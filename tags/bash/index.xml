@@ -6,7 +6,16 @@
     <description>Recent content in bash on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Thu, 18 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalar rclone en Synology Ds920&#43;</title>
+      <link>http://www.sherblog.pro/instalar-rclone-en-synology-ds920-/</link>
+      <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/instalar-rclone-en-synology-ds920-/</guid>
+      <description>&lt;p&gt;En la migración de los discos duros desde el Ds216+II al Ds920+ uno de los problemas con que me he encontrado es que ha desaparecido la instalación de Rclone, toca volver a instalarlo.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Sincronizar Google Photos desde la Raspberry</title>
       <link>http://www.sherblog.pro/sincronizar-google-photos-desde-la-raspberry/</link>

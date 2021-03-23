@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://www.sherblog.pro/instalar-rclone-en-synology-ds920-/</loc>
+    <lastmod>2021-03-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://www.sherblog.pro/vertices/loma_de_utebo/</loc>
     <lastmod>2021-03-02T00:00:00+00:00</lastmod>
   </url><url>
@@ -590,11 +593,29 @@
     <loc>http://www.sherblog.pro/raspberry-descargando-wordpress/</loc>
     <lastmod>2018-04-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://www.sherblog.pro/tags/bash/</loc>
+    <lastmod>2021-03-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://www.sherblog.pro/categories/</loc>
-    <lastmod>2021-03-02T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/categories/computing/</loc>
+    <lastmod>2021-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/post/</loc>
+    <lastmod>2021-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/tags/rclone/</loc>
+    <lastmod>2021-03-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/</loc>
-    <lastmod>2021-03-02T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/tags/synology/</loc>
+    <lastmod>2021-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/tags/</loc>
+    <lastmod>2021-03-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/vertices/</loc>
     <lastmod>2021-03-02T00:00:00+00:00</lastmod>
@@ -605,20 +626,8 @@
     <loc>http://www.sherblog.pro/categories/hugo/</loc>
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://www.sherblog.pro/post/</loc>
-    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://www.sherblog.pro/tags/shortcodes/</loc>
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/tags/</loc>
-    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/tags/bash/</loc>
-    <lastmod>2021-02-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/categories/computing/</loc>
-    <lastmod>2021-02-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/google-drive/</loc>
     <lastmod>2021-02-18T00:00:00+00:00</lastmod>
@@ -627,9 +636,6 @@
     <lastmod>2021-02-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/categories/productividad/</loc>
-    <lastmod>2021-02-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/tags/rclone/</loc>
     <lastmod>2021-02-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/categories/iot/</loc>
@@ -688,9 +694,6 @@
   </url><url>
     <loc>http://www.sherblog.pro/tags/phillips-hue/</loc>
     <lastmod>2020-09-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/tags/synology/</loc>
-    <lastmod>2020-09-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/podcast/</loc>
     <lastmod>2020-04-06T00:00:00+00:00</lastmod>
