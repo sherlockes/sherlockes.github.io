@@ -6,7 +6,16 @@
     <description>Recent content in sherver on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Wed, 27 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/categories/sherver/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/categories/sherver/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trabajar con ssh-key en Synology</title>
+      <link>http://www.sherblog.pro/trabajar-con-ssh-key-en-synology/</link>
+      <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/trabajar-con-ssh-key-en-synology/</guid>
+      <description>&lt;p&gt;El acceso mediante llave público-privada es la forma más sencilla de acceder mediante ssh a nuestro NAS o desde este a oto equipo de forma autónoma y sin pedir contraseña, por la red hay cientos de tutoriales de como hay que hacerlo. Esta es sólo la forma que a mi me ha funcionado sin problemas.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Insertar en Twitter enlaces a Hugo con imagen</title>
       <link>http://www.sherblog.pro/insertar-en-twitter-enlaces-a-hugo-con-imagen/</link>

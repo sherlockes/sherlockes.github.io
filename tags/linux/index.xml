@@ -6,7 +6,16 @@
     <description>Recent content in linux on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Wed, 13 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Montar carpeta del NAS mediante sshfs</title>
+      <link>http://www.sherblog.pro/montar-carpeta-del-nas-mediante-sshfs/</link>
+      <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/montar-carpeta-del-nas-mediante-sshfs/</guid>
+      <description>&lt;p&gt;Hoy toca montar una carpeta del NAS en el pc mediante sshfs para correr sobre ella un script, resulta sencillo pero hay que tener en cuenta unas peculiaridades&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Termostato Raspberry</title>
       <link>http://www.sherblog.pro/termostato-raspberry/</link>
