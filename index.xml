@@ -894,16 +894,6 @@ Completamente cuarteada a lo largo de todo el flanco de la rueda sin ninguna cau
     </item>
     
     <item>
-      <title>Copiar ssh key desde Synology</title>
-      <link>http://www.sherblog.pro/copiar-ssh-key-desde-synology/</link>
-      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.sherblog.pro/copiar-ssh-key-desde-synology/</guid>
-      <description>El problema Generar la llave ssh (ssh-key) de un usuario dentro de un nas Synology es tan sencillo como acceder al mismo a través de ssh (Es necesario tener activado el servicio desde el panel de control de DSM y la opción &amp;ldquo;Terminal y snmp&amp;rdquo;) y posteriormente ejecutar el comando.
-ssh-keygen Esta llave se guardará dentro de la carpeta del usuario en el directorio &amp;ldquo;.ssh&amp;rdquo; de modo en entre otros archivos se genera un &amp;ldquo;id_rsa.</description>
-    </item>
-    
-    <item>
       <title>Acceder a Github via ssh sin password</title>
       <link>http://www.sherblog.pro/acceder-a-github-via-ssh-sin-password/</link>
       <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>

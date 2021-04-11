@@ -151,34 +151,6 @@
 	</div>
 </article><article class="list__item post">
 	<figure class="list__thumbnail">
-		<a href="http://www.sherblog.pro/copiar-ssh-key-desde-synology/">
-			<img src="/images/20180809_ssh_key_synology.jpg" alt="Copiar ssh key desde Synology" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/copiar-ssh-key-desde-synology/" rel="bookmark">
-			Copiar ssh key desde Synology
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2018-08-09T00:00:00">2018-08-09</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/sherver" rel="category">Sherver</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		El problema Generar la llave ssh (ssh-key) de un usuario dentro de un nas Synology es tan sencillo como acceder al mismo a través de ssh (Es necesario tener activado el servicio desde el panel de control de DSM y la opción &ldquo;Terminal y snmp&rdquo;) y posteriormente ejecutar el comando.
-ssh-keygen Esta llave se guardará dentro de la carpeta del usuario en el directorio &ldquo;.ssh&rdquo; de modo en entre otros archivos se genera un &ldquo;id_rsa.
-	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
 		<a href="http://www.sherblog.pro/error-al-exportar-base-de-datos-de-wordpress-en-synology-webstation/">
 			<img src="/images/20170505_error_export_database_00.jpg" alt="Error al exportar base de datos de WordPress en Synology webStation" />
 		</a>
@@ -204,6 +176,34 @@ ssh-keygen Esta llave se guardará dentro de la carpeta del usuario en el direct
 	<div class="content list__excerpt post__content clearfix">
 		Hace unos días que publiqué el modo en el que hacía la copia de seguridad de la base de datos de WordPress desde el propio hosting hasta una unidad de Google Drive. Haciendo pruebas para alojar la web en el Nas de Synology me doy cuenta de que el plugin para exportar la base de datos y enviarla por correo electrónico periódicamente no funciona.
 Pruebo con otros plugins similares y todos me dan el mismo error y tras unas pruebas y un poco de buceo por la red me doy cuenta que el problema reside en la incapacidad del servidor web para tratar los archivos comprimidos.
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="http://www.sherblog.pro/copia-de-seguridad-de-la-base-de-datos-de-wordpress/">
+			<img src="/images/20170228_db_backup_00.jpg" alt="Copia de seguridad de la base de datos de WordPress" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/copia-de-seguridad-de-la-base-de-datos-de-wordpress/" rel="bookmark">
+			Copia de seguridad de la base de datos de WordPress
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2017-04-04T00:00:00">2017-04-04</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/wordpress" rel="category">Wordpress</a>, <a class="meta__link" href="/categories/sherver" rel="category">Sherver</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Hace unos días expliqué como gestiona la copia de seguridad de los archivos de WordPress (la carpeta wp-content) y aquí vamos a ver como hago lo propio con la base de datos. El flujo de trabajo es simple, periódicamente me llega un correo electrónico con la base de datos comprimida como archivo adjunto y guardo ese archivo en mi unidad de Google Drive.
+El plugin de WordPress WP-DB-Backup es el que se encarga de enviar un correo electrónico periódicamente con la copia de la base de datos.
 	</div>
 </article>
 </main>
@@ -319,7 +319,7 @@ Pruebo con otros plugins similares y todos me dan el mismo error y tras unas pru
 		<a class="widget-taglist__link widget__link btn" href="/tags/software" title="Software">Software (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/speedtrap" title="Speedtrap">Speedtrap (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ssh" title="SSH">SSH (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/synology" title="Synology">Synology (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/synology" title="Synology">Synology (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/telegram" title="Telegram">Telegram (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/tilt-shift" title="Tilt shift">Tilt shift (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/tracks" title="Tracks">Tracks (2)</a>

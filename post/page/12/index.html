@@ -70,34 +70,6 @@
 		<h1 class="main__title">Posts</h1>
 	</header><article class="list__item post">
 	<figure class="list__thumbnail">
-		<a href="http://www.sherblog.pro/copia-de-seguridad-de-la-base-de-datos-de-wordpress/">
-			<img src="/images/20170228_db_backup_00.jpg" alt="Copia de seguridad de la base de datos de WordPress" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/copia-de-seguridad-de-la-base-de-datos-de-wordpress/" rel="bookmark">
-			Copia de seguridad de la base de datos de WordPress
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2017-04-04T00:00:00">2017-04-04</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/wordpress" rel="category">Wordpress</a>, <a class="meta__link" href="/categories/sherver" rel="category">Sherver</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Hace unos días expliqué como gestiona la copia de seguridad de los archivos de WordPress (la carpeta wp-content) y aquí vamos a ver como hago lo propio con la base de datos. El flujo de trabajo es simple, periódicamente me llega un correo electrónico con la base de datos comprimida como archivo adjunto y guardo ese archivo en mi unidad de Google Drive.
-El plugin de WordPress WP-DB-Backup es el que se encarga de enviar un correo electrónico periódicamente con la copia de la base de datos.
-	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
 		<a href="http://www.sherblog.pro/flujo-de-trabajo-con-im%C3%A1genes-en-wordpress/">
 			<img src="/images/20170330_faststone_00.jpg" alt="Flujo de trabajo con imágenes en WordPress" />
 		</a>
@@ -207,6 +179,34 @@ Pues nada, toca &ldquo;Googlear&rdquo; un rato y pronto me doy cuenta de que la 
 	<div class="content list__excerpt post__content clearfix">
 		Desde el centro de paquetes de DSM en posible acceder a la instalación de WordPress de una forma sencilla tal y como puedes es en este tutorial, pero si lo que tu quieres es realizar una instalación manual con la que consigas un mayor control aquí te dejo los pasos a seguir.
 Antes de comenzar con la instalación de WordPress hay que instalar &ldquo;Web Station&rdquo; como servidor de archivos, &ldquo;Maria Db&rdquo; para el alojamiento de las bases de datos y &ldquo;PhpMyAdmin&rdquo; para gestionar las bases de datos.
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="http://www.sherblog.pro/backup-de-la-web-al-nas-mediante-ftp-y-ssh-en-synology/">
+			<img src="/images/20170226_backup_ftp_01.jpg" alt="Backup de la web al Nas mediante ftp y ssh en Synology" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/backup-de-la-web-al-nas-mediante-ftp-y-ssh-en-synology/" rel="bookmark">
+			Backup de la web al Nas mediante ftp y ssh en Synology
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2017-02-26T00:00:00">2017-02-26</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/sherver" rel="category">Sherver</a>, <a class="meta__link" href="/categories/wordpress" rel="category">WordPress</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Esta vez y como casi siempre el objetivo es sencillo, crear una copia de seguridad del contenido de una página web al Nas que tengo en casa, de una forma automática y periódica.
+Después de valorar varias alternativas, la que me ha parecido más apropiada es mediante una conexión ftp. Puesto que esta web trabaja bajo WordPress resultará suficiente la copia de la carpeta &ldquo;wp-content&rdquo; desde el servidor del hosting a nuestro Nas.
 	</div>
 </article>
 </main>
@@ -323,7 +323,7 @@ Antes de comenzar con la instalación de WordPress hay que instalar &ldquo;Web S
 		<a class="widget-taglist__link widget__link btn" href="/tags/software" title="Software">Software (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/speedtrap" title="Speedtrap">Speedtrap (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ssh" title="SSH">SSH (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/synology" title="Synology">Synology (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/synology" title="Synology">Synology (7)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/telegram" title="Telegram">Telegram (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/tilt-shift" title="Tilt shift">Tilt shift (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/tracks" title="Tracks">Tracks (2)</a>
