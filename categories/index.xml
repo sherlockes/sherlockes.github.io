@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Sun, 11 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iot</title>
+      <link>http://www.sherblog.pro/categories/iot/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/categories/iot/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>computing</title>
       <link>http://www.sherblog.pro/categories/computing/</link>
@@ -49,15 +58,6 @@
       <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>http://www.sherblog.pro/categories/productividad/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>iot</title>
-      <link>http://www.sherblog.pro/categories/iot/</link>
-      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.sherblog.pro/categories/iot/</guid>
       <description></description>
     </item>
     

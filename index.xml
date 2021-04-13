@@ -6,7 +6,16 @@
     <description>Recent content on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Sun, 11 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configurando un relé wifi mediante esp-01 y micropython</title>
+      <link>http://www.sherblog.pro/configurando-un-rel%C3%A9-wifi-mediante-esp-01-y-micropython/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/configurando-un-rel%C3%A9-wifi-mediante-esp-01-y-micropython/</guid>
+      <description>&lt;p&gt;Hace un tiempo hice un artículo con los &lt;a href=&#34;https://sherblog.pro/primeros-pasos-con-nodemcu-y-micropython-en-linux/&#34;&gt;primeros pasos con nodemcu&lt;/a&gt; en linux con micropython. Hoy voy a trabajar con otro microcontrolador menos potente pero mucho más pequeño, el ESP01. Linux Mint, Thonny y Micropython es el entorno que voy a utilizar.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Montar carpeta del NAS mediante sshfs</title>
       <link>http://www.sherblog.pro/montar-carpeta-del-nas-mediante-sshfs/</link>
