@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://www.sherblog.pro/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/</loc>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://www.sherblog.pro/configurando-un-rel%C3%A9-wifi-mediante-esp-01-y-micropython/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
   </url><url>
@@ -599,8 +602,26 @@
     <loc>http://www.sherblog.pro/raspberry-descargando-wordpress/</loc>
     <lastmod>2018-04-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://www.sherblog.pro/tags/bash/</loc>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://www.sherblog.pro/categories/</loc>
-    <lastmod>2021-04-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/categories/computing/</loc>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/tags/dotfiles/</loc>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/post/</loc>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/</loc>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/tags/</loc>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/esp01/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
@@ -608,26 +629,11 @@
     <loc>http://www.sherblog.pro/categories/iot/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://www.sherblog.pro/post/</loc>
-    <lastmod>2021-04-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/</loc>
-    <lastmod>2021-04-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/tags/</loc>
-    <lastmod>2021-04-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://www.sherblog.pro/tags/thonny/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/upython/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/tags/bash/</loc>
-    <lastmod>2021-04-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/categories/computing/</loc>
-    <lastmod>2021-04-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/linux/</loc>
     <lastmod>2021-04-11T00:00:00+00:00</lastmod>
