@@ -1,0 +1,11 @@
+@reboot ~/SherloScripts/python/termoflask/init.sh > ~/logs/flask.log 2>&1
+@reboot sleep 15 && ~/SherloScripts/bash/teledown.sh > ~/logs/teledown.log 2>&1
+@reboot sleep 15 && ~/SherloScripts/python/termoflask/mqtt.py > ~/logs/mqtt.log 2>&1
+@daily /home/pi/SherloScripts/bash/sherloscripts_push.sh
+@weekly ~/SherloScripts/bash/radares.sh 2>&1 ~/logs/radares.log
+@daily ~/SherloScripts/bash/hugo.sh
+30 0 * * * ~/SherloScripts/bash/gphotos-sync.sh > ~/logs/gphotos.log 2>&1
+@hourly ~/SherloScripts/bash/publish.sh
+@hourly ~/SherloScripts/bash/teledown_move.sh > ~/logs/teledown_move.log 2>&1
+0 8,14 * * * ~/SherloScripts/python/tiempo.py
+*/5 * * * * ~/SherloScripts/python/termoflask/termo.py > ~/logs/termostato.log 2>&1
