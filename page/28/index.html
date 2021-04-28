@@ -74,6 +74,24 @@
 
 	</div>
 	<article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/cambiando-los-casquillos-del-fox-rp2/" rel="bookmark">
+			Cambiando los casquillos del Fox RP2
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/a-pedales" rel="category">a pedales</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Un buen día, al levantar la bicicleta cogiéndola por el sillín noto una holgura de unos cuantos milímetros en la parte trasera de la bici que no tengo muy claro de donde viene. Tras descartar problemas con el buje o el eje trasero comienzo a revisar las articulaciones del basculante.
+Sólo hicieron falta unos minutos para darme cuenta de que el causante del problema era una holgura que había aparecido entre los casquillo y el alojamiento de los mismos en la unión entre el amortiguador Fox RP2 y la bieleta del basculante de la Giant Trance X3.
+	</div>
+</article><article class="list__item post">
 	<figure class="list__thumbnail">
 		<a href="http://www.sherblog.pro/reinicio-programado-con-tasker-en-android/">
 			<img src="/images/20180117_tasker_reinicio.jpg" alt="Reinicio programado con Tasker en Android" />
@@ -181,47 +199,12 @@ Accedemos a la consola de MySql con el siguiente comando tras el cual se nos sol
 sudo mysql -u root -p
 Ya estamos listos para crear la base de datos, el usuario que la manejará y asignación al segundo todos los privilegios sobre la primera.
 	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="http://www.sherblog.pro/raspberry-y-docker/">
-			<img src="/images/20180501_raspberry_docker.jpg" alt="Raspberry y Docker" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/raspberry-y-docker/" rel="bookmark">
-			Raspberry y Docker
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2018-04-12T00:00:00">2018-04-12</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/raspberry" rel="category">Raspberry</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Manejando contenedores con Docker Instalar Docker\
-sudo apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
-sudo curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo &ldquo;$ID&rdquo;)/gpg | sudo apt-key add -
-sudo echo &ldquo;deb [arch=armhf] https://download.docker.com/linux/$(. /etc/os-release; echo &ldquo;$ID&rdquo;)
-$(lsb_release -cs) stable&rdquo; |
-sudo tee /etc/apt/sources.list.d/docker.list
-sudo apt update sudo apt install docker-ce sudo systemctl enable docker sudo systemctl start docker añadir tu usuario al grupo de docker\
-sudo gpasswd -a ${USER} docker
-eliminar todos los contenedores con un solo comando\
-	</div>
 </article>
 </main>
 
 <div class="pagination">
 	<a class="pagination__item pagination__item--prev btn" href="/page/27/">«</a>
-	<span class="pagination__item pagination__item--current">28/30</span>
+	<span class="pagination__item pagination__item--current">28/31</span>
 	<a class="pagination__item pagination__item--next btn" href="/page/29/">»</a>
 </div>
 
@@ -232,6 +215,8 @@ eliminar todos los contenedores con un solo comando\
 	<h4 class="widget__title">Más Recientes</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/insertar-comentarios-en-hugo/">Insertar comentarios en Hugo</a></li>
+			<li class="widget__item"><a class="widget__link" href="/renombrado-de-lotes-de-archivos-en-emacs/">Renombrado de lotes de archivos en Emacs</a></li>
 			<li class="widget__item"><a class="widget__link" href="/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/">Mi gestión de los archivos de configuración</a></li>
 			<li class="widget__item"><a class="widget__link" href="/configurando-un-rel%C3%A9-wifi-mediante-esp-01-y-micropython/">Configurando un relé wifi mediante esp-01 y micropython</a></li>
 			<li class="widget__item"><a class="widget__link" href="/montar-carpeta-del-nas-mediante-sshfs/">Montar carpeta del NAS mediante sshfs</a></li>
@@ -240,8 +225,6 @@ eliminar todos los contenedores con un solo comando\
 			<li class="widget__item"><a class="widget__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos-en-hugo/">Mis vértices geodésicos en Hugo</a></li>
 			<li class="widget__item"><a class="widget__link" href="/sincronizar-google-photos-desde-la-raspberry/">Sincronizar Google Photos desde la Raspberry</a></li>
 			<li class="widget__item"><a class="widget__link" href="/sincronizar-nubes-con-rclone/">Sincronizar nubes con rclone</a></li>
-			<li class="widget__item"><a class="widget__link" href="/primeros-pasos-con-nodemcu-y-micropython-en-linux/">Primeros pasos con nodemcu y micropython en linux</a></li>
-			<li class="widget__item"><a class="widget__link" href="/descargar-archivos-de-telegram/">Descargar archivos de Telegram</a></li>
 		</ul>
 	</div>
 </div>
@@ -253,7 +236,6 @@ eliminar todos los contenedores con un solo comando\
 			<li class="widget__item"><a class="widget__link" href="/categories/android">Android</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/computing">Computing</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/dise%c3%b1o">Diseño</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/emacs">Emacs</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/gps">Gps</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/hardware">Hardware</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/hugo">Hugo</a></li>
@@ -282,6 +264,7 @@ eliminar todos los contenedores con un solo comando\
 		<a class="widget-taglist__link widget__link btn" href="/tags/desarrollo" title="Desarrollo">Desarrollo (16)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dired" title="Dired">Dired (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dotfiles" title="Dotfiles">Dotfiles (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/emacs" title="Emacs">Emacs (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/emule" title="Emule">Emule (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/esp01" title="Esp01">Esp01 (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/exif" title="Exif">Exif (1)</a>
@@ -327,6 +310,7 @@ eliminar todos los contenedores con un solo comando\
 		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/raspberry" title="Raspberry">Raspberry (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/rclone" title="Rclone">Rclone (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/regexp" title="Regexp">Regexp (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/sherlodj" title="Sherlodj">Sherlodj (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/shortcodes" title="Shortcodes">Shortcodes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/software" title="Software">Software (1)</a>

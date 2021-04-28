@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://www.sherblog.pro/insertar-comentarios-en-hugo/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/renombrado-de-lotes-de-archivos-en-emacs/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://www.sherblog.pro/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
@@ -85,9 +91,6 @@
   </url><url>
     <loc>http://www.sherblog.pro/raspberry-montaje-y-ssh/</loc>
     <lastmod>2021-01-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/insertar-comentarios-en-hugo/</loc>
-    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/muerte-del-termostato-netatmo/</loc>
     <lastmod>2020-12-01T00:00:00+00:00</lastmod>
@@ -602,25 +605,37 @@
     <loc>http://www.sherblog.pro/raspberry-descargando-wordpress/</loc>
     <lastmod>2018-04-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://www.sherblog.pro/categories/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/categories/computing/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/tags/emacs/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/tags/hugo/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/categories/hugo/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/post/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/tags/regexp/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/tags/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://www.sherblog.pro/tags/bash/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://www.sherblog.pro/categories/</loc>
-    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/categories/computing/</loc>
-    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://www.sherblog.pro/tags/dotfiles/</loc>
-    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/post/</loc>
-    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/</loc>
-    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/tags/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/esp01/</loc>
@@ -653,9 +668,6 @@
     <loc>http://www.sherblog.pro/categories/vertices/</loc>
     <lastmod>2021-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://www.sherblog.pro/categories/hugo/</loc>
-    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://www.sherblog.pro/tags/shortcodes/</loc>
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -685,9 +697,6 @@
   </url><url>
     <loc>http://www.sherblog.pro/tags/desarrollo/</loc>
     <lastmod>2021-01-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/tags/hugo/</loc>
-    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/categories/varios/</loc>
     <lastmod>2020-12-01T00:00:00+00:00</lastmod>
@@ -759,9 +768,6 @@
     <lastmod>2019-09-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/dired/</loc>
-    <lastmod>2019-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/categories/emacs/</loc>
     <lastmod>2019-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/markdown/</loc>

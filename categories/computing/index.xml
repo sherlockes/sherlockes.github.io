@@ -6,7 +6,16 @@
     <description>Recent content in computing on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/categories/computing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/categories/computing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Renombrado de lotes de archivos en Emacs</title>
+      <link>http://www.sherblog.pro/renombrado-de-lotes-de-archivos-en-emacs/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/renombrado-de-lotes-de-archivos-en-emacs/</guid>
+      <description>&lt;p&gt;Cuando era usuario de windows, usaba &lt;a href=&#34;https://portableapps.com/apps/utilities/renamer-portable&#34;&gt;Renamer&lt;/a&gt; para cambiar el nombre de varios archivos en lote, en linux todavía no he encontrado una aplicación que me guste así que lo hago gracias a Emacs de una forma rápida.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Mi gestión de los archivos de configuración</title>
       <link>http://www.sherblog.pro/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/</link>
@@ -86,6 +95,24 @@
       
       <guid>http://www.sherblog.pro/controlar-las-luces-de-philips-hue-con-un-script-en-bash/</guid>
       <description>&lt;p&gt;Hay muchas formas de controlar las luces de Phillis Hue, aquí dejo la que empleo para apagar las luces mediante una simple línea de comando gracias a la Raspberry.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Editando archivos markdown en emacs</title>
+      <link>http://www.sherblog.pro/editando-archivos-markdown-en-emacs/</link>
+      <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/editando-archivos-markdown-en-emacs/</guid>
+      <description>&lt;p&gt;En mi lucha por utilizar &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt; en todo mi usos con editor de texto aquí dejo reflejado como para editar archivos &amp;ldquo;Markdown&amp;rdquo; tiene muchas posibilidades.  No pretendo hacer una extensa guía, sólo los comandos que empleo habitualmente.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Usando Dired en Emacs</title>
+      <link>http://www.sherblog.pro/usando-dired-en-emacs/</link>
+      <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/usando-dired-en-emacs/</guid>
+      <description>&lt;p&gt;Después de algún tiempo buscando alternativas para la gestión de ficheros en emacs he tomado la determinación de que lo más práctico va a ser aprender a manejar una de las más potentes y que viene por defecto, Dired.&lt;/p&gt;</description>
     </item>
     
   </channel>
