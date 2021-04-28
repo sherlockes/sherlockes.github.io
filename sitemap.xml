@@ -5,6 +5,9 @@
     <loc>http://www.sherblog.pro/insertar-comentarios-en-hugo/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://www.sherblog.pro/que-hace-la-raspberry-sin-mi/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://www.sherblog.pro/renombrado-de-lotes-de-archivos-en-emacs/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
@@ -605,6 +608,9 @@
     <loc>http://www.sherblog.pro/raspberry-descargando-wordpress/</loc>
     <lastmod>2018-04-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://www.sherblog.pro/tags/bash/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://www.sherblog.pro/categories/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
@@ -623,6 +629,9 @@
     <loc>http://www.sherblog.pro/post/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://www.sherblog.pro/categories/raspberry/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://www.sherblog.pro/tags/regexp/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
@@ -631,9 +640,6 @@
   </url><url>
     <loc>http://www.sherblog.pro/tags/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/tags/bash/</loc>
-    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/dotfiles/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
@@ -690,9 +696,6 @@
     <lastmod>2021-02-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/google-sheets/</loc>
-    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/categories/raspberry/</loc>
     <lastmod>2021-01-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/desarrollo/</loc>

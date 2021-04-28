@@ -6,7 +6,16 @@
     <description>Recent content in bash on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Que hace la raspberry sin mi</title>
+      <link>http://www.sherblog.pro/que-hace-la-raspberry-sin-mi/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/que-hace-la-raspberry-sin-mi/</guid>
+      <description>&lt;p&gt;La Raspberry me sirve para hacer muchas cosas aunque aquí sólo voy a contar ahora las que hace ella sola cuando yo no estoy delante.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Mi gestión de los archivos de configuración</title>
       <link>http://www.sherblog.pro/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/</link>

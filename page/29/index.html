@@ -75,6 +75,36 @@
 	</div>
 	<article class="list__item post">
 	<figure class="list__thumbnail">
+		<a href="http://www.sherblog.pro/raspberry-mysql-y-db/">
+			<img src="/images/raspberry_logo.png" alt="Raspberry mysql y DB" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/raspberry-mysql-y-db/" rel="bookmark">
+			Raspberry mysql y DB
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2018-04-04T00:00:00">2018-04-04</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/raspberry" rel="category">Raspberry</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Instalando Mysql El motor de WordPress es una base de datos por lo que es necesario un motor que la gestione, usaré MySql y se instala de la siguente forma:
+Accedemos a la consola de MySql con el siguiente comando tras el cual se nos solicitará la contraseña correspondiente al usuario &ldquo;root&rdquo;
+sudo mysql -u root -p
+Ya estamos listos para crear la base de datos, el usuario que la manejará y asignación al segundo todos los privilegios sobre la primera.
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
 		<a href="http://www.sherblog.pro/raspberry-y-docker/">
 			<img src="/images/20180501_raspberry_docker.jpg" alt="Raspberry y Docker" />
 		</a>
@@ -192,34 +222,6 @@ Por un lado, para dirigir el tráfico que llega a nuestro router en busca de nue
 		Reiniciar la Raspberry a diario Para que la Raspberry se reinicie al menos una vez al día por si alguno de los servicios se cuelga y no tenemos acceso a ella o no nos damos cuenta del problema he implementado un reinicio diario a las 4:00 AM mediante una tarea programada usando el cron del usuario root
 sudo crontab -enos abre un archivo al que le añadiremos la siguiente línea
 	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="http://www.sherblog.pro/raspberry-copia-de-seguridad/">
-			<img src="/images/20180409_raspberry_backup.jpg" alt="Raspberry Copia de seguridad" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/raspberry-copia-de-seguridad/" rel="bookmark">
-			Raspberry Copia de seguridad
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2018-04-09T00:00:00">2018-04-09</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/raspberry" rel="category">Raspberry</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Antes de pensar en como realizar una copia de seguridad para las instalaciones de WordPress y Dokuwiki que hasta ahora hemos instalado en la Raspberry hay que hacerlo en los datos que son estrictamente necesarios para poder restaurar ambas instalaciones ante una pérdida de los mismos.
-En el caso de Wordpress, debemos guardar la base de datos y la carpeta &ldquo;wp-content&rdquo;. Para el caso de la Wiki, aquí podemos ver las carpetas necesarias que se recomienda guardar aunque yo he optado por prescindir de las versiones antiguas de páginas y archivos multimedia.
-	</div>
 </article>
 </main>
 
@@ -237,6 +239,7 @@ En el caso de Wordpress, debemos guardar la base de datos y la carpeta &ldquo;wp
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/insertar-comentarios-en-hugo/">Insertar comentarios en Hugo</a></li>
+			<li class="widget__item"><a class="widget__link" href="/que-hace-la-raspberry-sin-mi/">Que hace la raspberry sin mi</a></li>
 			<li class="widget__item"><a class="widget__link" href="/renombrado-de-lotes-de-archivos-en-emacs/">Renombrado de lotes de archivos en Emacs</a></li>
 			<li class="widget__item"><a class="widget__link" href="/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/">Mi gestión de los archivos de configuración</a></li>
 			<li class="widget__item"><a class="widget__link" href="/configurando-un-rel%C3%A9-wifi-mediante-esp-01-y-micropython/">Configurando un relé wifi mediante esp-01 y micropython</a></li>
@@ -245,7 +248,6 @@ En el caso de Wordpress, debemos guardar la base de datos y la carpeta &ldquo;wp
 			<li class="widget__item"><a class="widget__link" href="/instalar-rclone-en-synology-ds920-/">Instalar rclone en Synology Ds920&#43;</a></li>
 			<li class="widget__item"><a class="widget__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos-en-hugo/">Mis vértices geodésicos en Hugo</a></li>
 			<li class="widget__item"><a class="widget__link" href="/sincronizar-google-photos-desde-la-raspberry/">Sincronizar Google Photos desde la Raspberry</a></li>
-			<li class="widget__item"><a class="widget__link" href="/sincronizar-nubes-con-rclone/">Sincronizar nubes con rclone</a></li>
 		</ul>
 	</div>
 </div>
@@ -279,7 +281,7 @@ En el caso de Wordpress, debemos guardar la base de datos y la carpeta &ldquo;wp
 		<a class="widget-taglist__link widget__link btn" href="/tags/apps" title="Apps">Apps (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/averias" title="Averias">Averias (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/backup" title="Backup">Backup (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/bash" title="Bash">Bash (14)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bash" title="Bash">Bash (15)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bricolaje" title="Bricolaje">Bricolaje (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/darktable" title="Darktable">Darktable (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/desarrollo" title="Desarrollo">Desarrollo (16)</a>

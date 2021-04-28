@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Que hace la raspberry sin mi - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Este es un pequeño resumen de lo que la Raspberry hace por mi cuando yo no estoy delante de ella">
+
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://www.sherblog.pro//images/20210217_raspberry_autofaenas_00.jpg" />
+	<meta name="twitter:title" content="Que hace la raspberry sin mi"/>
+	<meta name="twitter:description" content="Este es un pequeño resumen de lo que la Raspberry hace por mi cuando yo no estoy delante de ella"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="sherblog.pro" />
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Que hace la raspberry sin mi"/>
+<meta name="twitter:description" content="Este es un pequeño resumen de lo que la Raspberry hace por mi cuando yo no estoy delante de ella"/>
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">Mis vértices geodésicos</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">Raspberry Pi desde cero</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">Tasker</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Que hace la raspberry sin mi</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2021-04-28T00:00:00">2021-04-28</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/raspberry" rel="category">raspberry</a></span>
+</div>
+</div>
+		</header>
+		<figure class="post__thumbnail">
+			<img src="/images/20210217_raspberry_autofaenas_00.jpg" alt="Que hace la raspberry sin mi">
+		</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Índice</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#termostato">Termostato</a></li>
+        <li><a href="#teledown">Teledown</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#sherloscripts_pushsh">sherloscripts_push.sh</a></li>
+        <li><a href="#radaressh">radares.sh</a></li>
+        <li><a href="#gphotos-syncsh">gphotos-sync.sh</a></li>
+        <li><a href="#tiempopy">tiempo.py</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div>
+<div class="content post__content clearfix">
+			<p>La Raspberry me sirve para hacer muchas cosas aunque aquí sólo voy a contar ahora las que hace ella sola cuando yo no estoy delante.</p>
+<p>Como todas las automatizaciones que tengo en la Raspberry son mediante cron, sacarlas a flote es tan simple como ejecutar <code>crontab -l</code> para obtener lo siguiente.</p>
+<pre><code><embed src="/files/crontab.txt" width="100%"></code></pre>
+
+
+<p>Si no tienes claro como realizar la programación en cron, es muy recomendable visitar <a href="https://crontab.guru">crontab guru</a> para realizar unas pruebas con el tema de los números y asteriscos para determinar la frecuencia de realización de la tarea.</p>
+<h3 id="termostato">Termostato</h3>
+<p>Hace ya un tiempo que cambié el comercial Netatmo que tan buen resultado me dio durante más de tres años por un <a href="https://sherblog.pro/termostato-raspberry/">termostato en la raspberry</a> con el que estoy igual de contento pero mucho más orgulloso. Para funcionar necesita tres entradas en el cron.</p>
+<h4 id="initsh">init.sh</h4>
+<pre><code>@reboot ~/SherloScripts/python/termoflask/init.sh
+</code></pre><p>Este script se ejecuta cada vez que arranca la raspberry y tiene la única función de arrancar el servidor web que flask lleva integrado para poder visualizar la interface del termostato.</p>
+<h4 id="mqttpy">mqtt.py</h4>
+<pre><code>@reboot sleep 15 &amp;&amp; ~/SherloScripts/python/termoflask/mqtt.py
+</code></pre><p>Además de la temperatura en la habitación en la que está ubicada la raspberry, se capturan también los datos de otra habitación mediante mqtt y el broker <a href="https://mosquitto.org">mosquitto</a> (instalado en la raspberry) gracias a una segunda sonda de Tª y un pequeño nodemcu.</p>
+<p>El servidor debe arrancarse cada vez que se reinicia la raspberry y tiene la peculiaridad de tener que esperar unos segundos (15) para no dar falo con la conexión de red.</p>
+<h4 id="termopy">termo.py</h4>
+<pre><code>*/5 * * * * ~/SherloScripts/python/termoflask/termo.py
+</code></pre><p>Este es el corazón del termostato, cada 5 minutos se ejecuta el script para calcular consignas y estado de la calefacción en función de las temperaturas y de lo establecido en el panel de control.</p>
+<h3 id="teledown">Teledown</h3>
+<p>La raspberry es tambien la encargada de [descargar arcivos de telegram] cuando no estoy delante del ordenador y los envío desde el teléfono gracias a <a href="https://github.com/alfem/telegram-download-daemon">telegram-download-daemon</a> para lo que necesito la ejecución de unos scripts.</p>
+<h4 id="teledownsh">teledown.sh</h4>
+<pre><code>@reboot sleep 15 &amp;&amp; ~/SherloScripts/bash/teledown.sh
+</code></pre><p>Es el corazon de las descargas y encargado de vigilar el canal para descargar todos los archivos que por ahí pasen. Se ejecuta cada vez que arranca la raspberry con un retraso de 15 sg para evitar evitar los problemas con el establecimiento de las conexiones de red.</p>
+<h4 id="teledown_movesh">teledown_move.sh</h4>
+<pre><code>@hourly ~/SherloScripts/bash/teledown_move.sh
+</code></pre><p>La raspberry está encendida todo el día, pero el NAS no, este script se ejecuta cada hora para comprobar si el NAS está encendido y mover a este los archivos descargados por la raspberry.</p>
+<h3 id="blog">Blog</h3>
+<p>Esta placa de menos de 40€ también es la encargada de, a partir del contenido alojado en una carpeta de mi cuenta en la nube de Google Drive, publicar en GitHub el contenido estático de este Blog.</p>
+<h4 id="publishsh">publish.sh</h4>
+<pre><code>@hourly ~/SherloScripts/bash/publish.sh
+</code></pre><p>Cada hora, busca nuevo contenido en Google Drive para publicar en el Blog o maquetas como post. Genera el ontenido estático en Hugo y lo sincroniza con el repositorio de Github.</p>
+<h4 id="hugosh">hugo.sh</h4>
+<pre><code>@daily ~/SherloScripts/bash/hugo.sh
+</code></pre><p>Cada día, comprueba e instala la posible actualización de Hugo para instalar en la propia Raspberry</p>
+<h3 id="sherloscripts_pushsh">sherloscripts_push.sh</h3>
+<pre><code>@daily ~/SherloScripts/bash/sherloscripts_push.sh
+</code></pre><p>Gracias a <a href="https://www.insynchq.com">Insync</a> y la integración de Google Drive con Android, me resulta mucho más sencllo y practico trabajar sobre una sincronización con la nube que sobre un repositorio. Este Script mueve los cambios todos los días a las 0:00 de la nube de Google al repositorio de GitHub.</p>
+<p>Además comprueba también el estado de varias nubes donde tengo alojado parte de mi colección multimedia y realiza una sincronización entre ellas.</p>
+<h3 id="radaressh">radares.sh</h3>
+<pre><code>@weekly ~/SherloScripts/bash/radares.sh
+</code></pre><p>Una vez a la semana, este script descarga la base de radares de tráfico de <a href="http://www.todopoi.es">www.todopoi.es</a>, quita todo lo innecesario y guarda el resto en una carpeta de Google Drive desde donde Tasker para Android hará el resto para tener al día la detección de radares cundo voy en el coche.</p>
+<h3 id="gphotos-syncsh">gphotos-sync.sh</h3>
+<pre><code>30 0 * * * ~/SherloScripts/bash/gphotos-sync.sh
+</code></pre><p>Hubo un tiempo mejor en el que el Ds216+II de Synology con sus utilidades propias era capaz de sincronizar con una carpeta en el mismo el contenido de Google Photos y esa misma carpeta sincronizarla con Amazón Drive para no tener &ldquo;todas manzanas en la misma cesta&rdquo;.</p>
+<p>Ahora, ambos han complicado las cosas y hasta ahora sólo he sido capaz de que todos los días a las 0:30 se realice una sincronización del contenido de Google Photos mediante Gphotos-Sync. en una carpeta del NAS gracias a este Script.</p>
+<h3 id="tiempopy">tiempo.py</h3>
+<pre><code>0 8,14 * * * ~/SherloScripts/python/tiempo.py
+</code></pre><p>Todos los días a las 8:00 y a las 14:00, este script recoge la información del tiempo de la Aemet y me lo envía al teléfono mediante un mensaje de Telegram.</p>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/bash/" rel="tag">bash</a></li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--prev">
+		<a class="post-nav__link" href="/sincronizar-google-photos-desde-la-raspberry/" rel="prev"><span class="post-nav__caption">«&thinsp;Anterior</span><p class="post-nav__post-title">Sincronizar Google Photos desde la Raspberry</p></a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2021 Sherblog.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script></body>
+</html>
