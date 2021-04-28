@@ -11,6 +11,9 @@
     <loc>http://www.sherblog.pro/que-hace-la-raspberry-sin-mi/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://www.sherblog.pro/raspberry-montaje-y-ssh/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://www.sherblog.pro/renombrado-de-lotes-de-archivos-en-emacs/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
@@ -94,9 +97,6 @@
   </url><url>
     <loc>http://www.sherblog.pro/termostato-raspberry/</loc>
     <lastmod>2021-01-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/raspberry-montaje-y-ssh/</loc>
-    <lastmod>2021-01-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/muerte-del-termostato-netatmo/</loc>
     <lastmod>2020-12-01T00:00:00+00:00</lastmod>
@@ -620,6 +620,9 @@
     <loc>http://www.sherblog.pro/categories/computing/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://www.sherblog.pro/tags/desarrollo/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://www.sherblog.pro/tags/emacs/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
@@ -703,9 +706,6 @@
   </url><url>
     <loc>http://www.sherblog.pro/tags/google-sheets/</loc>
     <lastmod>2021-01-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/tags/desarrollo/</loc>
-    <lastmod>2021-01-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/categories/varios/</loc>
     <lastmod>2020-12-01T00:00:00+00:00</lastmod>
