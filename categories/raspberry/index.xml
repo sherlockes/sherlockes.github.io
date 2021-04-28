@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>Sincronizar Google Photos desde la Raspberry</title>
+      <link>http://www.sherblog.pro/sincronizar-google-photos-desde-la-raspberry/</link>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/sincronizar-google-photos-desde-la-raspberry/</guid>
+      <description>&lt;p&gt;Hasta ahora había sincronizado mi galería de Google Fotos con el NAS desde el pc de sobremesa con Linux Mint, voy a intentar hacerlo desde la Raspberry para no tener que encender el pc.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Termostato Raspberry</title>
       <link>http://www.sherblog.pro/termostato-raspberry/</link>
       <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>

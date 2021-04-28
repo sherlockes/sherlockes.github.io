@@ -44,6 +44,15 @@
     </item>
     
     <item>
+      <title>shorcodes</title>
+      <link>http://www.sherblog.pro/tags/shorcodes/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/tags/shorcodes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>dotfiles</title>
       <link>http://www.sherblog.pro/tags/dotfiles/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
@@ -206,7 +215,7 @@
     </item>
     
     <item>
-      <title>Zerotier</title>
+      <title>zerotier</title>
       <link>http://www.sherblog.pro/tags/zerotier/</link>
       <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
       
@@ -377,11 +386,11 @@
     </item>
     
     <item>
-      <title>gtumb</title>
-      <link>http://www.sherblog.pro/tags/gtumb/</link>
+      <title>gthumb</title>
+      <link>http://www.sherblog.pro/tags/gthumb/</link>
       <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.sherblog.pro/tags/gtumb/</guid>
+      <guid>http://www.sherblog.pro/tags/gthumb/</guid>
       <description></description>
     </item>
     

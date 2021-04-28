@@ -76,6 +76,29 @@
 	<article class="list__item post">
 	<header class="list__header">
 		<h3 class="list__title post__title ">
+			<a href="/la-joya-de-la-corona/" rel="bookmark">
+			La joya de la corona
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2007-12-30T00:00:00">2007-12-30</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/sherver" rel="category">sherver</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Aquí está la máquina. Hace 10 años era la vanguardia de la tecnología y hoy se ha convertido en&hellip; lo que cada uno quiera pensar.
+Lo menos que se merece es una pequeña limpieza por dentro, tanto de polvo como de componentes innecesarios. La tarjeta de sonido y la disquetera no creo que nos sean muy útiles para el servidor y con un cable ide para el disco duro y el lector de cd será más que suficiente.
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
 			<a href="/acondicionando-una-horquilla-nueva/" rel="bookmark">
 			Acondicionando una horquilla nueva
 			</a>
@@ -159,34 +182,6 @@ Sólo hicieron falta unos minutos para darme cuenta de que el causante del probl
 		Configurar red y wifi Es interesante que la Raspberry arranque siempre con la misma dirección ip de red si queremos con ella automatizar algún servicio. Para ello, en primer lugar hay que editar el archivo &ldquo;/etc/dhcpcd.conf&rdquo; mediante la instrucción sudo nano /etc/dhcpcd.confe introduciremos al final las siguientes líneas (dependiendo de la configuración de la red y del router.
 interface eth0 static ip_address=192.168.1.202/24 static routers=192.168.1.1 static domain_name_servers=192.168.1.1  Guardamos el archivo =&gt; Ctrl + o Salimos del editor nano =&gt; Ctrl + x Reiniciamos la Raspberry =&gt; sudo reboot Nos logamos de nuevo a través de la nueva ip Comprobamos que ha funcionado =&gt; ip a  Ahora vamos a intentar ir un paso más allá y configurar la conexión a la red a través del módulo integrado wifi que trae la Raspberry 3.
 	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="http://www.sherblog.pro/raspberry-apache-y-php/">
-			<img src="/images/raspberry_logo.png" alt="Raspberry apache y php" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/raspberry-apache-y-php/" rel="bookmark">
-			Raspberry apache y php
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2018-04-03T00:00:00">2018-04-03</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/raspberry" rel="category">Raspberry</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Instalando PhP y Apache sudo apt-get install php7.0 libapache2-mod-php7.0 php7.0-mysql -y Para comprobar la correcta instalación de php borraremos el archivo &ldquo;index.html&rdquo;, crearemos un archivo &ldquo;index.php&rdquo; en el que escribiremos un mensaje &ldquo;hola mundo&rdquo; y reiniciaremos el servidor.
-cd /var/www/html sudo rm index.html sudo nano index.php &lt;?php echo &quot;hola mundo&quot;; ?&gt; Pulsar control-x Pulsar y Pulsar intro sudo service apache2 restart Ahora al acceder desde el navegador a la ip de nuestra raspberry se debería mostrar el mensaje &ldquo;hola mundo&rdquo;.
-	</div>
 </article>
 </main>
 
@@ -203,6 +198,7 @@ cd /var/www/html sudo rm index.html sudo nano index.php &lt;?php echo &quot;hola
 	<h4 class="widget__title">Más Recientes</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/incrustar-texto-externo-en-hugo/">Incrustar texto externo en Hugo</a></li>
 			<li class="widget__item"><a class="widget__link" href="/insertar-comentarios-en-hugo/">Insertar comentarios en Hugo</a></li>
 			<li class="widget__item"><a class="widget__link" href="/que-hace-la-raspberry-sin-mi/">Que hace la raspberry sin mi</a></li>
 			<li class="widget__item"><a class="widget__link" href="/renombrado-de-lotes-de-archivos-en-emacs/">Renombrado de lotes de archivos en Emacs</a></li>
@@ -212,7 +208,6 @@ cd /var/www/html sudo rm index.html sudo nano index.php &lt;?php echo &quot;hola
 			<li class="widget__item"><a class="widget__link" href="/trabajar-con-ssh-key-en-synology/">Trabajar con ssh-key en Synology</a></li>
 			<li class="widget__item"><a class="widget__link" href="/instalar-rclone-en-synology-ds920-/">Instalar rclone en Synology Ds920&#43;</a></li>
 			<li class="widget__item"><a class="widget__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos-en-hugo/">Mis vértices geodésicos en Hugo</a></li>
-			<li class="widget__item"><a class="widget__link" href="/sincronizar-google-photos-desde-la-raspberry/">Sincronizar Google Photos desde la Raspberry</a></li>
 		</ul>
 	</div>
 </div>
@@ -246,7 +241,7 @@ cd /var/www/html sudo rm index.html sudo nano index.php &lt;?php echo &quot;hola
 		<a class="widget-taglist__link widget__link btn" href="/tags/apps" title="Apps">Apps (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/averias" title="Averias">Averias (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/backup" title="Backup">Backup (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/bash" title="Bash">Bash (15)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bash" title="Bash">Bash (16)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bricolaje" title="Bricolaje">Bricolaje (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/darktable" title="Darktable">Darktable (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/desarrollo" title="Desarrollo">Desarrollo (16)</a>
@@ -273,7 +268,7 @@ cd /var/www/html sudo rm index.html sudo nano index.php &lt;?php echo &quot;hola
 		<a class="widget-taglist__link widget__link btn" href="/tags/gphoto-sync" title="Gphoto sync">Gphoto sync (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/gps" title="Gps">Gps (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/grub" title="Grub">Grub (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/gtumb" title="Gtumb">Gtumb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gthumb" title="Gthumb">Gthumb (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hdr" title="Hdr">Hdr (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo" title="Hugo">Hugo (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/iawriter" title="Iawriter">Iawriter (1)</a>
@@ -300,6 +295,7 @@ cd /var/www/html sudo rm index.html sudo nano index.php &lt;?php echo &quot;hola
 		<a class="widget-taglist__link widget__link btn" href="/tags/rclone" title="Rclone">Rclone (4)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/regexp" title="Regexp">Regexp (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/sherlodj" title="Sherlodj">Sherlodj (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/shorcodes" title="Shorcodes">Shorcodes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/shortcodes" title="Shortcodes">Shortcodes (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/software" title="Software">Software (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/speedtrap" title="Speedtrap">Speedtrap (1)</a>
