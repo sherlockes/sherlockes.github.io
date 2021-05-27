@@ -91,9 +91,9 @@
     <li>
       <ul>
         <li><a href="#distribución-completa">Distribución completa</a></li>
-        <li><a href="#contenedor-mediante-docker">Contenedor mediante Docker###</a></li>
+        <li><a href="#contenedor-mediante-docker">Contenedor mediante Docker</a></li>
         <li><a href="#ha-supervisado-sobre-debian-10">HA supervisado sobre Debian 10</a></li>
-        <li><a href="#instalación-sobre-raspberry-os">Instalación sobre Raspberry OS</a></li>
+        <li><a href="#ha-supervisado-sobre-raspberry-os">HA supervisado sobre Raspberry OS</a></li>
       </ul>
     </li>
   </ul>
@@ -116,7 +116,7 @@
 <p>Y ya está, de una forma rápida y sencilla tenemos la distribución de <a href="https://www.home-assistant.io">Home Assistant</a> corriendo en la Raspberry. La instalación es completamente funcional pero limita mucho el uso de la Raspberry para otros menesteres debido al Alpine Linux sobre el que está funcionando <a href="https://www.home-assistant.io">Home Assistant</a>.</p>
 <p>Otro problema con el que me he encontrado es que la única forma de asignar una IP estática a la Raspberry es reservando la dirección desde el DHCP del router. No he sido capaz de hacerlo desde la configuración de la distribución.</p>
 <p>Por lo anterior me decido a probar otro método de instalación que me ofrezca mejores resultados.</p>
-<h3 id="contenedor-mediante-docker">Contenedor mediante Docker###</h3>
+<h3 id="contenedor-mediante-docker">Contenedor mediante Docker</h3>
 <p>Necesitaremos tener instalado Docker en nuestra Raspberry para poder manejar la instalación del contenedor, para ello&hellip;</p>
 <ol>
 <li>Instalación de Raspberry OS en su versión lite (En este <a href="https://sherblog.pro/raspberry-montaje-y-ssh/">post</a> está detallado]</li>
@@ -158,8 +158,8 @@ curl -sL &quot;https://raw.githubusercontent.com/Kanga-Who/home-assistant/master
 [info] 
 </code></pre><p>Aunque el método es un poco más laborioso que los anteriores, el resultado es bueno ya que hemos obtenido una instalación de <a href="https://www.home-assistant.io">Home Assistant</a> con el modo supervisado activado sobre una distribución completamente funcional que nos permite sacar mucho más partido de la Raspberry.</p>
 <p>Con todo presenta el problema de la imposibilidad de actualizar el sistema operativo por lo que, aunque la dejo en producción, sigo buscando una mejor alternativa.</p>
-<h3 id="instalación-sobre-raspberry-os">Instalación sobre Raspberry OS</h3>
-<p>Removiendo un poco por <a href="https://github.com">GitHub</a> doy con un artículo de <a href="https://github.com/Kanga-Who/home-assistant/blob/master/Supervised%20Install%20on%20Raspberry%20Pi%20OS.md">Kanga-Who</a> donde esplica como instalar el modo supervisado de <a href="https://www.home-assistant.io">Home Assistant</a> sobre Raspberry OS de una forma al margen de la oficial.</p>
+<h3 id="ha-supervisado-sobre-raspberry-os">HA supervisado sobre Raspberry OS</h3>
+<p>Removiendo un poco por <a href="https://github.com">GitHub</a> doy con un artículo de <a href="https://github.com/Kanga-Who/home-assistant/blob/master/Supervised%20Install%20on%20Raspberry%20Pi%20OS.md">Kanga-Who</a> donde esplica como instalar el modo supervisado de <a href="https://www.home-assistant.io">Home Assistant</a> sobre Raspberry OS de una forma al margen de la oficial siguiendo los siguientes pasos.</p>
 <ol>
 <li>Instalación de Raspberry OS lite y habilitar el acceso ssh (En este <a href="https://sherblog.pro/raspberry-montaje-y-ssh/">post</a> está detallado]</li>
 <li>Conectarse a la Raspberry mediante ssh</li>
