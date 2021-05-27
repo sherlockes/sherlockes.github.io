@@ -75,6 +75,34 @@
 	</div>
 	<article class="list__item post">
 	<figure class="list__thumbnail">
+		<a href="http://www.sherblog.pro/raspberry-red-y-wifi/">
+			<img src="/images/raspberry_logo.png" alt="Raspberry red y wifi" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/raspberry-red-y-wifi/" rel="bookmark">
+			Raspberry red y wifi
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2018-04-02T00:00:00">2018-04-02</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/raspberry" rel="category">Raspberry</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Configurar red y wifi Es interesante que la Raspberry arranque siempre con la misma dirección ip de red si queremos con ella automatizar algún servicio. Para ello, en primer lugar hay que editar el archivo &ldquo;/etc/dhcpcd.conf&rdquo; mediante la instrucción sudo nano /etc/dhcpcd.confe introduciremos al final las siguientes líneas (dependiendo de la configuración de la red y del router.
+interface eth0 static ip_address=192.168.1.202/24 static routers=192.168.1.1 static domain_name_servers=192.168.1.1  Guardamos el archivo =&gt; Ctrl + o Salimos del editor nano =&gt; Ctrl + x Reiniciamos la Raspberry =&gt; sudo reboot Nos logamos de nuevo a través de la nueva ip Comprobamos que ha funcionado =&gt; ip a  Ahora vamos a intentar ir un paso más allá y configurar la conexión a la red a través del módulo integrado wifi que trae la Raspberry 3.
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
 		<a href="http://www.sherblog.pro/raspberry-apache-y-php/">
 			<img src="/images/raspberry_logo.png" alt="Raspberry apache y php" />
 		</a>
@@ -194,34 +222,6 @@ eliminar todos los contenedores con un solo comando\
 		Instalando un servidor VPN Una de las grandes funcionalidades que nos puede ofrecer nuestra Raspberry Pi es como servidor VPN el cual tiene dos finalidades fundamentales.
  Acceder de forma segura a nuestra red local desde fuera de ella Conseguir una navegación segura en redes wifi públicas  sudo apt updatesudo apt upgradecurl -L https://install.pivpn.io | bashPara los detalles de las opciones de configuración durante la instalación tan sólo hay que visitar la web de El Atareao donde lo explica pormenorizadamente.
 	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="http://www.sherblog.pro/raspberry-acceso-desde-el-exterior/">
-			<img src="/images/20180410_raspberry_noip.jpg" alt="Raspberry Acceso desde el exterior" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/raspberry-acceso-desde-el-exterior/" rel="bookmark">
-			Raspberry Acceso desde el exterior
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2018-04-10T00:00:00">2018-04-10</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/raspberry" rel="category">Raspberry</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Ya tenemos nuestro servidor prácticamente montado, ahora necesitamos que cualquiera desde fuera de nuestra red pueda acceder al mismo. Esto presenta dos problemas, el redireccionamiento de router a la raspberry y la ip dinámica que nos asigna el proveedor de servicios de internet.
-Por un lado, para dirigir el tráfico que llega a nuestro router en busca de nuestro servidor tendremos que abrir el puerto 80 para la ip local que tiene adjudicada la Raspberry, en mi caso la 192.
-	</div>
 </article>
 </main>
 
@@ -238,6 +238,7 @@ Por un lado, para dirigir el tráfico que llega a nuestro router en busca de nue
 	<h4 class="widget__title">Más Recientes</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/instalaci%C3%B3n-de-home-assistant-en-raspberry/">Instalación de Home Assistant en Raspberry</a></li>
 			<li class="widget__item"><a class="widget__link" href="/incrustar-texto-externo-en-hugo/">Incrustar texto externo en Hugo</a></li>
 			<li class="widget__item"><a class="widget__link" href="/insertar-comentarios-en-hugo/">Insertar comentarios en Hugo</a></li>
 			<li class="widget__item"><a class="widget__link" href="/que-hace-la-raspberry-sin-mi/">Que hace la raspberry sin mi</a></li>
@@ -247,7 +248,6 @@ Por un lado, para dirigir el tráfico que llega a nuestro router en busca de nue
 			<li class="widget__item"><a class="widget__link" href="/configurando-un-rel%C3%A9-wifi-mediante-esp-01-y-micropython/">Configurando un relé wifi mediante esp-01 y micropython</a></li>
 			<li class="widget__item"><a class="widget__link" href="/montar-carpeta-del-nas-mediante-sshfs/">Montar carpeta del NAS mediante sshfs</a></li>
 			<li class="widget__item"><a class="widget__link" href="/trabajar-con-ssh-key-en-synology/">Trabajar con ssh-key en Synology</a></li>
-			<li class="widget__item"><a class="widget__link" href="/instalar-rclone-en-synology-ds920-/">Instalar rclone en Synology Ds920&#43;</a></li>
 		</ul>
 	</div>
 </div>
@@ -310,6 +310,7 @@ Por un lado, para dirigir el tráfico que llega a nuestro router en busca de nue
 		<a class="widget-taglist__link widget__link btn" href="/tags/grub" title="Grub">Grub (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/gthumb" title="Gthumb">Gthumb (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hdr" title="Hdr">Hdr (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/home-assistant" title="Home assistant">Home assistant (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo" title="Hugo">Hugo (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/iawriter" title="Iawriter">Iawriter (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/imagemagick" title="Imagemagick">Imagemagick (2)</a>
@@ -331,7 +332,7 @@ Por un lado, para dirigir el tráfico que llega a nuestro router en busca de nue
 		<a class="widget-taglist__link widget__link btn" href="/tags/poppler" title="Poppler">Poppler (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/poppler-utils" title="Poppler utils">Poppler utils (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python (3)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/raspberry" title="Raspberry">Raspberry (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/raspberry" title="Raspberry">Raspberry (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/rclone" title="Rclone">Rclone (4)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/regexp" title="Regexp">Regexp (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/sherlodj" title="Sherlodj">Sherlodj (3)</a>
