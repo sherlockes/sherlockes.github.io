@@ -6,7 +6,16 @@
     <description>Recent content in rclone on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Mon, 22 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/rclone/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/rclone/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sincronizar nubes con rclone</title>
+      <link>http://www.sherblog.pro/sincronizar-nubes-con-rclone/</link>
+      <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/sincronizar-nubes-con-rclone/</guid>
+      <description>&lt;p&gt;Hace un tiempo y gracias a &lt;a href=&#34;http://www.andresramos.pro/google-drive-gratis/&#34;&gt;Andrés Ramos&lt;/a&gt; di con un enlace a una web para crear unidades compartidas de Google Drive con espacio ilimitado y la voy a utilizar para sincronizar la nube en la guardo el contenido multimedia por si alguna de las dos &amp;ldquo;falla&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Instalar rclone en Synology Ds920&#43;</title>
       <link>http://www.sherblog.pro/instalar-rclone-en-synology-ds920-/</link>
@@ -14,15 +23,6 @@
       
       <guid>http://www.sherblog.pro/instalar-rclone-en-synology-ds920-/</guid>
       <description>&lt;p&gt;En la migración de los discos duros desde el Ds216+II al Ds920+ uno de los problemas con que me he encontrado es que ha desaparecido la instalación de Rclone, toca volver a instalarlo.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Sincronizar nubes con rclone</title>
-      <link>http://www.sherblog.pro/sincronizar-nubes-con-rclone/</link>
-      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.sherblog.pro/sincronizar-nubes-con-rclone/</guid>
-      <description>&lt;p&gt;Hace un tiempo y gracias a &lt;a href=&#34;http://www.andresramos.pro/google-drive-gratis/&#34;&gt;Andrés Ramos&lt;/a&gt; di con un enlace a una web para crear unidades compartidas de Google Drive con espacio ilimitado y la voy a utilizar para sincronizar la nube en la guardo el contenido multimedia por si alguna de las dos &amp;ldquo;falla&amp;rdquo;.&lt;/p&gt;</description>
     </item>
     
     <item>

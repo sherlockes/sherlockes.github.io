@@ -6,7 +6,16 @@
     <description>Recent content on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Thu, 27 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sincronizar nubes con rclone</title>
+      <link>http://www.sherblog.pro/sincronizar-nubes-con-rclone/</link>
+      <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/sincronizar-nubes-con-rclone/</guid>
+      <description>&lt;p&gt;Hace un tiempo y gracias a &lt;a href=&#34;http://www.andresramos.pro/google-drive-gratis/&#34;&gt;Andrés Ramos&lt;/a&gt; di con un enlace a una web para crear unidades compartidas de Google Drive con espacio ilimitado y la voy a utilizar para sincronizar la nube en la guardo el contenido multimedia por si alguna de las dos &amp;ldquo;falla&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Instalación de Home Assistant en Raspberry</title>
       <link>http://www.sherblog.pro/instalaci%C3%B3n-de-home-assistant-en-raspberry/</link>
@@ -213,15 +222,6 @@
       
       <guid>http://www.sherblog.pro/sincronizar-google-photos-desde-la-raspberry/</guid>
       <description>&lt;p&gt;Hasta ahora había sincronizado mi galería de Google Fotos con el NAS desde el pc de sobremesa con Linux Mint, voy a intentar hacerlo desde la Raspberry para no tener que encender el pc.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Sincronizar nubes con rclone</title>
-      <link>http://www.sherblog.pro/sincronizar-nubes-con-rclone/</link>
-      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.sherblog.pro/sincronizar-nubes-con-rclone/</guid>
-      <description>&lt;p&gt;Hace un tiempo y gracias a &lt;a href=&#34;http://www.andresramos.pro/google-drive-gratis/&#34;&gt;Andrés Ramos&lt;/a&gt; di con un enlace a una web para crear unidades compartidas de Google Drive con espacio ilimitado y la voy a utilizar para sincronizar la nube en la guardo el contenido multimedia por si alguna de las dos &amp;ldquo;falla&amp;rdquo;.&lt;/p&gt;</description>
     </item>
     
     <item>

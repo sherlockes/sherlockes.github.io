@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Thu, 27 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Drive</title>
+      <link>http://www.sherblog.pro/tags/google-drive/</link>
+      <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/tags/google-drive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rclone</title>
+      <link>http://www.sherblog.pro/tags/rclone/</link>
+      <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/tags/rclone/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>home assistant</title>
       <link>http://www.sherblog.pro/tags/home-assistant/</link>
@@ -134,29 +152,11 @@
     </item>
     
     <item>
-      <title>rclone</title>
-      <link>http://www.sherblog.pro/tags/rclone/</link>
-      <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.sherblog.pro/tags/rclone/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>shortcodes</title>
       <link>http://www.sherblog.pro/tags/shortcodes/</link>
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>http://www.sherblog.pro/tags/shortcodes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Google Drive</title>
-      <link>http://www.sherblog.pro/tags/google-drive/</link>
-      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.sherblog.pro/tags/google-drive/</guid>
       <description></description>
     </item>
     

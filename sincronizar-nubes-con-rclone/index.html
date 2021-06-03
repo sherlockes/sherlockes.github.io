@@ -71,7 +71,7 @@
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2021-02-18T00:00:00">2021-02-18</time>
+	<time class="meta__text" datetime="2021-06-03T00:00:00">2021-06-03</time>
 </div>
 
 <div class="meta__item-categories meta__item">
@@ -86,12 +86,15 @@
 			<p>Hace un tiempo y gracias a <a href="http://www.andresramos.pro/google-drive-gratis/">Andrés Ramos</a> di con un enlace a una web para crear unidades compartidas de Google Drive con espacio ilimitado y la voy a utilizar para sincronizar la nube en la guardo el contenido multimedia por si alguna de las dos &ldquo;falla&rdquo;.</p>
 <h2 id="creando-una-unidad-compartida">Creando una unidad compartida</h2>
 <p>Gracias a al <a href="https://td.fastio.me/">enlace</a> de Andrés (y que ahora no funciona) era posible crear una unidad compartida de tamaño ilimitado de Google Drive sin más que introducir el nombre que le quiero dar, la cuenta de Google en la que la quiero incluir (No he usado mi cuenta principal sino otra que tengo para estas ocasiones) y seleccionar la universidad de San Francisco (No se como irán las demás opciones). Con solo eso ya tenemos creada una unidad compartida (Para nada privada) con espacio ilimitado.</p>
+<blockquote>
+<p>El rey a muerto&hellip; larga vida al rey. <a href="https://www.pon.workers.dev">https://www.pon.workers.dev</a></p>
+</blockquote>
 <p><img src="/images/20200625_rclone_sync_clouds_01.jpg" alt="Imagen_01"></p>
 <p>Rápido, barato y sencillo (mientras funcione&hellip;)</p>
 <h2 id="configurando-la-carpeta-en-rclone">Configurando la carpeta en Rclone</h2>
 <p>Ahora toca configurar la carpeta creada en rclone para que tenga acceso a esta unidad compartida.</p>
 <p>Deberemos conocer el identificador de la carpeta compartida para lo cual, entraremos a la msma a través del navegador y copiaremos la última parte de la barra de direcciones.</p>
-<p>![Imagen_02]</p>
+<p><img src="/images/20200625_rclone_sync_clouds_02.jpg" alt="Imagen_02"></p>
 <p>En mi caso el identificador de la carpeta será -&gt; 0AKXXD2qTbW50Uk9PVA</p>
 <p>Ya estamos listos para abrir una terminal y escribir el comando</p>
 <pre><code>rclone config
@@ -107,11 +110,12 @@
 <li>Usamos la configuración automática - Use auto config? &gt; y</li>
 </ul>
 <p>En este momento se abrirá el navegador y no solicitará el acceso a la carpeta para rclone. Lo permitimos</p>
-<p>![Imagen_03]</p>
+<p><img src="/images/20200625_rclone_sync_clouds_03.jpg" alt="Imagen_03"></p>
 <p>Si todo ha ido bien, nos aparecerá una nueva ventana del navegador con el mensaje de éxito y ya podemos volver a la terminal.</p>
-<p>![Imagen_04]</p>
+<p><img src="/images/20200625_rclone_sync_clouds_04.jpg" alt="Imagen_04"></p>
 <ul>
 <li>Configuramos la carpeta como unidad de equipo - Configure this as a team drive? &gt; y</li>
+<li>Seleccionamos la carpeta compartida entre las que nos salen</li>
 <li>Aceptamos la configuración creada - Yes this is OK</li>
 </ul>
 <p>Con esto ya tenemos aceso a la unidad y en la configuración de Rclone nos aparecerá algo como lo siguiente.</p>
@@ -206,10 +210,7 @@ e/n/d/r/c/s/q&gt;
 
 <nav class="post-nav flex">
 	<div class="post-nav__item post-nav__item--prev">
-		<a class="post-nav__link" href="/primeros-pasos-con-nodemcu-y-micropython-en-linux/" rel="prev"><span class="post-nav__caption">«&thinsp;Anterior</span><p class="post-nav__post-title">Primeros pasos con nodemcu y micropython en linux</p></a>
-	</div>
-	<div class="post-nav__item post-nav__item--next">
-		<a class="post-nav__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos-en-hugo/" rel="next"><span class="post-nav__caption">Siguiente&thinsp;»</span><p class="post-nav__post-title">Mis vértices geodésicos en Hugo</p></a>
+		<a class="post-nav__link" href="/incrustar-texto-externo-en-hugo/" rel="prev"><span class="post-nav__caption">«&thinsp;Anterior</span><p class="post-nav__post-title">Incrustar texto externo en Hugo</p></a>
 	</div>
 </nav>
 
