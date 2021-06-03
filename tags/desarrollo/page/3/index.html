@@ -70,118 +70,6 @@
 		<h1 class="main__title">Desarrollo</h1>
 	</header><article class="list__item post">
 	<figure class="list__thumbnail">
-		<a href="http://www.sherblog.pro/raspberry-instalando-dokuwiki/">
-			<img src="/images/20180408_raspberry_dokuwiki.jpg" alt="Raspberry Instalando Dokuwiki" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/raspberry-instalando-dokuwiki/" rel="bookmark">
-			Raspberry Instalando Dokuwiki
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2018-04-08T00:00:00">2018-04-08</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/raspberry" rel="category">Raspberry</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Que es DokuWiki Según la Wikipedia, DokuWiki es un software para gestión de webs colaborativas de tipo wiki, escrito en lenguaje de programación PHP y distribuido en código abierto bajo la licencia GPL. Está enfocado para ser usado por grupos de desarrolladores, grupos de trabajo en general y pequeñas empresas. Su sintaxis es similar a la de MediaWiki, aunque a diferencia de este software, la información se almacena en archivos de texto planos, por lo que no requiere el uso de una base de datos.
-	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="http://www.sherblog.pro/raspberry-instalando-wordpress/">
-			<img src="/images/20180407_raspberry_wordpress.jpg" alt="Raspberry Instalando WordPress" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/raspberry-instalando-wordpress/" rel="bookmark">
-			Raspberry Instalando WordPress
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2018-04-07T00:00:00">2018-04-07</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/raspberry" rel="category">Raspberry</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Instalando WordPress Al fin ha llegado el momento, se han acabado los preliminares y aquí es donde empieza la famosa instalación de WordPress en cinco minutos, tan sólo hay que introducir en nuestro navegador la ruta donde hemos copiado los archivos de instalación y seguir los pasos típicos.
-	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="http://www.sherblog.pro/raspberry-servidor-ftp/">
-			<img src="/images/20180406_raspberry_vsftpd.jpg" alt="Raspberry Servidor ftp" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/raspberry-servidor-ftp/" rel="bookmark">
-			Raspberry Servidor ftp
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2018-04-06T00:00:00">2018-04-06</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/raspberry" rel="category">Raspberry</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Instalando VSftpD Aunque no es imprescindible para la instalación y funcionamiento de WordPress, el servidor ftp nos resulta muy util para la instalación automática de plugins, actualizaciones, importaciones&hellip; Por lo que lo incluimos también dentro de la pequeña Raspberry.
-Instalamos &ldquo;vsftp&rdquo; y editamos el archivo de configuración asegurándonos de que están como aparecen a continuación los siguientes paramétros.
-*** Actualización *** //Para que los archivos subidos mediante el cliente ftp (logeado con el usuario &ldquo;pi&rdquo;) al servidor en la raspberry puedan ser leidos y ejecutados por el usuario &ldquo;www-data&rdquo; deberemos modificar tambien el parámetro umask de forma que quede local_umask=022//
-	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="http://www.sherblog.pro/raspberry-descargando-wordpress/">
-			<img src="/images/raspberry_logo.png" alt="Raspberry Descargando Wordpress" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/raspberry-descargando-wordpress/" rel="bookmark">
-			Raspberry Descargando Wordpress
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2018-04-05T00:00:00">2018-04-05</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/raspberry" rel="category">Raspberry</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Descargando WordPress En primer lugar descargamos la ultima versión de WordPress a el directorio &ldquo;home&rdquo; del usuario Pi. Si la descargamos en inglés lo haremos mediante el archivo &ldquo;latest.tar.gz&rdquo; pero si la queremos en castellano habrá en entrar en [[http://es.wordpress.org]] y comprobar cual es la versión actual para descargar un archivo del tipo &ldquo;wordpress-4.8.2-es_ES.tar.gz&rdquo;
-Las líneas de arriba realizan la siguiente secuencia:
- Crea un directorio en la raiz de apache para instalar WordPress Iniciarse en el directorio &ldquo;home&rdquo; de Pi Descargar la última versión de WordPress (En inglés) Descomprime el archivo descargado Mueve el contenido de la carpeta extraida a &ldquo;/var/www/html/sherblog&rdquo; Borra el archivo descargado Borra la carpeta vacía  Con esto ya están listos los archivos de WordPress, ahora modificaremos el archivo &ldquo;wp-config&rdquo; con la información de la conexión a la base de datos que hemos creado anteriormente.
-	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
 		<a href="http://www.sherblog.pro/post/android/tasker/">
 			<img src="/images/20180109_tasker_logo.jpg" alt="Tasker" />
 		</a>
@@ -208,13 +96,35 @@ Las líneas de arriba realizan la siguiente secuencia:
 		Tasker Tasker es una aplicación para Android que realiza tareas (Conjuntos de acciones) basadas en contextos (aplicaciones, hora, fecha, ubicación, eventos, gestos&hellip;), en perfiles definidos por el usuario o en acciones de widgets ubicadas en la pantalla de inicio.
 Este simple concepto añade infinidad de características a tus dispositivos android sin que, en la mayoría de los casos, sea necesario un &ldquo;rooteado&rdquo; de los mismos o añadir un nuevo launcher.
 	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="http://www.sherblog.pro/post/computing/raspberry/">
+			<img src="/images/20180626_raspberry_raspberry_desde_cero_00.png" alt="Raspberry Pi desde cero" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/computing/raspberry/" rel="bookmark">
+			Raspberry Pi desde cero
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/raspberry" rel="category">Raspberry</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Antes de nada&hellip; Lo mas importante antes de adquirir una Raspberry es tener un proyecto para ella (y si es posible que no sea muy complicado) para de esta forma fijarnos un objetivo y por el camino poder aprender infinidad de cosas.
+En mi caso el proyecto es usarla como servidor web donde alojar esta wiki y mi blog. En la actualidad tengo ambas páginas instaladas en un Synology Ds216+ y para el tráfico que tienen me parece matar moscas a cañonazos.
+	</div>
 </article>
 </main>
 
 <div class="pagination">
 	<a class="pagination__item pagination__item--prev btn" href="/tags/desarrollo/page/2/">«</a>
-	<span class="pagination__item pagination__item--current">3/4</span>
-	<a class="pagination__item pagination__item--next btn" href="/tags/desarrollo/page/4/">»</a>
+	<span class="pagination__item pagination__item--current">3/3</span>
 </div>
 
 
@@ -226,6 +136,7 @@ Este simple concepto añade infinidad de características a tus dispositivos and
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/sincronizar-nubes-con-rclone/">Sincronizar nubes con rclone</a></li>
+			<li class="widget__item"><a class="widget__link" href="/synology-broken-sudo/">Synology broken sudo</a></li>
 			<li class="widget__item"><a class="widget__link" href="/instalaci%C3%B3n-de-home-assistant-en-raspberry/">Instalación de Home Assistant en Raspberry</a></li>
 			<li class="widget__item"><a class="widget__link" href="/incrustar-texto-externo-en-hugo/">Incrustar texto externo en Hugo</a></li>
 			<li class="widget__item"><a class="widget__link" href="/insertar-comentarios-en-hugo/">Insertar comentarios en Hugo</a></li>
@@ -234,7 +145,6 @@ Este simple concepto añade infinidad de características a tus dispositivos and
 			<li class="widget__item"><a class="widget__link" href="/renombrado-de-lotes-de-archivos-en-emacs/">Renombrado de lotes de archivos en Emacs</a></li>
 			<li class="widget__item"><a class="widget__link" href="/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/">Mi gestión de los archivos de configuración</a></li>
 			<li class="widget__item"><a class="widget__link" href="/configurando-un-rel%C3%A9-wifi-mediante-esp-01-y-micropython/">Configurando un relé wifi mediante esp-01 y micropython</a></li>
-			<li class="widget__item"><a class="widget__link" href="/montar-carpeta-del-nas-mediante-sshfs/">Montar carpeta del NAS mediante sshfs</a></li>
 		</ul>
 	</div>
 </div>
@@ -328,7 +238,7 @@ Este simple concepto añade infinidad de características a tus dispositivos and
 		<a class="widget-taglist__link widget__link btn" href="/tags/software" title="Software">Software (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/speedtrap" title="Speedtrap">Speedtrap (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ssh" title="SSH">SSH (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/synology" title="Synology">Synology (9)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/synology" title="Synology">Synology (10)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/telegram" title="Telegram">Telegram (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/thonny" title="Thonny">Thonny (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/tilt-shift" title="Tilt shift">Tilt shift (1)</a>

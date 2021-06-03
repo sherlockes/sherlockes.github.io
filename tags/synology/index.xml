@@ -6,7 +6,16 @@
     <description>Recent content in synology on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Sun, 11 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/synology/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/synology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Synology broken sudo</title>
+      <link>http://www.sherblog.pro/synology-broken-sudo/</link>
+      <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/synology-broken-sudo/</guid>
+      <description>&lt;p&gt;Una simple modificación del archivo &amp;ldquo;sudoers&amp;rdquo; en mi Synology Ds920+ se podía haber convertido en una completa reinstalación del sistema operativo de no encontrar esta simple solución.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Montar carpeta del NAS mediante sshfs</title>
       <link>http://www.sherblog.pro/montar-carpeta-del-nas-mediante-sshfs/</link>

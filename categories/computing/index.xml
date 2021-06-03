@@ -6,7 +6,16 @@
     <description>Recent content in computing on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/categories/computing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/categories/computing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Synology broken sudo</title>
+      <link>http://www.sherblog.pro/synology-broken-sudo/</link>
+      <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/synology-broken-sudo/</guid>
+      <description>&lt;p&gt;Una simple modificación del archivo &amp;ldquo;sudoers&amp;rdquo; en mi Synology Ds920+ se podía haber convertido en una completa reinstalación del sistema operativo de no encontrar esta simple solución.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Renombrado de lotes de archivos en Emacs</title>
       <link>http://www.sherblog.pro/renombrado-de-lotes-de-archivos-en-emacs/</link>

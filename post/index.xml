@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>Synology broken sudo</title>
+      <link>http://www.sherblog.pro/synology-broken-sudo/</link>
+      <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/synology-broken-sudo/</guid>
+      <description>&lt;p&gt;Una simple modificación del archivo &amp;ldquo;sudoers&amp;rdquo; en mi Synology Ds920+ se podía haber convertido en una completa reinstalación del sistema operativo de no encontrar esta simple solución.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Incrustar texto externo en Hugo</title>
       <link>http://www.sherblog.pro/incrustar-texto-externo-en-hugo/</link>
       <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
