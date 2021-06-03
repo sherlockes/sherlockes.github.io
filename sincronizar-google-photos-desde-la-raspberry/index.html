@@ -92,15 +92,16 @@
 <li>Creamos el directorio &ldquo;gphotos-sync&rdquo; y nos ubicamos en el</li>
 <li>Instalamos el paquete pip gphotos-sync y el entorno virtual (Creo que con lo segundo valdría)</li>
 </ul>
-<pre><code>sudo apt-get install python3-pip
-/usr/bin/python3 -m pip install --upgrade pip
+<pre><code>- sudo apt-get install python3-pip
+- /usr/bin/python3 -m pip install --upgrade pip
 pip3 install --user pipenv 
-mkdir gphotos-sync 
-cd gphotos-sync
+- mkdir gphotos-sync 
+- cd gphotos-sync
 pip3 install --user pipenv ghotos-sync 
-pip install gphotos-sync
+- pip3 install gphotos-sync
 pipenv install gphotos-sync
-</code></pre><p>Con el paquete instalado, toca generar las credenciales Oauth2 desde <a href="https://console.cloud.google.com/cloud-resource-manager">Google Cloud Platform</a></p>
+</code></pre>
+<p>Con el paquete instalado, toca generar las credenciales Oauth2 desde <a href="https://console.cloud.google.com/cloud-resource-manager">Google Cloud Platform</a></p>
 <ul>
 <li>Creamos un nuevo proyecto y le ponemos un nombre (&ldquo;Create Project&rdquo;)</li>
 <li>Accedemos a <a href="https://console.cloud.google.com/marketplace/product/google/photoslibrary.googleapis.com">Photos Library API</a></li>
@@ -121,6 +122,8 @@ pipenv install gphotos-sync
 <p>Tras unos días funcionando correctamente me ha aparecido un fallo en el montaje de la unidad de mota del NAS &ldquo;read: Connection reset by peer&rdquo; que he conseguido reparar habilitando nuevamente la conexión sftp del NAS</p>
 </blockquote>
 <p>Con esto ya tenemos sincronizada nuestra galería de Google Photos en nuestro NAS. Seguro que esto es capaz de hacerlo el NAS sin ayuda de la Raspberry, pero esto será para otro día&hellip;</p>
+<p>Links:
+<a href="https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/">https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/</a></p>
 		</div>
 		<footer class="post__footer">
 			

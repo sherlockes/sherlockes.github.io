@@ -2,3 +2,5 @@
 @weekly ~/SherloScripts/bash/radares.sh 2>&1 ~/logs/radares.log
 @weekly ~/SherloScripts/bash/hugo.sh
 @hourly ~/SherloScripts/bash/publish.sh
+30 0 * * * ~/SherloScripts/bash/gphotos-sync.sh > ~/logs/gphotos.log 2>&1
+
