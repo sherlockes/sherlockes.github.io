@@ -71,7 +71,7 @@
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2021-02-18T00:00:00">2021-02-18</time>
+	<time class="meta__text" datetime="2021-06-06T00:00:00">2021-06-06</time>
 </div>
 
 <div class="meta__item-categories meta__item">
@@ -90,18 +90,17 @@
 <li>Actualizamos (Si es necesario)</li>
 <li>Instalamos la funcion de entornos virtuales</li>
 <li>Creamos el directorio &ldquo;gphotos-sync&rdquo; y nos ubicamos en el</li>
-<li>Instalamos el paquete pip gphotos-sync y el entorno virtual (Creo que con lo segundo valdría)</li>
+<li>Instalamos el paquete pip gphotos-sync</li>
 </ul>
 <pre><code>- sudo apt-get install python3-pip
 - /usr/bin/python3 -m pip install --upgrade pip
-pip3 install --user pipenv 
-- mkdir gphotos-sync 
-- cd gphotos-sync
-pip3 install --user pipenv ghotos-sync 
 - pip3 install gphotos-sync
-pipenv install gphotos-sync
-</code></pre>
-<p>Con el paquete instalado, toca generar las credenciales Oauth2 desde <a href="https://console.cloud.google.com/cloud-resource-manager">Google Cloud Platform</a></p>
+</code></pre><p>Tras instalar gphotos-sync aparece una advertencia relativa a que el script se ha instalado en un directorio que no está definido como ruta por defecto para detectar nuevos comandos.</p>
+<pre><code>WARNING: The script gphotos-sync is installed in '/home/pi/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+</code></pre><p>Para corregirlo sólo es necesario añadir la ruta al &ldquo;PATH&rdquo; mediante el siguiente comando.</p>
+<pre><code>export PATH=/home/pi/.local/bin:$PATH
+</code></pre><p>Con el paquete instalado, toca generar las credenciales Oauth2 desde <a href="https://console.cloud.google.com/cloud-resource-manager">Google Cloud Platform</a></p>
 <ul>
 <li>Creamos un nuevo proyecto y le ponemos un nombre (&ldquo;Create Project&rdquo;)</li>
 <li>Accedemos a <a href="https://console.cloud.google.com/marketplace/product/google/photoslibrary.googleapis.com">Photos Library API</a></li>
@@ -116,7 +115,7 @@ pipenv install gphotos-sync
 </ul>
 <p>Este proceso está descrito en <a href="https://docs.google.com/document/d/1ck1679H8ifmZ_4eVbDeD_-jezIcZ-j6MlaNaeQiz7y0/edit?usp=sharing">Gphotos-sync OAuth Creation</a></p>
 <p>LLegados a esta punto ya sólo resta ejecutar el comando en el entorno virtual para que todas las fotos sean descargadas al directorio de destino</p>
-<pre><code>pipenv run gphotos-sync directorio_destino
+<pre><code>gphotos-sync directorio_destino
 </code></pre><p>En mi caso, aunque el trabajo lo realiza la raspberry, las fotos quedan almacenadas en una carpeta del NAS que ha sido montada mediante sshfs y llave público/privada gracias a un <a href="https://github.com/sherlockes/SherloScripts/blob/master/bash/gphotos-sync.sh">script</a> que se ejecuta diariamente mediante cron.</p>
 <blockquote>
 <p>Tras unos días funcionando correctamente me ha aparecido un fallo en el montaje de la unidad de mota del NAS &ldquo;read: Connection reset by peer&rdquo; que he conseguido reparar habilitando nuevamente la conexión sftp del NAS</p>
@@ -141,10 +140,7 @@ pipenv install gphotos-sync
 
 <nav class="post-nav flex">
 	<div class="post-nav__item post-nav__item--prev">
-		<a class="post-nav__link" href="/termostato-raspberry/" rel="prev"><span class="post-nav__caption">«&thinsp;Anterior</span><p class="post-nav__post-title">Termostato Raspberry</p></a>
-	</div>
-	<div class="post-nav__item post-nav__item--next">
-		<a class="post-nav__link" href="/raspberry-montaje-y-ssh/" rel="next"><span class="post-nav__caption">Siguiente&thinsp;»</span><p class="post-nav__post-title">Raspberry Montaje y ssh</p></a>
+		<a class="post-nav__link" href="/instalaci%C3%B3n-de-home-assistant-en-raspberry/" rel="prev"><span class="post-nav__caption">«&thinsp;Anterior</span><p class="post-nav__post-title">Instalación de Home Assistant en Raspberry</p></a>
 	</div>
 </nav>
 

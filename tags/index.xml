@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bash</title>
+      <link>http://www.sherblog.pro/tags/bash/</link>
+      <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>google photos</title>
+      <link>http://www.sherblog.pro/tags/google-photos/</link>
+      <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/tags/google-photos/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Google Drive</title>
       <link>http://www.sherblog.pro/tags/google-drive/</link>
@@ -49,15 +67,6 @@
       <pubDate>Thu, 27 May 2021 00:00:00 +0000</pubDate>
       
       <guid>http://www.sherblog.pro/tags/raspberry/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bash</title>
-      <link>http://www.sherblog.pro/tags/bash/</link>
-      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.sherblog.pro/tags/bash/</guid>
       <description></description>
     </item>
     
@@ -157,15 +166,6 @@
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>http://www.sherblog.pro/tags/shortcodes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>google photos</title>
-      <link>http://www.sherblog.pro/tags/google-photos/</link>
-      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.sherblog.pro/tags/google-photos/</guid>
       <description></description>
     </item>
     

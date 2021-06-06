@@ -6,7 +6,16 @@
     <description>Recent content in bash on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sincronizar Google Photos desde la Raspberry</title>
+      <link>http://www.sherblog.pro/sincronizar-google-photos-desde-la-raspberry/</link>
+      <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/sincronizar-google-photos-desde-la-raspberry/</guid>
+      <description>&lt;p&gt;Hasta ahora había sincronizado mi galería de Google Fotos con el NAS desde el pc de sobremesa con Linux Mint, voy a intentar hacerlo desde la Raspberry para no tener que encender el pc.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Incrustar texto externo en Hugo</title>
       <link>http://www.sherblog.pro/incrustar-texto-externo-en-hugo/</link>
@@ -50,15 +59,6 @@
       
       <guid>http://www.sherblog.pro/instalar-rclone-en-synology-ds920-/</guid>
       <description>&lt;p&gt;En la migración de los discos duros desde el Ds216+II al Ds920+ uno de los problemas con que me he encontrado es que ha desaparecido la instalación de Rclone, toca volver a instalarlo.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Sincronizar Google Photos desde la Raspberry</title>
-      <link>http://www.sherblog.pro/sincronizar-google-photos-desde-la-raspberry/</link>
-      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.sherblog.pro/sincronizar-google-photos-desde-la-raspberry/</guid>
-      <description>&lt;p&gt;Hasta ahora había sincronizado mi galería de Google Fotos con el NAS desde el pc de sobremesa con Linux Mint, voy a intentar hacerlo desde la Raspberry para no tener que encender el pc.&lt;/p&gt;</description>
     </item>
     
     <item>

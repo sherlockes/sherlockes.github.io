@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://www.sherblog.pro/sincronizar-google-photos-desde-la-raspberry/</loc>
+    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://www.sherblog.pro/sincronizar-nubes-con-rclone/</loc>
     <lastmod>2021-06-03T00:00:00+00:00</lastmod>
   </url><url>
@@ -73,9 +76,6 @@
   </url><url>
     <loc>http://www.sherblog.pro/vertices/tetas/</loc>
     <lastmod>2021-02-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/sincronizar-google-photos-desde-la-raspberry/</loc>
-    <lastmod>2021-02-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/vertices/galiana/</loc>
     <lastmod>2021-02-18T00:00:00+00:00</lastmod>
@@ -617,8 +617,26 @@
     <loc>http://www.sherblog.pro/raspberry-descargando-wordpress/</loc>
     <lastmod>2018-04-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://www.sherblog.pro/tags/bash/</loc>
+    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://www.sherblog.pro/categories/</loc>
-    <lastmod>2021-06-03T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/tags/google-photos/</loc>
+    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/categories/productividad/</loc>
+    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/categories/raspberry/</loc>
+    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/</loc>
+    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/tags/</loc>
+    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/categories/computing/</loc>
     <lastmod>2021-06-03T00:00:00+00:00</lastmod>
@@ -629,32 +647,17 @@
     <loc>http://www.sherblog.pro/post/</loc>
     <lastmod>2021-06-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://www.sherblog.pro/categories/productividad/</loc>
-    <lastmod>2021-06-03T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://www.sherblog.pro/tags/rclone/</loc>
-    <lastmod>2021-06-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/</loc>
     <lastmod>2021-06-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/synology/</loc>
     <lastmod>2021-06-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://www.sherblog.pro/tags/</loc>
-    <lastmod>2021-06-03T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://www.sherblog.pro/tags/home-assistant/</loc>
-    <lastmod>2021-05-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/categories/raspberry/</loc>
     <lastmod>2021-05-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/raspberry/</loc>
     <lastmod>2021-05-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/tags/bash/</loc>
-    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/desarrollo/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
@@ -703,9 +706,6 @@
   </url><url>
     <loc>http://www.sherblog.pro/tags/shortcodes/</loc>
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/tags/google-photos/</loc>
-    <lastmod>2021-02-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/micropython/</loc>
     <lastmod>2021-02-16T00:00:00+00:00</lastmod>
