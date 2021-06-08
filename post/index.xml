@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESPHome en Home Assistant</title>
+      <link>http://www.sherblog.pro/esphome-en-home-assistant/</link>
+      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/esphome-en-home-assistant/</guid>
+      <description>&lt;p&gt;Hace ya un tiempo que tengo un nodemcu midiendo la temperatura del salón y un esp01 como relé para la calefacción pero&amp;hellip; ¿Como es posible integrar esto en Home Assistant?. La solución más rápida y sencilla es usando &lt;a href=&#34;https://esphome.io&#34;&gt;ESPHome&lt;/a&gt;, Un sistema para controlar los ESP32/ESP8266 mediante unos simples archivos de configuación y poder manejarlos remotamente mediante una automatización.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Sincronizar nubes con rclone</title>
       <link>http://www.sherblog.pro/sincronizar-nubes-con-rclone/</link>

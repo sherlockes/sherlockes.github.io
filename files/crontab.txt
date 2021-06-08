@@ -1,4 +1,4 @@
-@daily ~/SherloScripts/bash/sherloscripts_push.sh
+@daily ~/SherloScripts/bash/pidiario.sh
 @weekly ~/SherloScripts/bash/radares.sh 2>&1 ~/logs/radares.log
 @weekly ~/SherloScripts/bash/hugo.sh
 @hourly ~/SherloScripts/bash/publish.sh
