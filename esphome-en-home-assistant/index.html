@@ -91,6 +91,9 @@
     <li>
       <ul>
         <li><a href="#instalando-esphome-en-home-assistant">Instalando ESPHome en Home Assistant</a></li>
+        <li><a href="#esp-01-con-relé-de-un-canal">ESP-01 con relé de un canal</a></li>
+        <li><a href="#esp01-con-sensor-de-temperatura-dht11">ESP01 con sensor de temperatura DHT11</a></li>
+        <li><a href="#esp-wroom-32-con-sensor-de-temperatura">ESP-WROOM-32 con sensor de temperatura</a></li>
       </ul>
     </li>
   </ul>
@@ -101,16 +104,16 @@
 			<p>Hace ya un tiempo que tengo un nodemcu midiendo la temperatura del salón y un esp01 como relé para la calefacción pero&hellip; ¿Como es posible integrar esto en Home Assistant?. La solución más rápida y sencilla es usando <a href="https://esphome.io">ESPHome</a>, Un sistema para controlar los ESP32/ESP8266 mediante unos simples archivos de configuación y poder manejarlos remotamente mediante una automatización.</p>
 <h3 id="instalando-esphome-en-home-assistant">Instalando ESPHome en Home Assistant</h3>
 <p>Para instalar el complemento de <a href="https://esphome.io">ESPHome</a> en Home Assistant es imprescindible tener habilitado el modo &ldquo;Supervisor&rdquo; en nuestra instalación de Home Assistant y acceder a el a través del botón situado en la parte inferior de la barra de navegación de la izquierda.</p>
-<p>![image_01]</p>
+<p><img src="/images/20210608_home_assistant_esphome_01.jpg" alt="image-01"></p>
 <p>Desde el panel del Supervisor hay que:</p>
 <ul>
 <li>Acceder a la tienda de complementos</li>
 <li>Buscar &ldquo;ESPHome&rdquo; en &ldquo;Home Assistant Community Add-ons&rdquo;</li>
 <li>Instalarlo e iniciarlo</li>
 </ul>
-<p>![image_02]</p>
+<p><img src="/images/20210608_home_assistant_esphome_02.jpg" alt="image-02"></p>
 <p>Con esto ya es posible acceder a ESPHome desde Home Assistant mediante el correspondiente botón en la barra de navegación (Si se ha habilitado en las opciones deslizantes).</p>
-<h4 id="esp-01-con-relé-de-un-canal">ESP-01 con relé de un canal</h4>
+<h3 id="esp-01-con-relé-de-un-canal">ESP-01 con relé de un canal</h3>
 <p>Para controlar la puesta en marcha y paro de la calefacción utilizo un módulo de ESP01 con relé que es fáciĺ encontrar en Aliexpress por menos de 3€.</p>
 <p><img src="/images/20210608_home_assistant_esphome_04.jpg" alt="image-04"></p>
 <p>Para integrarlo en Home Assistant mediante ESPHome ha que seguir esto pasos desde el panel de control de ESPHome.</p>
@@ -163,7 +166,7 @@ Es necesario un programador con pulsador de booteo (O soldar el botón en un pro
 </code></pre></div><ul>
 <li>Guardar y subir y ya está nuestro relé listo.</li>
 </ul>
-<h4 id="esp01-con-sensor-de-temperatura-dht11">ESP01 con sensor de temperatura DHT11</h4>
+<h3 id="esp01-con-sensor-de-temperatura-dht11">ESP01 con sensor de temperatura DHT11</h3>
 <p>Una forma barata y sencilla de medir la temperatura es usando un módulo de ESP01 + DHT11 como el que aparece a continuación y que tengo instalado en una de las habitaciones.</p>
 <p><img src="/images/20210608_home_assistant_esphome_06.jpg" alt="image-06"></p>
 <p>El proceso de configuración para el ESP01 es idéntico que para el caso del relé solo que cambia el archivo de configuración por el siguiente.</p>
@@ -183,22 +186,22 @@ Es necesario un programador con pulsador de booteo (O soldar el botón en un pro
 </code></pre></div><blockquote>
 <p>El módulo que he empleado presenta un error en la medidad de temperatura de 5ºC por lo que le he incluido un &ldquo;offset&rdquo; en la configuración.</p>
 </blockquote>
-<h4 id="esp-wroom-32-con-sensor-de-temperatura">ESP-WROOM-32 con sensor de temperatura</h4>
+<h3 id="esp-wroom-32-con-sensor-de-temperatura">ESP-WROOM-32 con sensor de temperatura</h3>
 <p>Seguramente será matar moscas a cañonazos utilizar este microcontrolador como sólo sensor de temperatura. El ESP-WROOM-32 irá colocado en el salón y en un futuro es posible que haga más cosas.</p>
-<p>![image_07]</p>
+<p><img src="/images/20210608_home_assistant_esphome_07.jpg" alt="image-07"></p>
 <p>Voy a usar una sonda DHT22 con una resistencia de 4.7 kOhm entre el pin de datos y el de 5V. El pin de datos lo coloco en el pin 13 del ESP y creo un nuevo nodo dentro del módulo ESPHome al que nombraré &ldquo;salon&rdquo; y será del tipo &ldquo;nodeMCU-32S&rdquo;.</p>
 <p>Al código que se genera automáticamente con la información de la wifi añado lo siguiente.</p>
-<pre><code># Sensor de Temperatura AM2302
-sensor:
-  - platform: dht
-    pin: 13
-    temperature:
-      name: &quot;Temperatura Salón&quot;
-    humidity:
-      name: &quot;Humedad Salón&quot;
-    model: AM2302
-    update_interval: 60s
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Sensor de Temperatura AM2302</span>
+<span style="color:#f92672">sensor</span>:
+  - <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">dht</span>
+    <span style="color:#f92672">pin</span>: <span style="color:#ae81ff">13</span>
+    <span style="color:#f92672">temperature</span>:
+      <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;Temperatura Salón&#34;</span>
+    <span style="color:#f92672">humidity</span>:
+      <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;Humedad Salón&#34;</span>
+    <span style="color:#f92672">model</span>: <span style="color:#ae81ff">AM2302</span>
+    <span style="color:#f92672">update_interval</span>: <span style="color:#ae81ff">60s</span>
+</code></pre></div>
 		</div>
 		<footer class="post__footer">
 			
