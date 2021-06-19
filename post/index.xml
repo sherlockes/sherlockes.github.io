@@ -13,7 +13,7 @@
       <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>http://www.sherblog.pro/yi-home-camera-en-home-assistant/</guid>
-      <description>&lt;p&gt;No todo es &amp;ldquo;Plug &amp;amp; Play&amp;rdquo; en &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt;, aquí dejo lo que ha sido el proceso de configuración de la cámara para interior &lt;a href=&#34;https://www2.yitechnology.com/yi-1080p-home-camera&#34;&gt;Yi Home 1080&lt;/a&gt; que es fácil encontrar por menos de 20 €&lt;/p&gt;</description>
+      <description>&lt;p&gt;No todo es &amp;ldquo;Plug &amp;amp; Play&amp;rdquo; en &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt;, aquí dejo lo que ha sido el proceso de configuración de la cámara para interior &lt;a href=&#34;https://www2.yitechnology.com/yi-1080p-home-camera&#34;&gt;Yi Home 1080&lt;/a&gt;, una cámara sencilla y barata pero que ofrece muchas posibilidades con un firmware alternativo.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1298,8 +1298,15 @@ Sólo hicieron falta unos minutos para darme cuenta de que el causante del probl
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://www.sherblog.pro/</guid>
-      <description>https://optimizeimage.net Resultado: -11% http://www.jpeg-optimizer.com Resultado: -8.4 % https://compressjpeg.com Resultado: -1 % https://tinyjpg.com Resultado: 0.0 % http://www.imageoptimizer.net Resultado 0.0 % https://www.optimize-jpeg.com Resultado: 0.7 % https://imagecompressor.com Resultado 1 % https://jpgoptimize.com Resultado 34 % https://compressor.io Resultado: 37 % https://imageoptimizer.org/optimize/ Resultado: 39 %
-jpegoptim Resultado: 0%</description>
+      <description>Sólo permiten una imagen https://optimizeimage.net Resultado: -11% http://www.jpeg-optimizer.com Resultado: -8.4 % http://www.imageoptimizer.net Resultado 0.0 % https://www.optimize-jpeg.com Resultado: 0.7 % https://imageoptimizer.org/optimize/ Resultado: 39 %
+Con 10 imágenes https://kraken.io/web-interface Resultado: 4% https://tinyjpg.com Resultado: 8 %
+https://compressjpeg.com Resultado: 33 % https://imagecompressor.com Resultado: 17 %
+https://compressor.io Resultado: 50 % (Lossy) limit 50 images
+https://jpgoptimize.com Resultado 46 %
+jpegoptim Resultado: 0% jpegoptim -m85 *.jpg
+trimage Resultado 0%
+convert de imagemagick Resultado 1%
+for i in *.</description>
     </item>
     
     <item>
