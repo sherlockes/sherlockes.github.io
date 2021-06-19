@@ -70,6 +70,34 @@
 		<h1 class="main__title">Posts</h1>
 	</header><article class="list__item post">
 	<figure class="list__thumbnail">
+		<a href="http://www.sherblog.pro/copia-de-seguridad-de-la-base-de-datos-de-wordpress/">
+			<img src="/images/20170228_db_backup_00.jpg" alt="Copia de seguridad de la base de datos de WordPress" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/copia-de-seguridad-de-la-base-de-datos-de-wordpress/" rel="bookmark">
+			Copia de seguridad de la base de datos de WordPress
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2017-04-04T00:00:00">2017-04-04</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/wordpress" rel="category">Wordpress</a>, <a class="meta__link" href="/categories/sherver" rel="category">Sherver</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Hace unos días expliqué como gestiona la copia de seguridad de los archivos de WordPress (la carpeta wp-content) y aquí vamos a ver como hago lo propio con la base de datos. El flujo de trabajo es simple, periódicamente me llega un correo electrónico con la base de datos comprimida como archivo adjunto y guardo ese archivo en mi unidad de Google Drive.
+El plugin de WordPress WP-DB-Backup es el que se encarga de enviar un correo electrónico periódicamente con la copia de la base de datos.
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
 		<a href="http://www.sherblog.pro/flujo-de-trabajo-con-im%C3%A1genes-en-wordpress/">
 			<img src="/images/20170330_faststone_00.jpg" alt="Flujo de trabajo con imágenes en WordPress" />
 		</a>
@@ -235,34 +263,6 @@ Después de valorar varias alternativas, la que me ha parecido más apropiada es
 	<div class="content list__excerpt post__content clearfix">
 		Han pasado diez años desde que intenté por primera vez montar un servidor web casero, entonces lo hice sobre un viejo Pentium II a 233mhz que ya no utilizaba y en el que puse a correr Debian y LAMP no sin invertir muchas horas de trabajo. En un par de meses conseguí que funcionara todo y esta página estuvo alojada en el durante un tiempo. Pero aquel pc reconvertido en servidor aunque cumplía sin problemas su cometido no estaba preparado para hacerlo 24 horas al día y 365 días al año.
 	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="http://www.sherblog.pro/la-obsolescencia-prematura-de-unos-pu%C3%B1os/">
-			<img src="/images/20160713_ritchey_01.jpg" alt="La obsolescencia prematura de unos puños" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/la-obsolescencia-prematura-de-unos-pu%C3%B1os/" rel="bookmark">
-			La obsolescencia prematura de unos puños
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2016-07-13T00:00:00">2016-07-13</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/a-pedales" rel="category">A pedales</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Después de casi cinco años y varios miles de kilómetros montados sobre la bicicleta ha llegado el momento del cambio de los puños del manillar de la bicicleta de montaña reacondicionada a la carretera. Durante todo este tiempo he usado los [Ritchey WCS True Grip Ergo] 2 con los que estoy muy contento, por lo que para nada me planteo un cambio de modelo.
-Tal y como se puede ver en la imagen de cabecera, el fabricante los pone a la venta por 13€.
-	</div>
 </article>
 </main>
 
@@ -280,6 +280,7 @@ Tal y como se puede ver en la imagen de cabecera, el fabricante los pone a la ve
 	<h4 class="widget__title">Más Recientes</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/yi-home-camera-en-home-assistant/">Yi Home Camera en Home Assistant</a></li>
 			<li class="widget__item"><a class="widget__link" href="/esphome-en-home-assistant/">ESPHome en Home Assistant</a></li>
 			<li class="widget__item"><a class="widget__link" href="/sincronizar-google-photos-desde-la-raspberry/">Sincronizar Google Photos desde la Raspberry</a></li>
 			<li class="widget__item"><a class="widget__link" href="/sincronizar-nubes-con-rclone/">Sincronizar nubes con rclone</a></li>
@@ -289,7 +290,6 @@ Tal y como se puede ver en la imagen de cabecera, el fabricante los pone a la ve
 			<li class="widget__item"><a class="widget__link" href="/insertar-comentarios-en-hugo/">Insertar comentarios en Hugo</a></li>
 			<li class="widget__item"><a class="widget__link" href="/que-hace-la-raspberry-sin-mi/">Que hace la raspberry sin mi</a></li>
 			<li class="widget__item"><a class="widget__link" href="/raspberry-montaje-y-ssh/">Raspberry Montaje y ssh</a></li>
-			<li class="widget__item"><a class="widget__link" href="/renombrado-de-lotes-de-archivos-en-emacs/">Renombrado de lotes de archivos en Emacs</a></li>
 		</ul>
 	</div>
 </div>
@@ -329,6 +329,7 @@ Tal y como se puede ver en la imagen de cabecera, el fabricante los pone a la ve
 		<a class="widget-taglist__link widget__link btn" href="/tags/darktable" title="Darktable">Darktable (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/desarrollo" title="Desarrollo">Desarrollo (16)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dired" title="Dired">Dired (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker" title="Docker">Docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dotfiles" title="Dotfiles">Dotfiles (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/emacs" title="Emacs">Emacs (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/emule" title="Emule">Emule (1)</a>
@@ -354,7 +355,6 @@ Tal y como se puede ver en la imagen de cabecera, el fabricante los pone a la ve
 		<a class="widget-taglist__link widget__link btn" href="/tags/grub" title="Grub">Grub (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/gthumb" title="Gthumb">Gthumb (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hdr" title="Hdr">Hdr (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/home-assistant" title="Home assistant">Home assistant (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo" title="Hugo">Hugo (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/iawriter" title="Iawriter">Iawriter (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/imagemagick" title="Imagemagick">Imagemagick (2)</a>
@@ -367,6 +367,7 @@ Tal y como se puede ver en la imagen de cabecera, el fabricante los pone a la ve
 		<a class="widget-taglist__link widget__link btn" href="/tags/markdown" title="Markdown">Markdown (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/micropython" title="Micropython">Micropython (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/moodle" title="Moodle">Moodle (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mqtt" title="Mqtt">Mqtt (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/openstreetmap" title="Openstreetmap">Openstreetmap (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/panoramica" title="Panoramica">Panoramica (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/pdf" title="Pdf">Pdf (1)</a>
@@ -377,7 +378,7 @@ Tal y como se puede ver en la imagen de cabecera, el fabricante los pone a la ve
 		<a class="widget-taglist__link widget__link btn" href="/tags/poppler" title="Poppler">Poppler (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/poppler-utils" title="Poppler utils">Poppler utils (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python (3)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/raspberry" title="Raspberry">Raspberry (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/raspberry" title="Raspberry">Raspberry (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/rclone" title="Rclone">Rclone (4)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/regexp" title="Regexp">Regexp (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/sherlodj" title="Sherlodj">Sherlodj (3)</a>

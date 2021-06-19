@@ -70,6 +70,36 @@
 		<h1 class="main__title">Posts</h1>
 	</header><article class="list__item post">
 	<figure class="list__thumbnail">
+		<a href="http://www.sherblog.pro/wordpress-k.o.-fatal-error.-allowed-memory-size/">
+			<img src="/images/20130515_wordpress_php.jpg" alt="WordPress K.O. Fatal error. Allowed memory size" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/wordpress-k.o.-fatal-error.-allowed-memory-size/" rel="bookmark">
+			WordPress K.O. Fatal error. Allowed memory size
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2013-05-14T00:00:00">2013-05-14</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/wordpress" rel="category">Wordpress</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Hoy he intentado administrar el blog y me he encontrado con este pantallazo
+Parece que hay un problema de memoria en el servidor. Lo primero que he pensado es que mi host gratuito había puesto limitaciones. Tras una breve incursión por la red he encontrado la solución, rápida y sencilla.
+En el archivo en el archivo &ldquo;wp-config.php&rdquo; hay que añadir las siguientes líneas
+/** Ampliación de memoria*/ define('WP_MEMORY_LIMIT', '96M'); Y a funcionar de nuevo!
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
 		<a href="http://www.sherblog.pro/sherlodj-in-session-2012-vol.2/">
 			<img src="/images/sherloDj_lq.jpg" alt="SherloDj – In Session 2012 Vol.2" />
 		</a>
@@ -241,33 +271,6 @@ Antes de nada necesito un sitio para guardar la copia de seguridad &ldquo;en la 
 		Hace casi un año expuse aquí una forma de incluir un título delante de un vídeo con VirtualDub de una forma rápida y sencilla. El caso es que si el vídeo en cuestión lleva sonido el asunto no es tan fácil haciéndolo de esta manera ya que al programa no le gusta unir vídeos con diferencias en la pista de audio.
 En el siguiente videotutorial muestro otra forma de incluir este título de una forma más fácil todavía (Aunque menos intuitiva) haciendo uso del filtro &ldquo;logo&rdquo; y de las curvas de opacidad del mismo.
 	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="http://www.sherblog.pro/2011-a-pedales-y-sobre-ruedas/">
-			<img src="/images/20120107_pedales_2011.jpg" alt="2011 a pedales y sobre ruedas" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/2011-a-pedales-y-sobre-ruedas/" rel="bookmark">
-			2011 a pedales y sobre ruedas
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2012-01-06T00:00:00">2012-01-06</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/a-pedales" rel="category">a pedales</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		 279 Actividades Distancia: 11,918.40 km Tiempo: 622:13:43 h:m:s Ganancia de altura: 126,650 m Velocidad media: 20.3 km/h Calorías: 495,138 C  
-	</div>
 </article>
 </main>
 
@@ -285,6 +288,7 @@ En el siguiente videotutorial muestro otra forma de incluir este título de una 
 	<h4 class="widget__title">Más Recientes</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/yi-home-camera-en-home-assistant/">Yi Home Camera en Home Assistant</a></li>
 			<li class="widget__item"><a class="widget__link" href="/esphome-en-home-assistant/">ESPHome en Home Assistant</a></li>
 			<li class="widget__item"><a class="widget__link" href="/sincronizar-google-photos-desde-la-raspberry/">Sincronizar Google Photos desde la Raspberry</a></li>
 			<li class="widget__item"><a class="widget__link" href="/sincronizar-nubes-con-rclone/">Sincronizar nubes con rclone</a></li>
@@ -294,7 +298,6 @@ En el siguiente videotutorial muestro otra forma de incluir este título de una 
 			<li class="widget__item"><a class="widget__link" href="/insertar-comentarios-en-hugo/">Insertar comentarios en Hugo</a></li>
 			<li class="widget__item"><a class="widget__link" href="/que-hace-la-raspberry-sin-mi/">Que hace la raspberry sin mi</a></li>
 			<li class="widget__item"><a class="widget__link" href="/raspberry-montaje-y-ssh/">Raspberry Montaje y ssh</a></li>
-			<li class="widget__item"><a class="widget__link" href="/renombrado-de-lotes-de-archivos-en-emacs/">Renombrado de lotes de archivos en Emacs</a></li>
 		</ul>
 	</div>
 </div>
@@ -334,6 +337,7 @@ En el siguiente videotutorial muestro otra forma de incluir este título de una 
 		<a class="widget-taglist__link widget__link btn" href="/tags/darktable" title="Darktable">Darktable (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/desarrollo" title="Desarrollo">Desarrollo (16)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dired" title="Dired">Dired (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker" title="Docker">Docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dotfiles" title="Dotfiles">Dotfiles (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/emacs" title="Emacs">Emacs (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/emule" title="Emule">Emule (1)</a>
@@ -359,7 +363,6 @@ En el siguiente videotutorial muestro otra forma de incluir este título de una 
 		<a class="widget-taglist__link widget__link btn" href="/tags/grub" title="Grub">Grub (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/gthumb" title="Gthumb">Gthumb (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hdr" title="Hdr">Hdr (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/home-assistant" title="Home assistant">Home assistant (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo" title="Hugo">Hugo (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/iawriter" title="Iawriter">Iawriter (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/imagemagick" title="Imagemagick">Imagemagick (2)</a>
@@ -372,6 +375,7 @@ En el siguiente videotutorial muestro otra forma de incluir este título de una 
 		<a class="widget-taglist__link widget__link btn" href="/tags/markdown" title="Markdown">Markdown (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/micropython" title="Micropython">Micropython (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/moodle" title="Moodle">Moodle (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mqtt" title="Mqtt">Mqtt (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/openstreetmap" title="Openstreetmap">Openstreetmap (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/panoramica" title="Panoramica">Panoramica (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/pdf" title="Pdf">Pdf (1)</a>
@@ -382,7 +386,7 @@ En el siguiente videotutorial muestro otra forma de incluir este título de una 
 		<a class="widget-taglist__link widget__link btn" href="/tags/poppler" title="Poppler">Poppler (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/poppler-utils" title="Poppler utils">Poppler utils (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python (3)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/raspberry" title="Raspberry">Raspberry (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/raspberry" title="Raspberry">Raspberry (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/rclone" title="Rclone">Rclone (4)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/regexp" title="Regexp">Regexp (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/sherlodj" title="Sherlodj">Sherlodj (3)</a>
