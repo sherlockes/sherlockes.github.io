@@ -1293,23 +1293,6 @@ Sólo hicieron falta unos minutos para darme cuenta de que el causante del probl
     </item>
     
     <item>
-      <title></title>
-      <link>http://www.sherblog.pro/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.sherblog.pro/</guid>
-      <description>Sólo permiten una imagen https://optimizeimage.net Resultado: -11% http://www.jpeg-optimizer.com Resultado: -8.4 % http://www.imageoptimizer.net Resultado 0.0 % https://www.optimize-jpeg.com Resultado: 0.7 % https://imageoptimizer.org/optimize/ Resultado: 39 %
-Con 10 imágenes https://kraken.io/web-interface Resultado: 4% https://tinyjpg.com Resultado: 8 %
-https://compressjpeg.com Resultado: 33 % https://imagecompressor.com Resultado: 17 %
-https://compressor.io Resultado: 50 % (Lossy) limit 50 images
-https://jpgoptimize.com Resultado 46 %
-jpegoptim Resultado: 0% jpegoptim -m85 *.jpg
-trimage Resultado 0%
-convert de imagemagick Resultado 1%
-for i in *.</description>
-    </item>
-    
-    <item>
       <title>Mis vértices geodésicos</title>
       <link>http://www.sherblog.pro/mis-v%C3%A9rtices-geod%C3%A9sicos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
