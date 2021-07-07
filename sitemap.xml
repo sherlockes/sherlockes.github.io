@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://www.sherblog.pro/home-assistant-wake-on-lan-synology/</loc>
+    <lastmod>2021-06-27T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://www.sherblog.pro/yi-home-camera-en-home-assistant/</loc>
     <lastmod>2021-06-14T00:00:00+00:00</lastmod>
   </url><url>
@@ -624,21 +627,24 @@
     <lastmod>2018-04-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/categories/</loc>
-    <lastmod>2021-06-14T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/categories/home-assistant/</loc>
-    <lastmod>2021-06-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/tags/mqtt/</loc>
-    <lastmod>2021-06-14T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/post/</loc>
-    <lastmod>2021-06-14T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/</loc>
-    <lastmod>2021-06-14T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/tags/synology/</loc>
+    <lastmod>2021-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/</loc>
+    <lastmod>2021-06-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/tags/mqtt/</loc>
     <lastmod>2021-06-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/esp/</loc>
@@ -666,9 +672,6 @@
     <lastmod>2021-06-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/rclone/</loc>
-    <lastmod>2021-06-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/tags/synology/</loc>
     <lastmod>2021-06-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/docker/</loc>
@@ -928,6 +931,8 @@
   </url><url>
     <loc>http://www.sherblog.pro/tags/emule/</loc>
     <lastmod>2009-01-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/</loc>
   </url><url>
     <loc>http://www.sherblog.pro/mis-v%C3%A9rtices-geod%C3%A9sicos/</loc>
   </url><url>

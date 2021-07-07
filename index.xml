@@ -6,7 +6,16 @@
     <description>Recent content on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Mon, 14 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Home Assistant - Wake on Lan Synology</title>
+      <link>http://www.sherblog.pro/home-assistant-wake-on-lan-synology/</link>
+      <pubDate>Sun, 27 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/home-assistant-wake-on-lan-synology/</guid>
+      <description>&lt;p&gt;Mi NAS no está siempre encendido, arranca todos los días a una hora programada, si quiero hacerlo antes he implementado un interruptor en &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; para encenderlo o apagarlo. Aquí dejo la forma en la que lo he realizado.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Yi Home Camera en Home Assistant</title>
       <link>http://www.sherblog.pro/yi-home-camera-en-home-assistant/</link>
@@ -2018,6 +2027,15 @@ Las líneas de arriba realizan la siguiente secuencia:
       
       <guid>http://www.sherblog.pro/?p=906/</guid>
       <description>Está claro que la vida alejada de los grandes núcleos de población trae consigo una serie de ventajas e inconvenientes que hay que asumir, pero hasta cierto punto ya que llega un momento en el que la diferencia en el trato sobrepasa la frontera de la discriminación. Aunque aquí podría tratar varias circunstancias en las que sale a la luz esta discriminación, me voy a centrar únicamente en el servicio telefónico.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://www.sherblog.pro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/</guid>
+      <description>20210607 - 10€ Linux Mint</description>
     </item>
     
     <item>
