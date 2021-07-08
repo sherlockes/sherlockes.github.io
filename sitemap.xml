@@ -686,16 +686,13 @@
     <loc>http://www.sherblog.pro/tags/emacs/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://www.sherblog.pro/tags/hugo/</loc>
-    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://www.sherblog.pro/categories/hugo/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/regexp/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://www.sherblog.pro/tags/shorcodes/</loc>
+    <loc>http://www.sherblog.pro/tags/shortcodes/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/dotfiles/</loc>
@@ -718,9 +715,6 @@
   </url><url>
     <loc>http://www.sherblog.pro/categories/vertices/</loc>
     <lastmod>2021-03-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/tags/shortcodes/</loc>
-    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/tags/micropython/</loc>
     <lastmod>2021-02-16T00:00:00+00:00</lastmod>
