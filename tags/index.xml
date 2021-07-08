@@ -6,7 +6,16 @@
     <description>Recent content in Tags on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Sun, 27 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Drive</title>
+      <link>http://www.sherblog.pro/tags/google-drive/</link>
+      <pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/tags/google-drive/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>synology</title>
       <link>http://www.sherblog.pro/tags/synology/</link>
@@ -35,15 +44,6 @@
     </item>
     
     <item>
-      <title>iot</title>
-      <link>http://www.sherblog.pro/tags/iot/</link>
-      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.sherblog.pro/tags/iot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>bash</title>
       <link>http://www.sherblog.pro/tags/bash/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
@@ -58,15 +58,6 @@
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>http://www.sherblog.pro/tags/google-photos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Google Drive</title>
-      <link>http://www.sherblog.pro/tags/google-drive/</link>
-      <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.sherblog.pro/tags/google-drive/</guid>
       <description></description>
     </item>
     
@@ -139,15 +130,6 @@
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>http://www.sherblog.pro/tags/dotfiles/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ESP01</title>
-      <link>http://www.sherblog.pro/tags/esp01/</link>
-      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.sherblog.pro/tags/esp01/</guid>
       <description></description>
     </item>
     

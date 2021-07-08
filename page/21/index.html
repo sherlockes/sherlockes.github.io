@@ -74,6 +74,33 @@
 
 	</div>
 	<article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="http://www.sherblog.pro/al-fin-se-ve-la-luz/">
+			<img src="/images/logo.jpg" alt="Al fin se ve la luz¡" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/al-fin-se-ve-la-luz/" rel="bookmark">
+			Al fin se ve la luz¡
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2007-12-30T00:00:00">2007-12-30</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/sherver" rel="category">Sherver</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Después de más de una semana de trastear con mi viejo PII 233MHz, 64 Mb de RAM y 12 Gb de disco al final he conseguido montar en el un servidor linux en que está alojada esta página. En las próximas entradas trataré de explicar cuales han sido los principales problemas desde la instalación de Debian hasta este WordPress de modo que cualquiera de vosotros sea capaz de intentarlo en su propia casa con una inversión económica prácticamente nula.
+	</div>
+</article><article class="list__item post">
 	<header class="list__header">
 		<h3 class="list__title post__title ">
 			<a href="/la-joya-de-la-corona/" rel="bookmark">
@@ -210,36 +237,6 @@ interface eth0 static ip_address=192.168.1.202/24 static routers=192.168.1.1 sta
 		Instalando PhP y Apache sudo apt-get install php7.0 libapache2-mod-php7.0 php7.0-mysql -y Para comprobar la correcta instalación de php borraremos el archivo &ldquo;index.html&rdquo;, crearemos un archivo &ldquo;index.php&rdquo; en el que escribiremos un mensaje &ldquo;hola mundo&rdquo; y reiniciaremos el servidor.
 cd /var/www/html sudo rm index.html sudo nano index.php &lt;?php echo &quot;hola mundo&quot;; ?&gt; Pulsar control-x Pulsar y Pulsar intro sudo service apache2 restart Ahora al acceder desde el navegador a la ip de nuestra raspberry se debería mostrar el mensaje &ldquo;hola mundo&rdquo;.
 	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="http://www.sherblog.pro/raspberry-mysql-y-db/">
-			<img src="/images/raspberry_logo.png" alt="Raspberry mysql y DB" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/raspberry-mysql-y-db/" rel="bookmark">
-			Raspberry mysql y DB
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2018-04-04T00:00:00">2018-04-04</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/raspberry" rel="category">Raspberry</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Instalando Mysql El motor de WordPress es una base de datos por lo que es necesario un motor que la gestione, usaré MySql y se instala de la siguente forma:
-Accedemos a la consola de MySql con el siguiente comando tras el cual se nos solicitará la contraseña correspondiente al usuario &ldquo;root&rdquo;
-sudo mysql -u root -p
-Ya estamos listos para crear la base de datos, el usuario que la manejará y asignación al segundo todos los privilegios sobre la primera.
-	</div>
 </article>
 </main>
 
@@ -256,6 +253,7 @@ Ya estamos listos para crear la base de datos, el usuario que la manejará y asi
 	<h4 class="widget__title">Más Recientes</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/guardando-y-recuperando-la-configuraci%C3%B3n-de-home-assistant/">Guardando y recuperando la configuración de Home Assistant</a></li>
 			<li class="widget__item"><a class="widget__link" href="/home-assistant-wake-on-lan-synology/">Home Assistant - Wake on Lan Synology</a></li>
 			<li class="widget__item"><a class="widget__link" href="/yi-home-camera-en-home-assistant/">Yi Home Camera en Home Assistant</a></li>
 			<li class="widget__item"><a class="widget__link" href="/esphome-en-home-assistant/">ESPHome en Home Assistant</a></li>
@@ -265,7 +263,6 @@ Ya estamos listos para crear la base de datos, el usuario que la manejará y asi
 			<li class="widget__item"><a class="widget__link" href="/instalaci%C3%B3n-de-home-assistant-en-raspberry/">Instalación de Home Assistant en Raspberry</a></li>
 			<li class="widget__item"><a class="widget__link" href="/incrustar-texto-externo-en-hugo/">Incrustar texto externo en Hugo</a></li>
 			<li class="widget__item"><a class="widget__link" href="/insertar-comentarios-en-hugo/">Insertar comentarios en Hugo</a></li>
-			<li class="widget__item"><a class="widget__link" href="/que-hace-la-raspberry-sin-mi/">Que hace la raspberry sin mi</a></li>
 		</ul>
 	</div>
 </div>
@@ -309,8 +306,7 @@ Ya estamos listos para crear la base de datos, el usuario que la manejará y asi
 		<a class="widget-taglist__link widget__link btn" href="/tags/dotfiles" title="Dotfiles">Dotfiles (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/emacs" title="Emacs">Emacs (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/emule" title="Emule">Emule (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/esp" title="Esp">Esp (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/esp01" title="Esp01">Esp01 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/esp" title="Esp">Esp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/exif" title="Exif">Exif (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/facebook" title="Facebook">Facebook (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/fontaner%c3%ada" title="Fontanería">Fontanería (1)</a>
@@ -319,7 +315,7 @@ Ya estamos listos para crear la base de datos, el usuario que la manejará y asi
 		<a class="widget-taglist__link widget__link btn" href="/tags/gimp" title="Gimp">Gimp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/gmail" title="Gmail">Gmail (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/google-chrome" title="Google chrome">Google chrome (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/google-drive" title="Google drive">Google drive (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/google-drive" title="Google drive">Google drive (4)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/google-earth" title="Google earth">Google earth (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/google-keep" title="Google keep">Google keep (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/google-photos" title="Google photos">Google photos (1)</a>
@@ -334,7 +330,6 @@ Ya estamos listos para crear la base de datos, el usuario que la manejará y asi
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo" title="Hugo">Hugo (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/iawriter" title="Iawriter">Iawriter (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/imagemagick" title="Imagemagick">Imagemagick (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/iot" title="Iot">Iot (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/keepass" title="Keepass">Keepass (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux" title="Linux">Linux (4)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux-mint" title="Linux mint">Linux mint (3)</a>

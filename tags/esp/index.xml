@@ -16,5 +16,14 @@
       <description>&lt;p&gt;Hace ya un tiempo que tengo un nodemcu midiendo la temperatura del salón y un esp01 como relé para la calefacción pero&amp;hellip; ¿Como es posible integrar esto en Home Assistant?. La solución más rápida y sencilla es usando &lt;a href=&#34;https://esphome.io&#34;&gt;ESPHome&lt;/a&gt;, Un sistema para controlar los ESP32/ESP8266 mediante unos simples archivos de configuación y poder manejarlos remotamente mediante una automatización.&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Configurando un relé wifi mediante esp-01 y micropython</title>
+      <link>http://www.sherblog.pro/configurando-un-rel%C3%A9-wifi-mediante-esp-01-y-micropython/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/configurando-un-rel%C3%A9-wifi-mediante-esp-01-y-micropython/</guid>
+      <description>&lt;p&gt;Hace un tiempo hice un artículo con los &lt;a href=&#34;https://sherblog.pro/primeros-pasos-con-nodemcu-y-micropython-en-linux/&#34;&gt;primeros pasos con nodemcu&lt;/a&gt; en linux con micropython. Hoy voy a trabajar con otro microcontrolador menos potente pero mucho más pequeño, el ESP01. Linux Mint, Thonny y Micropython es el entorno que voy a utilizar.&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

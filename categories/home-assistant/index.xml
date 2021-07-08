@@ -6,7 +6,16 @@
     <description>Recent content in home assistant on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Sun, 27 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/categories/home-assistant/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/categories/home-assistant/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Guardando y recuperando la configuración de Home Assistant</title>
+      <link>http://www.sherblog.pro/guardando-y-recuperando-la-configuraci%C3%B3n-de-home-assistant/</link>
+      <pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/guardando-y-recuperando-la-configuraci%C3%B3n-de-home-assistant/</guid>
+      <description>&lt;p&gt;Llegará el día en que la instalación de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; se corrompa por algún fallo de software o de hardware, hay que estar preparados para ese momento creando de forma regular copias de seguridad en forma de &amp;ldquo;snapshots&amp;rdquo; que posteriormente sea posible recuperar.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Home Assistant - Wake on Lan Synology</title>
       <link>http://www.sherblog.pro/home-assistant-wake-on-lan-synology/</link>
