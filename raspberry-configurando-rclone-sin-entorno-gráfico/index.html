@@ -50,7 +50,7 @@
 		<li class="menu__item">
 			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">Mis vértices geodésicos</a>
 		</li>
-		<li class="menu__item">
+		<li class="menu__item menu__item--active">
 			<a class="menu__link" href="/post/computing/raspberry/">Raspberry Pi desde cero</a>
 		</li>
 		<li class="menu__item">
@@ -93,9 +93,9 @@
 			<p>En linux no hay cliente oficial para acceder a Google Drive pero por suerte hay varias utilizades que permiten realizar enta labor.  Hay cientos de post al respecto de la existencia de estas utilidades, por lo que no voy a crear uno más, simplemente voy a explicar mi experiencia con una de las que yo utilizo. <a href="https://rclone.org">Rclone</a></p>
 <h1 id="instalación">Instalación</h1>
 <p>La instalación es realmente sencilla gracias al script que hay en la web oficial</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https://rclone.org/install.sh | sudo bash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https://rclone.org/install.sh | sudo bash
 </code></pre></div><p>Podemos comprobar que se ha instalado correctemente mediante el comando</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rclone -V
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rclone -V
 </code></pre></div><h1 id="configuración-de-la-nube">Configuración de la nube</h1>
 <p>Hasta aquí bastante sencillo, el problema viene en el momento que intentamos configurar cualquiera de las nubes ya que, a priori, es necessario un entorno gráfico para conseguir el código de autorización a través del navegador web.</p>
 <blockquote>
@@ -103,9 +103,9 @@
 </blockquote>
 <p>En ausencia de entorno gráfico en  la Raspberry voy a utilizar el viejo portatil con linux Mint desde el que accedo a la misma para realizar esta configuración.</p>
 <p>Empezamos a añadir una nueva nube mediante</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rclone config
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rclone config
 </code></pre></div><p>y nos aparecen las suigiente opciones</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">No remotes found - make a new one
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">No remotes found - make a new one
 n<span style="color:#f92672">)</span> New remote
 s<span style="color:#f92672">)</span> Set configuration password
 q<span style="color:#f92672">)</span> Quit config
@@ -166,7 +166,7 @@ Choose a number from below, or type in your own value
    \ &quot;http&quot;
 Storage&gt; 
 </code></pre><p>A continuación, las opciones &ldquo;client_id&rdquo; y &ldquo;client_secret&rdquo; las dejo en blanco.  La siguiente opción es el tipo de acceso que voy a necesitar, sólo lectura, lectura y escritura&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#ae81ff">1</span> / Full access all files, excluding Application Data Folder.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#ae81ff">1</span> / Full access all files, excluding Application Data Folder.
    <span style="color:#ae81ff">\ </span><span style="color:#e6db74">&#34;drive&#34;</span>
  <span style="color:#ae81ff">2</span> / Read-only access to file metadata and file contents.
    <span style="color:#ae81ff">\ </span><span style="color:#e6db74">&#34;drive.readonly&#34;</span>
@@ -184,13 +184,13 @@ Storage&gt;
 </code></pre></div><p>Selecciono &ldquo;1&rdquo; puesto que quiero tanto poder leer como escribir en las carpetas de la nube.</p>
 <p>Ahora, la opcion &ldquo;ID of the root folder&rdquo; la dejo en blanco para poder acceder a toda la nube.  Deja tambien en blanco la opción &ldquo;Service Account Credentials JSON file path&rdquo;</p>
 <p>La siguiente opción es la configuración avanzada que no necesitamos.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Edit advanced config? <span style="color:#f92672">(</span>y/n<span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Edit advanced config? <span style="color:#f92672">(</span>y/n<span style="color:#f92672">)</span>
 y<span style="color:#f92672">)</span> Yes
 n<span style="color:#f92672">)</span> No
 y/n&gt; n
 </code></pre></div><p>Y ahora llega lo más interesante del post.  Cuando se nos pregunta por la configuración automática debemos seleccionar la opción &ldquo;No&rdquo;</p>
 <p>Ya ha llegado el momento de la arte más interesante de este post para la que abriremos una nueva sesion de terminal pero en este caso directamente en la instalación de Linux Mint que tengo instalada en el portatil.  Hay que tener instalado Rclone tambien en esta máquina con navegador completo y entorno gráfico.  Si no lo tengo, lo instalo y a continuación ejecuto el siguiente comando.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rclone authorize <span style="color:#e6db74">&#34;drive&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rclone authorize <span style="color:#e6db74">&#34;drive&#34;</span>
 </code></pre></div><blockquote>
 <p>He usado la opción &ldquo;drive&rdquo; por estar configurando una cuenta de Google Drive, para el resto de servicios hay que revisar la lista en la que anteriormente hemos seleccionado el tipo de nube para ver la opción que debemos poner entrecomillada.</p>
 </blockquote>
@@ -209,7 +209,7 @@ y) Yes
 n) No
 y/n&gt;
 </code></pre><p>Y&hellip; después de todo este trabajo y de intentar documentar sobre la marcha el <a href="https://rclone.org/remote_setup/">método oficial </a> que debería funcionar resulta que me aparece un error por faltar el parámetro &ldquo;Code&rdquo;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Failed to configure token: failed to get token: oauth2: cannot fetch token: <span style="color:#ae81ff">400</span> Bad Request
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Failed to configure token: failed to get token: oauth2: cannot fetch token: <span style="color:#ae81ff">400</span> Bad Request
 Response: <span style="color:#f92672">{</span>
   <span style="color:#e6db74">&#34;error&#34;</span> : <span style="color:#e6db74">&#34;invalid_grant&#34;</span>,
   <span style="color:#e6db74">&#34;error_description&#34;</span> : <span style="color:#e6db74">&#34;Malformed auth code.&#34;</span>
@@ -217,9 +217,9 @@ Response: <span style="color:#f92672">{</span>
 </code></pre></div><p>Toca probar el plan&quot;b&quot; que consiste en configurar la nube desde la instalación de Linux Mint y posterior mente copiar el archivo de configuración a la Raspberry. Con todo lo explicado anteriormente no creo que sea necesario más para configurar Google Drive en Rclone instalado sobre Linux Mint, sólo restaba en la últime opción escoger la opción &ldquo;Si&rdquo; en la configuración automática y se nos abre el navegador para permitir el acceso.</p>
 <p>Con la nube configurada en Linux Mint hay que buscar el archivo de configuración de rclone que en mi caso se encuentra en &ldquo;/home/sherlockes/.config/rclone/rclone.conf&rdquo; para el caso de la instalación sobre el portatil  y en &ldquo;/home/pi/.config/rclone/rclone.conf&rdquo; para el caso de la Raspberry.</p>
 <p>Es posible copiar directamente el archivo de una máquina a otra a través de ssh mediante el comando scp</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scp /home/sherlockes/.config/rclone/rclone.conf pi@192.168.1.203:/home/pi/.config/rclone/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scp /home/sherlockes/.config/rclone/rclone.conf pi@192.168.1.203:/home/pi/.config/rclone/
 </code></pre></div><p>Y con esto ya debería estar configurada la nube de Google Drive en la instalación de rclone de la raspberry, la mejor muestra es que al introcudir el comando &ldquo;rclone config&rdquo; en una sesión de la terminal sobre la Raspberry nos aparecerá algo como lo siguiente.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Current remotes:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Current remotes:
 
 Name                 Type
 <span style="color:#f92672">====</span>                 <span style="color:#f92672">====</span>

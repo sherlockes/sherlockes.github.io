@@ -6,7 +6,16 @@
     <description>Recent content in hugo on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.sherblog.pro/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo - Creando una lista de artículos por categoría.</title>
+      <link>http://www.sherblog.pro/hugo-creando-una-lista-de-art%C3%ADculos-por-categor%C3%ADa./</link>
+      <pubDate>Sat, 10 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sherblog.pro/hugo-creando-una-lista-de-art%C3%ADculos-por-categor%C3%ADa./</guid>
+      <description>&lt;p&gt;No se si será la forma más sencilla, es la que yo he utilizado para crear una lista de artículos publicados en cierta categoría de mi blog desarrollado en &lt;a href=&#34;https://gohugo.io&#34;&gt;hugo&lt;/a&gt; a partir del uso de &amp;ldquo;Shortcodes&amp;rdquo; personalizados.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Incrustar texto externo en Hugo</title>
       <link>http://www.sherblog.pro/incrustar-texto-externo-en-hugo/</link>

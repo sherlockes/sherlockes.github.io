@@ -157,7 +157,7 @@ Es necesario un programador con pulsador de booteo (O soldar el botón en un pro
 </li>
 </ul>
 <p>El código que tenemos que introducir para que funcione este relé de un sólo canal es unas pocas líneas que se muestran a continuación.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">switch</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">switch</span>:
   <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">gpio</span>
   <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;rele&#34;</span>
   <span style="color:#f92672">pin</span>:
@@ -170,7 +170,7 @@ Es necesario un programador con pulsador de booteo (O soldar el botón en un pro
 <p>Una forma barata y sencilla de medir la temperatura es usando un módulo de ESP01 + DHT11 como el que aparece a continuación y que tengo instalado en una de las habitaciones.</p>
 <p><img src="/images/20210608_home_assistant_esphome_06.jpg" alt="image-06"></p>
 <p>El proceso de configuración para el ESP01 es idéntico que para el caso del relé solo que cambia el archivo de configuración por el siguiente.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># DHT11 config</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># DHT11 config</span>
 <span style="color:#f92672">sensor</span>:
   - <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">dht</span>
     <span style="color:#f92672">pin</span>: 
@@ -191,7 +191,7 @@ Es necesario un programador con pulsador de booteo (O soldar el botón en un pro
 <p><img src="/images/20210608_home_assistant_esphome_07.jpg" alt="image-07"></p>
 <p>Voy a usar una sonda DHT22 con una resistencia de 4.7 kOhm entre el pin de datos y el de 5V. El pin de datos lo coloco en el pin 13 del ESP y creo un nuevo nodo dentro del módulo ESPHome al que nombraré &ldquo;salon&rdquo; y será del tipo &ldquo;nodeMCU-32S&rdquo;.</p>
 <p>Al código que se genera automáticamente con la información de la wifi añado lo siguiente.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Sensor de Temperatura AM2302</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Sensor de Temperatura AM2302</span>
 <span style="color:#f92672">sensor</span>:
   - <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">dht</span>
     <span style="color:#f92672">pin</span>: <span style="color:#ae81ff">13</span>

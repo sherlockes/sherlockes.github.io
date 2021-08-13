@@ -70,6 +70,34 @@
 		<h1 class="main__title">Posts</h1>
 	</header><article class="list__item post">
 	<figure class="list__thumbnail">
+		<a href="http://www.sherblog.pro/error-al-exportar-base-de-datos-de-wordpress-en-synology-webstation/">
+			<img src="/images/20170505_error_export_database_00.jpg" alt="Error al exportar base de datos de WordPress en Synology webStation" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/error-al-exportar-base-de-datos-de-wordpress-en-synology-webstation/" rel="bookmark">
+			Error al exportar base de datos de WordPress en Synology webStation
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2017-05-05T00:00:00">2017-05-05</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/wordpress" rel="category">Wordpress</a>, <a class="meta__link" href="/categories/sherver" rel="category">Sherver</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Hace unos días que publiqué el modo en el que hacía la copia de seguridad de la base de datos de WordPress desde el propio hosting hasta una unidad de Google Drive. Haciendo pruebas para alojar la web en el Nas de Synology me doy cuenta de que el plugin para exportar la base de datos y enviarla por correo electrónico periódicamente no funciona.
+Pruebo con otros plugins similares y todos me dan el mismo error y tras unas pruebas y un poco de buceo por la red me doy cuenta que el problema reside en la incapacidad del servidor web para tratar los archivos comprimidos.
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
 		<a href="http://www.sherblog.pro/openstreetmap-en-gps-garmin/">
 			<img src="/images/20170426_openstreetmaps_garmin_00.jpg" alt="Openstreetmap en Gps Garmin" />
 		</a>
@@ -235,34 +263,6 @@ Ahora intento utilizar programas &ldquo;portables&rdquo; que, aunque no estoy se
 		Después de la instalación de WordPress en el servidor Synology al intentar actualizar los temas o los plugins me encuentro con el siguiente error.
 Pues nada, toca &ldquo;Googlear&rdquo; un rato y pronto me doy cuenta de que la solución es bastante sencilla y basta con habilitar la extensión &ldquo;Curl&rdquo; dentro de la configuración de php de la aplicación Web Station tal y como se puede ver en la siguiente captura de pantalla.
 	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="http://www.sherblog.pro/instalaci%C3%B3n-manual-de-wordpress-en-synology/">
-			<img src="/images/20170228_wordpress_manual_00.jpg" alt="Instalación manual de WordPress en Synology" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/instalaci%C3%B3n-manual-de-wordpress-en-synology/" rel="bookmark">
-			Instalación manual de WordPress en Synology
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2017-02-28T00:00:00">2017-02-28</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/wordpress" rel="category">Wordpress</a>, <a class="meta__link" href="/categories/sherver" rel="category">Sherver</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Desde el centro de paquetes de DSM en posible acceder a la instalación de WordPress de una forma sencilla tal y como puedes es en este tutorial, pero si lo que tu quieres es realizar una instalación manual con la que consigas un mayor control aquí te dejo los pasos a seguir.
-Antes de comenzar con la instalación de WordPress hay que instalar &ldquo;Web Station&rdquo; como servidor de archivos, &ldquo;Maria Db&rdquo; para el alojamiento de las bases de datos y &ldquo;PhpMyAdmin&rdquo; para gestionar las bases de datos.
-	</div>
 </article>
 </main>
 
@@ -280,6 +280,7 @@ Antes de comenzar con la instalación de WordPress hay que instalar &ldquo;Web S
 	<h4 class="widget__title">Más Recientes</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/hugo-creando-una-lista-de-art%C3%ADculos-por-categor%C3%ADa./">Hugo - Creando una lista de artículos por categoría.</a></li>
 			<li class="widget__item"><a class="widget__link" href="/guardando-y-recuperando-la-configuraci%C3%B3n-de-home-assistant/">Guardando y recuperando la configuración de Home Assistant</a></li>
 			<li class="widget__item"><a class="widget__link" href="/home-assistant-wake-on-lan-synology/">Home Assistant - Wake on Lan Synology</a></li>
 			<li class="widget__item"><a class="widget__link" href="/yi-home-camera-en-home-assistant/">Yi Home Camera en Home Assistant</a></li>
@@ -289,7 +290,6 @@ Antes de comenzar con la instalación de WordPress hay que instalar &ldquo;Web S
 			<li class="widget__item"><a class="widget__link" href="/synology-broken-sudo/">Synology broken sudo</a></li>
 			<li class="widget__item"><a class="widget__link" href="/instalaci%C3%B3n-de-home-assistant-en-raspberry/">Instalación de Home Assistant en Raspberry</a></li>
 			<li class="widget__item"><a class="widget__link" href="/incrustar-texto-externo-en-hugo/">Incrustar texto externo en Hugo</a></li>
-			<li class="widget__item"><a class="widget__link" href="/insertar-comentarios-en-hugo/">Insertar comentarios en Hugo</a></li>
 		</ul>
 	</div>
 </div>
@@ -379,7 +379,7 @@ Antes de comenzar con la instalación de WordPress hay que instalar &ldquo;Web S
 		<a class="widget-taglist__link widget__link btn" href="/tags/rclone" title="Rclone">Rclone (4)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/regexp" title="Regexp">Regexp (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/sherlodj" title="Sherlodj">Sherlodj (3)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/shortcodes" title="Shortcodes">Shortcodes (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/shortcodes" title="Shortcodes">Shortcodes (4)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/software" title="Software">Software (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/speedtrap" title="Speedtrap">Speedtrap (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ssh" title="SSH">SSH (1)</a>
