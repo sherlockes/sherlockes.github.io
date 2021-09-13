@@ -105,15 +105,15 @@
 <h2 id="declaración-de-variables">Declaración de variables</h2>
 <p>Por cada nube o carpeta remota que vaya a a montar como una unidad en mi unidad local voy a utilizar dos variables, una con la ruta donde voy a montar la unidad y otra con el comando necesario para montarla.</p>
 <p>Por ejemplo, para el caso de <a href="https://mega.nz">Mega.nz</a> utilizo estas dos variables</p>
-<pre><code>Mega_dir=~/Mega
+<pre tabindex="0"><code>Mega_dir=~/Mega
 Mega_cmd='rclone mount Sherlockes_Mega: $Mega_dir --daemon'
 </code></pre><p>Es importante que no se esté utilizando ya la ruta a la carpeta que se ha definido, ya que el script la borrará para asegurar un correcto montaje</p>
 <h2 id="allow-other">Allow-other</h2>
 <p>Entre las muchas [opciones] que tiene el comando &ldquo;mount&rdquo; de Rclone nos encontramos con &ndash;allow-other que se utiliza en caso de que varios usuarios puedan acceder a la unidad montada. Esta opción la uso en caso de montar la biblioteca multimedia pero me muestra el siguiente error</p>
-<pre><code>mount helper error: fusermount: option allow_other only allowed if 'user_allow_other' is set in /etc/fuse.conf
+<pre tabindex="0"><code>mount helper error: fusermount: option allow_other only allowed if 'user_allow_other' is set in /etc/fuse.conf
 Fatal error: failed to mount FUSE fs: fusermount: exit status 1
 </code></pre><p>Esto me ha resultado un profundo dolor de cabeza durante unas horas ya que si montamos la unidad como servicio usando combinadas las opciones &ldquo;Allow-other&rdquo; y &ldquo;Daemon&rdquo; entonces la unidad no se monta pero tampoco muestra ningún error por lo que es dificil detectarlo.</p>
-<pre><code>rclone mount Sherloflix_en: $HOME/Sherloflix --allow-other --daemon
+<pre tabindex="0"><code>rclone mount Sherloflix_en: $HOME/Sherloflix --allow-other --daemon
 </code></pre><p>La solución, tal y como se muestra en el eror de arriba es bastante sencilla y basta con editar el archivo &ldquo;/etc/fuse.conf&rdquo; y quitar el comentario de la línea &ldquo;use_allow_other&rdquo; para que no sólo el usuario root tenga acceso a este parámetro de configuración.</p>
 <h2 id="comprobación-de-montaje">Comprobación de montaje</h2>
 <p>Esta es una función que se encarga de comprobar si la nube que le pasemos como argumento está o no ya montada. Tiene dos funciones</p>

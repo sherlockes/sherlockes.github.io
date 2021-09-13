@@ -89,7 +89,7 @@
 <h3 id="añadiendo-capacidad-de-previsualización">Añadiendo capacidad de previsualización</h3>
 <h4 id="previsualización-en-el-navegador">Previsualización en el navegador</h4>
 <p>En mi caso bajo Linux Mint tengo instalado Pandoc en el sistema operativo mediante la instrucción de consola <code>sudo apt-get install pandoc</code> y posteriormente se edita la variable &ldquo;markdown-command&rdquo; introduciendo el siguiente comando:</p>
-<pre><code>&quot;pandoc -f markdown -t html -s --mathjax --highlight-style=pygments&quot;
+<pre tabindex="0"><code>&quot;pandoc -f markdown -t html -s --mathjax --highlight-style=pygments&quot;
 </code></pre><blockquote>
 <p>Recordar que la forma más sencilla de editar una variable es mediante el comando <code>C-h v</code></p>
 </blockquote>
@@ -104,10 +104,10 @@
 <p>Es una pena pero, por defecto, la actualización del buffer de previsualización no se lleva a cabo hasta que se guarda el archivo que estamos editando lo cual supone una pequeña pérdida de tiempo. Para evitar esto hay algunas soluciones que iré probando y cuando de con la que más me guste lo dejaré aquí reflejado.</p>
 <h4 id="previsualización-en-un-editor-externo">Previsualización en un editor externo</h4>
 <p>En mi caso tengo instalado en el sistema Typora como editor específico para archivos markdown. Para poder abrirlos en este desde emacs hay que configurar la variable &ldquo;markdown-open-command&rdquo; con el comando:</p>
-<pre><code>&quot;typora&quot;
+<pre tabindex="0"><code>&quot;typora&quot;
 </code></pre><p>Ahora ya podemos abrir un archivo markdown en Typora mediante el comando <!-- raw HTML omitted -->C-c C-c o<!-- raw HTML omitted --></p>
 <p>Con todo lo anterior hemos modificado el archivo de configuración &ldquo;.emacs&rdquo; de forma que el apartado &ldquo;custom-set-variables&rdquo; se han incluido las siguientes líneas</p>
-<pre><code> '(markdown-command &quot;pandoc -f markdown -t html -s --mathjax --highlight-style pygments&quot;)
+<pre tabindex="0"><code> '(markdown-command &quot;pandoc -f markdown -t html -s --mathjax --highlight-style pygments&quot;)
  '(markdown-open-command &quot;typora&quot;)
  '(markdown-split-window-direction (quote right))
 </code></pre><h2 id="links-e-imágenes">Links e imágenes</h2>

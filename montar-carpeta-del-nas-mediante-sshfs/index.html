@@ -85,13 +85,13 @@
 		</figure><div class="content post__content clearfix">
 			<p>Hoy toca montar una carpeta del NAS en el pc mediante sshfs para correr sobre ella un script, resulta sencillo pero hay que tener en cuenta unas peculiaridades&hellip;</p>
 <p>Montar una carpeta remota en un directorio local trabajando en Linux es una tarea sencilla gracias a sshfs. En primer lugar es necesario instalar las utilidad en el sistema (En Linux Mint se resuelve con una sola línea en la terminal).</p>
-<pre><code>sudo apt install sshfs
+<pre tabindex="0"><code>sudo apt install sshfs
 </code></pre><p>Llegados a este punto resulta interesante tener un acceso al NAS mediante llave publico-privada tal y como detallo en este [artículo] para evitar la tediosa introducción de contraseñas.</p>
 <blockquote>
 <p>Imprescindible para que funcione el comando sobre el NAS que esté habilitado el acceso ssh y el servidor sftp desde &ldquo;Panel de control - Servicios de archivos - FTP - Habilitar servicio SFTP&rdquo;</p>
 </blockquote>
 <p>Con esto ya es posible ejecutar en la consola el comando que monte la unidad del nas en la carpeta que deseemos de nuestro sistema.</p>
-<pre><code>sudo sshfs -o allow_other,default_permissions usuario@ip_del_nas:/carpeta ~/ruta_donde_montar
+<pre tabindex="0"><code>sudo sshfs -o allow_other,default_permissions usuario@ip_del_nas:/carpeta ~/ruta_donde_montar
 
 </code></pre><blockquote>
 <p>La ruta a montar comienza en la carpeta &ldquo;Volume1&rdquo; del NAS de modo que para la carpeta &ldquo;/Volume1/fotos/2021/&rdquo; en el comando de sshfs deberemos poner &ldquo;/fotos/2021&rdquo;.</p>

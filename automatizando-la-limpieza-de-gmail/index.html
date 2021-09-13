@@ -92,7 +92,7 @@
 <p>Cierto es que esta operación supone un gasto de tiempo pequeño, pero me pregunto&hellip; ¿Podrá automatizarse esto? Pues si, y de una forma bastante sencilla usando <a href="https://www.google.com/script/start/">Google Apps Script</a>. Tan sencillo como entrar en <a href="https://drive.google.com/drive/u/0/my-drive">Google Drive</a> y crear un nuevo &ldquo;Google Apps Script&rdquo;.</p>
 <p><img src="/images/20161014_promociones_03.jpg" alt="imagen"></p>
 <p>Aparece un nuevo proyecto en blanco en el que incluiremos la siguiente función:</p>
-<pre><code>function limpiar_propaganda() {
+<pre tabindex="0"><code>function limpiar_propaganda() {
   var filtro = GmailApp.search('category:promotions older_than:10d');
   for (var i = 0; i &lt; filtro.length; i++) {
     filtro[i].moveToTrash();
@@ -101,7 +101,7 @@
 </code></pre><p>Por otro lado tengo definida un par de reglas en la configuración de gmail para los correos &ldquo;menos importantes&rdquo; que se pueden borrar sin ningún problema pasados diez días después de su recepción y que etiquetará como &ldquo;notificarme&rdquo;.</p>
 <p><img src="/images/20161014_promociones_06.jpg" alt="imagen-06"></p>
 <p>Ahora sólo resta añadir un segundo bucle &ldquo;for&rdquo; en el script para busque los mensajes de correo con la etiqueta &ldquo;notificarme&rdquo; y una antigüedad mayor de diez días para proceder a eliminarlos.  De esta forma el script completo quedará como lo siguiente.</p>
-<pre><code>function limpiar_propaganda() {
+<pre tabindex="0"><code>function limpiar_propaganda() {
   var filtro = GmailApp.search('category:promotions older_than:10d');
   for (var i = 0; i &lt; filtro.length; i++) {
     filtro[i].moveToTrash();

@@ -115,7 +115,7 @@
 <li>Copiar el archivo themes/mainroad/layouts/partials/widgets/social.html a /layouts/partials/widgets</li>
 <li>Editar el archivo /layouts/partials/widgets/social.html añadiendo otro bloque a continuación de los ya existentes para cada una de las redes sociales preestablecidas.</li>
 </ul>
-<pre><code>  {{- with .Site.Params.widgets.social.strava }}
+<pre tabindex="0"><code>  {{- with .Site.Params.widgets.social.strava }}
 		&lt;div class=&quot;widget-social__item widget__item&quot;&gt;
 			&lt;a class=&quot;widget-social__link widget__link btn&quot; title=&quot;Strava&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://www.strava.com/athletes/{{ . }}&quot; target=&quot;_blank&quot;&gt;
 				{{ partial &quot;svg/strava.svg&quot; (dict &quot;class&quot; &quot;widget-social__link-icon&quot;) }}
@@ -127,7 +127,7 @@
 <ul>
 <li>Buscar el identificador de la red y añadirlo en [Params.widget.social] dentro del archivo &ldquo;config.toml&rdquo; de la raiz de nuestro proyecto de forma que quede algo parecido a lo siguiente.</li>
 </ul>
-<pre><code>[Params.widgets.social]
+<pre tabindex="0"><code>[Params.widgets.social]
   # Enable parts of social widget
   twitter = &quot;sherblogpro&quot;
   telegram = &quot;sherlockes&quot;

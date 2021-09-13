@@ -102,7 +102,7 @@
 <p>Para este paso necesitamos un cliente ftp para descargar la carpeta &ldquo;wp-content&rdquo; de nuestro hosting online y con ella sobreescribir la correspondiente carpeta del blog recientemente creado en el servidor local. Personalmente utilizo <a href="https://filezilla-project.org">FileZilla</a> por ser sencillo, potente, ligero y sobretodo gratuito.</p>
 <p><img src="/images/20150929_filezilla_01.jpg" alt="imagen"></p>
 <p>Llegados a este punto tenemos en nuestra web online y el servidor local los mismos archivos con una pequeña salvedad, el archivo de configuración &ldquo;wp-config.php&rdquo;. Si queremos ser meticulosos y unificar estos archivos de configuración en uno válido para ambos servidores habrá que realizar alguna modificación en el mismo en la sección de conexión a la base de datos. Donde aparece algo como esto.</p>
-<pre><code>// ** MySQL settings - You can get this info from your web host ** //
+<pre tabindex="0"><code>// ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'db_yourserver');
 /** MySQL database username */
@@ -116,7 +116,7 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 </code></pre><p>lo cambiaremos por esto otro</p>
-<pre><code>// ** MySQL settings - You can get this info from your web host ** //
+<pre tabindex="0"><code>// ** MySQL settings - You can get this info from your web host ** //
 if ($_SERVER[&quot;HTTP_HOST&quot;] === 'yourserver.com') {
   $db_name = 'db_yourserver';
   $user_name = 'db_yourserver_user';

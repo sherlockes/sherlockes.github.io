@@ -87,7 +87,7 @@
 <p>En un <a href="https://sherblog.pro/backup-de-google-photos/">post anterior</a> expliqué la artimaña que ahora hay que hacer para poder tener una copia de seguridad de todas las imágenes de <a href="https://photos.google.com">Google Photos</a> en el NAS. Hasta hace poco, estas imágenes se subían desde el NAS a <a href="https://www.amazon.es/photos">Amazon Photos</a> de forma automática, pero con los cambios en las condiciones del servicio ahora hay que hacerlo de forma manual. Lo que voy haciendo es, cuando se acaba el més, subo todas las fotografías del mismo a <a href="https://www.amazon.es/photos">Amazon Photos</a> pero me he encontrado con un problema.</p>
 <p>Resulta que en algunas de las imágenes de mi galería no existe la información exif con la fecha de captura por lo que, al subirlas a <a href="https://www.amazon.es/photos">Amazon Photos</a> no se ordenan cronológicamente por lo que supone un completo desastre.</p>
 <p>Para resolver este problema, antes de subirlas, ejecuto en la carpeta en la que están guardadas este script.</p>
-<pre><code>shopt -s nullglob
+<pre tabindex="0"><code>shopt -s nullglob
 
 for ext in jpg jpeg png gif; do 
     files=( *.&quot;$ext&quot; )

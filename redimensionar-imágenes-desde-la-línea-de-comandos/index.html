@@ -90,7 +90,7 @@
 <p><a href="https://imagemagick.org">https://imagemagick.org</a></p>
 <p>Compacto y gratuito hace que merezca la pena el esfuerzo de aprender a manejarlo desde la línea de comandos.</p>
 <p>La instalación tanto en Linux Mint como en Lubuntu a partir de los repositorios oficiales de cada distribución es tan sencillo como&hellip;</p>
-<pre><code>sudo apt-get install imagemagick
+<pre tabindex="0"><code>sudo apt-get install imagemagick
 </code></pre><p>&hellip; aunque es posible de que no se instale la versión más reciente.  En mi caso, para la instalación en Lubuntu se me ha instalado la versión 6.9.7 cuando la versión oficial es la 7.0.8.  En princicio aguantaré este desfase pero si veo algún comportamiento anómalo realizaré na instalación manual de la última versión.</p>
 <blockquote>
 <p>Antes de seguir adelante hay que tener claros los tres parámetros que afectan al tamaño en el que vamos a imprimir nuestras fotografías.  En primer lugar está el tamaño de imagen, normalmente expresada en píxeles y que hace referencia al tamaño que la imagen va a adoptar en la pantalla. En segundo lugar tenemos la resolución de imagen que hace referencia al número de píxeles por unidad de impresión real, normalmente expresada en píxeles por pulgada o centímetro. Finalmente y como combinación de los dos anteriores nos encontramos con el tamaño de impresión y que nos mostrará el tamaño final en el que va a ser impresa nuestra fotografía.</p>
@@ -100,7 +100,7 @@
 <p>anchopx = (anchocm x dpi)/2.54 = (15 x 300) / 2.54 = 1772 px
 altopx = (altocm x dpi) / 2.54 = (10 x 300) / 2.54 = 1181 px</p>
 <p>Con todo lo anterior ya estamos en condiciones de ejecutar el comando que nos convertirá todas las imágenes de una carpeta de forma que todas tengan una traición de 300 dpi y que su lado más largo encaje en una fotografía de 10x15 cm, formato en el que se van a imprimir.</p>
-<pre><code>mogrify -path salida -units PixelsPerInch -resample 300 -rotate &quot;90&lt;&quot; -resize 1772x1181 *.*
+<pre tabindex="0"><code>mogrify -path salida -units PixelsPerInch -resample 300 -rotate &quot;90&lt;&quot; -resize 1772x1181 *.*
 </code></pre><p>Donde</p>
 <ul>
 <li>mogrify &hellip; es el comando que indica el procesamiento de imágenes en lotes</li>

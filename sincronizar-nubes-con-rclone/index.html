@@ -97,7 +97,7 @@
 <p><img src="/images/20200625_rclone_sync_clouds_02.jpg" alt="Imagen_02"></p>
 <p>En mi caso el identificador de la carpeta será -&gt; 0AKXXD2qTbW50Uk9PVA</p>
 <p>Ya estamos listos para abrir una terminal y escribir el comando</p>
-<pre><code>rclone config
+<pre tabindex="0"><code>rclone config
 </code></pre><ul>
 <li>Añadimos una nueva unidad (New remote) - name&gt; nombre</li>
 <li>Selecionamos Google Drive - Storage&gt; drive</li>
@@ -119,7 +119,7 @@
 <li>Aceptamos la configuración creada - Yes this is OK</li>
 </ul>
 <p>Con esto ya tenemos aceso a la unidad y en la configuración de Rclone nos aparecerá algo como lo siguiente.</p>
-<pre><code>Current remotes:
+<pre tabindex="0"><code>Current remotes:
 
 Name                 Type
 ====                 ====
@@ -136,7 +136,7 @@ e/n/d/r/c/s/q&gt;
 
 </code></pre><h2 id="encriptando-la-unidad">Encriptando la unidad</h2>
 <p>Puesto que no sabemos quien tiene privilegios para ver o manipular los archivos de esta unidad compartida creada, es imprescindible cifrar el contenido de la misma para lo cual volveremos a la configración de Rclone.</p>
-<pre><code>rclone config
+<pre tabindex="0"><code>rclone config
 </code></pre><ul>
 <li>Añadimos otra unidad remota &gt; New remote</li>
 <li>La nombramos - name&gt; nombre_en</li>
@@ -154,7 +154,7 @@ e/n/d/r/c/s/q&gt;
 <li>Aceptamos la unidad creada - Yes this is OK</li>
 </ul>
 <p>Ya tenemos creada la unidad compartida encriptada llamada &ldquo;nombre_en&rdquo;</p>
-<pre><code>Current remotes:
+<pre tabindex="0"><code>Current remotes:
 
 Name                 Type
 ====                 ====
@@ -172,7 +172,7 @@ e/n/d/r/c/s/q&gt;
 </code></pre><p>Pedemos ya salir de la configuración de Rclone</p>
 <h2 id="script-de-sincronización">Script de sincronización</h2>
 <p>Con la unidad encriptada creada, es el momento de realizar la sincronización con otra unidad que ya tengamos configurada en Rclone (En mi caso usaré mi directorio de películas en blanco y negro sin derechos de autor &ldquo;Sherloflix&rdquo;). El comando se reduce a una sólo línea de terminal</p>
-<pre><code>rclone sync Sherloflix: nombre_en: --transfers 2 --tpslimit 8 --bwlimit 5M
+<pre tabindex="0"><code>rclone sync Sherloflix: nombre_en: --transfers 2 --tpslimit 8 --bwlimit 5M
 </code></pre><p>Donde&hellip;</p>
 <ul>
 <li>&ldquo;Sherloflix&rdquo; es el nombre de la unidad que deseo sincronizar</li>

@@ -86,7 +86,7 @@
 			<p>Esta vez me encuentro con que tengo que acceder a la configuración de un router remoto, no tengo acceso a través de ssh pero  en la red del mismo tengo &ldquo;infiltrada&rdquo; una Raspberry con Zerotier.</p>
 <p>Me encuentro en la necesidad de modificar la configuración de un router remoto del que me separan unos cuantos kilómetros y el único as que tengo en la manga es una raspberry que tengo que tengo conectada a el y agregada a mi red privada de zerotier.</p>
 <p>Hace unos día leí un post de <a href="https://www.atareao.es/ubuntu/tuneles-ssh/">atareao</a> en el que se trataba el uso de túneles ssh y, aunque no se comentó específicamente el tema, me puso en la pista de como resolver mi problema con una sóla línea de código.</p>
-<pre><code>sudo ssh -L 80:&lt;ip_del_router&gt;:80 usuario_raspberry@&lt;ip_zerotier_de_raspberry&gt;
+<pre tabindex="0"><code>sudo ssh -L 80:&lt;ip_del_router&gt;:80 usuario_raspberry@&lt;ip_zerotier_de_raspberry&gt;
 </code></pre><p>La ejecuto en una terminal de Mint, contraseña del superusuario de Mint, contraseña del usuario de la Raspberry en Zerotier y&hellip;</p>
 <p>&hellip; parece que simplemente se la logado en la raspberry con Zerotier pero si abro el navegador de Mint y accedo a &ldquo;localhost&rdquo;&hellip;</p>
 <p><img src="/images/20201008_usando_tunel_ssh_01.jpg" alt="Image_01"></p>

@@ -86,13 +86,13 @@
 			<p>Hace tiempo que vengo pensando en la capacidad de poder introducir texto desde un archivo externo dentro de los post que publico en <a href="https://gohugo.io">Hugo</a>. Hoy se me ha encendido la bombilla.</p>
 <p>Una potente herramienta que posee <a href="https://gohugo.io">Hugo</a> es la posibilidad de uso de <a href="https://gohugo.io/content-management/shortcodes/">Shortcodes</a> (Fragmentos simples dentro de los archivos de contenido que llaman a plantillas integradas o personalizadas), pero más potente todavía es el uso de <a href="https://gohugo.io/templates/shortcode-templates/">Shortcodes personalizados</a> que ya he utilizado en otras ocasiones como en mi proyecto de <a href="https://sherblog.pro/mis-v%C3%A9rtices-geod%C3%A9sicos-en-hugo/">Vértices Geodésicos</a>.</p>
 <p>Es posible utilizar esta característica para crear un Shortcode que incluya en el post el texto contenido en un archivo de texto externo sin más que escribir una línea de código.</p>
-<pre><code>&lt;pre&gt;&lt;code&gt;&lt;embed src=&quot;{{.Get 0}}&quot; width=&quot;100%&quot;&gt;&lt;/code&gt;&lt;/pre&gt;
+<pre tabindex="0"><code>&lt;pre&gt;&lt;code&gt;&lt;embed src=&quot;{{.Get 0}}&quot; width=&quot;100%&quot;&gt;&lt;/code&gt;&lt;/pre&gt;
 </code></pre><p>Esta línea la incluiremos en un archivo llamado &ldquo;texto_externo.html&rdquo; que guardaremos en la carpeta &ldquo;layouts/shortcodes&rdquo;</p>
 <blockquote>
 <p>Crearemos esta carpeta (Si no lo está) en la raiz del blog (junto a &ldquo;content&rdquo;, &ldquo;static&rdquo;&hellip;) en lugar de insertar el archivo dentro de la carpeta del tema para evitar que destruya este shortcode co una actualizació del tema.</p>
 </blockquote>
 <p>Ahora ya sólo resta insertar el siguiente código en la zona del post o la página donde queramos incluir el texto del archivo externo.</p>
-<pre><code><pre><code><embed src="/archivo.md" width="100%"></code></pre>
+<pre tabindex="0"><code><pre><code><embed src="/archivo.md" width="100%"></code></pre>
 
 
 </code></pre><p>Para que se cargue correctamente, el archivo deberá alojarse en la carpeta &ldquo;static&rdquo; ya que es lo que <a href="https://gohugo.io">Hugo</a> entiende como la raiz de los documentos en el Blog.</p>

@@ -106,7 +106,7 @@
 <h3 id="archivo-de-configuración">Archivo de configuración</h3>
 <p>Puesto que la idea es construir un script que se ejecute cada determinado tiempo, necesito un archivo que dote al sistema de persistencia de algunas variables. Después de barajar varias alternativas, he optado por guardar los datos de configuración en un archivo &ldquo;config.json&rdquo; ubicado en la carpeta raiz del usario que ejecuta el script.</p>
 <p>El manejo de este tipo de archivos en python es muy sencillo y queda sentenciado con sólo seis líneas de código.</p>
-<pre><code>import json
+<pre tabindex="0"><code>import json
 
 with open('/home/pi/config.json', 'r') as archivo_json:
     data=archivo_json.read()
@@ -129,7 +129,7 @@ with open(&quot;config.json&quot;, &quot;w&quot;) as archivo_json:
 </ul>
 <h3 id="inicialización-de-variables">Inicialización de variables</h3>
 <p>La primera vez que abramos este archivo de configuración estará vacío por lo que nos tendremos que asegurar de inicializar unas &ldquo;variables por defecto&rdquo; para no tenga lugar el correspondiente error en caso de uqe alguna no exista o tenga un valor nulo. Esto se realiza mediante el siguiente código una vez que la variable &ldquo;datos_json&rdquo; ha sido creada a partir del contenido del archivo.</p>
-<pre><code>def inic_var(var,valor):
+<pre tabindex="0"><code>def inic_var(var,valor):
     if var in datos_json:
         if datos_json[var] == &quot;&quot;:
             datos_json[var] = valor
@@ -179,7 +179,7 @@ for x in variables:
 <p>Para tomar la temperatura que tengo en casa voy a utilizar un DHT22 (sensor de humedad y temperatura) que, aunque no es lo más preciso del mundo, es suficientemente barato como para empezar a hacer pruebas. En el artículo de <a href="https://www.atareao.es/podcast/temperatura-con-la-raspberry/">atareao</a> se explica perfectamente como llevar a cabo esta medición. El propio sensor DHT22, una resistencia de 10k y tres cables para conectar al puerto GPIO de la Raspberry es odo lo que he necesitado.</p>
 <p><img src="/images/20201112_termostato_raspberry_01.jpg" alt="Imagen_01"></p>
 <p>Necesitamos una librería para capturar los datos del sensor. Esta se instalará en la raspberry medianta el comando <code>sudo pip3 install Adafruit_DHT</code> siempre y cuando tengamos instalado Python3 y el gestos de paquetes pip.</p>
-<pre><code>import Adafruit_DHT as dht
+<pre tabindex="0"><code>import Adafruit_DHT as dht
 
 datos_dht = dht.read_retry(dht.DHT22,4)
 

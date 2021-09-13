@@ -92,7 +92,7 @@
 <li>Copia de seguridad versionada desde el NAS hasta Google Drive mediante HyperBackup</li>
 </ul>
 <p>Pues bien, para comenzar creamos una carpeta en el directorio &ldquo;home&rdquo; del usuario Pi llamada &ldquo;scripts&rdquo; y en ella creamos el archivo &ldquo;bckps.sh&rdquo; al que dotaremos de pemisos de ejecución (sudo chmod 700 bckps.sh) con el siguiente código:</p>
-<pre><code>#!/bin/sh
+<pre tabindex="0"><code>#!/bin/sh
 # -*- ENCODING: UTF-8 -*-
 
 # Borra el directorio backups y lo vuelve a crear
@@ -120,13 +120,13 @@ tar -zcvf $(date +%Y%m%d)_sherblog_sql.tgz sherblog.sql
 rm sherblog.sql
 exit
 </code></pre><p>Ahora editamos el crontab</p>
-<pre><code>crontab -e
+<pre tabindex="0"><code>crontab -e
 </code></pre><p>e introducimos al final una nueva tarea mediante la sentencia</p>
-<pre><code>@daily /home/pi/scripts/bckps.sh
+<pre tabindex="0"><code>@daily /home/pi/scripts/bckps.sh
 </code></pre><p>Con esto una vez al día se ejecutará la tarea de copias de seguridad incluidas en el archivo &ldquo;bckps.sh&rdquo;.  Es posible que hay que reiniciar el cron para que funcione la ejecución correctamente.</p>
-<pre><code>service cron restart
+<pre tabindex="0"><code>service cron restart
 </code></pre><p>El siguiente paso es copiar la carpeta &ldquo;backups&rdquo; de la raspberry al NAS, para lo que, desde este segundo y mediante al programador de tareas, ejecuto una vez al día la siguiente instrucción:</p>
-<pre><code>wget -m -N ftp://pi:password@192.168.1.202/backups -P /volume1/backups
+<pre tabindex="0"><code>wget -m -N ftp://pi:password@192.168.1.202/backups -P /volume1/backups
 </code></pre><p>Desde aquí, crear una copia de seguridad en Synology con la aplicación de DSM Hyperbackup sobre google drive ya es coser y cantar.</p>
 
 		</div>

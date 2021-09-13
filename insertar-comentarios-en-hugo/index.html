@@ -104,14 +104,14 @@
 <h3 id="usando-shortcodes">Usando Shortcodes</h3>
 <p>Cuando añado contenido a alguna entrada uso un concepto extraído de <a href="https://andreasbergstrom.com/posts/comments-in-hugo/">andreasbergstrom.com</a> en el que explica cómo es posible &ldquo;comentar&rdquo; parte del contenido del archivo Markdown para que <a href="https://gohugo.io/">Hugo</a> no lo interprete como contenido a mostrar.</p>
 <p>Para ello es necesario crear un archivo &ldquo;borrador.html&rdquo; dentro de la carpeta &ldquo;layouts/shortcodes/&rdquo; de nuestra web. El contenido de este archivo simplemente será</p>
-<pre><code>{{ if .Inner }}{{ end }}
+<pre tabindex="0"><code>{{ if .Inner }}{{ end }}
 </code></pre><p>A partir de aquí, mientras estemos añadiendo contenido a una entrada lo haremos dentro de una zona comentada de forma que Hugo no la muestre.</p>
-<pre><code>{{&lt; borrador &gt;}}
+<pre tabindex="0"><code>{{&lt; borrador &gt;}}
 Aquí iremos añadiendo el contenido con el que queremos actualizar la entrada...
 {{&lt; / borrador &gt;}}
 </code></pre><p>Y así de sencillo, cuando queramos que el contenido actualizado se muestre tan solo tenemos que eliminar las primera y última linea.</p>
 <p>Pues bien, como casi todos los artículos los escribo en Emacs me he creado un pequeño atajo de teclado para la inclusión de estos comentarios gracias a <a href="https://github.com/joaotavora/yasnippet">yasnippet</a> para lo cual solo es necesario crear un nuevo atajo desde un archivo markdown de una de las entradas del blog (yas-new-snippet) e incluir el siguiente texto.</p>
-<pre><code># -*- mode: snippet -*-
+<pre tabindex="0"><code># -*- mode: snippet -*-
 # name: comentario
 # key: comentario
 # --
@@ -121,7 +121,7 @@ ${1:Comentario...}
 </code></pre><p>Lo guardamos (C-x C-w) con el nombre que nos apetezca y ya está listo para utilizarse. Sólo hay que empezar una línea con la palabra comentario y pulsar el tabulador.</p>
 <h3 id="usando-html">Usando html</h3>
 <p>Aunque no resulta tan &ldquo;cool&rdquo;, un método igual de efectivo que el anterior pero un poco más sencillo es haciendo uso de los comentarios de código en html mediante las etiquetas &ldquo;&lt;!- - -&rdquo; y &ldquo;- -&gt;&rdquo;. Introduciremos el texto a modo de borrador o comentario entre estas equiquetas.</p>
-<pre><code>&lt;!- - -
+<pre tabindex="0"><code>&lt;!- - -
 Aquí irá todo el texto que queremos ocultar temporalmente
 - -&gt;
 </code></pre>

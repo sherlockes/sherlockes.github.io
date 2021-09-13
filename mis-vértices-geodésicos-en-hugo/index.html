@@ -114,7 +114,7 @@
 <h3 id="creación-de-una-plantilla">Creación de una plantilla</h3>
 <p>La documentación de <a href="https://gohugo.io/">Hugo</a> aunque es bastante extensa, en algunas ocasiones resulta complicada de seguir. Pretendo crear una plantilla común para los vértices geodésicos en los que únicamente cambien una serie de parámetros propios de cada vértice y un pequeño artículo del mismo. De esta forma, las imágenes y mapas de cada uno de los post se generarán automáticamente resultando muy sencillo así realizar una modificación común a todos.</p>
 <p>En la cabecera de cada archivo *.md con en que se genera el post del vértice he incluido, además de los parámetros propios del tema otros propios del vértice.</p>
-<pre><code>js: https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js
+<pre tabindex="0"><code>js: https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js
 css: https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css
 
 mapa_alto: 400
@@ -132,11 +132,11 @@ vertice_pan: &quot;VY8ieZb&quot;
 </code></pre><p>Las dos primeras líneas corresponden a una hoja de estilos y una clase javascript que utilizaré para la creación del mapa, la tercera hace referencia al número de pixeles que de alto va a ocupar el mapa en el post que se genere. El resto hacen referencia a valores del vértice como el nombre, la localización, las coordenadas, la altitud, la clasificación del ign y las imágenes del vértice.</p>
 <p>Con esto tengo material suficiente para crear un [shortcode] en forma de archivo &ldquo;mapa_vertice.html&rdquo; que será guardado dentro de la carpeta &ldquo;/layouts/shortcodes&rdquo; (No la de dentro del tema sin en el directorio raiz y que deberemos crear si no existe)</p>
 <p>El archivo <a href="https://github.com/sherlockes/SherloScripts/blob/master/hugo/shortcodes/mapa_vertice.html">mapa_vertice.html</a> de momento no voy a explicarlo aquí con todos los detalles ya que puedes verlo en mi <a href="https://github.com/sherlockes/SherloScripts">repositorio</a> de GitHub. La finalidad es que incluyendo en el post del vértice</p>
-<pre><code>{{ mapa_ vertice }}
+<pre tabindex="0"><code>{{ mapa_ vertice }}
 </code></pre><p>ya se genere todo el contenido de forma automática atendiendo a los parámetros del post.</p>
 <h3 id="creación-del-archivo-gpx">Creación del archivo gpx</h3>
 <p>Para representar los vértices en el mapa necesito un archivo en el que estén incluidas las coordenadas y el nombre del mismo. El formato libre más extendido para esto es gpx de forma que el archivo deberá quedar algo como lo siguiente:</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;gpx creator=&quot;GPS Visualizer http://www.gpsvisualizer.com/&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.topografix.com/GPX/1/1&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd&quot;&gt;
 &lt;wpt lat=&quot;xxxx&quot; lon=&quot;xxxx&quot;&gt;
 &lt;name&gt;nombre&lt;/name&gt;
@@ -144,7 +144,7 @@ vertice_pan: &quot;VY8ieZb&quot;
 &lt;/gpx&gt;
 </code></pre><p>Cada nodo &ldquo;wpt&rdquo; (waypoint) representará un vértice y sóloes cuestión de incluir tantos como sean necesarios. Anteriormente ya tenía creado un archivo similar a este pero en el formatio propietariode Google kml y la experiencia me dice que, aunque no es complicada la realización si resulta tedioso tener que volver a información del v��rtice en un nuevo archivo.</p>
 <p>Por lo anterior he creado un script en bash que extrae la información de todos los archivos en la carpeta &ldquo;vértices&rdquo; y genera el archivo gpx.</p>
-<pre><code># Cabecera genérica de los archivos gpx
+<pre tabindex="0"><code># Cabecera genérica de los archivos gpx
 cabecera='&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;gpx creator=&quot;GPS Visualizer http://www.gpsvisualizer.com/&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.topografix.com/GPX/1/1&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd&quot;&gt;'
 
@@ -179,7 +179,7 @@ echo '&lt;/gpx&gt;' &gt;&gt; $vertices_gpx
 </code></pre><p>Este código se ejecutará cada vez que se realiza una publicación de la web de forma que si hemos añadido o modificado algún vértice el archivo &ldquo;<a href="/gpx/mis_vertices.gpx">mis_vertices.gpx</a>&rdquo; se actualizará automáticamente.</p>
 <h3 id="creación-de-una-imagen-para-el-vértice">Creación de una imagen para el vértice</h3>
 <p>Para este apartado también he intentado ir un paso más alla en cuanto a la imagen que representará al vértice en el mapa. En lugar de una imagen en mapa de bits voy a utilizar un formato vectorial svg reducido a su mínima expresión en sólo unas de líneas de código.</p>
-<pre><code>&lt;svg version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;25px&quot; height=&quot;35px&quot; xml:space=&quot;preserve&quot;&gt;'+    
+<pre tabindex="0"><code>&lt;svg version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;25px&quot; height=&quot;35px&quot; xml:space=&quot;preserve&quot;&gt;'+    
 '&lt;path fill=&quot;white&quot; stroke=&quot;black&quot; d=&quot;M 10 0 l 0 15 l -10 0 l 0 20 l 25 0 l 0 -20 l -10 0 l 0 -15 z&quot;/&gt;'+'&lt;/svg&gt;'
 </code></pre><p>La sencilla forma del vértice nos permite realizar esta &ldquo;virguería&rdquo; que representada en el mapa quedará tal que esto</p>
 <p><img src="/images/20200512_mis_vertices_01.jpg" alt="image-01"></p>
@@ -187,7 +187,7 @@ echo '&lt;/gpx&gt;' &gt;&gt; $vertices_gpx
 <h3 id="listado-de-los-vértices-conquistados">Listado de los vértices conquistados</h3>
 <p>La opción más sencilla es la realización de un post que actualice cada vez que se incluye un nuevo vértice con un enlace al mismo. Pero no me quiero quedar aquí, quiero algo que busque todos los artículos dentro de la carpeta &ldquo;vertices&rdquo; de la web y genere un listado con un enlace a cada uno de ellos. En Wordpress no me resultó tan complicado encontrarlo, en hugo he tenido unos días de dolor de cabeza hasta dar con una brillante solución haciendo uso de <a href="https://gohugo.io/content-management/shortcodes/">shortcodes</a> en <a href="https://gohugo.io/">Hugo</a></p>
 <p>He creado el archivo &ldquo;lista_vertices.html&rdquo; que contiene estas líneas de código.</p>
-<pre><code>{{ $vertices := (where .Site.RegularPages &quot;Section&quot; &quot;==&quot; &quot;vertices&quot;) }}
+<pre tabindex="0"><code>{{ $vertices := (where .Site.RegularPages &quot;Section&quot; &quot;==&quot; &quot;vertices&quot;) }}
 {{ range $vertices }}
 &lt;li&gt;&lt;a href=&quot;{{.Permalink}}&quot;&gt;{{.Params.vertice_nom}} ({{.Params.creation}})&lt;/a&gt;
 
@@ -221,14 +221,14 @@ echo '&lt;/gpx&gt;' &gt;&gt; $vertices_gpx
 <li>Si tiene un track en garmin connect o wikiloc, genera un enlace</li>
 </ul>
 <p>Así tenemos un listado con una línea por cada uno de los vértices que podremos incluir en cualquier artículo de la web con únicamente escribir</p>
-<pre><code>{{ lista_vertices }}
+<pre tabindex="0"><code>{{ lista_vertices }}
 </code></pre><h3 id="representación-en-un-mapa">Representación en un mapa</h3>
 <p>Para dibujar sobre un mapa todos los vértices alcanzados e incurstarlos en la web he utilizado <a href="https://openlayers.org">openlayers</a> por ser de código abierto y de ua complejidad de uso asequible para mi escaso nivel de Javascript.</p>
 <p>Para poder trabajar con la librería <a href="https://openlayers.org">openlayers</a> he introducido dos parámetros de configuración en el artículo correspondiente a cada vértice.</p>
-<pre><code>js: https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js
+<pre tabindex="0"><code>js: https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js
 css: https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css
 </code></pre><p>Con el fin de incluir de forma dinámica la clase y hora de estilos de la librería sin necesidad de tenerla incrustada en el servidor. Además, he modificado la plantilla &ldquo;layouts/default/baseof.html&rdquo; incluyendo el siguiente código en la parte final del &ldquo;head&rdquo;.</p>
-<pre><code>{{ if .Params.css }}
+<pre tabindex="0"><code>{{ if .Params.css }}
 	&lt;link rel=&quot;stylesheet&quot; href=&quot;{{ .Params.css }}&quot;&gt;
 	&lt;style&gt;
 	  .map {
@@ -240,7 +240,7 @@ css: https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.
 	{{ if .Params.js }} &lt;script src=&quot;{{ .Params.js }}&quot;&gt;&lt;/script&gt; {{ end }}
 </code></pre><p>De esta manera, cuando el motor de <a href="https://gohugo.io/">Hugo</a> vaya a publicar un artículo incrustará tambien la clase y hoja de estilos de openlayers sólo si estos están incluidos dentro de los parámetros &ldquo;js&rdquo; y &ldquo;css&rdquo; (con el consiguiente ahorro de ancho de banda). Adicionalmente ajustará el mapa a mostrar a todo el ancho de la web y al alto que se incluya como parámetro en cada artículo particular.</p>
 <p>Nuevamente haré uso de los <a href="https://gohugo.io/content-management/shortcodes/">shortcodes</a> de <a href="https://gohugo.io/">Hugo</a> para crear el archivo <a href="https://github.com/sherlockes/SherloScripts/blob/master/hugo/shortcodes/mapa_vertice.html">mapa_vertice.html</a> con lo que la incusión de un mapa con la información del vértice geodésico en un artículo se realizará con la siguiente línea.</p>
-<pre><code>{{ mapa_vertice }}
+<pre tabindex="0"><code>{{ mapa_vertice }}
 </code></pre><p>Puedes encontrar todo el código en mi <a href="https://github.com/sherlockes/SherloScripts">repositorio</a> de GitHub.</p>
 <h3 id="almacenamiento-de-las-imágenes">Almacenamiento de las imágenes</h3>
 <p>Este punto también ha resultado un profundo dolor de cabeza. Hasta su cierre tenía publicadas todas las imágenes y panorámicas en Panoramio. Las sigo teniendo en Google Photos pero no he sido capaz de incrustarlas en el blog desde aquí por lo que me he visto obligado a buscar un nuevo alojamiento para todas estas imágenes.</p>

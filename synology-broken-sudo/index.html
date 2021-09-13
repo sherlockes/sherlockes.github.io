@@ -86,7 +86,7 @@
 			<p>Una simple modificación del archivo &ldquo;sudoers&rdquo; en mi Synology Ds920+ se podía haber convertido en una completa reinstalación del sistema operativo de no encontrar esta simple solución.</p>
 <p>Para apagar el NAS de forma remota desde la terminal mediante un script me he visto en la necesidad de modificar el archivo &ldquo;/etc/sudoers&rdquo; mediante nano y un acceso ssh al Ds920+. Pues bien, lo que en pantalla parecía un ajuste de línea ha resultado ser un salto de línea que ha dado al traste con la configuración y funcionamiento de &ldquo;sudo&rdquo;.</p>
 <p>De esta forma al usar el comando &ldquo;sudo&rdquo; aparece el siguiente error.</p>
-<pre><code>&gt;&gt;&gt; /etc/sudoers: syntax error near line 22 &lt;&lt;&lt;
+<pre tabindex="0"><code>&gt;&gt;&gt; /etc/sudoers: syntax error near line 22 &lt;&lt;&lt;
 &gt;&gt;&gt; /etc/sudoers: syntax error near line 23 &lt;&lt;&lt;
 sudo: parse error in /etc/sudoers near line 22
 sudo: no valid sudoers sources found, quitting

@@ -89,7 +89,7 @@
 <p>Accedemos a la consola de MySql con el siguiente comando tras el cual se nos solicitará la contraseña correspondiente al usuario &ldquo;root&rdquo;</p>
 <p><code>sudo mysql -u root -p</code></p>
 <p>Ya estamos listos para crear la base de datos, el usuario que la manejará y asignación al segundo todos los privilegios sobre la primera.</p>
-<pre><code>CREATE DATABASE dbwordpress;
+<pre tabindex="0"><code>CREATE DATABASE dbwordpress;
 CREATE USER wpuser@localhost IDENTIFIED BY 'wpP455w0rd';
 GRANT ALL PRIVILEGES ON dbwordpress.* TO wpuser@localhost;
 FLUSH PRIVILEGES;

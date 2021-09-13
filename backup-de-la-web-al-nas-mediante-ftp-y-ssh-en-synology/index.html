@@ -86,7 +86,7 @@
 			<p>Esta vez y como casi siempre el objetivo es sencillo, crear una copia de seguridad del contenido de una página web al <a href="https://es.wikipedia.org/wiki/Almacenamiento_conectado_en_red">Nas</a> que tengo en casa, de una forma automática y periódica.</p>
 <p>Después de valorar varias alternativas, la que me ha parecido más apropiada es mediante una conexión <a href="https://es.wikipedia.org/wiki/File_Transfer_Protocol">ftp</a>. Puesto que esta web trabaja bajo WordPress resultará suficiente la copia de la carpeta &ldquo;wp-content&rdquo; desde el servidor del hosting a nuestro Nas. Otro día veremos como gestionar la copia de seguridad de la base de datos de WordPress.</p>
 <p>En primer lugar crearemos un archivo de texto del tipo &ldquo;backup.sh&rdquo; en un directorio del nas al que nuestro usuario tenga acceso e introduciremos el siguiente código</p>
-<pre><code>wget -m ftp://usuario:pass@tusitio.es/public_html/blog/wp-content -P /ruta
+<pre tabindex="0"><code>wget -m ftp://usuario:pass@tusitio.es/public_html/blog/wp-content -P /ruta
 tar -zcvf /ruta/$(date +%Y-%m-%d)_bkp_tusitio.tar.gz /ruta/tusitio.es
 rm -r /ruta/tusitio.es
 </code></pre><p>La primera línea copia mediante una conexión ftp la carpeta &ldquo;wp-content&rdquo; desde tusitio.es a la ruta que le especifiques de tu nas. La segunda comprime la carpeta anterior a un archivo &ldquo;fecha_bkp_tusitio.tar.gz&rdquo; y la tercera elimina la carpeta descargada para solo quedarnos con el archivo comprimido.</p>

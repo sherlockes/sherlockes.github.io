@@ -144,14 +144,14 @@
 <p>Importante no realizar un &ldquo;apt upgrade&rdquo; de la distribución ya que, a día de hoy (20210517), presenta un bug con el aranque desde usb que hace que se cuelgue el sistema.</p>
 </blockquote>
 <p>Con esto ya sólo resta instalar una utilidades, docker y el supervisor de home assistant mediante las siguientes líneas de código.</p>
-<pre><code>sudo -i
+<pre tabindex="0"><code>sudo -i
 apt-get install -y software-properties-common apparmor-utils apt-transport-https ca-certificates curl dbus jq network-manager
 systemctl disable ModemManager
 systemctl stop ModemManager
 curl -fsSL get.docker.com | sh
 curl -sL &quot;https://raw.githubusercontent.com/Kanga-Who/home-assistant/master/supervised-installer.sh&quot; | bash -s -- -m raspberrypi4-64
 </code></pre><p>Con la instalación realizada, ya estamos en condiciones de acceder a la IP que se nos muestra al terminar el script a través del puerto 8123.</p>
-<pre><code>[info] 
+<pre tabindex="0"><code>[info] 
 [info] Home Assistant supervised is now installed
 [info] First setup will take some time, when it's ready you can reach it here:
 [info] http://192.168.1.104:8123
@@ -168,7 +168,7 @@ curl -sL &quot;https://raw.githubusercontent.com/Kanga-Who/home-assistant/master
 <li>Reiniciar mediante <code>sudo reboot</code></li>
 <li>Desde la conexión ssh ejecutar el siguiente código</li>
 </ol>
-<pre><code>sudo -i
+<pre tabindex="0"><code>sudo -i
 apt-get install -y software-properties-common apparmor-utils apt-transport-https ca-certificates curl dbus jq network-manager
 systemctl disable ModemManager
 systemctl stop ModemManager

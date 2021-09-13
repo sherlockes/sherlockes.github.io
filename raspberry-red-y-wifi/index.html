@@ -85,7 +85,7 @@
 		</figure><div class="content post__content clearfix">
 			<h3 id="configurar-red-y-wifi">Configurar red y wifi</h3>
 <p>Es interesante que la Raspberry arranque siempre con la misma dirección ip de red si queremos con ella automatizar algún servicio.  Para ello, en primer lugar hay que editar el archivo &ldquo;/etc/dhcpcd.conf&rdquo; mediante la instrucción <!-- raw HTML omitted -->sudo nano /etc/dhcpcd.conf<!-- raw HTML omitted --> e introduciremos al final las siguientes líneas (dependiendo de la configuración de la red y del router.</p>
-<pre><code>interface eth0
+<pre tabindex="0"><code>interface eth0
 
 static ip_address=192.168.1.202/24
 static routers=192.168.1.1
@@ -98,14 +98,14 @@ static domain_name_servers=192.168.1.1
 <li>Comprobamos que ha funcionado =&gt; ip a</li>
 </ul>
 <p>Ahora vamos a intentar ir un paso más allá y configurar la conexión a la red a través del módulo integrado wifi que trae la Raspberry 3.  Para configurar la red inalámbrica hay que editar el archivo &ldquo;/etc/wpa_supplicant/wpa_supplicant.conf&rdquo;</p>
-<pre><code>sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+<pre tabindex="0"><code>sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 </code></pre><p>y añadimos las siguientes líneas deacuerdo a la red wifi que nos queremos conectar.</p>
-<pre><code>network={
+<pre tabindex="0"><code>network={
     ssid=&quot;elnombredetured&quot;
     psk=&quot;elpassworddetured&quot;
 }
 </code></pre><p>Ahora volvemos a editar el archivo &ldquo;etc/dhcpcd.conf&rdquo; y añadimos al final las siguientes líneas</p>
-<pre><code>interface wlan0
+<pre tabindex="0"><code>interface wlan0
 
 static ip_address=192.168.0.2/24
 static routers=192.168.0.1

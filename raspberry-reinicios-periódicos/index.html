@@ -85,9 +85,9 @@
 		</figure><div class="content post__content clearfix">
 			<h3 id="reiniciar-la-raspberry-a-diario">Reiniciar la Raspberry a diario</h3>
 <p>Para que la Raspberry se reinicie al menos una vez al día por si alguno de los servicios se cuelga y no tenemos acceso a ella o no nos damos cuenta del problema he implementado un reinicio diario a las 4:00 AM mediante una tarea programada usando el cron del usuario root</p>
-<pre><code>sudo crontab -e
+<pre tabindex="0"><code>sudo crontab -e
 </code></pre><p>nos abre un archivo al que le añadiremos la siguiente línea</p>
-<pre><code>00 04 * * 0 /sbin/reboot
+<pre tabindex="0"><code>00 04 * * 0 /sbin/reboot
 </code></pre>
 		</div>
 		<footer class="post__footer">

@@ -87,12 +87,12 @@
 <p><img src="/images/20130515_error_php_memoria.jpg" alt="01"></p>
 <p>Parece que hay un problema de memoria en el servidor. Lo primero que he pensado es que mi <a href="http://www.000webhost.com/">host gratuito</a> había puesto limitaciones. Tras una breve incursión por la red he encontrado la solución, rápida y sencilla.</p>
 <p>En el archivo en el archivo &ldquo;wp-config.php&rdquo; hay que añadir las siguientes líneas</p>
-<pre><code>/** Ampliación de memoria*/
+<pre tabindex="0"><code>/** Ampliación de memoria*/
 define('WP_MEMORY_LIMIT', '96M');
 </code></pre><p>Y a funcionar de nuevo!!!!!</p>
 <p><strong>Actualización 20/8/2015</strong></p>
 <p>Algo más de dos años después y no tengo muy claro porque, vuelve a aparecer el mismo problema en la web. Esta vez para solucionarlo he optado por una solución alternativa y que también he encontrado por la web. Se trata de modificar el archivo &ldquo;.htaccess&rdquo; que el propio wordpress genera. De esta forma he añadido al principio del mismo las siguientes tres líneas.</p>
-<pre><code># Do not remove this line, otherwise mod_rewrite rules will stop working
+<pre tabindex="0"><code># Do not remove this line, otherwise mod_rewrite rules will stop working
 RewriteBase /
 php_value memory_limit 96M
 </code></pre><p>No todos los servidores aceptan esta modificación así que habrá que consultarlo primero y además hay que tener en cuenta que el archivo a modificar no es el que se encuentra en el directorio raíz de tu alojamiento sino que es el que se encuentra en el directorio donde tienes instalado WordPress.</p>

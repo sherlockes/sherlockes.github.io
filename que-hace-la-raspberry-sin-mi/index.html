@@ -113,44 +113,44 @@
 <h3 id="termostato">Termostato</h3>
 <p>Hace ya un tiempo que cambié el comercial Netatmo que tan buen resultado me dio durante más de tres años por un <a href="https://sherblog.pro/termostato-raspberry/">termostato en la raspberry</a> con el que estoy igual de contento pero mucho más orgulloso. Para funcionar necesita tres entradas en el cron.</p>
 <h4 id="initsh">init.sh</h4>
-<pre><code>@reboot ~/SherloScripts/python/termoflask/init.sh
+<pre tabindex="0"><code>@reboot ~/SherloScripts/python/termoflask/init.sh
 </code></pre><p>Este script se ejecuta cada vez que arranca la raspberry y tiene la única función de arrancar el servidor web que flask lleva integrado para poder visualizar la interface del termostato.</p>
 <h4 id="mqttpy">mqtt.py</h4>
-<pre><code>@reboot sleep 15 &amp;&amp; ~/SherloScripts/python/termoflask/mqtt.py
+<pre tabindex="0"><code>@reboot sleep 15 &amp;&amp; ~/SherloScripts/python/termoflask/mqtt.py
 </code></pre><p>Además de la temperatura en la habitación en la que está ubicada la raspberry, se capturan también los datos de otra habitación mediante mqtt y el broker <a href="https://mosquitto.org">mosquitto</a> (instalado en la raspberry) gracias a una segunda sonda de Tª y un pequeño nodemcu.</p>
 <p>El servidor debe arrancarse cada vez que se reinicia la raspberry y tiene la peculiaridad de tener que esperar unos segundos (15) para no dar falo con la conexión de red.</p>
 <h4 id="termopy">termo.py</h4>
-<pre><code>*/5 * * * * ~/SherloScripts/python/termoflask/termo.py
+<pre tabindex="0"><code>*/5 * * * * ~/SherloScripts/python/termoflask/termo.py
 </code></pre><p>Este es el corazón del termostato, cada 5 minutos se ejecuta el script para calcular consignas y estado de la calefacción en función de las temperaturas y de lo establecido en el panel de control.</p>
 <h3 id="teledown">Teledown</h3>
 <p>La raspberry es tambien la encargada de [descargar arcivos de telegram] cuando no estoy delante del ordenador y los envío desde el teléfono gracias a <a href="https://github.com/alfem/telegram-download-daemon">telegram-download-daemon</a> para lo que necesito la ejecución de unos scripts.</p>
 <h4 id="teledownsh">teledown.sh</h4>
-<pre><code>@reboot sleep 15 &amp;&amp; ~/SherloScripts/bash/teledown.sh
+<pre tabindex="0"><code>@reboot sleep 15 &amp;&amp; ~/SherloScripts/bash/teledown.sh
 </code></pre><p>Es el corazon de las descargas y encargado de vigilar el canal para descargar todos los archivos que por ahí pasen. Se ejecuta cada vez que arranca la raspberry con un retraso de 15 sg para evitar evitar los problemas con el establecimiento de las conexiones de red.</p>
 <h4 id="teledown_movesh">teledown_move.sh</h4>
-<pre><code>@hourly ~/SherloScripts/bash/teledown_move.sh
+<pre tabindex="0"><code>@hourly ~/SherloScripts/bash/teledown_move.sh
 </code></pre><p>La raspberry está encendida todo el día, pero el NAS no, este script se ejecuta cada hora para comprobar si el NAS está encendido y mover a este los archivos descargados por la raspberry.</p>
 <h3 id="blog">Blog</h3>
 <p>Esta placa de menos de 40€ también es la encargada de, a partir del contenido alojado en una carpeta de mi cuenta en la nube de Google Drive, publicar en GitHub el contenido estático de este Blog.</p>
 <h4 id="publishsh">publish.sh</h4>
-<pre><code>@hourly ~/SherloScripts/bash/publish.sh
+<pre tabindex="0"><code>@hourly ~/SherloScripts/bash/publish.sh
 </code></pre><p>Cada hora, busca nuevo contenido en Google Drive para publicar en el Blog o maquetas como post. Genera el ontenido estático en Hugo y lo sincroniza con el repositorio de Github.</p>
 <h4 id="hugosh">hugo.sh</h4>
-<pre><code>@daily ~/SherloScripts/bash/hugo.sh
+<pre tabindex="0"><code>@daily ~/SherloScripts/bash/hugo.sh
 </code></pre><p>Cada día, comprueba e instala la posible actualización de Hugo para instalar en la propia Raspberry</p>
 <h3 id="sherloscripts_pushsh">sherloscripts_push.sh</h3>
-<pre><code>@daily ~/SherloScripts/bash/sherloscripts_push.sh
+<pre tabindex="0"><code>@daily ~/SherloScripts/bash/sherloscripts_push.sh
 </code></pre><p>Gracias a <a href="https://www.insynchq.com">Insync</a> y la integración de Google Drive con Android, me resulta mucho más sencllo y practico trabajar sobre una sincronización con la nube que sobre un repositorio. Este Script mueve los cambios todos los días a las 0:00 de la nube de Google al repositorio de GitHub.</p>
 <p>Además comprueba también el estado de varias nubes donde tengo alojado parte de mi colección multimedia y realiza una sincronización entre ellas.</p>
 <h3 id="radaressh">radares.sh</h3>
-<pre><code>@weekly ~/SherloScripts/bash/radares.sh
+<pre tabindex="0"><code>@weekly ~/SherloScripts/bash/radares.sh
 </code></pre><p>Una vez a la semana, este script descarga la base de radares de tráfico de <a href="http://www.todopoi.es">www.todopoi.es</a>, quita todo lo innecesario y guarda el resto en una carpeta de Google Drive desde donde Tasker para Android hará el resto para tener al día la detección de radares cundo voy en el coche.</p>
 <h3 id="gphotos-syncsh">gphotos-sync.sh</h3>
-<pre><code>30 0 * * * ~/SherloScripts/bash/gphotos-sync.sh
+<pre tabindex="0"><code>30 0 * * * ~/SherloScripts/bash/gphotos-sync.sh
 </code></pre><p>Hubo un tiempo mejor en el que el Ds216+II de Synology con sus utilidades propias era capaz de sincronizar con una carpeta en el mismo el contenido de Google Photos y esa misma carpeta sincronizarla con Amazón Drive para no tener &ldquo;todas manzanas en la misma cesta&rdquo;.</p>
 <p>Ahora, ambos han complicado las cosas y hasta ahora sólo he sido capaz de que todos los días a las 0:30 se realice una sincronización del contenido de Google Photos mediante Gphotos-Sync. en una carpeta del NAS gracias a este Script.</p>
 <h3 id="tiempopy">tiempo.py</h3>
-<pre><code>0 8,14 * * * ~/SherloScripts/python/tiempo.py
+<pre tabindex="0"><code>0 8,14 * * * ~/SherloScripts/python/tiempo.py
 </code></pre><p>Todos los días a las 8:00 y a las 14:00, este script recoge la información del tiempo de la Aemet y me lo envía al teléfono mediante un mensaje de Telegram.</p>
 		</div>
 		<footer class="post__footer">

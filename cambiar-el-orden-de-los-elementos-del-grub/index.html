@@ -85,11 +85,11 @@
 		</figure><div class="content post__content clearfix">
 			<p>En mi Pc de sobremesa coexisten Linux Mint y Windows 7, en el GRUB aparecen por defecto en primer lugar las opciones de Linux pero necesito que la opción en la que se produzca el arranque si el usuario no toca nada sea Windows, así lo he conseguido.</p>
 <p>Lo que puede parecer un complejo problema se resuelve con tres líneas de terminal.</p>
-<pre><code>cd /etc/grub.d
+<pre tabindex="0"><code>cd /etc/grub.d
 sudo mv 30_os-prober 09_os-prober
 sudo update-grub
 </code></pre><p>La explicación es bastante simple. En el directorio &ldquo;/etc/grub.d&rdquo; están ubicados una serie de archivos que corresponden a cada uno de los tipos de arranque que puede tratar el grub. Algo parecido a lo siguiente.</p>
-<pre><code>sherlockes@imedia:/etc/grub.d$ ls -l
+<pre tabindex="0"><code>sherlockes@imedia:/etc/grub.d$ ls -l
 total 128
 -rwxr-xr-x 1 root root 10627 abr 15 13:31 00_header
 -rwxr-xr-x 1 root root  6258 abr 15 13:31 05_debian_theme
@@ -103,7 +103,7 @@ total 128
 -rw-r--r-- 1 root root   483 abr 15 13:31 README
 
 </code></pre><p>La numeración de cada uno de los archivos corresponde a la posición en el menú de arranque. El archivo que hace referencia al arranque en Windows es el &ldquo;30_os-prober&rdquo;, como el arranque en Linux corresponde al &ldquo;10&rdquo;, solo hace falta cambiar el &ldquo;30&rdquo; por uno anterior al &ldquo;10&rdquo; y el listado del directorio quedará parecido a lo siguiente.</p>
-<pre><code>sherlockes@imedia:/etc/grub.d$ ls -l
+<pre tabindex="0"><code>sherlockes@imedia:/etc/grub.d$ ls -l
 total 128
 -rwxr-xr-x 1 root root 10627 abr 15 13:31 00_header
 -rwxr-xr-x 1 root root  6258 abr 15 13:31 05_debian_theme

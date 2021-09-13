@@ -96,7 +96,7 @@ Recientemente he probado <a href="https://moodle.org/?lang=es">Moodle</a> como p
 <li>En linux está ubicado en &ldquo;\etc\hosts&rdquo;</li>
 </ul>
 <p>En este archivo deberemos añadir las siguientes líneas</p>
-<pre><code># MoodleBox connection via Ethernet
+<pre tabindex="0"><code># MoodleBox connection via Ethernet
 # MoodleBox must get an ip address via dhcp
 192.168.1.201 moodlebox.home  moodlebox
 </code></pre><p>donde &ldquo;192.168.1.201&rdquo; es la ip que el router le ha asignado a la raspberry.</p>
@@ -106,7 +106,7 @@ Recientemente he probado <a href="https://moodle.org/?lang=es">Moodle</a> como p
 <p>Con este cambio realizado ya podremos aceder a la dirección &ldquo;<a href="http://moodlebox.home/%22">http://moodlebox.home/&quot;</a> desde nuestro navegador para acceder al portal de Moodle.</p>
 <h3 id="conexión-mediante-ssh">Conexión mediante ssh</h3>
 <p>Por defecto, la ip de la Raspberry no es estática, lo cual supone que, dependiendo de la asignación del router, en un arranque posterior puede adquirir una ip distinta. Para evitarlo tendremos que conectarnos via ssh a la Raspberry (De la que ahora sabemos la ip tal y como hemos visto en el apartado anterior) y modificar el archivo “/etc/dhcpcd.conf” modificando las siguientes líneas:</p>
-<pre><code># Example static IP configuration:
+<pre tabindex="0"><code># Example static IP configuration:
 interface eth0
 static ip_address=192.168.1.201/24
 #static ip6_address=fd51:42f8:caae:d92e::ff/64

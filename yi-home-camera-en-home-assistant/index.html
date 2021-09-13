@@ -111,7 +111,7 @@
 <h4 id="instalación-de-mosquitto">Instalación de mosquitto</h4>
 <p>Para el correcto funcionamiento de la integración debemos disponer en nuestra red de un broker de mqtt que gestione las comunicaciones. Lo más sencillo es instalar mosquitto en la propia Raspberry siguiendo este post de <a href="https://domology.es/instalacion-configuracion-mqtt/">domology</a>.</p>
 <p>En el post de configuración de mosquitto se hace referencia a la necesidad de que <a href="https://www.home-assistant.io">Home Assistant</a> espere a que mosquitto esté cargado para ejecutarse. En mi caso, la <a href="https://sherblog.pro/instalaci%C3%B3n-de-home-assistant-en-raspberry/">instalacion de Home Assistant</a> corre dentro de un contenedor por lo que he editado el archivo &ldquo;/etc/systemd/system/hassio-supervisor.service&rdquo; modificando la siguiente línea:</p>
-<pre><code>After=docker.service dbus.socket network.target mosquitto.service
+<pre tabindex="0"><code>After=docker.service dbus.socket network.target mosquitto.service
 </code></pre><h4 id="instalación-de-la-integración-personalizada">Instalación de la integración personalizada</h4>
 <ol>
 <li>Copiar en &ldquo;Custom components&rdquo; la carpeta descargada de <a href="https://github.com/roleoroleo/yi-hack_ha_integration">Yi-Hack HA integration</a></li>

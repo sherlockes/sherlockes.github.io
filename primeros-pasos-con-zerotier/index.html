@@ -145,7 +145,7 @@
 <p>De aquí necesitamos el identificador de red, que en mi caso será 78898a1265hfg34b, para poder instalar el cliente Zerotier en cada uno de los dispositivos.</p>
 <h3 id="zetorier-one-en-la-raspberry">Zetorier One en la Raspberry</h3>
 <p>Bastan dos líneas de código, una de instalación del cliente y otra para unir el cliente a la red que hemos creado anteriormente.</p>
-<pre><code>curl -s https://install.zerotier.com/ | sudo bash
+<pre tabindex="0"><code>curl -s https://install.zerotier.com/ | sudo bash
 sudo zerotier-cli join 78898a1265hfg34b
 </code></pre><p>Ahora accederemos desde la <a href="https://my.zerotier.com">web</a> a la red que hemos creado y autorizaremos a la Raspberry a acceder a la misma habilitando el primer cuadro tal y como se muestra en la imagen.</p>
 <p><img src="/images/20190314_probando_zerotier_04.jpg" alt="imagen"></p>

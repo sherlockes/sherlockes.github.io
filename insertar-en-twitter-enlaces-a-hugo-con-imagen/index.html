@@ -90,9 +90,9 @@
 <p>Es decir, <a href="https://twitter.com">Twitter</a> necesita unos metadatos que <a href="https://gohugo.io/">Hugo</a> no está enviando.</p>
 <h3 id="la-solución-plan-a">La solución (Plan A)</h3>
 <p>Con la actualización del tema <a href="https://themes.gohugo.io/mainroad/">Mainroad</a> que uso en la web ha aparecido una nueva forma de generar las tarjetas de <a href="https://twitter.com">Twitter</a> gracias a las <a href="https://gohugo.io/templates/internal/#twitter-cards">Internal Templates</a> de <a href="https://gohugo.io/">Hugo</a>. Esto se gernera gracias a una línea en el archivo &ldquo;layouts/partials/default/baseof.html&rdquo;</p>
-<pre><code>{{ if .Site.Params.twitter_cards }}{{ template &quot;_internal/twitter_cards.html&quot; . }}{{ end }}
+<pre tabindex="0"><code>{{ if .Site.Params.twitter_cards }}{{ template &quot;_internal/twitter_cards.html&quot; . }}{{ end }}
 </code></pre><p>Con esto ya queda generada la tarjeta pero me he encontrado con que no se incluye la imagen que tengo registrada como cabecera del post (thumbnail) para lo cual me veo obligado a incluir un nuevo campo de parámetros con la imagen a mostrar.</p>
-<pre><code>images: [&quot;portada_del_post.jpg&quot;]
+<pre tabindex="0"><code>images: [&quot;portada_del_post.jpg&quot;]
 </code></pre><p>Esto presenta dos problemas:</p>
 <ul>
 <li>Hay que incluir una nueva línea en el archivo *.md de todos los post con la imagen de portada</li>
@@ -102,11 +102,11 @@
 <p>El primer problema no he sido capaz de salvarlo por lo que voy a buscar una solución mas limpia que no me obligue a modificar todos los artículos con la inclusión de un nuevo parámetro.</p>
 <h3 id="la-otra-solución-plan-b">La otra solución (Plan B)</h3>
 <p>En todos los encabezados de los artículos tengo, entre otros, insertados los siguiente campos</p>
-<pre><code>title: &quot;Enlaces con imagen en Twitter a Hugo&quot;
+<pre tabindex="0"><code>title: &quot;Enlaces con imagen en Twitter a Hugo&quot;
 description: &quot;Te interesa leer si los links que compartes o comparten en Twitter de tu web en Hugo Salen sin imagen&quot;
 thumbnail: &quot;images/20180712_wordpress_hugo.jpg&quot;
 </code></pre><p>Pues bien, el reto pasa por reaprovechar estos campos para generar los metadatos que <a href="https://twitter.com">Twitter</a> está buscando para generar su tarjeta de enlace.  Hay varias opciones, pero la más práctica que he encontrado es hacer una copia del archivo &ldquo;baseof.html&rdquo; dentro de la carpeta &ldquo;layouts/partials/default/&rdquo; para que quede duplicado fuera de la carpeta del tema e incluir en el &ldquo;head&rdquo; a continuación de los metas de <a href="https://gohugo.io/">Hugo</a> estas líneas:</p>
-<pre><code>&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;/&gt;
+<pre tabindex="0"><code>&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;/&gt;
 {{ if (.Params.thumbnail) }}&lt;meta name=&quot;twitter:image&quot; content=&quot;http://www.sherblog.pro{{ .Params.thumbnail }}&quot; /&gt;{{else}}&lt;meta name=&quot;twitter:image&quot; content=&quot;http://www.sherblog.pro/images/logo.png&quot; /&gt;{{end}}
 &lt;meta name=&quot;twitter:title&quot; content=&quot;{{ .Params.title }}&quot;/&gt;
 &lt;meta name=&quot;twitter:description&quot; content=&quot;{{ .Params.description }}&quot;/&gt;

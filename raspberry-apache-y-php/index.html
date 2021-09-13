@@ -84,9 +84,9 @@
 			<img src="/images/raspberry_logo.png" alt="Raspberry apache y php">
 		</figure><div class="content post__content clearfix">
 			<h3 id="instalando-php-y-apache">Instalando PhP y Apache</h3>
-<pre><code>sudo apt-get install php7.0 libapache2-mod-php7.0 php7.0-mysql -y
+<pre tabindex="0"><code>sudo apt-get install php7.0 libapache2-mod-php7.0 php7.0-mysql -y
 </code></pre><p>Para comprobar la correcta instalación de php borraremos el archivo &ldquo;index.html&rdquo;, crearemos un archivo &ldquo;index.php&rdquo; en el que escribiremos un mensaje &ldquo;hola mundo&rdquo; y reiniciaremos el servidor.</p>
-<pre><code>cd /var/www/html
+<pre tabindex="0"><code>cd /var/www/html
 sudo rm index.html
 sudo nano index.php
 
@@ -97,15 +97,15 @@ sudo nano index.php
 
 sudo service apache2 restart
 </code></pre><p>Ahora al acceder desde el navegador a la ip de nuestra raspberry se debería mostrar el mensaje &ldquo;hola mundo&rdquo;.  Antes de seguir adelante, modificaremos el archivo de configuración de php para que nos permita subir al servidor archivos de hasta 8Mb.</p>
-<pre><code>sudo nano /etc/php/7.0/apache2/php.ini
+<pre tabindex="0"><code>sudo nano /etc/php/7.0/apache2/php.ini
 </code></pre><p>Buscamos el tamaño máximo de subida de los archivos</p>
-<pre><code>Pulsamos control-w
+<pre tabindex="0"><code>Pulsamos control-w
 upload_max_filesize
 Cambiamos 2M por algo más adecuado
 
 upload_max_filesize = 8M
 </code></pre><p>Guardamos los cambios, salimos de nano y reiniciamos de nuevo apache</p>
-<pre><code>sudo service apache2 restart
+<pre tabindex="0"><code>sudo service apache2 restart
 </code></pre>
 		</div>
 		<footer class="post__footer">

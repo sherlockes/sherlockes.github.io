@@ -98,7 +98,7 @@
 <h3 id="micropython-y-thonny">Micropython y Thonny</h3>
 <p>Si hubiera llegado aquí desde el mundo de arduino quizas ahora estaría empleando su entorno de desarrollo para programar el nodemcu en c++. Como vengo de la Raspberry voy a introducirme en el mundo de <a href="https://micropython.org">micropython</a> mediante <a href="https://thonny.org">Thonny</a>.</p>
 <p>Para la instalación de <a href="https://thonny.org">Thonny</a> nos bastará con</p>
-<pre><code>sudo apt install python3 python3-pip python3-tk
+<pre tabindex="0"><code>sudo apt install python3 python3-pip python3-tk
 sudo pip3 install thonny
 </code></pre><p>Para arrancar el entorno de programación <a href="https://thonny.org">Thonny</a> abriremos una consola de comandos y ejecutaremos <code>thonny</code></p>
 <p><img src="/images/20210304_nodemcu_micropython_02.jpg" alt="image-02"></p>
@@ -110,7 +110,7 @@ sudo pip3 install thonny
 <li>Borrar la memoria <code>esptool.py --port /dev/ttyUSB0 erase_flash</code></li>
 <li>Cargar el firmware en la placa mediante el siguiente comando</li>
 </ul>
-<pre><code>esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-20200911-v1.13.bin
+<pre tabindex="0"><code>esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-20200911-v1.13.bin
 </code></pre><p>Dentro del entorno de <a href="https://thonny.org">Thonny</a>, en el menú &ldquo;Herramientas-Opciones&rdquo; y la pestaña &ldquo;Intérprete&rdquo; nos ofrece la opción de instalar o actualizar el firmware. Para hacerlo sólo hay que selecciónar en dispositivo y el puerto, este último en caso de que no sea capaz de detectarlo automáticamente.</p>
 <p><img src="/images/20210304_nodemcu_micropython_03.jpg" alt="image-03"></p>
 <blockquote>
@@ -143,7 +143,7 @@ sudo pip3 install thonny
 <li>Volver a captar, enviar y esperar</li>
 </ul>
 <p>Y así de forma indefinida añadiendo una capacidad de reconexión a la red wifi o servidor MQTT cuando alguno de los dos falle.</p>
-<pre><code>import machine
+<pre tabindex="0"><code>import machine
 from machine import Pin
 from time import sleep
 import dht 

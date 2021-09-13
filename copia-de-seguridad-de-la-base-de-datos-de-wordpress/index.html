@@ -88,7 +88,7 @@
 <p><img src="/images/20170228_db_backup_01.jpg" alt="image"></p>
 <p>Seleccionamos la frecuencia del respaldo y las tablas adicionales a respaldar, introducimos la dirección de correo a la que vamos a enviar el respaldo y pulsamos el botón &ldquo;Respaldo Programado&rdquo; para guardar la configuración.</p>
 <p>A continuación vamos a crear un programa dentro de Google Apps Script que nos guardará el archivo adjunto en una carpeta de nuestra unidad de Google Drive y borrará el correo electrónico.</p>
-<pre><code>// Declaración de variables
+<pre tabindex="0"><code>// Declaración de variables
 var ahora = new Date();
 var correos = GmailApp.search(&quot;subject:(*SherBlog Copia de seguridad de la base de datos*) has:attachment&quot;);
 var carpeta = DriveApp.searchFolders(&quot;title contains 'sherblog_db_backups'&quot;).next();

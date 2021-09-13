@@ -88,9 +88,9 @@
 <p><img src="/images/20210412_esp01_wifi_relay_02.jpg" alt="image-02"></p>
 <h3 id="capacidad-del-esp-01">Capacidad del ESP-01</h3>
 <p>Conectamos el ESP-01 al programador y lo ponemos en el puerto usb con el botón de reset pulsado, sin soltarlo, ejecutamos el siguiente comando.</p>
-<pre><code>esptool.py --port /dev/ttyUSB0 --baud 460800
+<pre tabindex="0"><code>esptool.py --port /dev/ttyUSB0 --baud 460800
 </code></pre><p>para ver la siguente respuesta en la consola</p>
-<pre><code>esptool.py v3.0
+<pre tabindex="0"><code>esptool.py v3.0
 Serial port /dev/ttyUSB0
 Connecting....
 Detecting chip type... ESP8266
@@ -113,9 +113,9 @@ Hard resetting via RTS pin...
 </blockquote>
 <h3 id="borrado-de-memoria-e-instalación-de-micropython">Borrado de memoria e instalación de Micropython</h3>
 <p>Nuevamente la misma jugada, sacamos el conjunto de programador y ESP-01 del usb del pc y lo volvemos a meter con el botón de reseteo del programador pulsado. Sin soltarlo, ejecutamos el siguiente comando.</p>
-<pre><code>esptool.py --port /dev/ttyUSB0 --baud 460800 erase_flash
+<pre tabindex="0"><code>esptool.py --port /dev/ttyUSB0 --baud 460800 erase_flash
 </code></pre><p>Para obtener la siguiente respuesta en la consola.</p>
-<pre><code>esptool.py v3.0
+<pre tabindex="0"><code>esptool.py v3.0
 Serial port /dev/ttyUSB0
 Connecting....
 Detecting chip type... ESP8266
@@ -132,9 +132,9 @@ Erasing flash (this may take a while)...
 Chip erase completed successfully in 5.4s
 Hard resetting via RTS pin...
 </code></pre><p>Ya tenemos borrada la memoria del chip, ahora vamos a instalar el firmware de Micropyton que hemos descargado ejecutando el siguiente comando desde la carpea donde tenemos descargada la imagen. Si, esta vez tambien toca soltar el conjunto de programador y ESP-01 del usb del pc y volverlo a pinchar con el botón de reset pulsado, sin soltarlo ejecutar el siguiente comando.</p>
-<pre><code>esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-1m-20210202-v1.14.bin
+<pre tabindex="0"><code>esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-1m-20210202-v1.14.bin
 </code></pre><p>Si todo ha ido bien, se obtiene una respuesta como esta en la terminal.</p>
-<pre><code>esptool.py v3.0
+<pre tabindex="0"><code>esptool.py v3.0
 Serial port /dev/ttyUSB0
 Connecting....
 Detecting chip type... ESP8266
@@ -159,7 +159,7 @@ Hard resetting via RTS pin...
 </code></pre><h3 id="desarrollando-en-thonny">Desarrollando en Thonny</h3>
 <p>Sacamos nuevamente el conjunto de programador y ESP-01 del slot usb del ordenador y lo volvems a introducir para que se resetee el chip (esta vez no es necesario pulsar el botón del programador para entrar en modo programación) y abrimos Thonny. Ya tenemos listo en entorno de desarrollo.</p>
 <p><img src="/images/20210412_esp01_wifi_relay_01.jpg" alt="image-01"></p>
-<pre><code>import machine
+<pre tabindex="0"><code>import machine
 import time
 led = machine.Pin(1, machine.Pin.OUT)
 while True:
@@ -172,7 +172,7 @@ while True:
 </blockquote>
 <h3 id="fallos-de-conexión-en-thonny">Fallos de conexión en Thonny</h3>
 <p>Tras una ejecución del código o cuando se quiere reprogramar el microcontrolador resulta muy habitual encontrarse con el siguiente mensaje de error en la consola.</p>
-<pre><code>Device is busy or does not respond. Your options:
+<pre tabindex="0"><code>Device is busy or does not respond. Your options:
 
   - wait until it completes current work;
   - use Ctrl+C to interrupt current work;

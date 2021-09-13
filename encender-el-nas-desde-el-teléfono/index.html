@@ -101,7 +101,7 @@
 <li>Selecciona &ldquo;Finish&rdquo;</li>
 </ul>
 <p>Por su sencillez, uso Zerotier como túnel de comunicación para cuando deseo trabajar con ella desde fuera de casa. La instalación y configuración la la traté en un <a href="/primeros-pasos-con-zerotier/">Post</a> anterior. La instalación y configuración son sólo dos líneas, la primera para inatalar ZeroTier en la Raspberry y la segunda para añadir esta a la res privada que deberemos haber creado en <a href="https://my.zerotier.com/network">My ZeroTier</a>.</p>
-<pre><code>curl -s https://install.zerotier.com/ | sudo bash
+<pre tabindex="0"><code>curl -s https://install.zerotier.com/ | sudo bash
 sudo zerotier-cli join 78898a1265hfg34b
 </code></pre><p>Para lanzar el comando &ldquo;wakeonlan&rdquo; que despierte al NAS uso la aplicación <a href="https://packages.debian.org/stable/net/etherwake">Etherwake</a>, su instalación es tan sencilla como <code>sudo apt install etherwake</code></p>
 <h2 id="configuración-de-android">Configuración de Android</h2>

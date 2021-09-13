@@ -92,14 +92,14 @@
 <li>Creamos el directorio &ldquo;gphotos-sync&rdquo; y nos ubicamos en el</li>
 <li>Instalamos el paquete pip gphotos-sync</li>
 </ul>
-<pre><code>- sudo apt-get install python3-pip
+<pre tabindex="0"><code>- sudo apt-get install python3-pip
 - /usr/bin/python3 -m pip install --upgrade pip
 - pip3 install gphotos-sync
 </code></pre><p>Tras instalar gphotos-sync aparece una advertencia relativa a que el script se ha instalado en un directorio que no está definido como ruta por defecto para detectar nuevos comandos.</p>
-<pre><code>WARNING: The script gphotos-sync is installed in '/home/pi/.local/bin' which is not on PATH.
+<pre tabindex="0"><code>WARNING: The script gphotos-sync is installed in '/home/pi/.local/bin' which is not on PATH.
   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
 </code></pre><p>Para corregirlo sólo es necesario añadir la ruta al &ldquo;PATH&rdquo; mediante el siguiente comando.</p>
-<pre><code>export PATH=/home/pi/.local/bin:$PATH
+<pre tabindex="0"><code>export PATH=/home/pi/.local/bin:$PATH
 </code></pre><p>Con el paquete instalado, toca generar las credenciales Oauth2 desde <a href="https://console.cloud.google.com/cloud-resource-manager">Google Cloud Platform</a></p>
 <ul>
 <li>Creamos un nuevo proyecto y le ponemos un nombre (&ldquo;Create Project&rdquo;)</li>
@@ -115,7 +115,7 @@
 </ul>
 <p>Este proceso está descrito en <a href="https://docs.google.com/document/d/1ck1679H8ifmZ_4eVbDeD_-jezIcZ-j6MlaNaeQiz7y0/edit?usp=sharing">Gphotos-sync OAuth Creation</a></p>
 <p>LLegados a esta punto ya sólo resta ejecutar el comando en el entorno virtual para que todas las fotos sean descargadas al directorio de destino</p>
-<pre><code>gphotos-sync directorio_destino
+<pre tabindex="0"><code>gphotos-sync directorio_destino
 </code></pre><p>En mi caso, aunque el trabajo lo realiza la raspberry, las fotos quedan almacenadas en una carpeta del NAS que ha sido montada mediante sshfs y llave público/privada gracias a un <a href="https://github.com/sherlockes/SherloScripts/blob/master/bash/gphotos-sync.sh">script</a> que se ejecuta diariamente mediante cron.</p>
 <blockquote>
 <p>Tras unos días funcionando correctamente me ha aparecido un fallo en el montaje de la unidad de mota del NAS &ldquo;read: Connection reset by peer&rdquo; que he conseguido reparar habilitando nuevamente la conexión sftp del NAS</p>
