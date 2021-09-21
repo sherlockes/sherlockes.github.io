@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://www.sherblog.pro/sensores-virtuales-y-jinja2-en-home-assistant/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://www.sherblog.pro/vertices/muga/</loc>
     <lastmod>2021-09-13T00:00:00+00:00</lastmod>
   </url><url>
@@ -636,10 +639,22 @@
     <lastmod>2018-04-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/categories/</loc>
-    <lastmod>2021-09-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/categories/home-assistant/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/tags/jinja2/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/post/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/</loc>
-    <lastmod>2021-09-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.sherblog.pro/tags/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/vertices/</loc>
     <lastmod>2021-09-13T00:00:00+00:00</lastmod>
@@ -650,19 +665,10 @@
     <loc>http://www.sherblog.pro/categories/hugo/</loc>
     <lastmod>2021-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://www.sherblog.pro/post/</loc>
-    <lastmod>2021-07-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://www.sherblog.pro/tags/shortcodes/</loc>
     <lastmod>2021-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://www.sherblog.pro/tags/</loc>
-    <lastmod>2021-07-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://www.sherblog.pro/tags/google-drive/</loc>
-    <lastmod>2021-07-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://www.sherblog.pro/categories/home-assistant/</loc>
     <lastmod>2021-07-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.sherblog.pro/categories/iot/</loc>
