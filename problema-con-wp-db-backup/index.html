@@ -1,0 +1,111 @@
+<!doctype html><html class=no-js lang=es>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>Problema con WP-DB-Backup - Sherblog</title>
+<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<meta name=description content="Problema con WP-DB-Backup">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="http://www.sherblog.pro/images/logo.png">
+<meta name=twitter:title content="Problema con WP-DB-Backup">
+<meta name=twitter:description content="Problema con WP-DB-Backup">
+<meta name=twitter:creator content="@sherblogpro">
+<meta name=twitter:site content="sherblog.pro">
+<link rel=dns-prefetch href=//fonts.googleapis.com>
+<link rel=dns-prefetch href=//fonts.gstatic.com>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+<link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=/css/custom.css>
+<link rel="shortcut icon" href=/favicon.ico>
+</head>
+<body class=body>
+<div class="container container--outer">
+<header class=header>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Problema con WP-DB-Backup">
+<meta name=twitter:description content="Problema con WP-DB-Backup">
+<div class=container>
+<div class=logo>
+<a class=logo__link href=/ title=Sherblog rel=home>
+<div class=logo__title>Sherblog</div>
+<div class=logo__tagline>Sólo mi forma de hacer las cosas...</div>
+</a>
+</div>
+<nav class=menu>
+<button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menú</span>
+</button>
+<ul class=menu__list>
+<li class=menu__item>
+<a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/>
+<span class=menu__text>Mis vértices geodésicos</span>
+</a>
+</li>
+<li class=menu__item>
+<a class=menu__link href=/post/computing/raspberry/>
+<span class=menu__text>Raspberry Pi desde cero</span>
+</a>
+</li>
+<li class=menu__item>
+<a class=menu__link href=/post/android/tasker/>
+<span class=menu__text>Tasker</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="wrapper flex">
+<div class=primary>
+<main class=main role=main>
+<article class=post>
+<header class=post__header>
+<h1 class=post__title>Problema con WP-DB-Backup</h1>
+<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2009-02-18T00:00:00Z>2009-02-18</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/wordpress/ rel=category>WordPress</a>
+</span>
+</div></div>
+</header><div class="content post__content clearfix">
+<p>A raíz de las últimas actualizaciones de <a href=http://wordpress.org/>WordPress</a>, tengo un problema con el plugin <a href=http://wordpress.org/extend/plugins/wp-db-backup/>wp-db-backup</a> y es que cuando lo activo e intento acceder a la zona de administración me aparece un hermoso cartel en el que se informa &ldquo;No estás autorizado para acceder a esta página&rdquo; aún después de haber mi nombre de usuario y contraseña como administrador.</p>
+<p>Para el que no lo sepa, la única misión de este complemento es realizar una copia de seguridad de la base de datos que gestiona wordpress bajo demanda del usuario o programada con una cierta frecuencia. Aunque no es indispensable ya que este respaldo se puede efectuar por otros caminos, el tiempo que ahorra es importante y sin ningún esfuerzo te garantiza que podrás recuperar la información del blog ante cualquier problema del servidor.</p>
+<p>Pues bien, el problema tiene dos soluciones. Nos podemos olvidar de este plugin (Así he estado durante los dos últimos meses) o bien editamos el archivo &ldquo;wp-config.php&rdquo; y borramos las siguientes líneas.</p>
+<pre tabindex=0><code> * Authentication Unique Keys.
+ *
+ * Change these to different unique phrases!
+ * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/ WordPress.org secret-key service}
+ *
+ * @since 2.6.0
+ */
+define('AUTH_KEY', 'put your unique phrase here');
+define('SECURE_AUTH_KEY', 'put your unique phrase here');
+define('LOGGED_IN_KEY', 'put your unique phrase here');
+define('NONCE_KEY', 'put your unique phrase here');
+/**#@-*/
+</code></pre><p>Todavía no tengo muy claro cual es la finalidad de estas cuatro variables de autentificación que han aparecido en las últimas versiones de WordPress ya que el Blog funciona exactamente igual sin definir estas variables. Cuando sepa algo más aquí lo postearé.</p>
+</div>
+</article>
+</main>
+<nav class="post-nav flex">
+<div class="post-nav__item post-nav__item--prev">
+<a class=post-nav__link href=/sincronizar-contactos-entre-htc-y-gmail/ rel=prev><span class=post-nav__caption>«&#8201;Anterior</span><p class=post-nav__post-title>Sincronizar contactos entre HTC y Gmail</p></a>
+</div>
+<div class="post-nav__item post-nav__item--next">
+<a class=post-nav__link href=/trekbuddy-0.9.83-en-un-htc-touch-diamond/ rel=next><span class=post-nav__caption>Siguiente&#8201;»</span><p class=post-nav__post-title>Trekbuddy 0.9.83 en un HTC Touch Diamond</p></a>
+</div>
+</nav>
+</div>
+</div>
+<footer class=footer>
+<div class="container footer__container flex">
+<div class=footer__copyright>
+&copy; 2022 Sherblog.
+<span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
+</div>
+</div>
+</footer>
+</div>
+<script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body>
+</html>

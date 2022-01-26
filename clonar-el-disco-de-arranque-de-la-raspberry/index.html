@@ -1,0 +1,223 @@
+<!doctype html><html class=no-js lang=es>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>Clonar el disco de arranque de la raspberry - Sherblog</title>
+<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<meta name=description content="Como crear una imagen de la raspberry sin apagarla">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="http://www.sherblog.pro/images/20211225_raspberry_clonar_disco_00.jpg">
+<meta name=twitter:title content="Clonar el disco de arranque de la raspberry">
+<meta name=twitter:description content="Como crear una imagen de la raspberry sin apagarla">
+<meta name=twitter:creator content="@sherblogpro">
+<meta name=twitter:site content="sherblog.pro">
+<link rel=dns-prefetch href=//fonts.googleapis.com>
+<link rel=dns-prefetch href=//fonts.gstatic.com>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+<link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=/css/custom.css>
+<link rel="shortcut icon" href=/favicon.ico>
+</head>
+<body class=body>
+<div class="container container--outer">
+<header class=header>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Clonar el disco de arranque de la raspberry">
+<meta name=twitter:description content="Como crear una imagen de la raspberry sin apagarla">
+<div class=container>
+<div class=logo>
+<a class=logo__link href=/ title=Sherblog rel=home>
+<div class=logo__title>Sherblog</div>
+<div class=logo__tagline>Sólo mi forma de hacer las cosas...</div>
+</a>
+</div>
+<nav class=menu>
+<button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menú</span>
+</button>
+<ul class=menu__list>
+<li class=menu__item>
+<a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/>
+<span class=menu__text>Mis vértices geodésicos</span>
+</a>
+</li>
+<li class="menu__item menu__item--active">
+<a class=menu__link href=/post/computing/raspberry/>
+<span class=menu__text>Raspberry Pi desde cero</span>
+</a>
+</li>
+<li class=menu__item>
+<a class=menu__link href=/post/android/tasker/>
+<span class=menu__text>Tasker</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="wrapper flex">
+<div class=primary>
+<main class=main role=main>
+<article class=post>
+<header class=post__header>
+<h1 class=post__title>Clonar el disco de arranque de la raspberry</h1>
+<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-12-25T00:00:00Z>2021-12-25</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/computing/ rel=category>computing</a>, <a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
+</span>
+</div></div>
+</header>
+<figure class=post__thumbnail>
+<img src=/images/20211225_raspberry_clonar_disco_00.jpg alt="Clonar el disco de arranque de la raspberry">
+</figure><div class="content post__content clearfix">
+<p>La mejor copia de seguridad que puedes hacer del contenido de la Raspberry es una imagen de la tarjeta sobre la que está funcionando. Dejo a continuación un par de métodos para hacerlo de una forma rápida y sencilla.</p>
+<p>En mi caso dispongo en la actualizada de una Rpi4 que arranca sobre un pendrive usb de 64 Gb del que quiero crear una imagen para arrancar directamente en caso de que esta falle.</p>
+<h3 id=clonación-en-frío>Clonación en frío</h3>
+<p>La forma más sencilla de realizar una clonación de la unidad del sistema operativo en otra unidad es mediante un segundo sistema operativo al que conectaremos los dos pinchos usb y ejecutamos el comando</p>
+<pre tabindex=0><code>sudo dd if=/dev/sda of=/dev/sdb
+</code></pre><p>donde if (input file) es el pendrive origen y of (output file) es el pendrive destino. Un poco de paciencia y ya estería realizada la clonación pero he necesitado un segundo sistema operativo y apagar la raspberry surente un buen rato.</p>
+<blockquote>
+<p>Este método requiere de una unidad de destino con al menos la misma capacidad que la de origen, esté ocupada o no.</p>
+</blockquote>
+<h3 id=clonación-en-caliente-usando-rpi-clone>Clonación en caliente (Usando rpi-clone)</h3>
+<h4 id=identificando-la-unidad-del-sistema>Identificando la unidad del sistema</h4>
+<p>Para identificar la unidad del sistema utilizaremos el comando <code>lsblk</code> que, al ejecutarlo via ssh sobre la Raspberry nos mostrará la siguente salida:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda      8:0    <span style=color:#ae81ff>1</span> 57.3G  <span style=color:#ae81ff>0</span> disk 
+├─sda1   8:1    <span style=color:#ae81ff>1</span>  256M  <span style=color:#ae81ff>0</span> part /boot
+└─sda2   8:2    <span style=color:#ae81ff>1</span> 57.1G  <span style=color:#ae81ff>0</span> part /
+</code></pre></div><p>De donde se deduce que la unidad del sistema está montada como &ldquo;sda&rdquo;. Ahora es el momento de introducir el pincho sobre el que queremos crear la imagen del sistema y volver a ejecutar el comando `lsblk', en este caso obtenemos lo siguiente:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda      8:0    <span style=color:#ae81ff>1</span> 57.3G  <span style=color:#ae81ff>0</span> disk 
+├─sda1   8:1    <span style=color:#ae81ff>1</span>  256M  <span style=color:#ae81ff>0</span> part /boot
+└─sda2   8:2    <span style=color:#ae81ff>1</span> 57.1G  <span style=color:#ae81ff>0</span> part /
+sdb      8:16   <span style=color:#ae81ff>1</span> 28.7G  <span style=color:#ae81ff>0</span> disk 
+└─sdb1   8:17   <span style=color:#ae81ff>1</span> 28.7G  <span style=color:#ae81ff>0</span> par
+</code></pre></div><p>Con esto ya sabemos que la unidad origen será &ldquo;sda&rdquo; y el destino &ldquo;sdb&rdquo; pero tenemos un problema y es que la unidad de destino es mas pequeña por lo que necesitamos saber cuando espacio de &ldquo;sda&rdquo; está ocupado. Esto lo podemos obtener con el comando <code>df . -h</code> que muestra la siguiente salida:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        57G  8.5G   46G  16% /
+
+</code></pre></div><p>De los 57 Gb sólo están ocupados 8.5 por que, con la unidad de destino de 28.7 Gb será más que suficiente.</p>
+<h4 id=instalación-de-rpi-clone>Instalación de rpi-clone</h4>
+<p>Para la instalación del <a href=https://github.com/billw2/rpi-clone>rpi-clone</a> hay que llevar a cabo los siguientes pasos:</p>
+<ul>
+<li>Descargar el repositorio del script</li>
+<li>Descomprimir el archivo descargado</li>
+<li>Renombrar el directorio</li>
+<li>Copiar el directorio al lugar de ejecución</li>
+<li>Eliminar lo la ya no se necesita</li>
+</ul>
+<p>Lo realizaremos mediante los siguiente comandos:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>wget https://github.com/billw2/rpi-clone/archive/master.zip
+unzip master.zip
+mv rpi-clone-master rpi-clone
+sudo cp rpi-clone/rpi-clone* /usr/local/sbin
+rm -rf rpi-clone master.zip
+</code></pre></div><blockquote>
+<p>Tambien es posible clonar el repositorio mediante git en lugar de descargarlo, descomprimirlo y renombrarlo.</p>
+</blockquote>
+<h4 id=ejecución-de-la-copia>Ejecución de la copia</h4>
+<p>Llegados a este punto sólo resta ejecutar el siguiente comando</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo bash rpi-clone sdb -f
+</code></pre></div><p>Donde &ldquo;sdb&rdquo; es la unidad donde vamos a crear la imagen del sistema y el parámetro &ldquo;f&rdquo; fuerza la inicialización de esta unidad. Habrá que esperar un rato, en mi caso unos 30 minutos y obtendremos una salida como la siguiente:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>Booted disk: sda 61.5GB                    Destination disk: sdb 30.8GB
+---------------------------------------------------------------------------
+Part      Size    FS     Label           Part   Size    FS     Label
+<span style=color:#ae81ff>1</span> /boot   256.0M  fat32  --              <span style=color:#ae81ff>1</span>       28.7G  fat32  --
+<span style=color:#ae81ff>2</span> root     57.1G  ext4   rootfs                                  
+---------------------------------------------------------------------------
+<span style=color:#f92672>==</span> Initialize: IMAGE partition table - forced by option <span style=color:#f92672>==</span>
+<span style=color:#ae81ff>1</span> /boot               <span style=color:#f92672>(</span>48.0M used<span style=color:#f92672>)</span>   : MKFS  SYNC to sdb1
+<span style=color:#ae81ff>2</span> root                <span style=color:#f92672>(</span>8.4G used<span style=color:#f92672>)</span>    : RESIZE  MKFS  SYNC to sdb2
+---------------------------------------------------------------------------
+Run setup script       : no.
+Verbose mode           : no.
+-----------------------:
+** WARNING **          : All destination disk sdb data will be overwritten!
+-----------------------:
+
+Initialize and clone to the destination disk sdb?  <span style=color:#f92672>(</span>yes/no<span style=color:#f92672>)</span>: yes
+Optional destination ext type file system label <span style=color:#f92672>(</span><span style=color:#ae81ff>16</span> chars max<span style=color:#f92672>)</span>: homeassistant
+
+Initializing
+  Imaging past partition <span style=color:#ae81ff>1</span> start.
+  <span style=color:#f92672>=</span>&gt; dd <span style=color:#66d9ef>if</span><span style=color:#f92672>=</span>/dev/sda of<span style=color:#f92672>=</span>/dev/sdb bs<span style=color:#f92672>=</span>1M count<span style=color:#f92672>=</span><span style=color:#ae81ff>8</span> ...
+  Resizing destination disk last partition ...
+    Resize success.
+  Changing destination Disk ID ...
+  <span style=color:#f92672>=</span>&gt; mkfs -t vfat -F <span style=color:#ae81ff>32</span>  /dev/sdb1 ...
+  <span style=color:#f92672>=</span>&gt; mkfs -t ext4 -L homeassistant /dev/sdb2 ...
+
+Syncing file systems <span style=color:#f92672>(</span>can take a long time<span style=color:#f92672>)</span>
+Syncing mounted partitions:
+  Mounting /dev/sdb2 on /mnt/clone
+  <span style=color:#f92672>=</span>&gt; rsync // /mnt/clone with-root-excludes ...
+  Mounting /dev/sdb1 on /mnt/clone/boot
+  <span style=color:#f92672>=</span>&gt; rsync /boot/ /mnt/clone/boot  ...
+
+Editing /mnt/clone/boot/cmdline.txt PARTUUID to use d8b40570
+Editing /mnt/clone/etc/fstab PARTUUID to use d8b40570
+<span style=color:#f92672>===============================</span>
+Done with clone to /dev/sdb
+   Start - 18:15:21    End - 18:39:32    Elapsed Time - 24:11
+
+Cloned partitions are mounted on /mnt/clone <span style=color:#66d9ef>for</span> inspection or customizing. 
+
+Hit Enter when ready to unmount the /dev/sdb partitions ...
+  unmounting /mnt/clone/boot
+  unmounting /mnt/clone
+<span style=color:#f92672>===============================</span>
+
+</code></pre></div><p>Y ya está el pendrive listo para sacar de la raspberry y guardarlo por si falla el del sistema.</p>
+<h3 id=enlaces-de-interés>Enlaces de interés</h3>
+<ul>
+<li><a href=https://cambiatealinux.com/ver_espacio_en_disco_en_linux>Cambiaté a linux</a></li>
+<li><a href=https://pysselilivet.blogspot.com/2017/11/rpi-clone-raspberry-boot-disk.html>Pysselilivet</a></li>
+<li><a href=https://www.unfantasmaenelsistema.com/2019/07/clonar-un-pendrive-booteable-en-linux/>Un fantasma en el sistema</a></li>
+<li><a href=https://www.yofriki.com/2016/06/como-clonar-un-usb-con-autoarranque-en.html>Yo Friki</a></li>
+</ul>
+</div>
+<footer class=post__footer>
+<div class="content post__content clearfix">
+<h3>Otros de mís artículos que te pueden interesar</h3>
+<ul>
+<li><a href=/montar-carpeta-del-nas-mediante-sshfs/>Montar carpeta del NAS mediante sshfs</a></li>
+<li><a href=/script-de-configuraci%C3%B3n-para-raspberry/>Script de configuración para Raspberry</a></li>
+<li><a href=/que-hace-la-raspberry-sin-mi/>Que hace la raspberry sin mi</a></li>
+<li><a href=/instalar-rclone-en-synology-ds920-/>Instalar rclone en Synology Ds920+</a></li>
+<li><a href=/sincronizar-google-photos-desde-la-raspberry/>Sincronizar Google Photos desde la Raspberry</a></li>
+</ul>
+</div>
+<div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
+<ul class=tags__list>
+<li class=tags__item>
+<a class="tags__link btn" href=/tags/bash/ rel=tag>bash</a>
+</li>
+<li class=tags__item>
+<a class="tags__link btn" href=/tags/linux/ rel=tag>linux</a>
+</li>
+</ul>
+</div>
+</footer>
+</article>
+</main>
+<nav class="post-nav flex">
+<div class="post-nav__item post-nav__item--prev">
+<a class=post-nav__link href=/que-hace-la-raspberry-sin-mi/ rel=prev><span class=post-nav__caption>«&#8201;Anterior</span><p class=post-nav__post-title>Que hace la raspberry sin mi</p></a>
+</div>
+</nav>
+</div>
+</div>
+<footer class=footer>
+<div class="container footer__container flex">
+<div class=footer__copyright>
+&copy; 2022 Sherblog.
+<span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
+</div>
+</div>
+</footer>
+</div>
+<script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body>
+</html>

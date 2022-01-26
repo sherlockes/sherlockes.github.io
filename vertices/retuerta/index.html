@@ -1,0 +1,120 @@
+<!doctype html><html class=no-js lang=es>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>Vértice geodésico Retuerta - Sherblog</title>
+<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<meta name=description content="Vértice geodésico Retuerta">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="http://www.sherblog.pro/images/vertice.jpg">
+<meta name=twitter:title content="Vértice geodésico Retuerta">
+<meta name=twitter:description content="Vértice geodésico Retuerta">
+<meta name=twitter:creator content="@sherblogpro">
+<meta name=twitter:site content="sherblog.pro">
+<link rel=dns-prefetch href=//fonts.googleapis.com>
+<link rel=dns-prefetch href=//fonts.gstatic.com>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+<link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=/css/custom.css>
+<link rel="shortcut icon" href=/favicon.ico>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css>
+<style>.map{height:400px;width:100%}</style>
+<script src=https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js></script>
+</head>
+<body class=body>
+<div class="container container--outer">
+<header class=header>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Vértice geodésico Retuerta">
+<meta name=twitter:description content="Vértice geodésico Retuerta">
+<div class=container>
+<div class=logo>
+<a class=logo__link href=/ title=Sherblog rel=home>
+<div class=logo__title>Sherblog</div>
+<div class=logo__tagline>Sólo mi forma de hacer las cosas...</div>
+</a>
+</div>
+<nav class=menu>
+<button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menú</span>
+</button>
+<ul class=menu__list>
+<li class=menu__item>
+<a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/>
+<span class=menu__text>Mis vértices geodésicos</span>
+</a>
+</li>
+<li class=menu__item>
+<a class=menu__link href=/post/computing/raspberry/>
+<span class=menu__text>Raspberry Pi desde cero</span>
+</a>
+</li>
+<li class=menu__item>
+<a class=menu__link href=/post/android/tasker/>
+<span class=menu__text>Tasker</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="wrapper flex">
+<div class=primary>
+<main class=main role=main>
+<article class=post>
+<header class=post__header>
+<h1 class=post__title>Vértice geodésico Retuerta</h1>
+<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2020-05-14T00:00:00Z>2020-05-14</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/vertices/ rel=category>vertices</a>
+</span>
+</div></div>
+</header>
+<figure class=post__thumbnail>
+<img src=/images/vertice.jpg alt="Vértice geodésico Retuerta">
+</figure><div class="content post__content clearfix">
+<p>
+Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico Retuerta está situado en el término municipal de Pina de Ebro a una altura de 413 metros.
+</p>
+<center><a href=https://i.imgur.com/L08NABr.jpg><img src=https://i.imgur.com/L08NABrl.jpg title="Vista del vertice" target=_blank></a></center>
+<br>
+<p>En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he "conquistado" (<a href=/gpx/mis_vertices.gpx>Aquí</a> está el archivo con las coordenadas de todos ellos). Puedes ver más información oficial en la web del <a href=ftp://ftp.geodesia.ign.es/Red_Geodesica/Hoja0413/041378.pdf target=_blank>Instituto Geográfico Nacional</a>. Desde esta misma web es posible acceder al <a href=ftp://ftp.geodesia.ign.es/utilidades/>directorio de utilidades</a> donde se actualiza periódicamente un archivo con todos los vértices de España.</p>
+<div id=map class=map></div>
+<script type=text/javascript>var base_osm=new ol.layer.Tile({source:new ol.source.OSM}),centro=new ol.proj.fromLonLat(["-0.2533447","41.4662748"]),svg='<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="35px" xml:space="preserve"><path fill="white" stroke="black" d="M 10 0 l 0 15 l -10 0 l 0 20 l 25 0 l 0 -20 l -10 0 l 0 -15 z"/></svg>',mysvg=new Image,style,source_gpx,gpx_layer,highlight,displayFeatureInfo,map;mysvg.src='data:image/svg+xml,'+encodeURIComponent(svg),style=new ol.style.Style({image:new ol.style.Icon({img:mysvg,imgSize:[25,35]}),text:new ol.style.Text({text:'texto',scale:1.3,fill:new ol.style.Fill({color:'#000000'}),stroke:new ol.style.Stroke({color:'#FFFF99',width:3.5}),offsetY:25})}),source_gpx=new ol.source.Vector({url:'/gpx/mis_vertices.gpx',format:new ol.format.GPX}),gpx_layer=new ol.layer.Vector({source:source_gpx,style:function(a){return style.getText().setText(a.get('name')),style}}),displayFeatureInfo=function(a){gpx_layer.getFeatures(a).then(function(b){var a=b.length?b[0]:void 0;b.length&&window.open("../"+a.get('name'),"_top"),a!==highlight&&(highlight&&featureOverlay.getSource().removeFeature(highlight),a&&featureOverlay.getSource().addFeature(a),highlight=a)})},map=new ol.Map({target:'map',layers:[base_osm,gpx_layer],view:new ol.View({center:centro,zoom:10})}),map.on('pointermove',function(a){if(a.dragging)return;var b=map.getEventPixel(a.originalEvent)}),map.on('click',function(a){displayFeatureInfo(a.pixel)})</script>
+<br>
+<p>Aquí una vista panorámica desde el mismo vértice...</p>
+<center><a href=https://i.imgur.com/IujzA5e.jpg><img src=https://i.imgur.com/IujzA5eh.jpg title="Vista panorámica desde el vértice" target=_blank></a></center>
+<br>
+<p>Puedes ver la ruta que he seguido desde <a href=http://connect.garmin.com/modern/activity/84972752>Garmin Connect</a>
+.</p>
+<br>
+<br>
+<p>Aunque el vértice está mas cerca de Bujaraloz, este vértice está ubicado dentro del término de Pina de Ebro. El acceso es de lo más sencillo, aproximadamente a cuatro kilómetros del restaurante El Ciervo en la NII y situado a menos de tres metros del camino casi se puede ir en autobús.</p>
+<p>El cilindro que indica el vértice está situado sobre un pedestal de hormigón de unos cuatro metros de alto, gracias a esto es posible sacar una panorámica digna pero no muy impresionante ya que existe un escaso desnivel entre este punto y toda la zona colindante. Subiendo con cuidado por los escalones del lateral del pedestal se puede ver la siguiente vista. Haz click en la imagen si quieres verla más grande.</p>
+<p>La ruta que he seguido para, a través de los caminos llegar desde Cinco Olivas a este vértice intentando realizar un trazado lo más circular posible sin repetir tramos. Saliendo de Cinco Olivas, por la carretera hacia Alborge y Alforque tomamos el camino de las Planetas hasta Valcenicero. Una larga pero tendida subida nos lleva hasta el vértice de la Retuerta donde se produce un curioso cambio pasando de un ecosistema de desierto monegrino a circular en un oasis de Sabinas a lo largo del camino que nos lleva a la NII y el restaurante El Ciervo. La vuelta por un bonito camino hasta el corral de Lanas, de allí a Purburell y la salada de Guallar para llegar hasta la carretera de Sástago a Bujaraloz. Cruzando la carretera pasamos por la Plana de Bernabé hasta la balsa del Horno, un par de kilómetros por Valdelacoja parece que sean algunos cientos, ya que entramos en una zona preciosa de pinar en la bajada por el Barranco de Piquer y la subida por Valdevelilla. El último tramo de camino lo hacemos por el Barranco de Polito hasta llegar nuevamente a la carretera de Sástago a Bujaraloz para volver a casa.</p>
+</div>
+</article>
+</main>
+<nav class="post-nav flex">
+<div class="post-nav__item post-nav__item--prev">
+<a class=post-nav__link href=/vertices/sasico/ rel=prev><span class=post-nav__caption>«&#8201;Anterior</span><p class=post-nav__post-title>Vértice geodésico Sasico</p></a>
+</div>
+<div class="post-nav__item post-nav__item--next">
+<a class=post-nav__link href=/vertices/reboll%C3%B3n/ rel=next><span class=post-nav__caption>Siguiente&#8201;»</span><p class=post-nav__post-title>Vértice geodésico Rebollón</p></a>
+</div>
+</nav>
+</div>
+</div>
+<footer class=footer>
+<div class="container footer__container flex">
+<div class=footer__copyright>
+&copy; 2022 Sherblog.
+<span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
+</div>
+</div>
+</footer>
+</div>
+<script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body>
+</html>

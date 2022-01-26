@@ -1,0 +1,228 @@
+<!doctype html><html class=no-js lang=es>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>Radares de tráfico en Android - Sherblog</title>
+<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<meta name=description content="Usando Tasker para avisar de radares de tráfico cuando vas en el coche.">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="http://www.sherblog.pro/images/20191113_radares_android_00.jpg">
+<meta name=twitter:title content="Radares de tráfico en Android">
+<meta name=twitter:description content="Usando Tasker para avisar de radares de tráfico cuando vas en el coche.">
+<meta name=twitter:creator content="@sherblogpro">
+<meta name=twitter:site content="sherblog.pro">
+<link rel=dns-prefetch href=//fonts.googleapis.com>
+<link rel=dns-prefetch href=//fonts.gstatic.com>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+<link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=/css/custom.css>
+<link rel="shortcut icon" href=/favicon.ico>
+</head>
+<body class=body>
+<div class="container container--outer">
+<header class=header>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Radares de tráfico en Android">
+<meta name=twitter:description content="Usando Tasker para avisar de radares de tráfico cuando vas en el coche.">
+<div class=container>
+<div class=logo>
+<a class=logo__link href=/ title=Sherblog rel=home>
+<div class=logo__title>Sherblog</div>
+<div class=logo__tagline>Sólo mi forma de hacer las cosas...</div>
+</a>
+</div>
+<nav class=menu>
+<button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menú</span>
+</button>
+<ul class=menu__list>
+<li class=menu__item>
+<a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/>
+<span class=menu__text>Mis vértices geodésicos</span>
+</a>
+</li>
+<li class=menu__item>
+<a class=menu__link href=/post/computing/raspberry/>
+<span class=menu__text>Raspberry Pi desde cero</span>
+</a>
+</li>
+<li class="menu__item menu__item--active">
+<a class=menu__link href=/post/android/tasker/>
+<span class=menu__text>Tasker</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="wrapper flex">
+<div class=primary>
+<main class=main role=main>
+<article class=post>
+<header class=post__header>
+<h1 class=post__title>Radares de tráfico en Android</h1>
+<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2020-01-07T00:00:00Z>2020-01-07</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/tasker/ rel=category>Tasker</a>, <a class=meta__link href=/categories/dise%C3%B1o/ rel=category>diseño</a>
+</span>
+</div></div>
+</header>
+<figure class=post__thumbnail>
+<img src=/images/20191113_radares_android_00.jpg alt="Radares de tráfico en Android">
+</figure><div class="content post__content clearfix">
+<p>En el coche resulta útil un avisador de radares para &ldquo;levantar el pie&rdquo; en determinados momentos o simplemente para ser más riguroso con el respeto de la velocidad máxima de la vía. Para esto también uso Tasker y aquí voy a mostrar cómo lo hago.</p>
+<h2 id=instalando>Instalando</h2>
+<p>Un uso más que le estoy dando a <a href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=es">tasker</a> dentro de mi teléfono Android es para el aviso de radares cuando voy en el coche. Para ello hago uso de la aplicación <a href="https://play.google.com/store/apps/details?id=com.balda.speedtrappro&hl=es">Speed Trap</a> y del <a href="https://play.google.com/store/apps/details?id=com.balda.autospeedtrap&hl=es_419">plugin para Tasker</a> que, aunque no son muy intuitivos me permiten una integración total con <a href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=es">tasker</a>. Una vez que tengamos ambos instalados ya podemos crear la tarea que lo ejecute.</p>
+<p>En mi caso uso el perfil &ldquo;En el coche&rdquo; con una tarea de entrada y otra de salida tal y como se puede ver en la siguiente imagen.</p>
+<p><img src=/images/20191113_radares_android_01.jpg alt=imagen_01></p>
+<p>Cuando <a href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=es">Tasker</a> detecta que me he conectado al Bluetooth del coche ejecuta la tarea &ldquo;Subir al coche&rdquo; en la cual, entre otras, está la acción para activar el indicador de radares <a href="https://play.google.com/store/apps/details?id=com.balda.speedtrappro&hl=es">Speed Trap</a>.</p>
+<p><img src=/images/20191113_radares_android_02.jpg alt=imagen_02></p>
+<p>La configuración de esta acción es muy simple ya que sólo hay que indicar si comienza el servicio (&ldquo;ACTIVADO&rdquo;) o se detiene el servicio (&ldquo;DESACTIVADO&rdquo;)</p>
+<p><img src=/images/20191113_radares_android_03.jpg alt=imagen_03></p>
+<p>Ahora todo lo que resta es actualizar la base de datos de radares para que el sistema comience a funcionar.</p>
+<blockquote>
+<p>En la tarea de salida del perfil &ldquo;En el coche&rdquo; habrá que incluir la acción para desactivar <a href="https://play.google.com/store/apps/details?id=com.balda.speedtrappro&hl=es">Speed Trap</a> para que se detenga el servicio y no gaste más batería de la necesaria.</p>
+</blockquote>
+<h2 id=actualizando>Actualizando&mldr;</h2>
+<p>Sin duda alguna el gran problema de usar <a href="https://play.google.com/store/apps/details?id=com.balda.speedtrappro&hl=es">Speed Trap</a> son las actualizaciones de la base de datos de radares que, lejos de ser automáticas y desatendidas, son un tedioso proceso completamente manual. Para hacerlo un poco más llevadero he creado un script en bash que puedes ver en mi <a href=https://github.com/sherlockes/SherloScripts>repositorio en GitHub</a> y que descarga los radares desde la web <a href=https://www.todo-poi.es>Todo-poi.es</a>, los acondiciona según los tipos de que dispone <a href="https://play.google.com/store/apps/details?id=com.balda.speedtrappro&hl=es">Speed Trap</a>, los renombra y los guarda en una carpeta de Google Drive (Usando rclone).</p>
+<pre tabindex=0><code>#!/bin/bash
+# -*- encoding: utf-8 -*-
+
+###################################################################
+#Script Name: Radares
+#Description: Descarga de radares y copia a Google Drive
+#Args: N/A
+#Creation/Update: 20191112/20191113
+#Author: www.sherblog.pro                                                
+#Email: sherlockes@gmail.com                                           
+###################################################################
+
+# ----------------------------------
+# Definición de variables
+# ----------------------------------
+carpeta=~/radares
+
+# ----------------------------------
+# Crear la carpeta local
+# ----------------------------------
+mkdir $carpeta
+
+# ----------------------------------
+# Descargar archivos
+# ----------------------------------
+curl 'https://www.todo-poi.es/radar/GARMIN_RADARES/garminvelocidad 3xx-5xx-6xx, Zumo, StreetPilot c550, 2720, 2820, 7200 y 7500.zip' -o $carpeta/radares_1.zip
+curl 'https://www.todo-poi.es/radar/GARMIN_RADARES/garmintipo 3xx-5xx-6xx, Zumo, StreetPilot c550, 2720, 2820, 7200 y 7500.zip' -o $carpeta/radares_2.zip
+
+# ---------------------------------------
+# Descomprimir archivos y borrar sobrante
+# ---------------------------------------
+unzip $carpeta/radares_1.zip -d $carpeta/
+rm -rf $carpeta/PoiLoader
+cp $carpeta/'garminvelocidad 3xx-5xx-6xx, Zumo, StreetPilot c550, 2720, 2820, 7200 y 7500'/*.csv $carpeta
+rm -rf $carpeta/'garminvelocidad 3xx-5xx-6xx, Zumo, StreetPilot c550, 2720, 2820, 7200 y 7500'
+
+unzip $carpeta/radares_2.zip -d $carpeta/
+rm -rf $carpeta/PoiLoader
+cp $carpeta/'garmintipo 3xx-5xx-6xx, Zumo, StreetPilot c550, 2720, 2820, 7200 y 7500'/*.csv $carpeta
+rm -rf $carpeta/'garmintipo 3xx-5xx-6xx, Zumo, StreetPilot c550, 2720, 2820, 7200 y 7500'
+rm $carpeta/radares_*.zip
+
+# ----------------------------------
+# Uniendo archivos
+# ----------------------------------
+rm $carpeta/*[0-9].csv
+rm $carpeta/*variable.csv
+cat $carpeta/*_tramo*.csv $carpeta/*_tunel*.csv &gt; $carpeta/R_BBS_tramo.csv
+rm $carpeta/*_tramo_*.csv
+rm $carpeta/*_tunel*.csv
+cat $carpeta/R_BBS_curvas_peligrosas.csv $carpeta/R_BBS_puntos_negros.csv &gt; $carpeta/03_cajas.csv
+rm $carpeta/R_BBS_curvas_peligrosas.csv
+rm $carpeta/R_BBS_puntos_negros.csv
+rm $carpeta/R_BBS_Alcoholemia.csv
+
+
+# ----------------------------------
+# Renombrando archivos
+# ----------------------------------
+mv $carpeta/R_BBS_fijos_total.csv $carpeta/01_fijos.csv
+mv $carpeta/R_BBS_camu_total.csv $carpeta/02_moviles.csv
+mv $carpeta/R_BBS_Foto.csv $carpeta/04_camaras.csv
+mv $carpeta/R_BBS_tramo.csv $carpeta/05_tramo.csv
+mv $carpeta/R_BBS_semaforos.csv $carpeta/06_semaforos.csv
+mv $carpeta/R_BBS_APR.csv $carpeta/07_restringido.csv
+
+# ----------------------------------
+# Sincronizando con Google Drive
+# ----------------------------------
+rclone sync $carpeta dd_gdu:Radares
+
+# ----------------------------------
+# Borrando los rastros
+# ----------------------------------
+rm -rf $carpeta
+</code></pre><p>A partir de aquí yo tengo configuradoen la Raspberry que está todo el día encendida una tarea mediante cron segń la cual se ejecutará este archivo todos los lunes a las 0:00. Para ello</p>
+<ul>
+<li>Editamos en cron con <code>crontab -e</code></li>
+<li>Añadimos la línea <code>0 0 * * 1 /home/pi/radares.sh</code></li>
+</ul>
+<p>Con esto ya tendremos disponible desde la aplicación <a href="https://play.google.com/store/apps/details?id=com.balda.speedtrappro&hl=es">Speed Trap</a> en el teléfono el acceso a las actualizaciones de una forma rápida y sencilla gracias a nuestra cuenta de google drive. Con todo esta actualización se deberá hacer de forma manual para cada grupo de radares siguiendo los siguientes pasos.</p>
+<ul>
+<li>Abrimos SpeedTrap</li>
+<li>Seleccionamos el grupo a actualizar</li>
+<li>Opción &ldquo;CSV (Garmin)&rdquo;</li>
+<li>Marcamos la nube</li>
+<li>Descargamos de Google Drive</li>
+<li>Seleccionamos la cuenta de Google</li>
+<li>Entramos en la carpeta &ldquo;Radares&rdquo;</li>
+<li>Archivo del grupo y seleccionar</li>
+<li>Cargar los datos al programa</li>
+</ul>
+<div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden>
+<iframe src=https://www.youtube.com/embed/1lgfjkHoYBc style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe>
+</div>
+<p>Es una pena tener que hacer este proceso de forma manual, quizás en futuras actualización de la aplicación&mldr;</p>
+</div>
+<footer class=post__footer>
+<div class="content post__content clearfix">
+<h3>Otros de mís artículos que te pueden interesar</h3>
+<ul>
+<li><a href=/extrayendo-la-portada-de-un-pdf/>Extrayendo la portada de un pdf</a></li>
+<li><a href=/flujo-de-im%C3%A1genes-en-linux/>Flujo de imágenes en Linux</a></li>
+<li><a href=/redimensionar-im%C3%A1genes-desde-la-l%C3%ADnea-de-comandos/>Redimensionar imágenes desde la línea de comandos</a></li>
+<li><a href=/crear-panor%C3%A1mica-a-partir-de-un-v%C3%ADdeo/>Crear panorámica a partir de un vídeo</a></li>
+<li><a href=/insertar-un-t%C3%ADtulo-a-un-v%C3%ADdeo-con-virtualdub-otra-forma/>Insertar un título a un vídeo con Virtualdub (Otra forma)</a></li>
+</ul>
+</div>
+<div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
+<ul class=tags__list>
+<li class=tags__item>
+<a class="tags__link btn" href=/tags/android/ rel=tag>android</a>
+</li>
+<li class=tags__item>
+<a class="tags__link btn" href=/tags/speedtrap/ rel=tag>SpeedTrap</a>
+</li>
+</ul>
+</div>
+</footer>
+</article>
+</main>
+<nav class="post-nav flex">
+<div class="post-nav__item post-nav__item--prev">
+<a class=post-nav__link href=/como-ahorrar-bater%C3%ADa-en-el-trabajo-con-tasker/ rel=prev><span class=post-nav__caption>«&#8201;Anterior</span><p class=post-nav__post-title>Como ahorrar batería en el trabajo con Tasker</p></a>
+</div>
+</nav>
+</div>
+</div>
+<footer class=footer>
+<div class="container footer__container flex">
+<div class=footer__copyright>
+&copy; 2022 Sherblog.
+<span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
+</div>
+</div>
+</footer>
+</div>
+<script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body>
+</html>

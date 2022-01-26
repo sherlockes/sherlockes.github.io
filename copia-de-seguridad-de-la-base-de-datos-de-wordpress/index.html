@@ -1,0 +1,176 @@
+<!doctype html><html class=no-js lang=es>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>Copia de seguridad de la base de datos de WordPress - Sherblog</title>
+<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<meta name=description content="Así es como realizo la copia de seguridad de la base de datos de WordPress hacia Google Drive">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="http://www.sherblog.pro/images/20170228_db_backup_00.jpg">
+<meta name=twitter:title content="Copia de seguridad de la base de datos de WordPress">
+<meta name=twitter:description content="Así es como realizo la copia de seguridad de la base de datos de WordPress hacia Google Drive">
+<meta name=twitter:creator content="@sherblogpro">
+<meta name=twitter:site content="sherblog.pro">
+<link rel=dns-prefetch href=//fonts.googleapis.com>
+<link rel=dns-prefetch href=//fonts.gstatic.com>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+<link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=/css/custom.css>
+<link rel="shortcut icon" href=/favicon.ico>
+</head>
+<body class=body>
+<div class="container container--outer">
+<header class=header>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Copia de seguridad de la base de datos de WordPress">
+<meta name=twitter:description content="Así es como realizo la copia de seguridad de la base de datos de WordPress hacia Google Drive">
+<div class=container>
+<div class=logo>
+<a class=logo__link href=/ title=Sherblog rel=home>
+<div class=logo__title>Sherblog</div>
+<div class=logo__tagline>Sólo mi forma de hacer las cosas...</div>
+</a>
+</div>
+<nav class=menu>
+<button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menú</span>
+</button>
+<ul class=menu__list>
+<li class=menu__item>
+<a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/>
+<span class=menu__text>Mis vértices geodésicos</span>
+</a>
+</li>
+<li class=menu__item>
+<a class=menu__link href=/post/computing/raspberry/>
+<span class=menu__text>Raspberry Pi desde cero</span>
+</a>
+</li>
+<li class=menu__item>
+<a class=menu__link href=/post/android/tasker/>
+<span class=menu__text>Tasker</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="wrapper flex">
+<div class=primary>
+<main class=main role=main>
+<article class=post>
+<header class=post__header>
+<h1 class=post__title>Copia de seguridad de la base de datos de WordPress</h1>
+<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2017-04-04T00:00:00Z>2017-04-04</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/wordpress/ rel=category>WordPress</a>, <a class=meta__link href=/categories/sherver/ rel=category>sherver</a>
+</span>
+</div></div>
+</header>
+<figure class=post__thumbnail>
+<img src=/images/20170228_db_backup_00.jpg alt="Copia de seguridad de la base de datos de WordPress">
+</figure><div class="content post__content clearfix">
+<p>Hace unos días expliqué como gestiona la copia de seguridad de los archivos de WordPress (la carpeta wp-content) y aquí vamos a ver como hago lo propio con la base de datos. El flujo de trabajo es simple, periódicamente me llega un correo electrónico con la base de datos comprimida como archivo adjunto y guardo ese archivo en mi unidad de Google Drive.</p>
+<p>El plugin de WordPress <a href=%C2%A0https://es.wordpress.org/plugins/wp-db-backup/>WP-DB-Backup</a> es el que se encarga de enviar un correo electrónico periódicamente con la copia de la base de datos. La configuración es muy sencilla, una vez que el plugin está instalado y activo vamos al menú &ldquo;Herramientas - Copia de respaldo&rdquo; del escritorio de WordPress y bajamos hasta la opción &ldquo;Respaldo Programado&rdquo;.</p>
+<p><img src=/images/20170228_db_backup_01.jpg alt=image></p>
+<p>Seleccionamos la frecuencia del respaldo y las tablas adicionales a respaldar, introducimos la dirección de correo a la que vamos a enviar el respaldo y pulsamos el botón &ldquo;Respaldo Programado&rdquo; para guardar la configuración.</p>
+<p>A continuación vamos a crear un programa dentro de Google Apps Script que nos guardará el archivo adjunto en una carpeta de nuestra unidad de Google Drive y borrará el correo electrónico.</p>
+<pre tabindex=0><code>// Declaración de variables
+var ahora = new Date();
+var correos = GmailApp.search(&quot;subject:(*SherBlog Copia de seguridad de la base de datos*) has:attachment&quot;);
+var carpeta = DriveApp.searchFolders(&quot;title contains 'sherblog_db_backups'&quot;).next();
+var archivos = new Array();
+ 
+// Matrices para distintos rangos de antiguedad 10-20-40-80-160 
+var d10 = new Array();
+var d20 = new Array();
+var d40 = new Array();
+var d80 = new Array();
+var d160 = new Array();
+ 
+function backup_db() {
+  
+  // Guardar los archivos adjuntos y borra los correos
+  for (var x=0; x&lt;correos.length; x++) {
+    var mensaje = correos[x].getMessages()[0];
+    var adjuntos = mensaje.getAttachments();
+    carpeta.createFile(adjuntos[0]);
+    correos[x].moveToTrash();
+  }
+                 
+  // Genera matriz con los archivos ya existentes en carpeta
+  archivos = carpeta.getFiles();
+  
+  while (archivos.hasNext()) {
+    archivo = archivos.next();
+    // Asigna cada archivo al rango de antiguedad y borra los obsoletos
+    if(dias(archivo)&gt;5 &amp;&amp; dias(archivo)&lt;11){d10.push(archivo)};
+    if(dias(archivo)&gt;10 &amp;&amp; dias(archivo)&lt;21){d20.push(archivo)};
+    if(dias(archivo)&gt;20 &amp;&amp; dias(archivo)&lt;41){d40.push(archivo)};
+    if(dias(archivo)&gt;40 &amp;&amp; dias(archivo)&lt;81){d80.push(archivo)};
+    if(dias(archivo)&gt;80 &amp;&amp; dias(archivo)&lt;161){d160.push(archivo)};
+    if(dias(archivo)&gt;160){archivo.setTrashed(true)};
+  }
+               
+  // Borrar los archivos recientes de cada rango
+  limpiar(d10);
+  limpiar(d20);
+  limpiar(d40);
+  limpiar(d80);
+  limpiar(d160); 
+}
+ 
+// función para contar los días de antiguedad de un archivo
+function dias(archiv){
+  return(Math.round((ahora - archiv.getLastUpdated())/1000/60/60/24));
+}
+ 
+// Función para eliminar los archivos mas recientes de una matriz
+function limpiar(matriz){
+  while (matriz.length&gt;1){
+    if(dias(matriz[0])&gt;dias(matriz[1])){
+      matriz[1].setTrashed(true);  //Elimina el archivo más reciente
+      matriz.splice(1,1);  //Elimina la entrada de la matriz correspondiente al archivo borrado
+    }else{
+      matriz[0].setTrashed(true);
+      matriz.splice(0,1);
+    }
+  }
+}
+</code></pre><p>Con esto ya tenemos guardada en nuestra unidad de Google Drive una copia de seguridad de la base de datos de WordPress de la web.</p>
+<p>Para el tema del guardado de versiones he optado por un sistema tan simple como efectivo, tal y como se puede ver en el código se guardan los siguientes archivos.</p>
+<ul>
+<li>Un archivo por cada uno de los cinco últimos días</li>
+<li>Un archivo con una antigüedad entre 5 y 10 días</li>
+<li>Un archivo con una antigüedad entre 10 y 20 días</li>
+<li>Un archivo con una antigüedad entre 20 y 40 días</li>
+<li>Un archivo con una antigüedad entre 40 y 80 días</li>
+<li>Un archivo con una antigüedad entre 80 y 160 días</li>
+</ul>
+<p>Y con esto creo que tengo más que suficiente para cubrir mis necesidades ocupando un espacio limitado.</p>
+</div>
+</article>
+</main>
+<nav class="post-nav flex">
+<div class="post-nav__item post-nav__item--prev">
+<a class=post-nav__link href=/flujo-de-trabajo-con-im%C3%A1genes-en-wordpress/ rel=prev><span class=post-nav__caption>«&#8201;Anterior</span><p class=post-nav__post-title>Flujo de trabajo con imágenes en WordPress</p></a>
+</div>
+<div class="post-nav__item post-nav__item--next">
+<a class=post-nav__link href=/deshabilitar-cache-en-chrome/ rel=next><span class=post-nav__caption>Siguiente&#8201;»</span><p class=post-nav__post-title>Deshabilitar cache en chrome</p></a>
+</div>
+</nav>
+</div>
+</div>
+<footer class=footer>
+<div class="container footer__container flex">
+<div class=footer__copyright>
+&copy; 2022 Sherblog.
+<span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
+</div>
+</div>
+</footer>
+</div>
+<script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body>
+</html>
