@@ -1,0 +1,30 @@
+<TaskerData sr="" dvi="1" tv="5.0u7m">
+	<Task sr="task2">
+		<cdate>1504551499511</cdate>
+		<edate>1515519230437</edate>
+		<id>2</id>
+		<nme>Apagar Pantalla</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>1563799945</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<com.intangibleobject.securesettings.plugin.extra.BLURB>Lock Device</com.intangibleobject.securesettings.plugin.extra.BLURB>
+					<com.intangibleobject.securesettings.plugin.extra.BLURB-type>java.lang.String</com.intangibleobject.securesettings.plugin.extra.BLURB-type>
+					<com.intangibleobject.securesettings.plugin.extra.SETTING>force_lock</com.intangibleobject.securesettings.plugin.extra.SETTING>
+					<com.intangibleobject.securesettings.plugin.extra.SETTING-type>java.lang.String</com.intangibleobject.securesettings.plugin.extra.SETTING-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Lock Device</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.intangibleobject.securesettings.plugin</Str>
+			<Str sr="arg2" ve="3">com.intangibleobject.securesettings.plugin.Activities.TabsActivity</Str>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>mw_av_airplay</nme>
+		</Img>
+	</Task>
+</TaskerData>
