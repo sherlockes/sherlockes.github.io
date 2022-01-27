@@ -15,7 +15,7 @@ tags:
 draft: false
 weight: 5
 ---
-Durante mucho tiempo he tenido alojado este blog en [GitHub] pero la publicación se realizaba en local mediante la Raspberry. Ahora voy a generar la publicación del blog a partir de un propio repositorio mediante las acciones de [GitHub]
+Durante mucho tiempo he tenido alojado este blog en [GitHub] pero la publicación se realizaba en local mediante la Raspberry. Ahora voy a generar la publicación del blog a partir de un propio repositorio mediante las [acciones de GitHub]
 <!--more-->
 ### Creando el repositorio en GitHub
 El primer paso es crear un nuevo repositorio público en [GitHub], para que la direción resultamente sea mucho más sencilla, le pondremos el nombre "usuario.github.io"
@@ -133,6 +133,7 @@ Y con esto ya tenemos todo listo.
 - [Codenanshu - Hugo & Github actions](https://www.youtube.com/watch?v=psyz4UPnGAA)
 - [Gohugo.io - Host on GitHub](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
 
+[acciones de GitHub]: https://github.com/features/actions
 [GitHub]: https://github.com
 [Host on Github]: https://gohugo.io/hosting-and-deployment/hosting-on-github/
 
