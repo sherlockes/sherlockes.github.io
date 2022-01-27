@@ -126,6 +126,14 @@ Le daremos unas horas para que se propague la información por todos los servido
 
 ![image-06]
 
+Por otro lado, para que esta configuración no se pierda cada vez que actualizemos el repositorio incluiremos dentro de la carpeta local "static" un archivo con nombre "CNAME" y cuyo contenido será únicamente el nombre del dominio personalizado. Actualizaremos el repositorio mediante:
+
+``` bash
+git add .
+git commit -m "Update"
+git push
+```
+
 Y con esto ya tenemos todo listo.
 
 ### Enlaces de interés
