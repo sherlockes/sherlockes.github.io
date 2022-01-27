@@ -19,36 +19,24 @@ Resumen de introducción
 <!--more-->
 
 - Crear el repositorio tu_usuario.github.io
-- Crear un repositorio para el contenido sin construir
 
-- En una carpeta en local poner el contenido de la web
+- En una carpeta en local poner el contenido de la web sin la carpeta de temas ni .git
 
 - Añadir la llave ssh a github
 
 
-
 ``` bash
 git init
-git remote add origin git@github.com:sherlockes/blog.git
-git add --all
-git commit -m "Commit MSG"
-git push origin master
-```
-
-- Añadir el tema
-``` bash
 git submodule add https://github.com/vimux/mainroad.git themes/mainroad
-git submodule update --init --recursive
-git push origin master
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:sherlockes/blog.git
+git push -u origin main
 ```
 
-Crear un [Token](https://github.com/settings/tokens/new) con acceso completo a los repositorios
 
-```
-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
-```
+- Crear la acción según el artículo "[Host on Github]"
 
-- Crear la acción
 Crear el archivo `.github/workflows/main.yml`
 
 ``` yml
@@ -86,11 +74,22 @@ jobs:
           publish_dir: ./public
 ```
 
+
+
+| HOSTNAME | TYPE  | ADDRESS / VALUE      | DISTANCE/PRIO | TTL   | SERVICE   |
+| -----    | ----- | ------               | -----         | ----- | -----     |
+|          | A     | 185.199.108.153      | NA            | 3603* | 3rd-party |
+|          | A     | 185.199.109.153      | NA            | 3603* | 3rd-party |
+|          | A     | 185.199.110.153      | NA            | 3603* | 3rd-party |
+|          | A     | 185.199.111.153      | NA            | 3603* | 3rd-party |
+| www      | CNAME | sherlockes.github.io | NA            | 3603* | 3rd-party |
+
 ![image-01]
 
 ### Enlaces de interés
 - [Ruddra - Static site with Hugo & Github actions](https://ruddra.com/hugo-deploy-static-page-using-github-actions/)
+- [Codenanshu - Hugo & Github actions](https://www.youtube.com/watch?v=psyz4UPnGAA)
 
-[link]: https://www.google.es
+[Host on Github]: https://gohugo.io/hosting-and-deployment/hosting-on-github/
 
 [image-01]: /images/20220126_hugo_github_01.jpg
