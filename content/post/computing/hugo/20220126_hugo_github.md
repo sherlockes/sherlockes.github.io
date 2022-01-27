@@ -126,9 +126,10 @@ Le daremos unas horas para que se propague la información por todos los servido
 
 ![image-06]
 
-Por otro lado, para que esta configuración no se pierda cada vez que actualizemos el repositorio incluiremos dentro de la carpeta local "static" un archivo con nombre "CNAME" y cuyo contenido será únicamente el nombre del dominio personalizado. Actualizaremos el repositorio mediante:
+Por otro lado, para que esta configuración no se pierda cada vez que actualicemos el repositorio incluiremos dentro de la carpeta local "static" un archivo con nombre "CNAME" y cuyo contenido será únicamente el nombre del dominio personalizado. Posteriormente actualizaremos el repositorio. Todo lo anterior mediante la siguiente secuencia de comandos ejecutados desde la consola de la carpeta local donde están los archivos del blog.
 
 ``` bash
+echo "tudominio.com" > static/CNAME
 git add .
 git commit -m "Update"
 git push
