@@ -67,6 +67,25 @@
 </div>
 <article class="list__item post">
 <figure class="list__thumbnail thumbnail">
+<a class=thumbnail__link href=/reinicio-programado-con-tasker-en-android/>
+<img class=thumbnail__image src=/images/20180117_tasker_reinicio.jpg alt="Reinicio programado con Tasker en Android">
+</a>
+</figure>
+<header class=list__header>
+<h2 class="list__title post__title">
+<a href=/reinicio-programado-con-tasker-en-android/ rel=bookmark>
+Reinicio programado con Tasker en Android
+</a>
+</h2>
+<div class="list__meta meta"><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/tasker/ rel=category>Tasker</a>
+</span>
+</div></div>
+</header>
+<div class="content list__excerpt post__content clearfix">
+El Problema Si eres de los que no apaga nunca el smartphone esta pequeña receta te va a interesar. Aunque soy un completo desconocedor de los motivos específicos, es fácil comprobar como si nunca apagas del teléfono, con el paso de los días empiezan a aparecer consumos de batería anómalos y ciertas inestabilidades en el sistema. La solución Para evitarlo me he creado una pequeña receta en Tasker según la cual se produce un reinicio automático del terminal los lunes, miércoles y viernes a las dos de la madrugada.
+</div>
+</article><article class="list__item post">
+<figure class="list__thumbnail thumbnail">
 <a class=thumbnail__link href=/raspberry-red-y-wifi/>
 <img class=thumbnail__image src=/images/raspberry_logo.png alt="Raspberry red y wifi">
 </a>
@@ -205,29 +224,6 @@ Raspberry Acceso desde el exterior
 Ya tenemos nuestro servidor prácticamente montado, ahora necesitamos que cualquiera desde fuera de nuestra red pueda acceder al mismo. Esto presenta dos problemas, el redireccionamiento de router a la raspberry y la ip dinámica que nos asigna el proveedor de servicios de internet.
 Por un lado, para dirigir el tráfico que llega a nuestro router en busca de nuestro servidor tendremos que abrir el puerto 80 para la ip local que tiene adjudicada la Raspberry, en mi caso la 192.
 </div>
-</article><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/raspberry-reinicios-peri%C3%B3dicos/>
-<img class=thumbnail__image src=/images/20180501_raspberry_reinicio.jpg alt="Raspberry Reinicios periódicos">
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/raspberry-reinicios-peri%C3%B3dicos/ rel=bookmark>
-Raspberry Reinicios periódicos
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2018-04-10T00:00:00Z>2018-04-10</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-Reiniciar la Raspberry a diario Para que la Raspberry se reinicie al menos una vez al día por si alguno de los servicios se cuelga y no tenemos acceso a ella o no nos damos cuenta del problema he implementado un reinicio diario a las 4:00 AM mediante una tarea programada usando el cron del usuario root
-sudo crontab -e
-nos abre un archivo al que le añadiremos la siguiente línea
-</div>
 </article>
 </main>
 <div class=pagination>
@@ -241,6 +237,7 @@ nos abre un archivo al que le añadiremos la siguiente línea
 <h4 class=widget__title>Más Recientes</h4>
 <div class=widget__content>
 <ul class=widget__list>
+<li class=widget__item><a class=widget__link href=/hugo-con-github-actions/>Hugo con Github actions</a></li>
 <li class=widget__item><a class=widget__link href=/servidor-webdav-de-contenido-remoto-con-rclone/>Servidor Webdav de contenido remoto con Rclone</a></li>
 <li class=widget__item><a class=widget__link href=/migrando-hugo-a-gitlab/>Migrando Hugo a Gitlab</a></li>
 <li class=widget__item><a class=widget__link href=/reseteo-autom%C3%A1tico-de-home-assistant/>Reseteo automático de Home assistant</a></li>
@@ -250,7 +247,6 @@ nos abre un archivo al que le añadiremos la siguiente línea
 <li class=widget__item><a class=widget__link href=/actualizar-m%C3%B3dulo-de-funciones-en-excel/>Actualizar módulo de funciones en excel</a></li>
 <li class=widget__item><a class=widget__link href=/cerrar-buffers-abiertos-en-emacs-con-ibuffer/>Cerrar buffers abiertos en Emacs con ibuffer</a></li>
 <li class=widget__item><a class=widget__link href=/clonar-el-disco-de-arranque-de-la-raspberry/>Clonar el disco de arranque de la raspberry</a></li>
-<li class=widget__item><a class=widget__link href=/que-hace-la-raspberry-sin-mi/>Que hace la raspberry sin mi</a></li>
 </ul>
 </div>
 </div>
@@ -319,7 +315,7 @@ nos abre un archivo al que le añadiremos la siguiente línea
 <a class="widget-taglist__link widget__link btn" href=/tags/garmin/ title=garmin>garmin (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gdrive/ title=Gdrive>Gdrive (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gimp/ title=Gimp>Gimp (2)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/git/ title=git>git (1)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/git/ title=git>git (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gmail/ title=gmail>gmail (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/google-chrome/ title="google chrome">google chrome (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/google-drive/ title="Google Drive">Google Drive (4)</a>

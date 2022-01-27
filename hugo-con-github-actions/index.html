@@ -1,0 +1,276 @@
+<!doctype html><html class=no-js lang=es>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>Hugo con Github actions - Sherblog</title>
+<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<meta name=description content="Como instalar la página desarrollada en Hugo con Github Actions">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="http://www.sherblog.pro/images/20220126_hugo_github_00.jpg">
+<meta name=twitter:title content="Hugo con Github actions">
+<meta name=twitter:description content="Como instalar la página desarrollada en Hugo con Github Actions">
+<meta name=twitter:creator content="@sherblogpro">
+<meta name=twitter:site content="sherblog.pro">
+<link rel=dns-prefetch href=//fonts.googleapis.com>
+<link rel=dns-prefetch href=//fonts.gstatic.com>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+<link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=/css/custom.css>
+<link rel="shortcut icon" href=/favicon.ico>
+</head>
+<body class=body>
+<div class="container container--outer">
+<header class=header>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Hugo con Github actions">
+<meta name=twitter:description content="Como instalar la página desarrollada en Hugo con Github Actions">
+<div class=container>
+<div class=logo>
+<a class=logo__link href=/ title=Sherblog rel=home>
+<div class=logo__title>Sherblog</div>
+<div class=logo__tagline>Sólo mi forma de hacer las cosas...</div>
+</a>
+</div>
+<nav class=menu>
+<button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menú</span>
+</button>
+<ul class=menu__list>
+<li class=menu__item>
+<a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/>
+<span class=menu__text>Mis vértices geodésicos</span>
+</a>
+</li>
+<li class=menu__item>
+<a class=menu__link href=/post/computing/raspberry/>
+<span class=menu__text>Raspberry Pi desde cero</span>
+</a>
+</li>
+<li class=menu__item>
+<a class=menu__link href=/post/android/tasker/>
+<span class=menu__text>Tasker</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="wrapper flex">
+<div class=primary>
+<main class=main role=main>
+<article class=post>
+<header class=post__header>
+<h1 class=post__title>Hugo con Github actions</h1>
+<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2022-01-27T00:00:00Z>2022-01-27</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/hugo/ rel=category>hugo</a>
+</span>
+</div></div>
+</header>
+<figure class=post__thumbnail>
+<img src=/images/20220126_hugo_github_00.jpg alt="Hugo con Github actions">
+</figure>
+<div class="post__toc toc">
+<div class=toc__title>Índice</div>
+<div class=toc__menu>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#creando-el-repositorio-en-github>Creando el repositorio en GitHub</a></li>
+<li><a href=#preparando-el-contenido-en-local>Preparando el contenido en local</a></li>
+<li><a href=#añadir-la-llave-ssh-a-github>Añadir la llave ssh a github</a></li>
+<li><a href=#creando-la-acción-de-publicación>Creando la acción de publicación</a></li>
+<li><a href=#inicializando-el-repositorio>Inicializando el repositorio</a></li>
+<li><a href=#configuración-de-github-pages>Configuración de GitHub Pages</a></li>
+<li><a href=#configuración-de-un-dominio-personalizado>Configuración de un dominio personalizado</a></li>
+<li><a href=#enlaces-de-interés>Enlaces de interés</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div><div class="content post__content clearfix">
+<p>Durante mucho tiempo he tenido alojado este blog en <a href=https://github.com>GitHub</a> pero la publicación se realizaba en local mediante la Raspberry. Ahora voy a generar la publicación del blog a partir de un propio repositorio mediante las acciones de <a href=https://github.com>GitHub</a></p>
+<h3 id=creando-el-repositorio-en-github>Creando el repositorio en GitHub</h3>
+<p>El primer paso es crear un nuevo repositorio público en <a href=https://github.com>GitHub</a>, para que la direción resultamente sea mucho más sencilla, le pondremos el nombre &ldquo;usuario.github.io&rdquo;</p>
+<p><img src=/images/20220126_hugo_github_01.jpg alt=image-01></p>
+<h3 id=preparando-el-contenido-en-local>Preparando el contenido en local</h3>
+<p>Tenemos el contenido a partir del cual generamos la página en una carpeta. Eliminamos la carpeta &ldquo;themes&rdquo; y todo el rastro de git en caso de que haya sido un repositorio anterior tal y como aparece seleccionado en la siguiente imagen:</p>
+<p><img src=/images/20220126_hugo_github_02.jpg alt=image-02></p>
+<h3 id=añadir-la-llave-ssh-a-github>Añadir la llave ssh a github</h3>
+<p>Para que el desarrollo sea más sencillo añadiremos una llave ssh del equipo desde el que vamos a publicar a la configuración personal, no a la del repositorio, de nuestra cuenta de <a href=https://github.com>GitHub</a>.</p>
+<p><img src=/images/20220126_hugo_github_03.jpg alt=image-03></p>
+<blockquote>
+<p>En linux es tan sencillo como ejecutar el comando <code>ssh-keygen -t rsa</code> y copiar el contenido del archivo &ldquo;.ssh/id_rsa.pub&rdquo; generado.</p>
+</blockquote>
+<h3 id=creando-la-acción-de-publicación>Creando la acción de publicación</h3>
+<p>Este punto es la clave de todo el proceso ya que nos permitirá que la web se publique automáticamente cada vez que actualizamos el repositorio. Según lo expuesto en el artículo &ldquo;<a href=https://gohugo.io/hosting-and-deployment/hosting-on-github/>Host on Github</a>&rdquo; situados en la carpeta local deberemos:</p>
+<ul>
+<li>Crear una carpeta llamada &ldquo;.github&rdquo;</li>
+<li>Dentro de la anterior crear una carpeta &ldquo;workflows&rdquo;</li>
+<li>Dentro de &ldquo;workflows&rdquo; crear un archivo &ldquo;gh-pages.yml&rdquo;</li>
+</ul>
+<p>El contenido del arhcivo será el siguiente:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>name</span>: <span style=color:#ae81ff>github pages</span>
+
+<span style=color:#f92672>on</span>:
+  <span style=color:#f92672>push</span>:
+    <span style=color:#f92672>branches</span>:
+      - <span style=color:#ae81ff>main </span> <span style=color:#75715e># Set a branch to deploy</span>
+  <span style=color:#f92672>pull_request</span>:
+
+<span style=color:#f92672>jobs</span>:
+  <span style=color:#f92672>deploy</span>:
+    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-20.04</span>
+    <span style=color:#f92672>steps</span>:
+      - <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/checkout@v2</span>
+        <span style=color:#f92672>with</span>:
+          <span style=color:#f92672>submodules</span>: <span style=color:#66d9ef>true</span>  <span style=color:#75715e># Fetch Hugo themes (true OR recursive)</span>
+          <span style=color:#f92672>fetch-depth</span>: <span style=color:#ae81ff>0</span>    <span style=color:#75715e># Fetch all history for .GitInfo and .Lastmod</span>
+
+      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Setup Hugo</span>
+        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>peaceiris/actions-hugo@v2</span>
+        <span style=color:#f92672>with</span>:
+          <span style=color:#f92672>hugo-version</span>: <span style=color:#e6db74>&#39;latest&#39;</span>
+          <span style=color:#75715e># extended: true</span>
+
+      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Build</span>
+        <span style=color:#f92672>run</span>: <span style=color:#ae81ff>hugo --minify</span>
+
+      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Deploy</span>
+        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>peaceiris/actions-gh-pages@v3</span>
+        <span style=color:#f92672>if</span>: <span style=color:#ae81ff>github.ref == &#39;refs/heads/main&#39;</span>
+        <span style=color:#f92672>with</span>:
+          <span style=color:#f92672>github_token</span>: <span style=color:#ae81ff>${{ secrets.GITHUB_TOKEN }}</span>
+          <span style=color:#f92672>publish_dir</span>: <span style=color:#ae81ff>./public</span>
+</code></pre></div><h3 id=inicializando-el-repositorio>Inicializando el repositorio</h3>
+<p>Desde la carpeta local en la que tenemos el contenido de la web ejecutaremos la siguiente secuencia de comandos:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git init
+git submodule add https://github.com/vimux/mainroad.git themes/mainroad
+git commit -m <span style=color:#e6db74>&#34;Primer Commit&#34;</span>
+git branch -M main
+git remote add origin git@github.com:sherlockes/sherlockes.github.io.git
+git push -u origin main
+</code></pre></div><ul>
+<li>Inicializar el repositorio</li>
+<li>Añadir el tema a través de un submódulo</li>
+<li>Crear el primer Commit</li>
+<li>Renombrar la rama principal a &ldquo;main&rdquo;</li>
+<li>Enlazar la carpeta con el repositorio remoto</li>
+<li>Subir el contenido al repositorio remoto</li>
+</ul>
+<p>En este momento podremos ver en la pestaña &ldquo;Actions&rdquo; de nuestro proyecto en <a href=https://github.com>GitHub</a> como se han ejecutado un par de ellas:</p>
+<p><img src=/images/20220126_hugo_github_04.jpg alt=image-04></p>
+<p>Con estas aciones se ha creado una nueva rama llamada &ldquo;gh-pages&rdquo; en el repositorio con el contenido tras la publicación en Hugo de la rama &ldquo;main&rdquo; del repositorio</p>
+<h3 id=configuración-de-github-pages>Configuración de GitHub Pages</h3>
+<p>Desde el menú &ldquo;Settings&rdquo; de nuestro repositorio accederemos al menú &ldquo;Pages&rdquo; para seleccionar como fuente la rama &ldquo;gh-pages&rdquo; y guardar los cambios.</p>
+<p><img src=/images/20220126_hugo_github_05.jpg alt=image-05></p>
+<p>Si todo ha ido bien, ya podemos acceder al contenido de la página desde &ldquo;usuario.github.io&rdquo;</p>
+<h3 id=configuración-de-un-dominio-personalizado>Configuración de un dominio personalizado</h3>
+<p>Accederemos al panel de control del registrador de dominios al que le hayamos comprado el mismo y editaremos los registros DNS para que queden como lo siguiente:</p>
+<table>
+<thead>
+<tr>
+<th>HOSTNAME</th>
+<th>TYPE</th>
+<th>ADDRESS / VALUE</th>
+<th>DISTANCE/PRIO</th>
+<th>TTL</th>
+<th>SERVICE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>A</td>
+<td>185.199.108.153</td>
+<td>NA</td>
+<td>3603*</td>
+<td>3rd-party</td>
+</tr>
+<tr>
+<td></td>
+<td>A</td>
+<td>185.199.109.153</td>
+<td>NA</td>
+<td>3603*</td>
+<td>3rd-party</td>
+</tr>
+<tr>
+<td></td>
+<td>A</td>
+<td>185.199.110.153</td>
+<td>NA</td>
+<td>3603*</td>
+<td>3rd-party</td>
+</tr>
+<tr>
+<td></td>
+<td>A</td>
+<td>185.199.111.153</td>
+<td>NA</td>
+<td>3603*</td>
+<td>3rd-party</td>
+</tr>
+<tr>
+<td>www</td>
+<td>CNAME</td>
+<td>sherlockes.github.io</td>
+<td>NA</td>
+<td>3603*</td>
+<td>3rd-party</td>
+</tr>
+</tbody>
+</table>
+<p>Le daremos unas horas para que se propague la información por todos los servidores de DNS y accederemos al menú &ldquo;Pages&rdquo; dentro de los ajustes de nuestro repositorio en <a href=https://github.com>GitHub</a> para introducir y comprobar la información de este dominio.</p>
+<p><img src=/images/20220126_hugo_github_06.jpg alt=image-06></p>
+<p>Y con esto ya tenemos todo listo.</p>
+<h3 id=enlaces-de-interés>Enlaces de interés</h3>
+<ul>
+<li><a href=https://ruddra.com/hugo-deploy-static-page-using-github-actions/>Ruddra - Static site with Hugo & Github actions</a></li>
+<li><a href="https://www.youtube.com/watch?v=psyz4UPnGAA">Codenanshu - Hugo & Github actions</a></li>
+<li><a href=https://gohugo.io/hosting-and-deployment/hosting-on-github/>Gohugo.io - Host on GitHub</a></li>
+</ul>
+</div>
+<footer class=post__footer>
+<div class="content post__content clearfix">
+<h3>Otros de mís artículos que te pueden interesar</h3>
+<ul>
+<li><a href=/migrando-hugo-a-gitlab/>Migrando Hugo a Gitlab</a></li>
+<li><a href=/contenido-relacionado-en-hugo/>Contenido relacionado en Hugo</a></li>
+<li><a href=/hugo-creando-una-lista-de-art%C3%ADculos-por-categor%C3%ADa./>Hugo - Creando una lista de artículos por categoría.</a></li>
+<li><a href=/incrustar-texto-externo-en-hugo/>Incrustar texto externo en Hugo</a></li>
+<li><a href=/insertar-comentarios-en-hugo/>Insertar comentarios en Hugo</a></li>
+</ul>
+</div>
+<div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
+<ul class=tags__list>
+<li class=tags__item>
+<a class="tags__link btn" href=/tags/git/ rel=tag>git</a>
+</li>
+</ul>
+</div>
+</footer>
+</article>
+</main>
+<nav class="post-nav flex">
+<div class="post-nav__item post-nav__item--prev">
+<a class=post-nav__link href=/servidor-webdav-de-contenido-remoto-con-rclone/ rel=prev><span class=post-nav__caption>«&#8201;Anterior</span><p class=post-nav__post-title>Servidor Webdav de contenido remoto con Rclone</p></a>
+</div>
+</nav>
+</div>
+</div>
+<footer class=footer>
+<div class="container footer__container flex">
+<div class=footer__copyright>
+&copy; 2022 Sherblog.
+<span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
+</div>
+</div>
+</footer>
+</div>
+<script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body>
+</html>
