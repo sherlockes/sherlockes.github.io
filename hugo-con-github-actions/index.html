@@ -226,8 +226,9 @@ git push -u origin main
 </table>
 <p>Le daremos unas horas para que se propague la información por todos los servidores de DNS y accederemos al menú &ldquo;Pages&rdquo; dentro de los ajustes de nuestro repositorio en <a href=https://github.com>GitHub</a> para introducir y comprobar la información de este dominio.</p>
 <p><img src=/images/20220126_hugo_github_06.jpg alt=image-06></p>
-<p>Por otro lado, para que esta configuración no se pierda cada vez que actualizemos el repositorio incluiremos dentro de la carpeta local &ldquo;static&rdquo; un archivo con nombre &ldquo;CNAME&rdquo; y cuyo contenido será únicamente el nombre del dominio personalizado. Actualizaremos el repositorio mediante:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git add .
+<p>Por otro lado, para que esta configuración no se pierda cada vez que actualicemos el repositorio incluiremos dentro de la carpeta local &ldquo;static&rdquo; un archivo con nombre &ldquo;CNAME&rdquo; y cuyo contenido será únicamente el nombre del dominio personalizado. Posteriormente actualizaremos el repositorio. Todo lo anterior mediante la siguiente secuencia de comandos ejecutados desde la consola de la carpeta local donde están los archivos del blog.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>echo <span style=color:#e6db74>&#34;tudominio.com&#34;</span> &gt; static/CNAME
+git add .
 git commit -m <span style=color:#e6db74>&#34;Update&#34;</span>
 git push
 </code></pre></div><p>Y con esto ya tenemos todo listo.</p>
