@@ -26,14 +26,5 @@ Resumen de introducción
 
 [link]: https://www.google.es
 
-[image-01]: /images/{{ .Name }}_01.jpg
-[image-02]: /images/{{ .Name }}_02.jpg
-[image-03]: /images/{{ .Name }}_03.jpg
-[image-04]: /images/{{ .Name }}_04.jpg
-[image-05]: /images/{{ .Name }}_05.jpg
-[image-06]: /images/{{ .Name }}_06.jpg
-[image-07]: /images/{{ .Name }}_07.jpg
-[image-08]: /images/{{ .Name }}_08.jpg
-[image-09]: /images/{{ .Name }}_09.jpg
-[image-10]: /images/{{ .Name }}_10.jpg
-
+{{ range $num := (seq 9) }}
+[image-0{{.}}]: /images/{{ $.Name }}_0{{ . }}.jpg{{ end }}
