@@ -67,6 +67,27 @@
 </div>
 <article class="list__item post">
 <figure class="list__thumbnail thumbnail">
+<a class=thumbnail__link href=/rclone-en-synology/>
+<img class=thumbnail__image src=/images/20190915_rclone_synology.jpg alt="Rclone en Synology">
+</a>
+</figure>
+<header class=list__header>
+<h2 class="list__title post__title">
+<a href=/rclone-en-synology/ rel=bookmark>
+Rclone en Synology
+</a>
+</h2>
+<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2019-09-15T00:00:00Z>2019-09-15</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/computing/ rel=category>computing</a>, <a class=meta__link href=/categories/sherver/ rel=category>sherver</a>
+</span>
+</div></div>
+</header>
+<div class="content list__excerpt post__content clearfix">
+<p>Llega el momento en el que tienes que instalar rclone en tu nas de Synology y te encuentras con que no funciona la misma instalación que has hecho en la Raspberry o Debian</p>
+</div>
+</article><article class="list__item post">
+<figure class="list__thumbnail thumbnail">
 <a class=thumbnail__link href=/raspberry-configurando-rclone-sin-entorno-gr%C3%A1fico/>
 <img class=thumbnail__image src=/images/20180910_raspberry_rclone_00.jpg alt="Raspberry configurando rclone sin entorno gráfico">
 </a>
@@ -193,28 +214,6 @@ Primeros pasos con Zerotier
 <div class="content list__excerpt post__content clearfix">
 La situación. Hace unos días que vengo teniendo problemas con la conexión VPN (Servidor VPN) que utilizo para conectarme a la red de mi casa cuando estoy en movilidad. Parece que el problema no está en el servidor VPN que corre sobre la Raspberry B+ ni en el cliente de openvpn que utilizo en mi terminal Android, pero no ha sido fácil llegar a esta conclusión. Después de varias pruebas y de mucho tiempo funcionando de un día para otro y sin tocar ninguna configurando el sistema ha dejado de funcionar.
 </div>
-</article><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/gesti%C3%B3n-de-usuarios-y-passwords/>
-<img class=thumbnail__image src=/images/20181009_gestion_passwords_00.jpg alt="Gestión de usuarios y passwords">
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/gesti%C3%B3n-de-usuarios-y-passwords/ rel=bookmark>
-Gestión de usuarios y passwords
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2019-02-06T00:00:00Z>2019-02-06</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/varios/ rel=category>Varios</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-Cada día son más los servicios web a los que estamos subscritos y parece evidente que hace falta una gestión adecuada de las contraseñas que utilizamos para acceder a cada uno de estos servicios. Cada uno maneja este tema a su gusto pero creo que para hacerlo de una forma “segura” hay que cumplir con los siguientes requisitos:
-Contraseñas distintas para cada servicio No usar palabras, nombres, fechas&mldr; No usar sólo letras Longitud suficiente (más de diez caracteres) Accesibles desde cualquier lugar Guardadas en un lugar seguro No voy a entrar a valorar las alternativas que existen y que cumplen con las características de arriba, simplemente voy a exponer el método que yo utilizo en la actualidad y como hago para garantizar lo que, a mi modo de ver, es una seguridad suficiente.
-</div>
 </article>
 </main>
 <div class=pagination>
@@ -228,6 +227,7 @@ Contraseñas distintas para cada servicio No usar palabras, nombres, fechas&mldr
 <h4 class=widget__title>Más Recientes</h4>
 <div class=widget__content>
 <ul class=widget__list>
+<li class=widget__item><a class=widget__link href=/usb-externo-controlado-desde-puerto-gpio/>Usb externo controlado desde puerto Gpio</a></li>
 <li class=widget__item><a class=widget__link href=/arquetipos-en-hugo-archetypes/>Arquetipos en Hugo (Archetypes)</a></li>
 <li class=widget__item><a class=widget__link href=/hugo-con-github-actions/>Hugo con Github actions</a></li>
 <li class=widget__item><a class=widget__link href=/servidor-webdav-de-contenido-remoto-con-rclone/>Servidor Webdav de contenido remoto con Rclone</a></li>
@@ -237,7 +237,6 @@ Contraseñas distintas para cada servicio No usar palabras, nombres, fechas&mldr
 <li class=widget__item><a class=widget__link href=/buscar-y-reemplazar-en-bash-con-find-y-sed/>Buscar y reemplazar en bash con find y sed</a></li>
 <li class=widget__item><a class=widget__link href=/el-termostato-de-la-caldera-en-home-assistant/>El termostato de la caldera en Home Assistant</a></li>
 <li class=widget__item><a class=widget__link href=/actualizar-m%C3%B3dulo-de-funciones-en-excel/>Actualizar módulo de funciones en excel</a></li>
-<li class=widget__item><a class=widget__link href=/cerrar-buffers-abiertos-en-emacs-con-ibuffer/>Cerrar buffers abiertos en Emacs con ibuffer</a></li>
 </ul>
 </div>
 </div>
@@ -289,7 +288,7 @@ Contraseñas distintas para cada servicio No usar palabras, nombres, fechas&mldr
 <a class="widget-taglist__link widget__link btn" href=/tags/apps/ title=Apps>Apps (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/averias/ title=Averias>Averias (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/backup/ title=Backup>Backup (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/bash/ title=bash>bash (18)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/bash/ title=bash>bash (19)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/bricolaje/ title=Bricolaje>Bricolaje (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/darktable/ title=darktable>darktable (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/desarrollo/ title=desarrollo>desarrollo (17)</a>
@@ -317,6 +316,7 @@ Contraseñas distintas para cada servicio No usar palabras, nombres, fechas&mldr
 <a class="widget-taglist__link widget__link btn" href=/tags/google-sheets/ title="google sheets">google sheets (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gopro/ title=Gopro>Gopro (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gphoto-sync/ title=gphoto-sync>gphoto-sync (1)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/gpio/ title=gpio>gpio (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gps/ title=GPS>GPS (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/grub/ title=grub>grub (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gthumb/ title=gthumb>gthumb (1)</a>

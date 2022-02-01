@@ -67,6 +67,31 @@
 </div>
 <article class="list__item post">
 <figure class="list__thumbnail thumbnail">
+<a class=thumbnail__link href=/raspberry-servidor-vpn/>
+<img class=thumbnail__image src=/images/20180501_raspberry_vpn.jpg alt="Raspberry Servidor VPN">
+</a>
+</figure>
+<header class=list__header>
+<h2 class="list__title post__title">
+<a href=/raspberry-servidor-vpn/ rel=bookmark>
+Raspberry Servidor VPN
+</a>
+</h2>
+<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2018-04-11T00:00:00Z>2018-04-11</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
+</span>
+</div></div>
+</header>
+<div class="content list__excerpt post__content clearfix">
+Instalando un servidor VPN Una de las grandes funcionalidades que nos puede ofrecer nuestra Raspberry Pi es como servidor VPN el cual tiene dos finalidades fundamentales.
+Acceder de forma segura a nuestra red local desde fuera de ella Conseguir una navegación segura en redes wifi públicas sudo apt update
+sudo apt upgrade
+curl -L https://install.pivpn.io | bash
+Para los detalles de las opciones de configuración durante la instalación tan sólo hay que visitar la web de El Atareao donde lo explica pormenorizadamente.
+</div>
+</article><article class="list__item post">
+<figure class="list__thumbnail thumbnail">
 <a class=thumbnail__link href=/raspberry-acceso-desde-el-exterior/>
 <img class=thumbnail__image src=/images/20180410_raspberry_noip.jpg alt="Raspberry Acceso desde el exterior">
 </a>
@@ -197,29 +222,6 @@ Instalando VSftpD Aunque no es imprescindible para la instalación y funcionamie
 Instalamos &ldquo;vsftp&rdquo; y editamos el archivo de configuración asegurándonos de que están como aparecen a continuación los siguientes paramétros.
 *** Actualización *** //Para que los archivos subidos mediante el cliente ftp (logeado con el usuario &ldquo;pi&rdquo;) al servidor en la raspberry puedan ser leidos y ejecutados por el usuario &ldquo;www-data&rdquo; deberemos modificar tambien el parámetro umask de forma que quede local_umask=022//
 </div>
-</article><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/raspberry-descargando-wordpress/>
-<img class=thumbnail__image src=/images/raspberry_logo.png alt="Raspberry Descargando Wordpress">
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/raspberry-descargando-wordpress/ rel=bookmark>
-Raspberry Descargando Wordpress
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2018-04-05T00:00:00Z>2018-04-05</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-Descargando WordPress En primer lugar descargamos la ultima versión de WordPress a el directorio &ldquo;home&rdquo; del usuario Pi. Si la descargamos en inglés lo haremos mediante el archivo &ldquo;latest.tar.gz&rdquo; pero si la queremos en castellano habrá en entrar en [[http://es.wordpress.org]] y comprobar cual es la versión actual para descargar un archivo del tipo &ldquo;wordpress-4.8.2-es_ES.tar.gz&rdquo;
-Las líneas de arriba realizan la siguiente secuencia:
-Crea un directorio en la raiz de apache para instalar WordPress Iniciarse en el directorio &ldquo;home&rdquo; de Pi Descargar la última versión de WordPress (En inglés) Descomprime el archivo descargado Mueve el contenido de la carpeta extraida a &ldquo;/var/www/html/sherblog&rdquo; Borra el archivo descargado Borra la carpeta vacía Con esto ya están listos los archivos de WordPress, ahora modificaremos el archivo &ldquo;wp-config&rdquo; con la información de la conexión a la base de datos que hemos creado anteriormente.
-</div>
 </article>
 </main>
 <div class=pagination>
@@ -233,6 +235,7 @@ Crea un directorio en la raiz de apache para instalar WordPress Iniciarse en el 
 <h4 class=widget__title>Más Recientes</h4>
 <div class=widget__content>
 <ul class=widget__list>
+<li class=widget__item><a class=widget__link href=/usb-externo-controlado-desde-puerto-gpio/>Usb externo controlado desde puerto Gpio</a></li>
 <li class=widget__item><a class=widget__link href=/arquetipos-en-hugo-archetypes/>Arquetipos en Hugo (Archetypes)</a></li>
 <li class=widget__item><a class=widget__link href=/hugo-con-github-actions/>Hugo con Github actions</a></li>
 <li class=widget__item><a class=widget__link href=/servidor-webdav-de-contenido-remoto-con-rclone/>Servidor Webdav de contenido remoto con Rclone</a></li>
@@ -242,7 +245,6 @@ Crea un directorio en la raiz de apache para instalar WordPress Iniciarse en el 
 <li class=widget__item><a class=widget__link href=/buscar-y-reemplazar-en-bash-con-find-y-sed/>Buscar y reemplazar en bash con find y sed</a></li>
 <li class=widget__item><a class=widget__link href=/el-termostato-de-la-caldera-en-home-assistant/>El termostato de la caldera en Home Assistant</a></li>
 <li class=widget__item><a class=widget__link href=/actualizar-m%C3%B3dulo-de-funciones-en-excel/>Actualizar módulo de funciones en excel</a></li>
-<li class=widget__item><a class=widget__link href=/cerrar-buffers-abiertos-en-emacs-con-ibuffer/>Cerrar buffers abiertos en Emacs con ibuffer</a></li>
 </ul>
 </div>
 </div>
@@ -294,7 +296,7 @@ Crea un directorio en la raiz de apache para instalar WordPress Iniciarse en el 
 <a class="widget-taglist__link widget__link btn" href=/tags/apps/ title=Apps>Apps (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/averias/ title=Averias>Averias (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/backup/ title=Backup>Backup (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/bash/ title=bash>bash (18)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/bash/ title=bash>bash (19)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/bricolaje/ title=Bricolaje>Bricolaje (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/darktable/ title=darktable>darktable (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/desarrollo/ title=desarrollo>desarrollo (17)</a>
@@ -322,6 +324,7 @@ Crea un directorio en la raiz de apache para instalar WordPress Iniciarse en el 
 <a class="widget-taglist__link widget__link btn" href=/tags/google-sheets/ title="google sheets">google sheets (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gopro/ title=Gopro>Gopro (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gphoto-sync/ title=gphoto-sync>gphoto-sync (1)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/gpio/ title=gpio>gpio (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gps/ title=GPS>GPS (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/grub/ title=grub>grub (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gthumb/ title=gthumb>gthumb (1)</a>
