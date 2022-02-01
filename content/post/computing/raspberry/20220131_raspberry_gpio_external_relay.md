@@ -13,7 +13,7 @@ categories:
 tags:
 - "bash"
 - "gpio"
-draft: true
+draft: false
 weight: 5
 ---
 Tenemos un disco duro externo conectado a la Raspberry por un puerto Usb y alimentado por un transformador. Veamos como es posible encenderlo gracias a un relé de 5V sólo cuando cuando vayamos a emplearlo.

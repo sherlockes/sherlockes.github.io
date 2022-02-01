@@ -47,6 +47,7 @@ De esta forma, con el servidor web montado sobre la Raspberry podría tener apag
 - [Mi uso de crontab]({{<relref"20210217_raspberry_autofaenas.md">}})
 - [Home Assistant]({{<relref"20210527_raspberry_home_assistant.md">}})
 - [Crear imagen del sistema]({{<relref"20211225_raspberry_clonar_disco.md">}})
+- [Encender disco externo desde GPIO]({{<relref"20220131_raspberry_gpio_external_relay.md">}})
 
 ### Enlaces de interés
 - [Innerzaurus - Configurar Raspberry sin monitor ni teclado](https://www.innerzaurus.com/diy/raspberry-pi/configurar-una-raspberry-pi-sin-monitor-ni-teclado)
