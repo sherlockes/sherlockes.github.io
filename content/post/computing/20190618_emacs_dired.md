@@ -95,6 +95,8 @@ Si el contenido del directorio que estamos visualizando en Dired cambia debemos 
 # Ocultando información
 Es posible que con nombres de archivos un poco largos nos ocupe algo más del ancho de la ventana quedando un poco "engorrosa" la navegación entre archivos
 
+
+
 [Argumento Prefijo]: https://www.emacswiki.org/emacs/PrefixArgument
 [gnu]: https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html
 [wikemacs]: https://wikemacs.org/wiki/Dired
