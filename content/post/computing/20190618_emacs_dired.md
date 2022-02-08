@@ -132,10 +132,68 @@ El problema reside en que cada vez que abramos un buffer con dired o cambiemos d
 ``` lisp
 (add-hook 'dired-mode-hook (lambda()(dired-hide-details-mode)))
 ```
+{{< borrador >}}
+### Mostrar/Ocultar archivos no visibles
+Para alternar entre que se vean o no los archivos ocultos tengo configurado otro "hook" con una llamada a una función:
+
+``` lisp
+(setq my-dired-ls-switches-show "-laGh1v --group-directories-first")
+(setq my-dired-ls-switches-hide "-lGh1v --group-directories-first")
+
+(setq my-dired-switch 1)
+
+(add-hook 'dired-mode-hook
+ (lambda ()
+  (if (= my-dired-switch 1)(dired-sort-other my-dired-ls-switches-hide))
+  (define-key dired-mode-map (kbd "M-o")
+   (lambda ()
+    (interactive)
+    (setq my-dired-switch (- my-dired-switch))
+    (if (= my-dired-switch 1)
+      (dired-sort-other my-dired-ls-switches-hide)
+     (dired-sort-other my-dired-ls-switches-show))))))
+```
+
+- Definición de cadenas (setq my-dired-ls-switches-show/hide) que determnan la lista de opciones con las que poder fijar el valor de "dired-listing-switches", quien es el encargado de guardar las opciones de visualización de "ls".
+
+- Definición de la variable "my-dired-switch" para determinar en cada momento si estamos en el modo de ver o ocultar.
+
+- Definición del "hook" o función que se va a ejecutar cuando sea abierto un buffer con [Dired].
+ - Se establece el modo por defecto ("my-dired-switch" = 1) estableciendo la cadena "hide" mediante "dired-sort-other"
+ - Se define una función para alternar mediante el atajo "M-o" qeu realiza lo siguiente:
+  - Se invierte el valor de modo ("my-dired-switch") respecto al anterior.
+  - Se activa la cadena "hide" si el valor de modo es "1" o la cadena "show" en caso contrario.
+
+Si añadimos a este "hook" 
+``` lisp
+(setq my-dired-ls-switches-show "-laGh1v --group-directories-first")
+(setq my-dired-ls-switches-hide "-lGh1v --group-directories-first")
+
+(setq my-dired-switch 1)
+
+(add-hook 'dired-mode-hook
+ (lambda ()
+  (dired-hide-details-mode)
+  (if (= my-dired-switch 1)(dired-sort-other my-dired-ls-switches-hide))
+  (define-key dired-mode-map (kbd "M-<up>") 'dired-up-directory)
+  (define-key dired-mode-map (kbd "M-<down>") 'dired-find-alternate-file)
+  (define-key dired-mode-map (kbd "M-o")
+   (lambda ()
+    (interactive)
+    (setq my-dired-switch (- my-dired-switch))
+    (if (= my-dired-switch 1)
+      (dired-sort-other my-dired-ls-switches-hide)
+     (dired-sort-other my-dired-ls-switches-show))))))
+```
+{{< / borrador >}}
 
 ### Enlaces de interés
 - [GNU - Dired reference card](https://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf)
+- [GNU - Hooks in Emacs](https://www.gnu.org/software/emacs/manual/html_node/emacs/Hooks.html)
 - [Emacs StackExchange - Dired sort](https://emacs.stackexchange.com/questions/27912/dired-sort-and-hide-by-default)
+- [EmacsWiki - Dired Omit Mode](https://www.emacswiki.org/emacs/DiredOmitMode)
+- [Oremacs - Dired options](https://oremacs.com/2015/01/13/dired-options/)
+- [Xahlee - Define keys in Emacs](http://xahlee.info/emacs/emacs/keyboard_shortcuts.html)
 - [Xenodium - Hide dired details](https://xenodium.com/showhide-emacs-dired-details-in-style/)
 
 [Dired]: https://www.emacswiki.org/emacs/DiredMode
