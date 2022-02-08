@@ -183,10 +183,15 @@
   config.toml
 </code></pre></div><p>El problema reside en que cada vez que abramos un buffer con dired o cambiemos de directorio dentro del mismo vamos a tener que usar el comando <code>(</code> para ocultar los detalles, lo cual resulta un poso engorroso. Para evitarlo he añadido la siguiente línea a mi archivo de configuración de <a href=https://www.gnu.org/software/emacs/>Emacs</a> &ldquo;.emacs&rdquo;</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lisp data-lang=lisp>(add-hook <span style=color:#e6db74>&#39;dired-mode-hook</span> (lambda()(dired-hide-details-mode)))
-</code></pre></div><h3 id=enlaces-de-interés>Enlaces de interés</h3>
+</code></pre></div>
+<h3 id=enlaces-de-interés>Enlaces de interés</h3>
 <ul>
 <li><a href=https://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf>GNU - Dired reference card</a></li>
+<li><a href=https://www.gnu.org/software/emacs/manual/html_node/emacs/Hooks.html>GNU - Hooks in Emacs</a></li>
 <li><a href=https://emacs.stackexchange.com/questions/27912/dired-sort-and-hide-by-default>Emacs StackExchange - Dired sort</a></li>
+<li><a href=https://www.emacswiki.org/emacs/DiredOmitMode>EmacsWiki - Dired Omit Mode</a></li>
+<li><a href=https://oremacs.com/2015/01/13/dired-options/>Oremacs - Dired options</a></li>
+<li><a href=http://xahlee.info/emacs/emacs/keyboard_shortcuts.html>Xahlee - Define keys in Emacs</a></li>
 <li><a href=https://xenodium.com/showhide-emacs-dired-details-in-style/>Xenodium - Hide dired details</a></li>
 </ul>
 </div>
