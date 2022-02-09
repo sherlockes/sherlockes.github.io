@@ -38,9 +38,9 @@ En el archivo de configuración ".emacs" he incluido una función que para conse
 - Elimina todas las ventanas
 - Divide el entorno de [Emacs] en lado izquierdo y derecho
 - Parte la ventana izquierda en superior e inferior
-- En la ventana superior izquierda abre un [Dired] a la raiz del blog
-- En la ventana inferior abre una sesión de terminal y lanza el comando "hugoser"
-- Cierra el buffer de Dired con la raiz del blog y abre uno con el contenido
+- Asigna el directorio por defecto al del repositorio del Blog
+- En la ventana superior izquierda abre una sesión de terminal y lanza el comando "hugoser"
+- En la ventana inferior abre un [Dired] al contenido del blog
 - Abre el navegador del sistema con la sirección del servidor de [Hugo]
 - Asigna la tecla "F4" a la función "sherblog_edit" que realiza todo lo anterior
 
@@ -50,12 +50,12 @@ En el archivo de configuración ".emacs" he incluido una función que para conse
   (mapc 'kill-buffer (buffer-list))
   (delete-other-windows nil)
   (split-window-right 80)
-  (split-window-below nil)
-  (dired "/ssh:pi@192.168.10.202:/home/pi/sherblog/")
-  (comint-send-string (get-buffer-process (shell)) "hugoser\n")
-  (other-window -1)
-  (kill-buffer)
+  (split-window-below)
+  (setq default-directory "/ssh:pi@192.168.10.202:/home/pi/sherblog/")
+  (comint-send-string (shell) "hugoser\n")
+  (other-window 1)
   (dired "/ssh:pi@192.168.10.202:/home/pi/sherblog/content/post/")
+  (enlarge-window 10)
   (browse-url "http://192.168.10.202:1313")
 )
 

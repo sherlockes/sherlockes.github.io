@@ -8,7 +8,7 @@ disable_comments: true
 authorbox: false
 toc: false
 mathjax: false
-draft: true
+draft: false
 type: indice
 weight: 5
 menu: main # Optional, add page to a menu. Options: main, side, footer
