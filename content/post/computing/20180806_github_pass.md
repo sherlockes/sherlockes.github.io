@@ -8,7 +8,7 @@ authorbox: false
 toc: false
 mathjax: false
 categories:
-  - "hugo"
+  - "computing"
 draft: falstrue
 weight: 5
 ---
