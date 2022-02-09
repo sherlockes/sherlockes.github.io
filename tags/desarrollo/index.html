@@ -3,12 +3,12 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<title>desarrollo - Sherblog</title>
+<title>Desarrollo - Sherblog</title>
 <script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
 <meta name=description content>
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="http://www.sherblog.pro/images/logo.png">
-<meta name=twitter:title content="desarrollo">
+<meta name=twitter:title content="Desarrollo">
 <meta name=twitter:description content>
 <meta name=twitter:creator content="@sherblogpro">
 <meta name=twitter:site content="sherblog.pro">
@@ -24,7 +24,7 @@
 <div class="container container--outer">
 <header class=header>
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="desarrollo">
+<meta name=twitter:title content="Desarrollo">
 <meta name=twitter:description content="Un poco de informática, bricolaje, bicicleta y todos los problemas que se me ponen delante en el día a día no está de más documentarlos, a alguien le puede ayudar...">
 <div class=container>
 <div class=logo>
@@ -61,29 +61,8 @@
 <div class=primary>
 <main class="main list" role=main>
 <header class=main__header>
-<h1 class=main__title>desarrollo</h1>
+<h1 class=main__title>Desarrollo</h1>
 </header><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/contenido-relacionado-en-hugo/>
-<img class=thumbnail__image src=/images/20211214_hugo_related_content_00.jpg alt="Contenido relacionado en Hugo">
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/contenido-relacionado-en-hugo/ rel=bookmark>
-Contenido relacionado en Hugo
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-12-14T00:00:00Z>2021-12-14</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/hugo/ rel=category>hugo</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-<p>Para que el visitante obtenga una mejor experiencia de tu contenido, es importante mostrarle contenido relaccionado para que siga leyendo a continuación de loa que ya ha consultado. Así lo he implementado en <a href=https://gohugo.io>Hugo</a></p>
-</div>
-</article><article class="list__item post">
 <figure class="list__thumbnail thumbnail">
 <a class=thumbnail__link href=/raspberry-montaje-y-ssh/>
 <img class=thumbnail__image src=/images/raspberry_logo.png alt="Raspberry Montaje y ssh">
@@ -219,6 +198,31 @@ sudo echo &ldquo;deb [arch=armhf] https://download.docker.com/linux/$(. /etc/os-
 sudo apt update sudo apt install docker-ce sudo systemctl enable docker sudo systemctl start docker añadir tu usuario al grupo de docker\ sudo gpasswd -a ${USER} docker
 eliminar todos los contenedores con un solo comando\ docker rm $(docker ps -a -q) docker rm $(docker container ls -a -q)
 </div>
+</article><article class="list__item post">
+<figure class="list__thumbnail thumbnail">
+<a class=thumbnail__link href=/raspberry-servidor-vpn/>
+<img class=thumbnail__image src=/images/20180501_raspberry_vpn.jpg alt="Raspberry Servidor VPN">
+</a>
+</figure>
+<header class=list__header>
+<h2 class="list__title post__title">
+<a href=/raspberry-servidor-vpn/ rel=bookmark>
+Raspberry Servidor VPN
+</a>
+</h2>
+<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2018-04-11T00:00:00Z>2018-04-11</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
+</span>
+</div></div>
+</header>
+<div class="content list__excerpt post__content clearfix">
+Instalando un servidor VPN Una de las grandes funcionalidades que nos puede ofrecer nuestra Raspberry Pi es como servidor VPN el cual tiene dos finalidades fundamentales.
+Acceder de forma segura a nuestra red local desde fuera de ella Conseguir una navegación segura en redes wifi públicas sudo apt update
+sudo apt upgrade
+curl -L https://install.pivpn.io | bash
+Para los detalles de las opciones de configuración durante la instalación tan sólo hay que visitar la web de El Atareao donde lo explica pormenorizadamente.
+</div>
 </article>
 </main>
 <div class=pagination>
@@ -231,16 +235,16 @@ eliminar todos los contenedores con un solo comando\ docker rm $(docker ps -a -q
 <h4 class=widget__title>Más Recientes</h4>
 <div class=widget__content>
 <ul class=widget__list>
-<li class=widget__item><a class=widget__link href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li>
 <li class=widget__item><a class=widget__link href=/usando-dired-en-emacs/>Usando Dired en Emacs</a></li>
 <li class=widget__item><a class=widget__link href=/usb-externo-controlado-desde-puerto-gpio/>Usb externo controlado desde puerto Gpio</a></li>
-<li class=widget__item><a class=widget__link href=/arquetipos-en-hugo-archetypes/>Arquetipos en Hugo (Archetypes)</a></li>
-<li class=widget__item><a class=widget__link href=/hugo-con-github-actions/>Hugo con Github actions</a></li>
 <li class=widget__item><a class=widget__link href=/servidor-webdav-de-contenido-remoto-con-rclone/>Servidor Webdav de contenido remoto con Rclone</a></li>
-<li class=widget__item><a class=widget__link href=/migrando-hugo-a-gitlab/>Migrando Hugo a Gitlab</a></li>
 <li class=widget__item><a class=widget__link href=/reseteo-autom%C3%A1tico-de-home-assistant/>Reseteo automático de Home assistant</a></li>
-<li class=widget__item><a class=widget__link href=/mathjax-en-hugo/>Mathjax en Hugo</a></li>
 <li class=widget__item><a class=widget__link href=/buscar-y-reemplazar-en-bash-con-find-y-sed/>Buscar y reemplazar en bash con find y sed</a></li>
+<li class=widget__item><a class=widget__link href=/el-termostato-de-la-caldera-en-home-assistant/>El termostato de la caldera en Home Assistant</a></li>
+<li class=widget__item><a class=widget__link href=/actualizar-m%C3%B3dulo-de-funciones-en-excel/>Actualizar módulo de funciones en excel</a></li>
+<li class=widget__item><a class=widget__link href=/cerrar-buffers-abiertos-en-emacs-con-ibuffer/>Cerrar buffers abiertos en Emacs con ibuffer</a></li>
+<li class=widget__item><a class=widget__link href=/clonar-el-disco-de-arranque-de-la-raspberry/>Clonar el disco de arranque de la raspberry</a></li>
+<li class=widget__item><a class=widget__link href=/que-hace-la-raspberry-sin-mi/>Que hace la raspberry sin mi</a></li>
 </ul>
 </div>
 </div>
@@ -262,8 +266,6 @@ eliminar todos los contenedores con un solo comando\ docker rm $(docker ps -a -q
 <a class=widget__link href=/categories/hardware/>hardware</a></li>
 <li class=widget__item>
 <a class=widget__link href=/categories/home-assistant/>home assistant</a></li>
-<li class=widget__item>
-<a class=widget__link href=/categories/hugo/>hugo</a></li>
 <li class=widget__item>
 <a class=widget__link href=/categories/iot/>iot</a></li>
 <li class=widget__item>
@@ -292,14 +294,14 @@ eliminar todos los contenedores con un solo comando\ docker rm $(docker ps -a -q
 <a class="widget-taglist__link widget__link btn" href=/tags/apps/ title=Apps>Apps (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/averias/ title=Averias>Averias (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/backup/ title=Backup>Backup (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/bash/ title=bash>bash (20)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/bash/ title=bash>bash (18)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/bricolaje/ title=Bricolaje>Bricolaje (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/darktable/ title=darktable>darktable (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/desarrollo/ title=desarrollo>desarrollo (17)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/desarrollo/ title=Desarrollo>Desarrollo (16)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/dired/ title=dired>dired (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/docker/ title=docker>docker (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/dotfiles/ title=dotfiles>dotfiles (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/emacs/ title=emacs>emacs (5)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/emacs/ title=emacs>emacs (4)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/emule/ title=emule>emule (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/esp/ title=esp>esp (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/excel/ title=excel>excel (1)</a>
@@ -309,7 +311,6 @@ eliminar todos los contenedores con un solo comando\ docker rm $(docker ps -a -q
 <a class="widget-taglist__link widget__link btn" href=/tags/garmin/ title=garmin>garmin (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gdrive/ title=Gdrive>Gdrive (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gimp/ title=Gimp>Gimp (2)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/git/ title=git>git (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gmail/ title=gmail>gmail (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/google-chrome/ title="google chrome">google chrome (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/google-drive/ title="Google Drive">Google Drive (4)</a>
@@ -326,7 +327,6 @@ eliminar todos los contenedores con un solo comando\ docker rm $(docker ps -a -q
 <a class="widget-taglist__link widget__link btn" href=/tags/gthumb/ title=gthumb>gthumb (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/hdr/ title=hdr>hdr (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/hue/ title=hue>hue (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/iawriter/ title=iAWriter>iAWriter (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/imagemagick/ title=imagemagick>imagemagick (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/jinja2/ title=jinja2>jinja2 (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/keepass/ title=Keepass>Keepass (1)</a>
@@ -335,7 +335,6 @@ eliminar todos los contenedores con un solo comando\ docker rm $(docker ps -a -q
 <a class="widget-taglist__link widget__link btn" href=/tags/mantenimiento/ title=mantenimiento>mantenimiento (20)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/mapas/ title=Mapas>Mapas (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/markdown/ title=markdown>markdown (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/mathjax/ title=mathjax>mathjax (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/micropython/ title=micropython>micropython (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/moodle/ title=moodle>moodle (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/mqtt/ title=mqtt>mqtt (1)</a>
@@ -351,9 +350,8 @@ eliminar todos los contenedores con un solo comando\ docker rm $(docker ps -a -q
 <a class="widget-taglist__link widget__link btn" href=/tags/python/ title=python>python (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/raspberry/ title=raspberry>raspberry (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/rclone/ title=rclone>rclone (6)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/regexp/ title=regexp>regexp (2)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/regexp/ title=regexp>regexp (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/sherlodj/ title=SherloDj>SherloDj (3)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/shortcodes/ title=shortcodes>shortcodes (4)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/software/ title=software>software (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/speedtrap/ title=SpeedTrap>SpeedTrap (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/ssh/ title=ssh>ssh (1)</a>

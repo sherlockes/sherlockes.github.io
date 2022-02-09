@@ -64,224 +64,61 @@
 <h1 class=main__title>Raspberry Pi desde cero</h1>
 </header>
 <div class="content main__content clearfix">
-<h3 id=antes-de-nada>Antes de nada&mldr;</h3>
 <p>Lo mas importante antes de adquirir una Raspberry es tener un proyecto para ella (y si es posible que no sea muy complicado) para de esta forma fijarnos un objetivo y por el camino poder aprender infinidad de cosas.</p>
-<p>En mi caso el proyecto es usarla como servidor web donde alojar esta wiki y mi blog. En la actualidad tengo ambas páginas instaladas en un Synology Ds216+ y para el tráfico que tienen me parece matar moscas a cañonazos.</p>
-<p>De esta forma, con el servidor web montado sobre la Raspberry podría tener apagado durante la noche el servidor Nas y así reducir la factura de la luz y el ruido y aumentar la duración del equipo y los discos.</p>
+<p>En mi caso comencé usándola como servidor web para este Blog, aunque en la actualidad su principal función es como servidor de <a href=https://www.home-assistant.io>Home Assistant</a>, hace muchas más cosas como sincronizar mis nubes públicas, actualizar mis repositorios en git, servidor webdav para mi contenido multimedia online, actualización de mi base de datos de radares para el teléfono, entorno de desarrollo en <a href=https://gohugo.io>Hugo</a>&mldr;</p>
+<p>La configuración que actualmente tengo funcionando es una <a href=https://www.raspberrypi.com/products/raspberry-pi-4-model-b/>Raspberry Pi 4</a> de 4Gb montada dentro de una caja <a href=https://www.argon40.com/argon-one-v-2-case-for-raspberry-pi-5.html>Argon One</a> y el sistema operativo es <a href=https://downloads.raspberrypi.org/raspios_lite_armhf/release_notes.txt>Raspberry Pi OS Lite</a> de 32 bits corriendo dentro de un stick usb <a href=https://www.westerndigital.com/products/usb-flash-drives/sandisk-ultra-fit-usb-3-1#SDCZ430-016G-G46>Sandisk Ultra Fit</a> de 32Gb.</p>
 <h3 id=primeros-días>Primeros días</h3>
 <ul>
 <li><a href=/raspberry-montaje-y-ssh/>Montaje y ssh</a></li>
 <li><a href=/raspberry-red-y-wifi/>Configurar red y wifi</a></li>
-<li><a href=/raspberry-apache-y-php/>Apache y Php</a></li>
-<li><a href=/raspberry-mysql-y-db/>MySql y DB</a></li>
-<li><a href=/raspberry-descargando-wordpress/>Descargando WordPress</a></li>
-<li><a href=/raspberry-servidor-ftp/>El servidor FTP</a></li>
-<li><a href=/raspberry-instalando-wordpress/>Instalando WordPress</a></li>
-<li><a href=/raspberry-instalando-dokuwiki/>Instalado DokuWiki</a></li>
 <li><a href=/raspberry-copia-de-seguridad/>Copia de seguridad</a></li>
 <li><a href=/raspberry-acceso-desde-el-exterior/>Acceder desde el exterior</a></li>
+<li><a href=/clonar-el-disco-de-arranque-de-la-raspberry/>Clonar disco de arranque</a></li>
+<li><a href=/script-de-configuraci%C3%B3n-para-raspberry/>Script de configuración</a></li>
 </ul>
-<h3 id=uso-avanzado>Uso avanzado</h3>
+<h3 id=post-en-el-blog>Post en el Blog</h3>
 <ul>
-<li><a href=/raspberry-reinicios-peri%C3%B3dicos/>Reinicios periódicos</a></li>
-<li><a href=/raspberry-servidor-vpn/>Servidor VPN</a></li>
-<li><a href=/raspberry-configurando-rclone-sin-entorno-gr%C3%A1fico/>Acceso a las nubes con rclone</a></li>
-<li><a href=/script-de-configuraci%C3%B3n-para-raspberry/>Creando un script de configuración inicial</a></li>
-<li><a href=/raspberry-y-docker/>Docker</a></li>
-<li><a href=/instalaci%C3%B3n-de-moodle-en-raspberry-pi/>Moodle con MoodleBox</a></li>
-<li><a href=/termostato-raspberry/>Termostato casero</a></li>
-<li><a href=/sincronizar-google-photos-desde-la-raspberry/>Sincronizar Google Photos</a></li>
-<li><a href=/que-hace-la-raspberry-sin-mi/>Mi uso de crontab</a></li>
-<li><a href=/instalaci%C3%B3n-de-home-assistant-en-raspberry/>Home Assistant</a></li>
-<li><a href=/clonar-el-disco-de-arranque-de-la-raspberry/>Crear imagen del sistema</a></li>
-<li><a href=/usb-externo-controlado-desde-puerto-gpio/>Encender disco externo desde GPIO</a></li>
+<li><a href=https://sherlockes.github.io/usb-externo-controlado-desde-puerto-gpio/>Usb externo controlado desde puerto Gpio (2022-02-01)</a></li>
+<li><a href=https://sherlockes.github.io/clonar-el-disco-de-arranque-de-la-raspberry/>Clonar el disco de arranque de la raspberry (2021-12-25)</a></li>
+<li><a href=https://sherlockes.github.io/que-hace-la-raspberry-sin-mi/>Que hace la raspberry sin mi (2021-12-22)</a></li>
+<li><a href=https://sherlockes.github.io/sincronizar-google-photos-desde-la-raspberry/>Sincronizar Google Photos desde la Raspberry (2021-06-06)</a></li>
+<li><a href=https://sherlockes.github.io/instalaci%C3%B3n-de-home-assistant-en-raspberry/>Instalación de Home Assistant en Raspberry (2021-05-27)</a></li>
+<li><a href=https://sherlockes.github.io/raspberry-montaje-y-ssh/>Raspberry Montaje y ssh (2021-04-28)</a></li>
+<li><a href=https://sherlockes.github.io/termostato-raspberry/>Termostato Raspberry (2021-01-13)</a></li>
+<li><a href=https://sherlockes.github.io/script-de-configuraci%C3%B3n-para-raspberry/>Script de configuración para Raspberry (2020-10-04)</a></li>
+<li><a href=https://sherlockes.github.io/instalaci%C3%B3n-de-moodle-en-raspberry-pi/>Instalación de Moodle en Raspberry Pi (2020-02-15)</a></li>
+<li><a href=https://sherlockes.github.io/raspberry-configurando-rclone-sin-entorno-gr%C3%A1fico/>Raspberry configurando rclone sin entorno gráfico (2019-07-11)</a></li>
+<li><a href=https://sherlockes.github.io/raspberry-y-docker/>Raspberry y Docker (2018-04-12)</a></li>
+<li><a href=https://sherlockes.github.io/raspberry-servidor-vpn/>Raspberry Servidor VPN (2018-04-11)</a></li>
+<li><a href=https://sherlockes.github.io/raspberry-reinicios-peri%C3%B3dicos/>Raspberry Reinicios periódicos (2018-04-10)</a></li>
+<li><a href=https://sherlockes.github.io/raspberry-acceso-desde-el-exterior/>Raspberry Acceso desde el exterior (2018-04-10)</a></li>
+<li><a href=https://sherlockes.github.io/raspberry-copia-de-seguridad/>Raspberry Copia de seguridad (2018-04-09)</a></li>
+<li><a href=https://sherlockes.github.io/raspberry-instalando-dokuwiki/>Raspberry Instalando Dokuwiki (2018-04-08)</a></li>
+<li><a href=https://sherlockes.github.io/raspberry-instalando-wordpress/>Raspberry Instalando WordPress (2018-04-07)</a></li>
+<li><a href=https://sherlockes.github.io/raspberry-servidor-ftp/>Raspberry Servidor ftp (2018-04-06)</a></li>
+<li><a href=https://sherlockes.github.io/raspberry-descargando-wordpress/>Raspberry Descargando Wordpress (2018-04-05)</a></li>
+<li><a href=https://sherlockes.github.io/raspberry-mysql-y-db/>Raspberry mysql y DB (2018-04-04)</a></li>
+<li><a href=https://sherlockes.github.io/raspberry-apache-y-php/>Raspberry apache y php (2018-04-03)</a></li>
+<li><a href=https://sherlockes.github.io/raspberry-red-y-wifi/>Raspberry red y wifi (2018-04-02)</a></li>
 </ul>
-<h3 id=enlaces-de-interés>Enlaces de interés</h3>
-<ul>
-<li><a href=https://www.innerzaurus.com/diy/raspberry-pi/configurar-una-raspberry-pi-sin-monitor-ni-teclado>Innerzaurus - Configurar Raspberry sin monitor ni teclado</a></li>
-<li><a href=https://ugeek.github.io/Nextcloud-en-Raspberry-Pi-3>Ugeek - NextCloud en Raspberry Pi 3</a></li>
-<li><a href=http://morituri.co.nf/raspberry-pi/how-to-set-up-a-web-server-and-install-wordpress-on-a-raspberry-pi-raspbian-stretch>Morituri - Setup a web server & WordPress on a Raspberry Pi with raspbian strech</a></li>
-<li><a href=http://www.instructables.com/id/Setup-a-Raspberry-Pi-PHP-web-server>Instructables - Raspberry Pi & php web server</a></li>
-<li><a href=https://howtoraspberrypi.com/install-wordpress-on-a-raspberry-pi-with-nginx>Howto Raspberry Pi - Install Wordpress with nginx</a></li>
-<li><a href=https://www.ochobitshacenunbyte.com/2016/01/21/soporte-ssh-sftp-wordpress>Ocho bits hacen un byte - Soporte ssh sftp wordpress</a></li>
-<li><a href=http://www.jveweb.net/archivo/2010/11/sincronizando-carpetas-con-rsync.html>JVE Web - Sincronizando con rsync</a></li>
-<li><a href=https://www.techrepublic.com/article/how-to-back-up-mysql-databases-from-the-command-line-with-linux>TechRepublic - Backup database from the command line</a></li>
-<li><a href=https://evotec.xyz/how-to-backup-ftp-to-synology>Evotec - How to backup from ftp to Synology</a></li>
-<li><a href=https://mviera.io/blog/entendiendo-umask>MViera - Entendiendo Umask</a></li>
-<li><a href=http://www.noip.com/support/knowledgebase/install-ip-duc-onto-raspberry-pi>No-ip - Install duc on Raspberry</a></li>
-<li><a href=https://www.atareao.es/tutorial/raspberry-pi-primeros-pasos/acceder-a-la-red-local-desde-fuera>El Atareado - Acceder a tu red local desde fuera con Raspberry Pi y Openvpn</a></li>
-</ul>
-<h3 id=artículos>Artículos</h3>
-</div><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/usb-externo-controlado-desde-puerto-gpio/>
-<img class=thumbnail__image src=/images/20220131_gpio_external_relay_00.jpg alt="Usb externo controlado desde puerto Gpio">
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/usb-externo-controlado-desde-puerto-gpio/ rel=bookmark>
-Usb externo controlado desde puerto Gpio
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2022-02-01T00:00:00Z>2022-02-01</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-<p>Tenemos un disco duro externo conectado a la Raspberry por un puerto Usb y alimentado por un transformador. Veamos como es posible encenderlo gracias a un relé de 5V sólo cuando cuando vayamos a emplearlo.</p>
 </div>
-</article><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/clonar-el-disco-de-arranque-de-la-raspberry/>
-<img class=thumbnail__image src=/images/20211225_raspberry_clonar_disco_00.jpg alt="Clonar el disco de arranque de la raspberry">
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/clonar-el-disco-de-arranque-de-la-raspberry/ rel=bookmark>
-Clonar el disco de arranque de la raspberry
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-12-25T00:00:00Z>2021-12-25</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/computing/ rel=category>computing</a>, <a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-<p>La mejor copia de seguridad que puedes hacer del contenido de la Raspberry es una imagen de la tarjeta sobre la que está funcionando. Dejo a continuación un par de métodos para hacerlo de una forma rápida y sencilla.</p>
-</div>
-</article><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/que-hace-la-raspberry-sin-mi/>
-<img class=thumbnail__image src=/images/20210217_raspberry_autofaenas_00.jpg alt="Que hace la raspberry sin mi">
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/que-hace-la-raspberry-sin-mi/ rel=bookmark>
-Que hace la raspberry sin mi
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-12-22T00:00:00Z>2021-12-22</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-<p>La Raspberry me sirve para hacer muchas cosas aunque aquí sólo voy a contar ahora las que hace ella sola cuando yo no estoy delante.</p>
-</div>
-</article><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/sincronizar-google-photos-desde-la-raspberry/>
-<img class=thumbnail__image src=/images/20201203_sincronizar_gphotos_raspberry_00.jpg alt="Sincronizar Google Photos desde la Raspberry">
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/sincronizar-google-photos-desde-la-raspberry/ rel=bookmark>
-Sincronizar Google Photos desde la Raspberry
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-06-06T00:00:00Z>2021-06-06</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>, <a class=meta__link href=/categories/productividad/ rel=category>productividad</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-<p>Hasta ahora había sincronizado mi galería de Google Fotos con el NAS desde el pc de sobremesa con Linux Mint, voy a intentar hacerlo desde la Raspberry para no tener que encender el pc.</p>
-</div>
-</article><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/instalaci%C3%B3n-de-home-assistant-en-raspberry/>
-<img class=thumbnail__image src=/images/20210527_raspberry_home_assistant_00.jpg alt="Instalación de Home Assistant en Raspberry">
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/instalaci%C3%B3n-de-home-assistant-en-raspberry/ rel=bookmark>
-Instalación de Home Assistant en Raspberry
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-05-27T00:00:00Z>2021-05-27</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>, <a class=meta__link href=/categories/home-assistant/ rel=category>home assistant</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-<p>Las dudas surgen cuando tienes varias posibilidades. Esto es lo que me ha pasado a la hora de empezar las pruebas con Home Assistant en una Raspberry Pi 4 de 4gb de ram sobre un stick usb.</p>
-</div>
-</article><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/raspberry-montaje-y-ssh/>
-<img class=thumbnail__image src=/images/raspberry_logo.png alt="Raspberry Montaje y ssh">
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/raspberry-montaje-y-ssh/ rel=bookmark>
-Raspberry Montaje y ssh
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-04-28T00:00:00Z>2021-04-28</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-<h3 id=montaje-y-acceso-ssh>Montaje y acceso ssh</h3>
-<p>Ya tengo todo lo que creo que necesito. Una <a href="https://www.amazon.es/gp/product/B01CD5VC92/ref=oh_aui_detailpage_o00_s01?ie=UTF8&psc=1">Raspberry</a>, una <a href="https://www.amazon.es/gp/product/B013UDL58E/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1">tarjeta micro sd</a>, una <a href="https://www.amazon.es/gp/product/B01DDFFOYK/ref=oh_aui_detailpage_o00_s01?ie=UTF8&psc=1">fuente de alimentación</a> y un <a href="https://www.amazon.es/gp/product/B001U3ZRBS/ref=oh_aui_detailpage_o00_s01?ie=UTF8&psc=1">cable de red</a>. Total 59€ de inversión inicial que supongo no se quedarán ahí.</p>
-</div>
-</article><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/termostato-raspberry/>
-<img class=thumbnail__image src=/images/20201112_termostato_raspberry_00.jpg alt="Termostato Raspberry">
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/termostato-raspberry/ rel=bookmark>
-Termostato Raspberry
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-01-13T00:00:00Z>2021-01-13</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-<p>Con la reciente muerte de termostato inteligente de NetAtmo a causa de una simple pila sulfatada me he decidido a crear el mio propio con la raspberry y un poco de Python. Iré escribiendo aquí los procesos con el mismo.</p>
-</div>
-</article>
 </main>
-<div class=pagination>
-<span class="pagination__item pagination__item--current">1/4</span>
-<a class="pagination__item pagination__item--next btn" href=/post/computing/raspberry/page/2/>»</a>
-</div>
 </div>
 <aside class=sidebar>
 <div class="widget-recent widget">
 <h4 class=widget__title>Más Recientes</h4>
 <div class=widget__content>
 <ul class=widget__list>
-<li class=widget__item><a class=widget__link href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li>
 <li class=widget__item><a class=widget__link href=/usando-dired-en-emacs/>Usando Dired en Emacs</a></li>
 <li class=widget__item><a class=widget__link href=/usb-externo-controlado-desde-puerto-gpio/>Usb externo controlado desde puerto Gpio</a></li>
-<li class=widget__item><a class=widget__link href=/arquetipos-en-hugo-archetypes/>Arquetipos en Hugo (Archetypes)</a></li>
-<li class=widget__item><a class=widget__link href=/hugo-con-github-actions/>Hugo con Github actions</a></li>
 <li class=widget__item><a class=widget__link href=/servidor-webdav-de-contenido-remoto-con-rclone/>Servidor Webdav de contenido remoto con Rclone</a></li>
-<li class=widget__item><a class=widget__link href=/migrando-hugo-a-gitlab/>Migrando Hugo a Gitlab</a></li>
 <li class=widget__item><a class=widget__link href=/reseteo-autom%C3%A1tico-de-home-assistant/>Reseteo automático de Home assistant</a></li>
-<li class=widget__item><a class=widget__link href=/mathjax-en-hugo/>Mathjax en Hugo</a></li>
 <li class=widget__item><a class=widget__link href=/buscar-y-reemplazar-en-bash-con-find-y-sed/>Buscar y reemplazar en bash con find y sed</a></li>
+<li class=widget__item><a class=widget__link href=/el-termostato-de-la-caldera-en-home-assistant/>El termostato de la caldera en Home Assistant</a></li>
+<li class=widget__item><a class=widget__link href=/actualizar-m%C3%B3dulo-de-funciones-en-excel/>Actualizar módulo de funciones en excel</a></li>
+<li class=widget__item><a class=widget__link href=/cerrar-buffers-abiertos-en-emacs-con-ibuffer/>Cerrar buffers abiertos en Emacs con ibuffer</a></li>
+<li class=widget__item><a class=widget__link href=/clonar-el-disco-de-arranque-de-la-raspberry/>Clonar el disco de arranque de la raspberry</a></li>
+<li class=widget__item><a class=widget__link href=/que-hace-la-raspberry-sin-mi/>Que hace la raspberry sin mi</a></li>
 </ul>
 </div>
 </div>
@@ -303,8 +140,6 @@ Termostato Raspberry
 <a class=widget__link href=/categories/hardware/>hardware</a></li>
 <li class=widget__item>
 <a class=widget__link href=/categories/home-assistant/>home assistant</a></li>
-<li class=widget__item>
-<a class=widget__link href=/categories/hugo/>hugo</a></li>
 <li class=widget__item>
 <a class=widget__link href=/categories/iot/>iot</a></li>
 <li class=widget__item>
@@ -333,14 +168,14 @@ Termostato Raspberry
 <a class="widget-taglist__link widget__link btn" href=/tags/apps/ title=Apps>Apps (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/averias/ title=Averias>Averias (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/backup/ title=Backup>Backup (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/bash/ title=bash>bash (20)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/bash/ title=bash>bash (18)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/bricolaje/ title=Bricolaje>Bricolaje (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/darktable/ title=darktable>darktable (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/desarrollo/ title=desarrollo>desarrollo (17)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/desarrollo/ title=Desarrollo>Desarrollo (16)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/dired/ title=dired>dired (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/docker/ title=docker>docker (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/dotfiles/ title=dotfiles>dotfiles (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/emacs/ title=emacs>emacs (5)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/emacs/ title=emacs>emacs (4)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/emule/ title=emule>emule (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/esp/ title=esp>esp (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/excel/ title=excel>excel (1)</a>
@@ -350,7 +185,6 @@ Termostato Raspberry
 <a class="widget-taglist__link widget__link btn" href=/tags/garmin/ title=garmin>garmin (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gdrive/ title=Gdrive>Gdrive (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gimp/ title=Gimp>Gimp (2)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/git/ title=git>git (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gmail/ title=gmail>gmail (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/google-chrome/ title="google chrome">google chrome (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/google-drive/ title="Google Drive">Google Drive (4)</a>
@@ -367,7 +201,6 @@ Termostato Raspberry
 <a class="widget-taglist__link widget__link btn" href=/tags/gthumb/ title=gthumb>gthumb (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/hdr/ title=hdr>hdr (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/hue/ title=hue>hue (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/iawriter/ title=iAWriter>iAWriter (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/imagemagick/ title=imagemagick>imagemagick (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/jinja2/ title=jinja2>jinja2 (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/keepass/ title=Keepass>Keepass (1)</a>
@@ -376,7 +209,6 @@ Termostato Raspberry
 <a class="widget-taglist__link widget__link btn" href=/tags/mantenimiento/ title=mantenimiento>mantenimiento (20)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/mapas/ title=Mapas>Mapas (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/markdown/ title=markdown>markdown (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/mathjax/ title=mathjax>mathjax (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/micropython/ title=micropython>micropython (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/moodle/ title=moodle>moodle (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/mqtt/ title=mqtt>mqtt (1)</a>
@@ -392,9 +224,8 @@ Termostato Raspberry
 <a class="widget-taglist__link widget__link btn" href=/tags/python/ title=python>python (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/raspberry/ title=raspberry>raspberry (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/rclone/ title=rclone>rclone (6)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/regexp/ title=regexp>regexp (2)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/regexp/ title=regexp>regexp (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/sherlodj/ title=SherloDj>SherloDj (3)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/shortcodes/ title=shortcodes>shortcodes (4)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/software/ title=software>software (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/speedtrap/ title=SpeedTrap>SpeedTrap (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/ssh/ title=ssh>ssh (1)</a>
