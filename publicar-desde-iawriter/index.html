@@ -1,0 +1,205 @@
+<!doctype html><html class=no-js lang=es>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>Publicar desde iaWriter - Sherblog</title>
+<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<meta name=description content="El modo que utilizo para publicar en el blog usando sólo el editor de texto.">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="http://www.sherblog.pro/images/20180904_hugo_publicar_editor_texto_00.jpg">
+<meta name=twitter:title content="Publicar desde iaWriter">
+<meta name=twitter:description content="El modo que utilizo para publicar en el blog usando sólo el editor de texto.">
+<meta name=twitter:creator content="@sherblogpro">
+<meta name=twitter:site content="sherblog.pro">
+<link rel=dns-prefetch href=//fonts.googleapis.com>
+<link rel=dns-prefetch href=//fonts.gstatic.com>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+<link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=/css/custom.css>
+<link rel="shortcut icon" href=/favicon.ico>
+</head>
+<body class=body>
+<div class="container container--outer">
+<header class=header>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Publicar desde iaWriter">
+<meta name=twitter:description content="El modo que utilizo para publicar en el blog usando sólo el editor de texto.">
+<div class=container>
+<div class=logo>
+<a class=logo__link href=/ title=Sherblog rel=home>
+<div class=logo__title>Sherblog</div>
+<div class=logo__tagline>Sólo mi forma de hacer las cosas...</div>
+</a>
+</div>
+<nav class=menu>
+<button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menú</span>
+</button>
+<ul class=menu__list>
+<li class="menu__item menu__item--active">
+<a class=menu__link href=/post/computing/hugo/>
+<span class=menu__text>Hugo</span>
+</a>
+</li>
+<li class=menu__item>
+<a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/>
+<span class=menu__text>Mis vértices geodésicos</span>
+</a>
+</li>
+<li class=menu__item>
+<a class=menu__link href=/post/computing/raspberry/>
+<span class=menu__text>Raspberry Pi desde cero</span>
+</a>
+</li>
+<li class=menu__item>
+<a class=menu__link href=/post/android/tasker/>
+<span class=menu__text>Tasker</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="wrapper flex">
+<div class=primary>
+<main class=main role=main>
+<article class=post>
+<header class=post__header>
+<h1 class=post__title>Publicar desde iaWriter</h1>
+<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2018-09-04T00:00:00Z>2018-09-04</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/hugo/ rel=category>hugo</a>
+</span>
+</div></div>
+</header>
+<figure class=post__thumbnail>
+<img src=/images/20180904_hugo_publicar_editor_texto_00.jpg alt="Publicar desde iaWriter">
+</figure><div class="content post__content clearfix">
+<h3 id=publicar-solo-con-el-editor-de-texto>Publicar solo con el editor de texto</h3>
+<p>Hace un tiempo que estoy intentando escribir en Markdown y para WordPress he estado utilizando el Plugin <a href=https://wordpress.org/plugins/wp-markdown/>Wp-MarkDown</a> que me ha permitido realizar la maquetación del post directamente en Markdown. Una vez que he dejado atrás WordPress en favor de Hugo uno de mis objetivos de los últimos meses ha sido poder publicar en el blog simplemente usando un editor de texto.</p>
+<p>Pues bien, no sin algo de esfuerzo, al final lo he conseguido. Gracias a Hugo cómo CMS este post que ahora estoy escribiendo lo puedo publicar en mi blog de una forma rápida y sencilla en Markdown directamente desde la aplicación <a href=https://ia.net/writer>iaWritter</a>.</p>
+<p>Las etapas del proceso son las siguientes.</p>
+<ul>
+<li>Parto de un archivo de texto con extensión *.md que renombro con la estructura &ldquo;fecha_nombre_archivo.md&rdquo;.</li>
+<li>Escribo el contenido del Post</li>
+</ul>
+<p>Hasta aquí todo el proceso que he de realizar de forma manual. El resto se realiza de forma automática según la siguiente secuencia.</p>
+<ul>
+<li>
+<p>Iawriter guarda el archivo de texto en mi unidad de Google Drive en una carpeta específica para los post de la web.</p>
+</li>
+<li>
+<p>Gracias a rclone la Raspberry es capaz de sincronizar tanto la carpeta &ldquo;content&rdquo; como la &ldquo;static&rdquo; con la nube de Google Drive mediante un proceso en crontab que se ejecuta cada hora</p>
+<blockquote>
+<p>Para crear el proceso que se ejecute cada hora se utiliza el comando <code>crontab -e</code> añadiendo al final la línea &ldquo;0 * * * * /home/pi/sherblog/publicar.sh&rdquo; donde &ldquo;publicar.sh&rdquo; es el script ejecutable que realiza todas las operaciones.</p>
+</blockquote>
+</li>
+<li>
+<p>La misma secuencia de comandos busca en la carpeta &ldquo;post&rdquo; algún archivo sin cabecera para incluirle una genérica que luego será fácil de editar.</p>
+<blockquote>
+<p>Antes de colocar la cabecera, el script comprueba que el archivo no se ha modificado en la última hora para de esta forma &ldquo;garantizar&rdquo; que no se está trabajando en el y no crear problemas de sincronización.</p>
+</blockquote>
+</li>
+<li>
+<p>Con los cambios efectuados en los archivos sin cabecera se realiza la sincronización inversa hacia la nube de Google.</p>
+</li>
+<li>
+<p>Tras sincronizar la carpeta, el script construye toda la web estática a partir de los post y archivos de configuración.</p>
+<blockquote>
+<p>Resulta interesante conocer que para hacer referencia al comando &ldquo;hugo&rdquo; hay que usar en el script la ruta completa que en mi caso quedará &ldquo;/usr/local/bin/hugo&rdquo;.</p>
+</blockquote>
+</li>
+<li>
+<p>Con la web regenerada se suben los cambios a mi cuenta de github donde tengo publicada la web de forma completamente gratuita.</p>
+</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e>#!/bin/sh
+</span><span style=color:#75715e></span><span style=color:#75715e># -*- ENCODING: UTF-8 -*-</span>
+
+<span style=color:#75715e>#Sincroniza el contenido de la nube de Google Drive con las carpetas locales</span>
+rclone sync -v GoogleDrive:/Sherblog/content/ /home/pi/sherblog/content/
+rclone sync -v GoogleDrive:/Sherblog/static/ /home/pi/sherblog/static/
+
+<span style=color:#75715e>#Cambio al directorio de contenidos</span>
+cd ~/sherblog/content/post
+
+<span style=color:#75715e>#Busca archivos sin cabecera para añadirle una genérica</span>
+grep -r -L <span style=color:#e6db74>&#34;\-\-\-&#34;</span> * |
+<span style=color:#66d9ef>while</span> read fname
+<span style=color:#66d9ef>do</span>
+  <span style=color:#75715e>#Minutos que han de pasar desde la ultima modificación para encabezado</span>
+  minmin<span style=color:#f92672>=</span><span style=color:#ae81ff>30</span>
+
+  <span style=color:#75715e>#Calculo de los minutos pasados desde la ultima modificacion</span>
+  umodsg<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>date +%s -r <span style=color:#e6db74>&#34;</span>$fname<span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>)</span>
+  ahorasg<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>date +%s<span style=color:#66d9ef>)</span>
+  minpasados<span style=color:#f92672>=</span><span style=color:#66d9ef>$((</span><span style=color:#f92672>(</span>ahorasg <span style=color:#f92672>-</span> umodsg<span style=color:#f92672>)/</span><span style=color:#ae81ff>60</span><span style=color:#66d9ef>))</span>
+  echo Han pasado $minpasados de los $minmin minutos desde la modificación de <span style=color:#e6db74>&#34;</span>$fname<span style=color:#e6db74>&#34;</span>
+
+  <span style=color:#75715e>#Inserta la cabecera si han pasado más de 65 minutos</span>
+  <span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> $minpasados -gt $minmin <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>
+    echo Colocando la cabecera a <span style=color:#e6db74>&#34;</span>$fname<span style=color:#e6db74>&#34;</span>
+    cat cabecera.md <span style=color:#e6db74>&#34;</span>$fname<span style=color:#e6db74>&#34;</span> &gt; temp <span style=color:#f92672>&amp;&amp;</span> mv temp <span style=color:#e6db74>&#34;</span>$fname<span style=color:#e6db74>&#34;</span>
+  <span style=color:#66d9ef>fi</span>
+<span style=color:#66d9ef>done</span>
+
+<span style=color:#75715e>#Sincroniza los archivos de la nube con los modificados en local</span>
+rclone sync -v /home/pi/sherblog/content/ GoogleDrive:/Sherblog/content/
+
+<span style=color:#75715e>#Genera la web estática en Hugo</span>
+cd ~/sherblog
+/usr/local/bin/hugo
+
+<span style=color:#75715e>#Sube los cambios generados en la web a GitHub</span>
+cd ~/sherblog/git/sherlockes.github.io
+git add --all
+git commit -m <span style=color:#e6db74>&#34;Update&#34;</span>
+git push -u origin master
+
+exit <span style=color:#ae81ff>0</span>
+</code></pre></div><p>Y ya está. La web actualizada sin usar nada más que iawriter. Ahora resta idear un método sencillo para subir las imágenes, quizás IFTTT sea una buena opción, pero esto para otro día&mldr;</p>
+<blockquote>
+<p>A fecha de hoy (Octubre de 2010) el sistema funciona a las mil maravillas en Android pero IAWriter en IOS da algún problema a la hora de guardar los archivos en Google Drive, espero se solvente con alguna actualización.</p>
+</blockquote>
+</div>
+<footer class=post__footer>
+<div class="content post__content clearfix">
+<h3>Otros de mís artículos que te pueden interesar</h3>
+<ul>
+<li><a href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li>
+<li><a href=/arquetipos-en-hugo-archetypes/>Arquetipos en Hugo (Archetypes)</a></li>
+<li><a href=/hugo-con-github-actions/>Hugo con Github actions</a></li>
+<li><a href=/migrando-hugo-a-gitlab/>Migrando Hugo a Gitlab</a></li>
+<li><a href=/contenido-relacionado-en-hugo/>Contenido relacionado en Hugo</a></li>
+</ul>
+</div>
+<div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
+<ul class=tags__list>
+<li class=tags__item>
+<a class="tags__link btn" href=/tags/iawriter/ rel=tag>iAWriter</a>
+</li>
+</ul>
+</div>
+</footer>
+</article>
+</main>
+<nav class="post-nav flex">
+<div class="post-nav__item post-nav__item--next">
+<a class=post-nav__link href=/hugo-is-deprecated/ rel=next><span class=post-nav__caption>Siguiente&#8201;»</span><p class=post-nav__post-title>Hugo is deprecated</p></a>
+</div>
+</nav>
+</div>
+</div>
+<footer class=footer>
+<div class="container footer__container flex">
+<div class=footer__copyright>
+&copy; 2022 Sherblog.
+<span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
+</div>
+</div>
+</footer>
+</div>
+<script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body>
+</html>
