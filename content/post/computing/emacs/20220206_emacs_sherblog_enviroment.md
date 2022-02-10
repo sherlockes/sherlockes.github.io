@@ -1,6 +1,6 @@
 ---
 title: "Entorno de desarrollo de Sherblog en Emacs"
-date: "2022-02-07"
+date: "2022-02-10"
 creation: "2022-02-06"
 description: "Emacs sherblog enviroment"
 thumbnail: "images/20220206_emacs_sherblog_enviroment_00.jpg"
@@ -63,6 +63,13 @@ En el archivo de configuración ".emacs" he incluido una función que para conse
 ```
 
 Y con esto, una vez que tenemos abierto [Emacs] sólo hay que pulsar "F4" para que el entorno se configure automáticamente.
+
+### Enlaces de interés
+- [StackOverflow - Default folder in Emacs](https://stackoverflow.com/questions/60464/changing-the-default-folder-in-emacs)
+- [StackOverflow - Shell in current Emacs window](https://stackoverflow.com/questions/19707018/emacs-open-another-shell-in-current-window)
+- [Superuser - Open remote shell in emacs](https://superuser.com/questions/841178/directly-open-remote-shell-with-tramp-in-emacs)
+- [Gnu - Windows in Emacs](https://www.gnu.org/software/emacs/manual/html_node/emacs/Windows.html)
+- [EmacsWiki - Windows resizing](https://www.emacswiki.org/emacs/WindowResize#h5o-3)
 
 [Dired]: https://www.emacswiki.org/emacs/DiredMode
 [Emacs]: https://www.gnu.org/software/emacs/
