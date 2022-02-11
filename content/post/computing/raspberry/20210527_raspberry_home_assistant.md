@@ -1,6 +1,6 @@
 ---
 title: "Instalación de Home Assistant en Raspberry"
-date: "2021-05-27"
+date: "2022-02-11"
 creation: "2021-05-27"
 description: "Aquí dejo las alternativas que he valorado a la hora de instalar Home Assistant en la Raspberry"
 thumbnail: "/images/20210527_raspberry_home_assistant_00.jpg"
