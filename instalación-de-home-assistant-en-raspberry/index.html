@@ -87,6 +87,7 @@
 <li><a href=#contenedor-mediante-docker>Contenedor mediante Docker</a></li>
 <li><a href=#ha-supervisado-sobre-debian-10>HA supervisado sobre Debian 10</a></li>
 <li><a href=#ha-supervisado-sobre-raspberry-os>HA supervisado sobre Raspberry OS</a></li>
+<li><a href=#ha-supervisado-sobre-debian-11>HA supervisado sobre Debian 11</a></li>
 </ul>
 </li>
 </ul>
@@ -167,7 +168,62 @@ systemctl stop ModemManager
 curl -fsSL get.docker.com | sh
 curl -sL &quot;https://raw.githubusercontent.com/Kanga-Who/home-assistant/master/supervised-installer.sh&quot; | bash -s -- -m raspberrypi4
 </code></pre><p>Un poco de paciencia y al cabo de unos minutos ya podremos acceder a http://ip_raspberry:8123 para terminar con la configuración de <a href=https://www.home-assistant.io>Home Assistant</a></p>
-<p>Definitivamente, este el mejor método que he podido encontrar hasta ahora, obteniendo todo lo que necesito sin ningún fallo.</p>
+<p>Definitivamente, este el mejor método que he podido encontrar hasta ahora, el único problema que presenta es que la instalación no está soportada oficialmente aunque el funcionamiento es correcto por lo que la dejo instalada.</p>
+<h3 id=ha-supervisado-sobre-debian-11>HA supervisado sobre Debian 11</h3>
+<p>En mi caso estoy realizando la instalación sobre una Raspberry Pi 3B+ sobre un stick usb que he configurado como método de arranque gracias a este post de <a href=https://www.instructables.com/Booting-Raspberry-Pi-3-B-With-a-USB-Drive/>instructables</a></p>
+<ul>
+<li>Desde <a href=https://raspi.debian.net/tested-images/>raspi.debian.net</a> descargamos la versión 11 para nuestra Raspberry</li>
+<li>Quemamos la imagen en un stick usb</li>
+<li>Conectamos el usb, un monitor y un teclado a la Raspberry</li>
+<li>Tras el arranque nos logueamos como &ldquo;root&rdquo;</li>
+<li>Ejecutamos los siguientes comandos para:</li>
+<li>Actualizar y limpiar el sistema</li>
+<li>Configurar el teclado y la consola en castellano</li>
+<li>Establecer contraseña para el usuario &ldquo;root&rdquo;</li>
+<li>Añadir el usuario &ldquo;pi&rdquo;</li>
+<li>Añadir la función &ldquo;sudo&rdquo;</li>
+<li>Añadir el usuario &ldquo;pi&rdquo; a la función &ldquo;sudo&rdquo;</li>
+<li>Conocer la ip que se le ha asignado a la Raspberry</li>
+<li>Reiniciar</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>apt update <span style=color:#f92672>&amp;&amp;</span> sudo apt upgrade -y <span style=color:#f92672>&amp;&amp;</span> sudo apt autoremove
+apt install keyboard-configuration console-setup
+passwd root
+adduser pi
+apt install sudo
+usermod -aG sudo pi
+ip addr show eth0 | grep <span style=color:#e6db74>&#34;inet&#34;</span>
+reboot
+</code></pre></div><ul>
+<li>Ahora ya nos podemos conectar de forma remota a la Raspberry mediante <code>ssh pi@192.168.10.149</code></li>
+</ul>
+<p>A partir de aquí seguiremos la instalación de Home Assistant Supervisado según el post <a href=https://github.com/Kanga-Who/home-assistant/blob/master/Supervised%20on%20Raspberry%20Pi%20with%20Debian.md>Kanga-Who - HA Rpi Debian 11</a>.</p>
+<ul>
+<li>Adquirimos los privilegios de &ldquo;root&rdquo;</li>
+<li>Reparamos dependencias no satisfechas</li>
+<li>Instalamos &ldquo;jp&rdquo;, &ldquo;curl&rdquo;, &ldquo;avahi-daemon&rdquo;,&mldr;</li>
+<li>Instalamos &ldquo;Docker&rdquo;</li>
+<li>Descargamos la última versión del agente para HA</li>
+<li>Instalamos el agente</li>
+<li>reiniciamos el sistema</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo -i
+apt --fix-broken install
+apt-get install jq curl avahi-daemon apparmor-utils udisks2 libglib2.0-bin network-manager dbus wget -y
+curl -fsSL get.docker.com | sh
+wget https://github.com/home-assistant/os-agent/releases/download/1.2.2/os-agent_1.2.2_linux_aarch64.deb
+dpkg -i os-agent_1.2.2_linux_aarch64.deb
+reboot
+</code></pre></div><p>Ya sólo resta instalar Home Assistant Supervisado mediante</p>
+<ul>
+<li>Adquirimos los privilegios de &ldquo;root&rdquo;</li>
+<li>Descargamos la ultima versión de HA Supervisado</li>
+<li>Instalamos</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>wget https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
+dpkg -i homeassistant-supervised.deb
+</code></pre></div><p>Se nos preguntará antes de realizar la instalación por el hardware sobre el que lo vamos a realizar. En mi caso he seleccionado &ldquo;raspberrypi3-64&rdquo;</p>
+<p>Ahora toca esperar un ratillo (En la Raspberry Pi 3 han sido más de 20 minutos) y ya podemos acceder a &ldquo;http://192.168.10.149:8123 para terminar con la instalación de Home Assistant</p>
 </div>
 <footer class=post__footer>
 <div class="content post__content clearfix">
