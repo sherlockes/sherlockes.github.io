@@ -50,9 +50,9 @@ C-x C-c ; Cierra Emacs
 C-g ; Cancelar un comando
 
 ### Ventanas
-C-x 0 ; Oculta la ventana actual
-C-x 1 ; Oculta todas ventanas menos la actual
-C-x 2 ; crea una ventana horizontal
+C-x 0 ; Elimina la ventana actual
+C-x 1 ; Elimina todas ventanas menos la actual
+C-x 2 ; Crea una ventana horizontal
 C-x 3 ; Crea una ventana vertical
 C-x o ; Cambiar de ventana
 

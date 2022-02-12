@@ -8,10 +8,6 @@ disable_comments: true
 authorbox: false
 toc: false
 mathjax: false
-categories:
-- "computing"
-tags:
-- "bash"
 draft: false
 weight: 5
 menu: main
