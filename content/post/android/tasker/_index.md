@@ -13,7 +13,7 @@ categories:
 tags:
   - "Desarrollo"
 menu: main # Optional, add page to a menu. Options: main, side, footer
-draft: false
+draft: true
 ---
 ### Tasker
 
