@@ -40,6 +40,11 @@
 </button>
 <ul class=menu__list>
 <li class=menu__item>
+<a class=menu__link href=/post/computing/emacs/>
+<span class=menu__text>Emacs</span>
+</a>
+</li>
+<li class=menu__item>
 <a class=menu__link href=/post/computing/hugo/>
 <span class=menu__text>Hugo</span>
 </a>
@@ -52,11 +57,6 @@
 <li class=menu__item>
 <a class=menu__link href=/post/computing/raspberry/>
 <span class=menu__text>Raspberry Pi desde cero</span>
-</a>
-</li>
-<li class=menu__item>
-<a class=menu__link href=/post/android/tasker/>
-<span class=menu__text>Tasker</span>
 </a>
 </li>
 </ul>
@@ -137,27 +137,6 @@ Recientemente he probado <a href="https://moodle.org/?lang=es">Moodle</a> como p
 </div>
 </article><article class="list__item post">
 <figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/radares-de-tr%C3%A1fico-en-android/>
-<img class=thumbnail__image src=/images/20191113_radares_android_00.jpg alt="Radares de tráfico en Android">
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/radares-de-tr%C3%A1fico-en-android/ rel=bookmark>
-Radares de tráfico en Android
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2020-01-07T00:00:00Z>2020-01-07</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/tasker/ rel=category>Tasker</a>, <a class=meta__link href=/categories/dise%C3%B1o/ rel=category>diseño</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-<p>En el coche resulta útil un avisador de radares para &ldquo;levantar el pie&rdquo; en determinados momentos o simplemente para ser más riguroso con el respeto de la velocidad máxima de la vía. Para esto también uso Tasker y aquí voy a mostrar cómo lo hago.</p>
-</div>
-</article><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
 <a class=thumbnail__link href=/archivos-de-telegram-al-nas/>
 <img class=thumbnail__image src=/images/20191207_telegram_nas.jpg alt="Archivos de Telegram al NAS">
 </a>
@@ -219,11 +198,32 @@ Extrayendo la portada de un pdf
 <div class="content list__excerpt post__content clearfix">
 <p>Una vez más me encuentro con un problema de los que puedo optar por la solución sencilla y laboriosa o por la optima y meticulosa. Necesito convertir de varios archivos en pdf la primera página (Portada) a una imagen para lo cual voy a probar dos alternativas, primero con <a href=https://imagemagick.org>Imagemagick</a> y posteriormente con <a href=https://poppler.freedesktop.org/>Poppler</a> ambas desde la terminal y la línea de comandos de Linux Mint.</p>
 </div>
+</article><article class="list__item post">
+<figure class="list__thumbnail thumbnail">
+<a class=thumbnail__link href=/unir-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/>
+<img class=thumbnail__image src=/images/20191127_unir_pdf_00.jpg alt="Unir varios pdf en linux desde la línea de comandos">
+</a>
+</figure>
+<header class=list__header>
+<h2 class="list__title post__title">
+<a href=/unir-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/ rel=bookmark>
+Unir varios pdf en linux desde la línea de comandos
+</a>
+</h2>
+<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2019-11-27T00:00:00Z>2019-11-27</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/productividad/ rel=category>productividad</a>, <a class=meta__link href=/categories/linux/ rel=category>linux</a>
+</span>
+</div></div>
+</header>
+<div class="content list__excerpt post__content clearfix">
+<p>En la web podemos encontrar una infinidad de servicios para unir varios archivos pdf en uno, pero si no quieres perder tiempo en subir y bajar los archivos a los servidores remotos aquí dejo una forma sencilla para realizar el mismo trabajo con una sola línea en la consola de comandos.</p>
+</div>
 </article>
 </main>
 <div class=pagination>
 <a class="pagination__item pagination__item--prev btn" href=/page/8/>«</a>
-<span class="pagination__item pagination__item--current">9/26</span>
+<span class="pagination__item pagination__item--current">9/25</span>
 <a class="pagination__item pagination__item--next btn" href=/page/10/>»</a>
 </div>
 </div>
@@ -276,8 +276,6 @@ Extrayendo la portada de un pdf
 <li class=widget__item>
 <a class=widget__link href=/categories/sherver/>sherver</a></li>
 <li class=widget__item>
-<a class=widget__link href=/categories/tasker/>Tasker</a></li>
-<li class=widget__item>
 <a class=widget__link href=/categories/varios/>Varios</a></li>
 <li class=widget__item>
 <a class=widget__link href=/categories/vertices/>vertices</a></li>
@@ -289,14 +287,13 @@ Extrayendo la portada de un pdf
 <div class="widget-taglist widget">
 <h4 class=widget__title>Etiquetas</h4>
 <div class=widget__content>
-<a class="widget-taglist__link widget__link btn" href=/tags/android/ title=android>android (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/apps/ title=Apps>Apps (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/averias/ title=Averias>Averias (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/backup/ title=Backup>Backup (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/bash/ title=bash>bash (20)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/bash/ title=bash>bash (21)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/bricolaje/ title=Bricolaje>Bricolaje (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/darktable/ title=darktable>darktable (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/desarrollo/ title=Desarrollo>Desarrollo (17)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/desarrollo/ title=desarrollo>desarrollo (16)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/dired/ title=dired>dired (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/docker/ title=docker>docker (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/dotfiles/ title=dotfiles>dotfiles (1)</a>
@@ -356,7 +353,6 @@ Extrayendo la portada de un pdf
 <a class="widget-taglist__link widget__link btn" href=/tags/sherlodj/ title=SherloDj>SherloDj (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/shortcodes/ title=shortcodes>shortcodes (4)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/software/ title=software>software (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/speedtrap/ title=SpeedTrap>SpeedTrap (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/ssh/ title=ssh>ssh (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/synology/ title=synology>synology (13)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/telegram/ title=telegram>telegram (1)</a>

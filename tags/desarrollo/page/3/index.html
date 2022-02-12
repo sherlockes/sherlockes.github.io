@@ -3,12 +3,12 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<title>Desarrollo - Sherblog</title>
+<title>desarrollo - Sherblog</title>
 <script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
 <meta name=description content>
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="http://www.sherblog.pro/images/logo.png">
-<meta name=twitter:title content="Desarrollo">
+<meta name=twitter:title content="desarrollo">
 <meta name=twitter:description content>
 <meta name=twitter:creator content="@sherblogpro">
 <meta name=twitter:site content="sherblog.pro">
@@ -24,7 +24,7 @@
 <div class="container container--outer">
 <header class=header>
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Desarrollo">
+<meta name=twitter:title content="desarrollo">
 <meta name=twitter:description content="Un poco de informática, bricolaje, bicicleta y todos los problemas que se me ponen delante en el día a día no está de más documentarlos, a alguien le puede ayudar...">
 <div class=container>
 <div class=logo>
@@ -38,6 +38,11 @@
 <span class=menu__btn-title tabindex=-1>Menú</span>
 </button>
 <ul class=menu__list>
+<li class=menu__item>
+<a class=menu__link href=/post/computing/emacs/>
+<span class=menu__text>Emacs</span>
+</a>
+</li>
 <li class=menu__item>
 <a class=menu__link href=/post/computing/hugo/>
 <span class=menu__text>Hugo</span>
@@ -53,11 +58,6 @@
 <span class=menu__text>Raspberry Pi desde cero</span>
 </a>
 </li>
-<li class=menu__item>
-<a class=menu__link href=/post/android/tasker/>
-<span class=menu__text>Tasker</span>
-</a>
-</li>
 </ul>
 </nav>
 </div>
@@ -66,7 +66,7 @@
 <div class=primary>
 <main class="main list" role=main>
 <header class=main__header>
-<h1 class=main__title>Desarrollo</h1>
+<h1 class=main__title>desarrollo</h1>
 </header><article class="list__item post">
 <figure class="list__thumbnail thumbnail">
 <a class=thumbnail__link href=/raspberry-descargando-wordpress/>
@@ -89,28 +89,6 @@ Raspberry Descargando Wordpress
 Descargando WordPress En primer lugar descargamos la ultima versión de WordPress a el directorio &ldquo;home&rdquo; del usuario Pi. Si la descargamos en inglés lo haremos mediante el archivo &ldquo;latest.tar.gz&rdquo; pero si la queremos en castellano habrá en entrar en [[http://es.wordpress.org]] y comprobar cual es la versión actual para descargar un archivo del tipo &ldquo;wordpress-4.8.2-es_ES.tar.gz&rdquo;
 Las líneas de arriba realizan la siguiente secuencia:
 Crea un directorio en la raiz de apache para instalar WordPress Iniciarse en el directorio &ldquo;home&rdquo; de Pi Descargar la última versión de WordPress (En inglés) Descomprime el archivo descargado Mueve el contenido de la carpeta extraida a &ldquo;/var/www/html/sherblog&rdquo; Borra el archivo descargado Borra la carpeta vacía Con esto ya están listos los archivos de WordPress, ahora modificaremos el archivo &ldquo;wp-config&rdquo; con la información de la conexión a la base de datos que hemos creado anteriormente.
-</div>
-</article><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/post/android/tasker/>
-<img class=thumbnail__image src=/images/20180109_tasker_logo.jpg alt=Tasker>
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/post/android/tasker/ rel=bookmark>
-Tasker
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2019-11-11T00:00:00Z>2019-11-11</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/tasker/ rel=category>Tasker</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-Tasker Tasker es una aplicación para Android que realiza tareas (Conjuntos de acciones) basadas en contextos (aplicaciones, hora, fecha, ubicación, eventos, gestos&mldr;), en perfiles definidos por el usuario o en acciones de widgets ubicadas en la pantalla de inicio.
-Este simple concepto añade infinidad de características a tus dispositivos android sin que, en la mayoría de los casos, sea necesario un &ldquo;rooteado&rdquo; de los mismos o añadir un nuevo launcher.
 </div>
 </article><article class="list__item post">
 <figure class="list__thumbnail thumbnail">
@@ -188,8 +166,6 @@ En mi caso comencé usándola como servidor web para este Blog, aunque en la act
 <li class=widget__item>
 <a class=widget__link href=/categories/sherver/>sherver</a></li>
 <li class=widget__item>
-<a class=widget__link href=/categories/tasker/>Tasker</a></li>
-<li class=widget__item>
 <a class=widget__link href=/categories/varios/>Varios</a></li>
 <li class=widget__item>
 <a class=widget__link href=/categories/vertices/>vertices</a></li>
@@ -201,14 +177,13 @@ En mi caso comencé usándola como servidor web para este Blog, aunque en la act
 <div class="widget-taglist widget">
 <h4 class=widget__title>Etiquetas</h4>
 <div class=widget__content>
-<a class="widget-taglist__link widget__link btn" href=/tags/android/ title=android>android (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/apps/ title=Apps>Apps (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/averias/ title=Averias>Averias (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/backup/ title=Backup>Backup (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/bash/ title=bash>bash (20)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/bash/ title=bash>bash (21)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/bricolaje/ title=Bricolaje>Bricolaje (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/darktable/ title=darktable>darktable (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/desarrollo/ title=Desarrollo>Desarrollo (17)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/desarrollo/ title=desarrollo>desarrollo (16)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/dired/ title=dired>dired (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/docker/ title=docker>docker (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/dotfiles/ title=dotfiles>dotfiles (1)</a>
@@ -268,7 +243,6 @@ En mi caso comencé usándola como servidor web para este Blog, aunque en la act
 <a class="widget-taglist__link widget__link btn" href=/tags/sherlodj/ title=SherloDj>SherloDj (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/shortcodes/ title=shortcodes>shortcodes (4)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/software/ title=software>software (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/speedtrap/ title=SpeedTrap>SpeedTrap (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/ssh/ title=ssh>ssh (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/synology/ title=synology>synology (13)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/telegram/ title=telegram>telegram (1)</a>

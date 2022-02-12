@@ -40,6 +40,11 @@
 </button>
 <ul class=menu__list>
 <li class=menu__item>
+<a class=menu__link href=/post/computing/emacs/>
+<span class=menu__text>Emacs</span>
+</a>
+</li>
+<li class=menu__item>
 <a class=menu__link href=/post/computing/hugo/>
 <span class=menu__text>Hugo</span>
 </a>
@@ -54,11 +59,6 @@
 <span class=menu__text>Raspberry Pi desde cero</span>
 </a>
 </li>
-<li class=menu__item>
-<a class=menu__link href=/post/android/tasker/>
-<span class=menu__text>Tasker</span>
-</a>
-</li>
 </ul>
 </nav>
 </div>
@@ -71,123 +71,6 @@
 <hr>
 </div>
 <article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/raspberry-y-docker/>
-<img class=thumbnail__image src=/images/20180501_raspberry_docker.jpg alt="Raspberry y Docker">
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/raspberry-y-docker/ rel=bookmark>
-Raspberry y Docker
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2018-04-12T00:00:00Z>2018-04-12</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-Manejando contenedores con Docker Instalar Docker\ sudo apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
-sudo curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo &ldquo;$ID&rdquo;)/gpg | sudo apt-key add -
-sudo echo &ldquo;deb [arch=armhf] https://download.docker.com/linux/$(. /etc/os-release; echo &ldquo;$ID&rdquo;) $(lsb_release -cs) stable&rdquo; | sudo tee /etc/apt/sources.list.d/docker.list
-sudo apt update sudo apt install docker-ce sudo systemctl enable docker sudo systemctl start docker añadir tu usuario al grupo de docker\ sudo gpasswd -a ${USER} docker
-eliminar todos los contenedores con un solo comando\ docker rm $(docker ps -a -q) docker rm $(docker container ls -a -q)
-</div>
-</article><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/raspberry-servidor-vpn/>
-<img class=thumbnail__image src=/images/20180501_raspberry_vpn.jpg alt="Raspberry Servidor VPN">
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/raspberry-servidor-vpn/ rel=bookmark>
-Raspberry Servidor VPN
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2018-04-11T00:00:00Z>2018-04-11</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-Instalando un servidor VPN Una de las grandes funcionalidades que nos puede ofrecer nuestra Raspberry Pi es como servidor VPN el cual tiene dos finalidades fundamentales.
-Acceder de forma segura a nuestra red local desde fuera de ella Conseguir una navegación segura en redes wifi públicas sudo apt update
-sudo apt upgrade
-curl -L https://install.pivpn.io | bash
-Para los detalles de las opciones de configuración durante la instalación tan sólo hay que visitar la web de El Atareao donde lo explica pormenorizadamente.
-</div>
-</article><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/raspberry-acceso-desde-el-exterior/>
-<img class=thumbnail__image src=/images/20180410_raspberry_noip.jpg alt="Raspberry Acceso desde el exterior">
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/raspberry-acceso-desde-el-exterior/ rel=bookmark>
-Raspberry Acceso desde el exterior
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2018-04-10T00:00:00Z>2018-04-10</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-Ya tenemos nuestro servidor prácticamente montado, ahora necesitamos que cualquiera desde fuera de nuestra red pueda acceder al mismo. Esto presenta dos problemas, el redireccionamiento de router a la raspberry y la ip dinámica que nos asigna el proveedor de servicios de internet.
-Por un lado, para dirigir el tráfico que llega a nuestro router en busca de nuestro servidor tendremos que abrir el puerto 80 para la ip local que tiene adjudicada la Raspberry, en mi caso la 192.
-</div>
-</article><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/raspberry-reinicios-peri%C3%B3dicos/>
-<img class=thumbnail__image src=/images/20180501_raspberry_reinicio.jpg alt="Raspberry Reinicios periódicos">
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/raspberry-reinicios-peri%C3%B3dicos/ rel=bookmark>
-Raspberry Reinicios periódicos
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2018-04-10T00:00:00Z>2018-04-10</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-Reiniciar la Raspberry a diario Para que la Raspberry se reinicie al menos una vez al día por si alguno de los servicios se cuelga y no tenemos acceso a ella o no nos damos cuenta del problema he implementado un reinicio diario a las 4:00 AM mediante una tarea programada usando el cron del usuario root
-sudo crontab -e
-nos abre un archivo al que le añadiremos la siguiente línea
-</div>
-</article><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/raspberry-copia-de-seguridad/>
-<img class=thumbnail__image src=/images/20180409_raspberry_backup.jpg alt="Raspberry Copia de seguridad">
-</a>
-</figure>
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/raspberry-copia-de-seguridad/ rel=bookmark>
-Raspberry Copia de seguridad
-</a>
-</h2>
-<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2018-04-09T00:00:00Z>2018-04-09</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
-</span>
-</div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-Antes de pensar en como realizar una copia de seguridad para las instalaciones de WordPress y Dokuwiki que hasta ahora hemos instalado en la Raspberry hay que hacerlo en los datos que son estrictamente necesarios para poder restaurar ambas instalaciones ante una pérdida de los mismos.
-En el caso de Wordpress, debemos guardar la base de datos y la carpeta &ldquo;wp-content&rdquo;. Para el caso de la Wiki, aquí podemos ver las carpetas necesarias que se recomienda guardar aunque yo he optado por prescindir de las versiones antiguas de páginas y archivos multimedia.
-</div>
-</article><article class="list__item post">
 <figure class="list__thumbnail thumbnail">
 <a class=thumbnail__link href=/raspberry-instalando-dokuwiki/>
 <img class=thumbnail__image src=/images/20180408_raspberry_dokuwiki.jpg alt="Raspberry Instalando Dokuwiki">
@@ -229,12 +112,118 @@ Raspberry Instalando WordPress
 <div class="content list__excerpt post__content clearfix">
 Instalando WordPress Al fin ha llegado el momento, se han acabado los preliminares y aquí es donde empieza la famosa instalación de WordPress en cinco minutos, tan sólo hay que introducir en nuestro navegador la ruta donde hemos copiado los archivos de instalación y seguir los pasos típicos.
 </div>
+</article><article class="list__item post">
+<figure class="list__thumbnail thumbnail">
+<a class=thumbnail__link href=/raspberry-servidor-ftp/>
+<img class=thumbnail__image src=/images/20180406_raspberry_vsftpd.jpg alt="Raspberry Servidor ftp">
+</a>
+</figure>
+<header class=list__header>
+<h2 class="list__title post__title">
+<a href=/raspberry-servidor-ftp/ rel=bookmark>
+Raspberry Servidor ftp
+</a>
+</h2>
+<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2018-04-06T00:00:00Z>2018-04-06</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
+</span>
+</div></div>
+</header>
+<div class="content list__excerpt post__content clearfix">
+Instalando VSftpD Aunque no es imprescindible para la instalación y funcionamiento de WordPress, el servidor ftp nos resulta muy util para la instalación automática de plugins, actualizaciones, importaciones&mldr; Por lo que lo incluimos también dentro de la pequeña Raspberry.
+Instalamos &ldquo;vsftp&rdquo; y editamos el archivo de configuración asegurándonos de que están como aparecen a continuación los siguientes paramétros.
+*** Actualización *** //Para que los archivos subidos mediante el cliente ftp (logeado con el usuario &ldquo;pi&rdquo;) al servidor en la raspberry puedan ser leidos y ejecutados por el usuario &ldquo;www-data&rdquo; deberemos modificar tambien el parámetro umask de forma que quede local_umask=022//
+</div>
+</article><article class="list__item post">
+<figure class="list__thumbnail thumbnail">
+<a class=thumbnail__link href=/raspberry-descargando-wordpress/>
+<img class=thumbnail__image src=/images/raspberry_logo.png alt="Raspberry Descargando Wordpress">
+</a>
+</figure>
+<header class=list__header>
+<h2 class="list__title post__title">
+<a href=/raspberry-descargando-wordpress/ rel=bookmark>
+Raspberry Descargando Wordpress
+</a>
+</h2>
+<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2018-04-05T00:00:00Z>2018-04-05</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
+</span>
+</div></div>
+</header>
+<div class="content list__excerpt post__content clearfix">
+Descargando WordPress En primer lugar descargamos la ultima versión de WordPress a el directorio &ldquo;home&rdquo; del usuario Pi. Si la descargamos en inglés lo haremos mediante el archivo &ldquo;latest.tar.gz&rdquo; pero si la queremos en castellano habrá en entrar en [[http://es.wordpress.org]] y comprobar cual es la versión actual para descargar un archivo del tipo &ldquo;wordpress-4.8.2-es_ES.tar.gz&rdquo;
+Las líneas de arriba realizan la siguiente secuencia:
+Crea un directorio en la raiz de apache para instalar WordPress Iniciarse en el directorio &ldquo;home&rdquo; de Pi Descargar la última versión de WordPress (En inglés) Descomprime el archivo descargado Mueve el contenido de la carpeta extraida a &ldquo;/var/www/html/sherblog&rdquo; Borra el archivo descargado Borra la carpeta vacía Con esto ya están listos los archivos de WordPress, ahora modificaremos el archivo &ldquo;wp-config&rdquo; con la información de la conexión a la base de datos que hemos creado anteriormente.
+</div>
+</article><article class="list__item post">
+<header class=list__header>
+<h2 class="list__title post__title">
+<a href="/?p=906/" rel=bookmark>
+La discriminación rural en el servicio telefónico
+</a>
+</h2>
+<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2015-10-15T22:23:41Z>2015-10-15</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/hardware/ rel=category>hardware</a>
+</span>
+</div></div>
+</header>
+<div class="content list__excerpt post__content clearfix">
+Está claro que la vida alejada de los grandes núcleos de población trae consigo una serie de ventajas e inconvenientes que hay que asumir, pero hasta cierto punto ya que llega un momento en el que la diferencia en el trato sobrepasa la frontera de la discriminación. Aunque aquí podría tratar varias circunstancias en las que sale a la luz esta discriminación, me voy a centrar únicamente en el servicio telefónico.
+</div>
+</article><article class="list__item post">
+<header class=list__header>
+<h2 class="list__title post__title">
+<a href=/ rel=bookmark>
+</a>
+</h2>
+</header>
+<div class="content list__excerpt post__content clearfix">
+<p>f&mdash;
+title: &ldquo;Como configurar emacs para trabajar con python&rdquo;
+date: &ldquo;2020-10-20&rdquo;
+creation: &ldquo;2020-10-20&rdquo;
+descrption: &ldquo;Como configurar emacs para trabajar con python&rdquo;
+thumbnail: &ldquo;/images/20201020_python_en_emacs_00.jpg&rdquo;
+disable_comments: true
+authorbox: false
+toc: false
+mathjax: false
+categories:</p>
+<ul>
+<li>&ldquo;uncategorized&rdquo;
+tags:</li>
+<li>&ldquo;untagged&rdquo;
+draft: true
+weight: 5</li>
+</ul>
+<hr>
+<p>Aquí voy a ir escribiendo los pasos que doy para convertir Emacs en mi entorno de desarrollo para python.</p>
+</div>
+</article><article class="list__item post">
+<figure class="list__thumbnail thumbnail">
+<a class=thumbnail__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/>
+<img class=thumbnail__image src=/images/vertice.jpg alt="Mis vértices geodésicos">
+</a>
+</figure>
+<header class=list__header>
+<h2 class="list__title post__title">
+<a href=/mis-v%C3%A9rtices-geod%C3%A9sicos/ rel=bookmark>
+Mis vértices geodésicos
+</a>
+</h2>
+</header>
+<div class="content list__excerpt post__content clearfix">
+Según dice la Wikipedia, en España hay unos 11000 vértices geodésicos que suelen estar formados por un cilindro de 120 centímetros de altura y 30 de diámetro sustentado en una báse cúbica de hormigón, todo ello pintado de blanco. Normalmente están en sitios altos y despejados para poder ver otros puntos, es por ello que suele haber unas buenas panorámicas desde ellos. Desde 1975 están protegidos por la Ley sobre Señales Geodésicas y Geofísicas.
+</div>
 </article>
 </main>
 <div class=pagination>
 <a class="pagination__item pagination__item--prev btn" href=/page/24/>«</a>
-<span class="pagination__item pagination__item--current">25/26</span>
-<a class="pagination__item pagination__item--next btn" href=/page/26/>»</a>
+<span class="pagination__item pagination__item--current">25/25</span>
 </div>
 </div>
 <aside class=sidebar>
@@ -286,8 +275,6 @@ Instalando WordPress Al fin ha llegado el momento, se han acabado los preliminar
 <li class=widget__item>
 <a class=widget__link href=/categories/sherver/>sherver</a></li>
 <li class=widget__item>
-<a class=widget__link href=/categories/tasker/>Tasker</a></li>
-<li class=widget__item>
 <a class=widget__link href=/categories/varios/>Varios</a></li>
 <li class=widget__item>
 <a class=widget__link href=/categories/vertices/>vertices</a></li>
@@ -299,14 +286,13 @@ Instalando WordPress Al fin ha llegado el momento, se han acabado los preliminar
 <div class="widget-taglist widget">
 <h4 class=widget__title>Etiquetas</h4>
 <div class=widget__content>
-<a class="widget-taglist__link widget__link btn" href=/tags/android/ title=android>android (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/apps/ title=Apps>Apps (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/averias/ title=Averias>Averias (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/backup/ title=Backup>Backup (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/bash/ title=bash>bash (20)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/bash/ title=bash>bash (21)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/bricolaje/ title=Bricolaje>Bricolaje (2)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/darktable/ title=darktable>darktable (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/desarrollo/ title=Desarrollo>Desarrollo (17)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/desarrollo/ title=desarrollo>desarrollo (16)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/dired/ title=dired>dired (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/docker/ title=docker>docker (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/dotfiles/ title=dotfiles>dotfiles (1)</a>
@@ -366,7 +352,6 @@ Instalando WordPress Al fin ha llegado el momento, se han acabado los preliminar
 <a class="widget-taglist__link widget__link btn" href=/tags/sherlodj/ title=SherloDj>SherloDj (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/shortcodes/ title=shortcodes>shortcodes (4)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/software/ title=software>software (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/speedtrap/ title=SpeedTrap>SpeedTrap (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/ssh/ title=ssh>ssh (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/synology/ title=synology>synology (13)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/telegram/ title=telegram>telegram (1)</a>
