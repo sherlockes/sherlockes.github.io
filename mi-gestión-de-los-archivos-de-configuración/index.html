@@ -69,7 +69,7 @@
 <h1 class=post__title>Mi gestión de los archivos de configuración</h1>
 <div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-04-16T00:00:00Z>2021-04-16</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/computing/ rel=category>computing</a>
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2022-02-12T00:00:00Z>2022-02-12</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/computing/ rel=category>computing</a>
 </span>
 </div></div>
 </header>
@@ -84,6 +84,7 @@
 <li>
 <ul>
 <li><a href=#configuración-ssh>Configuración ssh</a></li>
+<li><a href=#configuración-de-alias-en-bash>Configuración de Alias en Bash</a></li>
 <li><a href=#configuración-de-emacs>Configuración de Emacs</a></li>
 <li><a href=#configuración-de-rclone>Configuración de Rclone</a></li>
 <li><a href=#configuración-de-gphotos-sync>Configuración de gphotos-sync</a></li>
@@ -104,6 +105,14 @@
 <li>Archivo -> config</li>
 <li>Enlace -> <code>ln -si ~/dotfiles/ssh/config ~/.ssh/config</code></li>
 </ul>
+<h3 id=configuración-de-alias-en-bash>Configuración de Alias en Bash</h3>
+<p>El uso de alias es una herramienta muy importante cuando trabajamos con Bash en la terminal, guardando y compartiendo el archivo &ldquo;.bash_aliases&rdquo; estos se encuentran bien organizados.</p>
+<ul>
+<li>Ubicación -> dotfiles/bash</li>
+<li>Archivo -> .bash_aliases</li>
+<li>Enlace -> <code>ln -si ~/dotfiles/bash/.bash_aliases ~/.bash_aliases</code></li>
+</ul>
+<p>Tras crear el enlace simbólico, habrá que ejecutar el comando <code>source ~/.bashrc</code> para que los cambios tengan efecto.</p>
 <h3 id=configuración-de-emacs>Configuración de Emacs</h3>
 <ul>
 <li>Ubicación -> dotfiles/emacs</li>
@@ -134,11 +143,11 @@
 <div class="content post__content clearfix">
 <h3>Otros de mís artículos que te pueden interesar</h3>
 <ul>
+<li><a href=/mi-uso-de-alias-en-bash/>Mi uso de alias en bash</a></li>
+<li><a href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li>
+<li><a href=/buscar-y-reemplazar-en-bash-con-find-y-sed/>Buscar y reemplazar en bash con find y sed</a></li>
 <li><a href=/clonar-el-disco-de-arranque-de-la-raspberry/>Clonar el disco de arranque de la raspberry</a></li>
 <li><a href=/instalar-rclone-en-synology-ds920-/>Instalar rclone en Synology Ds920+</a></li>
-<li><a href=/montar-carpeta-del-nas-mediante-sshfs/>Montar carpeta del NAS mediante sshfs</a></li>
-<li><a href=/descargar-archivos-de-telegram/>Descargar archivos de Telegram</a></li>
-<li><a href=/exif-info-en-bash-con-exiftool/>Exif info en Bash con Exiftool</a></li>
 </ul>
 </div>
 <div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
@@ -156,10 +165,10 @@
 </main>
 <nav class="post-nav flex">
 <div class="post-nav__item post-nav__item--prev">
-<a class=post-nav__link href=/configurando-un-rel%C3%A9-wifi-mediante-esp-01-y-micropython/ rel=prev><span class=post-nav__caption>«&#8201;Anterior</span><p class=post-nav__post-title>Configurando un relé wifi mediante esp-01 y micropython</p></a>
+<a class=post-nav__link href=/servidor-webdav-de-contenido-remoto-con-rclone/ rel=prev><span class=post-nav__caption>«&#8201;Anterior</span><p class=post-nav__post-title>Servidor Webdav de contenido remoto con Rclone</p></a>
 </div>
 <div class="post-nav__item post-nav__item--next">
-<a class=post-nav__link href=/synology-broken-sudo/ rel=next><span class=post-nav__caption>Siguiente&#8201;»</span><p class=post-nav__post-title>Synology broken sudo</p></a>
+<a class=post-nav__link href=/mi-uso-de-alias-en-bash/ rel=next><span class=post-nav__caption>Siguiente&#8201;»</span><p class=post-nav__post-title>Mi uso de alias en bash</p></a>
 </div>
 </nav>
 </div>
