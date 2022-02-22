@@ -82,6 +82,7 @@ Con esto ya tenemos sincronizada nuestra galería de Google Photos en nuestro NA
 
 ### Enlaces de interés
 - [How to Geek - Add dir to path](https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/)
+- [Linux Up Rising - Backup Google Photos](https://www.linuxuprising.com/2019/06/how-to-backup-google-photos-to-your.html)
 
 [Google Cloud Platform]: https://console.cloud.google.com/cloud-resource-manager
 [Google Cloud Platform API]: https://console.cloud.google.com/apis/dashboard
