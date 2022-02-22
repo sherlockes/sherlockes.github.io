@@ -69,7 +69,7 @@
 <h1 class=post__title>Sincronizar Google Photos desde la Raspberry</h1>
 <div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-06-06T00:00:00Z>2021-06-06</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>, <a class=meta__link href=/categories/productividad/ rel=category>productividad</a>
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2022-02-22T00:00:00Z>2022-02-22</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>, <a class=meta__link href=/categories/productividad/ rel=category>productividad</a>
 </span>
 </div></div>
 </header>
@@ -110,20 +110,25 @@
 <p>LLegados a esta punto ya sólo resta ejecutar el comando en el entorno virtual para que todas las fotos sean descargadas al directorio de destino</p>
 <pre tabindex=0><code>gphotos-sync directorio_destino
 </code></pre><p>En mi caso, aunque el trabajo lo realiza la raspberry, las fotos quedan almacenadas en una carpeta del NAS que ha sido montada mediante sshfs y llave público/privada gracias a un <a href=https://github.com/sherlockes/SherloScripts/blob/master/bash/gphotos-sync.sh>script</a> que se ejecuta diariamente mediante cron.</p>
+<p>A la hora de hacerlo funcionar mediante cron me he emcontrado con el problema de que no encuentra el comando <code>gphotos-sync</code>, cosa que no ocurre cuando lo intento lanzar con la cuenta de usuario &ldquo;pi&rdquo; iniciada. Esto se debe a que el archivo del comando está cuardado dentro de la carpeta del usuario &ldquo;pi&rdquo; tal y como podemos ver si ejecutamos <code>type -a gphotos-sync</code></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>gphotos-sync is /home/pi/.local/bin/gphotos-sync
+</code></pre></div><p>para solventar este problema hago una llamada a la ruta completa en lugar de al comando directamente.</p>
 <blockquote>
 <p>Tras unos días funcionando correctamente me ha aparecido un fallo en el montaje de la unidad de mota del NAS &ldquo;read: Connection reset by peer&rdquo; que he conseguido reparar habilitando nuevamente la conexión sftp del NAS</p>
 </blockquote>
 <p>Con esto ya tenemos sincronizada nuestra galería de Google Photos en nuestro NAS. Seguro que esto es capaz de hacerlo el NAS sin ayuda de la Raspberry, pero esto será para otro día&mldr;</p>
-<p>Links:
-<a href=https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/>https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/</a></p>
+<h3 id=enlaces-de-interés>Enlaces de interés</h3>
+<ul>
+<li><a href=https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/>How to Geek - Add dir to path</a></li>
+</ul>
 </div>
 <footer class=post__footer>
 <div class="content post__content clearfix">
 <h3>Otros de mís artículos que te pueden interesar</h3>
 <ul>
+<li><a href=/usb-externo-controlado-desde-puerto-gpio/>Usb externo controlado desde puerto Gpio</a></li>
 <li><a href=/clonar-el-disco-de-arranque-de-la-raspberry/>Clonar el disco de arranque de la raspberry</a></li>
 <li><a href=/que-hace-la-raspberry-sin-mi/>Que hace la raspberry sin mi</a></li>
-<li><a href=/usb-externo-controlado-desde-puerto-gpio/>Usb externo controlado desde puerto Gpio</a></li>
 <li><a href=/script-de-configuraci%C3%B3n-para-raspberry/>Script de configuración para Raspberry</a></li>
 <li><a href=/unir-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/>Unir varios pdf en linux desde la línea de comandos</a></li>
 </ul>
@@ -143,10 +148,7 @@
 </main>
 <nav class="post-nav flex">
 <div class="post-nav__item post-nav__item--prev">
-<a class=post-nav__link href=/raspberry-montaje-y-ssh/ rel=prev><span class=post-nav__caption>«&#8201;Anterior</span><p class=post-nav__post-title>Raspberry Montaje y ssh</p></a>
-</div>
-<div class="post-nav__item post-nav__item--next">
-<a class=post-nav__link href=/que-hace-la-raspberry-sin-mi/ rel=next><span class=post-nav__caption>Siguiente&#8201;»</span><p class=post-nav__post-title>Que hace la raspberry sin mi</p></a>
+<a class=post-nav__link href=/instalaci%C3%B3n-de-home-assistant-en-raspberry/ rel=prev><span class=post-nav__caption>«&#8201;Anterior</span><p class=post-nav__post-title>Instalación de Home Assistant en Raspberry</p></a>
 </div>
 </nav>
 </div>
