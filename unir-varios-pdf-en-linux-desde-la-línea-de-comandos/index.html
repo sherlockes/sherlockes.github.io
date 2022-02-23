@@ -73,8 +73,8 @@
 </span>
 </div></div>
 </header>
-<figure class=post__thumbnail>
-<img src=/images/20191127_unir_pdf_00.jpg alt="Unir varios pdf en linux desde la línea de comandos">
+<figure class="post__thumbnail thumbnail">
+<img class=thumbnail__image src=/images/20191127_unir_pdf_00.jpg alt="Unir varios pdf en linux desde la línea de comandos">
 </figure><div class="content post__content clearfix">
 <p>En la web podemos encontrar una infinidad de servicios para unir varios archivos pdf en uno, pero si no quieres perder tiempo en subir y bajar los archivos a los servidores remotos aquí dejo una forma sencilla para realizar el mismo trabajo con una sola línea en la consola de comandos.</p>
 <p>Esta vez utilizo una librería de renderizado para archivos pdf para debian llamada <a href=https://packages.debian.org/es/sid/poppler-utils>poppler-utils</a> y que a su vez se basa en la librería genérica <a href=https://poppler.freedesktop.org/>Poppler</a>. Cuando yo la he intentado ejecutar en mi Linux Mint resulta que ya la tenía instalada. En caso contrario es tan simple como&mldr;</p>
@@ -110,12 +110,18 @@ sudo apt-get install poppler-utils
 </footer>
 </article>
 </main>
-<nav class="post-nav flex">
-<div class="post-nav__item post-nav__item--prev">
-<a class=post-nav__link href=/backup-de-google-photos/ rel=prev><span class=post-nav__caption>«&#8201;Anterior</span><p class=post-nav__post-title>Backup de Google Photos</p></a>
+<nav class="pager flex">
+<div class="pager__item pager__item--prev">
+<a class=pager__link href=/backup-de-google-photos/ rel=prev>
+<span class=pager__subtitle>«&#8201;Anterior</span>
+<p class=pager__title>Backup de Google Photos</p>
+</a>
 </div>
-<div class="post-nav__item post-nav__item--next">
-<a class=post-nav__link href=/extrayendo-la-portada-de-un-pdf/ rel=next><span class=post-nav__caption>Siguiente&#8201;»</span><p class=post-nav__post-title>Extrayendo la portada de un pdf</p></a>
+<div class="pager__item pager__item--next">
+<a class=pager__link href=/extrayendo-la-portada-de-un-pdf/ rel=next>
+<span class=pager__subtitle>Siguiente&#8201;»</span>
+<p class=pager__title>Extrayendo la portada de un pdf</p>
+</a>
 </div>
 </nav>
 </div>
@@ -123,8 +129,9 @@ sudo apt-get install poppler-utils
 <footer class=footer>
 <div class="container footer__container flex">
 <div class=footer__copyright>
-&copy; 2022 Sherblog.
+&copy; 2022 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
+</br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a>
 </div>
 </div>
 </footer>

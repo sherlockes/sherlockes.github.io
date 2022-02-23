@@ -73,8 +73,8 @@
 </span>
 </div></div>
 </header>
-<figure class=post__thumbnail>
-<img src=/images/20170228_db_backup_00.jpg alt="Copia de seguridad de la base de datos de WordPress">
+<figure class="post__thumbnail thumbnail">
+<img class=thumbnail__image src=/images/20170228_db_backup_00.jpg alt="Copia de seguridad de la base de datos de WordPress">
 </figure><div class="content post__content clearfix">
 <p>Hace unos días expliqué como gestiona la copia de seguridad de los archivos de WordPress (la carpeta wp-content) y aquí vamos a ver como hago lo propio con la base de datos. El flujo de trabajo es simple, periódicamente me llega un correo electrónico con la base de datos comprimida como archivo adjunto y guardo ese archivo en mi unidad de Google Drive.</p>
 <p>El plugin de WordPress <a href=%C2%A0https://es.wordpress.org/plugins/wp-db-backup/>WP-DB-Backup</a> es el que se encarga de enviar un correo electrónico periódicamente con la copia de la base de datos. La configuración es muy sencilla, una vez que el plugin está instalado y activo vamos al menú &ldquo;Herramientas - Copia de respaldo&rdquo; del escritorio de WordPress y bajamos hasta la opción &ldquo;Respaldo Programado&rdquo;.</p>
@@ -157,12 +157,18 @@ function limpiar(matriz){
 </div>
 </article>
 </main>
-<nav class="post-nav flex">
-<div class="post-nav__item post-nav__item--prev">
-<a class=post-nav__link href=/flujo-de-trabajo-con-im%C3%A1genes-en-wordpress/ rel=prev><span class=post-nav__caption>«&#8201;Anterior</span><p class=post-nav__post-title>Flujo de trabajo con imágenes en WordPress</p></a>
+<nav class="pager flex">
+<div class="pager__item pager__item--prev">
+<a class=pager__link href=/flujo-de-trabajo-con-im%C3%A1genes-en-wordpress/ rel=prev>
+<span class=pager__subtitle>«&#8201;Anterior</span>
+<p class=pager__title>Flujo de trabajo con imágenes en WordPress</p>
+</a>
 </div>
-<div class="post-nav__item post-nav__item--next">
-<a class=post-nav__link href=/deshabilitar-cache-en-chrome/ rel=next><span class=post-nav__caption>Siguiente&#8201;»</span><p class=post-nav__post-title>Deshabilitar cache en chrome</p></a>
+<div class="pager__item pager__item--next">
+<a class=pager__link href=/deshabilitar-cache-en-chrome/ rel=next>
+<span class=pager__subtitle>Siguiente&#8201;»</span>
+<p class=pager__title>Deshabilitar cache en chrome</p>
+</a>
 </div>
 </nav>
 </div>
@@ -170,8 +176,9 @@ function limpiar(matriz){
 <footer class=footer>
 <div class="container footer__container flex">
 <div class=footer__copyright>
-&copy; 2022 Sherblog.
+&copy; 2022 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
+</br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a>
 </div>
 </div>
 </footer>

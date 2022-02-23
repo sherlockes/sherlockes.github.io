@@ -73,8 +73,8 @@
 </span>
 </div></div>
 </header>
-<figure class=post__thumbnail>
-<img src=/images/raspberry_logo.png alt="Raspberry red y wifi">
+<figure class="post__thumbnail thumbnail">
+<img class=thumbnail__image src=/images/raspberry_logo.png alt="Raspberry red y wifi">
 </figure><div class="content post__content clearfix">
 <h3 id=configurar-red-y-wifi>Configurar red y wifi</h3>
 <p>Es interesante que la Raspberry arranque siempre con la misma dirección ip de red si queremos con ella automatizar algún servicio. Para ello, en primer lugar hay que editar el archivo &ldquo;/etc/dhcpcd.conf&rdquo; mediante la instrucción sudo nano /etc/dhcpcd.conf e introduciremos al final las siguientes líneas (dependiendo de la configuración de la red y del router.</p>
@@ -136,12 +136,18 @@ static domain_name_servers=192.168.0.1
 </footer>
 </article>
 </main>
-<nav class="post-nav flex">
-<div class="post-nav__item post-nav__item--prev">
-<a class=post-nav__link href=/raspberry-apache-y-php/ rel=prev><span class=post-nav__caption>«&#8201;Anterior</span><p class=post-nav__post-title>Raspberry apache y php</p></a>
+<nav class="pager flex">
+<div class="pager__item pager__item--prev">
+<a class=pager__link href=/raspberry-apache-y-php/ rel=prev>
+<span class=pager__subtitle>«&#8201;Anterior</span>
+<p class=pager__title>Raspberry apache y php</p>
+</a>
 </div>
-<div class="post-nav__item post-nav__item--next">
-<a class=post-nav__link href=/raspberry-configurando-rclone-sin-entorno-gr%C3%A1fico/ rel=next><span class=post-nav__caption>Siguiente&#8201;»</span><p class=post-nav__post-title>Raspberry configurando rclone sin entorno gráfico</p></a>
+<div class="pager__item pager__item--next">
+<a class=pager__link href=/raspberry-configurando-rclone-sin-entorno-gr%C3%A1fico/ rel=next>
+<span class=pager__subtitle>Siguiente&#8201;»</span>
+<p class=pager__title>Raspberry configurando rclone sin entorno gráfico</p>
+</a>
 </div>
 </nav>
 </div>
@@ -149,8 +155,9 @@ static domain_name_servers=192.168.0.1
 <footer class=footer>
 <div class="container footer__container flex">
 <div class=footer__copyright>
-&copy; 2022 Sherblog.
+&copy; 2022 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
+</br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a>
 </div>
 </div>
 </footer>

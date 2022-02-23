@@ -73,8 +73,8 @@
 </span>
 </div></div>
 </header>
-<figure class=post__thumbnail>
-<img src=/images/20190723_backup_google_photos_00.jpg alt="Backup de Google Photos">
+<figure class="post__thumbnail thumbnail">
+<img class=thumbnail__image src=/images/20190723_backup_google_photos_00.jpg alt="Backup de Google Photos">
 </figure><div class="content post__content clearfix">
 <p>Desde principios del mes de Julio de 2019, todos los que realizamos una copia de seguridad de de las imágenes subidas a Google Photos una forma automatizada hemos pasado a tener un serio problema que cada vez estoy más cerca de solucionar.</p>
 <p>Hasta ahora, mi Synology realizaba una copia de seguridad de Google Photos gracias a Cloud Sync y la posible sincronización entre las imágenes en Google Photos y una carpeta de Google Drive que se ofrecía. Pero esta capacidad de representar de todas las fotografías en una carpeta de Drive ha sido eliminada por Google y con ello casi todas las posibilidades de una copia de seguridad automática.</p>
@@ -149,12 +149,18 @@ fusermount -u ~/gphotos-sync
 </footer>
 </article>
 </main>
-<nav class="post-nav flex">
-<div class="post-nav__item post-nav__item--prev">
-<a class=post-nav__link href=/rclone-en-synology/ rel=prev><span class=post-nav__caption>«&#8201;Anterior</span><p class=post-nav__post-title>Rclone en Synology</p></a>
+<nav class="pager flex">
+<div class="pager__item pager__item--prev">
+<a class=pager__link href=/rclone-en-synology/ rel=prev>
+<span class=pager__subtitle>«&#8201;Anterior</span>
+<p class=pager__title>Rclone en Synology</p>
+</a>
 </div>
-<div class="post-nav__item post-nav__item--next">
-<a class=post-nav__link href=/unir-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/ rel=next><span class=post-nav__caption>Siguiente&#8201;»</span><p class=post-nav__post-title>Unir varios pdf en linux desde la línea de comandos</p></a>
+<div class="pager__item pager__item--next">
+<a class=pager__link href=/unir-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/ rel=next>
+<span class=pager__subtitle>Siguiente&#8201;»</span>
+<p class=pager__title>Unir varios pdf en linux desde la línea de comandos</p>
+</a>
 </div>
 </nav>
 </div>
@@ -162,8 +168,9 @@ fusermount -u ~/gphotos-sync
 <footer class=footer>
 <div class="container footer__container flex">
 <div class=footer__copyright>
-&copy; 2022 Sherblog.
+&copy; 2022 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
+</br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a>
 </div>
 </div>
 </footer>

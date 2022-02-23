@@ -73,8 +73,8 @@
 </span>
 </div></div>
 </header>
-<figure class=post__thumbnail>
-<img src=/images/20151006_wordpress_db_sync.jpg alt="Sincronizar WordPress en local y servidor">
+<figure class="post__thumbnail thumbnail">
+<img class=thumbnail__image src=/images/20151006_wordpress_db_sync.jpg alt="Sincronizar WordPress en local y servidor">
 </figure><div class="content post__content clearfix">
 <p>Si de algo carece WordPress, o al menos yo no he sido capaz de encontrarlo después de mucho navegar por la red, es de un entorno de desarrollo en local. A que me refiero, cada vez que nos ponemos a realizar modificaciones en la web algo más allá que publicar un post nos encontramos con la tediosa labor de descargar, modificar, guardar, subir y comprobar cada modificación hasta que conseguimos dejar la web a nuestro gusto.</p>
 <p>Pues bien, lo que yo busco es una forma sencilla de crear una copia de nuestra web en el ordenador de casa para poder trabajar sobre esta en las modificaciones y una vez estén terminadas subirlas al servidor. De esta forma el proceso se simplifica bastante ya que únicamente hay que realizar las modificaciones, guardarlas y comprobar si funcionan. Antes de empezar necesitamos cuatro puntos imprescindibles.</p>
@@ -157,12 +157,18 @@ define('DB_COLLATE', '');
 </div>
 </article>
 </main>
-<nav class="post-nav flex">
-<div class="post-nav__item post-nav__item--prev">
-<a class=post-nav__link href=/crear-panor%C3%A1mica-a-partir-de-un-v%C3%ADdeo/ rel=prev><span class=post-nav__caption>«&#8201;Anterior</span><p class=post-nav__post-title>Crear panorámica a partir de un vídeo</p></a>
+<nav class="pager flex">
+<div class="pager__item pager__item--prev">
+<a class=pager__link href=/crear-panor%C3%A1mica-a-partir-de-un-v%C3%ADdeo/ rel=prev>
+<span class=pager__subtitle>«&#8201;Anterior</span>
+<p class=pager__title>Crear panorámica a partir de un vídeo</p>
+</a>
 </div>
-<div class="post-nav__item post-nav__item--next">
-<a class=post-nav__link href=/el-l%C3%A1tex-y-las-maxxis-se-llevan-mal/ rel=next><span class=post-nav__caption>Siguiente&#8201;»</span><p class=post-nav__post-title>El látex y las maxxis se llevan mal</p></a>
+<div class="pager__item pager__item--next">
+<a class=pager__link href=/el-l%C3%A1tex-y-las-maxxis-se-llevan-mal/ rel=next>
+<span class=pager__subtitle>Siguiente&#8201;»</span>
+<p class=pager__title>El látex y las maxxis se llevan mal</p>
+</a>
 </div>
 </nav>
 </div>
@@ -170,8 +176,9 @@ define('DB_COLLATE', '');
 <footer class=footer>
 <div class="container footer__container flex">
 <div class=footer__copyright>
-&copy; 2022 Sherblog.
+&copy; 2022 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
+</br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a>
 </div>
 </div>
 </footer>
