@@ -40,13 +40,14 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 [Params]
   subtitle = "Sólo mi forma de hacer las cosas..."
   description = "Un poco de informática, bricolaje, bicicleta y todos los problemas que se me ponen delante en el día a día no está de más documentarlos, a alguien le puede ayudar..."
-  #copyright = "Sherlockes@2019" #
+  copyright = "Sherlockes" #
   opengraph = true
   twitter_cards = true
   readmore = false
   authorbox = false
   disable_comments = true
   toc = true
+  pager = true
   post_navigation = true
   post_meta = ["date", "categories", "translations"] # Order of post meta information
   mainSections = ["post"]
