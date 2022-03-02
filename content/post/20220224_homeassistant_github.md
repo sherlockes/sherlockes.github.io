@@ -21,12 +21,18 @@ Resumen de introducción
 ``` bash
 scp -r -P 222 root@192.168.10.202:config/*.yaml ~/config
 ```
+### Metodo 2
+
+
+ssh root@192.168.10.202 -p 222 'bash -s' < ~/SherloScripts/bash/ha_gitpush.sh
+
 
 ![image-01]
 
 ### Enlaces de interés
 - [Linux Hint - Scp different port](https://linuxhint.com/scp-different-port/)
-
+- [Peyanski - Home Asistant backup to github](https://peyanski.com/automatic-home-assistant-backup-to-github/)
+- [HomeAssistan - Shell command](https://www.home-assistant.io/integrations/shell_command/)
 [link]: https://www.google.es
 
 
