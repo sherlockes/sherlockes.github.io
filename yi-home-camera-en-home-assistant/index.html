@@ -3,8 +3,7 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<title>Yi Home Camera en Home Assistant - Sherblog</title>
-<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<title>Yi Home Camera en Home Assistant - Sherblog</title><script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script>
 <meta name=description content="Como he integrado la cámara Yi Home 1080 en home assistant">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="http://www.sherblog.pro//images/20210614_home_assistan_yi_camer_00.jpg">
@@ -18,8 +17,7 @@
 <link rel=stylesheet href=/css/style.css>
 <link rel=stylesheet href=/css/custom.css>
 <link rel="shortcut icon" href=/favicon.ico>
-</head>
-<body class=body>
+</head><body class=body>
 <div class="container container--outer">
 <header class=header>
 <meta name=twitter:card content="summary">
@@ -28,11 +26,8 @@
 <div class=container>
 <div class=logo>
 <a class=logo__link href=/ title=Sherblog rel=home>
-<div class=logo__title>Sherblog</div>
-<div class=logo__tagline>Sólo mi forma de hacer las cosas...</div>
-</a>
-</div>
-<nav class=menu>
+<div class=logo__title>Sherblog</div><div class=logo__tagline>Sólo mi forma de hacer las cosas...</div></a>
+</div><nav class=menu>
 <button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
 <span class=menu__btn-title tabindex=-1>Menú</span>
 </button>
@@ -41,127 +36,57 @@
 <a class=menu__link href=/post/computing/emacs/>
 <span class=menu__text>Emacs</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/post/computing/hugo/>
 <span class=menu__text>Hugo</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/>
 <span class=menu__text>Mis vértices geodésicos</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/post/computing/raspberry/>
 <span class=menu__text>Raspberry Pi desde cero</span>
 </a>
-</li>
-</ul>
-</nav>
-</div>
-</header>
-<div class="wrapper flex">
+</li></ul></nav></div></header><div class="wrapper flex">
 <div class=primary>
 <main class=main role=main>
 <article class=post>
 <header class=post__header>
-<h1 class=post__title>Yi Home Camera en Home Assistant</h1>
-<div class="post__meta meta">
+<h1 class=post__title>Yi Home Camera en Home Assistant</h1><div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 <svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-06-14T00:00:00Z>2021-06-14</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/home-assistant/ rel=category>home assistant</a>, <a class=meta__link href=/categories/iot/ rel=category>iot</a>
 </span>
-</div></div>
-</header>
-<figure class="post__thumbnail thumbnail">
+</div></div></header><figure class="post__thumbnail thumbnail">
 <img class=thumbnail__image src=/images/20210614_home_assistan_yi_camer_00.jpg alt="Yi Home Camera en Home Assistant">
 </figure><div class="content post__content clearfix">
-<p>No todo es &ldquo;Plug & Play&rdquo; en <a href=https://www.home-assistant.io>Home Assistant</a>, aquí dejo lo que ha sido el proceso de configuración de la cámara para interior <a href=https://www2.yitechnology.com/yi-1080p-home-camera>Yi Home 1080</a>, una cámara sencilla y barata pero que ofrece muchas posibilidades con un firmware alternativo.</p>
-<p>Tras una prueba frustrada con la cámara <a href=https://www.yitechnology.com.sg/products/yi-dome-guard/>Yi Dome Guard</a> me encuentro probando con la <a href=https://www2.yitechnology.com/yi-1080p-home-camera>Yi Home 1080</a> que he encontrado en Aliexpress por poco más de 15 €.</p>
-<p><img src=/images/20210614_home_assistan_yi_camer_01.jpg alt=image-01></p>
-<h3 id=instalación-del-firmware-yi-hack-allwinner-v2>Instalación del firmware <a href=https://github.com/roleoroleo/yi-hack-Allwinner-v2>Yi-Hack Allwinner-v2</a></h3>
-<p>Para poder integrar la cámara con <a href=https://www.home-assistant.io>Home Assistant</a> es necesario instalarle un firmware alternativo para lo cual hay que seguir los siguientes pasos:</p>
-<ol>
-<li>Hacer funcionar la cámara siguiendo las instrucciones del fabricante</li>
-<li>Insertar una tarjeta MicroSd y formatearla desde la app <a href="https://play.google.com/store/apps/details?id=com.ants360.yicamera.international&hl=es&gl=US">Yi Home</a></li>
-<li>Descargar el firmware alternativo <a href=https://github.com/roleoroleo/yi-hack-Allwinner-v2>Yi-Hack Allwinner-v2</a></li>
-</ol>
-<blockquote>
-<p>A la hora de escoger la versión de firmware que vamos a instalar hay que tener en cuenta el nº de serie de la cámara. Esta identificación se encuentra en la etiqueta trasera de la caja.</p>
-</blockquote>
-<ol start=4>
-<li>Cargar el firmware en la MicroSd y reiniciar la cámara</li>
-<li>Acceder al panel de control en http://ip_de_la_camara:8085</li>
-<li>Desde el menú &ldquo;Configurations&rdquo; añadir un nuevo usuario y pass de root</li>
-<li>Guardar la configuración (Configurations) y reiniciar la cámara (Maintenance)</li>
-</ol>
-<p><img src=/images/20210614_home_assistan_yi_camer_02.jpg alt=image-02></p>
-<blockquote>
-<p>Aunque en la documentación de <a href=https://github.com/roleoroleo/yi-hack-Allwinner-v2>Yi-Hack Allwinner-v2</a> indica que esta inclusión de la contraseña hay que realizarla a través de una conexión telnet, a mi me ha dado problemas de permisos y la he realizado a través del panel de control web.</p>
-</blockquote>
-<h3 id=integración-en-home-assistant>Integración en Home Assistant</h3>
-<p>En este punto, yo no he sido capaz de, mediante la documentación oficial de <a href=https://www.home-assistant.io/integrations/yi/>Yi Home cameras</a>, de visualizar la cámara en <a href=https://www.home-assistant.io>Home Assistant</a>. Como si me ha funcionado es mediante la integración del protocolo <a href=https://www.onvif.org>onvif</a> pero con el modo que he obtenido mayor funcionalidad es mediante la integración personalizada del propio creador de <a href=https://github.com/roleoroleo/yi-hack-Allwinner-v2>Yi-Hack Allwinner-v2</a></p>
-<h4 id=instalación-de-mosquitto>Instalación de mosquitto</h4>
-<p>Para el correcto funcionamiento de la integración debemos disponer en nuestra red de un broker de mqtt que gestione las comunicaciones. Lo más sencillo es instalar mosquitto en la propia Raspberry siguiendo este post de <a href=https://domology.es/instalacion-configuracion-mqtt/>domology</a>.</p>
-<p>En el post de configuración de mosquitto se hace referencia a la necesidad de que <a href=https://www.home-assistant.io>Home Assistant</a> espere a que mosquitto esté cargado para ejecutarse. En mi caso, la <a href=https://sherblog.pro/instalaci%C3%B3n-de-home-assistant-en-raspberry/>instalacion de Home Assistant</a> corre dentro de un contenedor por lo que he editado el archivo &ldquo;/etc/systemd/system/hassio-supervisor.service&rdquo; modificando la siguiente línea:</p>
-<pre tabindex=0><code>After=docker.service dbus.socket network.target mosquitto.service
-</code></pre><h4 id=instalación-de-la-integración-personalizada>Instalación de la integración personalizada</h4>
-<ol>
-<li>Copiar en &ldquo;Custom components&rdquo; la carpeta descargada de <a href=https://github.com/roleoroleo/yi-hack_ha_integration>Yi-Hack HA integration</a></li>
-<li>Reiniciar <a href=https://www.home-assistant.io>Home Assistant</a></li>
-<li>Añadir la integración &ldquo;yi_hack&rdquo;</li>
-<li>Insertar IP de la cámara y usuario y pass generados al cambiar el firmware</li>
-<li>Seleccionar la habitación</li>
-<li>Añadir la cámara al panel de control de <a href=https://www.home-assistant.io>Home Assistant</a></li>
-</ol>
-</div>
-<footer class=post__footer>
+<p>No todo es &ldquo;Plug & Play&rdquo; en <a href=https://www.home-assistant.io>Home Assistant</a>, aquí dejo lo que ha sido el proceso de configuración de la cámara para interior <a href=https://www2.yitechnology.com/yi-1080p-home-camera>Yi Home 1080</a>, una cámara sencilla y barata pero que ofrece muchas posibilidades con un firmware alternativo.</p><p>Tras una prueba frustrada con la cámara <a href=https://www.yitechnology.com.sg/products/yi-dome-guard/>Yi Dome Guard</a> me encuentro probando con la <a href=https://www2.yitechnology.com/yi-1080p-home-camera>Yi Home 1080</a> que he encontrado en Aliexpress por poco más de 15 €.</p><p><img src=/images/20210614_home_assistan_yi_camer_01.jpg alt=image-01></p><h3 id=instalación-del-firmware-yi-hack-allwinner-v2>Instalación del firmware <a href=https://github.com/roleoroleo/yi-hack-Allwinner-v2>Yi-Hack Allwinner-v2</a></h3><p>Para poder integrar la cámara con <a href=https://www.home-assistant.io>Home Assistant</a> es necesario instalarle un firmware alternativo para lo cual hay que seguir los siguientes pasos:</p><ol>
+<li>Hacer funcionar la cámara siguiendo las instrucciones del fabricante</li><li>Insertar una tarjeta MicroSd y formatearla desde la app <a href="https://play.google.com/store/apps/details?id=com.ants360.yicamera.international&hl=es&gl=US">Yi Home</a></li><li>Descargar el firmware alternativo <a href=https://github.com/roleoroleo/yi-hack-Allwinner-v2>Yi-Hack Allwinner-v2</a></li></ol><blockquote>
+<p>A la hora de escoger la versión de firmware que vamos a instalar hay que tener en cuenta el nº de serie de la cámara. Esta identificación se encuentra en la etiqueta trasera de la caja.</p></blockquote><ol start=4>
+<li>Cargar el firmware en la MicroSd y reiniciar la cámara</li><li>Acceder al panel de control en http://ip_de_la_camara:8085</li><li>Desde el menú &ldquo;Configurations&rdquo; añadir un nuevo usuario y pass de root</li><li>Guardar la configuración (Configurations) y reiniciar la cámara (Maintenance)</li></ol><p><img src=/images/20210614_home_assistan_yi_camer_02.jpg alt=image-02></p><blockquote>
+<p>Aunque en la documentación de <a href=https://github.com/roleoroleo/yi-hack-Allwinner-v2>Yi-Hack Allwinner-v2</a> indica que esta inclusión de la contraseña hay que realizarla a través de una conexión telnet, a mi me ha dado problemas de permisos y la he realizado a través del panel de control web.</p></blockquote><h3 id=integración-en-home-assistant>Integración en Home Assistant</h3><p>En este punto, yo no he sido capaz de, mediante la documentación oficial de <a href=https://www.home-assistant.io/integrations/yi/>Yi Home cameras</a>, de visualizar la cámara en <a href=https://www.home-assistant.io>Home Assistant</a>. Como si me ha funcionado es mediante la integración del protocolo <a href=https://www.onvif.org>onvif</a> pero con el modo que he obtenido mayor funcionalidad es mediante la integración personalizada del propio creador de <a href=https://github.com/roleoroleo/yi-hack-Allwinner-v2>Yi-Hack Allwinner-v2</a></p><h4 id=instalación-de-mosquitto>Instalación de mosquitto</h4><p>Para el correcto funcionamiento de la integración debemos disponer en nuestra red de un broker de mqtt que gestione las comunicaciones. Lo más sencillo es instalar mosquitto en la propia Raspberry siguiendo este post de <a href=https://domology.es/instalacion-configuracion-mqtt/>domology</a>.</p><p>En el post de configuración de mosquitto se hace referencia a la necesidad de que <a href=https://www.home-assistant.io>Home Assistant</a> espere a que mosquitto esté cargado para ejecutarse. En mi caso, la <a href=https://sherblog.pro/instalaci%C3%B3n-de-home-assistant-en-raspberry/>instalacion de Home Assistant</a> corre dentro de un contenedor por lo que he editado el archivo &ldquo;/etc/systemd/system/hassio-supervisor.service&rdquo; modificando la siguiente línea:</p><pre tabindex=0><code>After=docker.service dbus.socket network.target mosquitto.service
+</code></pre><h4 id=instalación-de-la-integración-personalizada>Instalación de la integración personalizada</h4><ol>
+<li>Copiar en &ldquo;Custom components&rdquo; la carpeta descargada de <a href=https://github.com/roleoroleo/yi-hack_ha_integration>Yi-Hack HA integration</a></li><li>Reiniciar <a href=https://www.home-assistant.io>Home Assistant</a></li><li>Añadir la integración &ldquo;yi_hack&rdquo;</li><li>Insertar IP de la cámara y usuario y pass generados al cambiar el firmware</li><li>Seleccionar la habitación</li><li>Añadir la cámara al panel de control de <a href=https://www.home-assistant.io>Home Assistant</a></li></ol></div><footer class=post__footer>
 <div class="content post__content clearfix">
-<h3>Otros de mís artículos que te pueden interesar</h3>
-<ul>
-<li><a href=/apagar-todas-las-luces-en-home-assistant/>Apagar todas las luces en Home Assistant</a></li>
-<li><a href=/guardando-y-recuperando-la-configuraci%C3%B3n-de-home-assistant/>Guardando y recuperando la configuración de Home Assistant</a></li>
-<li><a href=/home-assistant-wake-on-lan-synology/>Home Assistant - Wake on Lan Synology</a></li>
-<li><a href=/esphome-en-home-assistant/>ESPHome en Home Assistant</a></li>
-<li><a href=/el-termostato-de-la-caldera-en-home-assistant/>El termostato de la caldera en Home Assistant</a></li>
-</ul>
-</div>
-<div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
+<h3>Otros de mís artículos que te pueden interesar</h3><ul>
+<li><a href=/apagar-todas-las-luces-en-home-assistant/>Apagar todas las luces en Home Assistant</a></li><li><a href=/guardando-y-recuperando-la-configuraci%C3%B3n-de-home-assistant/>Guardando y recuperando la configuración de Home Assistant</a></li><li><a href=/home-assistant-wake-on-lan-synology/>Home Assistant - Wake on Lan Synology</a></li><li><a href=/esphome-en-home-assistant/>ESPHome en Home Assistant</a></li><li><a href=/el-termostato-de-la-caldera-en-home-assistant/>El termostato de la caldera en Home Assistant</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
 <ul class=tags__list>
 <li class=tags__item>
 <a class="tags__link btn" href=/tags/mqtt/ rel=tag>mqtt</a>
-</li>
-</ul>
-</div>
-</footer>
-</article>
-</main>
-<nav class="pager flex">
+</li></ul></div></footer></article></main><nav class="pager flex">
 <div class="pager__item pager__item--prev">
 <a class=pager__link href=/esphome-en-home-assistant/ rel=prev>
 <span class=pager__subtitle>«&#8201;Anterior</span>
-<p class=pager__title>ESPHome en Home Assistant</p>
-</a>
-</div>
-<div class="pager__item pager__item--next">
+<p class=pager__title>ESPHome en Home Assistant</p></a>
+</div><div class="pager__item pager__item--next">
 <a class=pager__link href=/home-assistant-wake-on-lan-synology/ rel=next>
 <span class=pager__subtitle>Siguiente&#8201;»</span>
-<p class=pager__title>Home Assistant - Wake on Lan Synology</p>
-</a>
-</div>
-</nav>
-</div>
-</div>
-<footer class=footer>
+<p class=pager__title>Home Assistant - Wake on Lan Synology</p></a>
+</div></nav></div></div><footer class=footer>
 <div class="container footer__container flex">
 <div class=footer__copyright>
 &copy; 2022 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
 </br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a>
-</div>
-</div>
-</footer>
-</div>
-<script async defer src=/js/menu.js></script>
-<script src=/js/custom.js></script></body>
-</html>
+</div></div></footer></div><script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body></html>

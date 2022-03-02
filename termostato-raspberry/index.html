@@ -3,8 +3,7 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<title>Termostato Raspberry - Sherblog</title>
-<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<title>Termostato Raspberry - Sherblog</title><script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script>
 <meta name=description content="Proceso de la creación de un termostato mediante la raspberry en python">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="http://www.sherblog.pro//images/20201112_termostato_raspberry_00.jpg">
@@ -18,8 +17,7 @@
 <link rel=stylesheet href=/css/style.css>
 <link rel=stylesheet href=/css/custom.css>
 <link rel="shortcut icon" href=/favicon.ico>
-</head>
-<body class=body>
+</head><body class=body>
 <div class="container container--outer">
 <header class=header>
 <meta name=twitter:card content="summary">
@@ -28,11 +26,8 @@
 <div class=container>
 <div class=logo>
 <a class=logo__link href=/ title=Sherblog rel=home>
-<div class=logo__title>Sherblog</div>
-<div class=logo__tagline>Sólo mi forma de hacer las cosas...</div>
-</a>
-</div>
-<nav class=menu>
+<div class=logo__title>Sherblog</div><div class=logo__tagline>Sólo mi forma de hacer las cosas...</div></a>
+</div><nav class=menu>
 <button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
 <span class=menu__btn-title tabindex=-1>Menú</span>
 </button>
@@ -41,66 +36,39 @@
 <a class=menu__link href=/post/computing/emacs/>
 <span class=menu__text>Emacs</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/post/computing/hugo/>
 <span class=menu__text>Hugo</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/>
 <span class=menu__text>Mis vértices geodésicos</span>
 </a>
-</li>
-<li class="menu__item menu__item--active">
+</li><li class="menu__item menu__item--active">
 <a class=menu__link href=/post/computing/raspberry/>
 <span class=menu__text>Raspberry Pi desde cero</span>
 </a>
-</li>
-</ul>
-</nav>
-</div>
-</header>
-<div class="wrapper flex">
+</li></ul></nav></div></header><div class="wrapper flex">
 <div class=primary>
 <main class=main role=main>
 <article class=post>
 <header class=post__header>
-<h1 class=post__title>Termostato Raspberry</h1>
-<div class="post__meta meta">
+<h1 class=post__title>Termostato Raspberry</h1><div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 <svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-01-13T00:00:00Z>2021-01-13</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/raspberry/ rel=category>Raspberry</a>
 </span>
-</div></div>
-</header>
-<figure class="post__thumbnail thumbnail">
+</div></div></header><figure class="post__thumbnail thumbnail">
 <img class=thumbnail__image src=/images/20201112_termostato_raspberry_00.jpg alt="Termostato Raspberry">
-</figure>
-<div class="post__toc toc">
-<div class=toc__title>Índice</div>
-<div class=toc__menu>
+</figure><div class="post__toc toc">
+<div class=toc__title>Índice</div><div class=toc__menu>
 <nav id=TableOfContents>
 <ul>
 <li>
 <ul>
-<li><a href=#archivo-de-configuración>Archivo de configuración</a></li>
-<li><a href=#inicialización-de-variables>Inicialización de variables</a></li>
-<li><a href=#captura-de-la-temperatura-exterior>Captura de la temperatura exterior</a></li>
-<li><a href=#captura-de-la-temperatura-interior>Captura de la temperatura interior</a></li>
-<li><a href=#el-relé-de-la-caldera>El relé de la caldera</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</div><div class="content post__content clearfix">
-<p>Con la reciente muerte de termostato inteligente de NetAtmo a causa de una simple pila sulfatada me he decidido a crear el mio propio con la raspberry y un poco de Python. Iré escribiendo aquí los procesos con el mismo.</p>
-<h3 id=archivo-de-configuración>Archivo de configuración</h3>
-<p>Puesto que la idea es construir un script que se ejecute cada determinado tiempo, necesito un archivo que dote al sistema de persistencia de algunas variables. Después de barajar varias alternativas, he optado por guardar los datos de configuración en un archivo &ldquo;config.json&rdquo; ubicado en la carpeta raiz del usario que ejecuta el script.</p>
-<p>El manejo de este tipo de archivos en python es muy sencillo y queda sentenciado con sólo seis líneas de código.</p>
-<pre tabindex=0><code>import json
+<li><a href=#archivo-de-configuración>Archivo de configuración</a></li><li><a href=#inicialización-de-variables>Inicialización de variables</a></li><li><a href=#captura-de-la-temperatura-exterior>Captura de la temperatura exterior</a></li><li><a href=#captura-de-la-temperatura-interior>Captura de la temperatura interior</a></li><li><a href=#el-relé-de-la-caldera>El relé de la caldera</a></li></ul></li></ul></nav></div></div><div class="content post__content clearfix">
+<p>Con la reciente muerte de termostato inteligente de NetAtmo a causa de una simple pila sulfatada me he decidido a crear el mio propio con la raspberry y un poco de Python. Iré escribiendo aquí los procesos con el mismo.</p><h3 id=archivo-de-configuración>Archivo de configuración</h3><p>Puesto que la idea es construir un script que se ejecute cada determinado tiempo, necesito un archivo que dote al sistema de persistencia de algunas variables. Después de barajar varias alternativas, he optado por guardar los datos de configuración en un archivo &ldquo;config.json&rdquo; ubicado en la carpeta raiz del usario que ejecuta el script.</p><p>El manejo de este tipo de archivos en python es muy sencillo y queda sentenciado con sólo seis líneas de código.</p><pre tabindex=0><code>import json
 
-with open('/home/pi/config.json', 'r') as archivo_json:
+with open(&#39;/home/pi/config.json&#39;, &#39;r&#39;) as archivo_json:
     data=archivo_json.read()
 
 datos_json = json.loads(data)
@@ -111,67 +79,39 @@ datos_json = json.loads(data)
 ...
 ...
 
-with open(&quot;config.json&quot;, &quot;w&quot;) as archivo_json:
+with open(&#34;config.json&#34;, &#34;w&#34;) as archivo_json:
     json.dump(datos_json, archivo_json, indent = 4)
-</code></pre><p>Al principio del script hay que importar la librería &ldquo;json&rdquo;, abrir el archivo en modo de lectura, leer el contenido y asignar este al dicionario &ldquo;json_data&rdquo;. Una vez realizadas las modificaciones necesarias en el diccionario a lo largo del script principal hay que abrir nuevamente el archivo &ldquo;config.json&rdquo;, aunque esta vez en modo de escritura, y volcar sobre el el contenido del diccionario &ldquo;datos_json&rdquo; modificado.</p>
-<p>La variables utilizadas en el almacenamiento externo de variables son:</p>
-<ul>
-<li>data - Lectura del archivo json</li>
-<li>datos_json - Diccionario de datos con variables</li>
-</ul>
-<h3 id=inicialización-de-variables>Inicialización de variables</h3>
-<p>La primera vez que abramos este archivo de configuración estará vacío por lo que nos tendremos que asegurar de inicializar unas &ldquo;variables por defecto&rdquo; para no tenga lugar el correspondiente error en caso de uqe alguna no exista o tenga un valor nulo. Esto se realiza mediante el siguiente código una vez que la variable &ldquo;datos_json&rdquo; ha sido creada a partir del contenido del archivo.</p>
-<pre tabindex=0><code>def inic_var(var,valor):
+</code></pre><p>Al principio del script hay que importar la librería &ldquo;json&rdquo;, abrir el archivo en modo de lectura, leer el contenido y asignar este al dicionario &ldquo;json_data&rdquo;. Una vez realizadas las modificaciones necesarias en el diccionario a lo largo del script principal hay que abrir nuevamente el archivo &ldquo;config.json&rdquo;, aunque esta vez en modo de escritura, y volcar sobre el el contenido del diccionario &ldquo;datos_json&rdquo; modificado.</p><p>La variables utilizadas en el almacenamiento externo de variables son:</p><ul>
+<li>data - Lectura del archivo json</li><li>datos_json - Diccionario de datos con variables</li></ul><h3 id=inicialización-de-variables>Inicialización de variables</h3><p>La primera vez que abramos este archivo de configuración estará vacío por lo que nos tendremos que asegurar de inicializar unas &ldquo;variables por defecto&rdquo; para no tenga lugar el correspondiente error en caso de uqe alguna no exista o tenga un valor nulo. Esto se realiza mediante el siguiente código una vez que la variable &ldquo;datos_json&rdquo; ha sido creada a partir del contenido del archivo.</p><pre tabindex=0><code>def inic_var(var,valor):
     if var in datos_json:
-        if datos_json[var] == &quot;&quot;:
+        if datos_json[var] == &#34;&#34;:
             datos_json[var] = valor
     else:
         datos_json[var] = valor
 
 variables = {
-    &quot;rele_estado&quot;: &quot;off&quot;,
-    &quot;rele_hora_cambio&quot;: datetime.now().strftime('%Y/%m/%d %H:%M:%S'),
-    &quot;histeresis&quot;: 0.2,
-    &quot;inercia&quot;: 750,
-    &quot;inercia_rango&quot;: 1.013,
-    &quot;consigna&quot;: 21.0,
-    &quot;rele_total_on&quot;: 0,
-    &quot;cons_manual&quot;: 21.0,
-    &quot;hora_manual&quot;: &quot;2020/12/30 16:45:32&quot;,
-    &quot;min_manual&quot;: 60,
-    &quot;modo_fuera&quot;: False,
-    &quot;cons_fuera&quot;: 16,
-    &quot;dec_casa_vacia&quot;: 1,
-    &quot;horas&quot;: [&quot;7:45&quot;,&quot;9:00&quot;,&quot;12:30&quot;,&quot;18:00&quot;,&quot;22:30&quot;],
-    &quot;temperaturas&quot;: [&quot;22&quot;,&quot;20.5&quot;,&quot;21.5&quot;,&quot;22.5&quot;,&quot;20.5&quot;]
+    &#34;rele_estado&#34;: &#34;off&#34;,
+    &#34;rele_hora_cambio&#34;: datetime.now().strftime(&#39;%Y/%m/%d %H:%M:%S&#39;),
+    &#34;histeresis&#34;: 0.2,
+    &#34;inercia&#34;: 750,
+    &#34;inercia_rango&#34;: 1.013,
+    &#34;consigna&#34;: 21.0,
+    &#34;rele_total_on&#34;: 0,
+    &#34;cons_manual&#34;: 21.0,
+    &#34;hora_manual&#34;: &#34;2020/12/30 16:45:32&#34;,
+    &#34;min_manual&#34;: 60,
+    &#34;modo_fuera&#34;: False,
+    &#34;cons_fuera&#34;: 16,
+    &#34;dec_casa_vacia&#34;: 1,
+    &#34;horas&#34;: [&#34;7:45&#34;,&#34;9:00&#34;,&#34;12:30&#34;,&#34;18:00&#34;,&#34;22:30&#34;],
+    &#34;temperaturas&#34;: [&#34;22&#34;,&#34;20.5&#34;,&#34;21.5&#34;,&#34;22.5&#34;,&#34;20.5&#34;]
 }
 
 for x in variables:
     inic_var(x,variables[x])
-</code></pre><p>Este código lo podemos dividir en tres partes, la función que inicializa las variables, el almacenamiento de las variables y la ejecución de la función para cada una de las variables.</p>
-<h4 id=la-función-inic_var>La función inic_var</h4>
-<p>La función &ldquo;inic_var&rdquo; coge dos argumentos, por un lado el nombre de la variable a inicializar y por otro su valor por defecto. En un primer momento se comprueba si la variable existe dentro de &ldquo;datos_json&rdquo;, si lo está y su valor es nulo le asignará el valor por defecto. En caso de que la variable no esté definida, se creará asignándole su valor por defecto.</p>
-<h4 id=el-diccionario-de-variables>El diccionario de variables</h4>
-<p>Después de barajar varias alternativas, he considerado que la forma más clara de representar todo el conjunto de variables dentro de un elemento es haciendo uso de un diccionario que he denominado &ldquo;variables&rdquo; en el que cada clave será el nombre de la variable a inicializar y el valor de la misma el valor por defecto de esta variable que está siendo inicializada.</p>
-<h4 id=for-sobre-el-diccionario>For sobre el diccionario</h4>
-<p>Con la lista de variables, su valor por defecto y la función para inicializar cada una de ellas preparada solo resta realizar una combinación de ambas mediante un lazo &ldquo;For&rdquo;. De esta forma cada variable existente dentro del diccionario &ldquo;Variables&rdquo; sera inicializada mediante la funcion &ldquo;inic_var&rdquo;</p>
-<p>La variables utilizadas en la inicialización de variables son:</p>
-<ul>
-<li>variables - Diccionario con el nombre de variable y valor por defecto</li>
-</ul>
-<h3 id=captura-de-la-temperatura-exterior>Captura de la temperatura exterior</h3>
-<p>De momento no he sido capaz de utilizarla para nada más allá de la mera representación de la misma. Extraigo la información de la web de la AEMET para obtener el valor de la temperatura exterior. Todo mediante la <a href=https://github.com/sherlockes/SherloScripts/blob/master/python/etc/aemet.py>clase Aemet</a> que puedes ver en mi repositorio de GitHub.</p>
-<p>Esta clase nos devolverá las siguientes variables:</p>
-<ul>
-<li>hora - Momento de la última toma</li>
-<li>temp_actual - Valor instantáneo de Tª obtenida</li>
-<li>temp_media - Valor medio diaro de la Tª</li>
-</ul>
-<h3 id=captura-de-la-temperatura-interior>Captura de la temperatura interior</h3>
-<p>Para tomar la temperatura que tengo en casa voy a utilizar un DHT22 (sensor de humedad y temperatura) que, aunque no es lo más preciso del mundo, es suficientemente barato como para empezar a hacer pruebas. En el artículo de <a href=https://www.atareao.es/podcast/temperatura-con-la-raspberry/>atareao</a> se explica perfectamente como llevar a cabo esta medición. El propio sensor DHT22, una resistencia de 10k y tres cables para conectar al puerto GPIO de la Raspberry es odo lo que he necesitado.</p>
-<p><img src=/images/20201112_termostato_raspberry_01.jpg alt=Imagen_01></p>
-<p>Necesitamos una librería para capturar los datos del sensor. Esta se instalará en la raspberry medianta el comando <code>sudo pip3 install Adafruit_DHT</code> siempre y cuando tengamos instalado Python3 y el gestos de paquetes pip.</p>
-<pre tabindex=0><code>import Adafruit_DHT as dht
+</code></pre><p>Este código lo podemos dividir en tres partes, la función que inicializa las variables, el almacenamiento de las variables y la ejecución de la función para cada una de las variables.</p><h4 id=la-función-inic_var>La función inic_var</h4><p>La función &ldquo;inic_var&rdquo; coge dos argumentos, por un lado el nombre de la variable a inicializar y por otro su valor por defecto. En un primer momento se comprueba si la variable existe dentro de &ldquo;datos_json&rdquo;, si lo está y su valor es nulo le asignará el valor por defecto. En caso de que la variable no esté definida, se creará asignándole su valor por defecto.</p><h4 id=el-diccionario-de-variables>El diccionario de variables</h4><p>Después de barajar varias alternativas, he considerado que la forma más clara de representar todo el conjunto de variables dentro de un elemento es haciendo uso de un diccionario que he denominado &ldquo;variables&rdquo; en el que cada clave será el nombre de la variable a inicializar y el valor de la misma el valor por defecto de esta variable que está siendo inicializada.</p><h4 id=for-sobre-el-diccionario>For sobre el diccionario</h4><p>Con la lista de variables, su valor por defecto y la función para inicializar cada una de ellas preparada solo resta realizar una combinación de ambas mediante un lazo &ldquo;For&rdquo;. De esta forma cada variable existente dentro del diccionario &ldquo;Variables&rdquo; sera inicializada mediante la funcion &ldquo;inic_var&rdquo;</p><p>La variables utilizadas en la inicialización de variables son:</p><ul>
+<li>variables - Diccionario con el nombre de variable y valor por defecto</li></ul><h3 id=captura-de-la-temperatura-exterior>Captura de la temperatura exterior</h3><p>De momento no he sido capaz de utilizarla para nada más allá de la mera representación de la misma. Extraigo la información de la web de la AEMET para obtener el valor de la temperatura exterior. Todo mediante la <a href=https://github.com/sherlockes/SherloScripts/blob/master/python/etc/aemet.py>clase Aemet</a> que puedes ver en mi repositorio de GitHub.</p><p>Esta clase nos devolverá las siguientes variables:</p><ul>
+<li>hora - Momento de la última toma</li><li>temp_actual - Valor instantáneo de Tª obtenida</li><li>temp_media - Valor medio diaro de la Tª</li></ul><h3 id=captura-de-la-temperatura-interior>Captura de la temperatura interior</h3><p>Para tomar la temperatura que tengo en casa voy a utilizar un DHT22 (sensor de humedad y temperatura) que, aunque no es lo más preciso del mundo, es suficientemente barato como para empezar a hacer pruebas. En el artículo de <a href=https://www.atareao.es/podcast/temperatura-con-la-raspberry/>atareao</a> se explica perfectamente como llevar a cabo esta medición. El propio sensor DHT22, una resistencia de 10k y tres cables para conectar al puerto GPIO de la Raspberry es odo lo que he necesitado.</p><p><img src=/images/20201112_termostato_raspberry_01.jpg alt=Imagen_01></p><p>Necesitamos una librería para capturar los datos del sensor. Esta se instalará en la raspberry medianta el comando <code>sudo pip3 install Adafruit_DHT</code> siempre y cuando tengamos instalado Python3 y el gestos de paquetes pip.</p><pre tabindex=0><code>import Adafruit_DHT as dht
 
 datos_dht = dht.read_retry(dht.DHT22,4)
 
@@ -181,85 +121,36 @@ while datos_dht[0] &gt; 100:
     
 real_hume = round(datos_dht[0],2)
 real_temp = round(datos_dht[1],2)
-</code></pre><p>Sobre estas líneas aparece la parte de código en Python involucrada en la medición de la temperatura. Importación de la libreria <a href=https://pypi.org/project/Adafruit-DHT/>ADAfruit-DHT</a>, captura de los datos del sensor y un redondeo a dos decimales que es más que suficiente.</p>
-<blockquote>
-<p>Alguna vez me ha dado un dato inválido la medición por lo que le he incrustado una condición de que siempre que la medición de humedad sea mayor del 100% (dato no válido) que espere 5 segundos y vuelva a medir.</p>
-</blockquote>
-<p>Las variables utilizadas en la adquisición de temperatura son las siguientes:</p>
-<ul>
-<li>datos_dht - Tupla con los valores de la medida del sensor</li>
-<li>real_hume - Humedad medida y redondeada</li>
-<li>real_temp - Temperatura medida y redondeada</li>
-</ul>
-<h3 id=el-relé-de-la-caldera>El relé de la caldera</h3>
-<p>Para poder enceder la caldera es necesario un relé. Lo más sencilo hubiera sido colocar uno que, a través del puerto GPIO, fuera directamente gobernado por la Raspberry pero tengo una serie de limitaciones en casa que no me han permitido hacerlo. Por eso necesito un relé que cumpla con lo siguiente:</p>
-<ul>
-<li>Alimentación de 220V</li>
-<li>Conexión wifi</li>
-<li>Relé seco (Sin tensión en lo contactos)</li>
-<li>Disponibilidad de API</li>
-</ul>
-<p>Aunque no son muchas las limitaciones que le he impuesto, no me ha resultado fácil enontrar un relé que se adapte a ellas y el resultado es este.</p>
-<p><img src=/images/20201112_termostato_raspberry_02.jpg alt=Imagen_02></p>
-<p>Una combinación casera de un <a href="https://www.amazon.es/Interruptor-peque%C3%B1o-interruptor-soporte-funciona/dp/B07X1CHF3V/ref=sr_1_17?dchild=1&keywords=sonoff+mini&qid=1606301867&sr=8-17">relé wifi sonoff</a>, un <a href="https://www.amazon.es/gp/product/B074CB1N7Z/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1">transformador</a> de 220V a 5V y un <a href="https://www.amazon.es/gp/product/B07CNR7K9B/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1">relé</a> de 5V (todo perfectamente unido con cinta adhesiva) que si no quieres esperar y los compras en Amazon te constarán en total poco más de 20€ pero que si no tienes prisa se pueden encontar en Aliexpress por menos de la mitad.</p>
-<p>Según lo he montado, la Raspberry menda a través de wifi el comando de activación al relé Sonnoff y, cuando este se activa alimenta al mini transformador que a su vez hace lo mismo con el relé seco de 5V. A través del contacto de este segundo relé activamos los contactos del termostato de la caldera. una combinación efectiva, fiable y económica.</p>
-</div>
-<footer class=post__footer>
+</code></pre><p>Sobre estas líneas aparece la parte de código en Python involucrada en la medición de la temperatura. Importación de la libreria <a href=https://pypi.org/project/Adafruit-DHT/>ADAfruit-DHT</a>, captura de los datos del sensor y un redondeo a dos decimales que es más que suficiente.</p><blockquote>
+<p>Alguna vez me ha dado un dato inválido la medición por lo que le he incrustado una condición de que siempre que la medición de humedad sea mayor del 100% (dato no válido) que espere 5 segundos y vuelva a medir.</p></blockquote><p>Las variables utilizadas en la adquisición de temperatura son las siguientes:</p><ul>
+<li>datos_dht - Tupla con los valores de la medida del sensor</li><li>real_hume - Humedad medida y redondeada</li><li>real_temp - Temperatura medida y redondeada</li></ul><h3 id=el-relé-de-la-caldera>El relé de la caldera</h3><p>Para poder enceder la caldera es necesario un relé. Lo más sencilo hubiera sido colocar uno que, a través del puerto GPIO, fuera directamente gobernado por la Raspberry pero tengo una serie de limitaciones en casa que no me han permitido hacerlo. Por eso necesito un relé que cumpla con lo siguiente:</p><ul>
+<li>Alimentación de 220V</li><li>Conexión wifi</li><li>Relé seco (Sin tensión en lo contactos)</li><li>Disponibilidad de API</li></ul><p>Aunque no son muchas las limitaciones que le he impuesto, no me ha resultado fácil enontrar un relé que se adapte a ellas y el resultado es este.</p><p><img src=/images/20201112_termostato_raspberry_02.jpg alt=Imagen_02></p><p>Una combinación casera de un <a href="https://www.amazon.es/Interruptor-peque%C3%B1o-interruptor-soporte-funciona/dp/B07X1CHF3V/ref=sr_1_17?dchild=1&keywords=sonoff+mini&qid=1606301867&sr=8-17">relé wifi sonoff</a>, un <a href="https://www.amazon.es/gp/product/B074CB1N7Z/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1">transformador</a> de 220V a 5V y un <a href="https://www.amazon.es/gp/product/B07CNR7K9B/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1">relé</a> de 5V (todo perfectamente unido con cinta adhesiva) que si no quieres esperar y los compras en Amazon te constarán en total poco más de 20€ pero que si no tienes prisa se pueden encontar en Aliexpress por menos de la mitad.</p><p>Según lo he montado, la Raspberry menda a través de wifi el comando de activación al relé Sonnoff y, cuando este se activa alimenta al mini transformador que a su vez hace lo mismo con el relé seco de 5V. A través del contacto de este segundo relé activamos los contactos del termostato de la caldera. una combinación efectiva, fiable y económica.</p></div><footer class=post__footer>
 <div class="content post__content clearfix">
-<h3>Otros de mís artículos que te pueden interesar</h3>
-<ul>
-<li><a href=/descargar-archivos-de-telegram/>Descargar archivos de Telegram</a></li>
-<li><a href=/clonar-el-disco-de-arranque-de-la-raspberry/>Clonar el disco de arranque de la raspberry</a></li>
-<li><a href=/script-de-configuraci%C3%B3n-para-raspberry/>Script de configuración para Raspberry</a></li>
-<li><a href=/montar-carpeta-del-nas-mediante-sshfs/>Montar carpeta del NAS mediante sshfs</a></li>
-<li><a href=/que-hace-la-raspberry-sin-mi/>Que hace la raspberry sin mi</a></li>
-</ul>
-</div>
-<div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
+<h3>Otros de mís artículos que te pueden interesar</h3><ul>
+<li><a href=/descargar-archivos-de-telegram/>Descargar archivos de Telegram</a></li><li><a href=/clonar-el-disco-de-arranque-de-la-raspberry/>Clonar el disco de arranque de la raspberry</a></li><li><a href=/script-de-configuraci%C3%B3n-para-raspberry/>Script de configuración para Raspberry</a></li><li><a href=/montar-carpeta-del-nas-mediante-sshfs/>Montar carpeta del NAS mediante sshfs</a></li><li><a href=/que-hace-la-raspberry-sin-mi/>Que hace la raspberry sin mi</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
 <ul class=tags__list>
 <li class=tags__item>
 <a class="tags__link btn" href=/tags/linux/ rel=tag>linux</a>
-</li>
-<li class=tags__item>
+</li><li class=tags__item>
 <a class="tags__link btn" href=/tags/raspberry/ rel=tag>raspberry</a>
-</li>
-<li class=tags__item>
+</li><li class=tags__item>
 <a class="tags__link btn" href=/tags/python/ rel=tag>python</a>
-</li>
-<li class=tags__item>
+</li><li class=tags__item>
 <a class="tags__link btn" href=/tags/google-sheets/ rel=tag>google sheets</a>
-</li>
-</ul>
-</div>
-</footer>
-</article>
-</main>
-<nav class="pager flex">
+</li></ul></div></footer></article></main><nav class="pager flex">
 <div class="pager__item pager__item--prev">
 <a class=pager__link href=/script-de-configuraci%C3%B3n-para-raspberry/ rel=prev>
 <span class=pager__subtitle>«&#8201;Anterior</span>
-<p class=pager__title>Script de configuración para Raspberry</p>
-</a>
-</div>
-<div class="pager__item pager__item--next">
+<p class=pager__title>Script de configuración para Raspberry</p></a>
+</div><div class="pager__item pager__item--next">
 <a class=pager__link href=/raspberry-montaje-y-ssh/ rel=next>
 <span class=pager__subtitle>Siguiente&#8201;»</span>
-<p class=pager__title>Raspberry Montaje y ssh</p>
-</a>
-</div>
-</nav>
-</div>
-</div>
-<footer class=footer>
+<p class=pager__title>Raspberry Montaje y ssh</p></a>
+</div></nav></div></div><footer class=footer>
 <div class="container footer__container flex">
 <div class=footer__copyright>
 &copy; 2022 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
 </br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a>
-</div>
-</div>
-</footer>
-</div>
-<script async defer src=/js/menu.js></script>
-<script src=/js/custom.js></script></body>
-</html>
+</div></div></footer></div><script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body></html>

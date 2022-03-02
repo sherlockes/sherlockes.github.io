@@ -3,8 +3,7 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<title>Migrando WordPress a otro servidor - Sherblog</title>
-<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<title>Migrando WordPress a otro servidor - Sherblog</title><script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script>
 <meta name=description content="Mi experiencia para migrar la instalación de WordPress de un servidor a otro con cambio de dominio incluido">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="http://www.sherblog.pro/images/20150530_migrando_wordpress.jpg">
@@ -18,8 +17,7 @@
 <link rel=stylesheet href=/css/style.css>
 <link rel=stylesheet href=/css/custom.css>
 <link rel="shortcut icon" href=/favicon.ico>
-</head>
-<body class=body>
+</head><body class=body>
 <div class="container container--outer">
 <header class=header>
 <meta name=twitter:card content="summary">
@@ -28,11 +26,8 @@
 <div class=container>
 <div class=logo>
 <a class=logo__link href=/ title=Sherblog rel=home>
-<div class=logo__title>Sherblog</div>
-<div class=logo__tagline>Sólo mi forma de hacer las cosas...</div>
-</a>
-</div>
-<nav class=menu>
+<div class=logo__title>Sherblog</div><div class=logo__tagline>Sólo mi forma de hacer las cosas...</div></a>
+</div><nav class=menu>
 <button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
 <span class=menu__btn-title tabindex=-1>Menú</span>
 </button>
@@ -41,99 +36,45 @@
 <a class=menu__link href=/post/computing/emacs/>
 <span class=menu__text>Emacs</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/post/computing/hugo/>
 <span class=menu__text>Hugo</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/>
 <span class=menu__text>Mis vértices geodésicos</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/post/computing/raspberry/>
 <span class=menu__text>Raspberry Pi desde cero</span>
 </a>
-</li>
-</ul>
-</nav>
-</div>
-</header>
-<div class="wrapper flex">
+</li></ul></nav></div></header><div class="wrapper flex">
 <div class=primary>
 <main class=main role=main>
 <article class=post>
 <header class=post__header>
-<h1 class=post__title>Migrando WordPress a otro servidor</h1>
-<div class="post__meta meta">
+<h1 class=post__title>Migrando WordPress a otro servidor</h1><div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 <svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2015-05-30T00:00:00Z>2015-05-30</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/wordpress/ rel=category>WordPress</a>
 </span>
-</div></div>
-</header>
-<figure class="post__thumbnail thumbnail">
+</div></div></header><figure class="post__thumbnail thumbnail">
 <img class=thumbnail__image src=/images/20150530_migrando_wordpress.jpg alt="Migrando WordPress a otro servidor">
 </figure><div class="content post__content clearfix">
-<p>En los últimos días y por causas que desconozco me han desaparecido todos los archivos de mi antigua dirección del blog &ldquo;<a href=http://www.sherver.site88.net>www.sherver.site88.net</a>&rdquo; que tenía alojada en <a href=http://www.000webhost.com>000webhost</a>. He intentado la reparación del site por todos los medios, pero la única respuesta que he recibido de parte de los administradores del alojamiento es que &ldquo;esto no hubiera pasado con la modalidad de pago de nuestro alojamiento&rdquo;.</p>
-<p>Bueno, el caso es que he tenido que buscar otro alojamiento para mi blog donde volver a montarlo desde cero y restaurarlo a como estaba hace unos días.</p>
-<h3 id=que-necesito>¿Que necesito?</h3>
-<ul>
-<li>Un alojamiento con posibilidad de base de datos para la nueva web</li>
-<li>Acceso a tu servidor web (vía shell o FTP y phpmyAdmin)</li>
-<li>Un Editor de textos (Personalmente utilizo Notepad++)</li>
-<li>Un Cliente FTP (Personalmente utilizo Filezilla)</li>
-<li>Tu navegador web preferido</li>
-<li>La copia de seguridad de la base de datos del blog</li>
-<li>La copia de seguridad de la carpeta &ldquo;wp-content&rdquo; del blog</li>
-</ul>
-<p>Pues bien, sin que sirva de precedente, he tirado la casa por la ventana (18€ al año) en <a href=http://www.domain.com>Domain.com</a> y he registrado el dominio <a href=http://www.sherblog.es>www.sherblog.es</a>.</p>
-<h3 id=primer-paso-creando-el-nuevo-blog>Primer paso¡¡ Creando el nuevo Blog</h3>
-<p>Crear una nueva instalación de WordPress en el nuevo servidor. Este es un paso del que no voy a dar muchas explicaciones, ya que es un proceso archidocumentado en la web y que pasa básicamente por subir una instalación de wordpress a tu servidor, crear la base de datos, modificar el config.php con la información de la base de datos y finalmente ejecutar el instalador. Si tienes alguna duda, revisa la famosa instalación en 5 minutos de WordPress desde el <a href=https://codex.wordpress.org/es:Instalando_Wordpress>codex</a>.</p>
-<h3 id=segundo-paso-restaurando-los-archivos>Segundo Paso¡¡ Restaurando los archivos</h3>
-<p>LLegados a este punto, ya tenemos creado nuestro nuevo blog pero por desgracia todavía sin contenido por lo que a continuación vamos a restaurar todo el contenido anteriormente existente a partir de la copia de seguridad. A través del servidor Ftp, sobrescribe la carpeta wp-content que ha creado la instalación de wordpress por la de tu copia de seguridad. Yo Utilizo el cliente <a href=https://filezilla-project.org>Filezilla</a> que es una opción fiable, potente, suficiente para la operación que estamos realizando. Además es una solución gratuita, lo que la hace mucho más interesante.</p>
-<p><img src=/images/20150530_migrando_wordpress_01.jpg alt=imagen></p>
-<h3 id=tercer-paso-editando-la-base-de-datos>Tercer paso¡¡ Editando la base de datos</h3>
-<p>Es muy importante tener una copia de seguridad de la base de datos de WordPress de nuestro blog a la que poder recurrir en este tipo de situaciones. Para realizarla periódicamente, utilizo el plugin de WordPress <a href=http://austinmatzko.com/wordpress-plugins/wp-db-backup/>WP-Db-Backup</a> de forma que una vez a la semana o cuando tu desees llega a tu correo una copia de seguridad de la base de datos.</p>
-<p>En el caso de que tengas que restaurar la base de datos en el mismo servidor es tan simple como importarla directamente desde phpmyadmin pero en el caso que ahora nos atañe vamos a realizar un paso intermedio ya que el direccionamiento del blog ha cambiado, donde antes era &ldquo;<a href=http://www.sherver.site88.net>http://www.sherver.site88.net</a>&rdquo; ahora es &ldquo;<a href=http://www.sherblog.es>http://www.sherblog.es</a>&rdquo;. Realizar este cambio es muy sencillo y sólo requiere una edición de la base de datos con un editor de texto, buscaremos la primera cadena de texto y la sustituiremos por la segunda.</p>
-<p><img src=/images/20150530_migrando_wordpress_02.jpg alt=imagen></p>
-<h3 id=cuarto-paso-importando-la-base-de-datos>Cuarto paso¡¡ Importando la base de datos</h3>
-<p>Ahora toca abrir la aplicación de phpMyadmin de nuestro servidor, acceder a la base de datos que gobierna el nuevo blog de WordPress e importar encima de ella la copia de seguridad con el direccionamiento modificado que hemos obtenido en el paso anterior.</p>
-<p><img src=/images/20150530_migrando_wordpress_03.jpg alt=imagen></p>
-<p>No se si es un fallo habitual, pero en mi servidor me ha dado problemas la importación del archivo de la base de datos sin comprimir, lo he metido dentro de un archivo basededatos.zip comprimido y la importación se ha efectuado correctamente.</p>
-<h3 id=quinto-paso-comentando-los-cambios-a-google>Quinto paso¡¡ Comentando los cambios a Google</h3>
-<p>Para que en Google deje de aparecer la dirección antigua y aparezca la nueva hay que transferir los cambios a la consola de busqueda de Google, pero en mi caso como no puedo acceder al alojamiento anterior no he podido realizar este paso así que se seguirá viendo durante un tiempo la dirección <a href=http://www.sherver.site88.net>http://www.sherver.site88.net</a>. Que le vamos a hacer???</p>
-<p>Y ya está¡¡¡</p>
-</div>
-</article>
-</main>
-<nav class="pager flex">
+<p>En los últimos días y por causas que desconozco me han desaparecido todos los archivos de mi antigua dirección del blog &ldquo;<a href=http://www.sherver.site88.net>www.sherver.site88.net</a>&rdquo; que tenía alojada en <a href=http://www.000webhost.com>000webhost</a>. He intentado la reparación del site por todos los medios, pero la única respuesta que he recibido de parte de los administradores del alojamiento es que &ldquo;esto no hubiera pasado con la modalidad de pago de nuestro alojamiento&rdquo;.</p><p>Bueno, el caso es que he tenido que buscar otro alojamiento para mi blog donde volver a montarlo desde cero y restaurarlo a como estaba hace unos días.</p><h3 id=que-necesito>¿Que necesito?</h3><ul>
+<li>Un alojamiento con posibilidad de base de datos para la nueva web</li><li>Acceso a tu servidor web (vía shell o FTP y phpmyAdmin)</li><li>Un Editor de textos (Personalmente utilizo Notepad++)</li><li>Un Cliente FTP (Personalmente utilizo Filezilla)</li><li>Tu navegador web preferido</li><li>La copia de seguridad de la base de datos del blog</li><li>La copia de seguridad de la carpeta &ldquo;wp-content&rdquo; del blog</li></ul><p>Pues bien, sin que sirva de precedente, he tirado la casa por la ventana (18€ al año) en <a href=http://www.domain.com>Domain.com</a> y he registrado el dominio <a href=http://www.sherblog.es>www.sherblog.es</a>.</p><h3 id=primer-paso-creando-el-nuevo-blog>Primer paso¡¡ Creando el nuevo Blog</h3><p>Crear una nueva instalación de WordPress en el nuevo servidor. Este es un paso del que no voy a dar muchas explicaciones, ya que es un proceso archidocumentado en la web y que pasa básicamente por subir una instalación de wordpress a tu servidor, crear la base de datos, modificar el config.php con la información de la base de datos y finalmente ejecutar el instalador. Si tienes alguna duda, revisa la famosa instalación en 5 minutos de WordPress desde el <a href=https://codex.wordpress.org/es:Instalando_Wordpress>codex</a>.</p><h3 id=segundo-paso-restaurando-los-archivos>Segundo Paso¡¡ Restaurando los archivos</h3><p>LLegados a este punto, ya tenemos creado nuestro nuevo blog pero por desgracia todavía sin contenido por lo que a continuación vamos a restaurar todo el contenido anteriormente existente a partir de la copia de seguridad. A través del servidor Ftp, sobrescribe la carpeta wp-content que ha creado la instalación de wordpress por la de tu copia de seguridad. Yo Utilizo el cliente <a href=https://filezilla-project.org>Filezilla</a> que es una opción fiable, potente, suficiente para la operación que estamos realizando. Además es una solución gratuita, lo que la hace mucho más interesante.</p><p><img src=/images/20150530_migrando_wordpress_01.jpg alt=imagen></p><h3 id=tercer-paso-editando-la-base-de-datos>Tercer paso¡¡ Editando la base de datos</h3><p>Es muy importante tener una copia de seguridad de la base de datos de WordPress de nuestro blog a la que poder recurrir en este tipo de situaciones. Para realizarla periódicamente, utilizo el plugin de WordPress <a href=http://austinmatzko.com/wordpress-plugins/wp-db-backup/>WP-Db-Backup</a> de forma que una vez a la semana o cuando tu desees llega a tu correo una copia de seguridad de la base de datos.</p><p>En el caso de que tengas que restaurar la base de datos en el mismo servidor es tan simple como importarla directamente desde phpmyadmin pero en el caso que ahora nos atañe vamos a realizar un paso intermedio ya que el direccionamiento del blog ha cambiado, donde antes era &ldquo;<a href=http://www.sherver.site88.net>http://www.sherver.site88.net</a>&rdquo; ahora es &ldquo;<a href=http://www.sherblog.es>http://www.sherblog.es</a>&rdquo;. Realizar este cambio es muy sencillo y sólo requiere una edición de la base de datos con un editor de texto, buscaremos la primera cadena de texto y la sustituiremos por la segunda.</p><p><img src=/images/20150530_migrando_wordpress_02.jpg alt=imagen></p><h3 id=cuarto-paso-importando-la-base-de-datos>Cuarto paso¡¡ Importando la base de datos</h3><p>Ahora toca abrir la aplicación de phpMyadmin de nuestro servidor, acceder a la base de datos que gobierna el nuevo blog de WordPress e importar encima de ella la copia de seguridad con el direccionamiento modificado que hemos obtenido en el paso anterior.</p><p><img src=/images/20150530_migrando_wordpress_03.jpg alt=imagen></p><p>No se si es un fallo habitual, pero en mi servidor me ha dado problemas la importación del archivo de la base de datos sin comprimir, lo he metido dentro de un archivo basededatos.zip comprimido y la importación se ha efectuado correctamente.</p><h3 id=quinto-paso-comentando-los-cambios-a-google>Quinto paso¡¡ Comentando los cambios a Google</h3><p>Para que en Google deje de aparecer la dirección antigua y aparezca la nueva hay que transferir los cambios a la consola de busqueda de Google, pero en mi caso como no puedo acceder al alojamiento anterior no he podido realizar este paso así que se seguirá viendo durante un tiempo la dirección <a href=http://www.sherver.site88.net>http://www.sherver.site88.net</a>. Que le vamos a hacer???</p><p>Y ya está¡¡¡</p></div></article></main><nav class="pager flex">
 <div class="pager__item pager__item--prev">
 <a class=pager__link href=/per%C3%ADmetro-cenad-del-boe-a-gpx/ rel=prev>
 <span class=pager__subtitle>«&#8201;Anterior</span>
-<p class=pager__title>Perímetro CENAD del BOE a gpx</p>
-</a>
-</div>
-<div class="pager__item pager__item--next">
+<p class=pager__title>Perímetro CENAD del BOE a gpx</p></a>
+</div><div class="pager__item pager__item--next">
 <a class=pager__link href=/marcos-de-im%C3%A1genes-en-wordpress/ rel=next>
 <span class=pager__subtitle>Siguiente&#8201;»</span>
-<p class=pager__title>Marcos de imágenes en WordPress</p>
-</a>
-</div>
-</nav>
-</div>
-</div>
-<footer class=footer>
+<p class=pager__title>Marcos de imágenes en WordPress</p></a>
+</div></nav></div></div><footer class=footer>
 <div class="container footer__container flex">
 <div class=footer__copyright>
 &copy; 2022 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
 </br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a>
-</div>
-</div>
-</footer>
-</div>
-<script async defer src=/js/menu.js></script>
-<script src=/js/custom.js></script></body>
-</html>
+</div></div></footer></div><script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body></html>

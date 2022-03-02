@@ -3,8 +3,7 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<title>Cuando una App deja KO a Android - Sherblog</title>
-<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<title>Cuando una App deja KO a Android - Sherblog</title><script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script>
 <meta name=description content="Una de esas veces que piensas que el teléfono lo tienes perdido y lo consigues recuperar de una forma rápida y sencilla.">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="http://www.sherblog.pro/images/20181129_android_error_mac_00.jpg">
@@ -18,8 +17,7 @@
 <link rel=stylesheet href=/css/style.css>
 <link rel=stylesheet href=/css/custom.css>
 <link rel="shortcut icon" href=/favicon.ico>
-</head>
-<body class=body>
+</head><body class=body>
 <div class="container container--outer">
 <header class=header>
 <meta name=twitter:card content="summary">
@@ -28,11 +26,8 @@
 <div class=container>
 <div class=logo>
 <a class=logo__link href=/ title=Sherblog rel=home>
-<div class=logo__title>Sherblog</div>
-<div class=logo__tagline>Sólo mi forma de hacer las cosas...</div>
-</a>
-</div>
-<nav class=menu>
+<div class=logo__title>Sherblog</div><div class=logo__tagline>Sólo mi forma de hacer las cosas...</div></a>
+</div><nav class=menu>
 <button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
 <span class=menu__btn-title tabindex=-1>Menú</span>
 </button>
@@ -41,82 +36,44 @@
 <a class=menu__link href=/post/computing/emacs/>
 <span class=menu__text>Emacs</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/post/computing/hugo/>
 <span class=menu__text>Hugo</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/>
 <span class=menu__text>Mis vértices geodésicos</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/post/computing/raspberry/>
 <span class=menu__text>Raspberry Pi desde cero</span>
 </a>
-</li>
-</ul>
-</nav>
-</div>
-</header>
-<div class="wrapper flex">
+</li></ul></nav></div></header><div class="wrapper flex">
 <div class=primary>
 <main class=main role=main>
 <article class=post>
 <header class=post__header>
-<h1 class=post__title>Cuando una App deja KO a Android</h1>
-<div class="post__meta meta">
+<h1 class=post__title>Cuando una App deja KO a Android</h1><div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 <svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2018-11-29T00:00:00Z>2018-11-29</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/android/ rel=category>Android</a>
 </span>
-</div></div>
-</header>
-<figure class="post__thumbnail thumbnail">
+</div></div></header><figure class="post__thumbnail thumbnail">
 <img class=thumbnail__image src=/images/20181129_android_error_mac_00.jpg alt="Cuando una App deja KO a Android">
 </figure><div class="content post__content clearfix">
-<p>No se si es un problema de tener un teléfono android, de que este tenga casi cuatro años, de que sobre el corra Lineage OS en lugar de la distribución del fabricante, de que esté rooteado o simplemente ha sido un bug en una aplicación que durante varias horas me ha provocado un fuerte dolor de cabeza.</p>
-<p>Todo empieza al intentar instalar el pack de router y satélite Orbi de Netgear que requiere la <a href="https://play.google.com/store/apps/details?id=com.dragonflow.android.orbi&hl=es">App</a> del propio fabricante</p>
-<p><img src=/images/20181129_android_error_mac_01.jpg alt="Image Netgear App"></p>
-<p>Llega un punto de la configuración dentro de la app en el que el teléfono se queda completamente bloqueado y la única forma de salir de este bloqueo es mediante un “Soft Reset” que en mi terminal, un BQ Aquaris E5 HD, se consigue manteniendo pulsado el botón de encendido durante varios segundos. Después del reinicio el teléfono funciona pero no detecta ninguna red wifi y la única forma de que no se vuelva a quedar bloqueado es desactivando el Wifi.</p>
-<p><img src=/images/20181129_android_error_mac_02.jpg alt=lineage></p>
-<p>Por mi cabeza pasa lo peor y es que no me apetece nada restaurar el terminal a los valores de fábrica y tener que volver a realizar toda la configuración así que sigo buscando una solución menos dolorosa.</p>
-<p>Después de varios intentos y reinicio fallidos me doy cuenta de la MAC asignada a la tarjeta wifi es un poco “rara” y es que un valor de “02:00:00:00:00:00” no es nada habitual.</p>
-<p><img src=/images/20181129_android_error_mac_03.jpg alt=Wifi></p>
-<p>Ahora ya tengo algo más de información para seguir buscando y no tardo con dar lo que podría ser una solución que pasa por “Resetear las conexiones de red”, sólo resta encontrar la forma de hacerlo en <a href=https://lineageos.org/>Lineage OS</a>. No tardo mucho tiempo en encontrar el menú dentro de &ldquo;Ajustes&rdquo;-&ldquo;Conexiones inalámbricas y redes&rdquo;-&ldquo;Mas&mldr;&rdquo; donde aparece la opción &ldquo;Restablecer ajustes de red&rdquo;</p>
-<p><img src=/images/20181129_android_error_mac_04.jpg alt=ajustes></p>
-<p>Un simple clic, aceptas las consecuencias y ya está¡¡¡</p>
-<p>Milagrosamente el wifi vuelve a la vida con la única consecuencia de que has perdido las claves wifi de todas las conexiones que tenías guardadas así como los emapejamientos bluetooth, un mal menor.</p>
-</div>
-</article>
-</main>
-<nav class="pager flex">
+<p>No se si es un problema de tener un teléfono android, de que este tenga casi cuatro años, de que sobre el corra Lineage OS en lugar de la distribución del fabricante, de que esté rooteado o simplemente ha sido un bug en una aplicación que durante varias horas me ha provocado un fuerte dolor de cabeza.</p><p>Todo empieza al intentar instalar el pack de router y satélite Orbi de Netgear que requiere la <a href="https://play.google.com/store/apps/details?id=com.dragonflow.android.orbi&hl=es">App</a> del propio fabricante</p><p><img src=/images/20181129_android_error_mac_01.jpg alt="Image Netgear App"></p><p>Llega un punto de la configuración dentro de la app en el que el teléfono se queda completamente bloqueado y la única forma de salir de este bloqueo es mediante un “Soft Reset” que en mi terminal, un BQ Aquaris E5 HD, se consigue manteniendo pulsado el botón de encendido durante varios segundos. Después del reinicio el teléfono funciona pero no detecta ninguna red wifi y la única forma de que no se vuelva a quedar bloqueado es desactivando el Wifi.</p><p><img src=/images/20181129_android_error_mac_02.jpg alt=lineage></p><p>Por mi cabeza pasa lo peor y es que no me apetece nada restaurar el terminal a los valores de fábrica y tener que volver a realizar toda la configuración así que sigo buscando una solución menos dolorosa.</p><p>Después de varios intentos y reinicio fallidos me doy cuenta de la MAC asignada a la tarjeta wifi es un poco “rara” y es que un valor de “02:00:00:00:00:00” no es nada habitual.</p><p><img src=/images/20181129_android_error_mac_03.jpg alt=Wifi></p><p>Ahora ya tengo algo más de información para seguir buscando y no tardo con dar lo que podría ser una solución que pasa por “Resetear las conexiones de red”, sólo resta encontrar la forma de hacerlo en <a href=https://lineageos.org/>Lineage OS</a>. No tardo mucho tiempo en encontrar el menú dentro de &ldquo;Ajustes&rdquo;-&ldquo;Conexiones inalámbricas y redes&rdquo;-&ldquo;Mas&mldr;&rdquo; donde aparece la opción &ldquo;Restablecer ajustes de red&rdquo;</p><p><img src=/images/20181129_android_error_mac_04.jpg alt=ajustes></p><p>Un simple clic, aceptas las consecuencias y ya está¡¡¡</p><p>Milagrosamente el wifi vuelve a la vida con la única consecuencia de que has perdido las claves wifi de todas las conexiones que tenías guardadas así como los emapejamientos bluetooth, un mal menor.</p></div></article></main><nav class="pager flex">
 <div class="pager__item pager__item--prev">
 <a class=pager__link href=/historia-del-alojamiento-del-blog/ rel=prev>
 <span class=pager__subtitle>«&#8201;Anterior</span>
-<p class=pager__title>Historia del alojamiento del blog</p>
-</a>
-</div>
-<div class="pager__item pager__item--next">
+<p class=pager__title>Historia del alojamiento del blog</p></a>
+</div><div class="pager__item pager__item--next">
 <a class=pager__link href=/redimensionar-im%C3%A1genes-desde-la-l%C3%ADnea-de-comandos/ rel=next>
 <span class=pager__subtitle>Siguiente&#8201;»</span>
-<p class=pager__title>Redimensionar imágenes desde la línea de comandos</p>
-</a>
-</div>
-</nav>
-</div>
-</div>
-<footer class=footer>
+<p class=pager__title>Redimensionar imágenes desde la línea de comandos</p></a>
+</div></nav></div></div><footer class=footer>
 <div class="container footer__container flex">
 <div class=footer__copyright>
 &copy; 2022 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
 </br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a>
-</div>
-</div>
-</footer>
-</div>
-<script async defer src=/js/menu.js></script>
-<script src=/js/custom.js></script></body>
-</html>
+</div></div></footer></div><script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body></html>

@@ -3,8 +3,7 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<title>Montar carpeta del NAS mediante sshfs - Sherblog</title>
-<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<title>Montar carpeta del NAS mediante sshfs - Sherblog</title><script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script>
 <meta name=description content="Descripción">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="http://www.sherblog.pro//images/20210406_sshfs_a_synology_00.jpg">
@@ -18,8 +17,7 @@
 <link rel=stylesheet href=/css/style.css>
 <link rel=stylesheet href=/css/custom.css>
 <link rel="shortcut icon" href=/favicon.ico>
-</head>
-<body class=body>
+</head><body class=body>
 <div class="container container--outer">
 <header class=header>
 <meta name=twitter:card content="summary">
@@ -28,11 +26,8 @@
 <div class=container>
 <div class=logo>
 <a class=logo__link href=/ title=Sherblog rel=home>
-<div class=logo__title>Sherblog</div>
-<div class=logo__tagline>Sólo mi forma de hacer las cosas...</div>
-</a>
-</div>
-<nav class=menu>
+<div class=logo__title>Sherblog</div><div class=logo__tagline>Sólo mi forma de hacer las cosas...</div></a>
+</div><nav class=menu>
 <button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
 <span class=menu__btn-title tabindex=-1>Menú</span>
 </button>
@@ -41,109 +36,59 @@
 <a class=menu__link href=/post/computing/emacs/>
 <span class=menu__text>Emacs</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/post/computing/hugo/>
 <span class=menu__text>Hugo</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/>
 <span class=menu__text>Mis vértices geodésicos</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/post/computing/raspberry/>
 <span class=menu__text>Raspberry Pi desde cero</span>
 </a>
-</li>
-</ul>
-</nav>
-</div>
-</header>
-<div class="wrapper flex">
+</li></ul></nav></div></header><div class="wrapper flex">
 <div class=primary>
 <main class=main role=main>
 <article class=post>
 <header class=post__header>
-<h1 class=post__title>Montar carpeta del NAS mediante sshfs</h1>
-<div class="post__meta meta">
+<h1 class=post__title>Montar carpeta del NAS mediante sshfs</h1><div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 <svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-04-11T00:00:00Z>2021-04-11</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/computing/ rel=category>computing</a>
 </span>
-</div></div>
-</header>
-<figure class="post__thumbnail thumbnail">
+</div></div></header><figure class="post__thumbnail thumbnail">
 <img class=thumbnail__image src=/images/20210406_sshfs_a_synology_00.jpg alt="Montar carpeta del NAS mediante sshfs">
 </figure><div class="content post__content clearfix">
-<p>Hoy toca montar una carpeta del NAS en el pc mediante sshfs para correr sobre ella un script, resulta sencillo pero hay que tener en cuenta unas peculiaridades&mldr;</p>
-<p>Montar una carpeta remota en un directorio local trabajando en Linux es una tarea sencilla gracias a sshfs. En primer lugar es necesario instalar las utilidad en el sistema (En Linux Mint se resuelve con una sola línea en la terminal).</p>
-<pre tabindex=0><code>sudo apt install sshfs
-</code></pre><p>Llegados a este punto resulta interesante tener un acceso al NAS mediante llave publico-privada tal y como detallo en este [artículo] para evitar la tediosa introducción de contraseñas.</p>
-<blockquote>
-<p>Imprescindible para que funcione el comando sobre el NAS que esté habilitado el acceso ssh y el servidor sftp desde &ldquo;Panel de control - Servicios de archivos - FTP - Habilitar servicio SFTP&rdquo;</p>
-</blockquote>
-<p>Con esto ya es posible ejecutar en la consola el comando que monte la unidad del nas en la carpeta que deseemos de nuestro sistema.</p>
-<pre tabindex=0><code>sudo sshfs -o allow_other,default_permissions usuario@ip_del_nas:/carpeta ~/ruta_donde_montar
-
+<p>Hoy toca montar una carpeta del NAS en el pc mediante sshfs para correr sobre ella un script, resulta sencillo pero hay que tener en cuenta unas peculiaridades&mldr;</p><p>Montar una carpeta remota en un directorio local trabajando en Linux es una tarea sencilla gracias a sshfs. En primer lugar es necesario instalar las utilidad en el sistema (En Linux Mint se resuelve con una sola línea en la terminal).</p><pre tabindex=0><code>sudo apt install sshfs
+</code></pre><p>Llegados a este punto resulta interesante tener un acceso al NAS mediante llave publico-privada tal y como detallo en este [artículo] para evitar la tediosa introducción de contraseñas.</p><blockquote>
+<p>Imprescindible para que funcione el comando sobre el NAS que esté habilitado el acceso ssh y el servidor sftp desde &ldquo;Panel de control - Servicios de archivos - FTP - Habilitar servicio SFTP&rdquo;</p></blockquote><p>Con esto ya es posible ejecutar en la consola el comando que monte la unidad del nas en la carpeta que deseemos de nuestro sistema.</p><pre tabindex=0><code>sudo sshfs -o allow_other,default_permissions usuario@ip_del_nas:/carpeta ~/ruta_donde_montar
 </code></pre><blockquote>
-<p>La ruta a montar comienza en la carpeta &ldquo;Volume1&rdquo; del NAS de modo que para la carpeta &ldquo;/Volume1/fotos/2021/&rdquo; en el comando de sshfs deberemos poner &ldquo;/fotos/2021&rdquo;.</p>
-</blockquote>
-<p>En mi <a href=https://github.com/sherlockes/SherloScripts>repositorio</a> de Github tengo un pequeño <a href=https://github.com/sherlockes/SherloScripts/blob/master/bash/host.sh>script</a> para automatizar un poco todo este proceso, puedes verlo y editarlo a tu gusto.</p>
-</div>
-<footer class=post__footer>
+<p>La ruta a montar comienza en la carpeta &ldquo;Volume1&rdquo; del NAS de modo que para la carpeta &ldquo;/Volume1/fotos/2021/&rdquo; en el comando de sshfs deberemos poner &ldquo;/fotos/2021&rdquo;.</p></blockquote><p>En mi <a href=https://github.com/sherlockes/SherloScripts>repositorio</a> de Github tengo un pequeño <a href=https://github.com/sherlockes/SherloScripts/blob/master/bash/host.sh>script</a> para automatizar un poco todo este proceso, puedes verlo y editarlo a tu gusto.</p></div><footer class=post__footer>
 <div class="content post__content clearfix">
-<h3>Otros de mís artículos que te pueden interesar</h3>
-<ul>
-<li><a href=/clonar-el-disco-de-arranque-de-la-raspberry/>Clonar el disco de arranque de la raspberry</a></li>
-<li><a href=/instalar-rclone-en-synology-ds920-/>Instalar rclone en Synology Ds920+</a></li>
-<li><a href=/synology-no-actualiza-por-el-espacio-de-la-partici%C3%B3n-del-sistema/>Synology no actualiza por el espacio de la partición del sistema</a></li>
-<li><a href=/synology-broken-sudo/>Synology broken sudo</a></li>
-<li><a href=/descargar-archivos-de-telegram/>Descargar archivos de Telegram</a></li>
-</ul>
-</div>
-<div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
+<h3>Otros de mís artículos que te pueden interesar</h3><ul>
+<li><a href=/clonar-el-disco-de-arranque-de-la-raspberry/>Clonar el disco de arranque de la raspberry</a></li><li><a href=/instalar-rclone-en-synology-ds920-/>Instalar rclone en Synology Ds920+</a></li><li><a href=/synology-no-actualiza-por-el-espacio-de-la-partici%C3%B3n-del-sistema/>Synology no actualiza por el espacio de la partición del sistema</a></li><li><a href=/synology-broken-sudo/>Synology broken sudo</a></li><li><a href=/descargar-archivos-de-telegram/>Descargar archivos de Telegram</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
 <ul class=tags__list>
 <li class=tags__item>
 <a class="tags__link btn" href=/tags/bash/ rel=tag>bash</a>
-</li>
-<li class=tags__item>
+</li><li class=tags__item>
 <a class="tags__link btn" href=/tags/synology/ rel=tag>synology</a>
-</li>
-<li class=tags__item>
+</li><li class=tags__item>
 <a class="tags__link btn" href=/tags/linux/ rel=tag>linux</a>
-</li>
-</ul>
-</div>
-</footer>
-</article>
-</main>
-<nav class="pager flex">
+</li></ul></div></footer></article></main><nav class="pager flex">
 <div class="pager__item pager__item--prev">
 <a class=pager__link href=/trabajar-con-ssh-key-en-synology/ rel=prev>
 <span class=pager__subtitle>«&#8201;Anterior</span>
-<p class=pager__title>Trabajar con ssh-key en Synology</p>
-</a>
-</div>
-<div class="pager__item pager__item--next">
+<p class=pager__title>Trabajar con ssh-key en Synology</p></a>
+</div><div class="pager__item pager__item--next">
 <a class=pager__link href=/configurando-un-rel%C3%A9-wifi-mediante-esp-01-y-micropython/ rel=next>
 <span class=pager__subtitle>Siguiente&#8201;»</span>
-<p class=pager__title>Configurando un relé wifi mediante esp-01 y micropython</p>
-</a>
-</div>
-</nav>
-</div>
-</div>
-<footer class=footer>
+<p class=pager__title>Configurando un relé wifi mediante esp-01 y micropython</p></a>
+</div></nav></div></div><footer class=footer>
 <div class="container footer__container flex">
 <div class=footer__copyright>
 &copy; 2022 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
 </br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a>
-</div>
-</div>
-</footer>
-</div>
-<script async defer src=/js/menu.js></script>
-<script src=/js/custom.js></script></body>
-</html>
+</div></div></footer></div><script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body></html>

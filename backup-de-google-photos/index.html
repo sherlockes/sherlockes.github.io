@@ -3,8 +3,7 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<title>Backup de Google Photos - Sherblog</title>
-<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<title>Backup de Google Photos - Sherblog</title><script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script>
 <meta name=description content="Cuando Google lo pone difícil hay que buscar alternativas.">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="http://www.sherblog.pro//images/20190723_backup_google_photos_00.jpg">
@@ -18,8 +17,7 @@
 <link rel=stylesheet href=/css/style.css>
 <link rel=stylesheet href=/css/custom.css>
 <link rel="shortcut icon" href=/favicon.ico>
-</head>
-<body class=body>
+</head><body class=body>
 <div class="container container--outer">
 <header class=header>
 <meta name=twitter:card content="summary">
@@ -28,11 +26,8 @@
 <div class=container>
 <div class=logo>
 <a class=logo__link href=/ title=Sherblog rel=home>
-<div class=logo__title>Sherblog</div>
-<div class=logo__tagline>Sólo mi forma de hacer las cosas...</div>
-</a>
-</div>
-<nav class=menu>
+<div class=logo__title>Sherblog</div><div class=logo__tagline>Sólo mi forma de hacer las cosas...</div></a>
+</div><nav class=menu>
 <button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
 <span class=menu__btn-title tabindex=-1>Menú</span>
 </button>
@@ -41,140 +36,80 @@
 <a class=menu__link href=/post/computing/emacs/>
 <span class=menu__text>Emacs</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/post/computing/hugo/>
 <span class=menu__text>Hugo</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/>
 <span class=menu__text>Mis vértices geodésicos</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/post/computing/raspberry/>
 <span class=menu__text>Raspberry Pi desde cero</span>
 </a>
-</li>
-</ul>
-</nav>
-</div>
-</header>
-<div class="wrapper flex">
+</li></ul></nav></div></header><div class="wrapper flex">
 <div class=primary>
 <main class=main role=main>
 <article class=post>
 <header class=post__header>
-<h1 class=post__title>Backup de Google Photos</h1>
-<div class="post__meta meta">
+<h1 class=post__title>Backup de Google Photos</h1><div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 <svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2019-09-20T00:00:00Z>2019-09-20</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/linux/ rel=category>linux</a>
 </span>
-</div></div>
-</header>
-<figure class="post__thumbnail thumbnail">
+</div></div></header><figure class="post__thumbnail thumbnail">
 <img class=thumbnail__image src=/images/20190723_backup_google_photos_00.jpg alt="Backup de Google Photos">
 </figure><div class="content post__content clearfix">
-<p>Desde principios del mes de Julio de 2019, todos los que realizamos una copia de seguridad de de las imágenes subidas a Google Photos una forma automatizada hemos pasado a tener un serio problema que cada vez estoy más cerca de solucionar.</p>
-<p>Hasta ahora, mi Synology realizaba una copia de seguridad de Google Photos gracias a Cloud Sync y la posible sincronización entre las imágenes en Google Photos y una carpeta de Google Drive que se ofrecía. Pero esta capacidad de representar de todas las fotografías en una carpeta de Drive ha sido eliminada por Google y con ello casi todas las posibilidades de una copia de seguridad automática.</p>
-<p>Poco a poco me voy acercando a la solución para esta copia de seguridad y según me vaya aproximando a la solución definitiva iré actualizando este artículo.</p>
-<h2 id=sincronizando-en-linux-mint>Sincronizando en Linux Mint</h2>
-<p>Pues bien, es necesario tener instalada y corriendo al menos la versión 3.6 de Python <code>python -V</code> y continuamos con la instalación del administrador de paquetes y configuramos el path donde los paquetes instalados de Python son almacenados</p>
-<p><code>sudo apt install python3-pip</code>
-<code>echo "export PATH=\"\$PATH:\$HOME/.local/bin\"" >> ~/.bashrc"</code></p>
-<p>En caso de error es posible que sea necesario actualizar el administrador de paquetes de Python (pip), para lo cual usaremos el siguiente comando</p>
-<p><code>python3 -m pip install --user --upgrade pip</code></p>
-<p>Con esto ya es posible instalar <a href=https://github.com/gilesknap/gphotos-sync>Gphotos-Sync</a> desde el administrador de paquetes para lo cual instalaremos en primer lugar el paquete &ldquo;pienv&rdquo;, crearemos el directorio &ldquo;gphotos-sync&rdquo; en nuestro &ldquo;home&rdquo; y desde dentro de este directorio instalaremos &ldquo;gphotos-sync&rdquo;</p>
-<pre tabindex=0><code>python3 -m pip install pipenv
+<p>Desde principios del mes de Julio de 2019, todos los que realizamos una copia de seguridad de de las imágenes subidas a Google Photos una forma automatizada hemos pasado a tener un serio problema que cada vez estoy más cerca de solucionar.</p><p>Hasta ahora, mi Synology realizaba una copia de seguridad de Google Photos gracias a Cloud Sync y la posible sincronización entre las imágenes en Google Photos y una carpeta de Google Drive que se ofrecía. Pero esta capacidad de representar de todas las fotografías en una carpeta de Drive ha sido eliminada por Google y con ello casi todas las posibilidades de una copia de seguridad automática.</p><p>Poco a poco me voy acercando a la solución para esta copia de seguridad y según me vaya aproximando a la solución definitiva iré actualizando este artículo.</p><h2 id=sincronizando-en-linux-mint>Sincronizando en Linux Mint</h2><p>Pues bien, es necesario tener instalada y corriendo al menos la versión 3.6 de Python <code>python -V</code> y continuamos con la instalación del administrador de paquetes y configuramos el path donde los paquetes instalados de Python son almacenados</p><p><code>sudo apt install python3-pip</code>
+<code>echo "export PATH=\"\$PATH:\$HOME/.local/bin\"" >> ~/.bashrc"</code></p><p>En caso de error es posible que sea necesario actualizar el administrador de paquetes de Python (pip), para lo cual usaremos el siguiente comando</p><p><code>python3 -m pip install --user --upgrade pip</code></p><p>Con esto ya es posible instalar <a href=https://github.com/gilesknap/gphotos-sync>Gphotos-Sync</a> desde el administrador de paquetes para lo cual instalaremos en primer lugar el paquete &ldquo;pienv&rdquo;, crearemos el directorio &ldquo;gphotos-sync&rdquo; en nuestro &ldquo;home&rdquo; y desde dentro de este directorio instalaremos &ldquo;gphotos-sync&rdquo;</p><pre tabindex=0><code>python3 -m pip install pipenv
 mkdir ~/gphotos-sync
 cd ~/gphotos-sync
 pipenv install gphotos-sync
-</code></pre><p>Ya estamos en condiciones de comenzar la sincronización con la carpeta local &ldquo;gphotos-sync&rdquo; mediante el comando:</p>
-<p><code>pipenv run gphotos-sync ~/gphotos-sync</code></p>
-<p>La primera vez que ejecutemos el comando se no solicitará el acceso a nuestra cuenta de Google por parte del script de &ldquo;gphotos-sync&rdquo; para lo cual pegaremos en el navegador el enlace que aparece en la terminal, concederemos los permisos necesarios y copiaremos el código que Google nos devuelve nuevamente en la terminal.</p>
-<p><img src=/images/20190911_gphotos_synnc_01.jpg alt=imagen_01></p>
-<p>En este punto y si no tiene lugar ningún error dejaremos el script corriendo durante un rato puesto que se van a descargar todas las fotos de nuestra cuente de Google Photos</p>
-<blockquote>
-<p>En raspberry <code>pipenv --python /usr/bin/python3</code></p>
-</blockquote>
-<h3 id=sincronizando-los-archivos-con-el-nas>Sincronizando los archivos con el Nas</h3>
-<p>En mi caso particular voy a guardar las fotos en una carpeta del Nas por lo que para no realizar la operación dos veces voy a montar esta carpeta en el ordenador de sobremesa con Linux Mint y correré el programa sobre dicha carpeta. Para ello utilizo el siguiente script.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=color:#75715e>#!/bin/bash
-</span><span style=color:#75715e></span>
-<span style=color:#75715e>###################################################################</span>
-<span style=color:#75715e>#Script Name: Backup Google Photos</span>
-<span style=color:#75715e>#Description: Monta la carpeta de copia de seguridad de Google Photos</span>
-<span style=color:#75715e>#             en el nas y realiza la sincronización desde Google</span>
-<span style=color:#75715e>#Args:</span>
-<span style=color:#75715e>#Creation/Update: 20190911/20190918</span>
-<span style=color:#75715e>#Author: www.sherblog.pro</span>
-<span style=color:#75715e>#Email: sherlockes@gmail.com</span>
-<span style=color:#75715e>###################################################################</span>
-
-<span style=color:#75715e># Monta la carpeta del nas &#34;gphotos-sync&#34; como una unidad en la carpeta local &#34;gphotos-sync&#34;</span>
-sshfs sherlockes@192.168.1.200:../../home/gphotos-sync ~/gphotos-sync
-
-<span style=color:#75715e># Ejecuta el script en python gphotos-sync</span>
-pipenv run gphotos-sync ~/gphotos-sync
-
-<span style=color:#75715e># Desmonta la unidad</span>
-fusermount -u ~/gphotos-sync
-</code></pre></div><p>Con esto, basta con un simple click para sincronizar la galería de Google Photos con el Nas.</p>
-<blockquote>
-<p>No he incluido este script en cron puesto que ni el ordenador de sobremesa ni el Nas están encendidos continuamente.</p>
-</blockquote>
-</div>
-<footer class=post__footer>
+</code></pre><p>Ya estamos en condiciones de comenzar la sincronización con la carpeta local &ldquo;gphotos-sync&rdquo; mediante el comando:</p><p><code>pipenv run gphotos-sync ~/gphotos-sync</code></p><p>La primera vez que ejecutemos el comando se no solicitará el acceso a nuestra cuenta de Google por parte del script de &ldquo;gphotos-sync&rdquo; para lo cual pegaremos en el navegador el enlace que aparece en la terminal, concederemos los permisos necesarios y copiaremos el código que Google nos devuelve nuevamente en la terminal.</p><p><img src=/images/20190911_gphotos_synnc_01.jpg alt=imagen_01></p><p>En este punto y si no tiene lugar ningún error dejaremos el script corriendo durante un rato puesto que se van a descargar todas las fotos de nuestra cuente de Google Photos</p><blockquote>
+<p>En raspberry <code>pipenv --python /usr/bin/python3</code></p></blockquote><h3 id=sincronizando-los-archivos-con-el-nas>Sincronizando los archivos con el Nas</h3><p>En mi caso particular voy a guardar las fotos en una carpeta del Nas por lo que para no realizar la operación dos veces voy a montar esta carpeta en el ordenador de sobremesa con Linux Mint y correré el programa sobre dicha carpeta. Para ello utilizo el siguiente script.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#75715e>#!/bin/bash
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>###################################################################</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Script Name: Backup Google Photos</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Description: Monta la carpeta de copia de seguridad de Google Photos</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#             en el nas y realiza la sincronización desde Google</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Args:</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Creation/Update: 20190911/20190918</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Author: www.sherblog.pro</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#Email: sherlockes@gmail.com</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>###################################################################</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Monta la carpeta del nas &#34;gphotos-sync&#34; como una unidad en la carpeta local &#34;gphotos-sync&#34;</span>
+</span></span><span style=display:flex><span>sshfs sherlockes@192.168.1.200:../../home/gphotos-sync ~/gphotos-sync
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Ejecuta el script en python gphotos-sync</span>
+</span></span><span style=display:flex><span>pipenv run gphotos-sync ~/gphotos-sync
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Desmonta la unidad</span>
+</span></span><span style=display:flex><span>fusermount -u ~/gphotos-sync
+</span></span></code></pre></div><p>Con esto, basta con un simple click para sincronizar la galería de Google Photos con el Nas.</p><blockquote>
+<p>No he incluido este script en cron puesto que ni el ordenador de sobremesa ni el Nas están encendidos continuamente.</p></blockquote></div><footer class=post__footer>
 <div class="content post__content clearfix">
-<h3>Otros de mís artículos que te pueden interesar</h3>
-<ul>
-<li><a href=/extrayendo-la-portada-de-un-pdf/>Extrayendo la portada de un pdf</a></li>
-<li><a href=/unir-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/>Unir varios pdf en linux desde la línea de comandos</a></li>
-<li><a href=/redimensionar-im%C3%A1genes-desde-la-l%C3%ADnea-de-comandos/>Redimensionar imágenes desde la línea de comandos</a></li>
-<li><a href=/cambiar-el-orden-de-los-elementos-del-grub/>Cambiar el orden de los elementos del grub</a></li>
-<li><a href=/sincronizar-google-photos-desde-la-raspberry/>Sincronizar Google Photos desde la Raspberry</a></li>
-</ul>
-</div>
-<div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
+<h3>Otros de mís artículos que te pueden interesar</h3><ul>
+<li><a href=/extrayendo-la-portada-de-un-pdf/>Extrayendo la portada de un pdf</a></li><li><a href=/unir-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/>Unir varios pdf en linux desde la línea de comandos</a></li><li><a href=/redimensionar-im%C3%A1genes-desde-la-l%C3%ADnea-de-comandos/>Redimensionar imágenes desde la línea de comandos</a></li><li><a href=/cambiar-el-orden-de-los-elementos-del-grub/>Cambiar el orden de los elementos del grub</a></li><li><a href=/sincronizar-google-photos-desde-la-raspberry/>Sincronizar Google Photos desde la Raspberry</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
 <ul class=tags__list>
 <li class=tags__item>
 <a class="tags__link btn" href=/tags/gphoto-sync/ rel=tag>gphoto-sync</a>
-</li>
-<li class=tags__item>
+</li><li class=tags__item>
 <a class="tags__link btn" href=/tags/bash/ rel=tag>bash</a>
-</li>
-</ul>
-</div>
-</footer>
-</article>
-</main>
-<nav class="pager flex">
+</li></ul></div></footer></article></main><nav class="pager flex">
 <div class="pager__item pager__item--prev">
 <a class=pager__link href=/rclone-en-synology/ rel=prev>
 <span class=pager__subtitle>«&#8201;Anterior</span>
-<p class=pager__title>Rclone en Synology</p>
-</a>
-</div>
-<div class="pager__item pager__item--next">
+<p class=pager__title>Rclone en Synology</p></a>
+</div><div class="pager__item pager__item--next">
 <a class=pager__link href=/unir-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/ rel=next>
 <span class=pager__subtitle>Siguiente&#8201;»</span>
-<p class=pager__title>Unir varios pdf en linux desde la línea de comandos</p>
-</a>
-</div>
-</nav>
-</div>
-</div>
-<footer class=footer>
+<p class=pager__title>Unir varios pdf en linux desde la línea de comandos</p></a>
+</div></nav></div></div><footer class=footer>
 <div class="container footer__container flex">
 <div class=footer__copyright>
 &copy; 2022 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
 </br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a>
-</div>
-</div>
-</footer>
-</div>
-<script async defer src=/js/menu.js></script>
-<script src=/js/custom.js></script></body>
-</html>
+</div></div></footer></div><script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body></html>

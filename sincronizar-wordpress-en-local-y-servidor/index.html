@@ -3,8 +3,7 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<title>Sincronizar WordPress en local y servidor - Sherblog</title>
-<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<title>Sincronizar WordPress en local y servidor - Sherblog</title><script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script>
 <meta name=description content="Está muy bien tener una instalación de WordPress en un servidor local de pruebas que puedas sincronizar con el servidor de producción cuando todo lo tengas listo, aquí te muestro como hacerlo.">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="http://www.sherblog.pro/images/20151006_wordpress_db_sync.jpg">
@@ -18,8 +17,7 @@
 <link rel=stylesheet href=/css/style.css>
 <link rel=stylesheet href=/css/custom.css>
 <link rel="shortcut icon" href=/favicon.ico>
-</head>
-<body class=body>
+</head><body class=body>
 <div class="container container--outer">
 <header class=header>
 <meta name=twitter:card content="summary">
@@ -28,11 +26,8 @@
 <div class=container>
 <div class=logo>
 <a class=logo__link href=/ title=Sherblog rel=home>
-<div class=logo__title>Sherblog</div>
-<div class=logo__tagline>Sólo mi forma de hacer las cosas...</div>
-</a>
-</div>
-<nav class=menu>
+<div class=logo__title>Sherblog</div><div class=logo__tagline>Sólo mi forma de hacer las cosas...</div></a>
+</div><nav class=menu>
 <button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
 <span class=menu__btn-title tabindex=-1>Menú</span>
 </button>
@@ -41,148 +36,82 @@
 <a class=menu__link href=/post/computing/emacs/>
 <span class=menu__text>Emacs</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/post/computing/hugo/>
 <span class=menu__text>Hugo</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/>
 <span class=menu__text>Mis vértices geodésicos</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/post/computing/raspberry/>
 <span class=menu__text>Raspberry Pi desde cero</span>
 </a>
-</li>
-</ul>
-</nav>
-</div>
-</header>
-<div class="wrapper flex">
+</li></ul></nav></div></header><div class="wrapper flex">
 <div class=primary>
 <main class=main role=main>
 <article class=post>
 <header class=post__header>
-<h1 class=post__title>Sincronizar WordPress en local y servidor</h1>
-<div class="post__meta meta">
+<h1 class=post__title>Sincronizar WordPress en local y servidor</h1><div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 <svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2015-10-06T00:00:00Z>2015-10-06</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/wordpress/ rel=category>WordPress</a>
 </span>
-</div></div>
-</header>
-<figure class="post__thumbnail thumbnail">
+</div></div></header><figure class="post__thumbnail thumbnail">
 <img class=thumbnail__image src=/images/20151006_wordpress_db_sync.jpg alt="Sincronizar WordPress en local y servidor">
 </figure><div class="content post__content clearfix">
-<p>Si de algo carece WordPress, o al menos yo no he sido capaz de encontrarlo después de mucho navegar por la red, es de un entorno de desarrollo en local. A que me refiero, cada vez que nos ponemos a realizar modificaciones en la web algo más allá que publicar un post nos encontramos con la tediosa labor de descargar, modificar, guardar, subir y comprobar cada modificación hasta que conseguimos dejar la web a nuestro gusto.</p>
-<p>Pues bien, lo que yo busco es una forma sencilla de crear una copia de nuestra web en el ordenador de casa para poder trabajar sobre esta en las modificaciones y una vez estén terminadas subirlas al servidor. De esta forma el proceso se simplifica bastante ya que únicamente hay que realizar las modificaciones, guardarlas y comprobar si funcionan. Antes de empezar necesitamos cuatro puntos imprescindibles.</p>
-<ol>
-<li>Montar un servidor de pruebas</li>
-<li>Instalar WordPress en el servidor local</li>
-<li>Copiar los archivos de la web</li>
-<li>Copiar la base de datos</li>
-</ol>
-<h3 id=montar-un-servidor-de-pruebas>Montar un servidor de pruebas</h3>
-<p>Básicamente necesitamos montar un servidor apache en local y phpmyadmin para la gestión de la base de datos de WordPress. Hay muchos programas para hacerlo, la que yo utilizo desde hace varios años es <a href=https://www.apachefriends.org/es/index.html>Xampp</a>.</p>
-<p><img src=/images/20150929_xampp_logo.jpg alt=imagen></p>
-<p>Es sencillo, hay versión para windows, linux y mac, ofrece lo que necesitamos (y algo más para los inquietos) y además tiene una versión portable para los que no quieren otro programa a instalar que deje el pc lleno de basura. No voy a entrar en más detalles sobre la instalación y configuración porque hay cientos de tutoriales en la web, simplemente cuando lo tengas instalado y hayas arrancado apache y phpmyadmin al escribir &ldquo;http://localhost&rdquo; en el explorador de internet deberás ver algo como lo siguiente.</p>
-<p><img src=/images/20150929_xampp_install.jpg alt=imagen></p>
-<h3 id=instalar-wordpress-en-el-servidor-local>Instalar WordPress en el servidor local</h3>
-<p>Tan sencillo como seguir los pasos de su famosa instalación en cinco minutos que puedes ver en <a href=/images/20150929_xampp_install.jpg>wordpress.org</a>. Además si has sido capaz de instalar WordPress en un hosting online, hacerlo en un servidor local no tiene que plantearte ningún problema.</p>
-<h3 id=copiar-los-archivos-de-la-web>Copiar los archivos de la web</h3>
-<p>Para este paso necesitamos un cliente ftp para descargar la carpeta &ldquo;wp-content&rdquo; de nuestro hosting online y con ella sobreescribir la correspondiente carpeta del blog recientemente creado en el servidor local. Personalmente utilizo <a href=https://filezilla-project.org>FileZilla</a> por ser sencillo, potente, ligero y sobretodo gratuito.</p>
-<p><img src=/images/20150929_filezilla_01.jpg alt=imagen></p>
-<p>Llegados a este punto tenemos en nuestra web online y el servidor local los mismos archivos con una pequeña salvedad, el archivo de configuración &ldquo;wp-config.php&rdquo;. Si queremos ser meticulosos y unificar estos archivos de configuración en uno válido para ambos servidores habrá que realizar alguna modificación en el mismo en la sección de conexión a la base de datos. Donde aparece algo como esto.</p>
-<pre tabindex=0><code>// ** MySQL settings - You can get this info from your web host ** //
+<p>Si de algo carece WordPress, o al menos yo no he sido capaz de encontrarlo después de mucho navegar por la red, es de un entorno de desarrollo en local. A que me refiero, cada vez que nos ponemos a realizar modificaciones en la web algo más allá que publicar un post nos encontramos con la tediosa labor de descargar, modificar, guardar, subir y comprobar cada modificación hasta que conseguimos dejar la web a nuestro gusto.</p><p>Pues bien, lo que yo busco es una forma sencilla de crear una copia de nuestra web en el ordenador de casa para poder trabajar sobre esta en las modificaciones y una vez estén terminadas subirlas al servidor. De esta forma el proceso se simplifica bastante ya que únicamente hay que realizar las modificaciones, guardarlas y comprobar si funcionan. Antes de empezar necesitamos cuatro puntos imprescindibles.</p><ol>
+<li>Montar un servidor de pruebas</li><li>Instalar WordPress en el servidor local</li><li>Copiar los archivos de la web</li><li>Copiar la base de datos</li></ol><h3 id=montar-un-servidor-de-pruebas>Montar un servidor de pruebas</h3><p>Básicamente necesitamos montar un servidor apache en local y phpmyadmin para la gestión de la base de datos de WordPress. Hay muchos programas para hacerlo, la que yo utilizo desde hace varios años es <a href=https://www.apachefriends.org/es/index.html>Xampp</a>.</p><p><img src=/images/20150929_xampp_logo.jpg alt=imagen></p><p>Es sencillo, hay versión para windows, linux y mac, ofrece lo que necesitamos (y algo más para los inquietos) y además tiene una versión portable para los que no quieren otro programa a instalar que deje el pc lleno de basura. No voy a entrar en más detalles sobre la instalación y configuración porque hay cientos de tutoriales en la web, simplemente cuando lo tengas instalado y hayas arrancado apache y phpmyadmin al escribir &ldquo;http://localhost&rdquo; en el explorador de internet deberás ver algo como lo siguiente.</p><p><img src=/images/20150929_xampp_install.jpg alt=imagen></p><h3 id=instalar-wordpress-en-el-servidor-local>Instalar WordPress en el servidor local</h3><p>Tan sencillo como seguir los pasos de su famosa instalación en cinco minutos que puedes ver en <a href=/images/20150929_xampp_install.jpg>wordpress.org</a>. Además si has sido capaz de instalar WordPress en un hosting online, hacerlo en un servidor local no tiene que plantearte ningún problema.</p><h3 id=copiar-los-archivos-de-la-web>Copiar los archivos de la web</h3><p>Para este paso necesitamos un cliente ftp para descargar la carpeta &ldquo;wp-content&rdquo; de nuestro hosting online y con ella sobreescribir la correspondiente carpeta del blog recientemente creado en el servidor local. Personalmente utilizo <a href=https://filezilla-project.org>FileZilla</a> por ser sencillo, potente, ligero y sobretodo gratuito.</p><p><img src=/images/20150929_filezilla_01.jpg alt=imagen></p><p>Llegados a este punto tenemos en nuestra web online y el servidor local los mismos archivos con una pequeña salvedad, el archivo de configuración &ldquo;wp-config.php&rdquo;. Si queremos ser meticulosos y unificar estos archivos de configuración en uno válido para ambos servidores habrá que realizar alguna modificación en el mismo en la sección de conexión a la base de datos. Donde aparece algo como esto.</p><pre tabindex=0><code>// ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'db_yourserver');
+define(&#39;DB_NAME&#39;, &#39;db_yourserver&#39;);
 /** MySQL database username */
-define('DB_USER', 'db_yourserver_user');
+define(&#39;DB_USER&#39;, &#39;db_yourserver_user&#39;);
 /** MySQL database password */
-define('DB_PASSWORD', 'db_yourserver_user_password');
+define(&#39;DB_PASSWORD&#39;, &#39;db_yourserver_user_password&#39;);
 /** MySQL hostname */
-define('DB_HOST', 'yourserver_hostname');
+define(&#39;DB_HOST&#39;, &#39;yourserver_hostname&#39;);
 /** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
-/** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
-</code></pre><p>lo cambiaremos por esto otro</p>
-<pre tabindex=0><code>// ** MySQL settings - You can get this info from your web host ** //
-if ($_SERVER[&quot;HTTP_HOST&quot;] === 'yourserver.com') {
-  $db_name = 'db_yourserver';
-  $user_name = 'db_yourserver_user';
-  $password = 'db_yourserver_user_password';
-  $hostname =  'yourserver_hostname';
-} else if ($_SERVER[&quot;HTTP_HOST&quot;] === 'localhost') {
-  $db_name = 'db_local';
-  $user_name = 'root';
-  $password = '';
-   $hostname =  'localhost';
+define(&#39;DB_CHARSET&#39;, &#39;utf8&#39;);
+/** The Database Collate type. Don&#39;t change this if in doubt. */
+define(&#39;DB_COLLATE&#39;, &#39;&#39;);
+</code></pre><p>lo cambiaremos por esto otro</p><pre tabindex=0><code>// ** MySQL settings - You can get this info from your web host ** //
+if ($_SERVER[&#34;HTTP_HOST&#34;] === &#39;yourserver.com&#39;) {
+  $db_name = &#39;db_yourserver&#39;;
+  $user_name = &#39;db_yourserver_user&#39;;
+  $password = &#39;db_yourserver_user_password&#39;;
+  $hostname =  &#39;yourserver_hostname&#39;;
+} else if ($_SERVER[&#34;HTTP_HOST&#34;] === &#39;localhost&#39;) {
+  $db_name = &#39;db_local&#39;;
+  $user_name = &#39;root&#39;;
+  $password = &#39;&#39;;
+   $hostname =  &#39;localhost&#39;;
 }
 /** The name of the database for WordPress */
-define('DB_NAME', $db_name);
+define(&#39;DB_NAME&#39;, $db_name);
 /** MySQL database username */
-define('DB_USER', $user_name);
+define(&#39;DB_USER&#39;, $user_name);
 /** MySQL database password */
-define('DB_PASSWORD', $password);
+define(&#39;DB_PASSWORD&#39;, $password);
 /** MySQL hostname */
-define('DB_HOST', $hostname);
+define(&#39;DB_HOST&#39;, $hostname);
 /** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
-/** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
-</code></pre><p>Con esto ya podemos tener exactamente los mismos archivos en nuestra web online y la réplica local por lo que a partir de ahora una servirá de copia de seguridad de la otra, siempre y cuando las vayamos sincronizando habitualmente tras realizar modificaciones en el sistema de archivos. Ahora es posible habilitar la navegación sincronizada de Filezilla y la comparación de directorios desde el gestor de sitios del programa en la pestaña &ldquo;avanzado&rdquo;.</p>
-<p><img src=/images/20151006_filezilla_compare.jpg alt=imagen></p>
-<p>De esta forma navegaremos al mismo tiempo en las dos pestañas y, gracias al código de colores, será más rápido y sencillo identificar los archivos modificados y actualizarlos.</p>
-<p><img src=/images/20151006_filezilla_compare_02.jpg alt=imagen></p>
-<h3 id=copiar-la-base-de-datos>Copiar la base de datos</h3>
-<p>Llegados a este punto nos encontramos con la labor más delicada de todas, la sincronización de la base de datos. Voy a exponer dos métodos, uno completamente manual y otro semiautomático. Sin duda alguna el segundo es mucho más rápido y sencillo aunque no está de más conocer el primero para saber los pasos que sigue el segundo.</p>
-<p>En primer lugar accedemos a la base de datos que gobierna nuestro blog online desde phpmyadmin y nos situamos en la pestaña &ldquo;Exportar&rdquo; tal y como muestra la siguiente imagen.</p>
-<p><img src=/images/20151006_export_phpmyadmin.jpg alt=imagen></p>
-<p>Exportamos las tablas de nuestra base de datos a un archivo &ldquo;sql&rdquo;. Ahora hay que modificar la base de datos para que los enlaces en lugar de apuntar a &ldquo;<a href=http://www.mipagina.com>www.mipagina.com</a>&rdquo; lo hagan a &ldquo;localhost/mipagina&rdquo;. El proceso es sencillo, abres el bloc de notas o cualquier editor de código fuente, buscas una cadena y la reemplazas con la otra. Para este tipo de ediciones yo utilizo [Notepad++<a href=https://notepad-plus-plus.org>14</a>] por ser rápido, sencillo, gratuito y portable.</p>
-<p><img src=/images/20151005_notepad.jpg alt=imagen></p>
-<p>en mi caso busco la cadena &ldquo;<a href=http://www.sherblog.es/blog%22>www.sherblog.es/blog"</a> y la cambio por &ldquo;localhost/blog&rdquo; que son las correspondientes carpetas en online y local.</p>
-<p><img src=/images/20151006_buscar_reemplazar.jpg alt=imagen></p>
-<p>A continuación accedemos a la base de datos de nuestro blog local a través de phpMyadmin e importamos dentro de esta el archivo &ldquo;*.sql&rdquo; que acabamos de editar de una forma similar a como anteriormente hemos exportado la base de datos online. Seleccionamos el archivo, seleccionamos el formato SQL y &ldquo;Continuar&rdquo;.</p>
-<p><img src=/images/20151006_phpmyadmin_importar.jpg alt=imagen></p>
-<p>Hasta aquí el método manual para la sincronización de las bases de datos. Por suerte hay una alternativa más rápida y sencilla a través de un plugin de WordPress. Se trata de <a href=https://github.com/wp-sync-db/wp-sync-db>wp-sync-db</a>. Este plugin no se puede encontrar a través del buscador de WordPress, hay que descargarlo de la web y copiarlo a la carpeta plugins de tu blog. No tengo claro la relación que mantiene con <a href=https://wordpress.org/plugins/wp-migrate-db/>wp-migrate-db</a> así como tampoco soy capaz de ver las diferencias entre uno y la versión pro del otro. Yo utilizo <a href=https://github.com/wp-sync-db/wp-sync-db>wp-sync-db</a>.</p>
-<p>El primer paso es instalar y activar el plugin tanto en el blog online como en el local. Una vez instalado y desde la versión online acudimos al menú &ldquo;herramientas&rdquo; del panel de control de WordPress y abrimos &ldquo;Migrate Db&rdquo;. En la pestaña &ldquo;Settings&rdquo; marcamos la primera opción para permitir que nuestro blog local pueda conectarse, exportar y descargar la base de datos de este blog online tal y como se muestra en la siguiente imagen.</p>
-<p><img src=/images/20150930_wp_sync_db_02.jpg alt=imagen></p>
-<p>Copiamos el enlace que aparece en el cuadro &ldquo;Connection Info&rdquo; y ya podemos cerrar el blog online para abrir la imagen en nuestro servidor local. Accedemos a la configuración del plugin y selecionamos la opción &ldquo;Pull&rdquo; para reemplazar la base de datos de nuestro blog local por la del remoto. Añadimos las cadenas de texto a reemplazar, unos cuantos ticks de configuración y ya está lista la sincronización.</p>
-<p><img src=/images/20150930_wp_sync_db_01.jpg alt=imagen></p>
-<p>Si prefieres ver el vídeo oficial antes que mi torpe interpretación, aquí está el link de <a href="https://www.youtube.com/watch?t=345&v=fHFcH4bCzmU">youtube</a>.</p>
-<p>Y con esto, si todo ha ido bien ya deberías tener dos copias sincronizadas de tu blog.</p>
-</div>
-</article>
-</main>
-<nav class="pager flex">
+define(&#39;DB_CHARSET&#39;, &#39;utf8&#39;);
+/** The Database Collate type. Don&#39;t change this if in doubt. */
+define(&#39;DB_COLLATE&#39;, &#39;&#39;);
+</code></pre><p>Con esto ya podemos tener exactamente los mismos archivos en nuestra web online y la réplica local por lo que a partir de ahora una servirá de copia de seguridad de la otra, siempre y cuando las vayamos sincronizando habitualmente tras realizar modificaciones en el sistema de archivos. Ahora es posible habilitar la navegación sincronizada de Filezilla y la comparación de directorios desde el gestor de sitios del programa en la pestaña &ldquo;avanzado&rdquo;.</p><p><img src=/images/20151006_filezilla_compare.jpg alt=imagen></p><p>De esta forma navegaremos al mismo tiempo en las dos pestañas y, gracias al código de colores, será más rápido y sencillo identificar los archivos modificados y actualizarlos.</p><p><img src=/images/20151006_filezilla_compare_02.jpg alt=imagen></p><h3 id=copiar-la-base-de-datos>Copiar la base de datos</h3><p>Llegados a este punto nos encontramos con la labor más delicada de todas, la sincronización de la base de datos. Voy a exponer dos métodos, uno completamente manual y otro semiautomático. Sin duda alguna el segundo es mucho más rápido y sencillo aunque no está de más conocer el primero para saber los pasos que sigue el segundo.</p><p>En primer lugar accedemos a la base de datos que gobierna nuestro blog online desde phpmyadmin y nos situamos en la pestaña &ldquo;Exportar&rdquo; tal y como muestra la siguiente imagen.</p><p><img src=/images/20151006_export_phpmyadmin.jpg alt=imagen></p><p>Exportamos las tablas de nuestra base de datos a un archivo &ldquo;sql&rdquo;. Ahora hay que modificar la base de datos para que los enlaces en lugar de apuntar a &ldquo;<a href=http://www.mipagina.com>www.mipagina.com</a>&rdquo; lo hagan a &ldquo;localhost/mipagina&rdquo;. El proceso es sencillo, abres el bloc de notas o cualquier editor de código fuente, buscas una cadena y la reemplazas con la otra. Para este tipo de ediciones yo utilizo [Notepad++<a href=https://notepad-plus-plus.org>14</a>] por ser rápido, sencillo, gratuito y portable.</p><p><img src=/images/20151005_notepad.jpg alt=imagen></p><p>en mi caso busco la cadena &ldquo;<a href=http://www.sherblog.es/blog%22>www.sherblog.es/blog"</a> y la cambio por &ldquo;localhost/blog&rdquo; que son las correspondientes carpetas en online y local.</p><p><img src=/images/20151006_buscar_reemplazar.jpg alt=imagen></p><p>A continuación accedemos a la base de datos de nuestro blog local a través de phpMyadmin e importamos dentro de esta el archivo &ldquo;*.sql&rdquo; que acabamos de editar de una forma similar a como anteriormente hemos exportado la base de datos online. Seleccionamos el archivo, seleccionamos el formato SQL y &ldquo;Continuar&rdquo;.</p><p><img src=/images/20151006_phpmyadmin_importar.jpg alt=imagen></p><p>Hasta aquí el método manual para la sincronización de las bases de datos. Por suerte hay una alternativa más rápida y sencilla a través de un plugin de WordPress. Se trata de <a href=https://github.com/wp-sync-db/wp-sync-db>wp-sync-db</a>. Este plugin no se puede encontrar a través del buscador de WordPress, hay que descargarlo de la web y copiarlo a la carpeta plugins de tu blog. No tengo claro la relación que mantiene con <a href=https://wordpress.org/plugins/wp-migrate-db/>wp-migrate-db</a> así como tampoco soy capaz de ver las diferencias entre uno y la versión pro del otro. Yo utilizo <a href=https://github.com/wp-sync-db/wp-sync-db>wp-sync-db</a>.</p><p>El primer paso es instalar y activar el plugin tanto en el blog online como en el local. Una vez instalado y desde la versión online acudimos al menú &ldquo;herramientas&rdquo; del panel de control de WordPress y abrimos &ldquo;Migrate Db&rdquo;. En la pestaña &ldquo;Settings&rdquo; marcamos la primera opción para permitir que nuestro blog local pueda conectarse, exportar y descargar la base de datos de este blog online tal y como se muestra en la siguiente imagen.</p><p><img src=/images/20150930_wp_sync_db_02.jpg alt=imagen></p><p>Copiamos el enlace que aparece en el cuadro &ldquo;Connection Info&rdquo; y ya podemos cerrar el blog online para abrir la imagen en nuestro servidor local. Accedemos a la configuración del plugin y selecionamos la opción &ldquo;Pull&rdquo; para reemplazar la base de datos de nuestro blog local por la del remoto. Añadimos las cadenas de texto a reemplazar, unos cuantos ticks de configuración y ya está lista la sincronización.</p><p><img src=/images/20150930_wp_sync_db_01.jpg alt=imagen></p><p>Si prefieres ver el vídeo oficial antes que mi torpe interpretación, aquí está el link de <a href="https://www.youtube.com/watch?t=345&v=fHFcH4bCzmU">youtube</a>.</p><p>Y con esto, si todo ha ido bien ya deberías tener dos copias sincronizadas de tu blog.</p></div></article></main><nav class="pager flex">
 <div class="pager__item pager__item--prev">
 <a class=pager__link href=/crear-panor%C3%A1mica-a-partir-de-un-v%C3%ADdeo/ rel=prev>
 <span class=pager__subtitle>«&#8201;Anterior</span>
-<p class=pager__title>Crear panorámica a partir de un vídeo</p>
-</a>
-</div>
-<div class="pager__item pager__item--next">
+<p class=pager__title>Crear panorámica a partir de un vídeo</p></a>
+</div><div class="pager__item pager__item--next">
 <a class=pager__link href=/el-l%C3%A1tex-y-las-maxxis-se-llevan-mal/ rel=next>
 <span class=pager__subtitle>Siguiente&#8201;»</span>
-<p class=pager__title>El látex y las maxxis se llevan mal</p>
-</a>
-</div>
-</nav>
-</div>
-</div>
-<footer class=footer>
+<p class=pager__title>El látex y las maxxis se llevan mal</p></a>
+</div></nav></div></div><footer class=footer>
 <div class="container footer__container flex">
 <div class=footer__copyright>
 &copy; 2022 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
 </br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a>
-</div>
-</div>
-</footer>
-</div>
-<script async defer src=/js/menu.js></script>
-<script src=/js/custom.js></script></body>
-</html>
+</div></div></footer></div><script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body></html>

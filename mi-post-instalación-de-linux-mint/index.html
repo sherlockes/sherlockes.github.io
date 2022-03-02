@@ -3,8 +3,7 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<title>Mi Post-instalación de Linux Mint - Sherblog</title>
-<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<title>Mi Post-instalación de Linux Mint - Sherblog</title><script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script>
 <meta name=description content="Aquí están todos los pasos que doy después de la instalación de Linux Mint, perfectamente documentado para que no se me olvide...">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="http://www.sherblog.pro/images/20200425_mint_post_install_00.jpg">
@@ -18,8 +17,7 @@
 <link rel=stylesheet href=/css/style.css>
 <link rel=stylesheet href=/css/custom.css>
 <link rel="shortcut icon" href=/favicon.ico>
-</head>
-<body class=body>
+</head><body class=body>
 <div class="container container--outer">
 <header class=header>
 <meta name=twitter:card content="summary">
@@ -28,11 +26,8 @@
 <div class=container>
 <div class=logo>
 <a class=logo__link href=/ title=Sherblog rel=home>
-<div class=logo__title>Sherblog</div>
-<div class=logo__tagline>Sólo mi forma de hacer las cosas...</div>
-</a>
-</div>
-<nav class=menu>
+<div class=logo__title>Sherblog</div><div class=logo__tagline>Sólo mi forma de hacer las cosas...</div></a>
+</div><nav class=menu>
 <button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
 <span class=menu__btn-title tabindex=-1>Menú</span>
 </button>
@@ -41,147 +36,68 @@
 <a class=menu__link href=/post/computing/emacs/>
 <span class=menu__text>Emacs</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/post/computing/hugo/>
 <span class=menu__text>Hugo</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/>
 <span class=menu__text>Mis vértices geodésicos</span>
 </a>
-</li>
-<li class=menu__item>
+</li><li class=menu__item>
 <a class=menu__link href=/post/computing/raspberry/>
 <span class=menu__text>Raspberry Pi desde cero</span>
 </a>
-</li>
-</ul>
-</nav>
-</div>
-</header>
-<div class="wrapper flex">
+</li></ul></nav></div></header><div class="wrapper flex">
 <div class=primary>
 <main class=main role=main>
 <article class=post>
 <header class=post__header>
-<h1 class=post__title>Mi Post-instalación de Linux Mint</h1>
-<div class="post__meta meta">
+<h1 class=post__title>Mi Post-instalación de Linux Mint</h1><div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 <svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2020-10-01T00:00:00Z>2020-10-01</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/linux/ rel=category>linux</a>
 </span>
-</div></div>
-</header>
-<figure class="post__thumbnail thumbnail">
+</div></div></header><figure class="post__thumbnail thumbnail">
 <img class=thumbnail__image src=/images/20200425_mint_post_install_00.jpg alt="Mi Post-instalación de Linux Mint">
-</figure>
-<div class="post__toc toc">
-<div class=toc__title>Índice</div>
-<div class=toc__menu>
+</figure><div class="post__toc toc">
+<div class=toc__title>Índice</div><div class=toc__menu>
 <nav id=TableOfContents>
 <ul>
 <li><a href=#vivaldi-navegador-web>Vivaldi (Navegador web)</a>
 <ul>
-<li><a href=#telegram-desktop-mensajería-instantanea-y>Telegram Desktop (Mensajería instantanea y&mldr;)</a></li>
-</ul>
-</li>
-<li><a href=#keeweb-gestor-de-contraseñas>Keeweb (Gestor de contraseñas)</a></li>
-<li><a href=#insync-sincronizador-de-archivos>Insync (Sincronizador de archivos)</a></li>
-<li><a href=#emacs-editor-de-texto>Emacs (Editor de texto)</a></li>
-<li><a href=#touchpad-indicator-gestor-táctil-portatil>Touchpad Indicator (Gestor táctil portatil)</a>
+<li><a href=#telegram-desktop-mensajería-instantanea-y>Telegram Desktop (Mensajería instantanea y&mldr;)</a></li></ul></li><li><a href=#keeweb-gestor-de-contraseñas>Keeweb (Gestor de contraseñas)</a></li><li><a href=#insync-sincronizador-de-archivos>Insync (Sincronizador de archivos)</a></li><li><a href=#emacs-editor-de-texto>Emacs (Editor de texto)</a></li><li><a href=#touchpad-indicator-gestor-táctil-portatil>Touchpad Indicator (Gestor táctil portatil)</a>
 <ul>
-<li><a href=#inkscape-diseño-vectorial>Inkscape (Diseño vectorial)</a></li>
-<li><a href=#rclone-sincronizar-nubes-desde-terminal>Rclone (Sincronizar nubes desde terminal)</a></li>
-<li><a href=#zerotier-virtual-vpn>Zerotier (Virtual VPN)</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</div><div class="content post__content clearfix">
-<p>Hay cientos de artículos sobre post-instalaciones de sistemas operativos. Este sólo pretendo que me sirva de guía para mi en las futuras instalaciones de linux Mint, aunque si le puede ayudar a alguien&mldr;</p>
-<h2 id=vivaldi-navegador-web>Vivaldi (Navegador web)</h2>
-<p>Después de la polémica creada sobre el navegador Brave, he cambiado a <a href=https://vivaldi.com>Vivaldi</a> por la privacidad y todas las funciones que tiene. Rápido, sencillo y potente&mldr;</p>
-<h3 id=telegram-desktop-mensajería-instantanea-y>Telegram Desktop (Mensajería instantanea y&mldr;)</h3>
-<p>Mis usos de Telegram los puedes ver en este post <a href=https://sherblog.pro/telegram-vs-whatsapp/>Whatsapp Vs Telegram</a> y la instalación es tan simple como descargar <a href=https://telegram.org/dl/desktop/linux>Telegram</a>, descomprimir el archivo y ejecutar la aplicación desde la carpeta descomprimida (Tambien es posible instalarlo desde el &ldquo;Gestor de software&rdquo; de Linux Mint. Es posible fijar la aplicación a la barra de inicio o crear un lanzador en el escritorio si no eres de los de abrir las aplicaciones desde el teclado&mldr;</p>
-<h2 id=keeweb-gestor-de-contraseñas>Keeweb (Gestor de contraseñas)</h2>
-<p>Descargamos el paquete .deb desde la web de <a href=https://keeweb.info>Keeweb</a> y lo instalamos manualmente. Con esto ya puedo acceder a todos los nombres de usuario y contraseñas que tengo guardadas en una archivo de <a href=https://drive.google.com/>Google Drive</a>.</p>
-<h2 id=insync-sincronizador-de-archivos>Insync (Sincronizador de archivos)</h2>
-<p>La mayor parte de los archivos con los que trabajo a diario están en <a href=https://drive.google.com/>Google Drive</a>. La forma más sencilla que conozco para trabajar con estos archivos es mediante el uso de <a href="https://www.insynchq.com/downloads?start=true">Insync</a>.</p>
-<p>Es importante que las carpetas sincronizadas de Google Drive se ubiquen dentro de la ruta &ldquo;/home/sherlockes/Google_Drive/&rdquo; para que el resto de aplicaciones puedan acceder a los archivos de configuración</p>
-<h2 id=emacs-editor-de-texto>Emacs (Editor de texto)</h2>
-<p>Desde el repositorio de paquetes de Linux Mint aunque no sea la última versión. El archivo de configuración de Emacs llamado &ldquo;.emacs&rdquo; se creará en &ldquo;/home/usuario/&rdquo; y tendrá el siguiente contenido.</p>
-<pre tabindex=0><code>(setq user-init-file &quot;/home/sherlockes/Google_Drive/SherloScripts/emacs/.emacs&quot;)
-(setq user-emacs-directory &quot;/home/sherlockes/Google_Drive/SherloScripts/emacs/.emacs.d/&quot;)
-(setq default-directory &quot;/home/sherlockes/&quot;)
-(setenv &quot;HOME&quot; &quot;/home/sherlockes/&quot;)
+<li><a href=#inkscape-diseño-vectorial>Inkscape (Diseño vectorial)</a></li><li><a href=#rclone-sincronizar-nubes-desde-terminal>Rclone (Sincronizar nubes desde terminal)</a></li><li><a href=#zerotier-virtual-vpn>Zerotier (Virtual VPN)</a></li></ul></li></ul></nav></div></div><div class="content post__content clearfix">
+<p>Hay cientos de artículos sobre post-instalaciones de sistemas operativos. Este sólo pretendo que me sirva de guía para mi en las futuras instalaciones de linux Mint, aunque si le puede ayudar a alguien&mldr;</p><h2 id=vivaldi-navegador-web>Vivaldi (Navegador web)</h2><p>Después de la polémica creada sobre el navegador Brave, he cambiado a <a href=https://vivaldi.com>Vivaldi</a> por la privacidad y todas las funciones que tiene. Rápido, sencillo y potente&mldr;</p><h3 id=telegram-desktop-mensajería-instantanea-y>Telegram Desktop (Mensajería instantanea y&mldr;)</h3><p>Mis usos de Telegram los puedes ver en este post <a href=https://sherblog.pro/telegram-vs-whatsapp/>Whatsapp Vs Telegram</a> y la instalación es tan simple como descargar <a href=https://telegram.org/dl/desktop/linux>Telegram</a>, descomprimir el archivo y ejecutar la aplicación desde la carpeta descomprimida (Tambien es posible instalarlo desde el &ldquo;Gestor de software&rdquo; de Linux Mint. Es posible fijar la aplicación a la barra de inicio o crear un lanzador en el escritorio si no eres de los de abrir las aplicaciones desde el teclado&mldr;</p><h2 id=keeweb-gestor-de-contraseñas>Keeweb (Gestor de contraseñas)</h2><p>Descargamos el paquete .deb desde la web de <a href=https://keeweb.info>Keeweb</a> y lo instalamos manualmente. Con esto ya puedo acceder a todos los nombres de usuario y contraseñas que tengo guardadas en una archivo de <a href=https://drive.google.com/>Google Drive</a>.</p><h2 id=insync-sincronizador-de-archivos>Insync (Sincronizador de archivos)</h2><p>La mayor parte de los archivos con los que trabajo a diario están en <a href=https://drive.google.com/>Google Drive</a>. La forma más sencilla que conozco para trabajar con estos archivos es mediante el uso de <a href="https://www.insynchq.com/downloads?start=true">Insync</a>.</p><p>Es importante que las carpetas sincronizadas de Google Drive se ubiquen dentro de la ruta &ldquo;/home/sherlockes/Google_Drive/&rdquo; para que el resto de aplicaciones puedan acceder a los archivos de configuración</p><h2 id=emacs-editor-de-texto>Emacs (Editor de texto)</h2><p>Desde el repositorio de paquetes de Linux Mint aunque no sea la última versión. El archivo de configuración de Emacs llamado &ldquo;.emacs&rdquo; se creará en &ldquo;/home/usuario/&rdquo; y tendrá el siguiente contenido.</p><pre tabindex=0><code>(setq user-init-file &#34;/home/sherlockes/Google_Drive/SherloScripts/emacs/.emacs&#34;)
+(setq user-emacs-directory &#34;/home/sherlockes/Google_Drive/SherloScripts/emacs/.emacs.d/&#34;)
+(setq default-directory &#34;/home/sherlockes/&#34;)
+(setenv &#34;HOME&#34; &#34;/home/sherlockes/&#34;)
 (load user-init-file)
-</code></pre><h2 id=touchpad-indicator-gestor-táctil-portatil>Touchpad Indicator (Gestor táctil portatil)</h2>
-<p>Para los que somos un poco manazas es fácil que se nos vaya algún pulgar al táctil del portatil mientras escribimos, de forma que nos mueve el puntero a otro punto del documento de forma que, como agaches un momento la cabeza&mldr; ya no estás escribiendo en el punto que lo estabas haciendo.</p>
-<p>Gracias a <a href=https://www.atareao.es>Atareao</a> por haber creado y mantenido <a href=https://www.atareao.es/aplicacion/touchpad-indicator-para-ubuntu/#>Touchpad Indicator</a>, una sencilla utilidad para linux con la que gestionar el panel táctil de los portátiles con múltiples funciones.</p>
-<p>La instalación es tan sencilla como añadir el repositorio, actualizarlo e instalar la aplicación.</p>
-<pre tabindex=0><code>sudo add-apt-repository ppa:atareao/atareao
+</code></pre><h2 id=touchpad-indicator-gestor-táctil-portatil>Touchpad Indicator (Gestor táctil portatil)</h2><p>Para los que somos un poco manazas es fácil que se nos vaya algún pulgar al táctil del portatil mientras escribimos, de forma que nos mueve el puntero a otro punto del documento de forma que, como agaches un momento la cabeza&mldr; ya no estás escribiendo en el punto que lo estabas haciendo.</p><p>Gracias a <a href=https://www.atareao.es>Atareao</a> por haber creado y mantenido <a href=https://www.atareao.es/aplicacion/touchpad-indicator-para-ubuntu/#>Touchpad Indicator</a>, una sencilla utilidad para linux con la que gestionar el panel táctil de los portátiles con múltiples funciones.</p><p>La instalación es tan sencilla como añadir el repositorio, actualizarlo e instalar la aplicación.</p><pre tabindex=0><code>sudo add-apt-repository ppa:atareao/atareao
 sudo apt-get update
 sudo apt-get install touchpad-indicator
-</code></pre><h3 id=inkscape-diseño-vectorial>Inkscape (Diseño vectorial)</h3>
-<p>Desde que empece a trabajar con el, apenas abro Gimp y me he acostumbrado a crear imágenes vectoriales mucho más ligeras y fáciles de redimensionar sin perder calidad.</p>
-<p>En el momento de escribir esto, es posible instalar la versión 0.92 de <a href=https://inkscape.org/es/release/>Inkscape</a> desde el &ldquo;Gestor de Software&rdquo; de Linux Mint o Instalar la versión 1 desde la web del creador en formato AppImage o FlatPak. Personalmente, no me importa renunciar a las últimas novedades en favor de la integración, tamaño y ligereza de la versión mediante repositorios.</p>
-<h3 id=rclone-sincronizar-nubes-desde-terminal>Rclone (Sincronizar nubes desde terminal)</h3>
-<p>Hasta ahora he escrito varios <a href=https://sherblog.pro/tags/rclone/>artículos sobre Rclone</a> en los que explico algunos de mis usos de esta fantástica utilidad para conectar con casi cualquiera de las nubes públicas desde nuestra tarminal. Tal y como podemos comprobar en la web de <a href=https://rclone.org/downloads/>Rclone</a> la instalación es tan simple como una línea de terminal.</p>
-<pre tabindex=0><code>curl https://rclone.org/install.sh | sudo bash
-</code></pre><p>La configuración completa de todas mis nubes la realizo copiando el archivo de respaldo &ldquo;rclone.conf&rdquo; al directorio &ldquo;usuario/.config/rclone/rclone.conf&rdquo;</p>
-<h3 id=zerotier-virtual-vpn>Zerotier (Virtual VPN)</h3>
-<p>La instalación es tan sencilla como <code>curl -s https://install.zerotier.com | sudo bash</code> y añadimos el cliente a la red que tengamos creada en <a href=https://www.zerotier.com/download/>Zerotier</a> mediante el comando <code>sudo zerotier-cli join 78898a1265hfg34b</code></p>
-<p>Y por ahora esto es todo lo que tengo instalado en mi ordenador, poco a poco iré actualizando este post con todas las utilidades y configuraciones que vaya necesitando.</p>
-</div>
-<footer class=post__footer>
+</code></pre><h3 id=inkscape-diseño-vectorial>Inkscape (Diseño vectorial)</h3><p>Desde que empece a trabajar con el, apenas abro Gimp y me he acostumbrado a crear imágenes vectoriales mucho más ligeras y fáciles de redimensionar sin perder calidad.</p><p>En el momento de escribir esto, es posible instalar la versión 0.92 de <a href=https://inkscape.org/es/release/>Inkscape</a> desde el &ldquo;Gestor de Software&rdquo; de Linux Mint o Instalar la versión 1 desde la web del creador en formato AppImage o FlatPak. Personalmente, no me importa renunciar a las últimas novedades en favor de la integración, tamaño y ligereza de la versión mediante repositorios.</p><h3 id=rclone-sincronizar-nubes-desde-terminal>Rclone (Sincronizar nubes desde terminal)</h3><p>Hasta ahora he escrito varios <a href=https://sherblog.pro/tags/rclone/>artículos sobre Rclone</a> en los que explico algunos de mis usos de esta fantástica utilidad para conectar con casi cualquiera de las nubes públicas desde nuestra tarminal. Tal y como podemos comprobar en la web de <a href=https://rclone.org/downloads/>Rclone</a> la instalación es tan simple como una línea de terminal.</p><pre tabindex=0><code>curl https://rclone.org/install.sh | sudo bash
+</code></pre><p>La configuración completa de todas mis nubes la realizo copiando el archivo de respaldo &ldquo;rclone.conf&rdquo; al directorio &ldquo;usuario/.config/rclone/rclone.conf&rdquo;</p><h3 id=zerotier-virtual-vpn>Zerotier (Virtual VPN)</h3><p>La instalación es tan sencilla como <code>curl -s https://install.zerotier.com | sudo bash</code> y añadimos el cliente a la red que tengamos creada en <a href=https://www.zerotier.com/download/>Zerotier</a> mediante el comando <code>sudo zerotier-cli join 78898a1265hfg34b</code></p><p>Y por ahora esto es todo lo que tengo instalado en mi ordenador, poco a poco iré actualizando este post con todas las utilidades y configuraciones que vaya necesitando.</p></div><footer class=post__footer>
 <div class="content post__content clearfix">
-<h3>Otros de mís artículos que te pueden interesar</h3>
-<ul>
-<li><a href=/desactivar-el-touchpad-en-linux-mint/>Desactivar el TouchPad en Linux Mint</a></li>
-<li><a href=/portatil-viejo-nueva-vida.-mi-vuelta-a-linux/>Portatil viejo, nueva vida. Mi vuelta a Linux</a></li>
-<li><a href=/usando-un-tunel-ssh-para-aceder-a-un-servidor-remoto/>Usando un tunel ssh para aceder a un servidor remoto</a></li>
-<li><a href=/cambiar-el-orden-de-los-elementos-del-grub/>Cambiar el orden de los elementos del grub</a></li>
-<li><a href=/extrayendo-la-portada-de-un-pdf/>Extrayendo la portada de un pdf</a></li>
-</ul>
-</div>
-<div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
+<h3>Otros de mís artículos que te pueden interesar</h3><ul>
+<li><a href=/desactivar-el-touchpad-en-linux-mint/>Desactivar el TouchPad en Linux Mint</a></li><li><a href=/portatil-viejo-nueva-vida.-mi-vuelta-a-linux/>Portatil viejo, nueva vida. Mi vuelta a Linux</a></li><li><a href=/usando-un-tunel-ssh-para-aceder-a-un-servidor-remoto/>Usando un tunel ssh para aceder a un servidor remoto</a></li><li><a href=/cambiar-el-orden-de-los-elementos-del-grub/>Cambiar el orden de los elementos del grub</a></li><li><a href=/extrayendo-la-portada-de-un-pdf/>Extrayendo la portada de un pdf</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
 <ul class=tags__list>
 <li class=tags__item>
 <a class="tags__link btn" href=/tags/linux-mint/ rel=tag>linux mint</a>
-</li>
-</ul>
-</div>
-</footer>
-</article>
-</main>
-<nav class="pager flex">
+</li></ul></div></footer></article></main><nav class="pager flex">
 <div class="pager__item pager__item--prev">
 <a class=pager__link href=/controlar-las-luces-de-philips-hue-con-un-script-en-bash/ rel=prev>
 <span class=pager__subtitle>«&#8201;Anterior</span>
-<p class=pager__title>Controlar las luces de Philips hue con un script en bash</p>
-</a>
-</div>
-<div class="pager__item pager__item--next">
+<p class=pager__title>Controlar las luces de Philips hue con un script en bash</p></a>
+</div><div class="pager__item pager__item--next">
 <a class=pager__link href=/cambiar-el-orden-de-los-elementos-del-grub/ rel=next>
 <span class=pager__subtitle>Siguiente&#8201;»</span>
-<p class=pager__title>Cambiar el orden de los elementos del grub</p>
-</a>
-</div>
-</nav>
-</div>
-</div>
-<footer class=footer>
+<p class=pager__title>Cambiar el orden de los elementos del grub</p></a>
+</div></nav></div></div><footer class=footer>
 <div class="container footer__container flex">
 <div class=footer__copyright>
 &copy; 2022 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
 </br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a>
-</div>
-</div>
-</footer>
-</div>
-<script async defer src=/js/menu.js></script>
-<script src=/js/custom.js></script></body>
-</html>
+</div></div></footer></div><script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body></html>
