@@ -15,13 +15,10 @@ tags:
 draft: true
 weight: 5
 ---
-Resumen de introducción
+Guardar la configuración de Home Assistant en un repositorio de GitHub puede llegar a ser muy útil de cara a compartirla o ver los parámetros que han sido modificados.
 <!--more-->
+Antes de empezar, dejar claro que tengo Home Assistant corriendo sobre Docker instalado en una Raspberry Pi 4 con Raspbian Lite.
 
-``` bash
-scp -r -P 222 root@192.168.10.202:config/*.yaml ~/config
-```
-### Metodo 2
 - Installar el Addon “SSH & Web Terminal“ desde la tienda del supervidor de Home Assistant
  - Poner el password que deseemos para la conexión
  - Asignar el puerto 22 del contenedor al 222 del host
@@ -69,14 +66,19 @@ git remote add origin git@github.com:USUARIO_GITHUB/NOMBRE_REPO_GITHUB.git
   ``` bash
   git config core.sshCommand "ssh -i /config/.ssh/id_rsa -F /dev/null"
   ```
-
- > Copiar el contenido de "id_rsa.pub" desde nano al portapapeles puede ser un profundo dolor de cabeza, la forma más sencilla es, una vez dentro del directorio ".ssh" mostrar el contenido de la llave mediante `cat id_rsa.pub`. Con Ctrl + Mays pulsado arrastramos con el ratón para releccionar todo el contenido de la llave y lo copiamos mediante "Ctrl + Mays + c".
-
+  - Actualizamos el repositorio remoto mediante `git push -u origin master`
   
+ > Copiar el contenido de "id_rsa.pub" desde nano al portapapeles puede ser un profundo dolor de cabeza, la forma más sencilla es, una vez dentro del directorio ".ssh" mostrar el contenido de la llave mediante `cat id_rsa.pub`. Con Ctrl + Mays pulsado arrastramos con el ratón para releccionar todo el contenido de la llave y lo copiamos mediante "Ctrl + Mays + c".
  
-
-ssh root@192.168.10.202 -p 222 'bash -s' < ~/SherloScripts/bash/ha_gitpush.sh
-
+- Para conseguir que la configuración de Home Assistant se guarde todos los días en el repositorio de GitHub he añadido las siguiente líneas al script [pidiario.sh] que la Raspberry (No el contenedor de Home Assistant)
+``` bash
+ssh -T root@192.168.10.202 -p 222 <<'ENDSSH'
+cd /config
+git add .
+git commit -m "Configuración HA de `date +'%d-%m-%Y %H:%M:%S'`"
+git push -u origin master
+ENDSSH
+```
 
 ![image-01]
 
@@ -84,7 +86,9 @@ ssh root@192.168.10.202 -p 222 'bash -s' < ~/SherloScripts/bash/ha_gitpush.sh
 - [Linux Hint - Scp different port](https://linuxhint.com/scp-different-port/)
 - [Peyanski - Home Asistant backup to github](https://peyanski.com/automatic-home-assistant-backup-to-github/)
 - [HomeAssistan - Shell command](https://www.home-assistant.io/integrations/shell_command/)
-[link]: https://www.google.es
+- [StackOverFlow - Ssh remote machine](https://stackoverflow.com/questions/305035/how-to-use-ssh-to-run-a-local-shell-script-on-a-remote-machine)
+
+[pidiario.sh]: https://raw.githubusercontent.com/sherlockes/SherloScripts/master/bash/pidiario.sh
 
 
 [image-01]: /images/20220224_homeassistant_github_01.jpg
