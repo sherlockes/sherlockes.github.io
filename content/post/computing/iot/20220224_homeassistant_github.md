@@ -1,31 +1,31 @@
 ---
-title: "Homeassistant github"
-date: "2022-02-24"
+title: "Configuración de Home Assistant en github"
+date: "2022-03-04"
 creation: "2022-02-24"
-description: "Homeassistant github"
+description: "En esta ocasión dejo como he creado un repositorio de GitHub en el que se guardan automáticamente todos los días los archivos de configuración de Home Assistant"
 thumbnail: "images/20220224_homeassistant_github_00.jpg"
 disable_comments: true
 authorbox: false
 toc: false
 mathjax: false
 categories:
-- "computing"
+- "home assistant"
 tags:
-- "bash"
-draft: true
+- "git"
+draft: false
 weight: 5
 ---
-Guardar la configuración de Home Assistant en un repositorio de GitHub puede llegar a ser muy útil de cara a compartirla o ver los parámetros que han sido modificados.
+Guardar la configuración de Home Assistant en un repositorio de GitHub puede llegar a ser muy útil de cara a compartirla o ver los parámetros que han sido modificados. Esta es la forma en la que mi Raspberry lo realiza a diario.
 <!--more-->
 Antes de empezar, dejar claro que tengo Home Assistant corriendo sobre Docker instalado en una Raspberry Pi 4 con Raspbian Lite.
 
-- Installar el Addon “SSH & Web Terminal“ desde la tienda del supervidor de Home Assistant
+- Instalar el Addon “SSH & Web Terminal“ desde la tienda del supervidor de Home Assistant
  - Poner el password que deseemos para la conexión
  - Asignar el puerto 22 del contenedor al 222 del host
  - Guardar y arrancar el complemento
  - Activar el inicio en el aranque, vigilancia, actualización automática y mostrar en la barra lateral
 - Crear un repositorio privado en GitHub (Sin añadir el archivo ".gitignore")
-- Desde la barra lateral de Home Assistan abrimos la terminal.
+- Desde la barra lateral de Home Assistant abrimos la terminal.
 - Accedemos al directorio "config" mediante `cd config`
 - Creamos el archivo ".gitignore" mediante `nano .gitignore`
 - En el archivo copiamos el siguiente texto
@@ -42,12 +42,6 @@ Antes de empezar, dejar claro que tengo Home Assistant corriendo sobre Docker in
 
 # No queremos incluir el archivo "secrets.yaml" 
 secrets.yaml
-
-# Ignorar estos archivos/carpetas
-.storage
-.cloud
-.google.token 
-home-assistant.log
 ```
 - Para guardar y salir "Ctrl + x" y luego "y"
 - Iniciamos el repositorio mediante `git init`
@@ -79,8 +73,7 @@ git commit -m "Configuración HA de `date +'%d-%m-%Y %H:%M:%S'`"
 git push -u origin master
 ENDSSH
 ```
-
-![image-01]
+Como este script se ejecuta a diario gracias a una llamada desde el cron se actualizará correspondientemente nuestro repositorio con la configuración de Home Assistant.
 
 ### Enlaces de interés
 - [Linux Hint - Scp different port](https://linuxhint.com/scp-different-port/)
