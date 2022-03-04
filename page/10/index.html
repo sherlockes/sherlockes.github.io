@@ -57,6 +57,21 @@
 <p>La productividad pasa por la documentación. <a href=https://twitter.com/sherblogpro>@sherlockes</a>.</p><hr>
 </div><article class="list__item post">
 <figure class="list__thumbnail thumbnail">
+<a class=thumbnail__link href=/subtotales-en-google-sheets/>
+<img class=thumbnail__image src=/images/20191220_subtotales_google_sheets_00.jpg alt="Subtotales en Google Sheets">
+</a>
+</figure><header class=list__header>
+<h2 class="list__title post__title">
+<a href=/subtotales-en-google-sheets/ rel=bookmark>
+Subtotales en Google Sheets
+</a>
+</h2><div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2020-01-02T00:00:00Z>2020-01-02</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/productividad/ rel=category>productividad</a>
+</span>
+</div></div></header><div class="content list__excerpt post__content clearfix">
+<p>En este post comentaré las dos formas que utilizo en mis archivos de Google Sheets para hacer cálculos de subtotales de forma &ldquo;dinamica&rdquo;, es decir, en función del valor de otra columna. Para ello utilizo las funciones &ldquo;filter&rdquo; y &ldquo;sumar.si&rdquo;.</p></div></article><article class="list__item post">
+<figure class="list__thumbnail thumbnail">
 <a class=thumbnail__link href=/extrayendo-la-portada-de-un-pdf/>
 <img class=thumbnail__image src=/images/20181210_redimensionar_linea_comando_00.jpg alt="Extrayendo la portada de un pdf">
 </a>
@@ -145,22 +160,7 @@ Editando archivos markdown en emacs
 <svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2019-06-27T00:00:00Z>2019-06-27</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/computing/ rel=category>computing</a>
 </span>
 </div></div></header><div class="content list__excerpt post__content clearfix">
-<p>En mi lucha por utilizar <a href=https://www.gnu.org/software/emacs/>Emacs</a> en todo mi usos con editor de texto aquí dejo reflejado como para editar archivos &ldquo;Markdown&rdquo; tiene muchas posibilidades. No pretendo hacer una extensa guía, sólo los comandos que empleo habitualmente.</p></div></article><article class="list__item post">
-<figure class="list__thumbnail thumbnail">
-<a class=thumbnail__link href=/hugo-is-deprecated/>
-<img class=thumbnail__image src=/images/20190430_hugo_deprecated_00.jpg alt="Hugo is deprecated">
-</a>
-</figure><header class=list__header>
-<h2 class="list__title post__title">
-<a href=/hugo-is-deprecated/ rel=bookmark>
-Hugo is deprecated
-</a>
-</h2><div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2019-04-30T00:00:00Z>2019-04-30</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/hugo/ rel=category>hugo</a>
-</span>
-</div></div></header><div class="content list__excerpt post__content clearfix">
-<p>Cuando no eres un programador avanzado cualquier advertencia o fallo en el momento de la compilación en la fase de producción puede ser un fuerte dolor de cabeza, la función &ldquo;.Hugo&rdquo; parece que va a caer en desuso, a ver como puedo apañarlo&mldr;</p></div></article></main><div class=pagination>
+<p>En mi lucha por utilizar <a href=https://www.gnu.org/software/emacs/>Emacs</a> en todo mi usos con editor de texto aquí dejo reflejado como para editar archivos &ldquo;Markdown&rdquo; tiene muchas posibilidades. No pretendo hacer una extensa guía, sólo los comandos que empleo habitualmente.</p></div></article></main><div class=pagination>
 <a class="pagination__item pagination__item--prev btn" href=/page/9/>«</a>
 <span class="pagination__item pagination__item--current">10/26</span>
 <a class="pagination__item pagination__item--next btn" href=/page/11/>»</a>
@@ -168,7 +168,7 @@ Hugo is deprecated
 <div class="widget-recent widget">
 <h4 class=widget__title>Más Recientes</h4><div class=widget__content>
 <ul class=widget__list>
-<li class=widget__item><a class=widget__link href=/como-a%C3%B1ado-enlaces-en-hugo/>Como añado enlaces en Hugo</a></li><li class=widget__item><a class=widget__link href=/sincronizar-google-photos-desde-la-raspberry/>Sincronizar Google Photos desde la Raspberry</a></li><li class=widget__item><a class=widget__link href=/mi-uso-de-alias-en-bash/>Mi uso de alias en bash</a></li><li class=widget__item><a class=widget__link href=/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/>Mi gestión de los archivos de configuración</a></li><li class=widget__item><a class=widget__link href=/instalaci%C3%B3n-de-home-assistant-en-raspberry/>Instalación de Home Assistant en Raspberry</a></li><li class=widget__item><a class=widget__link href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li><li class=widget__item><a class=widget__link href=/usando-dired-en-emacs/>Usando Dired en Emacs</a></li><li class=widget__item><a class=widget__link href=/usb-externo-controlado-desde-puerto-gpio/>Usb externo controlado desde puerto Gpio</a></li><li class=widget__item><a class=widget__link href=/arquetipos-en-hugo-archetypes/>Arquetipos en Hugo (Archetypes)</a></li><li class=widget__item><a class=widget__link href=/hugo-con-github-actions/>Hugo con Github actions</a></li></ul></div></div><div class="widget-categories widget">
+<li class=widget__item><a class=widget__link href=/configuraci%C3%B3n-de-home-assistant-en-github/>Configuración de Home Assistant en github</a></li><li class=widget__item><a class=widget__link href=/como-a%C3%B1ado-enlaces-en-hugo/>Como añado enlaces en Hugo</a></li><li class=widget__item><a class=widget__link href=/sincronizar-google-photos-desde-la-raspberry/>Sincronizar Google Photos desde la Raspberry</a></li><li class=widget__item><a class=widget__link href=/mi-uso-de-alias-en-bash/>Mi uso de alias en bash</a></li><li class=widget__item><a class=widget__link href=/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/>Mi gestión de los archivos de configuración</a></li><li class=widget__item><a class=widget__link href=/instalaci%C3%B3n-de-home-assistant-en-raspberry/>Instalación de Home Assistant en Raspberry</a></li><li class=widget__item><a class=widget__link href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li><li class=widget__item><a class=widget__link href=/usando-dired-en-emacs/>Usando Dired en Emacs</a></li><li class=widget__item><a class=widget__link href=/usb-externo-controlado-desde-puerto-gpio/>Usb externo controlado desde puerto Gpio</a></li><li class=widget__item><a class=widget__link href=/arquetipos-en-hugo-archetypes/>Arquetipos en Hugo (Archetypes)</a></li></ul></div></div><div class="widget-categories widget">
 <h4 class=widget__title>Categorías</h4><div class=widget__content>
 <ul class=widget__list>
 <li class=widget__item>
@@ -209,7 +209,7 @@ Hugo is deprecated
 <a class="widget-taglist__link widget__link btn" href=/tags/garmin/ title=garmin>garmin (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gdrive/ title=Gdrive>Gdrive (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gimp/ title=Gimp>Gimp (2)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/git/ title=git>git (2)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/git/ title=git>git (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/gmail/ title=gmail>gmail (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/google-chrome/ title="google chrome">google chrome (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/google-drive/ title="Google Drive">Google Drive (4)</a>
