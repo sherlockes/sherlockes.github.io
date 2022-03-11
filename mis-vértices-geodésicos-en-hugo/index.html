@@ -1,73 +1,5 @@
-<!doctype html><html class=no-js lang=es>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<title>Mis vértices geodésicos en Hugo - Sherblog</title><script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script>
-<meta name=description content="Todo lo que he tenido que aprender para poder incrustar de una forma sencilla, ágil y digna mis vértices en Hugo">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="http://www.sherblog.pro/images/20200512_mis_vertices_00.jpg">
-<meta name=twitter:title content="Mis vértices geodésicos en Hugo">
-<meta name=twitter:description content="Todo lo que he tenido que aprender para poder incrustar de una forma sencilla, ágil y digna mis vértices en Hugo">
-<meta name=twitter:creator content="@sherblogpro">
-<meta name=twitter:site content="sherblog.pro">
-<link rel=dns-prefetch href=//fonts.googleapis.com>
-<link rel=dns-prefetch href=//fonts.gstatic.com>
-<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
-<link rel=stylesheet href=/css/style.css>
-<link rel=stylesheet href=/css/custom.css>
-<link rel="shortcut icon" href=/favicon.ico>
-</head><body class=body>
-<div class="container container--outer">
-<header class=header>
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Mis vértices geodésicos en Hugo">
-<meta name=twitter:description content="Todo lo que he tenido que aprender para poder incrustar de una forma sencilla, ágil y digna mis vértices en Hugo">
-<div class=container>
-<div class=logo>
-<a class=logo__link href=/ title=Sherblog rel=home>
-<div class=logo__title>Sherblog</div><div class=logo__tagline>Sólo mi forma de hacer las cosas...</div></a>
-</div><nav class=menu>
-<button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
-<span class=menu__btn-title tabindex=-1>Menú</span>
-</button>
-<ul class=menu__list>
-<li class=menu__item>
-<a class=menu__link href=/post/computing/emacs/>
-<span class=menu__text>Emacs</span>
-</a>
-</li><li class="menu__item menu__item--active">
-<a class=menu__link href=/post/computing/hugo/>
-<span class=menu__text>Hugo</span>
-</a>
-</li><li class=menu__item>
-<a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/>
-<span class=menu__text>Mis vértices geodésicos</span>
-</a>
-</li><li class=menu__item>
-<a class=menu__link href=/post/computing/raspberry/>
-<span class=menu__text>Raspberry Pi desde cero</span>
-</a>
-</li></ul></nav></div></header><div class="wrapper flex">
-<div class=primary>
-<main class=main role=main>
-<article class=post>
-<header class=post__header>
-<h1 class=post__title>Mis vértices geodésicos en Hugo</h1><div class="post__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-03-01T00:00:00Z>2021-03-01</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/hugo/ rel=category>hugo</a>, <a class=meta__link href=/categories/vertices/ rel=category>vertices</a>
-</span>
-</div></div></header><figure class="post__thumbnail thumbnail">
-<img class=thumbnail__image src=/images/20200512_mis_vertices_00.jpg alt="Mis vértices geodésicos en Hugo">
-</figure><div class="post__toc toc">
-<div class=toc__title>Índice</div><div class=toc__menu>
-<nav id=TableOfContents>
-<ul>
-<li>
-<ul>
-<li><a href=#creación-de-una-plantilla>Creación de una plantilla</a></li><li><a href=#creación-del-archivo-gpx>Creación del archivo gpx</a></li><li><a href=#creación-de-una-imagen-para-el-vértice>Creación de una imagen para el vértice</a></li><li><a href=#listado-de-los-vértices-conquistados>Listado de los vértices conquistados</a></li><li><a href=#representación-en-un-mapa>Representación en un mapa</a></li><li><a href=#almacenamiento-de-las-imágenes>Almacenamiento de las imágenes</a></li></ul></li></ul></nav></div></div><div class="content post__content clearfix">
-<p>Hace más de dos años desde que visité mi ultimo vértice geodésico. Durante todo este tiempo el proyecto que empecé en el ya lejano 2008 lo he tenido aparcado por unos cuantos motivos&mldr;</p><ul>
-<li>Cierre de Panoramio (Donde tenía todas las fotos y panorámicas)</li><li>Abandono de Wordpress (En <a href=https://gohugo.io/>Hugo</a> no es todo tan sencillo)</li><li>Necesidad de pago en la API de Google Maps</li><li>Falta de tiempo</li></ul><p>Pues bien, al fin me he liado la manta a la cabeza y he conseguido sacar el tiempo suficiente para conseguir una solución digna al problema del archivo y representación de todos los vértices geodésicos a los que, hasta ahora, he conseguido llegar.</p><h3 id=creación-de-una-plantilla>Creación de una plantilla</h3><p>La documentación de <a href=https://gohugo.io/>Hugo</a> aunque es bastante extensa, en algunas ocasiones resulta complicada de seguir. Pretendo crear una plantilla común para los vértices geodésicos en los que únicamente cambien una serie de parámetros propios de cada vértice y un pequeño artículo del mismo. De esta forma, las imágenes y mapas de cada uno de los post se generarán automáticamente resultando muy sencillo así realizar una modificación común a todos.</p><p>En la cabecera de cada archivo *.md con en que se genera el post del vértice he incluido, además de los parámetros propios del tema otros propios del vértice.</p><pre tabindex=0><code>js: https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js
+<!doctype html><html class=no-js lang=es><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><title>Mis vértices geodésicos en Hugo - Sherblog</title><script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script><meta name=description content="Todo lo que he tenido que aprender para poder incrustar de una forma sencilla, ágil y digna mis vértices en Hugo"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://www.sherblog.pro/images/20200512_mis_vertices_00.jpg"><meta name=twitter:title content="Mis vértices geodésicos en Hugo"><meta name=twitter:description content="Todo lo que he tenido que aprender para poder incrustar de una forma sencilla, ágil y digna mis vértices en Hugo"><meta name=twitter:creator content="@sherblogpro"><meta name=twitter:site content="sherblog.pro"><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//fonts.gstatic.com><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"><link rel=stylesheet href=/css/style.css><link rel=stylesheet href=/css/custom.css><link rel="shortcut icon" href=/favicon.ico></head><body class=body><div class="container container--outer"><header class=header><meta name=twitter:card content="summary"><meta name=twitter:title content="Mis vértices geodésicos en Hugo"><meta name=twitter:description content="Todo lo que he tenido que aprender para poder incrustar de una forma sencilla, ágil y digna mis vértices en Hugo"><div class=container><div class=logo><a class=logo__link href=/ title=Sherblog rel=home><div class=logo__title>Sherblog</div><div class=logo__tagline>Sólo mi forma de hacer las cosas...</div></a></div><nav class=menu><button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menú</span></button><ul class=menu__list><li class=menu__item><a class=menu__link href=/post/computing/emacs/><span class=menu__text>Emacs</span></a></li><li class="menu__item menu__item--active"><a class=menu__link href=/post/computing/hugo/><span class=menu__text>Hugo</span></a></li><li class=menu__item><a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/><span class=menu__text>Mis vértices geodésicos</span></a></li><li class=menu__item><a class=menu__link href=/post/computing/raspberry/><span class=menu__text>Raspberry Pi desde cero</span></a></li></ul></nav></div></header><div class="wrapper flex"><div class=primary><main class=main role=main><article class=post><header class=post__header><h1 class=post__title>Mis vértices geodésicos en Hugo</h1><div class="post__meta meta"><div class="meta__item-datetime meta__item"><svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-03-01T00:00:00Z>2021-03-01</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/hugo/ rel=category>hugo</a>, <a class=meta__link href=/categories/vertices/ rel=category>vertices</a></span></div></div></header><figure class="post__thumbnail thumbnail"><img class=thumbnail__image src=/images/20200512_mis_vertices_00.jpg alt="Mis vértices geodésicos en Hugo"></figure><div class="post__toc toc"><div class=toc__title>Índice</div><div class=toc__menu><nav id=TableOfContents><ul><li><ul><li><a href=#creación-de-una-plantilla>Creación de una plantilla</a></li><li><a href=#creación-del-archivo-gpx>Creación del archivo gpx</a></li><li><a href=#creación-de-una-imagen-para-el-vértice>Creación de una imagen para el vértice</a></li><li><a href=#listado-de-los-vértices-conquistados>Listado de los vértices conquistados</a></li><li><a href=#representación-en-un-mapa>Representación en un mapa</a></li><li><a href=#almacenamiento-de-las-imágenes>Almacenamiento de las imágenes</a></li></ul></li></ul></nav></div></div><div class="content post__content clearfix"><p>Hace más de dos años desde que visité mi ultimo vértice geodésico. Durante todo este tiempo el proyecto que empecé en el ya lejano 2008 lo he tenido aparcado por unos cuantos motivos&mldr;</p><ul><li>Cierre de Panoramio (Donde tenía todas las fotos y panorámicas)</li><li>Abandono de Wordpress (En <a href=https://gohugo.io/>Hugo</a> no es todo tan sencillo)</li><li>Necesidad de pago en la API de Google Maps</li><li>Falta de tiempo</li></ul><p>Pues bien, al fin me he liado la manta a la cabeza y he conseguido sacar el tiempo suficiente para conseguir una solución digna al problema del archivo y representación de todos los vértices geodésicos a los que, hasta ahora, he conseguido llegar.</p><h3 id=creación-de-una-plantilla>Creación de una plantilla</h3><p>La documentación de <a href=https://gohugo.io/>Hugo</a> aunque es bastante extensa, en algunas ocasiones resulta complicada de seguir. Pretendo crear una plantilla común para los vértices geodésicos en los que únicamente cambien una serie de parámetros propios de cada vértice y un pequeño artículo del mismo. De esta forma, las imágenes y mapas de cada uno de los post se generarán automáticamente resultando muy sencillo así realizar una modificación común a todos.</p><p>En la cabecera de cada archivo *.md con en que se genera el post del vértice he incluido, además de los parámetros propios del tema otros propios del vértice.</p><pre tabindex=0><code>js: https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js
 css: https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css
 
 mapa_alto: 400
@@ -147,8 +79,7 @@ echo &#39;&lt;/gpx&gt;&#39; &gt;&gt; $vertices_gpx
 &lt;/li&gt;
 {{ end }}
 &lt;br&gt;
-</code></pre><p>De esta forma tan simple el script:</p><ul>
-<li>Busca todos archiculos dentro de la carpeta &ldquo;vértices&rdquo;</li><li>Genera un enlace con el nombre del vértice y la &ldquo;fecha de conquista&rdquo;</li><li>Si el vértice tiene imagen, genera un enlace a la imagen</li><li>Si el vértice tiene foto panorámica, genera un enlace a la misma</li><li>Si tiene un track en garmin connect o wikiloc, genera un enlace</li></ul><p>Así tenemos un listado con una línea por cada uno de los vértices que podremos incluir en cualquier artículo de la web con únicamente escribir</p><pre tabindex=0><code>{{ lista_vertices }}
+</code></pre><p>De esta forma tan simple el script:</p><ul><li>Busca todos archiculos dentro de la carpeta &ldquo;vértices&rdquo;</li><li>Genera un enlace con el nombre del vértice y la &ldquo;fecha de conquista&rdquo;</li><li>Si el vértice tiene imagen, genera un enlace a la imagen</li><li>Si el vértice tiene foto panorámica, genera un enlace a la misma</li><li>Si tiene un track en garmin connect o wikiloc, genera un enlace</li></ul><p>Así tenemos un listado con una línea por cada uno de los vértices que podremos incluir en cualquier artículo de la web con únicamente escribir</p><pre tabindex=0><code>{{ lista_vertices }}
 </code></pre><h3 id=representación-en-un-mapa>Representación en un mapa</h3><p>Para dibujar sobre un mapa todos los vértices alcanzados e incurstarlos en la web he utilizado <a href=https://openlayers.org>openlayers</a> por ser de código abierto y de ua complejidad de uso asequible para mi escaso nivel de Javascript.</p><p>Para poder trabajar con la librería <a href=https://openlayers.org>openlayers</a> he introducido dos parámetros de configuración en el artículo correspondiente a cada vértice.</p><pre tabindex=0><code>js: https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js
 css: https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css
 </code></pre><p>Con el fin de incluir de forma dinámica la clase y hora de estilos de la librería sin necesidad de tenerla incrustada en el servidor. Además, he modificado la plantilla &ldquo;layouts/default/baseof.html&rdquo; incluyendo el siguiente código en la parte final del &ldquo;head&rdquo;.</p><pre tabindex=0><code>{{ if .Params.css }}
@@ -162,28 +93,6 @@ css: https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.
 	{{ end }}
 	{{ if .Params.js }} &lt;script src=&#34;{{ .Params.js }}&#34;&gt;&lt;/script&gt; {{ end }}
 </code></pre><p>De esta manera, cuando el motor de <a href=https://gohugo.io/>Hugo</a> vaya a publicar un artículo incrustará tambien la clase y hoja de estilos de openlayers sólo si estos están incluidos dentro de los parámetros &ldquo;js&rdquo; y &ldquo;css&rdquo; (con el consiguiente ahorro de ancho de banda). Adicionalmente ajustará el mapa a mostrar a todo el ancho de la web y al alto que se incluya como parámetro en cada artículo particular.</p><p>Nuevamente haré uso de los <a href=https://gohugo.io/content-management/shortcodes/>shortcodes</a> de <a href=https://gohugo.io/>Hugo</a> para crear el archivo <a href=https://github.com/sherlockes/SherloScripts/blob/master/hugo/shortcodes/mapa_vertice.html>mapa_vertice.html</a> con lo que la incusión de un mapa con la información del vértice geodésico en un artículo se realizará con la siguiente línea.</p><pre tabindex=0><code>{{ mapa_vertice }}
-</code></pre><p>Puedes encontrar todo el código en mi <a href=https://github.com/sherlockes/SherloScripts>repositorio</a> de GitHub.</p><h3 id=almacenamiento-de-las-imágenes>Almacenamiento de las imágenes</h3><p>Este punto también ha resultado un profundo dolor de cabeza. Hasta su cierre tenía publicadas todas las imágenes y panorámicas en Panoramio. Las sigo teniendo en Google Photos pero no he sido capaz de incrustarlas en el blog desde aquí por lo que me he visto obligado a buscar un nuevo alojamiento para todas estas imágenes.</p><ul>
-<li><em>Usar Github como alojamiento</em> - Aunque factible, presenta una limitación por el tamaño máximo del repositorio a 1 gb por lo que queda descartada la opción.</li><li><em>Usar Internet Archive como alojamiento</em> - Lo intenté, pero el modo de subir las fotografías, gestionarlas y organizarlas es simplemente pésimo por lo que termine desestimando está opción.</li><li><em>Usar Imgur como alojamiento</em> - Después de comprobar en funcionamiento y capacidad de varios servicios web he probado por escoger está opción. El espacio de almacenamiento es ilimitado con el límite de 20mb por fotografía y 50 fotografías por hora lo cual es más que suficiente para mis necesidades.</li></ul></div><footer class=post__footer>
-<div class="content post__content clearfix">
-<h3>Otros de mís artículos que te pueden interesar</h3><ul>
-<li><a href=/lista-de-art%C3%ADculos-por-categor%C3%ADa-en-hugo/>Lista de artículos por categoría en Hugo</a></li><li><a href=/incrustar-texto-externo-en-hugo/>Incrustar texto externo en Hugo</a></li><li><a href=/insertar-comentarios-en-hugo/>Insertar comentarios en Hugo</a></li><li><a href=/como-a%C3%B1ado-enlaces-en-hugo/>Como añado enlaces en Hugo</a></li><li><a href=/contenido-relacionado-en-hugo/>Contenido relacionado en Hugo</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
-<ul class=tags__list>
-<li class=tags__item>
-<a class="tags__link btn" href=/tags/shortcodes/ rel=tag>shortcodes</a>
-</li></ul></div></footer></article></main><nav class="pager flex">
-<div class="pager__item pager__item--prev">
-<a class=pager__link href=/insertar-en-twitter-enlaces-a-hugo-con-imagen/ rel=prev>
-<span class=pager__subtitle>«&#8201;Anterior</span>
-<p class=pager__title>Insertar en Twitter enlaces a Hugo con imagen</p></a>
-</div><div class="pager__item pager__item--next">
-<a class=pager__link href=/insertar-comentarios-en-hugo/ rel=next>
-<span class=pager__subtitle>Siguiente&#8201;»</span>
-<p class=pager__title>Insertar comentarios en Hugo</p></a>
-</div></nav></div></div><footer class=footer>
-<div class="container footer__container flex">
-<div class=footer__copyright>
-&copy; 2022 Sherlockes.
-<span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span>
-</br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a>
-</div></div></footer></div><script async defer src=/js/menu.js></script>
+</code></pre><p>Puedes encontrar todo el código en mi <a href=https://github.com/sherlockes/SherloScripts>repositorio</a> de GitHub.</p><h3 id=almacenamiento-de-las-imágenes>Almacenamiento de las imágenes</h3><p>Este punto también ha resultado un profundo dolor de cabeza. Hasta su cierre tenía publicadas todas las imágenes y panorámicas en Panoramio. Las sigo teniendo en Google Photos pero no he sido capaz de incrustarlas en el blog desde aquí por lo que me he visto obligado a buscar un nuevo alojamiento para todas estas imágenes.</p><ul><li><em>Usar Github como alojamiento</em> - Aunque factible, presenta una limitación por el tamaño máximo del repositorio a 1 gb por lo que queda descartada la opción.</li><li><em>Usar Internet Archive como alojamiento</em> - Lo intenté, pero el modo de subir las fotografías, gestionarlas y organizarlas es simplemente pésimo por lo que termine desestimando está opción.</li><li><em>Usar Imgur como alojamiento</em> - Después de comprobar en funcionamiento y capacidad de varios servicios web he probado por escoger está opción. El espacio de almacenamiento es ilimitado con el límite de 20mb por fotografía y 50 fotografías por hora lo cual es más que suficiente para mis necesidades.</li></ul></div><footer class=post__footer><div class="content post__content clearfix"><h3>Otros de mís artículos que te pueden interesar</h3><ul><li><a href=/lista-de-art%C3%ADculos-por-categor%C3%ADa-en-hugo/>Lista de artículos por categoría en Hugo</a></li><li><a href=/incrustar-texto-externo-en-hugo/>Incrustar texto externo en Hugo</a></li><li><a href=/insertar-comentarios-en-hugo/>Insertar comentarios en Hugo</a></li><li><a href=/como-a%C3%B1ado-enlaces-en-hugo/>Como añado enlaces en Hugo</a></li><li><a href=/contenido-relacionado-en-hugo/>Contenido relacionado en Hugo</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/shortcodes/ rel=tag>shortcodes</a></li></ul></div></footer></article></main><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=/insertar-en-twitter-enlaces-a-hugo-con-imagen/ rel=prev><span class=pager__subtitle>«&#8201;Anterior</span><p class=pager__title>Insertar en Twitter enlaces a Hugo con imagen</p></a></div><div class="pager__item pager__item--next"><a class=pager__link href=/insertar-comentarios-en-hugo/ rel=next><span class=pager__subtitle>Siguiente&#8201;»</span><p class=pager__title>Insertar comentarios en Hugo</p></a></div></nav></div></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2022 Sherlockes.
+<span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span></br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a></div></div></footer></div><script async defer src=/js/menu.js></script>
 <script src=/js/custom.js></script></body></html>
