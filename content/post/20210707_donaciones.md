@@ -19,11 +19,13 @@ La mejor forma de contribuir con el software libre es mediante la aportación de
 <!--more-->
 Aquí dejo una lista de lo que han sido mis últimas donaciones.
 
+- 20220312 - [ORG-Mode] (10€)
 - 20220103 - [Gimp] (10€)
 - 20211108 - Rclone (10€)
 - 20210813 - Inkscape (10$)
 - 20210607 - Linux Mint (10€)
 
 [Gimp]: https://www.gimp.org/donating/
+[ORG-Mode]: https://orgmode.org/worg/donate.html
 
 [Image-01]: /images/20210707_20210607_-_10€_Linux_Mint_01.jpg
