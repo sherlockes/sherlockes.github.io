@@ -23,9 +23,11 @@ No pretendo hacer un completo tutorial sobre el uso de Dired ya que soy un reci�
 
 Como en todos los aspectos de Emacs, hay que ser un privilegiado para aprenderse de memoria desde un principio todos los atajos de teclado que existen. Lo más práctico creo que es una "[Reference Card]" que podemos imprimir y tener a mano cuando necesitemos alguna consulta.
 
+---
 ### Instalación
 Quizás esto sea una de las grandes bondades de Dired y es que no hay que instalar nada al venir incluido en la distribución de Emacs. Para ejecutarlo usaremos el atajo `C-x d` (Para abrir Dired en la ventana activa) , `C-x 4 d` (Para abrirlo en la ventana no activa) o `C-x 5 d` (Para abrirlo en una estancia nueva de emacs) y a continuación introduciremos la ruta del directorio que queremos abrir.
 
+---
 ### Abrir un archivo o directorio
 En el buffer ya nos aparecen una línea por cada archivo o carpeta, para abrir un archivo o entrar en un directorio tenemos tres opciones
 
@@ -35,9 +37,9 @@ En el buffer ya nos aparecen una línea por cada archivo o carpeta, para abrir u
 
 Para la navegación por carpetas está claro que la mejor opión es la tercera ya que de lo contrario te encuentras con tantos fubbers como carpetas has abierto.  Para el caso de los archivos, a gusto de cada uno en función de las necesidades.
 
+---
 ### Seleccionando y editando archivos
-#### Selección de archivos
-##### Selección para eliminar "Flag"
+##### Selección de archivos para eliminar "Flag"
 Para eliminar archivos o directorios, Dired puede seleccionar los archivos o directorios mediante "Flags" de una forma rápidad y sencilla. Con el teclado, nada de usar el ratón nos ponemos sobre el archivo o directorio que queremos seleccionar y pulsamos la tecla "d". En caso de que queramos deseleccionar, nos colocamos sobre el mismo archivo y pulsamos "u". Una vez realizada la selección, eliminamos todo lo selaccionado con la tecla "x"
 
 * "d" > Selecciona el archivo
@@ -47,7 +49,7 @@ Para eliminar archivos o directorios, Dired puede seleccionar los archivos o dir
 
 Tanto la selección como la deselección son compatibles con el "[Argumento prefijo]" de Emacs de modo que p.ej podemos selecionar cuatro archivos consecutivos situando el cursor sobre el primero de ellos y con la combinación de teclas `C-u 4 d`
 
-##### Selección para editar archivos "Mark"
+##### Selección de archivos para editar archivos "Mark"
 
 * "m" > Selecciona el archivo
 * "u" > Deselecciona el archivo
@@ -58,32 +60,14 @@ Tanto la selección como la deselección son compatibles con el "[Argumento pref
 
 En este caso existen muchos más comandos específicos además de moder hacer uso del "[Argumento Prefijo]" pero aquí sólo muestro los que yo uso habitualmente.
 
-
-#### Manejar archivos marcados
+##### Manejar archivos marcados
 Copiar, mover, borrar archivos , comprimirlos,renombrarlos... y muchas más opciones se realizan con la simple pulsación de una tecla una vez que tenemos seleccionados los archivos con la opción "Mark". A continuación sólo las opciones mas comunes.
 
 * "C" > Copiar archivos
 * "R" > Renombrar un archivo o mover varios a otro directorio
 * "D" > Eliminar lo seleccionado
 
-
-
-##### Un caso práctico, emacs como gestor de dos paneles
-Desde los tiempos de Norton Commander creo que la opción más práctica para los gestores de ficheros es el doble panel.  Emacs es fácilmente convertible a un gestor de arcivos de dos (o más) paneles con el el copiar o mover archivos de uno a otro de una forma sencilla. Para mover un archivo de un directorio a otro haciendo uso de dos paneles seguiremos los siguientes pasos.
-
-1. Cerrar todos los buffers correspondientes los archivos a mover
-1. Configurar la variable "dired-dwim-target" a "t" (Añadirá la línea '(dired-dwim-target t) en Custom-set-variables. (Esto quedará activo para futuras ocasiones)
-1. Abrimos un bufer de Dired con el directorio conde están los archivos a mover `C-x d`
-1. En caso de tener que navegar desde el raiz, usamos "a" sobre cada carpeta para subir niveles
-1. Marcamos los archivos a mover o copiar con "m"
-1. Abrimos un nuevo buffer con el directorio al que queremos mover los arhivos con "o"
-1. Con el directorio de destino en el nuevo buffer, volvemos al de origen con `C-x o`
-1. Para copiar los archivos usamos "C" y para mover "R"
-
-Parece un método un poco laborioso pero en el siguiente vídeo se puede ver como apenas son unos cuantos "Clicks"
-
-{{< youtube 01XAYge2Qq8 >}}
-
+---
 ### Actualizar el buffer
 Si el contenido del directorio que estamos visualizando en Dired cambia debemos tener en cuenta que este no se refresca de forma automática. Se dispone de varios comandos para actualizar el buffer.
 
@@ -92,6 +76,7 @@ Si el contenido del directorio que estamos visualizando en Dired cambia debemos 
 * "k" > Borra las líneas seleccionadas sin borrar los archivos
 * "l" > Refresca sólo las líneas que se muestran en el buffer
 
+---
 ### Ocultando información irrelevante
 Cuando nos da igual el propietario de un archivo, tamaño, privilegios... al trabajar con Dired dentro de Emacs resulta más productivo ver sólo el el nombre de la carpeta o archivo para navegar entre ellos cuando utilizamos [Dired] dentro de [Emacs].
 
@@ -132,8 +117,8 @@ El problema reside en que cada vez que abramos un buffer con dired o cambiemos d
 ``` lisp
 (add-hook 'dired-mode-hook (lambda()(dired-hide-details-mode)))
 ```
-{{< borrador >}}
-### Mostrar/Ocultar archivos no visibles
+
+##### Función Mostrar/Ocultar archivos no visibles
 Para alternar entre que se vean o no los archivos ocultos tengo configurado otro "hook" con una llamada a una función:
 
 ``` lisp
@@ -154,38 +139,49 @@ Para alternar entre que se vean o no los archivos ocultos tengo configurado otro
      (dired-sort-other my-dired-ls-switches-show))))))
 ```
 
-- Definición de cadenas (setq my-dired-ls-switches-show/hide) que determnan la lista de opciones con las que poder fijar el valor de "dired-listing-switches", quien es el encargado de guardar las opciones de visualización de "ls".
-
+- Definición de cadenas (setq my-dired-ls-switches-show/hide) que determinan la lista de opciones con las que poder fijar el valor de "dired-listing-switches", quien es el encargado de guardar las opciones de visualización de "ls".
 - Definición de la variable "my-dired-switch" para determinar en cada momento si estamos en el modo de ver o ocultar.
-
 - Definición del "hook" o función que se va a ejecutar cuando sea abierto un buffer con [Dired].
- - Se establece el modo por defecto ("my-dired-switch" = 1) estableciendo la cadena "hide" mediante "dired-sort-other"
- - Se define una función para alternar mediante el atajo "M-o" qeu realiza lo siguiente:
-  - Se invierte el valor de modo ("my-dired-switch") respecto al anterior.
-  - Se activa la cadena "hide" si el valor de modo es "1" o la cadena "show" en caso contrario.
+  - Se establece el modo por defecto ("my-dired-switch" = 1) estableciendo la cadena "hide" mediante "dired-sort-other"
+  - Se define una función para alternar mediante el atajo "M-o" qeu realiza lo siguiente:
+    - Se invierte el valor de modo ("my-dired-switch") respecto al anterior.
+    - Se activa la cadena "hide" si el valor de modo es "1" o la cadena "show" en caso contrario.
 
-Si añadimos a este "hook" 
+{{< borrador >}}
+
+---
+### Navegación limpia entre directorios
+Uno de los problemas con que nos encontramos al navegar entre directorios mediante [Dired] es que puede llegar a abrirse un buffer por cada directorio que hayamos visitado lo que convierte el cambio a otro buffer en una pesadilla si tienes que buscarlo entre todos los que tienes abiertos.
+
+El método más sencillo para evitar esta acumulación de buffers es entrar a los directorios mediante la tecla `a` (La primera vez que la utilices [Emacs] preguntará si quieres habilitar el comando) y para volver al directorio anterior pulsar en `..`. Esto último es un problema si tenemos ocultos los archivos no visibles ya que tampoco se mostrará la línea correspondiente al directorio superior.
+
+Existen varias soluciones a este problema aunque la más sencilla pasa por añadir dos definiciones nuevas de combinación de teclas dentro de un "hook" de dired en el archivo de configuración ".emacs" del mismo modo que hemos realizado para `M-o` para la función mostrar/ocultar en el apartado anterior.
+
 ``` lisp
-(setq my-dired-ls-switches-show "-laGh1v --group-directories-first")
-(setq my-dired-ls-switches-hide "-lGh1v --group-directories-first")
-
-(setq my-dired-switch 1)
-
-(add-hook 'dired-mode-hook
- (lambda ()
-  (dired-hide-details-mode)
-  (if (= my-dired-switch 1)(dired-sort-other my-dired-ls-switches-hide))
-  (define-key dired-mode-map (kbd "M-<up>") 'dired-up-directory)
-  (define-key dired-mode-map (kbd "M-<down>") 'dired-find-alternate-file)
-  (define-key dired-mode-map (kbd "M-o")
-   (lambda ()
-    (interactive)
-    (setq my-dired-switch (- my-dired-switch))
-    (if (= my-dired-switch 1)
-      (dired-sort-other my-dired-ls-switches-hide)
-     (dired-sort-other my-dired-ls-switches-show))))))
+(define-key dired-mode-map (kbd "M-<up>") (lambda () (interactive) (find-alternate-file "..")))
+(define-key dired-mode-map (kbd "M-<down>") 'dired-find-alternate-file)
 ```
+
+Gracias a estas dos combinaciones, para acceder a un directorio pulsaremos `M-<down>` y para volver al nivel superior `M-<up>` sin que se nos abran buffers adicionales.
+
 {{< / borrador >}}
+
+---
+### Un caso práctico, emacs como gestor de dos paneles
+Desde los tiempos de Norton Commander creo que la opción más práctica para los gestores de ficheros es el doble panel.  Emacs es fácilmente convertible a un gestor de arcivos de dos (o más) paneles con el el copiar o mover archivos de uno a otro de una forma sencilla. Para mover un archivo de un directorio a otro haciendo uso de dos paneles seguiremos los siguientes pasos.
+
+1. Cerrar todos los buffers correspondientes los archivos a mover
+1. Configurar la variable "dired-dwim-target" a "t" (Añadirá la línea '(dired-dwim-target t) en Custom-set-variables. (Esto quedará activo para futuras ocasiones)
+1. Abrimos un bufer de Dired con el directorio conde están los archivos a mover `C-x d`
+1. En caso de tener que navegar desde el raiz, usamos "a" sobre cada carpeta para subir niveles
+1. Marcamos los archivos a mover o copiar con "m"
+1. Abrimos un nuevo buffer con el directorio al que queremos mover los arhivos con "o"
+1. Con el directorio de destino en el nuevo buffer, volvemos al de origen con `C-x o`
+1. Para copiar los archivos usamos "C" y para mover "R"
+
+Parece un método un poco laborioso pero en el siguiente vídeo se puede ver como apenas son unos cuantos "Clicks"
+
+{{< youtube 01XAYge2Qq8 >}}
 
 ### Enlaces de interés
 - [GNU - Dired reference card](https://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf)

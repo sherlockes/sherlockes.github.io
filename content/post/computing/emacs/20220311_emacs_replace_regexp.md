@@ -1,6 +1,6 @@
 ---
 title: "Reemplazo mediante expresiones regulares en Emacs"
-date: "2022-03-11"
+date: "2022-03-13"
 creation: "2022-03-11"
 description: "Como reemplazar texto de uno o varios archivos desde Emacs gracias al uso de las expresiones regulares, incluso de forma recursiva."
 thumbnail: "images/20220311_emacs_replace_regexp_00.jpg"
