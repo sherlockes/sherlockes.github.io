@@ -1,12 +1,12 @@
 ---
-title: "Emacs replace regexp"
+title: "Reemplazo mediante expresiones regulares en Emacs"
 date: "2022-03-11"
 creation: "2022-03-11"
-description: "Emacs replace regexp"
+description: "Como reemplazar texto de uno o varios archivos desde Emacs gracias al uso de las expresiones regulares, incluso de forma recursiva."
 thumbnail: "images/20220311_emacs_replace_regexp_00.jpg"
 disable_comments: true
 authorbox: false
-toc: false
+toc: true
 mathjax: false
 categories:
 - "computing"
@@ -15,9 +15,9 @@ tags:
 draft: true
 weight: 5
 ---
-A raiz de leer este [artículo de Angel] he vuelto a intentar lo que hace un tiempo dejé por [imposible]. Se trata del reemplazo de cadenas de texto en varios archivos mediante [Emacs].
+A raiz de leer este [artículo de Angel] he vuelto a intentar lo que hace un tiempo dejé por [imposible]. Se trata del reemplazo de cadenas de texto definidas mediante expresiones regulares y de forma recursiva en distintos archivos de varios directorios gracias a [Emacs].
 <!--more-->
-Recordemos el problema, sólo hay que cambiar esto
+Recordemos el problema que me asaltó cuando tuve que cambiar el formato de todos los encabezados que hasta entonces tenía escritos en los artículos del blog, sólo hay que cambiar esto ...
 
 ```
 # Encabezado 1 #
@@ -41,7 +41,7 @@ Lo que sea
 
 ... en todos los archivos "*.md" dento de un directorio.
 
-Antes de seguir adelante hay que tener en cuenta unas peculiaridades que tiene [Emacs] en lo que se refiere al manejo de expresiones regulares.
+Antes de seguir adelante hay que tener en cuenta unas de las peculiaridades que tiene [Emacs] en lo que se refiere al manejo de expresiones regulares y que en este caso nos van a afectar.
 - Para definir un espacio en blanco → `\s-`
 - Para definir un grupo → `\(...\)`
 
@@ -90,9 +90,32 @@ M-x dired-do-query-replace-regexp
 Realizaremos todos los reemplazos pulsando la tecla `Y` y posteriormente guardaremos los cambios mediante el comando `C-x s`.
 
 ### Reemplazando en varios archivos de forma recursiva
-¿Que pasa si no todos los archivos en los que necesitamos realizar la busqueda y reemplazo están en la misma carpeta sino que se encuentran en distintos dubdirectorios? [Dired] ya no es capaz de realizar esta función por lo que tenemos que dar un paso más alla y utilizar el paquete [Dired+] que en el apartado siguiente explico como instalar en [Emacs].
+¿Que pasa si no todos los archivos en los que necesitamos realizar la busqueda y reemplazo están en la misma carpeta sino que se encuentran en distintos dubdirectorios? [Dired] ya no es capaz de realizar esta función por lo que tenemos que dar un paso más alla y utilizar los paquetes [Dired+] e [Icicles] que en los apartados siguientes explico como instalar en [Emacs].
 
-diredp-mark-files-regexp-recursive 
+En primer lugar abriremos mediante [Dired] con el comando `C-x d` para la ubicación donde tenemos los archivos "*.md" y los directorios en los que queremos buscar de forma recursiva.
+
+Marcaremos manualemte mediante `m` los directorios en los que deseemos buscar
+
+Ejecutaremos el comando `diredp-mark-files-regexp-recursive` e introduciremos la cadena "\.md$" a buscar. Tras ejecutarlo se nos indicará cuantos archivos han sido marcados y aparederán con un "*" delante.
+``` bash
+  /home/sherlockes/Descargas/tmp:
+  total used in directory 20K available 76291464
+* drwxrwxr-x 2 sherlockes 4,0K mar 13 09:52 prueba_2
+* -rw-rw-r-- 1 sherlockes  351 mar 13 09:53 archivo_1.md
+* -rw-rw-r-- 1 sherlockes  435 mar 12 12:14 archivo_2.md
+* -rw-rw-r-- 1 sherlockes  435 mar 12 12:24 archivo_3.md
+  -rw-rw-r-- 1 sherlockes  437 mar 12 12:25 archivo_4.txt
+```
+Ahora ya podemos ejecutar el comando que nos busque la cadena que queremos reemplazar de forma recursiva en todos los archivos que hemos marcado previamente.
+``` lisp
+diredp-do-query-replace-regexp-recursive
+```
+A continuación confirmaremos mediante "y" que queremos actuar sobre todos los archivos que tenemos marcados e introducimos la cadena a buscar y la de reemplazo
+- Cadena a buscar → `\(#+\s-\)\(.+\)\(\s-#+\)`
+- Cadena a reemplazar → `\1\2`
+
+Volvemos a marcar con "y" que queremos realizar la operación en todos los archivos marcados y posteriormente con "Y" ejecutaremos los cambios en todos.
+Para terminar guardaremos los cambios en todos los archivos mediante `C-x s`
 
 
 ### Instalando Dired+
@@ -106,23 +129,34 @@ Para instalar [Dired+] en [Emacs] sólo hay que descargar la librería "[dired+.
 
 > En mi caso tengo ubicados los archivos de configuración dentro de la carpeta "dotfiles" y es ahí donde he guardado la librería. En posible guardarlo en otro sitio cambiando también la ruta en el archivo de configuración.
 
-``` lisp
-diredp-do-query-replace-regexp-recursive
-```
-- Cadena a buscar → `\(#+\s-\)\(.+\)\(\s-#+\)`
-- Cadena a reemplazar → `\1\2`
+### Instalando Icicles
+Para instalar [Icicles] tenemos que seguir el mismo procedimiento que en el caso de [Dired+] con una pequeña diferencia y es que en este caso no es un solo archivo sino que son varios y hay varios métodos para descargarlos tal y como se explica [aquí]. Personamente (Desde Linux Mint) he creado una carpeta "icicles" junto a la ya creada anteriormente "dired+" y dentro de ella he ejecutado el siguiente comando en la terminal.
 
-![image-01]
+``` bash
+wget https://www.emacswiki.org/emacs/download/icicles{,-chg,-cmd1,-cmd2,-doc1,-doc2,-face,-fn,-mac,-mcmd,-mode,-opt,-var}.el
+```
+
+Además, en el archivo de configuració de [Emacs] he añadido las siguientes líneas
+
+``` lisp
+(add-to-list 'load-path "~/dotfiles/emacs/.emacs.d/icicles/")
+(require 'icicles)
+(icy-mode 1)
+```
 
 ### Enlaces de interés
 - [StackOverflow - Install *.el package on Emacs](https://stackoverflow.com/questions/6400447/how-to-install-a-emacs-plugin-many-times-its-a-el-file-on-windows-platform)
 - [Emacs StackExchange - Query replace](https://emacs.stackexchange.com/questions/26602/query-replace-on-directory)
+- [GNU Emacs - Syntax of regular expressions](https://www.gnu.org/software/emacs/manual/html_node/emacs/Regexps.html)
+- [EmacsWiki - Regular Expression](https://www.emacswiki.org/emacs/RegularExpression#h5o-5)
 
+[aquí]: https://www.emacswiki.org/emacs/Icicles_-_Libraries#h5o-6
 [artículo de Angel]: https://ugeek.github.io/blog/post/2022-03-08-reemplazar-texto-de-uno-o-varios-archivos-con-dired-en-emacs.html
 [Dired]: https://www.emacswiki.org/emacs/DiredMode
 [Dired+]: https://www.emacswiki.org/emacs/DiredPlus
 [dired+.el]: https://www.emacswiki.org/emacs/download/dired%2b.el
 [Emacs]: https://www.gnu.org/software/emacs/
+[Icicles]: https://www.emacswiki.org/emacs/Icicles
 [imposible]: {{< relref "20211230_bash_find_sed_regex.md" >}}
 
 
