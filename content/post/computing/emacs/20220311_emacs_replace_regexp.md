@@ -1,6 +1,6 @@
 ---
 title: "Reemplazo mediante expresiones regulares en Emacs"
-date: "2022-03-13"
+date: "2022-03-14"
 creation: "2022-03-11"
 description: "Como reemplazar texto de uno o varios archivos desde Emacs gracias al uso de las expresiones regulares, incluso de forma recursiva."
 thumbnail: "images/20220311_emacs_replace_regexp_00.jpg"
@@ -96,26 +96,41 @@ En primer lugar abriremos mediante [Dired] con el comando `C-x d` para la ubicac
 
 Marcaremos manualemte mediante `m` los directorios en los que deseemos buscar
 
-Ejecutaremos el comando `diredp-mark-files-regexp-recursive` e introduciremos la cadena "\.md$" a buscar. Tras ejecutarlo se nos indicará cuantos archivos han sido marcados y aparederán con un "*" delante.
+Ejecutamos el comando `diredp-insert-subdirs-recursive` para que se muestre en el buffer todos los archivos contenidos en los diredtorios marcados.
+
+Ahora seleccionamos los archivos "*.md" mediante el comendo `diredp-mark-extension-recursive` e introducimos la extensión "md".
+
+Para que el buffer quede más limpio podemos ocultar los archivos que no están seleccionados mediante el comando `diredp-omit-unmarked` y ya sólo veremos en el buffer los archivos que necesitamos modificar junto con su correspondiente directorio.
+
 ``` bash
   /home/sherlockes/Descargas/tmp:
-  total used in directory 20K available 76291464
-* drwxrwxr-x 2 sherlockes 4,0K mar 13 09:52 prueba_2
-* -rw-rw-r-- 1 sherlockes  351 mar 13 09:53 archivo_1.md
+  total used in directory 24K available 77081412
+* -rw-rw-r-- 1 sherlockes  353 mar 13 10:55 archivo_1.md
 * -rw-rw-r-- 1 sherlockes  435 mar 12 12:14 archivo_2.md
 * -rw-rw-r-- 1 sherlockes  435 mar 12 12:24 archivo_3.md
-  -rw-rw-r-- 1 sherlockes  437 mar 12 12:25 archivo_4.txt
+
+  /home/sherlockes/Descargas/tmp/prueba_2:
+  total used in directory 16K available 77081396
+* -rw-rw-r-- 1 sherlockes 353 mar 13 10:55 archivo_1.md
+* -rw-rw-r-- 1 sherlockes 435 mar 12 12:14 archivo_2.md
+* -rw-rw-r-- 1 sherlockes 435 mar 12 12:24 archivo_3.md
 ```
+
+> Por alguna razón que desconozco fui capaz de hacer varias veces esta selección mediante el comando `diredp-mark-files-regexp-recursive` introduciendo la cadena "\.md$" a buscar. Pero ahora Emacs no me ofrece la opción sin previamente insertar en el buffer todos los subdirectorios.
+
 Ahora ya podemos ejecutar el comando que nos busque la cadena que queremos reemplazar de forma recursiva en todos los archivos que hemos marcado previamente.
+
 ``` lisp
 diredp-do-query-replace-regexp-recursive
 ```
+
 A continuación confirmaremos mediante "y" que queremos actuar sobre todos los archivos que tenemos marcados e introducimos la cadena a buscar y la de reemplazo
 - Cadena a buscar → `\(#+\s-\)\(.+\)\(\s-#+\)`
 - Cadena a reemplazar → `\1\2`
 
 Volvemos a marcar con "y" que queremos realizar la operación en todos los archivos marcados y posteriormente con "Y" ejecutaremos los cambios en todos.
-Para terminar guardaremos los cambios en todos los archivos mediante `C-x s`
+
+Para terminar guardaremos los cambios en todos los archivos mediante `C-x s` y pulsando a continuación la tecla "!"
 
 
 ### Instalando Dired+
@@ -149,6 +164,7 @@ Además, en el archivo de configuració de [Emacs] he añadido las siguientes l�
 - [Emacs StackExchange - Query replace](https://emacs.stackexchange.com/questions/26602/query-replace-on-directory)
 - [GNU Emacs - Syntax of regular expressions](https://www.gnu.org/software/emacs/manual/html_node/emacs/Regexps.html)
 - [EmacsWiki - Regular Expression](https://www.emacswiki.org/emacs/RegularExpression#h5o-5)
+- [StackOverflow - Dired useful function](https://stackoverflow.com/questions/28880606/how-to-make-dired-adopt-some-useful-function-from-total-command)
 
 [aquí]: https://www.emacswiki.org/emacs/Icicles_-_Libraries#h5o-6
 [artículo de Angel]: https://ugeek.github.io/blog/post/2022-03-08-reemplazar-texto-de-uno-o-varios-archivos-con-dired-en-emacs.html
