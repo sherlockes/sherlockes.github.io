@@ -1,6 +1,7 @@
 ---
 title: "Emacs desde cero"
-date: "2018-09-26" 
+date: "2022-03-14"
+creation: "2018-09-26"
 description: "Aquí iré documentando mi experiencia con este impresionante editor de texto.."
 thumbnail: "images/titulo_00.jpg"
 disable_comments: true
@@ -14,30 +15,23 @@ tags:
 draft: true
 weight: 5
 ---
-## Emacs, sólo un editor de texto?
+[Emacs] es una aplicación fea, nada intuitiva y con una curva de aprendizaje muy pronunciada, a cambio te ofrece un completo entorno de trabajo con infinidad de posibilidades. Hace casi cuatro años que empecé a escribir este artículo, ahora me decido a terminarlo cansado de verlo en mi lista de artículos en borrador a pesar de que sigo aprendiendo algo sobre [Emacs] cada día.
+<!--more-->
+### Emacs, sólo un editor de texto?
+Caí en el uso de [Emacs] como editor de texto pero con el tiempo me he dado cuenta de que esta cualidad solo es la "punta del iceberg" ya que lo he terminado usando también para realizar conexiones remotas, navegar entre directorios, entorno de desarrollo y la única aplicación que necesito para gestionar este blog.
 
-### Por que Emacs?
-Esta es una pregunta complicada, ya que prácticamente tengo cubiertas todas mis necesidades de edición de texto con iaWritter en android y con Visual Studio Code para el resto de plataformas pero recientemente he escuchado sobre todas las bondades de Emacs y la curiosidad ha podido conmigo.
+Es gratis, es libre y me ofrece un entorno de trabajo sin distracciones con el que estoy encantado.
 
-Ya había intentado en anteriores ocasiones usarlo pero por cuestiones que te responderé posteriormente lo dejé de lado.  Espero que este sea el intento definitivo.
-
-### Que me ofrece Emacs?
-En un primer momento lo único que espero de Emacs en un entorno de creación y edición para mis documentos de texto en formato MarkDown con las menores distracciones posibles.  Nada de bonitos iconos flotantes ni miles de opciones para formatear el texto que no necesito.
-
-Seguro que con el tiempo soy capaz de conseguir esto y mucho más.
-
-### Que necesito?
-* La aplicación
-* Un tutorial sencillo donde dar los primeros pasos
-* Algo de tiempo
-* Perseverancia y paciencia
-
-La aplicación la puedes encontrar [aquí][11] para la mayoría de plataformas.  En esta ocasión he seguido [este][12] curso que, aunque tiene varios años resulta fácil de seguir y está bien explicado (Si quieres reproducir directamente en [vlc][14] la lista de reproducción que tengo [creada][13].  En cuanto al tiempo no creo que sea muy complicado sacar ratos de quince minutos para todos los días avanzar un poco en el manejo de Emacs.  Ya ves que los tres primeros son unos requerimientos sencillos y accesibles, sólo hay que luchar con en cuarto y aquí no puedo dar ningún consejo, simplemente que el esfuerzo merecerá la pena.
+#### Que necesito?
+* [Descargar aquí] la aplicación.
+* Ver los vídeos del Canal de [Emacx] en Youtube.
+* Algo de tiempo, perseverancia y paciencia
 
 ### Donde está el problema?
 Emacs es una de esas aplicaciones que cuando las abres te parece que no van a ser capaces de hacer nada pero que a medida que vas profundizando en ellas te das cuenta de la increíble potencia que presentan.  Una interface que parece de finales de los ochenta y un tutorial en la ventana de inicio son dos de las cualidades que echan para atrás a casi cualquiera.
 
-Pero lo que sin duda alguna es el gran impedimento para trabajar con Emacs es su curva de aprendizaje increiblemente lenta al principio por culpa de un flujo de trabajo completamente diferente al resto de aplicaciones y la infinidad de atajos de teclado que hay que hay que aprender para conseguir una productividad “digna”.
+Pero lo que sin duda alguna es el gran impedimento para trabajar con Emacs es su curva de aprendizaje increíblemente lenta al principio por culpa de un flujo de trabajo completamente diferente al resto de aplicaciones y la infinidad de atajos de 
+teclado que hay que hay que aprender para conseguir una productividad “digna”.
 
 ## Lo que he aprendido
 
@@ -84,18 +78,14 @@ shell ; Lanza una terminal
 menu-bar-mode ; oculta la barra de menú
 tool-bar-mode ; oculta la barra de herramientas
 customize-theme ; configuración del tema
-eval-buffer ; evalua el contenido del buffer activo
+eval-buffer ; evalúa el contenido del buffer activo
 ido-mode ; Activa el modo ido
 customize ; Entra al modo de configuración de Emacs
 package-list-packages ; lista los paquetes instalados
 
-### Plugins
-#### Neotree
-https://www.emacswiki.org/emacs/NeoTree
-En el archivo de configuración .emacs introducir la línea `(global-set-key [f8] 'neotree-toggle)` para usar la tecla F8 para desplegar el navegador.
-
-
-[11]: https://www.gnu.org/software/emacs/download.html
+[Emacs]: https://www.gnu.org/software/emacs/
+[Emacx]: https://www.youtube.com/playlist?list=PLxGJqI9jxu_iWOJt_GqpWKq5STAZVA4rn
+[Descargar aquí]: https://www.gnu.org/software/emacs/download.html
 [12]: https://github.com/farliz/emacs-academia/blob/master/contenido.md
 [13]: /files/emacs-academia-farliz.xspf
 [14]: https://www.videolan.org/vlc/index.es.html
