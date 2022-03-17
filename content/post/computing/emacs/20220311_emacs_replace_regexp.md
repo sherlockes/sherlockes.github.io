@@ -12,7 +12,7 @@ categories:
 - "computing"
 tags:
 - "emacs"
-draft: true
+draft: false
 weight: 5
 ---
 A raiz de leer este [artículo de Angel] he vuelto a intentar lo que hace un tiempo dejé por [imposible]. Se trata del reemplazo de cadenas de texto definidas mediante expresiones regulares y de forma recursiva en distintos archivos de varios directorios gracias a [Emacs].
