@@ -17,12 +17,13 @@ weight: 5
 ---
 Resumen de introducción
 <!--more-->
-
+sudo apt install jq
 
 ![image-01]
 
 ### Enlaces de interés
-- [enlace](www.sherblog.pro)
+- [jq](https://stedolan.github.io/jq/download/)
+- [ByteFreaks - Remove last character](https://bytefreaks.net/gnulinux/bash/bash-remove-the-last-character-from-each-line)
 
 [link]: https://www.google.es
 
