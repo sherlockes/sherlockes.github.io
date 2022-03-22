@@ -6,7 +6,7 @@ description: "Una orma sencilla de crear de forma automática un podcast a parti
 thumbnail: "images/20220317_python_download_twitch_00.jpg"
 disable_comments: true
 authorbox: false
-toc: false
+toc: true
 mathjax: false
 categories:
 - "computing"
@@ -19,30 +19,46 @@ weight: 5
 No tengo tiempo para ver los canales de Twitch que me gustaría seguir y tras unos días probando una aplicación Android para descargar los vídeos me he decidido a crear un podcast privado que se genere de forma automática a partir del contenido de un canal en Twitch.
 <!--more-->
 ### Buscar nuevos vídeos publicados
-Una vez más, gracias a [Angel] he descubierto [twitch-dl], una aplicación en python con la que listar y descargar los vídeos de cualquier canal de Twitch.
+Una vez más, gracias a [Angel] he descubierto [twitch-dl], una aplicación en python con la que listar y descargar los vídeos de cualquier canal de Twitch. Para listarlos en formato "json" es tan sencillo como ejecutar el siguiente comando desde el directorio donde tengamos descargado "twitch-dl".
 
 ``` bash
-CANAL="jordillatzer"
-script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-twdl=$script_dir/twitch-dl.pyz
-
-json=$(python3 $twdl videos $CANAL -j)
+python3 twitch-dl.pyz videos jordillatzer -j
 ```
 ### Descargar los vídeos nuevos
+Ya tenemos un precioso "json" del que extraer las "id" de los últimos vídeos publicados. En mi script he utilizado "jq" para extraer la id de los últimos vídeos y compruebo si ya lo he descargado anteriormente con las "id's" que tengo guardadas en el archivo "descargados.txt". Para descargar el audio del vídeo es tan sencillo como lo siguiente.
+
+``` bash
+twitch-dl.pyz download -q audio_only 221837124
+```
 ### Convertir los vídeos descargados a mp3
+Pero el archivo que se descarga es muy grande para ser un audio y está en formato "mkv" por lo que lo proceso con FFMPEG y elimino los silencios pasándolo al mismo tiempo de mkv a mp3.
+
+``` bash
+ffmpeg -loglevel 24 -i "$file" -af silenceremove=1:0:-50dB "${file%.mkv}.mp3"
+```
+
 ### Subir el audio generado a un servidor WebDav
+Ya he escrito en un post como tengo implementado un servidor [webdav] gracias a Rclone usando como almacenamiento mis nubes públicas.
+
+``` bash
+rclone copy $canal remoto:twitch/$canal/ --create-empty-src-dirs
+```
+
 ### Generar el feed con todos los audios
 sudo apt install jq
 
 ![image-01]
 
 ### Enlaces de interés
+- [FFMPEG](https://ffmpeg.org/ffmpeg.html)
 - [jq](https://stedolan.github.io/jq/download/)
 - [ByteFreaks - Remove last character](https://bytefreaks.net/gnulinux/bash/bash-remove-the-last-character-from-each-line)
 
 [Angel]: https://ugeek.github.io/blog/post/2022-03-15-twitch-dl-aplicacion-cli-para-descargar-videos-de-twitch-tv.html
 [twitch-dl]: https://twitch-dl.bezdomni.net/introduction.html
 
+[rclone]: https://rclone.org
+[webdav]: {{< relref "20211217_rclone_serve_webdav.md" >}}
 
 [image-01]: /images/20220317_python_download_twitch_01.jpg
 [image-02]: /images/20220317_python_download_twitch_02.jpg
