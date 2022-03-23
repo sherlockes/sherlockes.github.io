@@ -13,7 +13,7 @@ categories:
 tags:
 - "bash"
 - "python"
-draft: true
+draft: false
 weight: 5
 ---
 No tengo tiempo para ver los canales de Twitch que me gustaría seguir en el momento de la emisión y tras unos días probando una aplicación Android para descargar los vídeos me he decidido a crear un podcast privado que se genere de forma automática a partir del contenido de un canal en Twitch.
@@ -50,13 +50,13 @@ Como plantilla para la generación del feed he utilizado esta de [Matthew Dicken
 Tras poner el feed en el servidor webdav donde he colocado los archivos de audio ya sólo resta añadirlo y actualizarlo en la aplicación de Podcast.
 
 
-![image-01]
+### Script completo
+Aquí puedes encontrar el [script](https://github.com/sherlockes/SherloScripts/blob/master/bash/twitch2podcast.sh) completo listo para ejecutar con todas las modificaciones que hay podido realizar.
 
 ### Enlaces de interés
 - [DelftStack - Parse JSON in Bash](https://www.delftstack.com/howto/linux/parse-json-in-bash/)
 - [FFMPEG](https://ffmpeg.org/ffmpeg.html)
 - [ByteFreaks - Remove last character](https://bytefreaks.net/gnulinux/bash/bash-remove-the-last-character-from-each-line)
-
 
 [Angel]: https://ugeek.github.io/blog/post/2022-03-15-twitch-dl-aplicacion-cli-para-descargar-videos-de-twitch-tv.html
 [awk]: https://ss64.com/bash/awk.html
