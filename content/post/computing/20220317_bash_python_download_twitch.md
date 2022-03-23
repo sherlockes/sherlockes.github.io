@@ -51,7 +51,9 @@ Tras poner el feed en el servidor webdav donde he colocado los archivos de audio
 
 
 ### Script completo
-Aquí puedes encontrar el [script](https://github.com/sherlockes/SherloScripts/blob/master/bash/twitch2podcast.sh) completo listo para ejecutar con todas las modificaciones que hay podido realizar.
+A continuación dejo el código completo de script, si quieres descargarlo o copiarlo te recomiendo que pases por mi [Repositorio de scripts] y lo [descargues](https://github.com/sherlockes/SherloScripts/blob/master/bash/twitch2podcast.sh)  ya que Hugo no lleva bien la importación de texto externo de momento.
+
+{{< texto_remoto "https://raw.githubusercontent.com/sherlockes/SherloScripts/master/bash/twitch2podcast.sh" >}}
 
 ### Enlaces de interés
 - [DelftStack - Parse JSON in Bash](https://www.delftstack.com/howto/linux/parse-json-in-bash/)
@@ -64,6 +66,7 @@ Aquí puedes encontrar el [script](https://github.com/sherlockes/SherloScripts/b
 [jq]: https://stedolan.github.io/jq/
 [Matthew Dickens]: http://matthewdickens.me/post/xml-template-for-a-podcast-rss-feed
 [Rclone]: https://rclone.org
+[Repositorio de scripts]: https://github.com/sherlockes/SherloScripts
 [twitch-dl]: https://twitch-dl.bezdomni.net/introduction.html
 [webdav]: {{< relref "20211217_rclone_serve_webdav.md" >}}
 
