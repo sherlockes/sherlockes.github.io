@@ -3,6 +3,185 @@
 </span></span></code></pre></div><h3 id=descargar-los-vídeos-nuevos>Descargar los vídeos nuevos</h3><p>Ya tenemos un precioso &ldquo;json&rdquo; del que extraer las &ldquo;id&rdquo; de los últimos vídeos publicados. En mi script he utilizado <a href=https://stedolan.github.io/jq/>jq</a> para extraer la id de los últimos vídeos y compruebo si ya lo he descargado anteriormente con las &ldquo;id&rsquo;s&rdquo; que tengo guardadas en el archivo &ldquo;descargados.txt&rdquo;. Para descargar el audio del vídeo es tan sencillo como lo siguiente.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>twitch-dl.pyz download -q audio_only <span style=color:#ae81ff>221837124</span>
 </span></span></code></pre></div><h3 id=convertir-los-vídeos-descargados-a-mp3>Convertir los vídeos descargados a mp3</h3><p>Pero el archivo que se descarga es muy grande para ser un audio y está en formato &ldquo;mkv&rdquo; por lo que lo proceso con FFMPEG y elimino los silencios pasándolo al mismo tiempo de mkv a mp3.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>ffmpeg -loglevel <span style=color:#ae81ff>24</span> -i <span style=color:#e6db74>&#34;</span>$file<span style=color:#e6db74>&#34;</span> -af silenceremove<span style=color:#f92672>=</span>1:0:-50dB <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>file%.mkv<span style=color:#e6db74>}</span><span style=color:#e6db74>.mp3&#34;</span>
 </span></span></code></pre></div><h3 id=subir-el-audio-generado-a-un-servidor-webdav>Subir el audio generado a un servidor WebDav</h3><p>Ya he escrito en un post como tengo implementado un servidor <a href=/servidor-webdav-de-contenido-remoto-con-rclone/>webdav</a> gracias a <a href=https://rclone.org>Rclone</a> usando como almacenamiento mis nubes públicas. Uso el mismo <a href=https://rclone.org>Rclone</a> en este script para subir el contenido descargado y recodificado en local.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>rclone copy $canal remoto:twitch/$canal/ --create-empty-src-dirs
-</span></span></code></pre></div><h3 id=generar-el-feed-con-todos-los-archivos>Generar el feed con todos los archivos</h3><p>Como plantilla para la generación del feed he utilizado esta de <a href=http://matthewdickens.me/post/xml-template-for-a-podcast-rss-feed>Matthew Dickens</a> eliminando de la misma todo lo relativo a itunes ya que va a ser de uso privado. Guardo por un lado el encabezado del xml y por otro los archivos ya incluidos junto con el pie, así me resulta fácil poner como primer &ldquo;item&rdquo; del feed un nuevo audio que descargue. Hago uso de <a href=https://ffmpeg.org/ffprobe.html>ffprobe</a> para extraer los metadatos del mp3 que incrustar en el feed y el comando <code>awk</code> para extraer la información del nombre del archivo.</p><p>Tras poner el feed en el servidor webdav donde he colocado los archivos de audio ya sólo resta añadirlo y actualizarlo en la aplicación de Podcast.</p><h3 id=script-completo>Script completo</h3><p>Aquí puedes encontrar el <a href=https://github.com/sherlockes/SherloScripts/blob/master/bash/twitch2podcast.sh>script</a> completo listo para ejecutar con todas las modificaciones que hay podido realizar.</p><h3 id=enlaces-de-interés>Enlaces de interés</h3><ul><li><a href=https://www.delftstack.com/howto/linux/parse-json-in-bash/>DelftStack - Parse JSON in Bash</a></li><li><a href=https://ffmpeg.org/ffmpeg.html>FFMPEG</a></li><li><a href=https://bytefreaks.net/gnulinux/bash/bash-remove-the-last-character-from-each-line>ByteFreaks - Remove last character</a></li></ul></div><footer class=post__footer><div class="content post__content clearfix"><h3>Otros de mís artículos que te pueden interesar</h3><ul><li><a href=/descargar-archivos-de-telegram/>Descargar archivos de Telegram</a></li><li><a href=/mi-uso-de-alias-en-bash/>Mi uso de alias en bash</a></li><li><a href=/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/>Mi gestión de los archivos de configuración</a></li><li><a href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li><li><a href=/buscar-y-reemplazar-en-bash-con-find-y-sed/>Buscar y reemplazar en bash con find y sed</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/bash/ rel=tag>bash</a></li><li class=tags__item><a class="tags__link btn" href=/tags/python/ rel=tag>python</a></li></ul></div></footer></article></main><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=/configuraci%C3%B3n-de-home-assistant-en-github/ rel=prev><span class=pager__subtitle>«&#8201;Anterior</span><p class=pager__title>Configuración de Home Assistant en github</p></a></div></nav></div></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2022 Sherlockes.
+</span></span></code></pre></div><h3 id=generar-el-feed-con-todos-los-archivos>Generar el feed con todos los archivos</h3><p>Como plantilla para la generación del feed he utilizado esta de <a href=http://matthewdickens.me/post/xml-template-for-a-podcast-rss-feed>Matthew Dickens</a> eliminando de la misma todo lo relativo a itunes ya que va a ser de uso privado. Guardo por un lado el encabezado del xml y por otro los archivos ya incluidos junto con el pie, así me resulta fácil poner como primer &ldquo;item&rdquo; del feed un nuevo audio que descargue. Hago uso de <a href=https://ffmpeg.org/ffprobe.html>ffprobe</a> para extraer los metadatos del mp3 que incrustar en el feed y el comando <code>awk</code> para extraer la información del nombre del archivo.</p><p>Tras poner el feed en el servidor webdav donde he colocado los archivos de audio ya sólo resta añadirlo y actualizarlo en la aplicación de Podcast.</p><h3 id=script-completo>Script completo</h3><p>A continuación dejo el código completo de script, si quieres descargarlo o copiarlo te recomiendo que pases por mi <a href=https://github.com/sherlockes/SherloScripts>Repositorio de scripts</a> y lo <a href=https://github.com/sherlockes/SherloScripts/blob/master/bash/twitch2podcast.sh>descargues</a> ya que Hugo no lleva bien la importación de texto externo de momento.</p><pre><code>#!/bin/bash
+
+###################################################################
+#Script Name: twitch2podcast.sh
+#Description: Generación de entorno de desarrollo para sherblog.pro
+#Args: N/A
+#Creation/Update: 20220317/20220221
+#Author: www.sherblog.pro                                             
+#Email: sherlockes@gmail.com                               
+###################################################################
+
+CANAL="jordillatzer"
+TITULO="Jordi Llatzer en Twitch"
+SERVIDOR="http://192.168.10.202:5005"
+FECHA=$(date)
+
+twitch_dir=~/twitch
+twdl=$twitch_dir/twitch-dl.pyz
+
+echo "#####################################"
+echo "## Twitch to Podcast by Sherlockes ##"
+echo "#####################################"
+
+###############
+## Funciones ##
+###############
+
+# Función para buscar los últimos vídeos de un canal no descargados
+buscar_ultimos () {
+    # Valores de argumentos
+    local canal=${1:?Falta el nombre del canal}
+    #local titulo=${2:?Falta el título del canal}
+    local titulo=$2
+
+    # Obtiene el json de los ultimos vídeos.
+    echo "$2"
+    echo "- Obteniendo últimos vídeos de $titulo"
+    json=$(python3 $twdl videos $canal -j)
+
+    # Busca sobre los ultimos diez videos
+    for i in {0..9}
+    do
+	# obtiene la identificación y minutos de duración del último vídeo
+	id=$(echo "$json" | jq ".videos[$i].id" | cut -c2- | rev | cut -c2- | rev)
+	mins=$(expr $(echo "$json" | jq ".videos[$i].lengthSeconds") / 60)
+
+	# Comprobar si el archivo ya ha sido descargado
+	if grep -q $id $twitch_dir/$canal/descargados.txt
+	then 
+	    echo "- El vídeo $id ya ha sido descargado.";
+	    # No sigue comprobando si ya ha visto uno descargado
+	    break
+	else
+	    echo "- Descargando el audio del vídeo $id.";
+            if (( $mins > 10 ))
+            then
+		# Descarga el audio en formato mkv
+		$twdl download -q audio_only $id;
+            else
+		echo "- El archivo sólo tiene $mins minutos, no se descarga."
+            fi
+	    # Añade el archivo a la lista de descargados
+	    echo $id >> $twitch_dir/$canal/descargados.txt;
+	fi
+    done
+}
+
+# Función para pasar a mp3 los vídeos descargados en la carpeta
+# (Coge todos os vídeos que hay en la carpeta del script
+convertir_mp3 () {
+    local canal=${1:?Falta el nombre del canal}
+    echo "- Buscando archivos para convertir en $canal"
+    
+    # Pasa a mp3, quita silencios, mueve el audio a destino y elimina el video
+    find . -type f -name "*.mkv" | while read -r file; do
+	local nombre=$(basename $file .mkv)
+	local id_ep=$(echo $nombre | awk -F'_' '{print $2}')
+
+	echo "- Episodio $id_ep, codificando audio y eliminando silencios"
+	ffmpeg -loglevel 24 -i "$file" -af silenceremove=1:0:-50dB "${file%.mkv}.mp3"
+
+	echo "- Episodio $id_ep, moviendo mp3"
+	mv $nombre.mp3 $canal/mp3/$nombre.mp3
+
+	echo "- Episodio $id_ep, eliminando el video"
+	rm $file
+    done
+}
+
+# Función para actualizar el feed a partir de lo anterior y lo descargado
+# (Coge la info de
+
+actualizar_feed () {
+    # Valores de argumentos
+    local servidor=${1:?Falta el servidor del feed}
+    local canal=${2:?Falta el nombre del canal}
+    local titulo=${3:?Falta el título del canal}
+
+    # Encabezado del feed
+    echo "- Insertando el encabezado del feed"
+
+    cat > $canal/feed.xml <<end_header <?xml version=1.0 encoding=UTF-8 ?>
+<rss version=2.0 xmlns:atom=http://www.w3.org/2005/Atom xmlns:content=http://purl.org/rss/1.0/modules/content/ xmlns:itunes=http://www.itunes.com/dtds/podcast-1.0.dtd>
+  <channel>
+    <atom:link href=$servidor/twitch/$canal/feed.xml rel=self type=application/rss+xml>
+    <title>$TITULO</title>
+    <description>Un podcast creado por Sherlockes a partir del canal de $TITULO</description>
+    <copyright>Copyright 2022 Sherlockes</copyright>
+    <language>es</language>
+    <pubdate>$FECHA</pubdate>
+    <lastbuilddate>$FECHA</lastbuilddate>
+    <image>
+      <link>https://sherblog.pro</link>
+      <title>$TITULO</title>
+      <url>$servidor/twitch/$canal/artwork.jpg</url>
+    </image>
+    <link>https://www.sherblog.pro</link>
+END_HEADER
+
+    # Buscando mp3's locales para extraer info
+    echo "- Buscando nuevos episodios descargados"
+
+    find $canal -type f -name "*.mp3" | while read -r file; do
+	NOM_EP=$(basename $file)
+	ART_EP=$(ffprobe -loglevel error -show_entries format_tags=artist -of default=noprint_wrappers=1:nokey=1 $file)
+	TIT_EP=$(ffprobe -loglevel error -show_entries format_tags=title -of default=noprint_wrappers=1:nokey=1 $file)
+	FEC_EP=$(echo $NOM_EP | awk -F'_' '{print $1}')
+	FEC_EP=$(date -d $FEC_EP +'%a, %d %b %Y')
+	ID_EP=$(echo $NOM_EP | awk -F'_' '{print $2}')
+
+	echo "- Añadiendo episodio $ID_EP a la dista de episodios"
+	
+	cat >> $canal/items.xml <<end_item <item>
+      <guid ispermalink=true>$servidor/$canal/$ID_EP</guid>
+      <title>$TIT_EP</title>
+      <link>http://linktoyourpodcast.com/$ID_EP</link>
+      <description>Esta es la descripción</description>
+      <pubdate>$FEC_EP 22:00:00 PST</pubdate>
+      <author>$ART_EP</author>
+      <content:encoded><![CDATA[<p>Episodio descargado de Twitch.</p>]]></content:encoded>
+      <enclosure length=37424476 type=audio/mpeg url=$servidor/twitch/$canal/mp3/$NOM_EP>
+    </item>
+END_ITEM
+    done
+
+    # Añadir lista de episodios al feed
+    echo "- Añadiendo lista de episodios al feed"
+    cat $canal/items.xml >> $canal/feed.xml
+
+    # Añadiendo el pie del feed
+    echo "- Añadiendo el pie del feed"
+    cat >> $canal/feed.xml <<end </channel>
+</rss>
+END
+}
+
+subir_contenido () {
+    # Valores de argumentos
+    local canal=${1:?Falta el nombre del canal}
+    
+    # Subiendo archivos a la nube via rclone
+    echo "- Subiendo los mp3's al sevidor remoto"
+    rclone copy $canal Sherlockes78_UN_en:twitch/$canal/ --create-empty-src-dirs
+
+    # Eliminando audio y video local
+    echo "- Eliminando audios locales"
+    find . -type f -name "*.mp3" -delete
+}
+
+########################
+## Programa principal ##
+########################
+
+cd $twitch_dir
+echo "- Corriendo en $twitch_dir"
+buscar_ultimos "$CANAL" "$TITULO"
+convertir_mp3 "$CANAL"
+actualizar_feed "$SERVIDOR" "$CANAL" "$TITULO"
+subir_contenido "$CANAL"
+</code></pre><h3 id=enlaces-de-interés>Enlaces de interés</h3><ul><li><a href=https://www.delftstack.com/howto/linux/parse-json-in-bash/>DelftStack - Parse JSON in Bash</a></li><li><a href=https://ffmpeg.org/ffmpeg.html>FFMPEG</a></li><li><a href=https://bytefreaks.net/gnulinux/bash/bash-remove-the-last-character-from-each-line>ByteFreaks - Remove last character</a></li></ul></div><footer class=post__footer><div class="content post__content clearfix"><h3>Otros de mís artículos que te pueden interesar</h3><ul><li><a href=/descargar-archivos-de-telegram/>Descargar archivos de Telegram</a></li><li><a href=/mi-uso-de-alias-en-bash/>Mi uso de alias en bash</a></li><li><a href=/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/>Mi gestión de los archivos de configuración</a></li><li><a href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li><li><a href=/buscar-y-reemplazar-en-bash-con-find-y-sed/>Buscar y reemplazar en bash con find y sed</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/bash/ rel=tag>bash</a></li><li class=tags__item><a class="tags__link btn" href=/tags/python/ rel=tag>python</a></li></ul></div></footer></article></main><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=/configuraci%C3%B3n-de-home-assistant-en-github/ rel=prev><span class=pager__subtitle>«&#8201;Anterior</span><p class=pager__title>Configuración de Home Assistant en github</p></a></div></nav></div></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2022 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span></br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a></div></div></footer></div><script async defer src=/js/menu.js></script>
 <script src=/js/custom.js></script></body></html>
