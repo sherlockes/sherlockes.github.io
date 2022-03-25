@@ -1,16 +1,5 @@
-{{/*
-  remote
-  Fetch and render remote content from a JSON proxy
-
-  @author @qcasey
-
-  @access public
-
-  @example - Go Template
-    {{< remote "https://git.quinncasey.com/qcasey/lineageos-patches/-/raw/main/README.md" >}}
-*/}}
 {{- $remote_url := (.Get 0) -}}
-{{- $remote_data := getJSON "https://hugo-remote-url-proxy.quinn934.workers.dev/fetch?url=" $remote_url -}}
+{{- $remote_data := getJSON "https://texto-remoto.sherlockes.workers.dev/fetch?url=" $remote_url -}}
 {{- with $remote_data -}}
-    <pre><code>{{ $remote_data.body | safeHTML }}</code></pre>
+    <pre><code>{{ $remote_data.body }}</code></pre>
 {{- end -}}
