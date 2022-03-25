@@ -7,24 +7,24 @@
 
 ###################################################################
 #Script Name: twitch2podcast.sh
-#Description: Generación de entorno de desarrollo para sherblog.pro
+#Description: Generación de Podcast a partir de canal de Twitch
 #Args: N/A
-#Creation/Update: 20220317/20220221
+#Creation/Update: 20220317/20220224
 #Author: www.sherblog.pro                                             
 #Email: sherlockes@gmail.com                               
 ###################################################################
 
-CANAL="jordillatzer"
-TITULO="Jordi Llatzer en Twitch"
-SERVIDOR="http://192.168.10.202:5005"
+CANAL=&#34;jordillatzer&#34;
+TITULO=&#34;Jordi Llatzer en Twitch&#34;
+SERVIDOR=&#34;http://192.168.10.202:5005&#34;
 FECHA=$(date)
 
 twitch_dir=~/twitch
 twdl=$twitch_dir/twitch-dl.pyz
 
-echo "#####################################"
-echo "## Twitch to Podcast by Sherlockes ##"
-echo "#####################################"
+echo &#34;#####################################&#34;
+echo &#34;## Twitch to Podcast by Sherlockes ##&#34;
+echo &#34;#####################################&#34;
 
 ###############
 ## Funciones ##
@@ -38,63 +38,64 @@ buscar_ultimos () {
     local titulo=$2
 
     # Obtiene el json de los ultimos vídeos.
-    echo "$2"
-    echo "- Obteniendo últimos vídeos de $titulo"
+    echo &#34;$2&#34;
+    echo &#34;- Obteniendo últimos vídeos de $titulo&#34;
     json=$(python3 $twdl videos $canal -j)
 
     # Busca sobre los ultimos diez videos
     for i in {0..9}
     do
 	# obtiene la identificación y minutos de duración del último vídeo
-	id=$(echo "$json" | jq ".videos[$i].id" | cut -c2- | rev | cut -c2- | rev)
-	mins=$(expr $(echo "$json" | jq ".videos[$i].lengthSeconds") / 60)
+	id=$(echo &#34;$json&#34; | jq &#34;.videos[$i].id&#34; | cut -c2- | rev | cut -c2- | rev)
+	mins=$(expr $(echo &#34;$json&#34; | jq &#34;.videos[$i].lengthSeconds&#34;) / 60)
 
 	# Comprobar si el archivo ya ha sido descargado
 	if grep -q $id $twitch_dir/$canal/descargados.txt
 	then 
-	    echo "- El vídeo $id ya ha sido descargado.";
+	    echo &#34;- El vídeo $id ya ha sido descargado.&#34;;
 	    # No sigue comprobando si ya ha visto uno descargado
 	    break
 	else
-	    echo "- Descargando el audio del vídeo $id.";
-            if (( $mins > 10 ))
+	    echo &#34;- Descargando el audio del vídeo $id.&#34;;
+            if (( $mins &gt; 10 ))
             then
 		# Descarga el audio en formato mkv
 		$twdl download -q audio_only $id;
             else
-		echo "- El archivo sólo tiene $mins minutos, no se descarga."
+		echo &#34;- El archivo sólo tiene $mins minutos, no se descarga.&#34;
             fi
 	    # Añade el archivo a la lista de descargados
-	    echo $id >> $twitch_dir/$canal/descargados.txt;
+	    echo $id &gt;&gt; $twitch_dir/$canal/descargados.txt;
 	fi
     done
 }
 
 # Función para pasar a mp3 los vídeos descargados en la carpeta
-# (Coge todos os vídeos que hay en la carpeta del script
+# (Coge todos los vídeos que hay en la carpeta del script)
 convertir_mp3 () {
+    # comprueba si hay algún video, si no hay sale de la función
+    if [ ! -e ./*.mkv ]; then return; fi;
+
     local canal=${1:?Falta el nombre del canal}
-    echo "- Buscando archivos para convertir en $canal"
-    
-    # Pasa a mp3, quita silencios, mueve el audio a destino y elimina el video
-    find . -type f -name "*.mkv" | while read -r file; do
+    echo &#34;- Buscando archivos para convertir en $canal&#34;
+
+    for file in ./*.mkv; do
 	local nombre=$(basename $file .mkv)
-	local id_ep=$(echo $nombre | awk -F'_' '{print $2}')
+	local id_ep=$(echo $nombre | awk -F&#39;_&#39; &#39;{print $2}&#39;)
 
-	echo "- Episodio $id_ep, codificando audio y eliminando silencios"
-	ffmpeg -loglevel 24 -i "$file" -af silenceremove=1:0:-50dB "${file%.mkv}.mp3"
+	echo &#34;- Episodio $id_ep, codificando audio y eliminando silencios&#34;
+	ffmpeg -loglevel 24 -i &#34;$file&#34; -af silenceremove=1:0:-50dB &#34;${file%.mkv}.mp3&#34;
 
-	echo "- Episodio $id_ep, moviendo mp3"
+	echo &#34;- Episodio $id_ep, moviendo mp3&#34;
 	mv $nombre.mp3 $canal/mp3/$nombre.mp3
 
-	echo "- Episodio $id_ep, eliminando el video"
+	echo &#34;- Episodio $id_ep, eliminando el video&#34;
 	rm $file
     done
 }
 
 # Función para actualizar el feed a partir de lo anterior y lo descargado
 # (Coge la info de
-
 actualizar_feed () {
     # Valores de argumentos
     local servidor=${1:?Falta el servidor del feed}
@@ -102,60 +103,71 @@ actualizar_feed () {
     local titulo=${3:?Falta el título del canal}
 
     # Encabezado del feed
-    echo "- Insertando el encabezado del feed"
+    echo &#34;- Insertando el encabezado del feed&#34;
 
-    cat > $canal/feed.xml <<end_header <?xml version=1.0 encoding=UTF-8 ?>
-<rss version=2.0 xmlns:atom=http://www.w3.org/2005/Atom xmlns:content=http://purl.org/rss/1.0/modules/content/ xmlns:itunes=http://www.itunes.com/dtds/podcast-1.0.dtd>
-  <channel>
-    <atom:link href=$servidor/twitch/$canal/feed.xml rel=self type=application/rss+xml>
-    <title>$TITULO</title>
-    <description>Un podcast creado por Sherlockes a partir del canal de $TITULO</description>
-    <copyright>Copyright 2022 Sherlockes</copyright>
-    <language>es</language>
-    <pubdate>$FECHA</pubdate>
-    <lastbuilddate>$FECHA</lastbuilddate>
-    <image>
-      <link>https://sherblog.pro</link>
-      <title>$TITULO</title>
-      <url>$servidor/twitch/$canal/artwork.jpg</url>
-    </image>
-    <link>https://www.sherblog.pro</link>
+    cat &gt; $canal/feed.xml &lt;&lt;END_HEADER
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;rss version=&#34;2.0&#34;
+  xmlns:atom=&#34;http://www.w3.org/2005/Atom&#34;
+  xmlns:content=&#34;http://purl.org/rss/1.0/modules/content/&#34;
+  xmlns:itunes=&#34;http://www.itunes.com/dtds/podcast-1.0.dtd&#34;&gt;
+  &lt;channel&gt;
+    &lt;atom:link href=&#34;$servidor/twitch/$canal/feed.xml&#34; rel=&#34;self&#34; type=&#34;application/rss&#43;xml&#34;/&gt;
+    &lt;title&gt;$TITULO&lt;/title&gt;
+    &lt;description&gt;Un podcast creado por Sherlockes a partir del canal de $TITULO&lt;/description&gt;
+    &lt;copyright&gt;Copyright 2022 Sherlockes&lt;/copyright&gt;
+    &lt;language&gt;es&lt;/language&gt;
+    &lt;pubDate&gt;$FECHA&lt;/pubDate&gt;
+    &lt;lastBuildDate&gt;$FECHA&lt;/lastBuildDate&gt;
+    &lt;image&gt;
+      &lt;link&gt;https://sherblog.pro&lt;/link&gt;
+      &lt;title&gt;$TITULO&lt;/title&gt;
+      &lt;url&gt;$servidor/twitch/$canal/artwork.jpg&lt;/url&gt;
+    &lt;/image&gt;
+    &lt;link&gt;https://www.sherblog.pro&lt;/link&gt;
 END_HEADER
 
-    # Buscando mp3's locales para extraer info
-    echo "- Buscando nuevos episodios descargados"
+    # Buscando mp3&#39;s locales para extraer info
+    echo &#34;- Buscando nuevos episodios descargados&#34;
 
-    find $canal -type f -name "*.mp3" | while read -r file; do
+    find $canal -type f -name &#34;*.mp3&#34; | while read -r file; do
 	NOM_EP=$(basename $file)
 	ART_EP=$(ffprobe -loglevel error -show_entries format_tags=artist -of default=noprint_wrappers=1:nokey=1 $file)
 	TIT_EP=$(ffprobe -loglevel error -show_entries format_tags=title -of default=noprint_wrappers=1:nokey=1 $file)
-	FEC_EP=$(echo $NOM_EP | awk -F'_' '{print $1}')
-	FEC_EP=$(date -d $FEC_EP +'%a, %d %b %Y')
-	ID_EP=$(echo $NOM_EP | awk -F'_' '{print $2}')
+	FEC_EP=$(echo $NOM_EP | awk -F&#39;_&#39; &#39;{print $1}&#39;)
+	FEC_EP=$(date -d $FEC_EP &#43;&#39;%a, %d %b %Y&#39;)
+	ID_EP=$(echo $NOM_EP | awk -F&#39;_&#39; &#39;{print $2}&#39;)
 
-	echo "- Añadiendo episodio $ID_EP a la dista de episodios"
-	
-	cat >> $canal/items.xml <<end_item <item>
-      <guid ispermalink=true>$servidor/$canal/$ID_EP</guid>
-      <title>$TIT_EP</title>
-      <link>http://linktoyourpodcast.com/$ID_EP</link>
-      <description>Esta es la descripción</description>
-      <pubdate>$FEC_EP 22:00:00 PST</pubdate>
-      <author>$ART_EP</author>
-      <content:encoded><![CDATA[<p>Episodio descargado de Twitch.</p>]]></content:encoded>
-      <enclosure length=37424476 type=audio/mpeg url=$servidor/twitch/$canal/mp3/$NOM_EP>
-    </item>
+	echo &#34;- Añadiendo episodio $ID_EP a la dista de episodios&#34;
+
+	# crea el &#34;item.xml&#34; con info del episodio
+	cat &gt;&gt; $canal/item.xml &lt;&lt;END_ITEM
+    &lt;item&gt;
+      &lt;guid isPermaLink=&#34;true&#34;&gt;$servidor/$canal/$ID_EP&lt;/guid&gt;
+      &lt;title&gt;$TIT_EP&lt;/title&gt;
+      &lt;link&gt;http://linktoyourpodcast.com/$ID_EP&lt;/link&gt;
+      &lt;description&gt;Esta es la descripción&lt;/description&gt;
+      &lt;pubDate&gt;$FEC_EP 22:00:00 PST&lt;/pubDate&gt;
+      &lt;author&gt;$ART_EP&lt;/author&gt;
+      &lt;content:encoded&gt;&lt;![CDATA[&lt;p&gt;Episodio descargado de Twitch.&lt;/p&gt;]]&gt;&lt;/content:encoded&gt;
+      &lt;enclosure length=&#34;37424476&#34; type=&#34;audio/mpeg&#34; url=&#34;$servidor/twitch/$canal/mp3/$NOM_EP&#34;/&gt;
+    &lt;/item&gt;
 END_ITEM
     done
 
+    # Añade los &#34;items.xml&#34; ya descargado a continuación del &#34;item.xml&#34;
+    cat $canal/items.xml &gt;&gt; $canal/item.xml
+    mv $canal/item.xml $canal/items.xml
+    
     # Añadir lista de episodios al feed
-    echo "- Añadiendo lista de episodios al feed"
-    cat $canal/items.xml >> $canal/feed.xml
+    echo &#34;- Añadiendo lista de episodios al feed&#34;
+    cat $canal/items.xml &gt;&gt; $canal/feed.xml
 
     # Añadiendo el pie del feed
-    echo "- Añadiendo el pie del feed"
-    cat >> $canal/feed.xml <<end </channel>
-</rss>
+    echo &#34;- Añadiendo el pie del feed&#34;
+    cat &gt;&gt; $canal/feed.xml &lt;&lt;END
+  &lt;/channel&gt;
+&lt;/rss&gt;
 END
 }
 
@@ -164,12 +176,12 @@ subir_contenido () {
     local canal=${1:?Falta el nombre del canal}
     
     # Subiendo archivos a la nube via rclone
-    echo "- Subiendo los mp3's al sevidor remoto"
+    echo &#34;- Subiendo los mp3&#39;s al sevidor remoto&#34;
     rclone copy $canal Sherlockes78_UN_en:twitch/$canal/ --create-empty-src-dirs
 
     # Eliminando audio y video local
-    echo "- Eliminando audios locales"
-    find . -type f -name "*.mp3" -delete
+    echo &#34;- Eliminando audios locales&#34;
+    find . -type f -name &#34;*.mp3&#34; -delete
 }
 
 ########################
@@ -177,11 +189,11 @@ subir_contenido () {
 ########################
 
 cd $twitch_dir
-echo "- Corriendo en $twitch_dir"
-buscar_ultimos "$CANAL" "$TITULO"
-convertir_mp3 "$CANAL"
-actualizar_feed "$SERVIDOR" "$CANAL" "$TITULO"
-subir_contenido "$CANAL"
+echo &#34;- Corriendo en $twitch_dir&#34;
+buscar_ultimos &#34;$CANAL&#34; &#34;$TITULO&#34;
+convertir_mp3 &#34;$CANAL&#34;
+actualizar_feed &#34;$SERVIDOR&#34; &#34;$CANAL&#34; &#34;$TITULO&#34;
+subir_contenido &#34;$CANAL&#34;
 </code></pre><h3 id=enlaces-de-interés>Enlaces de interés</h3><ul><li><a href=https://www.delftstack.com/howto/linux/parse-json-in-bash/>DelftStack - Parse JSON in Bash</a></li><li><a href=https://ffmpeg.org/ffmpeg.html>FFMPEG</a></li><li><a href=https://bytefreaks.net/gnulinux/bash/bash-remove-the-last-character-from-each-line>ByteFreaks - Remove last character</a></li></ul></div><footer class=post__footer><div class="content post__content clearfix"><h3>Otros de mís artículos que te pueden interesar</h3><ul><li><a href=/descargar-archivos-de-telegram/>Descargar archivos de Telegram</a></li><li><a href=/mi-uso-de-alias-en-bash/>Mi uso de alias en bash</a></li><li><a href=/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/>Mi gestión de los archivos de configuración</a></li><li><a href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li><li><a href=/buscar-y-reemplazar-en-bash-con-find-y-sed/>Buscar y reemplazar en bash con find y sed</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/bash/ rel=tag>bash</a></li><li class=tags__item><a class="tags__link btn" href=/tags/python/ rel=tag>python</a></li></ul></div></footer></article></main><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=/configuraci%C3%B3n-de-home-assistant-en-github/ rel=prev><span class=pager__subtitle>«&#8201;Anterior</span><p class=pager__title>Configuración de Home Assistant en github</p></a></div></nav></div></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2022 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span></br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a></div></div></footer></div><script async defer src=/js/menu.js></script>
 <script src=/js/custom.js></script></body></html>
