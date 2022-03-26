@@ -9,7 +9,7 @@
 #Script Name: twitch2podcast.sh
 #Description: Generación de Podcast a partir de canal de Twitch
 #Args: N/A
-#Creation/Update: 20220317/20220224
+#Creation/Update: 20220317/20220226
 #Author: www.sherblog.pro                                             
 #Email: sherlockes@gmail.com                               
 ###################################################################
@@ -22,25 +22,43 @@ FECHA=$(date)
 twitch_dir=~/twitch
 twdl=$twitch_dir/twitch-dl.pyz
 
-echo &#34;#####################################&#34;
-echo &#34;## Twitch to Podcast by Sherlockes ##&#34;
-echo &#34;#####################################&#34;
+notificacion=~/SherloScripts/bash/telegram.sh
+inicio=$( date &#43;%s )
+
+mensaje=$&#39;Actualizar Twitch mediante &lt;a href=&#34;https://raw.githubusercontent.com/sherlockes/SherloScripts/master/bash/twitch2podcast.sh&#34;&gt;twitch2podcast.sh&lt;/a&gt;\n&#39;
+mensaje&#43;=$&#39;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n&#39;
 
 ###############
 ## Funciones ##
 ###############
 
-# Función para buscar los últimos vídeos de un canal no descargados
+#----------------------------------------------------------#
+#                   Comprobar la salida                    #
+#----------------------------------------------------------#
+comprobar(){
+
+    if [ $1 -eq 0 ]; then
+	mensaje&#43;=$&#39;OK&#39;
+    else
+	mensaje&#43;=$&#39;ERROR&#39;
+    fi
+    mensaje&#43;=$&#39;\n&#39;
+}
+
+#----------------------------------------------------------#
+#   Buscar los últimos vídeos de un canal no descargados   #
+#----------------------------------------------------------#
 buscar_ultimos () {
     # Valores de argumentos
     local canal=${1:?Falta el nombre del canal}
-    #local titulo=${2:?Falta el título del canal}
-    local titulo=$2
+    local titulo=${2:?Falta el título del canal}
 
     # Obtiene el json de los ultimos vídeos.
-    echo &#34;$2&#34;
+    mensaje&#43;=$&#39;Obteniendo últimos vídeos . . . . . . . . . . . . . . &#39;
     echo &#34;- Obteniendo últimos vídeos de $titulo&#34;
     json=$(python3 $twdl videos $canal -j)
+    comprobar $?
+    
 
     # Busca sobre los ultimos diez videos
     for i in {0..9}
@@ -51,56 +69,86 @@ buscar_ultimos () {
 
 	# Comprobar si el archivo ya ha sido descargado
 	if grep -q $id $twitch_dir/$canal/descargados.txt
-	then 
+	then
+        echo $i
+        if [ $i -eq 0 ]
+        then
+            echo &#34;- No hay nuevos vídeos.&#34;;
+            mensaje&#43;=$&#34;No hay nuevos vídeos.&#34;
+            mensaje&#43;=$&#39;\n&#39;
+	        # No sigue comprobando si ya ha visto uno descargado
+	        break
+        fi
 	    echo &#34;- El vídeo $id ya ha sido descargado.&#34;;
+        mensaje&#43;=$&#34;El vídeo $id ya ha sido descargado.&#34;
+        mensaje&#43;=$&#39;\n&#39;
 	    # No sigue comprobando si ya ha visto uno descargado
 	    break
 	else
 	    echo &#34;- Descargando el audio del vídeo $id.&#34;;
-            if (( $mins &gt; 10 ))
-            then
-		# Descarga el audio en formato mkv
-		$twdl download -q audio_only $id;
-            else
-		echo &#34;- El archivo sólo tiene $mins minutos, no se descarga.&#34;
-            fi
+        mensaje&#43;=$&#34;Descargando el audio del vídeo $id.&#34;
+        mensaje&#43;=$&#39;\n&#39;
+
+        if (( $mins &gt; 10 ))
+        then
+		    # Descarga el audio en formato mkv
+		    $twdl download -q audio_only $id;
+        else
+		    echo &#34;- El archivo sólo tiene $mins minutos, no se descarga.&#34;
+            mensaje&#43;=$&#34;El archivo sólo tiene $mins minutos, no se descarga.&#34;
+            mensaje&#43;=$&#39;\n&#39;
+        fi
+
 	    # Añade el archivo a la lista de descargados
 	    echo $id &gt;&gt; $twitch_dir/$canal/descargados.txt;
 	fi
     done
 }
 
-# Función para pasar a mp3 los vídeos descargados en la carpeta
-# (Coge todos los vídeos que hay en la carpeta del script)
+#----------------------------------------------------------#
+#      Pasa a mp3 los vídeos descargados en la carpeta     #
+#----------------------------------------------------------#
 convertir_mp3 () {
     # comprueba si hay algún video, si no hay sale de la función
-    if [ ! -e ./*.mkv ]; then return; fi;
+    if [ ! -e ./*.mkv ]; then return; fi
 
     local canal=${1:?Falta el nombre del canal}
     echo &#34;- Buscando archivos para convertir en $canal&#34;
+    mensaje&#43;=$&#34;Buscando archivos para convertir en $canal&#34;
+    mensaje&#43;=$&#39;\n&#39;
 
     for file in ./*.mkv; do
-	local nombre=$(basename $file .mkv)
-	local id_ep=$(echo $nombre | awk -F&#39;_&#39; &#39;{print $2}&#39;)
+	    local nombre=$(basename $file .mkv)
+	    local id_ep=$(echo $nombre | awk -F&#39;_&#39; &#39;{print $2}&#39;)
 
-	echo &#34;- Episodio $id_ep, codificando audio y eliminando silencios&#34;
-	ffmpeg -loglevel 24 -i &#34;$file&#34; -af silenceremove=1:0:-50dB &#34;${file%.mkv}.mp3&#34;
+	    echo &#34;- Episodio $id_ep, codificando audio y eliminando silencios&#34;
+        mensaje&#43;=$&#34;Episodio $id_ep, codificando audio . . . .&#34;
+        ffmpeg -loglevel 24 -i &#34;$file&#34; -af silenceremove=1:0:-50dB &#34;${file%.mkv}.mp3&#34;
+        comprobar $?
 
-	echo &#34;- Episodio $id_ep, moviendo mp3&#34;
-	mv $nombre.mp3 $canal/mp3/$nombre.mp3
+	    echo &#34;- Episodio $id_ep, moviendo mp3&#34;
+        mensaje&#43;=$&#34;Episodio $id_ep, moviendo mp3 . . . . . . .&#34;
+	    mv $nombre.mp3 $canal/mp3/$nombre.mp3
+        comprobar $?
 
-	echo &#34;- Episodio $id_ep, eliminando el video&#34;
-	rm $file
+	    echo &#34;- Episodio $id_ep, eliminando el video&#34;
+        mensaje&#43;=$&#34;Episodio $id_ep, eliminando el video . . . . . . .&#34;
+	    rm $file
+        comprobar $?
     done
 }
-
-# Función para actualizar el feed a partir de lo anterior y lo descargado
+#----------------------------------------------------------#
+#                    Actualizar el feed                    #
+#----------------------------------------------------------#
 # (Coge la info de
 actualizar_feed () {
     # Valores de argumentos
     local servidor=${1:?Falta el servidor del feed}
     local canal=${2:?Falta el nombre del canal}
     local titulo=${3:?Falta el título del canal}
+
+    # Comprueba si hay algún mp3 en la carpeta del canal, si no hay sale de la función
+    if [ ! -e ./$canal/*.mp3 ]; then return; fi
 
     # Encabezado del feed
     echo &#34;- Insertando el encabezado del feed&#34;
@@ -171,9 +219,16 @@ END_ITEM
 END
 }
 
+
+#----------------------------------------------------------#
+#               Subir contenido actualizado                #
+#----------------------------------------------------------#
 subir_contenido () {
     # Valores de argumentos
     local canal=${1:?Falta el nombre del canal}
+
+    # Comprueba si hay algún mp3 en la carpeta del canal, si no hay sale de la función
+    if [ ! -e ./$canal/*.mp3 ]; then return; fi
     
     # Subiendo archivos a la nube via rclone
     echo &#34;- Subiendo los mp3&#39;s al sevidor remoto&#34;
@@ -184,20 +239,40 @@ subir_contenido () {
     find . -type f -name &#34;*.mp3&#34; -delete
 }
 
+
 ########################
 ## Programa principal ##
 ########################
+
+echo &#34;#####################################&#34;
+echo &#34;## Twitch to Podcast by Sherlockes ##&#34;
+echo &#34;#####################################&#34;
 
 cd $twitch_dir
 echo &#34;- Corriendo en $twitch_dir&#34;
 
 # Comprobar la instalación de twitch-dl en el directorio
 . ~/SherloScripts/bash/twitch-dl.sh &amp;&amp; check
-case 
+
+# Buscar nuevos videos y convertirlos a mp3
 buscar_ultimos &#34;$CANAL&#34; &#34;$TITULO&#34;
+
+# Convertir a mp3 los vídeos descargados
 convertir_mp3 &#34;$CANAL&#34;
+
+# Actualizar el feed con los nuevos vídeos
 actualizar_feed &#34;$SERVIDOR&#34; &#34;$CANAL&#34; &#34;$TITULO&#34;
+
+# Subir el nuevo contenido al servidor
 subir_contenido &#34;$CANAL&#34;
+
+# Envia el mensaje de telegram con el resultado
+fin=$( date &#43;%s )
+let duracion=$fin-$inicio
+mensaje&#43;=$&#39;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n&#39;
+mensaje&#43;=$&#34;Duración del Script:  $duracion segundos&#34;
+
+$notificacion &#34;$mensaje&#34;
 </code></pre><h3 id=enlaces-de-interés>Enlaces de interés</h3><ul><li><a href=https://www.delftstack.com/howto/linux/parse-json-in-bash/>DelftStack - Parse JSON in Bash</a></li><li><a href=https://ffmpeg.org/ffmpeg.html>FFMPEG</a></li><li><a href=https://bytefreaks.net/gnulinux/bash/bash-remove-the-last-character-from-each-line>ByteFreaks - Remove last character</a></li></ul></div><footer class=post__footer><div class="content post__content clearfix"><h3>Otros de mís artículos que te pueden interesar</h3><ul><li><a href=/descargar-archivos-de-telegram/>Descargar archivos de Telegram</a></li><li><a href=/mi-uso-de-alias-en-bash/>Mi uso de alias en bash</a></li><li><a href=/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/>Mi gestión de los archivos de configuración</a></li><li><a href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li><li><a href=/buscar-y-reemplazar-en-bash-con-find-y-sed/>Buscar y reemplazar en bash con find y sed</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/bash/ rel=tag>bash</a></li><li class=tags__item><a class="tags__link btn" href=/tags/python/ rel=tag>python</a></li></ul></div></footer></article></main><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=/configuraci%C3%B3n-de-home-assistant-en-github/ rel=prev><span class=pager__subtitle>«&#8201;Anterior</span><p class=pager__title>Configuración de Home Assistant en github</p></a></div></nav></div></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2022 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span></br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a></div></div></footer></div><script async defer src=/js/menu.js></script>
 <script src=/js/custom.js></script></body></html>
