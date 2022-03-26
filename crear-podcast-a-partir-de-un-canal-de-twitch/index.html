@@ -190,6 +190,10 @@ subir_contenido () {
 
 cd $twitch_dir
 echo &#34;- Corriendo en $twitch_dir&#34;
+
+# Comprobar la instalación de twitch-dl en el directorio
+. ~/SherloScripts/bash/twitch-dl.sh &amp;&amp; check
+case 
 buscar_ultimos &#34;$CANAL&#34; &#34;$TITULO&#34;
 convertir_mp3 &#34;$CANAL&#34;
 actualizar_feed &#34;$SERVIDOR&#34; &#34;$CANAL&#34; &#34;$TITULO&#34;
