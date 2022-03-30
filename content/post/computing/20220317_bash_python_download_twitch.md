@@ -2,7 +2,7 @@
 title: "Crear Podcast a partir de un canal de Twitch"
 date: "2022-03-23"
 creation: "2022-03-17"
-description: "Una orma sencilla de crear de forma automática un podcast a partir de un canal de Twitch"
+description: "Una forma sencilla de crear de forma automática un podcast a partir de un canal de Twitch"
 thumbnail: "images/20220317_python_download_twitch_00.jpg"
 disable_comments: true
 authorbox: false

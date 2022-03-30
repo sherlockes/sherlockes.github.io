@@ -17,6 +17,12 @@ weight: 5
 ---
 Resumen de introducción
 <!--more-->
+Cuando empecé con [IFTTT] era posible crear todas las "recetas" que se quisiera de forma completamente gratuita. Hace unos años lo limitaron a 3 por cuenta y ahora veo que lo han subido a 5 pero, ¿Que impide que pongan el servicio completamente de pago y haya que subirse al carro o buscar una alternativa?
+
+Ahora me dispongo a sacar de [IFTTT] el servicio de publicación automática de los post del blog en Twitter para crear el mio propio.
+
+![image-01]
+
 
 sudo apt install libxml2-utils
 
@@ -26,8 +32,9 @@ sudo apt install libxml2-utils
 ### Enlaces de interés
 - [Atareao - Tratar xml en bash](https://atareao.es/como/xml-en-bash/)
 
-[link]: https://www.google.es
-
+[tweet.sh]: https://github.com/piroor/tweet.sh
+[Developer Portal]: https://developer.twitter.com
+[IFTTT]: https://ifttt.com
 
 [image-01]: /images/20220326_bash_rss_2_twitter_01.jpg
 [image-02]: /images/20220326_bash_rss_2_twitter_02.jpg

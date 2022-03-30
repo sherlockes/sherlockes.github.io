@@ -3,7 +3,7 @@ title: "Incrustar texto externo en Hugo"
 date: "2022-03-25"
 creation: "2021-04-21"
 description: "Como incrustar texto de un archivo externo dentro de un post en Hugo"
-thumbnail: "/images/20210421_hugo_incrustar_texto_00.jpg"
+thumbnail: "images/20210421_hugo_incrustar_texto_00.jpg"
 disable_comments: true
 authorbox: false
 toc: false
