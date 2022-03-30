@@ -9,7 +9,7 @@
 #Script Name: twitch2podcast.sh
 #Description: Generación de Podcast a partir de canal de Twitch
 #Args: N/A
-#Creation/Update: 20220317/20220229
+#Creation/Update: 20220317/20220230
 #Author: www.sherblog.pro                                             
 #Email: sherlockes@gmail.com                               
 ###################################################################
@@ -60,7 +60,7 @@ buscar_ultimos () {
     comprobar $?
 
     # Limitar a 15 videos la lista de descargados
-    mensaje&#43;=$&#39;Recortando listas de descargados . . . . . &#39;
+    mensaje&#43;=$&#39;Recortando listas de descargados . . . . . .&#39;
     echo &#34;- Recortando listas de descargados&#34;
     head -n15 $twitch_dir/$canal/descargados.txt &gt; tmp
     mv tmp $twitch_dir/$canal/descargados.txt
@@ -73,6 +73,17 @@ buscar_ultimos () {
     # Busca sobre los ultimos diez videos
     for i in {0..9}
     do
+	# Si el vídeo a comenzado hace menos de 3 horas pasa al siguiente
+	publicado=$(echo &#34;$json&#34; | jq &#34;.videos[$i].publishedAt&#34; | cut -c2- | rev | cut -c2- | rev)
+	publicado=$(date -d &#34;$publicado&#43;3 hours&#34; &#43;%s)
+	
+	if [[ $(date &#43;%s) &lt; $publicado ]]
+	then
+	    mensaje&#43;=$&#34;El vídeo $id está en emisión.&#34;
+            mensaje&#43;=$&#39;\n&#39;
+	    continue
+	fi
+	
 	# obtiene la identificación y minutos de duración del último vídeo
 	id=$(echo &#34;$json&#34; | jq &#34;.videos[$i].id&#34; | cut -c2- | rev | cut -c2- | rev)
 	mins=$(expr $(echo &#34;$json&#34; | jq &#34;.videos[$i].lengthSeconds&#34;) / 60)
@@ -96,18 +107,18 @@ buscar_ultimos () {
 	    break
 	else
 	    echo &#34;- Descargando el audio del vídeo $id.&#34;;
-        mensaje&#43;=$&#34;Descargando el audio del vídeo $id.&#34;
-        mensaje&#43;=$&#39;\n&#39;
+            mensaje&#43;=$&#34;Descargando el audio de $id . . .&#34;
 
-        if (( $mins &gt; 10 ))
-        then
-		    # Descarga el audio en formato mkv
-		    $twdl download -q audio_only $id;
-        else
-		    echo &#34;- El archivo sólo tiene $mins minutos, no se descarga.&#34;
-            mensaje&#43;=$&#34;El archivo sólo tiene $mins minutos, no se descarga.&#34;
-            mensaje&#43;=$&#39;\n&#39;
-        fi
+            if (( $mins &gt; 10 ))
+            then
+		# Descarga el audio en formato mkv
+		$twdl download -q audio_only $id;
+		comprobar $?
+            else
+		echo &#34;- El archivo sólo tiene $mins minutos, no se descarga.&#34;
+		mensaje&#43;=$&#34;El archivo sólo tiene $mins minutos, no se descarga.&#34;
+		mensaje&#43;=$&#39;\n&#39;
+            fi
 
 	    # Añade el archivo al principio de la lista de descargados
 	#echo $id &gt;&gt; $twitch_dir/$canal/descargados.txt;
@@ -130,23 +141,23 @@ convertir_mp3 () {
     mensaje&#43;=$&#39;\n&#39;
 
     for file in ./*.mkv; do
-	    local nombre=$(basename $file .mkv)
-	    local id_ep=$(echo $nombre | awk -F&#39;_&#39; &#39;{print $2}&#39;)
+       local nombre=$(basename $file .mkv)
+       local id_ep=$(echo $nombre | awk -F&#39;_&#39; &#39;{print $2}&#39;)
 
-	    echo &#34;- Episodio $id_ep, codificando audio y eliminando silencios&#34;
-        mensaje&#43;=$&#34;Codificando audio de video $id_ep . . &#34;
-        ffmpeg -loglevel 24 -i &#34;$file&#34; -af silenceremove=1:0:-50dB &#34;${file%.mkv}.mp3&#34;
-        comprobar $?
+       echo &#34;- Episodio $id_ep, codificando audio y eliminando silencios&#34;
+       mensaje&#43;=$&#34;Recodificando audio de $id_ep . . . . &#34;
+       ffmpeg -loglevel 24 -i &#34;$file&#34; -af silenceremove=1:0:-50dB &#34;${file%.mkv}.mp3&#34;
+       comprobar $?
 
-	    echo &#34;- Episodio $id_ep, moviendo mp3&#34;
-        mensaje&#43;=$&#34;Moviendo mp3 $id_ep . . . . . . . .&#34;
-	    mv $nombre.mp3 $canal/mp3/$id_ep.mp3
-        comprobar $?
+       echo &#34;- Episodio $id_ep, moviendo mp3&#34;
+       mensaje&#43;=$&#34;Moviendo mp3 $id_ep . . . . . . . . .&#34;
+       mv $nombre.mp3 $canal/mp3/$id_ep.mp3
+       comprobar $?
 
-	    echo &#34;- Episodio $id_ep, eliminando el video&#34;
-        mensaje&#43;=$&#34;Eliminando vídeo $id_ep . . . . . .&#34;
-	    rm $file
-        comprobar $?
+       echo &#34;- Episodio $id_ep, eliminando el video&#34;
+       mensaje&#43;=$&#34;Eliminando vídeo $id_ep . . . . . . .&#34;
+       rm $file
+       comprobar $?
     done
 }
 #----------------------------------------------------------#
