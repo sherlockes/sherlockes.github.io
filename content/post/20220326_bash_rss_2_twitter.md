@@ -44,6 +44,11 @@ curl --fail --silent --show-error "https://raw.githubusercontent.com/piroor/twee
 chmod +x tweet.sh
 ```
 
+La documentación de [Hugo] sobre [rss] es un poco ambigua, lo único que es necesario tener en cuenta para el caso que nos ocupa es que por defecto se crea el archivo "www.tudominio.com/index.xml" con la información que nos servirá de rss para el blog.
+
+> Para simplificar un poco el archivo he incluido en el archivo "config.toml" el parámetro `rssLimit = "10"` para que el"index.xml" generado se limite a 10 post.
+
+
 ![image-01]
 
 ### Enlaces de interés
@@ -54,6 +59,7 @@ chmod +x tweet.sh
 [Hugo]: https://gohugo.io
 [IFTTT]: https://ifttt.com
 [nkf]: https://github.com/dmc/nkf
+[rss]: https://gohugo.io/templates/rss/
 [Twitter]: https://twitter.com/sherblogpro
 [Xmllint]: https://gnome.pages.gitlab.gnome.org/libxml2/xmllint.html
 
