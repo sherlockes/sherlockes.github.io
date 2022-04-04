@@ -1,6 +1,6 @@
 ---
 title: "Bash rss 2 twitter"
-date: "2022-03-26"
+date: "2022-04-04"
 creation: "2022-03-26"
 description: "Como publicar los nuevos artículos del blog en Twitter mediante un script en Bash"
 thumbnail: "images/20220326_bash_rss_2_twitter_00.jpg"
