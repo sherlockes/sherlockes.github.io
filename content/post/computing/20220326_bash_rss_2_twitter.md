@@ -2,7 +2,7 @@
 title: "Bash rss 2 twitter"
 date: "2022-03-26"
 creation: "2022-03-26"
-description: "Bash rss 2 twitter"
+description: "Como publicar los nuevos artículos del blog en Twitter mediante un script en Bash"
 thumbnail: "images/20220326_bash_rss_2_twitter_00.jpg"
 disable_comments: true
 authorbox: false
@@ -12,7 +12,7 @@ categories:
 - "computing"
 tags:
 - "bash"
-draft: true
+draft: false
 weight: 5
 ---
 Una buena forma de dar algo de visibilidad a los post en el blog es publicándolos en [Twitter]. Aunque no es muy laborioso, resulta más cómodo que se realice de forma automática y aquí dejo como he creado mi propio script para hacerlo.
@@ -36,6 +36,8 @@ La primera duda que me surge es si desarrollarlo en Bash o Python ya que son los
 
 Para la instalación de todo lo anterior ejecutaremos el siguiente código aunque realmente no es necesario, ya que el propio script va a ser capaz de detectar si algo no está instalado y hacerlo automáticamente.
 
+
+
 ``` bash
 sudo apt update
 sudo apt install libxml2-utils
@@ -48,12 +50,36 @@ La documentación de [Hugo] sobre [rss] es un poco ambigua, lo único que es nec
 
 > Para simplificar un poco el archivo he incluido en el archivo "config.toml" el parámetro `rssLimit = "10"` para que el"index.xml" generado se limite a 10 post.
 
+La siguiente necesidad que se nos plantea es la extracción de información desde el archivo xml. Para esto te recomiendo que leas el artículo de Atareao que hay en los enlaces de abajo. A partir de este artículo me he creado una función para obtener a partir de un xml cualquier parámetro de cualquier objeto.
 
-![image-01]
+``` bash
+obtener_xml() {
+    SALIDA="$(xmllint --xpath "//$2[$4]/$3" $1 | sed -E "s/<$3>([^<]*)<\/$3>/\1;/g" | rev | cut -c2- | rev)"
+    echo "$SALIDA"
+}
+```
+Donde
+- $1 es el archivo del que vamos a extraer la info
+- $2 es el objeto que estamos buscando (Ahora "items" o posts)
+- $3 es la propiedad dentro del objeto (Para este caso "link")
+- $4 es la posición del objeto (1º, 2º, 3º, 4º...)
+
+Por último queda enviar el link del artículo a como tweet a tu cuenta de Twitter para lo que he usado [tweet.sh] que sólo necesita tener acceso a las llaves de publicación en Twitter que guardaremos en el archivo "~/.tweet.client.key" y llamar al comando post mediante.
+
+``` bash
+tweet.sh post $LINK
+```
+
+> Para acceder a las claves deberás crear una [App de Twitter] y darle permiso de lectura y escritura desde el menú "User authentication settings". Importante regenerar las claves después de cambiar los permisos.
+
+Por supuesto, hay que comprobar si el ultimo artículo publicado ha cambiado para no repetir constantemente los tweets. Como he conseguido esto y el resto de necesidades lo puedes ver en el script completo.
+
+{{< texto_remoto "https://raw.githubusercontent.com/sherlockes/SherloScripts/master/bash/rss2twitter.sh" >}}
 
 ### Enlaces de interés
 - [Atareao - Tratar xml en bash](https://atareao.es/como/xml-en-bash/)
 
+[App de Twitter]: https://apps.twitter.com/
 [tweet.sh]: https://github.com/piroor/tweet.sh
 [Developer Portal]: https://developer.twitter.com
 [Hugo]: https://gohugo.io
