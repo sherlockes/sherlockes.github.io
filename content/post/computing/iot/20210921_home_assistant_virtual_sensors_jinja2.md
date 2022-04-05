@@ -1,6 +1,6 @@
 ---
 title: "Sensores virtuales y Jinja2 en Home Assistant"
-date: "2021-12-09"
+date: "2022-04-05"
 creation: "2021-09-21"
 description: "Mi manejo de los sensores virtuales y el motor de plantillas Jinja2 en Home Assistant"
 thumbnail: "images/20210921_home_assistant_virtual_sensors_jinja2_00.jpg"
@@ -16,6 +16,8 @@ draft: false
 weight: 5
 ---
 Aquí dejo la solución que he implementado ante el problema de crear una nueva entidad en Home Assistant cuyo valor dependa del de otras entidades ya existentes gracias al uso de sensores virtuales y el motor de plantillas de Jinja2.
+
+**Actualización:** Sensor de estado de la TV
 <!--more-->
 
 ### Creando el archivo de sensores
@@ -199,9 +201,30 @@ Si lo traducimos a jinja 2, el sensor virtual quedará así.
             {% endif %}
 ```
 
+### Sensor de estado de la TV
+Mi TV no es "inteligente" y para poder encenderla o apagarla a través de [Home Assistant] lo hago a través de un [Broadlink RM mini] colocado en el salón gracias a la integración [SmartIR]. Esta integración hace uso de un sensor de encendido denominado "power_sensor" de forma que cuando está a "on" ofrece todos los controles de la TV y cuando esta a "off" sólo ofrece la posibilidad de encenderla.
+
+Para crear este sensor de encendido tengo conectada la TV a un enchufe inteligente que me da información de consumo. No se si la medición es muy fiable, pero la experiencia me dice que cuando está encendida gasta por encima de los 30w lo que es información suficiente para crear este sensor de estado de la TV que incluyo dentro del archivo "sensors.yaml"
+
+```
+  - platform: template
+    sensors:
+      estado_tv:
+        friendly_name: "Como está la tele?"
+        value_template: >-
+            {% set consumo_tv = state_attr('sensor.salon_tv_enchufe_corriente','current') %}
+            {% if consumo_tv > 30 %}
+            on
+            {% else %}
+            off
+            {% endif %}
+```
+
 [AEMET]: https://www.home-assistant.io/integrations/aemet
+[Broadlink RM mini]: https://www.broadlink.com.es/broadlink-rm-mini3-domotica-mando-distancia-universal.html
 [File Editor]: https://github.com/home-assistant/addons/tree/master/configurator
 [Home Assistant]: https://www.home-assistant.io
+[SmartIR]: https://github.com/smartHomeHub/SmartIR
 
 [image-01]: /images/20210921_home_assistant_virtual_sensors_jinja2_01.jpg
 [image-02]: /images/20210921_home_assistant_virtual_sensors_jinja2_02.jpg

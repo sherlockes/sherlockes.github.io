@@ -32,7 +32,7 @@ Para poder integrar la cámara con [Home Assistant] es necesario instalarle un f
 > A la hora de escoger la versión de firmware que vamos a instalar hay que tener en cuenta el nº de serie de la cámara. Esta identificación se encuentra en la etiqueta trasera de la caja.
 
 4. Cargar el firmware en la MicroSd y reiniciar la cámara
-5. Acceder al panel de control en http://ip_de_la_camara:8085
+5. Acceder al panel de control en http://ip_de_la_camara:8080
 6. Desde el menú "Configurations" añadir un nuevo usuario y pass de root
 7. Guardar la configuración (Configurations) y reiniciar la cámara (Maintenance)
 
