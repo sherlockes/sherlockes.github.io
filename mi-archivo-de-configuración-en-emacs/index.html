@@ -114,6 +114,7 @@
 (put &#39;erase-buffer &#39;disabled nil)                                                           ;; Habilita el comando de borrado del buffer
 (global-visual-line-mode t)                                                                 ;; Ajuste de línea
 (add-hook &#39;window-setup-hook &#39;toggle-frame-maximized t)                                     ;; Arrancar emacs maximizado
+;; (add-to-list &#39;initial-frame-alist &#39;(fullscreen . maximized))                             ;; Arrancar emacs maximizado
 (add-to-list &#39;display-buffer-alist &#39;(&#34;^\\*shell\\*&#34; . (display-buffer-same-window . nil)))  ;; Mostrar la sesión de terminal en el mismo buffer
 (add-hook &#39;markdown-mode-hook &#39;flyspell-mode)                                               ;; Habilita la correción ortográfica para archivos Markdown
 (add-hook &#39;flyspell-mode-hook &#39;flyspell-buffer)                                             ;; Corrige el buffer cuando se habilita la corrección
@@ -197,11 +198,7 @@
   )
 )
 
-;;(toggle-frame-maximized)
-(add-to-list &#39;initial-frame-alist &#39;(fullscreen . maximized))
-
 ;; Accesos directos
-;(global-set-key (kbd &#34;&lt;f1&gt;&#34;) (lambda() (interactive)(load-file user-init-file)))
 (global-set-key (kbd &#34;&lt;f1&gt;&#34;) &#39;reiniciar)
 (global-set-key (kbd &#34;&lt;f2&gt;&#34;) (lambda() (interactive)(find-file &#34;~/Google_Drive/SherloScripts/mi_diario.org&#34;)))
 (global-set-key (kbd &#34;&lt;f4&gt;&#34;) &#39;sherblog_edit)
