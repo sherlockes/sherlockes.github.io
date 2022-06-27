@@ -1,6 +1,6 @@
 ---
 title: "Calcular temperatura media en Home Assistant"
-date: "2022-05-24"
+date: "2022-06-27"
 creation: "2022-05-24"
 description: "Una forma rápida y sencilla de calcular la temperatura media entre un conjunto de sensores"
 thumbnail: "images/20220524_home_assistant_average_temperature_00.jpg"
@@ -12,7 +12,7 @@ categories:
 - "home assistant"
 tags:
 - "hacs"
-draft: true
+draft: false
 weight: 5
 ---
 ¿Que pasa si en casa tenemos varios sensores y queremos calcular la temperatura media de ellos para controlar la calefacción? Con esta sencilla integración personalizada es posible crear un sensor virtual de una forma rápida y sencilla.
@@ -33,7 +33,13 @@ Con esto, crear un nuevo sensor personalizado cuyo valor sea la temperatura medi
       - sensor.temperatura_estudio
 ```
 
-En mi caso particular, añadir la lectura de temperatura
+Una vez creada la entidad y reiniciado [Home Assistant] podemos acceder a las "Herramientas para desarrolladores" y comprobar el estado de la entidad. Podremos ver los sensores incluidos en la media, el nº de sensores, los que están disponibles y temperaturas máxima y mínima de todos ellos.
+
+![image-01]
+
+En mi caso particular, añadir la lectura de temperatura del sensor que tengo en la puerta de casa ha tenido cierta complejidad, ya que no se trata de un sensor de temperatura sino que se trata de un sensor de la alarma que como uno de sus atributos nos muestra la alarma.
+
+Para incluirlo como un sensor más en el cálculo de la media de las temperaturas de casa he creado un sensor virtual personalizado que como plantilla de valor toma este atributo de temperatura del sensor de la puerta de entrada.
 
 ``` yaml
   - platform: template
@@ -46,13 +52,12 @@ En mi caso particular, añadir la lectura de temperatura
             {{ state_attr("binary_sensor.puerta_entrada", "temperature") | float }}
 ```
 
+Esta extensión además de ser capaz de calcular el valor medio de varios sensores también es capaz de calcular medias temporales aunque esto ya pasaré a documentarlo cuando lo necesite...
 
-
-
-![image-01]
 
 ### Enlaces de interés
 - [HACS](https://hacs.xyz)
+- [HA - Average](https://github.com/Limych/ha-average)
 
 [Alexa Media Player]: https://github.com/custom-components/alexa_media_player
 [Average Sensor]: https://github.com/Limych/ha-average
