@@ -9,7 +9,7 @@
 #Script Name: twitch2podcast.sh
 #Description: Generación de Podcast a partir de canal de Twitch
 #Args: N/A
-#Creation/Update: 20220317/20220521
+#Creation/Update: 20220317/20220901
 #Author: www.sherblog.pro                                             
 #Email: sherlockes@gmail.com                               
 ###################################################################
@@ -25,7 +25,7 @@ twdl=$twitch_dir/twitch-dl.pyz
 notificacion=~/SherloScripts/bash/telegram.sh
 inicio=$( date &#43;%s )
 
-mensaje=$&#39;Actualizar Twitch mediante &lt;a href=&#34;https://raw.githubusercontent.com/sherlockes/SherloScripts/master/bash/twitch2podcast.sh&#34;&gt;twitch2podcast.sh&lt;/a&gt;\n&#39;
+mensaje=$&#39;Actualizar Twitch desde &lt;a href=&#34;https://raw.githubusercontent.com/sherlockes/SherloScripts/master/bash/twitch2podcast.sh&#34;&gt;twitch2podcast.sh&lt;/a&gt;\n&#39;
 mensaje&#43;=$&#39;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n&#39;
 
 ###############
@@ -54,13 +54,13 @@ buscar_ultimos () {
     local titulo=${2:?Falta el título del canal}
 
     # Obtiene el json de los ultimos vídeos.
-    mensaje&#43;=$&#39;Obteniendo últimos vídeos . . . . . . . . . . . . &#39;
+    mensaje&#43;=$&#39;Obteniendo últimos vídeos. . . . . . . . . . . . . &#39;
     echo &#34;- Obteniendo últimos vídeos de $titulo&#34;
     json=$(python3 $twdl videos $canal -j)
     comprobar $?
 
     # Limitar a 15 videos la lista de descargados
-    mensaje&#43;=$&#39;Recortando listas de descargados . . . . . .&#39;
+    mensaje&#43;=$&#39;Recortando listas de descargados. . . . . . . &#39;
     echo &#34;- Recortando listas de descargados&#34;
     head -n15 $twitch_dir/$canal/descargados.txt &gt; tmp
     mv tmp $twitch_dir/$canal/descargados.txt
@@ -137,7 +137,7 @@ convertir_mp3 () {
 
     local canal=${1:?Falta el nombre del canal}
     echo &#34;- Buscando archivos para convertir en $canal&#34;
-    mensaje&#43;=$&#34;Buscando archivos para convertir en $canal&#34;
+    mensaje&#43;=$&#34;Buscando archivos en $canal . . . .&#34;
     mensaje&#43;=$&#39;\n&#39;
 
     for file in ./*.mkv; do
@@ -150,12 +150,12 @@ convertir_mp3 () {
        comprobar $?
 
        echo &#34;- Episodio $id_ep, moviendo mp3&#34;
-       mensaje&#43;=$&#34;Moviendo mp3 $id_ep . . . . . . . . .&#34;
+       mensaje&#43;=$&#34;Moviendo mp3 $id_ep . . . . . . . . . . . .&#34;
        mv $nombre.mp3 $canal/mp3/$id_ep.mp3
        comprobar $?
 
        echo &#34;- Episodio $id_ep, eliminando el video&#34;
-       mensaje&#43;=$&#34;Eliminando vídeo $id_ep . . . . . . .&#34;
+       mensaje&#43;=$&#34;Eliminando vídeo $id_ep . . . . . . . . . .&#34;
        rm $file
        comprobar $?
     done
@@ -276,7 +276,7 @@ subir_contenido () {
     find . -type f -name &#34;*.mp3&#34; -delete
 
     # Borrando los archivos de la nube anteriores a 30 días
-    mensaje&#43;=$&#34;Borrando contenido antiguo . . . . . . . . .&#34;
+    mensaje&#43;=$&#34;Borrando contenido antiguo . . . . . . . . . . . .&#34;
     rclone delete Sherlockes78_UN_en:twitch/$canal/mp3 --min-age 30d
     comprobar $?
 }
@@ -294,7 +294,7 @@ cd $twitch_dir
 echo &#34;- Corriendo en $twitch_dir&#34;
 
 # Comprobar la instalación de twitch-dl en el directorio
-. ~/SherloScripts/bash/twitch-dl.sh &amp;&amp; check
+#. ~/SherloScripts/bash/twitch-dl.sh &amp;&amp; check
 
 # Buscar nuevos videos y convertirlos a mp3
 buscar_ultimos &#34;$CANAL&#34; &#34;$TITULO&#34;
