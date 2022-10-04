@@ -61,7 +61,12 @@ Todo el código del script lo pueden encontrar en mi repositorio de scripts [Git
 {{< texto_remoto "https://raw.githubusercontent.com/sherlockes/SherloScripts/master/bash/youtube2podcast.sh" >}}
 
 ### Enlaces de interés
+- [GitHub Diego Fleitas - yt-dlp commands](https://gist.github.com/DiegoFleitas/c940d4b94d6b92b55a7084afe84bf571)
+- [StackOverFlow - Download new videos with youtube-dl](https://stackoverflow.com/questions/21356764/use-youtube-dl-to-download-new-videos-from-channel)
+- [Unix Stack-Exchange - id3 tags](https://unix.stackexchange.com/questions/463875/scripting-id3-tags-with-id3v2-and-sed)
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+- [Write - Download youtube channel with yt-dlp ](https://write.corbpie.com/downloading-a-youtube-channel-with-yt-dlp/)
+- [Write - Download youtube video & playlist with yt-dlp](https://write.corbpie.com/downloading-youtube-videos-and-playlists-with-yt-dlp/)
 
 [ffprobe]: https://ffmpeg.org/ffprobe.html
 [GitHub]: https://github.com/sherlockes/SherloScripts
