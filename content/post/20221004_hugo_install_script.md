@@ -34,7 +34,7 @@ fi
 > En caso de tratar con mayor variedad de equipos seguramente fuera más adecuado usar el comando `uname -m` para determinar la arquitectura de los mismos.
 
 ### Ruta de descarga
-Conociendo la arquitectura del equipo, descargar el instalador adecuado desde la página en [Github de Hugo] no tiene ninguna complicación si lo realizamos manualmente. Para automatizar la tarea creo la variable "hugo_latest_path" que contendrá la ruta completa al ultimo instalador disponible gracias al acceso a la api de [Github]
+Conociendo la arquitectura del equipo, descargar el instalador adecuado desde la página en [Github de Hugo] no tiene ninguna complicación si lo realizamos manualmente. Para automatizar la tarea creo la variable "hugo_latest_path" que contendrá la ruta completa al ultimo instalador disponible gracias al acceso a la api de [Github].
 
 ```bash
 hugo_latest_path=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest \
@@ -58,8 +58,19 @@ Este comando realiza los siguientes pasos:
 - Se queda con el contenido del campo y no el encabezado
 - Elimina las comillas
 
+El resultado del comando completo será una ruta de descarga para la última versión de [Hugo]
 "https://github.com/gohugoio/hugo/releases/download/v0.104.3/hugo_0.104.3_linux-arm.tar.gz"
 
+
+### Determinar la ultima versión disponible
+A partir de la variable "hugo_latest_path" generaremos la variable "hugo_latest_ver"
+
+```bash
+if [[ $hugo_latest_path =~ ^$hugo_download_path[v](.*)[/].*\.tar\.gz$ ]]; then
+    	hugo_latest_ver=${BASH_REMATCH[1]}
+    	echo "La última versión disponible es $hugo_latest_ver"
+    fi
+```
 {{< texto_remoto "https://raw.githubusercontent.com/sherlockes/SherloScripts/master/bash/hugo.sh" >}}
 
 ![image-01]
