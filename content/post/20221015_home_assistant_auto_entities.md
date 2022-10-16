@@ -1,6 +1,6 @@
 ---
 title: "Tarjetas inteligentes en Home Assistant"
-date: "2022-10-15"
+date: "2022-10-16"
 creation: "2022-10-15"
 description: "Como crear y utilizar tarjetas inteligentes en Home assistant mediante auto-entities"
 thumbnail: "images/20221015_home_assistant_auto_entities_00.jpg"
@@ -28,6 +28,40 @@ Buscaremos "auto-entities" en el cuadro de diálogo de la lupa e instalaremos la
 
 > Tras la instalación he tenido algún problema a la hora de incluir nuevas tarjetes, no tengo claro si hay que refrescar el navegador o acceder a [Dashboard Resources] y actualizar el módudo de javascript correspondiente a "auto entities".
 
+### Tarjeta de baterías
+Editamos el panel de control que deseemos y añadimos una nueva tarjeta mediante el botón "
+
+![image-02]
+
+Y este es el código que tengo incluido para añadir y ordenar todos los niveles de batería que tengo disponibles en [Home Assistant]
+
+```yaml
+type: custom:auto-entities
+show_empty: false
+card:
+  type: entities
+  title: Estado de baterías
+  show_header_toggle: false
+filter:
+  include:
+    - entity_id: '*battery_level*'
+    - entity_id: '*_power*'
+    - entity_id: '*_battery'
+    - entity_id: '*_bateria'
+  exclude:
+    - entity_id: '*power_factor*'
+    - entity_id: '*power_status*'
+    - entity_id: '*_battery_power*'
+sort:
+  method: state
+  reverse: false
+  ignore_case: false
+  numeric: true
+```
+
+He utilizado los filtros "include" y "exclude" para añadir o quitar las distintas entidades disponibles según e nombre de la entidad. Además, también está ordenado en modo numérico según el estado de cada una. El resultado es el siguiente.
+
+![image-03]
 
 
 ### Enlaces de interés
@@ -40,6 +74,7 @@ Buscaremos "auto-entities" en el cuadro de diálogo de la lupa e instalaremos la
 [Home Assistant]: https://www.home-assistant.io
 
 [image-01]: /images/20221015_home_assistant_auto_entities_01.jpg
-
+[image-02]: /images/20221015_home_assistant_auto_entities_02.jpg
+[image-03]: /images/20221015_home_assistant_auto_entities_03.jpg
 
 
