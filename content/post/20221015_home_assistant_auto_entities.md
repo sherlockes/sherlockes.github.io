@@ -63,6 +63,27 @@ He utilizado los filtros "include" y "exclude" para añadir o quitar las distint
 
 ![image-03]
 
+### Tarjeta de luces encendidas
+Otro uso interesante que he encontrado para [auto-entities] es la creación de una tarjeta de luces encendidas. En esta tarjeta se mostrarán sólo las luces que tenga encendidas en casa gracias a este simple código.
+
+```yaml
+type: custom:auto-entities
+show_empty: false
+card:
+  type: entities
+  title: Luces encendidas
+filter:
+  template: |
+    {% for light in states.light %}
+      {% if light.state == "on" %}
+        {{ light.entity_id}},
+      {% endif %}
+    {% endfor %}
+```
+Con una simple plantilla se añaden a la tarjeta únicamente las luces (states.light) que están encendidas (light.state == "on"). Además gracias a la línea `show_empty: false` la tarjeta sólo se muestra cuando hay alguna luz encendida. Este el el aspecto de la tarjeta.
+
+
+
 
 ### Enlaces de interés
 - [Thomas Loven - Lovelace plugins](https://github.com/thomasloven/hass-config/wiki/Lovelace-Plugins)
