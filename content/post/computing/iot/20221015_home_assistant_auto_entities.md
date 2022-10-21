@@ -12,10 +12,10 @@ categories:
 - "home assistant"
 tags:
 - "hacs"
-draft: true
+draft: false
 weight: 5
 ---
-Para que el contenido de una tarjeta del panel de control de [Home Assistant] sea dinámico y potenciar toda su funcionalidad, la forma más sencilla es mediante el uso de [auto-entities]
+Para que el contenido de una tarjeta del panel de control de [Home Assistant] sea dinámico y potenciar toda su funcionalidad, la forma más sencilla es mediante el uso de [auto-entities]. Aquí dejo la forma de realizarlo.
 <!--more-->
 El objetivo de hoy es sencillo, conseguir que la tarjeta que me muestra el estado de la batería de todos los equipos que utilizo en la domótica de casa se muestre ordenada según la batería disponible de cada uno de los equipos. Para esto voy a hacer uso de [auto-entities].
 
@@ -82,7 +82,9 @@ filter:
 ```
 Con una simple plantilla se añaden a la tarjeta únicamente las luces (states.light) que están encendidas (light.state == "on"). Además gracias a la línea `show_empty: false` la tarjeta sólo se muestra cuando hay alguna luz encendida. Este el el aspecto de la tarjeta.
 
+![image-04]
 
+Seguramente esta herramienta sea útil en muchas ocasiones, intentaré adjuntarlas aquí.
 
 
 ### Enlaces de interés
@@ -97,5 +99,5 @@ Con una simple plantilla se añaden a la tarjeta únicamente las luces (states.l
 [image-01]: /images/20221015_home_assistant_auto_entities_01.jpg
 [image-02]: /images/20221015_home_assistant_auto_entities_02.jpg
 [image-03]: /images/20221015_home_assistant_auto_entities_03.jpg
-
+[image-04]: /images/20221015_home_assistant_auto_entities_04.jpg
 
