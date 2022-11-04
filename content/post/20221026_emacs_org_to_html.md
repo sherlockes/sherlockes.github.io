@@ -17,10 +17,15 @@ weight: 5
 ---
 No pretendo traducir el manual, simplemente hacer un resumen y recopilación de los conceptos que me han resultado útiles al exportar documentos escritos en org-mode a html usando emacs.
 <!--more-->
-### Propiedades del archivo (Título
+### Propiedades del archivo (Título, archivo de exportación, opciones
+Es posible en una línea definir el título del que va a ser el archivo exportado, en otra la ruta se exportación.
+
+Además es posible definir en una sola línea varias opciones como la no inclusión del índice `toc:nil`, no numerar la lista de contenidos `num:nil`, no agregar el postámbulo al final del archivo `html-postamble:nil`, no evaluar la exportación de subíndices y superíndices `^:nil`
 
 ```org
 #+TITLE: Exportando org a html en emacs
+#+EXPORT_FILE_NAME: ~/salida/index.html
+#+OPTIONS: toc:nil num:nil html-postamble:nil ^:nil
 ```
 -----
 ### Insertar contenido desde un archivo externo
@@ -98,7 +103,13 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY">
 </video>
 #+END_EXPORT
 ```
+-----
+### No exportar un encabezado
+La forma más sencilla de no exportar todo el contenido de un encabezado es añadiendo al mismo un tag y excluir la publicación del mismo.
 
+```org
+#+EXCLUDE_TAGS: oculto
+```
 
 ![image-01]
 
