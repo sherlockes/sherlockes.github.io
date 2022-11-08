@@ -24,7 +24,7 @@ Después de escuchar a Juan Febles en su [episodio 167] de Podcastlinux sobre la
 
 A priori parece que contiene todo lo que voy a necesitar durante una temporada para introducirnos en este entorno.
 
-### Dia 01 (Primer fracaso)
+### Día 01 (Primer fracaso)
 La idea es utilizar la placa junto con el Ipad por lo desde este enlace ([Microbit - Mobile apps]) nos envía al sitio para descargar la aplicación para IOS ([Microbit - App store]). Claramente se puede ver en la web como es necesaria la versión 9 de IOS de la aplicación.
 
 Empezamos en la web de [Microbit] y, aunque la web se puede traducir al castellano, el vídeo de emparejado sólo está en inglés con subtítulos en inglés.
@@ -35,7 +35,7 @@ Instalamos la aplicación para ipad pero, aunque es posible llevar a cabo el emp
 
 > Un par de conclusiones del primer día efectivo. Por un lado, el tema de pulsar los dos botones delanteros y posteriormente pulsar el trasero y volverlo a soltar para el emparejado no resulta intuitivo para un niño de primaria. Por otro, con los dos chicos (7 y 4 años) al mismo tiempo va a ser complicado...
 
-
+### Día 02 (Primera toma de contacto)
 
 
 
