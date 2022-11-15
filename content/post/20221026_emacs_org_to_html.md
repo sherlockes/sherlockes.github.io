@@ -1,6 +1,6 @@
 ---
 title: "Exportar de org a html en emacs"
-date: "2022-10-26"
+date: "2022-11-15"
 creation: "2022-10-26"
 description: "Lo que a mi me ha resultado util en la exportación de org a html usando emacs"
 thumbnail: "images/20221026_emacs_org_to_html_00.jpg"
@@ -15,10 +15,10 @@ tags:
 draft: true
 weight: 5
 ---
-No pretendo traducir el manual, simplemente hacer un resumen y recopilación de los conceptos que me han resultado útiles al exportar documentos escritos en org-mode a html usando emacs.
+No pretendo traducir el manual, simplemente hacer un resumen y recopilación de los conceptos que me han resultado útiles al exportar documentos escritos en org-mode a html usando emacs. Añadiré contenido a medida que lo vaya descubriendo y utilizando.
 <!--more-->
 ### Propiedades del archivo (Título, archivo de exportación, opciones...)
-Es posible en una línea definir el título del que va a ser el archivo exportado, en otra la ruta se exportación.
+Es posible en una línea definir el título del que va a ser el archivo exportado, en otra la ruta se exportación o incluso definir o añadir información al "head" del archivo html generado.
 
 Además es posible definir en una sola línea varias opciones como la no inclusión del índice `toc:nil`, no numerar la lista de contenidos `num:nil`, no agregar el postámbulo al final del archivo `html-postamble:nil`, no evaluar la exportación de subíndices y superíndices `^:nil`
 
@@ -26,6 +26,8 @@ Además es posible definir en una sola línea varias opciones como la no inclusi
 #+TITLE: Exportando org a html en emacs
 #+EXPORT_FILE_NAME: ~/salida/index.html
 #+OPTIONS: toc:nil num:nil html-postamble:nil ^:nil
+#+HTML_HEAD: <img src="./img/logo.jpg" width="240">
+#+HTML_HEAD_EXTRA: <style> .figure p {text-align: left;}</style>
 ```
 -----
 ### Insertar contenido desde un archivo externo
@@ -39,10 +41,26 @@ Además es posible definir en una sola línea varias opciones como la no inclusi
 ```
 > Mediante el modificador `:lines "1-20"` indicamos al exportador que sólo queremos importar al 20 primeras líneas.
 
-- Desde un archivo de texto
+- Desde un archivo de texto (Incluyendo el archivo)
 ```org
 #+INCLUDE: "~/Descargas/pepe.txt" export txt
 ```
+
+- Desde un archivo de texto (Leyendo el contenido evaluando elisp)
+```org
+#+name: emacs-lisp-hello-world
+#+begin_src elisp :exports results
+(with-temp-buffer
+    (insert-file-contents "~/Descargas/pepe.txt")
+    (buffer-string))
+#+end_src
+```
+
+- Desde un archivo de texto (Incluyendo a través de un html Object data)
+```org
+#+HTML: <div><object data="~/Descargas/pepe.txt" height= 500 width=1000></object></font></div>
+```
+
 -----
 ### Insertar código HTML
 - Una sola línea
@@ -111,6 +129,14 @@ La forma más sencilla de no exportar todo el contenido de un encabezado es aña
 #+EXCLUDE_TAGS: oculto
 ```
 
+-----
+### Exportar usando un tema
+En la red es posible encontrar [temas] desarrollados por creadores independientes como [Fabrice Niessen] que con una sólo línea dentro del archivo org realiza una exportación sencillamente espectacular.
+
+```org
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+```
+
 ![image-01]
 
 ### Enlaces de interés
@@ -119,7 +145,8 @@ La forma más sencilla de no exportar todo el contenido de un encabezado es aña
 - [EmacsStackExchange - Include html in org exported](https://emacs.stackexchange.com/questions/10085/org-export-how-to-include-a-pregenerated-html-file-when-exporting-org-to-html)
 - [fniessen in GitHub - org-html-themes](https://github.com/fniessen/org-html-themes)
 
-
+[Fabrice Niessen]: https://github.com/fniessen
+[temas]: https://github.com/fniessen/org-html-themes
 [Images in HTML export]: https://orgmode.org/manual/Images-in-HTML-export.html#Images-in-HTML-export
 [Images and XHTML export]: https://orgmode.org/worg/org-tutorials/images-and-xhtml-export.html
 
