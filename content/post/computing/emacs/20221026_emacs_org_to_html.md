@@ -1,6 +1,6 @@
 ---
 title: "Exportar de org a html en emacs"
-date: "2022-11-15"
+date: "2022-11-16"
 creation: "2022-10-26"
 description: "Lo que a mi me ha resultado util en la exportación de org a html usando emacs"
 thumbnail: "images/20221026_emacs_org_to_html_00.jpg"
@@ -12,11 +12,17 @@ categories:
 - "computing"
 tags:
 - "emacs"
-draft: true
+- "orgmode"
+draft: false
 weight: 5
 ---
 No pretendo traducir el manual, simplemente hacer un resumen y recopilación de los conceptos que me han resultado útiles al exportar documentos escritos en org-mode a html usando emacs. Añadiré contenido a medida que lo vaya descubriendo y utilizando.
 <!--more-->
+### Exportando un archivo ORG a HTML
+La [exportación a HTML] de un documento escrito en [Org Mode] es bastante sencilla usando [Emacs], Basta con pulsar la combinación de teclas `C-c C-e h o` (Ctrl+c, Ctrl+o, h, o) y ya tendremos creado y abierto en el navegador un archivo html con el resultado de la exportación. Lo más interesante comienza en el momento que necesitas una personalización de esta exportación.
+
+![image-02]
+
 ### Propiedades del archivo (Título, archivo de exportación, opciones...)
 Es posible en una línea definir el título del que va a ser el archivo exportado, en otra la ruta se exportación o incluso definir o añadir información al "head" del archivo html generado.
 
@@ -146,11 +152,14 @@ En la red es posible encontrar [temas] desarrollados por creadores independiente
 - [fniessen in GitHub - org-html-themes](https://github.com/fniessen/org-html-themes)
 
 [Fabrice Niessen]: https://github.com/fniessen
-[temas]: https://github.com/fniessen/org-html-themes
+[Emacs]: https://www.gnu.org/software/emacs/
+[exportación a HTML]: https://orgmode.org/manual/HTML-Export.html
 [Images in HTML export]: https://orgmode.org/manual/Images-in-HTML-export.html#Images-in-HTML-export
 [Images and XHTML export]: https://orgmode.org/worg/org-tutorials/images-and-xhtml-export.html
+[Org Mode]: https://orgmode.org
+[temas]: https://github.com/fniessen/org-html-themes
 
 [image-01]: /images/20221026_emacs_org_to_html_01.jpg
-
+[image-02]: /images/20221026_emacs_org_to_html_02.jpg
 
 
