@@ -37,7 +37,7 @@ y ya estamos dentro sin necesidad de introducir ninguna contraseña.
 ### Asignar DNS dinámico
 Acordarse o tener que consultar la ip de la instancia remota creada cada vez que nos queremos conectar a la misma no es práctico. Por esto yo uso el servicio [NoIp] que en su modo gratuito permite hasta 3 dns dinámicos. Para que la ip se actualice automáticamente a través del servicio de [Noip] cuando esta cambie es necesario instalar el cliente [DUC] en nuestra instancia remota.
 
-Para poder seguir según las intrucciones la compilación e instalación del cliente antes deberemos instalar "make" y "gcc" en la instancia
+Para poder seguir según las instrucciones la compilación e instalación del cliente antes deberemos instalar "make" y "gcc" en la instancia
 
 ```bash
 sudo apt install make
@@ -118,6 +118,10 @@ nano ~/.bashrc
 ### Quitamos el comentario
 . ~/.bashrc
 ```
+
+### Crear un servidor webdav mediante rclone
+Tal y como utilicé en un [post]({{<relref"20220317_bash_python_download_twitch.md">}}) anterior, crear un servidor webdav a partir del contenido de una nube pública
+
 
 ### Enlaces de interés
 - [Ask Ubuntu - Keys not working in terminal](https://askubuntu.com/questions/163802/backspace-tab-del-and-arrow-keys-not-working-in-terminal-using-ssh)
