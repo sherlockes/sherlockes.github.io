@@ -96,10 +96,35 @@ ssh nuevo_usuario@loquesea.ddns.net
 ```
 > Aunque no lo he probado, este proceso se podía haber simplificado si hubiera subido la llave pública de mi terminal a la instancia remota en el momento de la creación de la misma en lugar de descargar las llaves privada y pública de esta última.
 
+### Prompt color y teclas en la consola de comandos
+Al logearme en la instancia mediante ssh me encuentro con que no aparece ningún tipo de color, para el usuario no se muestra este y el nombre de la máquina en el prompt de la terminal sino que sólo aparece lo siguiente:
+
+```bash
+$ 
+```
+Tampoco funcionan las flechas de desplazamiento de cursor y de comando anterior/posterior.
+
+La solución que he encontrado pasa por ejecutar el comando `/bin/bash` y editar el archivo "/etc/passwd" para comprobar que en la fila correspondiente al usuario creado aparece algo como lo siguiente
+
+```bash
+nombre_usuario:x:1002:1002:Nombre Usuario:/home/nombre_usuario:/bin/bash
+```
+
+El tema de los colores la solución también es sencilla y pasa por copiar el archivo de configuración de bash por defecto a la carpeta del usuario y quitar el comentario de la línea "force_color_prompt=yes" para ello ejecutamos los siguientes comandos:
+
+```bash
+cp /etc/skel/.bashrc ~/.bashrc
+nano ~/.bashrc
+### Quitamos el comentario
+. ~/.bashrc
+```
 
 ### Enlaces de interés
+- [Ask Ubuntu - Keys not working in terminal](https://askubuntu.com/questions/163802/backspace-tab-del-and-arrow-keys-not-working-in-terminal-using-ssh)
+- [Ask Ubuntu - Terminal colors not working](https://askubuntu.com/questions/39731/terminal-colors-not-working)
 - [Oracle - Add ssh user](https://docs.oracle.com/en/cloud/cloud-at-customer/occ-get-started/add-ssh-enabled-user.html)
 - [Oracle - Conexión a una instancia](https://docs.oracle.com/es-ww/iaas/Content/Compute/Tasks/accessinginstance.htm)
+
 
 [DUC]: https://my.noip.com/dynamic-dns/duc
 [Noip]: https://www.noip.com
