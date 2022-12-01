@@ -43,16 +43,18 @@ Los pasos son similares al caso anterior sólo que usando regex
 1. Abrir en modo "Dired" el directorio -> Alt+x dired (C-c D)
 1. Entrar en modo renombrado -> Alt+x dired-toggle-read-only (C-x C-q)
 1. Acceder al reemplazo mediante Regex -> Alt-x query-replace-regexp (CM-%)
-1. Introducir la cadena a buscar -> .+\.jpg
-1. Introducir la cadena a reemplazar -> \,(format "%02d" (1+ \#))_info.jpg
+1. Introducir la cadena a buscar -> `.+\.jpg`
+1. Introducir la cadena a reemplazar -> `\,(format "%02d" (1+ \#))_info.jpg`
 1. Reemplazar todos -> !
 1. Finalizar el modo de renombrado -> Alt+x wdired-finish-edit (C-c C-c)
 
 El asunto se complica un poco ya que dentro de Emacs el uso de Regexp es un poco peculiar tal y como se puede leer en el artículo [Emacs Regexp]. A continuación dejo unos ejemplos que he utilizado.
 
 - Separar número en temporada y episodio.
+
 De "168 loquesea.avi" a "1x68 loquesea.avi"
-\([0-9]\)\([0-9]\{2\}\) Mujer.mkv → \1x\2 Mujer.mkv
+
+`\([0-9]\)\([0-9]\{2\}\) Mujer.mkv → \1x\2 Mujer.mkv`
 
 
 [Emacs Regexp]: https://www.emacswiki.org/emacs/RegularExpression
