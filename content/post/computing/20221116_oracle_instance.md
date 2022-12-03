@@ -1,6 +1,6 @@
 ---
 title: "Crear y configurar una instancia gratuita en Oracle"
-date: "2022-11-17"
+date: "2022-12-03"
 creation: "2022-11-16"
 description: "Descripción"
 thumbnail: "images/20221116_oracle_instance_00.jpg"
@@ -12,10 +12,10 @@ categories:
 - "computing"
 tags:
 - "bash"
-draft: true
+draft: false
 weight: 5
 ---
-Resumen de introducción
+Tener un pequeño servidor privado virtual a modo de laboratorio en el que hacer nuestras pruebas es gratis gracias a [Oracle Cloud], aquí dejo la forma de conseguirlo y las pruebas que con el he realizado
 <!--more-->
 El proceso de la creación de la cuenta en [Oracle Cloud] puede llegar a ser desesperante por la lentitud del entorno. A la hora de crear una nueva instancia el asunto resulta bastante sencillo e intuitivo. Lo más importante a tener en cuenta es descargar las llaves ssh para poder tener acceso a la máquina remota que hemos creado.
 
@@ -120,7 +120,38 @@ nano ~/.bashrc
 ```
 
 ### Crear un servidor webdav mediante rclone
-Tal y como utilicé en un [post]({{<relref"20220317_bash_python_download_twitch.md">}}) anterior, crear un servidor webdav a partir del contenido de una nube pública
+Tal y como utilicé en un [post]({{<relref"20220317_bash_python_download_twitch.md">}}) anterior, crear un servidor webdav a partir del contenido de una nube pública es cuestión de añadir al cron la ejecución del script de lanzamiento del servidor webdav de forma que así queda el cron
+
+```bash
+@reboot /home/sherlockes/webdav.sh > /home/sherlockes/webdav.log 2>&1
+```
+
+Y este es el script de lanzamiento del servidor webdav mediante [rclone] donde:
+ - "nube_publica" es el nombre que hemos asignado a la unidad de [rclone]
+ - "10.0.0.173" es la IP privada de la instancia de oracle creada
+ - "5005" es el puerto sobre el que se va a mostrar el contenido
+ - "usuario" es el nombre de usuario con el que accederemos al servidor
+ - "contraseña" es la contraseña de acceso
+ 
+
+```bash
+#!/bin/bash
+
+###################################################################
+#Script Name: webdav.sh
+#Description: Monta un servidor webdav con rclone
+#Args: N/A
+#Creation/Update: 20211217/20211217
+#Author: www.sherblog.pro
+#Email: sherlockes@gmail.com
+###################################################################
+
+sleep 30
+rclone serve webdav nube_publica: --addr 10.0.0.173:5005 --read-only --user usuario --pass contraseña
+
+```
+
+> Tener en cuenta que se esperan 30 segundos antes de lanzar el comando del servidor para asegurar que la infraestructura de red está montada.
 
 
 ### Enlaces de interés
@@ -133,6 +164,7 @@ Tal y como utilicé en un [post]({{<relref"20220317_bash_python_download_twitch.
 [DUC]: https://my.noip.com/dynamic-dns/duc
 [Noip]: https://www.noip.com
 [Oracle Cloud]: https://cloud.oracle.com
+[rclone]: https://rclone.org
 
 [image-01]: /images/20221116_oracle_instance_01.jpg
 
