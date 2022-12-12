@@ -8,12 +8,25 @@
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.Description }}{{ end }}">
 
+	<!-- Tarjetas en Twitter ---->
 	<meta name="twitter:card" content="summary_large_image"/>
 	{{ if (.Params.thumbnail) }}<meta name="twitter:image" content="http://www.sherblog.pro/{{ .Params.thumbnail }}" />{{else}}<meta name="twitter:image" content="http://www.sherblog.pro/images/logo.png" />{{end}}
 	<meta name="twitter:title" content="{{ .Params.title }}"/>
 	<meta name="twitter:description" content="{{ .Params.description }}"/>
 	<meta name="twitter:creator" content="@sherblogpro">
 	<meta name="twitter:site" content="sherblog.pro" />
+
+	<!-- Open Graph para Mastodon ---->
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="{{ .Params.title }}">
+	<meta property="og:url"   content="{{ .Site.BaseURL }}">
+
+	{{ if (.Params.thumbnail) }}<meta property="og:image" content="http://www.sherblog.pro/{{ .Params.thumbnail }}" />{{else}}<meta property="og:image" content="http://www.sherblog.pro/images/logo.png" />{{end}}
+
+	
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
