@@ -31,7 +31,7 @@ Como Mastodon utiliza el protocolo de [OpenGraph] incluiremos las siguiente lín
 <meta property="og:locale" content="es_ES">
 <meta property="og:title"   content="{{ .Params.title }}">
 <meta property="og:url"   content="{{ .Site.BaseURL }}">
-<meta name="og:description" content="{{ .Params.description }}"/>
+<meta property="og:description" content="{{ .Params.description }}"/>
 
 {{ if (.Params.thumbnail) }}<meta property="og:image" content="http://www.sherblog.pro/{{ .Params.thumbnail }}" />{{else}}<meta property="og:image" content="http://www.sherblog.pro/images/logo.png" />{{end}}
 ```
