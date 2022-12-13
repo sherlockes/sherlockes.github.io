@@ -14,7 +14,7 @@ tags:
 - "mastodon"
 - "jinja2"
 - "html"
-draft: true
+draft: false
 weight: 5
 ---
 Para que al publicar en Mastodon un artículo de la web se vincule también la imagen del mismo es necesario realizar unas modificaciones en la plantilla de Hugo.
@@ -35,8 +35,6 @@ Como Mastodon utiliza el protocolo de [OpenGraph] incluiremos las siguiente lín
 
 {{ if (.Params.thumbnail) }}<meta property="og:image" content="http://www.sherblog.pro/{{ .Params.thumbnail }}" />{{else}}<meta property="og:image" content="http://www.sherblog.pro/images/logo.png" />{{end}}
 ```
-
-![image-01]
 
 ### Enlaces de interés
 - [AmyTabb - Mastodon preview cards](https://amytabb.com/til/2022/12/03/mastodon-preview-cards/)
