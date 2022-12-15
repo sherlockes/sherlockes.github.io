@@ -15,7 +15,7 @@
 #Script Name: rss2twiter.sh
 #Description: Generación de Tweet cuando hay un nuevo post del blog
 #Args: N/A
-#Creation/Update: 20220326/20220331
+#Creation/Update: 20220326/20221213
 #Author: www.sherblog.pro                                             
 #Email: sherlockes@gmail.com                               
 ###################################################################
@@ -27,6 +27,10 @@
 RUTA=~/temp
 RSS_URL=&#34;https://sherblog.pro/index.xml&#34;
 TWEETSH_URL=&#34;https://raw.githubusercontent.com/piroor/tweet.sh/trunk/tweet.sh&#34;
+INSTANCIA=&#34;https://emacs.ch&#34;
+
+# Carga los parámetros del archivo de configuración en el directorio de usuario
+. ~/config.conf
 
 ################################
 ####      Dependencias      ####
@@ -75,7 +79,12 @@ then
     # Compara el ultimo link con el actual
     if [[ $LINK_ULTIMO != $LINK_ACTUAL ]]
     then
+	# Publicando para Twitter
 	bash $RUTA/tweet.sh post $LINK_ACTUAL
+
+	# Publicando para Mastodon
+	curl $INSTANCIA/api/v1/statuses -H &#34;Authorization: Bearer $TOKENM&#34; -F &#34;status=Lo último de mi blog $LINK_ACTUAL&#34;
+	
 	echo &#34;publicando un enlace&#34;
     fi
 fi
