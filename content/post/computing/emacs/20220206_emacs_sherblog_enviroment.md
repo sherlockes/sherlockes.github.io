@@ -1,6 +1,6 @@
 ---
 title: "Entorno de desarrollo de Sherblog en Emacs"
-date: "2022-02-10"
+date: "2022-12-17"
 creation: "2022-02-06"
 description: "Emacs sherblog enviroment"
 thumbnail: "images/20220206_emacs_sherblog_enviroment_00.jpg"
@@ -20,17 +20,17 @@ weight: 5
 Por mucho que podamos pensar "sólo cuesta dos minutos", resulta más productivo invertir una hora en preparar una función para poder acomodar [Emacs] como entorno de desarrollo del blog con una sola tecla que tener que hacerlo a mano cada una de las veces que lo necesitemos.
 <!--more-->
 
-Para trabajar en cada uno de los post que escribo desde [Emacs] tengo la pantalla partida en tres ventanas, dos a la izquierda, una con un buffer de Dired y el contenido del blog y otra con una sesión de terminal en la carpeta raiz del blog para lanzar el servidor de [Hugo]. A la derecha pongo una ventana con todo el alto de pantalla para editar el post en el que estoy trabajando tal y como se puede ver en la siguiente imagen.
+Para trabajar en cada uno de los post que escribo desde [Emacs] tengo la pantalla partida en tres ventanas, dos a la izquierda, una con un buffer de Dired y el contenido del blog y otra con una sesión de terminal en la carpeta raíz del blog para lanzar el servidor de [Hugo]. A la derecha pongo una ventana con todo el alto de pantalla para editar el post en el que estoy trabajando tal y como se puede ver en la siguiente imagen.
 
 ![image-01]
 
 Antes de seguir adelante hay que tener en cuenta unas consideraciones particulares sobre la configuración de mi sistema.
 - El blog está guardado en un repositorio sincronizado con [GitHub] en la Raspberry a la la que accedo a través de ssh a la IP 192.168.10.202
 - El servidor de [Hugo] está en la misma Raspberry
-- En esta Raspberry tengo configurado el alias "hugoser" para lanzar el servidor de [Hugo] con todos los parámetros naecesrios para que publique también los borradores desde la IP de la Raspberry
+- En esta Raspberry tengo configurado el alias "hugoser" para lanzar el servidor de [Hugo] con todos los parámetros necesarios para que publique también los borradores desde la IP de la Raspberry y nos lleve directamente al archivo modificado en lugar de tener que navegar hasta el.
 
 ``` bash
-alias hugoser="hugo server -D --bind=192.168.10.202 --baseURL=http://192.168.10.202:1313
+alias hugoser="hugo server -D --bind=192.168.10.202 --baseURL=http://192.168.10.202:1313 --navigateToChanged
 ```
 
 En el archivo de configuración ".emacs" he incluido una función que para conseguir la disposición de este entorno de desarrollo realiza los siguientes comandos:
@@ -41,7 +41,7 @@ En el archivo de configuración ".emacs" he incluido una función que para conse
 - Asigna el directorio por defecto al del repositorio del Blog
 - En la ventana superior izquierda abre una sesión de terminal y lanza el comando "hugoser"
 - En la ventana inferior abre un [Dired] al contenido del blog
-- Abre el navegador del sistema con la sirección del servidor de [Hugo]
+- Abre el navegador del sistema con la dirección del servidor de [Hugo]
 - Asigna la tecla "F4" a la función "sherblog_edit" que realiza todo lo anterior
 
 ``` lisp
@@ -62,7 +62,7 @@ En el archivo de configuración ".emacs" he incluido una función que para conse
 (global-set-key (kbd "<f4>") 'sherblog_edit)
 ```
 
-Y con esto, una vez que tenemos abierto [Emacs] sólo hay que pulsar "F4" para que el entorno se configure automáticamente.
+Y con esto, una vez que tenemos abierto [Emacs] sólo hay que pulsar "F4" para que el entorno se configure automáticamente. No es el entorno de desarrollo más bonito del mundo pero es increíblemente práctico.
 
 ### Enlaces de interés
 - [StackOverflow - Default folder in Emacs](https://stackoverflow.com/questions/60464/changing-the-default-folder-in-emacs)

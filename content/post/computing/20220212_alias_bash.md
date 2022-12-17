@@ -23,7 +23,7 @@ Para usar los alias en bash sólo hay que seguir estos tres sencillos pasos
 - Añadir el nuevo alias -> alias nombre="comando"
 - Habilitar los cambios ejecutando `source ~/.bashrc`
 
-Para la mayoría de distribuciones existe o podemos crear un archivo ".bash_aliases" en la carpeta raiz de nuestro usuario donde incluir exclusivamente los alias para así no complicar el archivo ".bashrc". Esto se consigue gracias al siguiente código incluido en el archivo ".bashrc"
+Para la mayoría de distribuciones existe o podemos crear un archivo ".bash_aliases" en la carpeta raíz de nuestro usuario donde incluir exclusivamente los alias para así no complicar el archivo ".bashrc". Esto se consigue gracias al siguiente código incluido en el archivo ".bashrc"
 
 ``` bash
 if [ -f ~/.bash_aliases ]; then
@@ -37,11 +37,11 @@ fi
 ``` bash
 alias gitup="git add . && git commit -m 'Update' && git push"
 ```
-Asi sólo hay que ejecutar 'gitup' dentro de un repositorio para realizar un "push" sin la necesidad de incluir las tres líneas de código correspondientes.
+Así sólo hay que ejecutar 'gitup' dentro de un repositorio para realizar un "push" sin la necesidad de incluir las tres líneas de código correspondientes.
 
 - Lanzar el servidor de Hugo en la Raspberry
 ``` bash
-alias hugoser="hugo server -D --bind=192.168.10.202 --baseURL=http://192.168.10.20$
+alias hugoser="hugo server -D --bind=192.168.10.202 --baseURL=http://192.168.10.20 --navigateToChanged"
 ```
 El comando es largo y tedioso de escribir, gracias a `hugoser` resulta un placer.
 
