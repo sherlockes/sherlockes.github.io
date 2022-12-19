@@ -9,7 +9,7 @@ authorbox: false
 toc: true
 mathjax: false
 categories:
-  - "Varios"
+  - "computing"
 tags:
   - "bash"
   - "rclone"
