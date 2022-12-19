@@ -1,0 +1,96 @@
+<!doctype html><html class=no-js lang=es><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><title>Del Blog a Twitter y Mastodon mediante rss y Bash - Sherblog</title><script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script><meta name=description content="Como publicar los nuevos artículos del blog en Twitter mediante un script en Bash"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://www.sherblog.pro/images/20220326_bash_rss_2_twitter_00.jpg"><meta name=twitter:title content="Del Blog a Twitter y Mastodon mediante rss y Bash"><meta name=twitter:description content="Como publicar los nuevos artículos del blog en Twitter mediante un script en Bash"><meta name=twitter:creator content="@sherblogpro"><meta name=twitter:site content="sherblog.pro"><meta property="og:type" content="article"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="sherblog.pro"><meta property="og:locale" content="es_ES"><meta property="og:title" content="Del Blog a Twitter y Mastodon mediante rss y Bash"><meta property="og:url" content="https://sherlockes.github.io"><meta property="og:description" content="Como publicar los nuevos artículos del blog en Twitter mediante un script en Bash"><meta property="og:image" content="http://www.sherblog.pro/images/20220326_bash_rss_2_twitter_00.jpg"><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//fonts.gstatic.com><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"><link rel=stylesheet href=/css/style.css><link rel=stylesheet href=/css/custom.css><link rel="shortcut icon" href=/favicon.ico></head><body class=body><a rel=me href=https://emacs.ch/@Sherlockes>Mastodon</a><div class="container container--outer"><header class=header><meta name=twitter:card content="summary"><meta name=twitter:title content="Del Blog a Twitter y Mastodon mediante rss y Bash"><meta name=twitter:description content="Como publicar los nuevos artículos del blog en Twitter mediante un script en Bash"><div class=container><div class=logo><a class=logo__link href=/ title=Sherblog rel=home><div class=logo__title>Sherblog</div><div class=logo__tagline>Sólo mi forma de hacer las cosas...</div></a></div><nav class=menu><button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menú</span></button><ul class=menu__list><li class=menu__item><a class=menu__link href=/post/computing/emacs/><span class=menu__text>Emacs</span></a></li><li class=menu__item><a class=menu__link href=/post/computing/hugo/><span class=menu__text>Hugo</span></a></li><li class=menu__item><a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/><span class=menu__text>Mis vértices geodésicos</span></a></li><li class=menu__item><a class=menu__link href=/post/computing/raspberry/><span class=menu__text>Raspberry Pi desde cero</span></a></li></ul></nav></div></header><div class="wrapper flex"><div class=primary><main class=main role=main><article class=post><header class=post__header><h1 class=post__title>Del Blog a Twitter y Mastodon mediante rss y Bash</h1><div class="post__meta meta"><div class="meta__item-datetime meta__item"><svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2022-12-19T00:00:00Z>2022-12-19</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/computing/ rel=category>computing</a></span></div></div></header><figure class="post__thumbnail thumbnail"><img class=thumbnail__image src=/images/20220326_bash_rss_2_twitter_00.jpg alt="Del Blog a Twitter y Mastodon mediante rss y Bash"></figure><div class="post__toc toc"><div class=toc__title>Índice</div><div class=toc__menu><nav id=TableOfContents><ul><li><ul><li><a href=#lo-que-había-utilizado>Lo que había utilizado</a></li><li><a href=#preparando-el-script>Preparando el script</a></li><li><a href=#leyendo-el-rss>Leyendo el rss</a></li><li><a href=#publicando-en-twitter>Publicando en Twitter</a></li><li><a href=#publicando-en-mastodon>Publicando en Mastodon</a></li><li><a href=#script-completo>Script completo</a></li><li><a href=#enlaces-de-interés>Enlaces de interés</a></li></ul></li></ul></nav></div></div><div class="content post__content clearfix"><p>Una buena forma de dar algo de visibilidad a los post en el blog es publicándolos en <a href=https://twitter.com/sherblogpro>Twitter</a> y <a href=https://joinmastodon.org/es>Mastodon</a>. Aunque no es muy laborioso, resulta más cómodo que se realice de forma automática y aquí dejo como he creado mi propio script para hacerlo.</p><h3 id=lo-que-había-utilizado>Lo que había utilizado</h3><p>Hasta ahora he estado utilizando <a href=https://ifttt.com>IFTTT</a> como medio para publicar el enlace a mis post en <a href=https://twitter.com/sherblogpro>Twitter</a>. Cuando empecé con a usar este servicio era posible crear todas las &ldquo;recetas&rdquo; que se quisiera de forma completamente gratuita. Hace unos años lo limitaron a 3 por cuenta y ahora veo que lo han subido a 5 pero, ¿Que impide que pongan el servicio completamente de pago y haya que subirse al carro o buscar una alternativa?</p><p><img src=/images/20220326_bash_rss_2_twitter_01.jpg alt=image-01></p><p>Ahora me dispongo a sacar de <a href=https://ifttt.com>IFTTT</a> el servicio de publicación automática de los post del blog en <a href=https://twitter.com/sherblogpro>Twitter</a> para crear el mio propio y utilizarlo también para publicar en <a href=https://joinmastodon.org/es>Mastodon</a>.</p><p>Básicamente, el reto pasa por dos aspectos fundamentales:</p><ul><li>Crear y leer el rss del Blog</li><li>Crear el Tweet con el enlace</li><li>Crear la publicación en Mastodon</li></ul><h3 id=preparando-el-script>Preparando el script</h3><p>La primera duda que me surge es si desarrollarlo en Bash o Python ya que son los dos lenguajes con los que me apaño mejor y lo que me ha hecho decantarme por Bash es que ha sido para el que encontrado una solución más rápida y sencilla en lo que se refiere a la creación del Tweet. Para los aspectos fundamentales citados anteriormente, las soluciones que voy a implementar en el script son:</p><ul><li><a href=https://gohugo.io>Hugo</a> para la creación del rss</li><li><a href=https://gnome.pages.gitlab.gnome.org/libxml2/xmllint.html>Xmllint</a> para la lectura del rss (Requiere también el conversor <a href=https://github.com/dmc/nkf>nkf</a>)</li><li><a href=https://github.com/piroor/tweet.sh>tweet.sh</a> para la publicación del tweet</li><li><a href=https://curl.se>Curl</a> para la publicación del enlace en Mastodon</li></ul><p>Para la instalación de todo lo anterior ejecutaremos el siguiente código aunque realmente no es necesario, ya que el propio script va a ser capaz de detectar si algo no está instalado y hacerlo automáticamente.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sudo apt update
+</span></span><span style=display:flex><span>sudo apt install curl
+</span></span><span style=display:flex><span>sudo apt install libxml2-utils
+</span></span><span style=display:flex><span>sudo apt install nkf
+</span></span><span style=display:flex><span>curl --fail --silent --show-error <span style=color:#e6db74>&#34;https://raw.githubusercontent.com/piroor/tweet.sh/trunk/tweet.sh&#34;</span> --output tweet.sh
+</span></span><span style=display:flex><span>chmod +x tweet.sh
+</span></span></code></pre></div><h3 id=leyendo-el-rss>Leyendo el rss</h3><p>La documentación de <a href=https://gohugo.io>Hugo</a> sobre <a href=https://gohugo.io/templates/rss/>rss</a> es un poco ambigua, lo único que es necesario tener en cuenta para el caso que nos ocupa es que por defecto se crea el archivo &ldquo;<a href=https://www.tudominio.com/index.xml%22>www.tudominio.com/index.xml"</a> con la información que nos servirá de rss para el blog.</p><blockquote><p>Para simplificar un poco el archivo he incluido en el archivo &ldquo;config.toml&rdquo; el parámetro <code>rssLimit = "10"</code> para que el"index.xml&rdquo; generado se limite a 10 post.</p></blockquote><p>La siguiente necesidad que se nos plantea es la extracción de información desde el archivo xml. Para esto te recomiendo que leas el artículo de Atareao que hay en los enlaces de abajo. A partir de este artículo me he creado una función para obtener a partir de un xml cualquier parámetro de cualquier objeto.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>obtener_xml<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>    SALIDA<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>xmllint --xpath <span style=color:#e6db74>&#34;//</span>$2<span style=color:#e6db74>[</span>$4<span style=color:#e6db74>]/</span>$3<span style=color:#e6db74>&#34;</span> $1 | sed -E <span style=color:#e6db74>&#34;s/&lt;</span>$3<span style=color:#e6db74>&gt;([^&lt;]*)\/&lt;\/</span>$3<span style=color:#e6db74>&gt;/\1/g&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>    echo <span style=color:#e6db74>&#34;</span>$SALIDA<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>Donde</p><ul><li>$1 es el archivo del que vamos a extraer la info</li><li>$2 es el objeto que estamos buscando (Ahora &ldquo;items&rdquo; o posts)</li><li>$3 es la propiedad dentro del objeto (Para este caso &ldquo;link&rdquo;)</li><li>$4 es la posición del objeto (1º, 2º, 3º, 4º&mldr;)</li></ul><p>Gracias a la función &ldquo;xmllint&rdquo; obtenemos la línea correspondiente al enlace del último artículo y mediante un &ldquo;sed&rdquo; y un poco de expresiones regulares las aperturas y cierre html &ldquo;&rdquo; y &ldquo;.</p><h3 id=publicando-en-twitter>Publicando en Twitter</h3><p>Para publicar el enlace del artículo como tweet a tu cuenta de Twitter he usado <a href=https://github.com/piroor/tweet.sh>tweet.sh</a> que sólo necesita tener acceso a las llaves de publicación en <a href=https://twitter.com/sherblogpro>Twitter</a> que guardaremos en el archivo &ldquo;~/.tweet.client.key&rdquo; y llamar al comando post mediante.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>tweet.sh post $LINK_ACTUAL
+</span></span></code></pre></div><blockquote><p>Para acceder a las claves deberás crear una <a href=https://apps.twitter.com/>App de Twitter</a> y darle permiso de lectura y escritura desde el menú &ldquo;User authentication settings&rdquo;. Importante regenerar las claves después de cambiar los permisos.</p></blockquote><h3 id=publicando-en-mastodon>Publicando en Mastodon</h3><p>La publicación en <a href=https://joinmastodon.org/es>Mastodon</a> es mucho más sencilla y con un simple comando <a href=https://curl.se>Curl</a> podemos realizarla.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Bash data-lang=Bash><span style=display:flex><span>curl $INSTANCIA/api/v1/statuses -H <span style=color:#e6db74>&#34;Authorization: Bearer </span>$TOKENM<span style=color:#e6db74>&#34;</span> -F <span style=color:#e6db74>&#34;status=Lo último de mi blog </span>$LINK_ACTUAL<span style=color:#e6db74>&#34;</span>
+</span></span></code></pre></div><p>Además de utilizar la variable &ldquo;LINK_ACTUAL&rdquo; con el enlace a la última publicación del blog, esta línea de comando también hace uso de la variable &ldquo;INSTANCIA&rdquo; (En mi caso la tengo definida como <code>INSTANCIA="https://emacs.ch"</code>) con la ruta raíz de la instancia donde tengas creada la cuenta de <a href=https://joinmastodon.org/es>Mastodon</a> y de la variable &ldquo;TOKENM&rdquo; con la información del token de acceso.</p><blockquote><p>El Token de acceso lo crearemos desde el menú de &ldquo;preferencias&rdquo; y la opción &ldquo;desarrollo&rdquo; creando una nueva aplicación.</p></blockquote><h3 id=script-completo>Script completo</h3><p>Por supuesto, hay que comprobar si el ultimo artículo publicado ha cambiado para no repetir constantemente los tweets. Como he conseguido esto y el resto de necesidades lo puedes ver en el script completo.</p><pre><code>#!/bin/bash
+
+###################################################################
+#Script Name: rss2twiter.sh
+#Description: Generación de Tweet cuando hay un nuevo post del blog
+#Args: N/A
+#Creation/Update: 20220326/20221217
+#Author: www.sherblog.pro                                             
+#Email: sherlockes@gmail.com                               
+###################################################################
+
+################################
+####       Variables        ####
+################################
+
+RUTA=~/temp
+RSS_URL=&#34;https://sherblog.pro/index.xml&#34;
+TWEETSH_URL=&#34;https://raw.githubusercontent.com/piroor/tweet.sh/trunk/tweet.sh&#34;
+INSTANCIA=&#34;https://emacs.ch&#34;
+
+# Carga los parámetros del archivo de configuración en el directorio de usuario
+. ~/config.conf
+
+################################
+####      Dependencias      ####
+################################
+
+# Crea la RUTA de descarga si no existe
+if [[ ! -e $RUTA ]]; then mkdir $RUTA; fi
+
+# Instala xmllint si no está disponible
+if ! which xmllint &gt;/dev/null; then sudo apt install -y libxml2-utils; fi
+
+# Instala nkf si no está disponible
+if ! which nkf &gt;/dev/null; then sudo apt install -y nkf; fi
+
+# Descarga tweet.sh si no está en la RUTA
+if [[ ! -e $RUTA/tweet.sh ]]
+then
+    curl --fail --silent --show-error $TWEETSH_URL --output $RUTA/tweet.sh
+    chmod &#43;x $RUTA/tweet.sh
+fi
+
+################################
+####       Funciones        ####
+################################
+
+# Función para obtener de un xml 
+obtener_xml() {
+    #SALIDA=&#34;$(xmllint --xpath &#34;//$2[$4]/$3&#34; $1 | sed -E &#34;s/&lt;$3&gt;([^&lt;]*)&lt;\/$3&gt;/\1;/g&#34; | rev | cut -c2- | rev)&#34;
+    SALIDA=&#34;$(xmllint --xpath &#34;//$2[$4]/$3&#34; $1 | sed -E &#34;s/&lt;$3&gt;([^&lt;]*)\/&lt;\/$3&gt;/\1/g&#34;)&#34;
+    echo &#34;$SALIDA&#34;
+}
+
+################################
+####    Script principal    ####
+################################
+
+# Busca si hay diferencias entre el rss guardado y el publicado
+if [ &#34;$(diff $RUTA/rss.xml &lt;(wget --quiet -O - $RSS_URL))&#34; != &#34;&#34; ] 
+then
+    # Carga el ultimo link guardado del archivo rss descargado anteriormente
+    LINK_ULTIMO=$(obtener_xml $RUTA/rss.xml &#34;item&#34; &#34;link&#34; &#34;1&#34;)
+
+    # Descarga el archivo rss del blog
+    curl --fail --silent --show-error $RSS_URL --output $RUTA/rss.xml
+    LINK_ACTUAL=$(obtener_xml $RUTA/rss.xml &#34;item&#34; &#34;link&#34; &#34;1&#34;)
+
+    # Compara el ultimo link con el actual
+    if [[ $LINK_ULTIMO != $LINK_ACTUAL ]]
+    then
+	# Publicando para Twitter
+	bash $RUTA/tweet.sh post $LINK_ACTUAL
+
+	# Publicando para Mastodon
+	curl $INSTANCIA/api/v1/statuses -H &#34;Authorization: Bearer $TOKENM&#34; -F &#34;status=Lo último de mi blog $LINK_ACTUAL&#34;
+	
+	echo &#34;publicando un enlace&#34;
+    fi
+fi
+</code></pre><h3 id=enlaces-de-interés>Enlaces de interés</h3><ul><li><a href=https://atareao.es/como/xml-en-bash/>Atareao - Tratar xml en bash</a></li></ul></div><footer class=post__footer><div class="content post__content clearfix"><h3>Otros de mís artículos que te pueden interesar</h3><ul><li><a href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li><li><a href=/crear-y-configurar-una-instancia-gratuita-en-oracle/>Crear y configurar una instancia gratuita en Oracle</a></li><li><a href=/de-youtube-a-podcast/>De Youtube a Podcast</a></li><li><a href=/crear-podcast-a-partir-de-un-canal-de-twitch/>Crear Podcast a partir de un canal de Twitch</a></li><li><a href=/mi-uso-de-alias-en-bash/>Mi uso de alias en bash</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/bash/ rel=tag>bash</a></li></ul></div></footer></article></main><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=/crear-y-configurar-una-instancia-gratuita-en-oracle/ rel=prev><span class=pager__subtitle>«&#8201;Anterior</span><p class=pager__title>Crear y configurar una instancia gratuita en Oracle</p></a></div></nav><div class="content post__content clearfix"><h3>Comentarios</h3>Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href=https://twitter.com/sherblogpro>@sherlockes</a> en Twitter o Telegram.</div></div></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2022 Sherlockes.
+<span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span></br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a></div></div></footer></div><script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body></html>
