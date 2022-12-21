@@ -1,6 +1,6 @@
 ---
 title: "Sensores virtuales y Jinja2 en Home Assistant"
-date: "2022-04-05"
+date: "2022-12-21"
 creation: "2021-09-21"
 description: "Mi manejo de los sensores virtuales y el motor de plantillas Jinja2 en Home Assistant"
 thumbnail: "images/20210921_home_assistant_virtual_sensors_jinja2_00.jpg"
@@ -17,7 +17,7 @@ weight: 5
 ---
 Aquí dejo la solución que he implementado ante el problema de crear una nueva entidad en Home Assistant cuyo valor dependa del de otras entidades ya existentes gracias al uso de sensores virtuales y el motor de plantillas de Jinja2.
 
-**Actualización:** Sensor de estado de la TV
+**Actualización:** Sensor de día lectivo
 <!--more-->
 
 ### Creando el archivo de sensores
@@ -220,8 +220,27 @@ Para crear este sensor de encendido tengo conectada la TV a un enchufe inteligen
             {% endif %}
 ```
 
+### Sensor de día lectivo
+Desde hace varios años tengo una automatización en Alexa como despertador para los días de colegio, ahora voy a integrarla en [Home Assistant] mediante un calendario "festivos_escolares" en el que he insertado el [calendario escolar] con todos los días que no hay que ir al cole (Lo he hecho a través de la integración con Google Calendar aunque también se podría haber hecho directamente en [Home Assistant]).
+
+El sensor que he creado para saber si hoy es lectivo pasa por comprobar que no haya ningún festivo escolar ni que sea fin de semana. Así de sencillo.
+
+```yaml
+- platform: template
+    sensors:
+        es_lectivo_hoy:
+          entity_id: sensor.date
+          value_template: >
+            {% if states('calendar.festivos_escolares') == 'on' or now().isoweekday() >= 6 %}
+              no
+            {% else %}
+              si
+            {% endif %}
+```
+
 [AEMET]: https://www.home-assistant.io/integrations/aemet
 [Broadlink RM mini]: https://www.broadlink.com.es/broadlink-rm-mini3-domotica-mando-distancia-universal.html
+[calendario escolar]: https://educa.aragon.es/calendario-escolar
 [File Editor]: https://github.com/home-assistant/addons/tree/master/configurator
 [Home Assistant]: https://www.home-assistant.io
 [SmartIR]: https://github.com/smartHomeHub/SmartIR
