@@ -25,7 +25,7 @@ Este es el primer modelo de auriculares de la marca que tuve. Se trata de un aur
 
 -----
 ### QCY - Qy12
-
+Probando
 
 ![image-qy12]
 -----
