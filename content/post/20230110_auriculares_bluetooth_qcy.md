@@ -25,7 +25,7 @@ Este es el primer modelo de auriculares de la marca que tuve. Se trata de un aur
 
 -----
 ### QCY - Qy12
-Probando
+El siguiente modelo de auriculares de la marca que adquiero son los Qy12, ya con doble auricular unidos ambos por un cable que permite dejarlos colgados en el cuello gracias al imán que hace que se unan los dos auriculares. Este sencillo método apaga el conjunto cuando están unidos por el imán lo cual es una gran ventaja pero presenta el pequeño problema de que, cuando los almacenas en la mochila, se encienden si llegan a separarse involuntariamente.
 
 ![image-qy12]
 -----
