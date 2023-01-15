@@ -40,6 +40,14 @@ Aparecen aquí los primeros auriculares sin puerto de carga en los mismos y que 
 
 Con el paso de los años se nota, como es normal, una disminución en la capacidad de la batería y un leve deterioro de los pines y contactos de los puertos de carga tanto en la caja como en los auriculares.
 
+#### Como restaurar los valores de fábrica
+- Borrar la conexión bluetooth de los auriculares en el teléfono
+- Sacar de la caja y apagar los dos auriculares (Pulsar los botones 3 sg)
+- Pulsar los dos botones durante 20 sg (El led parpadeará en rojo y blanco y 10 sg después parpadeará tres veces en rojo y blanco)
+- Pulsar los dos botones durante 1 sg para encenderlos (El led parpadeará roo y blanco) y los dos auriculares se emparejarán entre si.
+- El auricular derecho entrará en modo de emparejado (Parpadeo del led) y el led del auricular izquierdo se apagará.
+- En el teléfono buscar la conexión bluetooth "CY-T1 R" y conectarse.
+
 ---
 
 ### QCY - Qs2
@@ -50,7 +58,8 @@ Una evolución del modelo anterior con el que, con la aparición de la tapa en l
 Con el paso del tiempo la dureza de los botones ha desaparecido y los únicos deterioros que he notado han sido una reducción de la capacidad de la batería y el leve deterioro de los pines y contactos de los puertos de carga.
 
 ---
-### Qcy - Q29 pro
+
+### QCY - Q29 pro
 El primer fracaso de la marca con el que me he encontrado. La ergonomía es peor que el los modelos anteriores ya que los auriculares son bastante más grandes, los adaptadores para la oreja tienden a soltarse al quitártelos o sacarlos de la caja. el contacto de carga en la caja no se realiza por medio de imanes sino que es por presión, lo que obliga a tener que estar ajustando la posición de los auriculares en la caja hasta dar con la posición de carga. Además los auriculares no se encienden automáticamente al sacarlos de la caja lo que resulta un poco tedioso
 
 ![image-q29pro]
@@ -59,8 +68,25 @@ Pero el mayor de los defectos y lo que los ha relegado para un uso exclusivo en 
 
 ---
 
-HT03
-HT01
+### QCY - T17
+En este modelo tienen lugar dos cambios importantes, uno en lo relativo a la forma de los auriculares que pasan a ser más redondeados y otro en cuanto a los controles ya que desaparecen los botones físicos para incorporar en su lugar superficies táctiles de control. Ninguno de los dos cambio me supone una mejoría respecto a modelos anteriores, la nueva forma hace que los auriculares no se sujeten tan bien a la oreja con lo que resulta más fácil que se caigan, al tiempo que no producen tan buen sello sonoro con el exterior. Si bien no he pasado mucho tiempo con ellos, las superficies de control táctiles no son tan precisas como los botones físicos y muchas veces tengo que recurrir al teléfono para arrancar o parar el audio.
+
+![image-t17]
+
+No los he usado lo suficiente todavía como para notar el paso del tiempo por ellos
+
+---
+
+### QCY - HT03
+Después del fracaso del modelo anterior intento un cambio radical, seguramente motivado por una buena oferta, hacia los auriculares tipo "airpod" aunque rápidamente salgo desencantado. La ergonomía es desastrosa, mis orejas no se adaptan a este tipo de auriculares con ninguna de las tres almohadillas que suministra el fabricante.
+
+![image-ht03]
+
+La mejor salida para estos auriculares es un regalo.
+
+---
+
+### QCY - HT01
 
 T7
 
@@ -74,3 +100,5 @@ T7
 [image-t1]: /images/20230110_auriculares_bluetooth_qcy_t1.jpg
 [image-qs2]: /images/20230110_auriculares_bluetooth_qcy_qs2.jpg
 [image-q29pro]: /images/20230110_auriculares_bluetooth_qcy_q29pro.jpg
+[image-t17]: /images/20230110_auriculares_bluetooth_qcy_t17.jpg
+[image-ht03]: /images/20230110_auriculares_bluetooth_qcy_ht03.jpg
