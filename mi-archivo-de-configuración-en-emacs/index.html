@@ -148,8 +148,10 @@
  &#39;(package-selected-packages
    (quote
     (whole-line-or-region markdown-mode htmlize gnu-elpa-keyring-update elpy)))
+ &#39;(remote-shell-program &#34;ssh&#34;)
  &#39;(safe-local-variable-values (quote ((ENCODING . UTF-8) (encoding . utf-8))))
- &#39;(tramp-default-method &#34;ssh&#34;))
+ &#39;(tramp-default-method &#34;ssh&#34;)
+ &#39;(tramp-encoding-shell &#34;/bin/bash&#34;))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -205,7 +207,8 @@
 
 ;; Accesos directos
 (global-set-key (kbd &#34;&lt;f1&gt;&#34;) &#39;reiniciar)
-(global-set-key (kbd &#34;&lt;f2&gt;&#34;) (lambda() (interactive)(find-file &#34;~/Google_Drive/SherloScripts/mi_diario.org&#34;)))
+;;(global-set-key (kbd &#34;&lt;f2&gt;&#34;) (lambda() (interactive)(find-file &#34;~/Google_Drive/SherloScripts/mi_diario.org&#34;)))
+(global-set-key (kbd &#34;&lt;f2&gt;&#34;) (lambda() (interactive)(browse-url-emacs &#34;https://raw.githubusercontent.com/sherlockes/SherloScripts/master/mi_diario.org&#34;)))
 (global-set-key (kbd &#34;&lt;f4&gt;&#34;) &#39;sherblog_edit)
 (global-set-key (kbd &#34;&lt;f5&gt;&#34;) &#39;flyspell-mode)
 (global-set-key (kbd &#34;&lt;f6&gt;&#34;) (kbd &#34;C-u C-c C-c&#34;))
