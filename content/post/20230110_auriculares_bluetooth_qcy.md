@@ -24,12 +24,16 @@ Este es el primer modelo de auriculares de la marca que tuve. Se trata de un aur
 
 ![image-q26]
 
+[Manual de instrucciones](https://t.me/sherblog_archivo/5)
+
 ---
 
 ### QCY - Qy12
 El siguiente modelo de auriculares de la marca que adquiero son los Qy12, ya con doble auricular unidos ambos por un cable que permite dejarlos colgados en el cuello gracias al imán que hace que se unan los dos auriculares. Este sencillo método apaga el conjunto cuando están unidos por el imán lo cual es una gran ventaja pero presenta el pequeño problema de que, cuando los almacenas en la mochila, se encienden si llegan a separarse involuntariamente.
 
 ![image-qy12]
+
+[Manual de instrucciones](https://t.me/sherblog_archivo/7)
 
 ---
 
@@ -48,14 +52,18 @@ Con el paso de los años se nota, como es normal, una disminución en la capacid
 - El auricular derecho entrará en modo de emparejado (Parpadeo del led) y el led del auricular izquierdo se apagará.
 - En el teléfono buscar la conexión bluetooth "CY-T1 R" y conectarse.
 
+[Manual de instruciones](https://t.me/sherblog_archivo/10)
+
 ---
 
-### QCY - Qs2
+### QCY - T2C (Qs2)
 Una evolución del modelo anterior con el que, con la aparición de la tapa en la caja de almacenaje, eliminamos uno de los grandes problemas del mismo. Seguramente, con este modelo tengo cubiertas todas mis necesidades para la escucha de podcast que es el principal uso que les doy. El único problema que les encontré al principio es que el botón de control con el que pausas la reproducción estaba un poco duro y hacía que, al usarlo, se metiera demasiado el auricular en el pabellón auditivo.
 
 ![image-qs2]
 
 Con el paso del tiempo la dureza de los botones ha desaparecido y los únicos deterioros que he notado han sido una reducción de la capacidad de la batería y el leve deterioro de los pines y contactos de los puertos de carga.
+
+[Manual de instrucciones](https://t.me/sherblog_archivo/12)
 
 ---
 
