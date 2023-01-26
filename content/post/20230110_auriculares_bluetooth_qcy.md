@@ -24,6 +24,13 @@ Este es el primer modelo de auriculares de la marca que tuve. Se trata de un aur
 
 ![image-q26]
 
+***Lo mejor***
+- Tamaño y ergonomía
+
+***Lo peor***
+- Ausencia de almacenaje
+- Mono
+
 ***El paso del tiempo***
 - Degradación extrema de la batería
 - Rotura del protector del puerto de carga
@@ -41,8 +48,8 @@ El siguiente modelo de auriculares de la marca que adquiero son los Qy12, ya con
 - Duración de la batería
 - Facilidad de encendido y apagado llevándolos en el cuello
 
-***Lo peor**
-- Ausencia de caja de almacenamiento, encendidos involuntarios
+***Lo peor***
+- Ausencia de caja de almacenamiento, encendidos involuntarios al separarse.
 
 ***El paso del tiempo***
 - Rotura del protector del puerto de carga
@@ -53,6 +60,7 @@ El siguiente modelo de auriculares de la marca que adquiero son los Qy12, ya con
 ---
 
 ### QCY - T1
+Bluetooth 5.0, una caja destapada, conexión automática y un pequeño driver de sonido de 6mm son las cualidades que el fabricante destaca de este [modelo](https://www.qcyearbuds.com/qcy-t1/).
 Aparecen aquí los primeros auriculares sin puerto de carga en los mismos y que tanto para cargarlos como para guardarlos disponemos de una pequeña caja con un alojamiento imantado para asegurar la posición de carga. buen sonido, ergonomía y duración de la batería. Los únicos problemas que presentan son la no existencia de la tapa en la caja a la hora de guardarlos en la mochila y un pequeño "bug" que los hace desvincularse y que hace que sea necesario un "reseteo" de fábrica no muy intuitivo.
 
 ![image-t1]
@@ -60,14 +68,12 @@ Aparecen aquí los primeros auriculares sin puerto de carga en los mismos y que 
 ***Lo mejor***
 - Ergonomía e insonorización
 
-***Lo peor**
+***Lo peor***
 - Ausencia de tapa en la caja de almacenamiento
 - Tendencia a desconfigurarse y necesidad de reinicio
 
 ***El paso del tiempo***
 - Desgaste de pines y contactos de los puertos de carga
-
-Con el paso de los años se nota, como es normal, una disminución en la capacidad de la batería y un leve deterioro de los pines y contactos de los puertos de carga tanto en la caja como en los auriculares.
 
 #### Como restaurar los valores de fábrica
 - Borrar la conexión bluetooth de los auriculares en el teléfono
@@ -81,23 +87,26 @@ Con el paso de los años se nota, como es normal, una disminución en la capacid
 
 ---
 
-### QCY - T2C
-Una evolución del modelo anterior con el que, con la aparición de la tapa en la caja de almacenaje, eliminamos uno de los grandes problemas del mismo. Seguramente, con este modelo tengo cubiertas todas mis necesidades para la escucha de podcast que es el principal uso que les doy. El único problema que les encontré al principio es que el botón de control con el que pausas la reproducción estaba un poco duro y hacía que, al usarlo, se metiera demasiado el auricular en el pabellón auditivo.
+### QCY - T2C (Qc2)
+Bluetooth 5.0, una capacidad impermeable IPx7, ligereza y una batería de hasta 32 horas de uso son las principales cualidades que el fabricante ofrece sobre este [modelo](https://www.qcyearbuds.com/qcy-t2c/).
 
 ![image-qs2]
 
-Con el paso del tiempo la dureza de los botones ha desaparecido y los únicos deterioros que he notado han sido una reducción de la capacidad de la batería y el leve deterioro de los pines y contactos de los puertos de carga.
-
 ***Lo mejor***
+- Ergonomía y peso
 - Sonido e insonorización
+- Tapa en la caja de almacenaje
 
 ***Lo peor***
-- Caja de carga muy voluminosa
+- Caja de carga voluminosa
+- Botónes de control muy duros (presión en el oido), que mejora con el tiempo.
 
 ***El paso del tiempo***
 - Desgaste de los pines y contactos de los puertos de carga, mal contacto.
 
 [Manual de instrucciones](https://t.me/sherblog_archivo/12)
+
+> Sin duda alguna estos son los auriculares que más agusto y durante más tiempo he llevado hasta la fecha. Ofrecen todo lo que necesito sin ningún inconveniente.
 
 ---
 
@@ -117,6 +126,8 @@ Pero el mayor de los defectos y lo que los ha relegado para un uso exclusivo en 
 - Deterioro del plástico alrededor de los pines de carga en los auriculares
 
 [Manual de instrucciones](https://t.me/sherblog_archivo/14)
+
+> Los he terminado usando en modo independiente (uso alterno de uno u otro) para cuando me voy a dormir ya que así está siempre la caja conectada y no presentan los problemas de carga.
 
 ---
 
@@ -140,11 +151,16 @@ En este modelo tienen lugar dos cambios importantes, uno en lo relativo a la for
 ---
 
 ### QCY - HT03
-Después del fracaso del modelo anterior intento un cambio radical, seguramente motivado por una buena oferta, hacia los auriculares tipo "airpod" aunque rápidamente salgo desencantado. La ergonomía es desastrosa, mis orejas no se adaptan a este tipo de auriculares con ninguna de las tres almohadillas que suministra el fabricante.
+Bluetooth 5.1, cancelación de ruido activa, control desde aplicación en el teléfono y baja latencia son las ofertas del fabricante para este [modelo](https://www.qcyearbuds.com/qcy-ht03/).
 
 ![image-ht03]
 
-La mejor salida para estos auriculares es un regalo.
+***Lo mejor***
+- Calidad de sonido
+
+***Lo peor***
+- La posición de la superficie táctil no es intuitiva
+- La ergonomía. Se mueven y son dífíciles de ajustar.
 
 ***El paso del tiempo***
 - Pendiente de valorar
@@ -154,18 +170,19 @@ La mejor salida para estos auriculares es un regalo.
 ---
 
 ### QCY - HT01
-El último modelo de la marca del formato que más se adapta a mis orejas y conseguido gracias a una oferta a un precio espectacular (9€). El tamaño es un poco superior al modelo [T2c]
+Bluetooth 5.0, cancelación activa de ruido, sensores mara detectar cuando te quitas los auriculares de la oreja, capacidad impermeable IPx4 y una carga inalámbrica son las principales cualidades que el fabricante destaca para este [modelo](https://www.qcyearbuds.com/qcy-ht01/).
 
 ***Lo mejor***
-
 - Caja con carga inalámbrica y aspecto premium
 - Duración de la batería
 - Calidad de sonido
+- El precio al que los he conseguido (9€)
 
 ***Lo peor***
 - Sacarlos de la funda es complicado
 - La cancelación de ruido apenas es apreciable
 - Sensibilidad de los controles táctiles
+- Tamaño sensiblemente superior al modelo [T2c]
 
 ***El paso del tiempo***
 - Pendiente de valorar
@@ -176,13 +193,29 @@ El último modelo de la marca del formato que más se adapta a mis orejas y cons
 
 ---
 
-T7
+### QCY - T7
+Bluetooth 5.0, mayor calidad de sonido y deteccion de cuando los llevas puestos son las novedades que ofrecen estos auriculares según el fabricante. Hace años que no tengo unos auriculares blancos.
+
+***Lo mejor***
+- Pendiente de valorar
+
+***Lo peor***
+- Pendiente de valorar
+
+***El paso del tiempo***
+- Pendiente de valorar
+
+![image-t7]
+
+[Manual de instrucciones](https://t.me/sherblog_archivo/23)
+
+---
 
 ### Enlaces de interés
 - [enlace](www.sherblog.pro)
 
 [QCY]: https://www.qcy.com
-[T2c]: {{< relref "#t2c" >}}
+[T2c]: {{< relref "#qcy---t2c-qc2" >}}
 
 [image-q26]: /images/20230110_auriculares_bluetooth_qcy_q26.jpg
 [image-qy12]: /images/20230110_auriculares_bluetooth_qcy_qy12.jpg
@@ -192,3 +225,4 @@ T7
 [image-t17]: /images/20230110_auriculares_bluetooth_qcy_t17.jpg
 [image-ht03]: /images/20230110_auriculares_bluetooth_qcy_ht03.jpg
 [image-ht01]: /images/20230110_auriculares_bluetooth_qcy_ht01.jpg
+[image-t7]: /images/20230110_auriculares_bluetooth_qcy_t7.jpg

@@ -1,0 +1,36 @@
+pi@raspberrypi:~/sherblog$ Start building sites … 
+hugo v0.102.3-b76146b129d7caa52417f8e914fc5b9271bf56fc linux/arm BuildDate=2022-09-01T10:16:19Z VendorInfo=gohugoio
+
+                   | ES   
+-------------------+------
+  Pages            | 510  
+  Paginator pages  |  70  
+  Non-page files   |   0  
+  Static files     | 591  
+  Processed images |   0  
+  Aliases          | 116  
+  Sitemaps         |   1  
+  Cleaned          |   0  
+
+Built in 2711 ms
+Watching for changes in /home/pi/sherblog/{archetypes,content,layouts,static,themes}
+Watching for config changes in /home/pi/sherblog/config.toml
+Environment: "development"
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://192.168.10.202:1313/ (bind address 192.168.10.202)
+Press Ctrl+C to stop
+
+Change detected, rebuilding site.
+2023-01-26 10:16:32.762 +0100
+Source changed "/home/pi/sherblog/content/post/20230110_auriculares_bluetooth_qcy.md": WRITE
+Total in 815 ms
+
+Change of Static files detected, rebuilding site.
+2023-01-26 10:18:26.262 +0100
+Syncing images/20230110_auriculares_bluetooth_qcy_t7.jpg to /
+
+Change detected, rebuilding site.
+2023-01-26 10:23:19.262 +0100
+Source changed "/home/pi/sherblog/content/post/20230110_auriculares_bluetooth_qcy.md": WRITE
+Total in 811 ms
