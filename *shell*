@@ -34,3 +34,85 @@ Change detected, rebuilding site.
 2023-01-26 10:23:19.262 +0100
 Source changed "/home/pi/sherblog/content/post/20230110_auriculares_bluetooth_qcy.md": WRITE
 Total in 811 ms
+
+Change detected, rebuilding site.
+2023-01-26 10:25:53.262 +0100
+Source changed "/home/pi/sherblog/content/post/20230110_auriculares_bluetooth_qcy.md": WRITE
+Total in 812 ms
+
+Change detected, rebuilding site.
+2023-01-26 10:28:35.261 +0100
+Source changed "/home/pi/sherblog/content/post/20230110_auriculares_bluetooth_qcy.md": WRITE
+Total in 789 ms
+
+Change detected, rebuilding site.
+2023-01-26 10:29:04.262 +0100
+Source changed "/home/pi/sherblog/content/post/20230110_auriculares_bluetooth_qcy.md": WRITE
+Total in 849 ms
+
+Change detected, rebuilding site.
+2023-01-26 10:29:30.762 +0100
+Source changed "/home/pi/sherblog/content/post/20230110_auriculares_bluetooth_qcy.md": WRITE
+Total in 863 ms
+
+Change detected, rebuilding site.
+2023-01-26 10:34:33.762 +0100
+Source changed "/home/pi/sherblog/content/post/20230110_auriculares_bluetooth_qcy.md": WRITE
+Total in 853 ms
+
+Change detected, rebuilding site.
+2023-01-26 10:52:23.762 +0100
+Source changed "/home/pi/sherblog/content/post/20230110_auriculares_bluetooth_qcy.md": WRITE
+Total in 810 ms
+
+Change detected, rebuilding site.
+2023-01-26 10:56:11.762 +0100
+Source changed "/home/pi/sherblog/content/post/20230110_auriculares_bluetooth_qcy.md": WRITE
+Total in 846 ms
+
+Change detected, rebuilding site.
+2023-01-26 10:57:38.761 +0100
+Source changed "/home/pi/sherblog/content/post/20230110_auriculares_bluetooth_qcy.md": WRITE
+Total in 793 ms
+
+Change detected, rebuilding site.
+2023-01-26 10:58:01.761 +0100
+Source changed "/home/pi/sherblog/content/post/20230110_auriculares_bluetooth_qcy.md": WRITE
+Total in 833 ms
+
+Change detected, rebuilding site.
+2023-01-26 10:59:30.762 +0100
+Source changed "/home/pi/sherblog/content/post/20230110_auriculares_bluetooth_qcy.md": WRITE
+Total in 832 ms
+
+Change detected, rebuilding site.
+2023-01-26 11:01:06.261 +0100
+Source changed "/home/pi/sherblog/content/post/20230110_auriculares_bluetooth_qcy.md": WRITE
+Total in 817 ms
+
+Change detected, rebuilding site.
+2023-01-26 11:01:28.762 +0100
+Source changed "/home/pi/sherblog/content/post/20230110_auriculares_bluetooth_qcy.md": WRITE
+Total in 801 ms
+
+Change detected, rebuilding site.
+2023-01-26 11:03:16.262 +0100
+Source changed "/home/pi/sherblog/content/post/20230110_auriculares_bluetooth_qcy.md": WRITE
+Total in 756 ms
+Total in 801 ms  C-c C-c
+pi@raspberrypi:~/sherblog$ gitup
+[main 7b40fa0] Update
+ 3 files changed, 86 insertions(+), 16 deletions(-)
+ create mode 100644 *shell*
+ create mode 100644 static/images/20230110_auriculares_bluetooth_qcy_t7.jpg
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 13.63 KiB | 2.27 MiB/s, done.
+Total 9 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas: 100% (5/5), completed with 5 local objects.        
+To github.com:sherlockes/sherlockes.github.io.git
+   d20fdf0..7b40fa0  main -> main
+pi@raspberrypi:~/sherblog$ exit
+exit

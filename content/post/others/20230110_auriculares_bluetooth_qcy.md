@@ -9,10 +9,8 @@ authorbox: false
 toc: true
 mathjax: false
 categories:
-- "computing"
-tags:
-- "bash"
-draft: true
+- "hardware"
+draft: false
 weight: 5
 ---
 Llevo haciendo uso de auriculares bluetooth de forma intensiva desde 2016, al principio probé varias marcas pero desde 2018 todos los que he usado han sido de la marca [QCY] y no por ser especialmente buenos ni baratos, simplemente por que me dan lo que necesito al precio más bajo posible.
@@ -194,7 +192,7 @@ Bluetooth 5.0, cancelación activa de ruido, sensores mara detectar cuando te qu
 ---
 
 ### QCY - T7
-Bluetooth 5.0, mayor calidad de sonido y deteccion de cuando los llevas puestos son las novedades que ofrecen estos auriculares según el fabricante. Hace años que no tengo unos auriculares blancos.
+Bluetooth 5.0, mayor calidad de sonido y detección de cuando los llevas puestos son las novedades que ofrece el fabricante para este [modelo](https://www.qcyearbuds.com/qcy-t7/). Hace años que no tengo unos auriculares blancos, veremos como responden ya que todavía no los he probado.
 
 ***Lo mejor***
 - Pendiente de valorar
@@ -210,9 +208,6 @@ Bluetooth 5.0, mayor calidad de sonido y deteccion de cuando los llevas puestos 
 [Manual de instrucciones](https://t.me/sherblog_archivo/23)
 
 ---
-
-### Enlaces de interés
-- [enlace](www.sherblog.pro)
 
 [QCY]: https://www.qcy.com
 [T2c]: {{< relref "#qcy---t2c-qc2" >}}
