@@ -25,20 +25,20 @@ Está claro, si eres un usuario avanzado de [Home Assistant] vas a necesitar el 
 ---
 
 ### Instalando Debian 11
-Parto de mi pc de sobremesa en el que tengo instalado [Linux Mint] y desde el que voy a realizar la conexión remota a la Raspberry para llevar a cabo toda la instalación.
+Parto de mi pc de sobremesa en el que tengo instalado [Linux Mint] y desde el que voy a realizar la conexión remota a la Raspberry 3B+ sobre la que voy a llevar a cabo toda la instalación.
 
 - Descargamos la imagen de Debian para nuestra Raspberry de [Raspi.debian.net](https://raspi.debian.net/tested-images/)
-- La grabamos en un usb o microSD con [Raspberry Pi imager](https://www.raspberrypi.com/software/)
+- La grabamos en un usb o microSD con [Raspberry Pi imager](https://www.raspberrypi.com/software/). Importante tener en cuanta que, en caso de que grabemos en un usb la instalación de Debian, para modelos anteriores a la Raspberry 3b+ hay que habilitar el arranque desde el usb ya que por defecto sólo lo realizan desde la tarjeta de memoria.
 - Para no tener que conectar un monitor y teclado a la Raspberry, una vez grabada la imagen
   - Editaremos el archivo "/RASPIFIRM/sysconf.txt"
   - Quitaremos el comentario de la línea "root_authorized_key="
-  - A continuación insertaremos el contenido del archivo "id_rsa.pub" que está en la carpeta ".ssh" del usuario con el que queremos acceder a la Raspberry
+  - A continuación insertaremos el contenido de la llave pública del pc desde el que hemos grabado la imagen (archivo "id_rsa.pub" que está en la carpeta ".ssh" del usuario). Si no existe el archivo lo generaremos con el comando `ssh-keygen`.
 
-> En caso de que tengamos problemas con la llave ssh podemos conectarnos mediante teclado y monitor y posteriormente crear un usuario al que conectarnos
+> En caso de que tengamos problemas con la llave ssh podemos conectarnos mediante teclado y monitor y posteriormente crear un usuario al que conectarnos de forma remota desde nuestro pc
 >  - Logearse como 'root' sin contraseña
->  - Crear un nuevo usuario 'pi' con `add user pi`
->  - Buscar la ip local asignada con `ip address`
->  - Conectarse mediante `ssh pi@xxx.xxx.xxx.xxx`
+>  - Crear un nuevo usuario 'TU_USUARIO' con `adduser TU_USUARIO`
+>  - Buscar IP_RASPBERRY local asignada con `ip address` o en la configuración del router.
+>  - Conectarse mediante `ssh TU_USUARIO@IP_RASPBERRY`
 >  - Cambiar al usuario 'root' mediante `su root`
 
 - Meteremos la tarjeta o pincho en la Raspberry, la conectaremos a la red y la alimentaremos.
