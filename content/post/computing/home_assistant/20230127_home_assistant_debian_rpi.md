@@ -2,7 +2,7 @@
 title: "Instalando Home Assistant supervisado en Debian 11"
 date: "2023-01-28"
 creation: "2023-01-27"
-description: "Todos los pasos que he seguido para instalar Homa Assistant supervisado en una Raspberry Pi 3b+ con Debian 11"
+description: "Todos los pasos que he seguido para instalar Home Assistant supervisado en una Raspberry Pi 3b+ con Debian 11"
 thumbnail: "images/20230127_home_assistant_debian_rpi_00.jpg"
 disable_comments: true
 authorbox: false
