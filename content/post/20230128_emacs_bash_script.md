@@ -1,8 +1,8 @@
 ---
-title: "Creando un script en Bash en Emacs"
+title: "Creando scripts en Bash en Emacs"
 date: "2023-01-28"
 creation: "2023-01-28"
-description: "Este el el flujo de trabajo a la hora de crear y omprobar el funcionamiento de los scripts que genero en Bash mediante Emacs."
+description: "Este el el flujo de trabajo a la hora de crear y comprobar el funcionamiento de los scripts que genero en Bash mediante Emacs."
 thumbnail: "images/20230128_emacs_bash_script_00.jpg"
 disable_comments: true
 authorbox: false
@@ -75,7 +75,16 @@ Tal y como se puede ver en el archivo de la plantilla de abajo, se rellena autom
 
 $0
 ```
-Una vez que tenemos listo el script lo podemos ejecutar directamente desde [emacs] con el comando "executable-interpret" (C-c C-x) apareciendo el resultado en la otra ventana
+Una vez que tenemos listo el script lo podemos ejecutar directamente desde [emacs] con el comando "executable-interpret" (C-c C-x) apareciendo el resultado en la otra ventana.
+
+Para el caso de que estemos realizando la edición de un archivo en local, al pulsar "C-c C-x" nos aparecerá en la barra de comandos de [emacs] algo como lo siguiente.
+
+```bash
+Run script: /home/pi/prueba.sh
+```
+
+Al pulsar "enter" es posible que nos pregunte si queremos guardar previamente el archivo y a continuación aparecerá el resultado del script en otra ventana
+
 
 ![image-01]
 
