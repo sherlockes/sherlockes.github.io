@@ -1,6 +1,6 @@
 ---
 title: "Instalando Home Assistant supervisado en Debian 11"
-date: "2023-01-27"
+date: "2023-01-28"
 creation: "2023-01-27"
 description: "Todos los pasos que he seguido para instalar Homa Assistant supervisado en una Raspberry Pi 3b+ con Debian 11"
 thumbnail: "images/20230127_home_assistant_debian_rpi_00.jpg"
@@ -10,6 +10,7 @@ toc: true
 mathjax: false
 categories:
 - "home assistant"
+- "raspberry"
 tags:
 - "linux"
 draft: false
@@ -17,11 +18,15 @@ weight: 5
 ---
 Si quieres sacar todo el potencial de tu Raspberry al tiempo que la empleas como servidor de [Home Assistant] con el uso de [Addons], aquí dejo el método oficial de la instalación supervisada mediante Debian 11 en una Raspberry 3B+.
 <!--more-->
-Está claro, si eres un usuario avanzado de [Home Assistant] vas a necesitar el uso de [Addons] lo cual te obliga a utilizar el sistema operativo de [Home Assistant] o una instalación supervisada. La primera alternativa es realmente sencilla, grabas la imagen en una tarjeta o usb, la insertas en la Raspberry y listo para funcionar. La segunda alternativa se complica un poco más, y esto es lo que quiero describir en este artículo.
+Está claro, si eres un usuario avanzado de [Home Assistant] vas a necesitar el uso de [Addons] lo cual te obliga a utilizar el sistema operativo de [Home Assistant] o una instalación supervisada. La primera alternativa es realmente sencilla, grabas la imagen en una tarjeta o usb, la insertas en la Raspberry y listo para funcionar. La segunda alternativa se complica un poco más y, aunque está descrita en la página [oficial], voy a exponer en este artículo cual ha sido mi experiencia.
 
 ![image-01]
 
+---
+
 ### Instalando Debian 11
+Parto de mi pc de sobremesa en el que tengo instalado [Linux Mint] y desde el que voy a realizar la conexión remota a la Raspberry para llevar a cabo toda la instalación.
+
 - Descargamos la imagen de Debian para nuestra Raspberry de [Raspi.debian.net](https://raspi.debian.net/tested-images/)
 - La grabamos en un usb o microSD con [Raspberry Pi imager](https://www.raspberrypi.com/software/)
 - Para no tener que conectar un monitor y teclado a la Raspberry, una vez grabada la imagen
@@ -29,7 +34,12 @@ Está claro, si eres un usuario avanzado de [Home Assistant] vas a necesitar el 
   - Quitaremos el comentario de la línea "root_authorized_key="
   - A continuación insertaremos el contenido del archivo "id_rsa.pub" que está en la carpeta ".ssh" del usuario con el que queremos acceder a la Raspberry
 
-> En caso de que tengamos conectada la Raspberry a un monitor y teclado nos podremos logear directamente como "root" sin la necesidad de modificar este archivo.
+> En caso de que tengamos problemas con la llave ssh podemos conectarnos mediante teclado y monitor y posteriormente crear un usuario al que conectarnos
+>  - Logearse como 'root' sin contraseña
+>  - Crear un nuevo usuario 'pi' con `add user pi`
+>  - Buscar la ip local asignada con `ip address`
+>  - Conectarse mediante `ssh pi@xxx.xxx.xxx.xxx`
+>  - Cambiar al usuario 'root' mediante `su root`
 
 - Meteremos la tarjeta o pincho en la Raspberry, la conectaremos a la red y la alimentaremos.
 - Dejamos pasar unos minutos para que arranque el sistema
@@ -46,16 +56,7 @@ C6:45:ED:33:E4:D8 	192.168.10.149 (rpi3-20230102.home)
 ...
 ...
 ```
-- Conectarse a la Raspberry mediante ssh `ssh root@192.168.10.149`, como hemos pasado previamente la llave ssh no es necesaria la contraseña.
-
-> En caso de que tengamos problemas con la llave ssh podemos conectarnos mediante teclado y monitor y posteriormente crear un usuario al que conectarnos
->  - Logearse como 'root' sin contraseña
->  - Crear un nuevo usuario 'pi' con `add user pi`
->  - Buscar la ip local asignada con `ip address`
->  - Conectarse mediante `ssh pi@xxx.xxx.xxx.xxx`
->  - Cambiar al usuario 'root' mediante `su root`
-
-Es posible que si ya se había asignado anteriormente la IP local a otra instalación nos aparezca un mensaje como el siguiente
+- Conectarse a la Raspberry mediante ssh `ssh root@192.168.10.149`, como hemos pasado previamente la llave ssh no es necesaria la contraseña. En caso de hacerlo a través de un usuario intermedio deberemos cambiar a "root" una vez realizada la conexión. Es posible que si ya se había asignado anteriormente la IP local a otra instalación nos aparezca un mensaje como el siguiente
 ```
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
@@ -79,11 +80,15 @@ En este caso deberemos ejecutar el comando `ssh-keygen -f "/home/sherlockes/.ssh
 - Actualizar el sistema con `apt update & apt upgrade -y`
 > Es posible que al terminar nos diga que hay algún paquete listo para actualizar, realizaremos otro `apt upgrade`
 
+---
+
 ### Instalando las dependencias y Docker
 Para poder proseguir con la instalación de [Home Assistant] supervisado el sistema debe cumplir una serie de [requerimientos] que pasamos a instalar a continuación.
 - Instalar dependencias con `apt install apparmor jq wget curl udisks2 libglib2.0-bin network-manager dbus lsb-release systemd-journal-remote -y`
 - Instalar Docker con `curl -fsSL get.docker.com | sh`
 > Tras la instalación de Docker podemos comprobar que se ha realizado correctamente comprobando la versión del mismo mediante `docker --version`, para cumplir con los [requerimientos] deberemos tener instalada una versión mayor que la 20.10.17.
+
+---
 
 ### Instalación de os-agent
 Ahora toca la instalación de os-agent para [Home Assistant]. Es usado tanto en el sistema operativo de [Home Assistant] como en la versión supervisada que estamos instalando para comunicar el supervisor de [Home Assistant] con el sistema operativo sobre el que está corriendo.
@@ -101,6 +106,7 @@ Linux rpi3-20230102 5.10.0-20-arm64 #1 SMP Debian 5.10.158-2 (2022-12-13) aarch6
 
 > Si todo ha ido bien se devolverá una respuesta con el tipo "interface", en caso de no existir el comando hay que instalar la librería libglib2.0-bin para conseguir el comando "gdbus".
 
+---
 
 ### Instalado Home Assistant
 Ya sólo resta la instalación de [Home Assistant] que realizamos a continuación.
@@ -123,6 +129,8 @@ Ya estamos listos para crear un usuario y comenzar la configuración desde cero 
 
 Perfecta importación de toda la configuración a la Raspberry 3
 
+---
+
 ### Enlaces de interés
 - [Bolly inside - Configure ssh on Debian 11](https://www.bollyinside.com/articles/how-to-configure-and-turn-on-ssh-on-debian-11-bullseye-linux)
 - [Vitux - Reboot Debian 11](https://vitux.com/shutdown-reboot-debian-11/)
@@ -135,6 +143,8 @@ Perfecta importación de toda la configuración a la Raspberry 3
 
 [Addons]: https://www.home-assistant.io/addons/
 [Home Assistant]: https://www.home-assistant.io
+[Linux Mint]: https://linuxmint.com
+[oficial]: https://github.com/home-assistant/supervised-installer
 [requerimientos]: https://github.com/home-assistant/architecture/blob/master/adr/0014-home-assistant-supervised.md
 
 [image-01]: /images/20230127_home_assistant_debian_rpi_01.jpg
