@@ -1,6 +1,6 @@
 ---
 title: "Sincronizar nubes con rclone"
-date: "2021-06-03"
+date: "2023-02-22"
 creation: "2020-06-25"
 description: "El método que utilizo para sincronizar dos nubes con mi contenido multimedia por si una de las dos desaparece."
 thumbnail: "images/20200625_rclone_sync_clouds_00.jpg"
@@ -23,7 +23,7 @@ Hace un tiempo y gracias a [Andrés Ramos] di con un enlace a una web para crear
 
 Gracias a al [enlace] de Andrés (y que ahora no funciona) era posible crear una unidad compartida de tamaño ilimitado de Google Drive sin más que introducir el nombre que le quiero dar, la cuenta de Google en la que la quiero incluir (No he usado mi cuenta principal sino otra que tengo para estas ocasiones) y seleccionar la universidad de San Francisco (No se como irán las demás opciones). Con solo eso ya tenemos creada una unidad compartida (Para nada privada) con espacio ilimitado.
 
-> El rey a muerto... larga vida al rey. https://www.pon.workers.dev
+> El rey a muerto... pero quedan príncipes [enlace_01], [enlace_02], [enlace_03], [enlace_04], [enlace_05]
 
 ![Imagen_01]
 
@@ -160,6 +160,11 @@ Pero como el ser humano no está hecho para esperar he optado por automatizar la
 [Andrés Ramos]:  http://www.andresramos.pro/google-drive-gratis/
 [enlace]: https://td.fastio.me/
 
+[enlace_01]: https://dawn-star-699e.anime123.workers.dev/
+[enlace_02]: https://td.msgsuite.workers.dev/
+[enlace_03]: https://driveweb.sharedgoogle.workers.dev/
+[enlace_04]: https://td.1tb.workers.dev/
+[enlace_05]: https://sparkdrive.tiktikimelbo7.workers.dev/
 
 [Imagen_01]: /images/20200625_rclone_sync_clouds_01.jpg
 [Imagen_02]: /images/20200625_rclone_sync_clouds_02.jpg
