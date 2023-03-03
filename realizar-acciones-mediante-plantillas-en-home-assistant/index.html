@@ -10,7 +10,7 @@
 </span></span><span style=display:flex><span><span style=color:#f92672>condition</span>: []
 </span></span><span style=display:flex><span><span style=color:#f92672>action</span>:
 </span></span><span style=display:flex><span>  - <span style=color:#f92672>service</span>: &gt;-<span style=color:#e6db74>
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>      </span>      <span style=color:#ae81ff>light.turn_{{ &#39;on&#39; if states (&#39;light.salon_lado_mesa&#39;) == &#39;on&#39; else &#39;off&#39; }}</span>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      light.turn_{{ &#39;on&#39; if states (&#39;light.salon_lado_mesa&#39;) == &#39;on&#39; else &#39;off&#39; }}</span>      
 </span></span><span style=display:flex><span>    <span style=color:#f92672>target</span>:
 </span></span><span style=display:flex><span>      <span style=color:#f92672>entity_id</span>: <span style=color:#ae81ff>light.luces_del_salon</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>mode</span>: <span style=color:#ae81ff>single</span>
