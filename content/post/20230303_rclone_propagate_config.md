@@ -17,7 +17,9 @@ weight: 5
 ---
 [Rclone] presenta un problema si pretendemos trabajar a través de un enlace simbólico como archivo de configuración ya que al actualizarla elimina el enlace y genera un nuevo archivo "rclone.conf". De esta forma le he conseguido dar solución.
 <!--more-->
-Aunque es posible que el archivo de configuración de [Rclone] apunta a cualquier ubicación, para salir del valor por defecto hay que pasarlo como parámetro al comando de forma `rclone --config "$HOME/.config/ubicación/rclone.conf"` lo cual resulta un poco latoso. Por defecto se guarda el archivo de configuración en "/home/usuario/.config/rclone/rclone.conf" y es posible cambiar este archivo por un enlace simbólico a la ubicación donde queramos tener el archivo de configuración.
+Aunque es posible que el archivo de configuración de [Rclone] apunta a cualquier ubicación, para salir del valor por defecto hay que pasarlo como parámetro al comando de forma `rclone --config "$HOME/.config/ubicación/rclone.conf"` lo cual resulta un poco latoso. Por defecto se guarda el archivo de configuración en "/home/usuario/.config/rclone/rclone.conf" tal y como podemos obtener mediante el comando `rclone config file`, es posible cambiar este archivo por un enlace simbólico a la ubicación donde queramos tener el archivo de configuración.
+
+Tal y como dejé escrito en [este]({{<relref"20210416_dotfiles.md">}}) artículo, mis archivos de configuración se guardan en una nube pública sincronizados con el nas. Al menos una vez al día, cada uno de mis equipos descarga estos archivos de configuración y los coloca en la carpeta "~/dotfiles/" de mi usuario.
 
 ``` bash
 rclone_config(){
