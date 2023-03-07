@@ -10,7 +10,7 @@ mathjax: false
 categories:
   - "Raspberry"
 tags:
-  - "Desarrollo"
+  - "desarrollo"
 draft: false
 weight: 15
 ---

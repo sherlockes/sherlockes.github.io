@@ -11,7 +11,7 @@ mathjax: false
 categories:
   - "Raspberry"
 tags:
-  - "Desarrollo"
+  - "desarrollo"
 menu: main # Optional, add page to a menu. Options: main, side, footer
 draft: false
 ---
