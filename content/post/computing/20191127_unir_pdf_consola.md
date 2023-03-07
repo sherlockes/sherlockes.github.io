@@ -12,7 +12,7 @@ categories:
   - "productividad"
   - "linux"
 tags:
-  - "poppler-utils"
+  - "poppler"
   - "bash"
 draft: false
 weight: 5
