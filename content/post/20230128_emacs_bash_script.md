@@ -1,6 +1,6 @@
 ---
 title: "Creando scripts en Bash en Emacs"
-date: "2023-01-28"
+date: "2023-03-10"
 creation: "2023-01-28"
 description: "Este el el flujo de trabajo a la hora de crear y comprobar el funcionamiento de los scripts que genero en Bash mediante Emacs."
 thumbnail: "images/20230128_emacs_bash_script_00.jpg"
@@ -80,10 +80,33 @@ Una vez que tenemos listo el script lo podemos ejecutar directamente desde [emac
 Para el caso de que estemos realizando la edición de un archivo en local, al pulsar "C-c C-x" nos aparecerá en la barra de comandos de [emacs] algo como lo siguiente.
 
 ```bash
-Run script: /home/pi/prueba.sh
+Run script: /home/usuario/prueba.sh
 ```
 
 Al pulsar "enter" es posible que nos pregunte si queremos guardar previamente el archivo y a continuación aparecerá el resultado del script en otra ventana
+
+En el caso de que estemos realizando la edición de un archivo remoto que queremos ejecutar sobre la terminal remota , al pulsar "C-c C-x" nos aparecerá en la barra de comandos de [emacs] algo como lo siguiente.
+
+```bash
+Run script: /ssh:usuario@192.168.10.202:/home/usuario/prueba.sh
+```
+Al ejecutar el comando nos aparece un error
+
+``` bash
+-*- mode: compilation; default-directory: "/ssh:usuario@192.168.10.202:/home/usuario/" -*-
+Comint started at Fri Mar 10 12:11:53
+
+/ssh:usuario@192.168.10.202:/home/usuario/prueba.sh
+/bin/sh: 2: /ssh:usuario@192.168.10.202:/home/usuario/prueba.sh: not found
+
+Comint exited abnormally with code 127 at Fri Mar 10 12:11:53
+```
+
+La solución pasa por eliminar la referencia a la conexión ssh antes de ejecutar el script de forma que el comando se quedará según lo siguiente exactamente igual que en el caso de un archivo local:
+
+```bash
+Run script: /home/usuario/prueba.sh
+```
 
 
 ![image-01]
