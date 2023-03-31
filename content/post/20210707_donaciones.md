@@ -1,6 +1,6 @@
 ---
 title: "Mi contribución al software libre"
-date: "2022-06-27"
+date: "2022-06-28"
 creation: "2021-07-07"
 description: "Aquí queda mi pequeña contribución al software libre que utilizo en forma de donaciones."
 thumbnail: "/images/20210707_donaciones_00.jpg"
