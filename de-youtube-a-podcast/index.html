@@ -12,7 +12,7 @@ e incrusto esta información en el &ldquo;track&rdquo; descargado a través del 
 #Script Name: youtube2podcast.sh
 #Description: Creación de un podcast a partir de un canal de youtube
 #Args: N/A
-#Creation/Update: 20220605/20220916
+#Creation/Update: 20220605/20230416
 #Author: www.sherblog.pro                                             
 #Email: sherlockes@gmail.com                               
 ###################################################################
@@ -28,7 +28,8 @@ CANAL_NOMBRE=&#34;Jordi Llatzer&#34;
 TITULO=&#34;Jordi Llatzer en Twitch&#34;
 SERVIDOR=&#34;http://192.168.10.202:5005&#34;
 #CANAL_YT=&#34;https://www.youtube.com/channel/UCSQJX9lm4u92bx0XGpEIUiA&#34;
-CANAL_YT=&#34;https://www.youtube.com/watch?v=T-SliI2PHQQ&amp;list=PLD75mPDs8ehwjBOCDPUlmxsnNySzJl-Lv&#34;
+#CANAL_YT=&#34;https://www.youtube.com/watch?v=T-SliI2PHQQ&amp;list=PLD75mPDs8ehwjBOCDPUlmxsnNySzJl-Lv&#34;
+CANAL_YT=&#34;https://www.youtube.com/@jordillatzer/videos&#34;
 
 twitch_dir=~/twitch
 DESCARGADOS=&#34;$twitch_dir/$CANAL/descargados_yt.txt&#34;
@@ -50,11 +51,18 @@ echo &#34;######################################&#34;
 
 dependencias(){
     # yt-dlp
+    
     if command -v yt-dlp &gt;/dev/null 2&gt;&amp;1 ; then
 	echo &#34;Versión de yt-dlp: $(yt-dlp --version)&#34;
+	sudo yt-dlp -U
     else
 	echo &#34;ATENCION: yt-dlp no está disponible&#34;
+	sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
+	sudo chmod a&#43;rx /usr/local/bin/yt-dlp
     fi
+    
+
+    
 
     # id3v2
     if command -v id3v2 &gt;/dev/null 2&gt;&amp;1 ; then
@@ -111,6 +119,8 @@ buscar_ultimos_yt(){
     do
 	id=$( echo &#34;$video&#34; |cut -d\/ -f1 )
 	duracion=$( echo &#34;$video&#34; |cut -d\/ -f2 )
+
+	echo $id
 
 	# Comprueba si el archivo es de más de 20&#39;
 	if (( $duracion &gt; 1200 )) &amp;&amp; ! grep -q $id &#34;$DESCARGADOS&#34;; then
@@ -279,14 +289,14 @@ subir_contenido () {
     
     # Subiendo archivos a la nube via rclone
     echo &#34;- Subiendo los mp3&#39;s al servidor remoto&#34;
-    rclone copy $canal Sherlockes78_UN_en:twitch/$canal/ --create-empty-src-dirs
+    rclone copy $canal Sherlockes78_UN2_en:twitch/$canal/ --create-empty-src-dirs
 
     # Eliminando audio y video local
     echo &#34;- Eliminando audios locales&#34;
     find . -type f -name &#34;*.mp3&#34; -delete
 
     # Borrando los archivos de la nube anteriores a 30 días
-    rclone delete Sherlockes78_UN_en:twitch/$canal/mp3 --min-age 30d
+    rclone delete Sherlockes78_UN2_en:twitch/$canal/mp3 --min-age 30d
 }
 
 
@@ -333,6 +343,6 @@ mensaje&#43;=$&#39;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 mensaje&#43;=$&#34;Duración del Script:  $duracion segundos&#34;
 
 $notificacion &#34;$mensaje&#34;
-</code></pre></p><h3 id=enlaces-de-interés>Enlaces de interés</h3><ul><li><a href=https://gist.github.com/DiegoFleitas/c940d4b94d6b92b55a7084afe84bf571>GitHub Diego Fleitas - yt-dlp commands</a></li><li><a href=https://stackoverflow.com/questions/21356764/use-youtube-dl-to-download-new-videos-from-channel>StackOverFlow - Download new videos with youtube-dl</a></li><li><a href=https://unix.stackexchange.com/questions/463875/scripting-id3-tags-with-id3v2-and-sed>Unix Stack-Exchange - id3 tags</a></li><li><a href=https://github.com/yt-dlp/yt-dlp>yt-dlp</a></li><li><a href=https://write.corbpie.com/downloading-a-youtube-channel-with-yt-dlp/>Write - Download youtube channel with yt-dlp</a></li><li><a href=https://write.corbpie.com/downloading-youtube-videos-and-playlists-with-yt-dlp/>Write - Download youtube video & playlist with yt-dlp</a></li></ul></div><footer class=post__footer><div class="content post__content clearfix"><h3>Otros de mís artículos que te pueden interesar</h3><ul><li><a href=/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/>Del Blog a Twitter y Mastodon mediante rss y Bash</a></li><li><a href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li><li><a href=/crear-y-configurar-una-instancia-gratuita-en-oracle/>Crear y configurar una instancia gratuita en Oracle</a></li><li><a href=/crear-podcast-a-partir-de-un-canal-de-twitch/>Crear Podcast a partir de un canal de Twitch</a></li><li><a href=/mi-uso-de-alias-en-bash/>Mi uso de alias en bash</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/bash/ rel=tag>bash</a></li></ul></div></footer></article></main><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=/unir-o-separar-en-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/ rel=prev><span class=pager__subtitle>«&#8201;Anterior</span><p class=pager__title>Unir o separar en varios pdf en linux desde la línea de comandos</p></a></div><div class="pager__item pager__item--next"><a class=pager__link href=/crear-y-configurar-una-instancia-gratuita-en-oracle/ rel=next><span class=pager__subtitle>Siguiente&#8201;»</span><p class=pager__title>Crear y configurar una instancia gratuita en Oracle</p></a></div></nav><div class="content post__content clearfix"><h3>Comentarios</h3>Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href=https://emacs.ch/@sherlockes>@sherlockes</a> en Mastodon o Telegram.</div></div></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2023 Sherlockes.
+</code></pre></p><h3 id=enlaces-de-interés>Enlaces de interés</h3><ul><li><a href=https://gist.github.com/DiegoFleitas/c940d4b94d6b92b55a7084afe84bf571>GitHub Diego Fleitas - yt-dlp commands</a></li><li><a href=https://stackoverflow.com/questions/21356764/use-youtube-dl-to-download-new-videos-from-channel>StackOverFlow - Download new videos with youtube-dl</a></li><li><a href=https://unix.stackexchange.com/questions/463875/scripting-id3-tags-with-id3v2-and-sed>Unix Stack-Exchange - id3 tags</a></li><li><a href=https://github.com/yt-dlp/yt-dlp>yt-dlp</a></li><li><a href=https://write.corbpie.com/downloading-a-youtube-channel-with-yt-dlp/>Write - Download youtube channel with yt-dlp</a></li><li><a href=https://write.corbpie.com/downloading-youtube-videos-and-playlists-with-yt-dlp/>Write - Download youtube video & playlist with yt-dlp</a></li></ul></div><footer class=post__footer><div class="content post__content clearfix"><h3>Otros de mís artículos que te pueden interesar</h3><ul><li><a href=/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/>Del Blog a Twitter y Mastodon mediante rss y Bash</a></li><li><a href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li><li><a href=/crear-podcast-a-partir-de-un-canal-de-twitch/>Crear Podcast a partir de un canal de Twitch</a></li><li><a href=/mi-uso-de-alias-en-bash/>Mi uso de alias en bash</a></li><li><a href=/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/>Mi gestión de los archivos de configuración</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/bash/ rel=tag>bash</a></li></ul></div></footer></article></main><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=/unir-o-separar-en-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/ rel=prev><span class=pager__subtitle>«&#8201;Anterior</span><p class=pager__title>Unir o separar en varios pdf en linux desde la línea de comandos</p></a></div><div class="pager__item pager__item--next"><a class=pager__link href=/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/ rel=next><span class=pager__subtitle>Siguiente&#8201;»</span><p class=pager__title>Del Blog a Twitter y Mastodon mediante rss y Bash</p></a></div></nav><div class="content post__content clearfix"><h3>Comentarios</h3>Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href=https://emacs.ch/@sherlockes>@sherlockes</a> en Mastodon o Telegram.</div></div></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2023 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span></br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a></div></div></footer></div><script async defer src=/js/menu.js></script>
 <script src=/js/custom.js></script></body></html>

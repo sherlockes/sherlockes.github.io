@@ -83,7 +83,7 @@
 # Script Name: hugo.sh
 # Description: Instala y actualiza Hugo
 # Args: N/A
-# Creation/Update: 20191114/20221015
+# Creation/Update: 20191114/20230412
 # Author: www.sherblog.pro                                                
 # Email: sherlockes@gmail.com                                           
 ###################################################################
@@ -110,17 +110,18 @@ hugo_check(){
 	| cut -d &#34;:&#34; -f 2,3 \
 	| tr -d \&#34;)
 
-    if [[ $hugo_latest_path =~ ^$hugo_download_path[v](.*)[/].*\.tar\.gz$ ]]; then
-    	hugo_latest_ver=${BASH_REMATCH[1]}
-    	echo &#34;La última versión disponible es $hugo_latest_ver&#34;
-    fi
+    # Extrae el número de la última version disponible
+    nombre_carpeta=$(basename $(dirname $hugo_latest_path))
+    hugo_latest_ver=&#34;${nombre_carpeta:1}&#34;
+    echo &#34;La última versión disponible es $hugo_latest_ver&#34;
 
     if which hugo &gt;/dev/null; then
+	# Extrae el número de la versión de Hugo isntalada
 	hugo_local_ver=$(hugo version | perl -pe &#39;($_)=/([0-9]&#43;([.][0-9]&#43;)&#43;)/&#39;)
 
 	echo &#34;Versión instalada $hugo_local_ver, última versión $hugo_latest_ver&#34;
 
-	if [ $hugo_local_ver == $hugo_web_ver ]
+	if [ $hugo_local_ver == $hugo_latest_ver ]
 	then
 	    echo &#34;hugo instalado y actualizado...&#34;
 	else
@@ -177,6 +178,6 @@ hugo_install(){
 }
 
 hugo_check
-</code></pre><h3 id=enlaces-de-interés>Enlaces de interés</h3><ul><li><a href=https://fabianlee.org/2020/01/29/bash-using-bash_rematch-to-pull-capture-groups-from-a-regex/>Fabian Lee - Capture groups from regex</a></li><li><a href=https://www.howtogeek.com/815684/bash-check-if-file-exists/>How to Geek - Check if file exists</a></li><li><a href=https://linuxize.com/post/regular-expressions-in-grep/>Linuxxize - Regex in grep</a></li><li><a href=https://stackoverflow.com/questions/13341702/how-do-i-turn-off-the-output-from-tar-commands-on-unix>Stackoverflow - Turn off tar output</a></li><li><a href=https://stackoverflow.com/questions/10411616/grep-regex-not-containing-a-string>StackOverFlow - Grep regex without string</a></li></ul></div><footer class=post__footer><div class="content post__content clearfix"><h3>Otros de mís artículos que te pueden interesar</h3><ul><li><a href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li><li><a href=/incrustar-texto-externo-en-hugo/>Incrustar texto externo en Hugo</a></li><li><a href=/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/>Del Blog a Twitter y Mastodon mediante rss y Bash</a></li><li><a href=/crear-y-configurar-una-instancia-gratuita-en-oracle/>Crear y configurar una instancia gratuita en Oracle</a></li><li><a href=/de-youtube-a-podcast/>De Youtube a Podcast</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/bash/ rel=tag>bash</a></li><li class=tags__item><a class="tags__link btn" href=/tags/regex/ rel=tag>regex</a></li></ul></div></footer></article></main><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=/incrustar-texto-externo-en-hugo/ rel=prev><span class=pager__subtitle>«&#8201;Anterior</span><p class=pager__title>Incrustar texto externo en Hugo</p></a></div><div class="pager__item pager__item--next"><a class=pager__link href=/compartiendo-contenido-de-hugo-en-mastodon/ rel=next><span class=pager__subtitle>Siguiente&#8201;»</span><p class=pager__title>Compartiendo contenido de Hugo en Mastodon</p></a></div></nav><div class="content post__content clearfix"><h3>Comentarios</h3>Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href=https://emacs.ch/@sherlockes>@sherlockes</a> en Mastodon o Telegram.</div></div></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2023 Sherlockes.
+</code></pre><h3 id=enlaces-de-interés>Enlaces de interés</h3><ul><li><a href=https://fabianlee.org/2020/01/29/bash-using-bash_rematch-to-pull-capture-groups-from-a-regex/>Fabian Lee - Capture groups from regex</a></li><li><a href=https://www.howtogeek.com/815684/bash-check-if-file-exists/>How to Geek - Check if file exists</a></li><li><a href=https://linuxize.com/post/regular-expressions-in-grep/>Linuxxize - Regex in grep</a></li><li><a href=https://stackoverflow.com/questions/13341702/how-do-i-turn-off-the-output-from-tar-commands-on-unix>Stackoverflow - Turn off tar output</a></li><li><a href=https://stackoverflow.com/questions/10411616/grep-regex-not-containing-a-string>StackOverFlow - Grep regex without string</a></li></ul></div><footer class=post__footer><div class="content post__content clearfix"><h3>Otros de mís artículos que te pueden interesar</h3><ul><li><a href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li><li><a href=/incrustar-texto-externo-en-hugo/>Incrustar texto externo en Hugo</a></li><li><a href=/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/>Del Blog a Twitter y Mastodon mediante rss y Bash</a></li><li><a href=/de-youtube-a-podcast/>De Youtube a Podcast</a></li><li><a href=/unir-o-separar-en-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/>Unir o separar en varios pdf en linux desde la línea de comandos</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/bash/ rel=tag>bash</a></li><li class=tags__item><a class="tags__link btn" href=/tags/regex/ rel=tag>regex</a></li></ul></div></footer></article></main><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=/incrustar-texto-externo-en-hugo/ rel=prev><span class=pager__subtitle>«&#8201;Anterior</span><p class=pager__title>Incrustar texto externo en Hugo</p></a></div><div class="pager__item pager__item--next"><a class=pager__link href=/compartiendo-contenido-de-hugo-en-mastodon/ rel=next><span class=pager__subtitle>Siguiente&#8201;»</span><p class=pager__title>Compartiendo contenido de Hugo en Mastodon</p></a></div></nav><div class="content post__content clearfix"><h3>Comentarios</h3>Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href=https://emacs.ch/@sherlockes>@sherlockes</a> en Mastodon o Telegram.</div></div></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2023 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span></br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a></div></div></footer></div><script async defer src=/js/menu.js></script>
 <script src=/js/custom.js></script></body></html>
