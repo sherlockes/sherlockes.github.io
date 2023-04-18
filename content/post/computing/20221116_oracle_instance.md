@@ -1,6 +1,6 @@
 ---
 title: "Crear y configurar una instancia gratuita en Oracle"
-date: "2022-12-03"
+date: "2023-04-18"
 creation: "2022-11-16"
 description: "Descripción"
 thumbnail: "images/20221116_oracle_instance_00.jpg"
@@ -17,7 +17,7 @@ weight: 5
 ---
 Tener un pequeño servidor privado virtual a modo de laboratorio en el que hacer nuestras pruebas es gratis gracias a [Oracle Cloud], aquí dejo la forma de conseguirlo y las pruebas que con el he realizado
 <!--more-->
-El proceso de la creación de la cuenta en [Oracle Cloud] puede llegar a ser desesperante por la lentitud del entorno. A la hora de crear una nueva instancia el asunto resulta bastante sencillo e intuitivo. Lo más importante a tener en cuenta es descargar las llaves ssh para poder tener acceso a la máquina remota que hemos creado.
+El proceso de la creación de la cuenta en [Oracle Cloud] puede llegar a ser desesperante por la lentitud del entorno. A la hora de crear una nueva instancia el asunto resulta bastante sencillo e intuitivo. Lo más importante a tener en cuenta es descargar las llaves ssh para poder tener acceso a la máquina remota que hemos creado o bien subir a la instancia creada la llave pública de nuestro equipo.
 
 ![image-01]
 
@@ -31,8 +31,15 @@ Ya tenemos creada nuestra instancia a la que se le ha asignado una ip pública x
 ssh -i ssh-key-2022-11-17.key ubuntu@xxx.xxx.xxx.xxx
 ```
 
+>Antes de poder usar la llave hay que cambiarle los permisos al archivo mediante el comando `chmod 400 ssh-key-2022-11-17.key` tal y como se explica en la [instrucciones de conexión](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm).
+
 y ya estamos dentro sin necesidad de introducir ninguna contraseña.
 
+En caso de que hayamos optado por subir la llave pública de nuestro equipo en lugar de descargas las llaves de la instancia el acceso a la misma será mucho más sencillo mediante:
+
+```bash
+ssh ubuntu@xxx.xxx.xxx.xxx
+```
 
 ### Asignar DNS dinámico
 Acordarse o tener que consultar la ip de la instancia remota creada cada vez que nos queremos conectar a la misma no es práctico. Por esto yo uso el servicio [NoIp] que en su modo gratuito permite hasta 3 dns dinámicos. Para que la ip se actualice automáticamente a través del servicio de [Noip] cuando esta cambie es necesario instalar el cliente [DUC] en nuestra instancia remota.
