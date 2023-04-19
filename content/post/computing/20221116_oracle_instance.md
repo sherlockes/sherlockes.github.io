@@ -83,11 +83,13 @@ New configuration file '/tmp/no-ip2.conf' created.
 mv /tmp/no-ip2.conf /usr/local/etc/no-ip2.conf
 ```
 
+>El proceso de instalación detallado lo puedes encontrar [aquí](https://www.noip.com/support/knowledgebase/installing-the-linux-dynamic-update-client/).
+
 ### Añadir un usuario
 
 - Acceder a la máquina remota mediante `ssh -i ssh_pub.key ubuntu@loquesea.ddns.net` donde "ssh_pub.key" es el archivo correspondiente a la llave pública que se genera al crear la instancia.
 - Cambiar al usuario "root" con el comando `sudo su`
-- Crear el nuevo usuario (Con el mismo nombre que tenemos en la terminal desde la que estamos accediendo a la mátuina remota) con `useradd nuevo_usuario`
+- Crear el nuevo usuario (Con el mismo nombre que tenemos en la terminal desde la que estamos accediendo a la máquina remota) con `useradd nuevo_usuario`
 - Crear el directorio ".ssh" para guardar las llaves con `mkdir -p /home/nuevo_usuario/.ssh`
 - Copiar el contenido de la llave pública del usuario en el terminal desde el que está accediendo a la máquina remota. La ubicación por defecto de la llave es "/home/usuario/.ssh/id_rsa.pub". En caso de que no se haya generado la llave anteriormente la generaremos mediante `ssh-keygen -t rsa`
 - Copiamos la llave pública al archivo "/home/nuevo_usuario/.ssh/authorized_keys" a través del comando `echo "contenido" > /home/new_user/.ssh/authorized_keys`
