@@ -289,14 +289,14 @@ subir_contenido () {
     
     # Subiendo archivos a la nube via rclone
     echo &#34;- Subiendo los mp3&#39;s al servidor remoto&#34;
-    rclone copy $canal Sherlockes78_UN2_en:twitch/$canal/ --create-empty-src-dirs
+    rclone copy $canal Sherlockes78_UN_en:twitch/$canal/ --create-empty-src-dirs
 
     # Eliminando audio y video local
     echo &#34;- Eliminando audios locales&#34;
     find . -type f -name &#34;*.mp3&#34; -delete
 
     # Borrando los archivos de la nube anteriores a 30 días
-    rclone delete Sherlockes78_UN2_en:twitch/$canal/mp3 --min-age 30d
+    rclone delete Sherlockes78_UN_en:twitch/$canal/mp3 --min-age 30d
 }
 
 

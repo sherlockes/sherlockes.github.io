@@ -9,7 +9,7 @@
 #Script Name: twitch2podcast.sh
 #Description: Generación de Podcast a partir de canal de Twitch
 #Args: N/A
-#Creation/Update: 20220317/20220901
+#Creation/Update: 20220317/20230420
 #Author: www.sherblog.pro                                             
 #Email: sherlockes@gmail.com                               
 ###################################################################
@@ -41,6 +41,8 @@ comprobar(){
 	mensaje&#43;=$&#39;OK&#39;
     else
 	mensaje&#43;=$&#39;ERROR&#39;
+	$notificacion &#34;$mensaje&#34;
+	exit 0
     fi
     mensaje&#43;=$&#39;\n&#39;
 }
@@ -59,7 +61,7 @@ buscar_ultimos () {
     json=$(python3 $twdl videos $canal -j)
     comprobar $?
 
-    # Limitar a 15 videos la lista de descargados
+    # Limitar a 15 videos la lista de descargadoscase 
     mensaje&#43;=$&#39;Recortando listas de descargados. . . . . . . &#39;
     echo &#34;- Recortando listas de descargados&#34;
     head -n15 $twitch_dir/$canal/descargados.txt &gt; tmp
@@ -91,7 +93,7 @@ buscar_ultimos () {
 	# Comprobar si el archivo ya ha sido descargado
 	if grep -q $id $twitch_dir/$canal/descargados.txt
 	then
-        echo $i
+	    
         if [ $i -eq 0 ]
         then
             echo &#34;- No hay nuevos vídeos.&#34;;
@@ -268,7 +270,8 @@ subir_contenido () {
     # Subiendo archivos a la nube via rclone
     echo &#34;- Subiendo los mp3&#39;s al sevidor remoto&#34;
     mensaje&#43;=$&#34;Subiendo los mp3&#39;s al sevidor webdav . . .&#34;
-    rclone copy $canal Sherlockes78_UN2_en:twitch/$canal/ --create-empty-src-dirs
+    rclone copy $canal Sherlockes78_UN_en:twitch/$canal/ --create-empty-src-dirs
+
     comprobar $?
 
     # Eliminando audio y video local
@@ -277,7 +280,7 @@ subir_contenido () {
 
     # Borrando los archivos de la nube anteriores a 30 días
     mensaje&#43;=$&#34;Borrando contenido antiguo . . . . . . . . . . . .&#34;
-    rclone delete Sherlockes78_UN2_en:twitch/$canal/mp3 --min-age 30d
+    rclone delete Sherlockes78_UN_en:twitch/$canal/mp3 --min-age 30d
     comprobar $?
 }
 
