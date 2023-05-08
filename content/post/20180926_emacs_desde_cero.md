@@ -1,6 +1,6 @@
 ---
 title: "Emacs desde cero"
-date: "2022-03-15"
+date: "2022-03-14"
 creation: "2018-09-26"
 description: "Aquí iré documentando mi experiencia con este impresionante editor de texto.."
 thumbnail: "images/titulo_00.jpg"
