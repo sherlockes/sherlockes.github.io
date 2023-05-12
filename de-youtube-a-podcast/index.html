@@ -12,7 +12,7 @@ e incrusto esta información en el &ldquo;track&rdquo; descargado a través del 
 #Script Name: youtube2podcast.sh
 #Description: Creación de un podcast a partir de un canal de youtube
 #Args: N/A
-#Creation/Update: 20220605/20230416
+#Creation/Update: 20220605/20230511
 #Author: www.sherblog.pro                                             
 #Email: sherlockes@gmail.com                               
 ###################################################################
@@ -27,8 +27,6 @@ CANAL=&#34;jordillatzer&#34;
 CANAL_NOMBRE=&#34;Jordi Llatzer&#34;
 TITULO=&#34;Jordi Llatzer en Twitch&#34;
 SERVIDOR=&#34;http://192.168.10.202:5005&#34;
-#CANAL_YT=&#34;https://www.youtube.com/channel/UCSQJX9lm4u92bx0XGpEIUiA&#34;
-#CANAL_YT=&#34;https://www.youtube.com/watch?v=T-SliI2PHQQ&amp;list=PLD75mPDs8ehwjBOCDPUlmxsnNySzJl-Lv&#34;
 CANAL_YT=&#34;https://www.youtube.com/@jordillatzer/videos&#34;
 
 twitch_dir=~/twitch
@@ -51,7 +49,6 @@ echo &#34;######################################&#34;
 
 dependencias(){
     # yt-dlp
-    
     if command -v yt-dlp &gt;/dev/null 2&gt;&amp;1 ; then
 	echo &#34;Versión de yt-dlp: $(yt-dlp --version)&#34;
 	sudo yt-dlp -U
@@ -60,9 +57,6 @@ dependencias(){
 	sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
 	sudo chmod a&#43;rx /usr/local/bin/yt-dlp
     fi
-    
-
-    
 
     # id3v2
     if command -v id3v2 &gt;/dev/null 2&gt;&amp;1 ; then
@@ -111,26 +105,25 @@ buscar_ultimos_yt(){
     # Obtiene el json de los ultimos vídeos.
     mensaje&#43;=$&#39;Obteniendo últimos vídeos . . . . . . . . . . . . .&#39;
     echo &#34;- Buscando últimos vídeos de $CANAL_NOMBRE&#34;
-    
-    mapfile -t videos &lt; &lt;( yt-dlp --dateafter now-5day --get-filename -o &#34;%(id)s/%(duration)s&#34; $CANAL_YT )
+
+    mapfile -t videos &lt; &lt;( yt-dlp --flat-playlist --print &#34;%(id)s/%(duration)s&#34; --playlist-end 10 $CANAL_YT )
+
     comprobar $?
+
 
     for video in ${videos[@]}
     do
 	id=$( echo &#34;$video&#34; |cut -d\/ -f1 )
 	duracion=$( echo &#34;$video&#34; |cut -d\/ -f2 )
+	duracion=${duracion%??}
 
-	echo $id
-
-	# Comprueba si el archivo es de más de 20&#39;
-	if (( $duracion &gt; 1200 )) &amp;&amp; ! grep -q $id &#34;$DESCARGADOS&#34;; then
+	# Comprueba si el archivo es de más de 10&#39;
+	if (( $duracion &gt; 600 )) &amp;&amp; ! grep -q $id &#34;$DESCARGADOS&#34;; then
 	    # Descargando el episodio
-	    echo &#34;- Descargando el vídeo $id&#34;
-	    mensaje&#43;=$&#34;Descargando vídeo $id . . . . . . &#34;
 	    descargar_video_yt $id
 	    comprobar $?
 	else
-	    echo &#34;- El episodio $id no se procesa por corto o ya descargado&#34;
+	    echo &#34;- El episodio $id escorto o ya descargado&#34;
 	fi
 	
     done
@@ -141,7 +134,8 @@ descargar_video_yt(){
     local id=${1:?Falta el id del video}
     local url=&#34;https://www.youtube.com/watch?v=$id&#34;
     
-    echo -e &#34;- Descargando episodio $id....&#34;
+    echo &#34;- Descargando el vídeo $id&#34;
+    mensaje&#43;=$&#34;Descargando vídeo $id . . . . . . &#34;
     yt-dlp -o &#34;%(id)s.%(ext)s&#34; --extract-audio --audio-format mp3 $url
 
     if [ $? -eq 0 ]; then
@@ -152,9 +146,7 @@ descargar_video_yt(){
 }
 
 tag_y_mover(){
-    # Comprueba si hay algún mp3 en la carpeta del canal, si no hay sale de la función
     cd $twitch_dir
-    if [ ! -e ./*.mp3 ]; then return; fi
 
     echo -e &#34;- Taggeando y moviendo los archivos&#34;
 
@@ -283,20 +275,17 @@ END
 subir_contenido () {
     # Valores de argumentos
     local canal=${1:?Falta el nombre del canal}
-
-    # Comprueba si hay algún mp3 en la carpeta del canal, si no hay sale de la función
-    if [ ! -e ./$canal/mp3/*.mp3 ]; then return; fi
     
     # Subiendo archivos a la nube via rclone
     echo &#34;- Subiendo los mp3&#39;s al servidor remoto&#34;
-    rclone copy $canal Sherlockes78_UN_en:twitch/$canal/ --create-empty-src-dirs
+    rclone copy $canal Sherlockes78_GD:podcast/twitch/$canal/ --create-empty-src-dirs
 
     # Eliminando audio y video local
     echo &#34;- Eliminando audios locales&#34;
     find . -type f -name &#34;*.mp3&#34; -delete
 
     # Borrando los archivos de la nube anteriores a 30 días
-    rclone delete Sherlockes78_UN_en:twitch/$canal/mp3 --min-age 30d
+    rclone delete Sherlockes78_GD:podcast/twitch/$canal/mp3 --min-age 30d
 }
 
 
@@ -316,21 +305,21 @@ comprobar $?
 buscar_ultimos_yt &#34;$CANAL&#34;
 
 # Añadir info si hay nuevos vídeos y moverlos a la carpeta mp3
-if [ -e ./*.mp3 ]; then
+if ls ./*.mp3 1&gt; /dev/null 2&gt;&amp;1; then
     mensaje&#43;=$&#39;Añadiendo info del nuevo vídeo . . . . . . . . &#39;
     tag_y_mover
     comprobar $?
 fi
 
 # Actualizar el feed si hay nuevos vídeos
-if [ -e ./$CANAL/mp3/*.mp3 ]; then
+if ls ./$CANAL/mp3/*.mp3 1&gt; /dev/null 2&gt;&amp;1; then
     mensaje&#43;=$&#39;Actualizando el Feed . . . . . . . . . . . . . . . . &#39;
     actualizar_feed &#34;$SERVIDOR&#34; &#34;$CANAL&#34; &#34;$TITULO&#34;
     comprobar $?
 fi
 
 # Subir si hay nuevo contenido al servidor
-if [ -e ./$CANAL/mp3/*.mp3 ]; then
+if ls ./$CANAL/mp3/*.mp3 1&gt; /dev/null 2&gt;&amp;1; then
     mensaje&#43;=$&#34;Subiendo los mp3&#39;s al sevidor webdav . . .&#34;
     subir_contenido &#34;$CANAL&#34;
     comprobar $?
