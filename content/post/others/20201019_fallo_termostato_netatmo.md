@@ -9,7 +9,7 @@ authorbox: false
 toc: false
 mathjax: false
 categories:
-  - "varios"
+  - "iot"
 draft: false
 weight: 5
 ---

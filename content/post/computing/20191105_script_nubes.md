@@ -1,6 +1,6 @@
 ---
 title: "Menú para montar nubes en Bash"
-date: "2020-05-01"
+date: "2023-05-12"
 creation: "2019-11-05"
 description: "Cuando las tareas, por sencillas que sean, son repetitivas lo mejor es automatizarlas."
 thumbnail: "images/20191105_script_nubes_00.jpg"
@@ -9,14 +9,16 @@ authorbox: false
 toc: true
 mathjax: false
 categories:
-  - "Varios"
+  - "computing"
 tags:
   - "bash"
   - "rclone"
 draft: false
 weight: 5
 ---
-**Actualización: Parámetro de rclone ["allow-other"]({{<ref "#allow-other" >}}).** Ya hace un tiempo que vengo utilizando la terminal para montar las distintas nubes de las que hago uso a diario en mi terminal con [Linux Mint]. Ahora he creado un pequeño script en bash que me ahorra tiempo en esta operación y con el que he conseguido aprender abundantes conceptos en bas que a continuación paso a desgranar.
+**Actualización:** Instalación de "fuse3".
+
+Ya hace un tiempo que vengo utilizando la terminal para montar las distintas nubes de las que hago uso a diario en mi terminal con [Linux Mint]. Ahora he creado un pequeño script en bash que me ahorra tiempo en esta operación y con el que he conseguido aprender abundantes conceptos en bash que a continuación paso a desgranar.
 <!--more-->
 Puesto que este script va a estar en una continua modificación y mejora no lo voy a dejar aquí expuesto, si quieres descargarlo tan sólo tienes que acudir a mi repositorio en Github y descargar [Sherlomenu].
 
@@ -45,7 +47,9 @@ Esto me ha resultado un profundo dolor de cabeza durante unas horas ya que si mo
 ```
 rclone mount Sherloflix_en: $HOME/Sherloflix --allow-other --daemon
 ```
-La solución, tal y como se muestra en el eror de arriba es bastante sencilla y basta con editar el archivo "/etc/fuse.conf" y quitar el comentario de la línea "use_allow_other" para que no sólo el usuario root tenga acceso a este parámetro de configuración.
+La solución, tal y como se muestra en el eror de arriba es bastante sencilla y basta con editar el archivo "/etc/fuse.conf" y quitar el comentario de la línea "user_allow_other" para que no sólo el usuario root tenga acceso a este parámetro de configuración.
+
+> Recientemente, me he encontrado con el problema de que no funcionaba el script, al intentar ejecutar el comando de montaje me he dado cuenta de que la causa del problema es que ahora [Rclone] hace uso de "fuse3" para realizar los montajes de las unidades. Tan sencillo como `sudo apt install fuse3`y listo. Tener en cuenta que si no mantenemos el archivo de configuración de "fuse" en la instalación de "fuse3" habrá que volver a editarlo para quitar el comentario de la línea "user_allow_other"
 
 ## Comprobación de montaje
 Esta es una función que se encarga de comprobar si la nube que le pasemos como argumento está o no ya montada. Tiene dos funciones
@@ -161,4 +165,4 @@ done
 [Mega.nz]: https://mega.nz
 [Linux Mint]: https://linuxmint.com/
 [Sherlomenu]: https://github.com/sherlockes/SherloScripts/blob/master/sherlomenu
-[opciones] : https://rclone.org/commands/rclone_mount/
+[opciones]: https://rclone.org/commands/rclone_mount/

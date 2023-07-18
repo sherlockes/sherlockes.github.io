@@ -6,23 +6,32 @@
     <description>Recent content in productividad on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/productividad/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Sincronizar Google Photos desde la Raspberry</title>
-      <link>https://sherlockes.github.io/sincronizar-google-photos-desde-la-raspberry/</link>
-      <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/sincronizar-google-photos-desde-la-raspberry/</guid>
-      <description>&lt;p&gt;Hasta ahora había sincronizado mi galería de Google Fotos con el NAS desde el pc de sobremesa con Linux Mint, voy a intentar hacerlo desde la Raspberry para no tener que encender el pc.&lt;/p&gt;</description>
-    </item>
-    
+    <lastBuildDate>Wed, 22 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/productividad/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sincronizar nubes con rclone</title>
       <link>https://sherlockes.github.io/sincronizar-nubes-con-rclone/</link>
-      <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 22 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>https://sherlockes.github.io/sincronizar-nubes-con-rclone/</guid>
       <description>&lt;p&gt;Hace un tiempo y gracias a &lt;a href=&#34;http://www.andresramos.pro/google-drive-gratis/&#34;&gt;Andrés Ramos&lt;/a&gt; di con un enlace a una web para crear unidades compartidas de Google Drive con espacio ilimitado y la voy a utilizar para sincronizar la nube en la guardo el contenido multimedia por si alguna de las dos &amp;ldquo;falla&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Unir o separar en varios pdf en linux desde la línea de comandos</title>
+      <link>https://sherlockes.github.io/unir-o-separar-en-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/</link>
+      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/unir-o-separar-en-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/</guid>
+      <description>&lt;p&gt;En la web podemos encontrar una infinidad de servicios para unir varios archivos pdf en uno o partir uno en varios según las páginas, pero si no quieres perder tiempo en subir y bajar los archivos a los servidores remotos y tienes dudas de la privacidad que el servicio ofrezca, aquí dejo una forma sencilla para realizar el mismo trabajo con una sola línea en la consola de comandos.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sincronizar Google Photos desde la Raspberry</title>
+      <link>https://sherlockes.github.io/sincronizar-google-photos-desde-la-raspberry/</link>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/sincronizar-google-photos-desde-la-raspberry/</guid>
+      <description>&lt;p&gt;Hasta ahora había sincronizado mi galería de Google Fotos con el NAS desde el pc de sobremesa con Linux Mint, voy a intentar hacerlo desde la Raspberry para no tener que encender el pc.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -68,15 +77,6 @@
       
       <guid>https://sherlockes.github.io/subtotales-en-google-sheets/</guid>
       <description>&lt;p&gt;En este post comentaré las dos formas que utilizo en mis archivos de Google Sheets para hacer cálculos de subtotales de forma &amp;ldquo;dinamica&amp;rdquo;, es decir, en función del valor de otra columna. Para ello utilizo las funciones &amp;ldquo;filter&amp;rdquo; y &amp;ldquo;sumar.si&amp;rdquo;.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Unir varios pdf en linux desde la línea de comandos</title>
-      <link>https://sherlockes.github.io/unir-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/</link>
-      <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/unir-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/</guid>
-      <description>&lt;p&gt;En la web podemos encontrar una infinidad de servicios para unir varios archivos pdf en uno, pero si no quieres perder tiempo en subir y bajar los archivos a los servidores remotos aquí dejo una forma sencilla para realizar el mismo trabajo con una sola línea en la consola de comandos.&lt;/p&gt;</description>
     </item>
     
     <item>

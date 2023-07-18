@@ -8,6 +8,6 @@ mathjax: false
 draft: false
 ---
 
-La productividad pasa por la documentación. [Sherlockes@2021](https://twitter.com/sherblogpro).
+La productividad pasa por la documentación. [@sherlockes](https://emacs.ch/@sherlockes).
 
 ------

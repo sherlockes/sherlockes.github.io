@@ -6,25 +6,7 @@
     <description>Recent content in Varios on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Tue, 01 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/varios/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Muerte del termostato netatmo</title>
-      <link>https://sherlockes.github.io/muerte-del-termostato-netatmo/</link>
-      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/muerte-del-termostato-netatmo/</guid>
-      <description>&lt;p&gt;Hace unos días que el termostato Netatmo dio aviso de batería baja y cual fue mi sorpresa al ver una de las pilas sulfatada a pesar de haber estado funcionando con normalidad durante los tres años que ha durado, ahora no funciona correctamente y esto es lo que he hecho.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Menú para montar nubes en Bash</title>
-      <link>https://sherlockes.github.io/men%C3%BA-para-montar-nubes-en-bash/</link>
-      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/men%C3%BA-para-montar-nubes-en-bash/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Actualización: Parámetro de rclone &lt;a href=&#34;#allow-other&#34;&gt;&amp;ldquo;allow-other&amp;rdquo;&lt;/a&gt;.&lt;/strong&gt; Ya hace un tiempo que vengo utilizando la terminal para montar las distintas nubes de las que hago uso a diario en mi terminal con &lt;a href=&#34;https://linuxmint.com/&#34;&gt;Linux Mint&lt;/a&gt;. Ahora he creado un pequeño script en bash que me ahorra tiempo en esta operación y con el que he conseguido aprender abundantes conceptos en bas que a continuación paso a desgranar.&lt;/p&gt;</description>
-    </item>
-    
+    <lastBuildDate>Mon, 06 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/varios/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Los podcast que escucho. Abril de 2020</title>
       <link>https://sherlockes.github.io/los-podcast-que-escucho.-abril-de-2020/</link>
@@ -104,6 +86,25 @@ Una primera impresión me informa de que no es nadie conocido y, a priori, un an
       <guid>https://sherlockes.github.io/lo-barato-no-siempre-es-suficiente/</guid>
       <description>Cuando cacharreas con la Gopro más o menos habitualmente y la conectas muchas veces al ordenador, lo más probable es que pierdas o rompas la tapa lateral que cubre el puerto USB y HDMI. Pues bien, hace unos días que me desapareció esta tapa de plástico y tras una infructuosa búsqueda me sumergí en Banggood a la búsqueda de un repuesto bueno, bonito y sobre todo barato.
 Termine comprando por menos de 2$ esta tapa de repuesto.</description>
+    </item>
+    
+    <item>
+      <title>No compres en Ikea</title>
+      <link>https://sherlockes.github.io/no-compres-en-ikea/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/no-compres-en-ikea/</guid>
+      <description>Comprar un jarrón en Ikea es realmente sencillo, cuando tu pasas junto a el, lo echas al carro, lo pagas al pasar por caja y al llegar a casa lo pones en la estantería. En dos horas el jarrón pasa de estar en la estantería de Ikea a hacerlo en la de tu casa. El asunto se complica un poco más cuando lo que quieres comprar es una cocina entera y los pasos a seguir son los siguientes:</description>
+    </item>
+    
+    <item>
+      <title>SherloDj – In Session 2012 Vol.2</title>
+      <link>https://sherlockes.github.io/sherlodj-in-session-2012-vol.2/</link>
+      <pubDate>Sat, 26 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/sherlodj-in-session-2012-vol.2/</guid>
+      <description>Gracias a House-Mixes.com casi dos horitas con algunos de los mejores temas dance de 2012.
+01.- Mr Sidy - Tu Nao Me Enganas Mais (2012 Etho Exclusive Rmx)\ 02.- Lolita Jolie - Non Non Non (Rob &amp;amp; Chris Remix)\ 03.- F.B.S Vs White Label - WTF (Chris Ferres &amp;amp; Dj Pro Bootleg)\ 04.- Rihanna - Where Have You Been (Andy Young Bootleg)\ 05.- Tasha - Black Due (Gordon &amp;amp; Doyle Rmx)\ 06.</description>
     </item>
     
   </channel>

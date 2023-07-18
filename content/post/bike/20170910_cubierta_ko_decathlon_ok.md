@@ -9,9 +9,9 @@ authorbox: false
 toc: false
 mathjax: false
 categories:
-  - "A pedales"
+  - "a pedales"
 tags:
-  - "Averias"
+  - "averias"
 draft: false
 weight: 5
 ---

@@ -35,6 +35,15 @@
     </item>
     
     <item>
+      <title>Home Assistant - Wake on Lan Synology</title>
+      <link>https://sherlockes.github.io/home-assistant-wake-on-lan-synology/</link>
+      <pubDate>Sun, 27 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/home-assistant-wake-on-lan-synology/</guid>
+      <description>&lt;p&gt;Mi NAS no está siempre encendido, arranca todos los días a una hora programada, si quiero hacerlo antes he implementado un interruptor en &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; para encenderlo o apagarlo. Aquí dejo la forma en la que lo he realizado.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Synology broken sudo</title>
       <link>https://sherlockes.github.io/synology-broken-sudo/</link>
       <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
@@ -87,16 +96,6 @@
       <guid>https://sherlockes.github.io/error-al-exportar-base-de-datos-de-wordpress-en-synology-webstation/</guid>
       <description>Hace unos días que publiqué el modo en el que hacía la copia de seguridad de la base de datos de WordPress desde el propio hosting hasta una unidad de Google Drive. Haciendo pruebas para alojar la web en el Nas de Synology me doy cuenta de que el plugin para exportar la base de datos y enviarla por correo electrónico periódicamente no funciona.
 Pruebo con otros plugins similares y todos me dan el mismo error y tras unas pruebas y un poco de buceo por la red me doy cuenta que el problema reside en la incapacidad del servidor web para tratar los archivos comprimidos.</description>
-    </item>
-    
-    <item>
-      <title>Descarga fallida. No working transports found</title>
-      <link>https://sherlockes.github.io/descarga-fallida.-no-working-transports-found/</link>
-      <pubDate>Mon, 13 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/descarga-fallida.-no-working-transports-found/</guid>
-      <description>Después de la instalación de WordPress en el servidor Synology al intentar actualizar los temas o los plugins me encuentro con el siguiente error.
-Pues nada, toca &amp;ldquo;Googlear&amp;rdquo; un rato y pronto me doy cuenta de que la solución es bastante sencilla y basta con habilitar la extensión &amp;ldquo;Curl&amp;rdquo; dentro de la configuración de php de la aplicación Web Station tal y como se puede ver en la siguiente captura de pantalla.</description>
     </item>
     
   </channel>

@@ -1,5 +1,5 @@
 ---
-title: "Hugo - Creando una lista de artículos por categoría."
+title: "Lista de artículos por categoría en Hugo"
 date: "2021-07-10"
 creation: "2021-07-08"
 description: "Aquí dejo la forma que he utilizado para crear una lista de artículos para una categoría determinada"
@@ -37,8 +37,8 @@ Con esto ya sólo resta incluir el código
 
 y obtendremos una lista con todos los post de la categoría y la fecha de creación del mismo.
 
-### Links
-https://discourse.gohugo.io/t/range-with-pages-with-specific-category-solved/32345/5
+### Enlaces de interés
+- [Gohugo - Range pages specific category](https://discourse.gohugo.io/t/range-with-pages-with-specific-category-solved/32345/5)
 
 [Custom Shortcodes]: https://gohugo.io/templates/shortcode-templates/
 [Hugo]: https://gohugo.io

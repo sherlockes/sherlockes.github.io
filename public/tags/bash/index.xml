@@ -6,95 +6,97 @@
     <description>Recent content in bash on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Tue, 01 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Usb externo controlado desde puerto Gpio</title>
-      <link>https://sherlockes.github.io/usb-externo-controlado-desde-puerto-gpio/</link>
-      <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
+      <title>Menú para montar nubes en Bash</title>
+      <link>https://sherlockes.github.io/men%C3%BA-para-montar-nubes-en-bash/</link>
+      <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://sherlockes.github.io/usb-externo-controlado-desde-puerto-gpio/</guid>
-      <description>&lt;p&gt;Tenemos un disco duro externo conectado a la Raspberry por un puerto Usb y alimentado por un transformador. Veamos como es posible encenderlo gracias a un relé de 5V sólo cuando cuando vayamos a emplearlo.&lt;/p&gt;</description>
+      <guid>https://sherlockes.github.io/men%C3%BA-para-montar-nubes-en-bash/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Actualización:&lt;/strong&gt; Instalación de &amp;ldquo;fuse3&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Ya hace un tiempo que vengo utilizando la terminal para montar las distintas nubes de las que hago uso a diario en mi terminal con &lt;a href=&#34;https://linuxmint.com/&#34;&gt;Linux Mint&lt;/a&gt;. Ahora he creado un pequeño script en bash que me ahorra tiempo en esta operación y con el que he conseguido aprender abundantes conceptos en bash que a continuación paso a desgranar.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Buscar y reemplazar en bash con find y sed</title>
-      <link>https://sherlockes.github.io/buscar-y-reemplazar-en-bash-con-find-y-sed/</link>
-      <pubDate>Mon, 03 Jan 2022 00:00:00 +0000</pubDate>
+      <title>Crear y configurar una instancia gratuita en Oracle</title>
+      <link>https://sherlockes.github.io/crear-y-configurar-una-instancia-gratuita-en-oracle/</link>
+      <pubDate>Tue, 18 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://sherlockes.github.io/buscar-y-reemplazar-en-bash-con-find-y-sed/</guid>
-      <description>&lt;p&gt;Después de varios años escribiendo artículos me doy cuenta de que para que &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; funcione correctamente necesitamos escribir los encabezados sólo con almohadillas al principio y resulta que &lt;a href=&#34;https://jblevins.org/projects/markdown-mode/&#34;&gt;Modo Markdown&lt;/a&gt; de &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt; que utilizo para escribir lo hace con almohadillas al principio y al final. A ver como modifico ahora todos los archivos.&lt;/p&gt;</description>
+      <guid>https://sherlockes.github.io/crear-y-configurar-una-instancia-gratuita-en-oracle/</guid>
+      <description>&lt;p&gt;Tener un pequeño servidor privado virtual a modo de laboratorio en el que hacer nuestras pruebas es gratis gracias a &lt;a href=&#34;https://cloud.oracle.com&#34;&gt;Oracle Cloud&lt;/a&gt;, aquí dejo la forma de conseguirlo y las pruebas que con el he realizado&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Clonar el disco de arranque de la raspberry</title>
-      <link>https://sherlockes.github.io/clonar-el-disco-de-arranque-de-la-raspberry/</link>
-      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+      <title>Configuración de Rclone mediante Dotfiles</title>
+      <link>https://sherlockes.github.io/configuraci%C3%B3n-de-rclone-mediante-dotfiles/</link>
+      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://sherlockes.github.io/clonar-el-disco-de-arranque-de-la-raspberry/</guid>
-      <description>&lt;p&gt;La mejor copia de seguridad que puedes hacer del contenido de la Raspberry es una imagen de la tarjeta sobre la que está funcionando. Dejo a continuación un par de métodos para hacerlo de una forma rápida y sencilla.&lt;/p&gt;</description>
+      <guid>https://sherlockes.github.io/configuraci%C3%B3n-de-rclone-mediante-dotfiles/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://rclone.org&#34;&gt;Rclone&lt;/a&gt; presenta un problema si pretendemos trabajar a través de un enlace simbólico como archivo de configuración ya que al actualizarla elimina el enlace y genera un nuevo archivo &amp;ldquo;rclone.conf&amp;rdquo;. De esta forma le he conseguido dar solución.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Que hace la raspberry sin mi</title>
-      <link>https://sherlockes.github.io/que-hace-la-raspberry-sin-mi/</link>
-      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      <title>Del Blog a Twitter y Mastodon mediante rss y Bash</title>
+      <link>https://sherlockes.github.io/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/</link>
+      <pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://sherlockes.github.io/que-hace-la-raspberry-sin-mi/</guid>
-      <description>&lt;p&gt;La Raspberry me sirve para hacer muchas cosas aunque aquí sólo voy a contar ahora las que hace ella sola cuando yo no estoy delante.&lt;/p&gt;</description>
+      <guid>https://sherlockes.github.io/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/</guid>
+      <description>&lt;p&gt;Una buena forma de dar algo de visibilidad a los post en el blog es publicándolos en &lt;a href=&#34;https://twitter.com/sherblogpro&#34;&gt;Twitter&lt;/a&gt; y &lt;a href=&#34;https://joinmastodon.org/es&#34;&gt;Mastodon&lt;/a&gt;. Aunque no es muy laborioso, resulta más cómodo que se realice de forma automática y aquí dejo como he creado mi propio script para hacerlo.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Instalar rclone en Synology Ds920&#43;</title>
-      <link>https://sherlockes.github.io/instalar-rclone-en-synology-ds920-/</link>
-      <pubDate>Sat, 25 Sep 2021 00:00:00 +0000</pubDate>
+      <title>Entorno de desarrollo de Sherblog en Emacs</title>
+      <link>https://sherlockes.github.io/entorno-de-desarrollo-de-sherblog-en-emacs/</link>
+      <pubDate>Sat, 17 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://sherlockes.github.io/instalar-rclone-en-synology-ds920-/</guid>
-      <description>&lt;p&gt;Tanto en la migración de los discos duros desde el Ds216+II al Ds920+ como en la actualización desde DSM6 a DSM7, uno de los problemas con que me he encontrado es que ha desaparecido la instalación de Rclone, toca volver a instalarlo.&lt;/p&gt;</description>
+      <guid>https://sherlockes.github.io/entorno-de-desarrollo-de-sherblog-en-emacs/</guid>
+      <description>&lt;p&gt;Por mucho que podamos pensar &amp;ldquo;sólo cuesta dos minutos&amp;rdquo;, resulta más productivo invertir una hora en preparar una función para poder acomodar &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt; como entorno de desarrollo del blog con una sola tecla que tener que hacerlo a mano cada una de las veces que lo necesitemos.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Sincronizar Google Photos desde la Raspberry</title>
-      <link>https://sherlockes.github.io/sincronizar-google-photos-desde-la-raspberry/</link>
-      <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
+      <title>Script de instalación de Hugo en linux</title>
+      <link>https://sherlockes.github.io/script-de-instalaci%C3%B3n-de-hugo-en-linux/</link>
+      <pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://sherlockes.github.io/sincronizar-google-photos-desde-la-raspberry/</guid>
-      <description>&lt;p&gt;Hasta ahora había sincronizado mi galería de Google Fotos con el NAS desde el pc de sobremesa con Linux Mint, voy a intentar hacerlo desde la Raspberry para no tener que encender el pc.&lt;/p&gt;</description>
+      <guid>https://sherlockes.github.io/script-de-instalaci%C3%B3n-de-hugo-en-linux/</guid>
+      <description>&lt;p&gt;Cierto es que la &lt;a href=&#34;https://gohugo.io/getting-started/installing/#source&#34;&gt;instalación de Hugo&lt;/a&gt; no lleva más allá de unos pocos minutos, pero es gratificante no tener que gastar este tiempo cada vez que se actualiza a una nueva versión. Este script es la forma con la que consigo ahorrar este valioso tiempo en mis terminales con linux a partir de la fuente.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>De Youtube a Podcast</title>
+      <link>https://sherlockes.github.io/de-youtube-a-podcast/</link>
+      <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/de-youtube-a-podcast/</guid>
+      <description>&lt;p&gt;Si no tienes tiempo para ver los vídeos de un canal de &lt;a href=&#34;https://www.youtube.com&#34;&gt;Youtube&lt;/a&gt; pero te interesa el audio de los mismos para escucharlo en tu reproductor de Podcast, gracias a &lt;a href=&#34;https://github.com/yt-dlp/yt-dlp&#34;&gt;yt-dlp&lt;/a&gt; puedes hacerlo de una forma sencilla.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Unir o separar en varios pdf en linux desde la línea de comandos</title>
+      <link>https://sherlockes.github.io/unir-o-separar-en-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/</link>
+      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/unir-o-separar-en-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/</guid>
+      <description>&lt;p&gt;En la web podemos encontrar una infinidad de servicios para unir varios archivos pdf en uno o partir uno en varios según las páginas, pero si no quieres perder tiempo en subir y bajar los archivos a los servidores remotos y tienes dudas de la privacidad que el servicio ofrezca, aquí dejo una forma sencilla para realizar el mismo trabajo con una sola línea en la consola de comandos.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Incrustar texto externo en Hugo</title>
       <link>https://sherlockes.github.io/incrustar-texto-externo-en-hugo/</link>
-      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://sherlockes.github.io/incrustar-texto-externo-en-hugo/</guid>
-      <description>&lt;p&gt;Hace tiempo que vengo pensando en la capacidad de poder introducir texto desde un archivo externo dentro de los post que publico en &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;. Hoy se me ha encendido la bombilla.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Hace tiempo que vengo pensando en la capacidad de poder introducir texto desde un archivo externo dentro de los post que publico en &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;. Hoy se me ha encendido la bombilla.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Actualización:&lt;/strong&gt; Inclusión de texto desde un servidor remoto.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Mi gestión de los archivos de configuración</title>
-      <link>https://sherlockes.github.io/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/</link>
-      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      <title>Crear Podcast a partir de un canal de Twitch</title>
+      <link>https://sherlockes.github.io/crear-podcast-a-partir-de-un-canal-de-twitch/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://sherlockes.github.io/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/</guid>
-      <description>&lt;p&gt;Que dolor de cabeza resulta el perder la configuración del equipo tras la reinstalación del sistema operativo. Así evito la pérdida y realizo la sincronización de los archivos de configuración.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Montar carpeta del NAS mediante sshfs</title>
-      <link>https://sherlockes.github.io/montar-carpeta-del-nas-mediante-sshfs/</link>
-      <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/montar-carpeta-del-nas-mediante-sshfs/</guid>
-      <description>&lt;p&gt;Hoy toca montar una carpeta del NAS en el pc mediante sshfs para correr sobre ella un script, resulta sencillo pero hay que tener en cuenta unas peculiaridades&amp;hellip;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Descargar archivos de Telegram</title>
-      <link>https://sherlockes.github.io/descargar-archivos-de-telegram/</link>
-      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/descargar-archivos-de-telegram/</guid>
-      <description>&lt;p&gt;Hace un tiempo que uso un bot para descargar los archivos grandes de Telegram al NAS tal y como expliqué en este &lt;a href=&#34;https://sherblog.pro/archivos-de-telegram-al-nas/&#34;&gt;artículo&lt;/a&gt;, ahora le doy una vuelta y pongo a trabajar la Raspberry con un servicio que me hace prescindir del bot y sus limitaciones.&lt;/p&gt;</description>
+      <guid>https://sherlockes.github.io/crear-podcast-a-partir-de-un-canal-de-twitch/</guid>
+      <description>&lt;p&gt;No tengo tiempo para ver los canales de Twitch que me gustaría seguir en el momento de la emisión y tras unos días probando una aplicación Android para descargar los vídeos me he decidido a crear un podcast privado que se genere de forma automática a partir del contenido de un canal en Twitch.&lt;/p&gt;</description>
     </item>
     
   </channel>

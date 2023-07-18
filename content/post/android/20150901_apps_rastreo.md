@@ -8,9 +8,9 @@ authorbox: false
 toc: false
 mathjax: false
 categories:
-  - "Android"
+  - "android"
 tags:
-  - "Apps"
+  - "apps"
 draft: false
 weight: 5
 ---

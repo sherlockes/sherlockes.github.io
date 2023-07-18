@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Calcular temperatura media en Home Assistant - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Una forma rápida y sencilla de calcular la temperatura media entre un conjunto de sensores">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://www.sherblog.pro/images/20220524_home_assistant_average_temperature_00.jpg" />
+	<meta name="twitter:title" content="Calcular temperatura media en Home Assistant"/>
+	<meta name="twitter:description" content="Una forma rápida y sencilla de calcular la temperatura media entre un conjunto de sensores"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="sherblog.pro" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Calcular temperatura media en Home Assistant">
+	<meta property="og:url"   content="https://sherlockes.github.io">
+	<meta property="og:description" content="Una forma rápida y sencilla de calcular la temperatura media entre un conjunto de sensores"/>
+
+	<meta property="og:image" content="http://www.sherblog.pro/images/20220524_home_assistant_average_temperature_00.jpg" />
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Calcular temperatura media en Home Assistant"/>
+<meta name="twitter:description" content="Una forma rápida y sencilla de calcular la temperatura media entre un conjunto de sensores"/>
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Calcular temperatura media en Home Assistant</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-06-27T00:00:00Z">2022-06-27</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/home-assistant/" rel="category">home assistant</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20220524_home_assistant_average_temperature_00.jpg" alt="Calcular temperatura media en Home Assistant">
+		
+	</figure><div class="content post__content clearfix">
+			<p>¿Que pasa si en casa tenemos varios sensores y queremos calcular la temperatura media de ellos para controlar la calefacción? Con esta sencilla integración personalizada es posible crear un sensor virtual de una forma rápida y sencilla.</p>
+<p>Antes de seguir adelante, debes tener instalado <a href="https://hacs.xyz">HACS</a> en tu entorno de <a href="https://www.home-assistant.io">Home Assistant</a>. No voy a entrar aquí en la forma de hacerlo ya que está perfectamente documentado en su web. <a href="https://hacs.xyz">HACS</a> es una tienda de la comunidad para <a href="https://www.home-assistant.io">Home Assistant</a> en la que podemos encontrar infinidad de integraciones y configuraciones personalizadas.</p>
+<p>En mi caso ya uso varias integraciones de <a href="https://hacs.xyz">HACS</a> como pueden ser <a href="https://github.com/custom-components/alexa_media_player">Alexa Media Player</a> para enviar comandos a Alexa, <a href="https://github.com/dynasticorpheus/gigasetelements-ha">Gigaset Elements</a> para integrar la alarma de casa y <a href="https://github.com/roleoroleo/yi-hack_ha_integration">Yi-Hack</a> para la integración de las cámaras. Pero la integración que nos ocupa en este artículo es <a href="https://github.com/Limych/ha-average">Average Sensor</a> para calcular el valor medio de uno o varios sensores. Instalarlo es tan sencillo como buscarlo dentro del explorador de repositorios en las integraciones de la pestaña HACS y descargarlo.</p>
+<p>Con esto, crear un nuevo sensor personalizado cuyo valor sea la temperatura media de toda la casa es tan sencillo como incluir el siguiente código en el archivo &ldquo;sensors.yaml&rdquo;:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  - <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">average</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#39;Temperatura media de casa&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">entities</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">sensor.salon_puerta_temperatura</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">sensor.dormitorio_temperatura</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">sensor.temperatura_salon</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">sensor.temperatura_estudio</span>
+</span></span></code></pre></div><p>Una vez creada la entidad y reiniciado <a href="https://www.home-assistant.io">Home Assistant</a> podemos acceder a las &ldquo;Herramientas para desarrolladores&rdquo; y comprobar el estado de la entidad. Podremos ver los sensores incluidos en la media, el nº de sensores, los que están disponibles y temperaturas máxima y mínima de todos ellos.</p>
+<p><img src="/images/20220524_home_assistant_average_temperature_01.jpg" alt="image-01"></p>
+<p>En mi caso particular, añadir la lectura de temperatura del sensor que tengo en la puerta de casa ha tenido cierta complejidad, ya que no se trata de un sensor de temperatura sino que se trata de un sensor de la alarma que como uno de sus atributos nos muestra la alarma.</p>
+<p>Para incluirlo como un sensor más en el cálculo de la media de las temperaturas de casa he creado un sensor virtual personalizado que como plantilla de valor toma este atributo de temperatura del sensor de la puerta de entrada.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  - <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">template</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">sensors</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">salon_puerta_temperatura</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">friendly_name</span>: <span style="color:#e6db74">&#34;Temperatura de la puerta del salón&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">unit_of_measurement</span>: <span style="color:#e6db74">&#34;°C&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">device_class</span>: <span style="color:#e6db74">&#34;temperature&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">value_template</span>: &gt;-<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            {{ state_attr(&#34;binary_sensor.puerta_entrada&#34;, &#34;temperature&#34;) | float }}</span>            
+</span></span></code></pre></div><p>Esta extensión además de ser capaz de calcular el valor medio de varios sensores también es capaz de calcular medias temporales aunque esto ya pasaré a documentarlo cuando lo necesite&hellip;</p>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="https://hacs.xyz">HACS</a></li>
+<li><a href="https://github.com/Limych/ha-average">HA - Average</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/tarjetas-inteligentes-en-home-assistant/">Tarjetas inteligentes en Home Assistant</a></li>
+	    
+	    <li><a href="/sensores-virtuales-y-jinja2-en-home-assistant/">Sensores virtuales y Jinja2 en Home Assistant</a></li>
+	    
+	    <li><a href="/realizar-acciones-mediante-plantillas-en-home-assistant/">Realizar acciones mediante plantillas en Home Assistant</a></li>
+	    
+	    <li><a href="/configuraci%C3%B3n-de-home-assistant-en-github/">Configuración de Home Assistant en github</a></li>
+	    
+	    <li><a href="/instalaci%C3%B3n-de-home-assistant-en-raspberry/">Instalación de Home Assistant en Raspberry</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/hacs/" rel="tag">hacs</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/realizar-acciones-mediante-plantillas-en-home-assistant/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Realizar acciones mediante plantillas en Home Assistant</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/tarjetas-inteligentes-en-home-assistant/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Tarjetas inteligentes en Home Assistant</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://emacs.ch/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2023 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script></body>
+</html>

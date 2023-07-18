@@ -62,6 +62,27 @@
 	</button>
 	<ul class="menu__list">
 		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
 			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
 				
 				<span class="menu__text">Mis vértices geodésicos</span>
@@ -72,13 +93,6 @@
 			<a class="menu__link" href="/post/computing/raspberry/">
 				
 				<span class="menu__text">Raspberry Pi desde cero</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
-			<a class="menu__link" href="/post/android/tasker/">
-				
-				<span class="menu__text">Tasker</span>
 				
 			</a>
 		</li>
@@ -96,7 +110,7 @@
 			<h1 class="post__title">Sincronizar Google Photos desde la Raspberry</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-06-06T00:00:00Z">2021-06-06</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/raspberry/" rel="category">Raspberry</a>, <a class="meta__link" href="/categories/productividad/" rel="category">productividad</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-02-22T00:00:00Z">2022-02-22</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/raspberry/" rel="category">Raspberry</a>, <a class="meta__link" href="/categories/productividad/" rel="category">productividad</a>
 	</span>
 </div></div>
 		</header>
@@ -140,12 +154,18 @@
 <p>LLegados a esta punto ya sólo resta ejecutar el comando en el entorno virtual para que todas las fotos sean descargadas al directorio de destino</p>
 <pre tabindex="0"><code>gphotos-sync directorio_destino
 </code></pre><p>En mi caso, aunque el trabajo lo realiza la raspberry, las fotos quedan almacenadas en una carpeta del NAS que ha sido montada mediante sshfs y llave público/privada gracias a un <a href="https://github.com/sherlockes/SherloScripts/blob/master/bash/gphotos-sync.sh">script</a> que se ejecuta diariamente mediante cron.</p>
+<p>A la hora de hacerlo funcionar mediante cron me he emcontrado con el problema de que no encuentra el comando <code>gphotos-sync</code>, cosa que no ocurre cuando lo intento lanzar con la cuenta de usuario &ldquo;pi&rdquo; iniciada. Esto se debe a que el archivo del comando está cuardado dentro de la carpeta del usuario &ldquo;pi&rdquo; tal y como podemos ver si ejecutamos <code>type -a gphotos-sync</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gphotos-sync is /home/pi/.local/bin/gphotos-sync
+</span></span></code></pre></div><p>para solventar este problema hago una llamada a la ruta completa en lugar de al comando directamente.</p>
 <blockquote>
 <p>Tras unos días funcionando correctamente me ha aparecido un fallo en el montaje de la unidad de mota del NAS &ldquo;read: Connection reset by peer&rdquo; que he conseguido reparar habilitando nuevamente la conexión sftp del NAS</p>
 </blockquote>
 <p>Con esto ya tenemos sincronizada nuestra galería de Google Photos en nuestro NAS. Seguro que esto es capaz de hacerlo el NAS sin ayuda de la Raspberry, pero esto será para otro día&hellip;</p>
-<p>Links:
-<a href="https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/">https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/</a></p>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/">How to Geek - Add dir to path</a></li>
+<li><a href="https://www.linuxuprising.com/2019/06/how-to-backup-google-photos-to-your.html">Linux Up Rising - Backup Google Photos</a></li>
+</ul>
 		</div>
 		<footer class="post__footer">
 		  
@@ -154,15 +174,15 @@
     <h3>Otros de mís artículos que te pueden interesar</h3>
     <ul>
 	    
+	    <li><a href="/unir-o-separar-en-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/">Unir o separar en varios pdf en linux desde la línea de comandos</a></li>
+	    
+	    <li><a href="/usb-externo-controlado-desde-puerto-gpio/">Usb externo controlado desde puerto Gpio</a></li>
+	    
 	    <li><a href="/clonar-el-disco-de-arranque-de-la-raspberry/">Clonar el disco de arranque de la raspberry</a></li>
 	    
 	    <li><a href="/que-hace-la-raspberry-sin-mi/">Que hace la raspberry sin mi</a></li>
 	    
-	    <li><a href="/usb-externo-controlado-desde-puerto-gpio/">Usb externo controlado desde puerto Gpio</a></li>
-	    
 	    <li><a href="/script-de-configuraci%C3%B3n-para-raspberry/">Script de configuración para Raspberry</a></li>
-	    
-	    <li><a href="/unir-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/">Unir varios pdf en linux desde la línea de comandos</a></li>
 	    
     </ul>
 </div>
@@ -190,12 +210,6 @@
 		<a class="pager__link" href="/instalaci%C3%B3n-de-home-assistant-en-raspberry/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Anterior</span>
 			<p class="pager__title">Instalación de Home Assistant en Raspberry</p>
-		</a>
-	</div>
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/que-hace-la-raspberry-sin-mi/" rel="next">
-			<span class="pager__subtitle">Siguiente&thinsp;»</span>
-			<p class="pager__title">Que hace la raspberry sin mi</p>
 		</a>
 	</div>
 </nav>

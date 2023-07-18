@@ -56,7 +56,7 @@ description: "Te interesa leer si los links que compartes o comparten en Twitter
 thumbnail: "images/20180712_wordpress_hugo.jpg"
 ```
 
-Pues bien, el reto pasa por reaprovechar estos campos para generar los metadatos que [Twitter] está buscando para generar su tarjeta de enlace.  Hay varias opciones, pero la más práctica que he encontrado es hacer una copia del archivo "baseof.html" dentro de la carpeta "layouts/partials/default/" para que quede duplicado fuera de la carpeta del tema e incluir en el "head" a continuación de los metas de [Hugo] estas líneas:
+Pues bien, el reto pasa por aprovechar estos campos para generar los metadatos que [Twitter] está buscando para generar su tarjeta de enlace.  Hay varias opciones, pero la más práctica que he encontrado es hacer una copia del archivo "baseof.html" dentro de la carpeta "layouts/_default/" para que quede duplicado fuera de la carpeta del tema e incluir en el "head" a continuación de los metas de [Hugo] estas líneas:
 
 ```
 <meta name="twitter:card" content="summary_large_image"/>

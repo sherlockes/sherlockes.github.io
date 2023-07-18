@@ -6,7 +6,16 @@
     <description>Recent content in python on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Mon, 01 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Crear Podcast a partir de un canal de Twitch</title>
+      <link>https://sherlockes.github.io/crear-podcast-a-partir-de-un-canal-de-twitch/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/crear-podcast-a-partir-de-un-canal-de-twitch/</guid>
+      <description>&lt;p&gt;No tengo tiempo para ver los canales de Twitch que me gustaría seguir en el momento de la emisión y tras unos días probando una aplicación Android para descargar los vídeos me he decidido a crear un podcast privado que se genere de forma automática a partir del contenido de un canal en Twitch.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Descargar archivos de Telegram</title>
       <link>https://sherlockes.github.io/descargar-archivos-de-telegram/</link>

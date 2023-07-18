@@ -1,6 +1,6 @@
 ---
 title: "Sincronizar Google Photos desde la Raspberry"
-date: "2021-06-06"
+date: "2022-02-22"
 creation: "2020-12-03"
 description: "Como sincronizar las imágenes de Google Photos desde la Raspberry"
 thumbnail: "/images/20201203_sincronizar_gphotos_raspberry_00.jpg"
@@ -69,12 +69,20 @@ gphotos-sync directorio_destino
 
 En mi caso, aunque el trabajo lo realiza la raspberry, las fotos quedan almacenadas en una carpeta del NAS que ha sido montada mediante sshfs y llave público/privada gracias a un [script] que se ejecuta diariamente mediante cron.
 
+A la hora de hacerlo funcionar mediante cron me he emcontrado con el problema de que no encuentra el comando `gphotos-sync`, cosa que no ocurre cuando lo intento lanzar con la cuenta de usuario "pi" iniciada. Esto se debe a que el archivo del comando está cuardado dentro de la carpeta del usuario "pi" tal y como podemos ver si ejecutamos `type -a gphotos-sync`
+
+``` bash
+gphotos-sync is /home/pi/.local/bin/gphotos-sync
+```
+para solventar este problema hago una llamada a la ruta completa en lugar de al comando directamente.
+
 > Tras unos días funcionando correctamente me ha aparecido un fallo en el montaje de la unidad de mota del NAS "read: Connection reset by peer" que he conseguido reparar habilitando nuevamente la conexión sftp del NAS
 
 Con esto ya tenemos sincronizada nuestra galería de Google Photos en nuestro NAS. Seguro que esto es capaz de hacerlo el NAS sin ayuda de la Raspberry, pero esto será para otro día...
 
-Links:
-https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/
+### Enlaces de interés
+- [How to Geek - Add dir to path](https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/)
+- [Linux Up Rising - Backup Google Photos](https://www.linuxuprising.com/2019/06/how-to-backup-google-photos-to-your.html)
 
 [Google Cloud Platform]: https://console.cloud.google.com/cloud-resource-manager
 [Google Cloud Platform API]: https://console.cloud.google.com/apis/dashboard

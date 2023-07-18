@@ -17,6 +17,24 @@
     </item>
     
     <item>
+      <title>El termostato de la caldera en Home Assistant</title>
+      <link>https://sherlockes.github.io/el-termostato-de-la-caldera-en-home-assistant/</link>
+      <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/el-termostato-de-la-caldera-en-home-assistant/</guid>
+      <description>&lt;p&gt;La temporada pasada implementé desde cero mi propio termostato sobre la raspberry usando python, flask y muchas horas de desarrollo. Ahora he conseguido implementarlo desde cero en &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; en menos de una hora gracias a &lt;a href=&#34;https://esphome.io&#34;&gt;ESPHome&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ESPHome en Home Assistant</title>
+      <link>https://sherlockes.github.io/esphome-en-home-assistant/</link>
+      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/esphome-en-home-assistant/</guid>
+      <description>&lt;p&gt;Hace ya un tiempo que tengo un nodemcu midiendo la temperatura del salón y un esp01 como relé para la calefacción pero&amp;hellip; ¿Como es posible integrar esto en Home Assistant?. La solución más rápida y sencilla es usando &lt;a href=&#34;https://esphome.io&#34;&gt;ESPHome&lt;/a&gt;, Un sistema para controlar los ESP32/ESP8266 mediante unos simples archivos de configuación y poder manejarlos remotamente mediante una automatización.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>ESPHome en Home Assistant</title>
       <link>https://sherlockes.github.io/esphome-en-home-assistant/</link>
       <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>

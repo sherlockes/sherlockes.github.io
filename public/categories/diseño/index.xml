@@ -6,16 +6,7 @@
     <description>Recent content in diseño on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Tue, 07 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/dise%C3%B1o/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Radares de tráfico en Android</title>
-      <link>https://sherlockes.github.io/radares-de-tr%C3%A1fico-en-android/</link>
-      <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/radares-de-tr%C3%A1fico-en-android/</guid>
-      <description>&lt;p&gt;En el coche resulta útil un avisador de radares para &amp;ldquo;levantar el pie&amp;rdquo; en determinados momentos o simplemente para ser más riguroso con el respeto de la velocidad máxima de la vía. Para esto también uso Tasker y aquí voy a mostrar cómo lo hago.&lt;/p&gt;</description>
-    </item>
-    
+    <lastBuildDate>Fri, 29 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/dise%C3%B1o/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Extrayendo la portada de un pdf</title>
       <link>https://sherlockes.github.io/extrayendo-la-portada-de-un-pdf/</link>
@@ -104,6 +95,17 @@ Una vez utilizaremos VirtualDub como principal programa en la edición y de form
       <guid>https://sherlockes.github.io/creando-un-v%C3%ADdeo-panor%C3%A1mico-a-partir-de-una-fotograf%C3%ADa/</guid>
       <description>Una vez más, una solución sencilla a un problema sencillo. Esta vez estamos buscando la creación de un vídeo que realice un barrido a una fotografía panorámica creada anteriormente.
 Buscando un poco en la red he encontrado un software gratuito que es capaz de hacer esto de una forma rápida y sencilla. Se trata de WPanorama que combinado con VirtualDub para la compresión del resultado hacen la solución perfecta a este problema.</description>
+    </item>
+    
+    <item>
+      <title>Time-Lapse / Stop-Motion con VirtualDub</title>
+      <link>https://sherlockes.github.io/time-lapse-/-stop-motion-con-virtualdub/</link>
+      <pubDate>Wed, 28 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/time-lapse-/-stop-motion-con-virtualdub/</guid>
+      <description>Resumiendo bastante, podemos definir Time-Lapse y Stop-Motion como dos técnicas fotográficas que permiten crear un vídeo a partir de una secuencia de imágenes.
+En el mercado hay muchos programas capaces de hacer esta labor e incluso hay algumos específicos que es lo único que saben hacer. Pero una vez más vamos a utilizar VirtualDub como ya hemos hecho en otras ocasiones y para muy diferentes propositos.
+Si tienes problemas de visión te aconsejo que maximices el vídeo y lo pauses en cada paso hasta haber entendido todo el contenido del mismo.</description>
     </item>
     
   </channel>

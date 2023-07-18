@@ -6,95 +6,97 @@
     <description>Recent content on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Tue, 01 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Usb externo controlado desde puerto Gpio</title>
-      <link>https://sherlockes.github.io/usb-externo-controlado-desde-puerto-gpio/</link>
-      <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
+      <title>Menú para montar nubes en Bash</title>
+      <link>https://sherlockes.github.io/men%C3%BA-para-montar-nubes-en-bash/</link>
+      <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://sherlockes.github.io/usb-externo-controlado-desde-puerto-gpio/</guid>
-      <description>&lt;p&gt;Tenemos un disco duro externo conectado a la Raspberry por un puerto Usb y alimentado por un transformador. Veamos como es posible encenderlo gracias a un relé de 5V sólo cuando cuando vayamos a emplearlo.&lt;/p&gt;</description>
+      <guid>https://sherlockes.github.io/men%C3%BA-para-montar-nubes-en-bash/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Actualización:&lt;/strong&gt; Instalación de &amp;ldquo;fuse3&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Ya hace un tiempo que vengo utilizando la terminal para montar las distintas nubes de las que hago uso a diario en mi terminal con &lt;a href=&#34;https://linuxmint.com/&#34;&gt;Linux Mint&lt;/a&gt;. Ahora he creado un pequeño script en bash que me ahorra tiempo en esta operación y con el que he conseguido aprender abundantes conceptos en bash que a continuación paso a desgranar.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Arquetipos en Hugo (Archetypes)</title>
-      <link>https://sherlockes.github.io/arquetipos-en-hugo-archetypes/</link>
-      <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
+      <title>Crear y configurar una instancia gratuita en Oracle</title>
+      <link>https://sherlockes.github.io/crear-y-configurar-una-instancia-gratuita-en-oracle/</link>
+      <pubDate>Tue, 18 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://sherlockes.github.io/arquetipos-en-hugo-archetypes/</guid>
-      <description>&lt;p&gt;Cada vez que se comienza la creación de un artículo en Hugo partimos del comando &lt;code&gt;hugo new post/nuevo.md&lt;/code&gt; que hace uso de los arquetipos creados para definir la plantilla de este artículo. Aquí dejo como los tengo configurados para ahorrar tiempo.&lt;/p&gt;</description>
+      <guid>https://sherlockes.github.io/crear-y-configurar-una-instancia-gratuita-en-oracle/</guid>
+      <description>&lt;p&gt;Tener un pequeño servidor privado virtual a modo de laboratorio en el que hacer nuestras pruebas es gratis gracias a &lt;a href=&#34;https://cloud.oracle.com&#34;&gt;Oracle Cloud&lt;/a&gt;, aquí dejo la forma de conseguirlo y las pruebas que con el he realizado&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Hugo con Github actions</title>
-      <link>https://sherlockes.github.io/hugo-con-github-actions/</link>
-      <pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate>
+      <title>Configuración de Rclone mediante Dotfiles</title>
+      <link>https://sherlockes.github.io/configuraci%C3%B3n-de-rclone-mediante-dotfiles/</link>
+      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://sherlockes.github.io/hugo-con-github-actions/</guid>
-      <description>&lt;p&gt;Durante mucho tiempo he tenido alojado este blog en &lt;a href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt; pero la publicación se realizaba en local mediante la Raspberry. Ahora voy a generar la publicación del blog a partir de un propio repositorio mediante las &lt;a href=&#34;https://github.com/features/actions&#34;&gt;acciones de GitHub&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>https://sherlockes.github.io/configuraci%C3%B3n-de-rclone-mediante-dotfiles/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://rclone.org&#34;&gt;Rclone&lt;/a&gt; presenta un problema si pretendemos trabajar a través de un enlace simbólico como archivo de configuración ya que al actualizarla elimina el enlace y genera un nuevo archivo &amp;ldquo;rclone.conf&amp;rdquo;. De esta forma le he conseguido dar solución.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Servidor Webdav de contenido remoto con Rclone</title>
-      <link>https://sherlockes.github.io/servidor-webdav-de-contenido-remoto-con-rclone/</link>
-      <pubDate>Wed, 26 Jan 2022 00:00:00 +0000</pubDate>
+      <title>Sincronizar nubes con rclone</title>
+      <link>https://sherlockes.github.io/sincronizar-nubes-con-rclone/</link>
+      <pubDate>Wed, 22 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://sherlockes.github.io/servidor-webdav-de-contenido-remoto-con-rclone/</guid>
-      <description>&lt;p&gt;Utilizo este servidor WebDav para reproducir el contenido multimedia que tengo perfectamente guardado y encriptado en alguna de mis nubes públicas en el FireTV mediante Kodi. Si este uso no te convence quizás encuentres otro que se adapte más a tus necesidades.&lt;/p&gt;</description>
+      <guid>https://sherlockes.github.io/sincronizar-nubes-con-rclone/</guid>
+      <description>&lt;p&gt;Hace un tiempo y gracias a &lt;a href=&#34;http://www.andresramos.pro/google-drive-gratis/&#34;&gt;Andrés Ramos&lt;/a&gt; di con un enlace a una web para crear unidades compartidas de Google Drive con espacio ilimitado y la voy a utilizar para sincronizar la nube en la guardo el contenido multimedia por si alguna de las dos &amp;ldquo;falla&amp;rdquo;.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Migrando Hugo a Gitlab</title>
-      <link>https://sherlockes.github.io/migrando-hugo-a-gitlab/</link>
-      <pubDate>Tue, 25 Jan 2022 00:00:00 +0000</pubDate>
+      <title>Instalando Home Assistant supervisado en Debian 11</title>
+      <link>https://sherlockes.github.io/instalando-home-assistant-supervisado-en-debian-11/</link>
+      <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://sherlockes.github.io/migrando-hugo-a-gitlab/</guid>
-      <description>&lt;p&gt;Me dio pereza la migración de Github de este blog creado con &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; en el momento que la compró Microsoft y ahora afronto el problema que ha sido más laborioso de lo previsto.&lt;/p&gt;</description>
+      <guid>https://sherlockes.github.io/instalando-home-assistant-supervisado-en-debian-11/</guid>
+      <description>&lt;p&gt;Si quieres sacar todo el potencial de tu Raspberry al tiempo que la empleas como servidor de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; con el uso de &lt;a href=&#34;https://www.home-assistant.io/addons/&#34;&gt;Addons&lt;/a&gt;, aquí dejo el método oficial de la instalación supervisada mediante Debian 11 en una Raspberry 3B+.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Reseteo automático de Home assistant</title>
-      <link>https://sherlockes.github.io/reseteo-autom%C3%A1tico-de-home-assistant/</link>
-      <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
+      <title>Los auriculares QCY que he usado</title>
+      <link>https://sherlockes.github.io/los-auriculares-qcy-que-he-usado/</link>
+      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://sherlockes.github.io/reseteo-autom%C3%A1tico-de-home-assistant/</guid>
-      <description>&lt;p&gt;Por muy estable que sea un sistema, resetearlo de vez en cuando se suele venir bien y nos sirve para asegurar un correcto arranque. En mi caso hago que la Raspberry sobre la que corre &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; se resetee todos los días a las cuatro de la mañana mediante una automatización que a continuación paso a detallar.&lt;/p&gt;</description>
+      <guid>https://sherlockes.github.io/los-auriculares-qcy-que-he-usado/</guid>
+      <description>&lt;p&gt;Llevo haciendo uso de auriculares bluetooth de forma intensiva desde 2016, al principio probé varias marcas pero desde 2018 todos los que he usado han sido de la marca &lt;a href=&#34;https://www.qcy.com&#34;&gt;QCY&lt;/a&gt; y no por ser especialmente buenos ni baratos, simplemente por que me dan lo que necesito al precio más bajo posible.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Mathjax en Hugo</title>
-      <link>https://sherlockes.github.io/mathjax-en-hugo/</link>
-      <pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate>
+      <title>Sensores virtuales y Jinja2 en Home Assistant</title>
+      <link>https://sherlockes.github.io/sensores-virtuales-y-jinja2-en-home-assistant/</link>
+      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://sherlockes.github.io/mathjax-en-hugo/</guid>
-      <description>&lt;p&gt;En un post de Hugo podemos ser prácticos e incluir una ecuación matemática simplemente insertando una imagen de la misma o ser mucho más elegantes haciéndolo mediante &lt;a href=&#34;https://www.mathjax.org&#34;&gt;Mathjax&lt;/a&gt;. A continuación voy a explicar como lo hago.&lt;/p&gt;</description>
+      <guid>https://sherlockes.github.io/sensores-virtuales-y-jinja2-en-home-assistant/</guid>
+      <description>&lt;p&gt;Aquí dejo la solución que he implementado ante el problema de crear una nueva entidad en Home Assistant cuyo valor dependa del de otras entidades ya existentes gracias al uso de sensores virtuales y el motor de plantillas de Jinja2.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Actualización:&lt;/strong&gt; Sensor de día lectivo&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Buscar y reemplazar en bash con find y sed</title>
-      <link>https://sherlockes.github.io/buscar-y-reemplazar-en-bash-con-find-y-sed/</link>
-      <pubDate>Mon, 03 Jan 2022 00:00:00 +0000</pubDate>
+      <title>Del Blog a Twitter y Mastodon mediante rss y Bash</title>
+      <link>https://sherlockes.github.io/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/</link>
+      <pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://sherlockes.github.io/buscar-y-reemplazar-en-bash-con-find-y-sed/</guid>
-      <description>&lt;p&gt;Después de varios años escribiendo artículos me doy cuenta de que para que &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; funcione correctamente necesitamos escribir los encabezados sólo con almohadillas al principio y resulta que &lt;a href=&#34;https://jblevins.org/projects/markdown-mode/&#34;&gt;Modo Markdown&lt;/a&gt; de &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt; que utilizo para escribir lo hace con almohadillas al principio y al final. A ver como modifico ahora todos los archivos.&lt;/p&gt;</description>
+      <guid>https://sherlockes.github.io/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/</guid>
+      <description>&lt;p&gt;Una buena forma de dar algo de visibilidad a los post en el blog es publicándolos en &lt;a href=&#34;https://twitter.com/sherblogpro&#34;&gt;Twitter&lt;/a&gt; y &lt;a href=&#34;https://joinmastodon.org/es&#34;&gt;Mastodon&lt;/a&gt;. Aunque no es muy laborioso, resulta más cómodo que se realice de forma automática y aquí dejo como he creado mi propio script para hacerlo.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>El termostato de la caldera en Home Assistant</title>
-      <link>https://sherlockes.github.io/el-termostato-de-la-caldera-en-home-assistant/</link>
-      <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
+      <title>Entorno de desarrollo de Sherblog en Emacs</title>
+      <link>https://sherlockes.github.io/entorno-de-desarrollo-de-sherblog-en-emacs/</link>
+      <pubDate>Sat, 17 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://sherlockes.github.io/el-termostato-de-la-caldera-en-home-assistant/</guid>
-      <description>&lt;p&gt;La temporada pasada implementé desde cero mi propio termostato sobre la raspberry usando python, flask y muchas horas de desarrollo. Ahora he conseguido implementarlo desde cero en &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; en menos de una hora gracias a &lt;a href=&#34;https://esphome.io&#34;&gt;ESPHome&lt;/a&gt;.&lt;/p&gt;</description>
+      <guid>https://sherlockes.github.io/entorno-de-desarrollo-de-sherblog-en-emacs/</guid>
+      <description>&lt;p&gt;Por mucho que podamos pensar &amp;ldquo;sólo cuesta dos minutos&amp;rdquo;, resulta más productivo invertir una hora en preparar una función para poder acomodar &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt; como entorno de desarrollo del blog con una sola tecla que tener que hacerlo a mano cada una de las veces que lo necesitemos.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Actualizar módulo de funciones en excel</title>
-      <link>https://sherlockes.github.io/actualizar-m%C3%B3dulo-de-funciones-en-excel/</link>
-      <pubDate>Mon, 27 Dec 2021 00:00:00 +0000</pubDate>
+      <title>Compartiendo contenido de Hugo en Mastodon</title>
+      <link>https://sherlockes.github.io/compartiendo-contenido-de-hugo-en-mastodon/</link>
+      <pubDate>Mon, 12 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://sherlockes.github.io/actualizar-m%C3%B3dulo-de-funciones-en-excel/</guid>
-      <description>&lt;p&gt;Tenemos varias hojas de cálculo de Excel que trabajan todas con un mismo módulo de funciones. Esta es la forma para que de forma automática se actualicen los módulos de todas las hojas al realizar una modificación en el módulo que alberga las funciones.&lt;/p&gt;</description>
+      <guid>https://sherlockes.github.io/compartiendo-contenido-de-hugo-en-mastodon/</guid>
+      <description>&lt;p&gt;Para que al publicar en Mastodon un artículo de la web se vincule también la imagen del mismo es necesario realizar unas modificaciones en la plantilla de Hugo.&lt;/p&gt;</description>
     </item>
     
   </channel>

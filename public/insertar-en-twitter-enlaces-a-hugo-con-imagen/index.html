@@ -62,6 +62,27 @@
 	</button>
 	<ul class="menu__list">
 		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
 			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
 				
 				<span class="menu__text">Mis vértices geodésicos</span>
@@ -72,13 +93,6 @@
 			<a class="menu__link" href="/post/computing/raspberry/">
 				
 				<span class="menu__text">Raspberry Pi desde cero</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
-			<a class="menu__link" href="/post/android/tasker/">
-				
-				<span class="menu__text">Tasker</span>
 				
 			</a>
 		</li>
@@ -128,7 +142,7 @@
 <pre tabindex="0"><code>title: &#34;Enlaces con imagen en Twitter a Hugo&#34;
 description: &#34;Te interesa leer si los links que compartes o comparten en Twitter de tu web en Hugo Salen sin imagen&#34;
 thumbnail: &#34;images/20180712_wordpress_hugo.jpg&#34;
-</code></pre><p>Pues bien, el reto pasa por reaprovechar estos campos para generar los metadatos que <a href="https://twitter.com">Twitter</a> está buscando para generar su tarjeta de enlace.  Hay varias opciones, pero la más práctica que he encontrado es hacer una copia del archivo &ldquo;baseof.html&rdquo; dentro de la carpeta &ldquo;layouts/partials/default/&rdquo; para que quede duplicado fuera de la carpeta del tema e incluir en el &ldquo;head&rdquo; a continuación de los metas de <a href="https://gohugo.io/">Hugo</a> estas líneas:</p>
+</code></pre><p>Pues bien, el reto pasa por aprovechar estos campos para generar los metadatos que <a href="https://twitter.com">Twitter</a> está buscando para generar su tarjeta de enlace.  Hay varias opciones, pero la más práctica que he encontrado es hacer una copia del archivo &ldquo;baseof.html&rdquo; dentro de la carpeta &ldquo;layouts/_default/&rdquo; para que quede duplicado fuera de la carpeta del tema e incluir en el &ldquo;head&rdquo; a continuación de los metas de <a href="https://gohugo.io/">Hugo</a> estas líneas:</p>
 <pre tabindex="0"><code>&lt;meta name=&#34;twitter:card&#34; content=&#34;summary_large_image&#34;/&gt;
 {{ if (.Params.thumbnail) }}&lt;meta name=&#34;twitter:image&#34; content=&#34;http://www.sherblog.pro{{ .Params.thumbnail }}&#34; /&gt;{{else}}&lt;meta name=&#34;twitter:image&#34; content=&#34;http://www.sherblog.pro/images/logo.png&#34; /&gt;{{end}}
 &lt;meta name=&#34;twitter:title&#34; content=&#34;{{ .Params.title }}&#34;/&gt;
@@ -148,15 +162,15 @@ thumbnail: &#34;images/20180712_wordpress_hugo.jpg&#34;
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/exif-info-en-bash-con-exiftool/" rel="prev">
+		<a class="pager__link" href="/a%C3%B1adir-una-red-social-a-hugo-con-el-tema-mainroad/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Anterior</span>
-			<p class="pager__title">Exif info en Bash con Exiftool</p>
+			<p class="pager__title">Añadir una red social a Hugo con el tema Mainroad</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/descargar-archivos-de-telegram/" rel="next">
+		<a class="pager__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos-en-hugo/" rel="next">
 			<span class="pager__subtitle">Siguiente&thinsp;»</span>
-			<p class="pager__title">Descargar archivos de Telegram</p>
+			<p class="pager__title">Mis vértices geodésicos en Hugo</p>
 		</a>
 	</div>
 </nav>

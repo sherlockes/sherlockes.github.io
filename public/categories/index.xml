@@ -6,40 +6,67 @@
     <description>Recent content in Categories on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Tue, 01 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Raspberry</title>
-      <link>https://sherlockes.github.io/categories/raspberry/</link>
-      <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/categories/raspberry/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://sherlockes.github.io/categories/hugo/</link>
-      <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/categories/hugo/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Fri, 12 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>computing</title>
       <link>https://sherlockes.github.io/categories/computing/</link>
-      <pubDate>Wed, 26 Jan 2022 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://sherlockes.github.io/categories/computing/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>productividad</title>
+      <link>https://sherlockes.github.io/categories/productividad/</link>
+      <pubDate>Wed, 22 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/categories/productividad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>home assistant</title>
       <link>https://sherlockes.github.io/categories/home-assistant/</link>
-      <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://sherlockes.github.io/categories/home-assistant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberry</title>
+      <link>https://sherlockes.github.io/categories/raspberry/</link>
+      <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/categories/raspberry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hardware</title>
+      <link>https://sherlockes.github.io/categories/hardware/</link>
+      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/categories/hardware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://sherlockes.github.io/categories/hugo/</link>
+      <pubDate>Sat, 17 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://sherlockes.github.io/categories/linux/</link>
+      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/categories/linux/</guid>
       <description></description>
     </item>
     
@@ -62,38 +89,11 @@
     </item>
     
     <item>
-      <title>productividad</title>
-      <link>https://sherlockes.github.io/categories/productividad/</link>
-      <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/categories/productividad/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>sherver</title>
       <link>https://sherlockes.github.io/categories/sherver/</link>
       <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://sherlockes.github.io/categories/sherver/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Varios</title>
-      <link>https://sherlockes.github.io/categories/varios/</link>
-      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/categories/varios/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://sherlockes.github.io/categories/linux/</link>
-      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/categories/linux/</guid>
       <description></description>
     </item>
     
