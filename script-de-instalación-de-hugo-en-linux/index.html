@@ -1,0 +1,183 @@
+<!doctype html><html class=no-js lang=es><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><title>Script de instalación de Hugo en linux - Sherblog</title><script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script><meta name=description content="La forma automatizada que utilizo para comprobar la existencia de Hugo en un computador y si este está actualizado a la última versión"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://www.sherblog.pro/images/20221004_hugo_install_script_00.jpg"><meta name=twitter:title content="Script de instalación de Hugo en linux"><meta name=twitter:description content="La forma automatizada que utilizo para comprobar la existencia de Hugo en un computador y si este está actualizado a la última versión"><meta name=twitter:creator content="@sherblogpro"><meta name=twitter:site content="sherblog.pro"><meta property="og:type" content="article"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="sherblog.pro"><meta property="og:locale" content="es_ES"><meta property="og:title" content="Script de instalación de Hugo en linux"><meta property="og:url" content="https://sherlockes.github.io"><meta property="og:description" content="La forma automatizada que utilizo para comprobar la existencia de Hugo en un computador y si este está actualizado a la última versión"><meta property="og:image" content="http://www.sherblog.pro/images/20221004_hugo_install_script_00.jpg"><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//fonts.gstatic.com><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"><link rel=stylesheet href=/css/style.css><link rel=stylesheet href=/css/custom.css><link rel="shortcut icon" href=/favicon.ico></head><body class=body><div class="container container--outer"><header class=header><meta name=twitter:card content="summary"><meta name=twitter:title content="Script de instalación de Hugo en linux"><meta name=twitter:description content="La forma automatizada que utilizo para comprobar la existencia de Hugo en un computador y si este está actualizado a la última versión"><div class=container><div class=logo><a class=logo__link href=/ title=Sherblog rel=home><div class=logo__title>Sherblog</div><div class=logo__tagline>Sólo mi forma de hacer las cosas...</div></a></div><nav class=menu><button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menú</span></button><ul class=menu__list><li class=menu__item><a class=menu__link href=/post/computing/emacs/><span class=menu__text>Emacs</span></a></li><li class="menu__item menu__item--active"><a class=menu__link href=/post/computing/hugo/><span class=menu__text>Hugo</span></a></li><li class=menu__item><a class=menu__link href=/post/computing/home_assistant/><span class=menu__text>Home assistant</span></a></li><li class=menu__item><a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/><span class=menu__text>Mis vértices geodésicos</span></a></li><li class=menu__item><a class=menu__link href=/post/computing/raspberry/><span class=menu__text>Raspberry Pi desde cero</span></a></li></ul></nav></div></header><div class="wrapper flex"><div class=primary><main class=main role=main><article class=post><header class=post__header><h1 class=post__title>Script de instalación de Hugo en linux</h1><div class="post__meta meta"><div class="meta__item-datetime meta__item"><svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2022-10-15T00:00:00Z>2022-10-15</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/hugo/ rel=category>hugo</a></span></div></div></header><figure class="post__thumbnail thumbnail"><img class=thumbnail__image src=/images/20221004_hugo_install_script_00.jpg alt="Script de instalación de Hugo en linux"></figure><div class="content post__content clearfix"><p>Cierto es que la <a href=https://gohugo.io/getting-started/installing/#source>instalación de Hugo</a> no lleva más allá de unos pocos minutos, pero es gratificante no tener que gastar este tiempo cada vez que se actualiza a una nueva versión. Este script es la forma con la que consigo ahorrar este valioso tiempo en mis terminales con linux a partir de la fuente.</p><h3 id=arquitectura-del-equipo>Arquitectura del equipo</h3><p>El primer problema con el que nos encontramos es determinar el tipo de arquitectura que tiene el equipo sobre el que vamos a instalar <a href=https://gohugo.io>Hugo</a>. En mi caso tengo que diferenciar entre la <a href=https://www.raspberrypi.org>Raspberry</a> con arquitectura arm de 32bit (Raspbian) y los equipos de sobremesa y portátil, ambos con arquitectura x86 de 64bit (Linux Mint). Para determinar la longitud de bit con la que trabaja el equipo uso el comando <code>getconf LONG_BIT</code> con este sencillo script:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>bits<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>getconf LONG_BIT<span style=color:#66d9ef>)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> $bits <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;64&#39;</span> <span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>    bits<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;64bit&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span>    bits<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;arm&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fi</span>
+</span></span></code></pre></div><blockquote><p>En caso de tratar con mayor variedad de equipos seguramente fuera más adecuado usar el comando <code>uname -m</code> para determinar la arquitectura de los mismos.</p></blockquote><h3 id=ruta-de-descarga>Ruta de descarga</h3><p>Conociendo la arquitectura del equipo, descargar el instalador adecuado desde la página en <a href=https://github.com/gohugoio/hugo/releases>Github de Hugo</a> no tiene ninguna complicación si lo realizamos manualmente. Para automatizar la tarea creo la variable &ldquo;hugo_latest_path&rdquo; que contendrá la ruta completa al ultimo instalador disponible gracias al acceso a la api de <a href=https://github.com>Github</a>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>hugo_latest_path<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	| grep <span style=color:#e6db74>&#34;browser_download_url&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	| grep <span style=color:#e6db74>&#34;[Ll]inux&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	| grep <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>bits<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	| grep -v <span style=color:#e6db74>&#34;hugo_extended&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	| grep -v <span style=color:#e6db74>&#34;arm64&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	| grep <span style=color:#e6db74>&#34;\.tar\.gz&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	| cut -d <span style=color:#e6db74>&#34;:&#34;</span> -f 2,3 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	| tr -d <span style=color:#ae81ff>\&#34;</span><span style=color:#66d9ef>)</span>
+</span></span></code></pre></div><p>Este comando realiza los siguientes pasos:</p><ul><li>Descarga de la página con las ultimas versiones de <a href=https://gohugo.io>Hugo</a></li><li>Filtra por las líneas que contienen &ldquo;Browser_download_url&rdquo;</li><li>Filtra por la líneas que contienen &ldquo;Linux&rdquo; o &ldquo;linux&rdquo;</li><li>Filtra por el tiempo de architectura (64bit o arm)</li><li>Desprecia las líneas con la versión extendida de <a href=https://gohugo.io>Hugo</a></li><li>Desprecia las líneas para &ldquo;arm64&rdquo;</li><li>Se queda sólo con los instaladores &ldquo;.tar.gz&rdquo;</li><li>Se queda con el contenido del campo y no el encabezado</li><li>Elimina las comillas</li></ul><p>El resultado del comando completo será una ruta de descarga para la última versión de <a href=https://gohugo.io>Hugo</a>
+&ldquo;<a href=https://github.com/gohugoio/hugo/releases/download/v0.104.3/hugo_0.104.3_linux-arm.tar.gz%22>https://github.com/gohugoio/hugo/releases/download/v0.104.3/hugo_0.104.3_linux-arm.tar.gz"</a></p><h3 id=determinar-la-ultima-versión-disponible>Determinar la ultima versión disponible</h3><p>A partir de la variable &ldquo;hugo_latest_path&rdquo; generaremos la variable &ldquo;hugo_latest_ver&rdquo;</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>hugo_download_path<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://github.com/gohugoio/hugo/releases/download/&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> $hugo_latest_path <span style=color:#f92672>=</span>~ ^$hugo_download_path<span style=color:#f92672>[</span>v<span style=color:#f92672>](</span>.*<span style=color:#f92672>)[</span>/<span style=color:#f92672>]</span>.*<span style=color:#ae81ff>\.</span>tar<span style=color:#ae81ff>\.</span>gz$ <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>    	hugo_latest_ver<span style=color:#f92672>=</span><span style=color:#e6db74>${</span>BASH_REMATCH[1]<span style=color:#e6db74>}</span>
+</span></span><span style=display:flex><span>    	echo <span style=color:#e6db74>&#34;La última versión disponible es </span>$hugo_latest_ver<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>fi</span>
+</span></span></code></pre></div><p>Hacemos uso de la expresiones regulares en bash y el comando <code>BASH_REMATCH</code> para extraer el nº de versión como el conjunto de números y puntos detrás de &ldquo;<a href=https://github.com/gohugoio/hugo/releases/download/v%22>https://github.com/gohugoio/hugo/releases/download/v"</a> y antes de la siguiente &ldquo;/&rdquo; en el path de la ultima versión para descargar.</p><p>“https://github.com/gohugoio/hugo/releases/download/v<strong>0.104.3</strong>/hugo_0.104.3_linux-arm.tar.gz&rdquo;</p><h3 id=está-hugo-ya-instalado>¿Está Hugo ya instalado?</h3><p>En caso de que <a href=https://gohugo.io>Hugo</a> esté instalado en el sistema comprobaremos si la versión coincide con la ultima versión disponible en la web, si son iguales no hacemos nada, en caso contrario borraremos la instalación de <a href=https://gohugo.io>Hugo</a> y realizaremos una nueva instalación. En caso de que <a href=https://gohugo.io>Hugo</a> no esté instalado directamente realizaremos la instalación de la última versión disponible.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#66d9ef>if</span> which hugo &gt;/dev/null; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>	hugo_local_ver<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>hugo version | perl -pe <span style=color:#e6db74>&#39;($_)=/([0-9]+([.][0-9]+)+)/&#39;</span><span style=color:#66d9ef>)</span>
+</span></span><span style=display:flex><span>	echo <span style=color:#e6db74>&#34;Versión instalada </span>$hugo_local_ver<span style=color:#e6db74>, última versión </span>$hugo_latest_ver<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>	
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> $hugo_local_ver <span style=color:#f92672>==</span> $hugo_web_ver <span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>	    echo <span style=color:#e6db74>&#34;hugo instalado y actualizado...&#34;</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span>	    echo <span style=color:#e6db74>&#39;actualizando a hugo &#39;</span>$hugo_latest_ver
+</span></span><span style=display:flex><span>	    
+</span></span><span style=display:flex><span>	    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> -f ~/.local/bin/hugo <span style=color:#f92672>]]</span> 
+</span></span><span style=display:flex><span>	    <span style=color:#66d9ef>then</span> 
+</span></span><span style=display:flex><span>		rm ~/.local/bin/hugo
+</span></span><span style=display:flex><span>	    <span style=color:#66d9ef>else</span> 
+</span></span><span style=display:flex><span>		sudo dpkg -P hugo
+</span></span><span style=display:flex><span>	    <span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span>	    
+</span></span><span style=display:flex><span>	    hugo_install
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span>	
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span>	echo <span style=color:#e6db74>&#39;Hugo no está instalado...&#39;</span>
+</span></span><span style=display:flex><span>	hugo_install
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>fi</span>
+</span></span></code></pre></div><p>Para desinstalar <a href=https://gohugo.io>Hugo</a> borraremos el archivo &ldquo;~/.local/bin/hugo&rdquo; en caso de que este exista, en caso contrario eliminaremos el paquete mediante el comando <code>dpkg</code>.</p><h3 id=instalación-de-hugo>Instalación de Hugo</h3><p>En la web viene claramente descrita la <a href=https://gohugo.io/getting-started/installing/#source>instalación de hugo</a> para entornos linux a partir de una archivo &ldquo;*.tar.gz&rdquo;, simplemente he adaptado estos pasos a mi script creando la función de instalación.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>hugo_install<span style=color:#f92672>(){</span>
+</span></span><span style=display:flex><span>    cd ~
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    echo <span style=color:#e6db74>&#39;Comprobando el directorio ~/.local/bin...&#39;</span>
+</span></span><span style=display:flex><span>    mkdir -p ~/.local/bin
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    echo <span style=color:#e6db74>&#39;Descargando la última versión de Hugo...&#39;</span>
+</span></span><span style=display:flex><span>    wget -q $hugo_latest_path
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Busca el archivo *.tar.gz descargado</span>
+</span></span><span style=display:flex><span>    instalador<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>find . -maxdepth <span style=color:#ae81ff>1</span> -name <span style=color:#e6db74>&#34;hugo_*.tar.gz&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> -n $instalador <span style=color:#f92672>]]</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>		echo <span style=color:#e6db74>&#39;Descomprimiendo el instalador...&#39;</span>
+</span></span><span style=display:flex><span>		<span style=color:#75715e># Extrae el archivo &#34;Hugo&#34; a &#34;~/.local/bin&#34;</span>
+</span></span><span style=display:flex><span>		tar -xzf $instalador -C ~/.local/bin hugo
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e># Borra el archivo descargado</span>
+</span></span><span style=display:flex><span>		rm $instalador
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Comprueba si la ruta esta en el PATH</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> -n <span style=color:#66d9ef>$(</span>echo $PATH | grep <span style=color:#e6db74>&#34;</span>$HOME<span style=color:#e6db74>/.local/bin&#34;</span><span style=color:#66d9ef>)</span> <span style=color:#f92672>]]</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>		echo <span style=color:#e6db74>&#34;La ruta </span>$HOME<span style=color:#e6db74>/.local/bin está en el PATH&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span>		echo <span style=color:#e6db74>&#34;La ruta no está en el Path, se añade&#34;</span>
+</span></span><span style=display:flex><span>		PATH<span style=color:#f92672>=</span>$PATH:~/.local/bin
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>Los pasos que realiza esta función son los siguientes:</p><ul><li>Crea el directorio &ldquo;~/.local/bin/&rdquo; en caso de que no exista</li><li>Descarga la última versión disponible</li><li>Descomprime el archivo &ldquo;hugo&rdquo; del instalador en &ldquo;~/.local/bin&rdquo;</li><li>Borra el instalador</li><li>Comprueba si la ruta esta en el PATH y si no lo está la añade</li></ul><p>Y con esto ya está todo listo, puedes ver a continuación el script completo y encontrarlo otros que he escrito en mi <a href=https://github.com/sherlockes/SherloScripts>repositorio de GitHub</a>.</p><pre><code>#!/bin/bash
+
+###################################################################
+# Script Name: hugo.sh
+# Description: Instala y actualiza Hugo
+# Args: N/A
+# Creation/Update: 20191114/20230412
+# Author: www.sherblog.pro                                                
+# Email: sherlockes@gmail.com                                           
+###################################################################
+
+bits=$(getconf LONG_BIT)
+if [ $bits == &#39;64&#39; ]
+then
+    bits=&#39;64bit&#39;
+else
+    bits=&#39;arm&#39;
+fi
+
+hugo_check(){
+
+    hugo_download_path=&#34;https://github.com/gohugoio/hugo/releases/download/&#34;
+
+    hugo_latest_path=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest \
+	| grep &#34;browser_download_url&#34; \
+	| grep &#34;[Ll]inux&#34; \
+	| grep &#34;${bits}&#34; \
+	| grep -v &#34;hugo_extended&#34; \
+	| grep -v &#34;arm64&#34; \
+	| grep &#34;\.tar\.gz&#34; \
+	| cut -d &#34;:&#34; -f 2,3 \
+	| tr -d \&#34;)
+
+    # Extrae el número de la última version disponible
+    nombre_carpeta=$(basename $(dirname $hugo_latest_path))
+    hugo_latest_ver=&#34;${nombre_carpeta:1}&#34;
+    echo &#34;La última versión disponible es $hugo_latest_ver&#34;
+
+    if which hugo &gt;/dev/null; then
+	# Extrae el número de la versión de Hugo isntalada
+	hugo_local_ver=$(hugo version | perl -pe &#39;($_)=/([0-9]&#43;([.][0-9]&#43;)&#43;)/&#39;)
+
+	echo &#34;Versión instalada $hugo_local_ver, última versión $hugo_latest_ver&#34;
+
+	if [ $hugo_local_ver == $hugo_latest_ver ]
+	then
+	    echo &#34;hugo instalado y actualizado...&#34;
+	else
+	    echo &#39;actualizando a hugo &#39;$hugo_latest_ver
+	    
+	    if [[ -f ~/.local/bin/hugo ]] 
+	    then 
+		rm ~/.local/bin/hugo
+	    else 
+		sudo dpkg -P hugo
+	    fi
+	    
+	    hugo_install
+	fi
+	
+    else
+	echo &#39;Hugo no está instalado...&#39;
+	hugo_install
+    fi
+}
+
+hugo_install(){
+    cd ~
+
+    echo &#39;Comprobando el directorio ~/.local/bin...&#39;
+    mkdir -p ~/.local/bin
+
+    echo &#39;Descargando la última versión de Hugo...&#39;
+    wget -q $hugo_latest_path
+
+    
+    # Busca el archivo *.tar.gz descargado
+    instalador=&#34;$(find . -maxdepth 1 -name &#34;hugo_*.tar.gz&#34;)&#34;
+
+    if [[ -n $instalador ]]
+    then
+	echo &#39;Descomprimiendo el instalador...&#39;
+	# Extrae el archivo &#34;Hugo&#34; a &#34;~/.local/bin&#34;
+	tar -xzf $instalador -C ~/.local/bin hugo
+
+	# Borra el archivo descargado
+	rm $instalador
+    fi
+
+    # Comprueba si la ruta esta en el PATH
+    if [[ -n $(echo $PATH | grep &#34;$HOME/.local/bin&#34;) ]]
+    then
+	echo &#34;La ruta $HOME/.local/bin está en el PATH&#34;
+    else
+	echo &#34;La ruta no está en el Path, se añade&#34;
+	PATH=$PATH:~/.local/bin
+    fi
+    
+}
+
+hugo_check
+</code></pre><h3 id=enlaces-de-interés>Enlaces de interés</h3><ul><li><a href=https://fabianlee.org/2020/01/29/bash-using-bash_rematch-to-pull-capture-groups-from-a-regex/>Fabian Lee - Capture groups from regex</a></li><li><a href=https://www.howtogeek.com/815684/bash-check-if-file-exists/>How to Geek - Check if file exists</a></li><li><a href=https://linuxize.com/post/regular-expressions-in-grep/>Linuxxize - Regex in grep</a></li><li><a href=https://stackoverflow.com/questions/13341702/how-do-i-turn-off-the-output-from-tar-commands-on-unix>Stackoverflow - Turn off tar output</a></li><li><a href=https://stackoverflow.com/questions/10411616/grep-regex-not-containing-a-string>StackOverFlow - Grep regex without string</a></li></ul></div><footer class=post__footer><div class="content post__content clearfix"><h3>Otros de mís artículos que te pueden interesar</h3><ul><li><a href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li><li><a href=/incrustar-texto-externo-en-hugo/>Incrustar texto externo en Hugo</a></li><li><a href=/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/>Del Blog a Twitter y Mastodon mediante rss y Bash</a></li><li><a href=/de-youtube-a-podcast/>De Youtube a Podcast</a></li><li><a href=/unir-o-separar-en-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/>Unir o separar en varios pdf en linux desde la línea de comandos</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/bash/ rel=tag>bash</a></li><li class=tags__item><a class="tags__link btn" href=/tags/regex/ rel=tag>regex</a></li></ul></div></footer></article></main><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=/incrustar-texto-externo-en-hugo/ rel=prev><span class=pager__subtitle>«&#8201;Anterior</span><p class=pager__title>Incrustar texto externo en Hugo</p></a></div><div class="pager__item pager__item--next"><a class=pager__link href=/compartiendo-contenido-de-hugo-en-mastodon/ rel=next><span class=pager__subtitle>Siguiente&#8201;»</span><p class=pager__title>Compartiendo contenido de Hugo en Mastodon</p></a></div></nav><div class="content post__content clearfix"><h3>Comentarios</h3>Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href=https://emacs.ch/@sherlockes>@sherlockes</a> en Mastodon o Telegram.</div></div></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2023 Sherlockes.
+<span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span></br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a></div></div></footer></div><script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body></html>

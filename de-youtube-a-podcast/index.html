@@ -1,0 +1,337 @@
+<!doctype html><html class=no-js lang=es><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><title>De Youtube a Podcast - Sherblog</title><script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script><meta name=description content="Aquí dejo mi método para pasar a formato podcast un anal de youtube"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://www.sherblog.pro/images/20220916_youtube_to_podcast_00.jpg"><meta name=twitter:title content="De Youtube a Podcast"><meta name=twitter:description content="Aquí dejo mi método para pasar a formato podcast un anal de youtube"><meta name=twitter:creator content="@sherblogpro"><meta name=twitter:site content="sherblog.pro"><meta property="og:type" content="article"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="sherblog.pro"><meta property="og:locale" content="es_ES"><meta property="og:title" content="De Youtube a Podcast"><meta property="og:url" content="https://sherlockes.github.io"><meta property="og:description" content="Aquí dejo mi método para pasar a formato podcast un anal de youtube"><meta property="og:image" content="http://www.sherblog.pro/images/20220916_youtube_to_podcast_00.jpg"><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//fonts.gstatic.com><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"><link rel=stylesheet href=/css/style.css><link rel=stylesheet href=/css/custom.css><link rel="shortcut icon" href=/favicon.ico></head><body class=body><div class="container container--outer"><header class=header><meta name=twitter:card content="summary"><meta name=twitter:title content="De Youtube a Podcast"><meta name=twitter:description content="Aquí dejo mi método para pasar a formato podcast un anal de youtube"><div class=container><div class=logo><a class=logo__link href=/ title=Sherblog rel=home><div class=logo__title>Sherblog</div><div class=logo__tagline>Sólo mi forma de hacer las cosas...</div></a></div><nav class=menu><button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menú</span></button><ul class=menu__list><li class=menu__item><a class=menu__link href=/post/computing/emacs/><span class=menu__text>Emacs</span></a></li><li class=menu__item><a class=menu__link href=/post/computing/hugo/><span class=menu__text>Hugo</span></a></li><li class=menu__item><a class=menu__link href=/post/computing/home_assistant/><span class=menu__text>Home assistant</span></a></li><li class=menu__item><a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/><span class=menu__text>Mis vértices geodésicos</span></a></li><li class=menu__item><a class=menu__link href=/post/computing/raspberry/><span class=menu__text>Raspberry Pi desde cero</span></a></li></ul></nav></div></header><div class="wrapper flex"><div class=primary><main class=main role=main><article class=post><header class=post__header><h1 class=post__title>De Youtube a Podcast</h1><div class="post__meta meta"><div class="meta__item-datetime meta__item"><svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2022-10-04T00:00:00Z>2022-10-04</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/computing/ rel=category>computing</a></span></div></div></header><figure class="post__thumbnail thumbnail"><img class=thumbnail__image src=/images/20220916_youtube_to_podcast_00.jpg alt="De Youtube a Podcast"></figure><div class="content post__content clearfix"><p>Si no tienes tiempo para ver los vídeos de un canal de <a href=https://www.youtube.com>Youtube</a> pero te interesa el audio de los mismos para escucharlo en tu reproductor de Podcast, gracias a <a href=https://github.com/yt-dlp/yt-dlp>yt-dlp</a> puedes hacerlo de una forma sencilla.</p><p>Hace un tiempo escribí un <a href=/crear-podcast-a-partir-de-un-canal-de-twitch/>post</a> sobre el método que utilizo para pasar los vídeos de <a href=https://www.twitch.tv>Twitch</a> en formato audio a un servidor webdav alojado en mi Raspberry y que coge el contenido de una nube pública mediante <a href=https://rclone.org>Rclone</a> al mismo tiempo que publica un feed para que mi reproductor de podcast sea capaz de coger de este servidor los audios. Ahora hago lo mismo pero a partir de un vídeo de Youtube.</p><p>Para descargar los vídeos de <a href=https://www.twitch.tv>Twitch</a> uso el servicio <a href=https://twitch-dl.bezdomni.net/introduction.html>twitch-dl</a>, para hacer lo propio con <a href=https://www.youtube.com>Youtube</a> utilizo <a href=https://github.com/yt-dlp/yt-dlp>yt-dlp</a>.</p><h3 id=comprobar-los-últimos-vídeos-del-canal>Comprobar los últimos vídeos del canal</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>mapfile -t videos &lt; &lt;<span style=color:#f92672>(</span> yt-dlp --dateafter now-5day --get-filename -o <span style=color:#e6db74>&#34;%(id)s/%(duration)s&#34;</span> $CANAL_YT <span style=color:#f92672>)</span>
+</span></span></code></pre></div><p>Con esta línea se crea una matriz &ldquo;vídeos&rdquo; en la que, gracias a <a href=https://github.com/yt-dlp/yt-dlp>yt-dlp</a> se introducen la identificación y duración de los vídeos que se han publicado en un canal de <a href=https://www.youtube.com>Youtube</a> en los últimos cinco días. Utilizo la duración del mismo para no descargar los vídeos de menos de diez minutos.</p><h3 id=descargar-el-audio-de-un-vídeo>Descargar el audio de un vídeo</h3><p>Conocida la identificación del vídeo que queremos descargar (id), para descargar el audio del mismo ejecutaremos los siguientes comandos.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>url<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://www.youtube.com/watch?v=</span>$id<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>yt-dlp -o <span style=color:#e6db74>&#34;%(id)s.%(ext)s&#34;</span> --extract-audio --audio-format mp3 $url
+</span></span></code></pre></div><h3 id=añadir-los-tag-al-audio>Añadir los tag al audio</h3><p>Al descargar el audio de <a href=https://www.youtube.com>Youtube</a> no se le asigna automáticamente la información id3v2 correspondiente por lo que hay que hacerlo manualmente para que posteriormente en el reproductor de Podcast tanto el &ldquo;Artista&rdquo; como el &ldquo;Podcast&rdquo; aparezca correctamente identificado. Para esto obtengo el título del vídeo de <a href=https://www.youtube.com>Youtube</a> gracias a la función de <a href=https://github.com/yt-dlp/yt-dlp>yt-dlp</a> &ldquo;&ndash;get-title&rdquo;
+e incrusto esta información en el &ldquo;track&rdquo; descargado a través del comando &ldquo;id3v2&rdquo;. Todo gracias a dos sencillas líneas de código.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>titulo<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>yt-dlp --get-title <span style=color:#e6db74>&#34;https://www.youtube.com/watch?v=</span>$nombre<span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>)</span>
+</span></span><span style=display:flex><span>id3v2 -t <span style=color:#e6db74>&#34;</span>$titulo<span style=color:#e6db74>&#34;</span> -a <span style=color:#e6db74>&#34;</span>$artista<span style=color:#e6db74>&#34;</span> -A <span style=color:#e6db74>&#34;</span>$album<span style=color:#e6db74>&#34;</span> $track
+</span></span></code></pre></div><h3 id=subir-el-audio-generado-a-un-servidor-webdav>Subir el audio generado a un servidor WebDav</h3><p>Ya he escrito en un post como tengo implementado un servidor <a href=/servidor-webdav-de-contenido-remoto-con-rclone/>webdav</a> gracias a <a href=https://rclone.org>Rclone</a> usando como almacenamiento mis nubes públicas. Uso el mismo <a href=https://rclone.org>Rclone</a> en este script para subir el contenido descargado y recodificado en local.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>rclone copy $canal remoto:twitch/$canal/ --create-empty-src-dirs
+</span></span></code></pre></div><h3 id=generar-el-feed-con-todos-los-archivos>Generar el feed con todos los archivos</h3><p>Como plantilla para la generación del feed he utilizado esta de <a href=http://matthewdickens.me/post/xml-template-for-a-podcast-rss-feed>Matthew Dickens</a> eliminando de la misma todo lo relativo a itunes ya que va a ser de uso privado. Guardo por un lado el encabezado del xml y por otro los archivos ya incluidos junto con el pie, así me resulta fácil poner como primer &ldquo;item&rdquo; del feed un nuevo audio que descargue. Hago uso de <a href=https://ffmpeg.org/ffprobe.html>ffprobe</a> para extraer los metadatos del mp3 que incrustar en el feed y el comando <code>awk</code> para extraer la información del nombre del archivo.</p><p>Tras poner el feed en el servidor webdav donde he colocado los archivos de audio ya sólo resta añadirlo y actualizarlo en la aplicación de Podcast.</p><h3 id=script-completo>Script completo</h3><p>Todo el código del script lo pueden encontrar en mi repositorio de scripts <a href=https://github.com/sherlockes/SherloScripts>GitHub</a><pre><code>#!/bin/bash
+
+###################################################################
+#Script Name: youtube2podcast.sh
+#Description: Creación de un podcast a partir de un canal de youtube
+#Args: N/A
+#Creation/Update: 20220605/20230511
+#Author: www.sherblog.pro                                             
+#Email: sherlockes@gmail.com                               
+###################################################################
+
+################################
+####       Variables        ####
+################################
+
+PATH=&#34;/home/pi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;
+
+CANAL=&#34;jordillatzer&#34;
+CANAL_NOMBRE=&#34;Jordi Llatzer&#34;
+TITULO=&#34;Jordi Llatzer en Twitch&#34;
+SERVIDOR=&#34;http://192.168.10.202:5005&#34;
+CANAL_YT=&#34;https://www.youtube.com/@jordillatzer/videos&#34;
+
+twitch_dir=~/twitch
+DESCARGADOS=&#34;$twitch_dir/$CANAL/descargados_yt.txt&#34;
+
+notificacion=~/SherloScripts/bash/telegram.sh
+inicio=$( date &#43;%s )
+
+mensaje=$&#39;Actualizar Youtube via &lt;a href=&#34;https://raw.githubusercontent.com/sherlockes/SherloScripts/master/bash/youtube2podcast.sh&#34;&gt;youtube2podcast.sh&lt;/a&gt;\n&#39;
+mensaje&#43;=$&#39;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n&#39;
+
+
+echo &#34;######################################&#34;
+echo &#34;## Youtube to Podcast by Sherlockes ##&#34;
+echo &#34;######################################&#34;
+
+################################
+####      Dependencias      ####
+################################
+
+dependencias(){
+    # yt-dlp
+    if command -v yt-dlp &gt;/dev/null 2&gt;&amp;1 ; then
+	echo &#34;Versión de yt-dlp: $(yt-dlp --version)&#34;
+	sudo yt-dlp -U
+    else
+	echo &#34;ATENCION: yt-dlp no está disponible&#34;
+	sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
+	sudo chmod a&#43;rx /usr/local/bin/yt-dlp
+    fi
+
+    # id3v2
+    if command -v id3v2 &gt;/dev/null 2&gt;&amp;1 ; then
+	echo &#34;Versión de id3v2: $(id3v2 --version | head -n 1)&#34;
+    else
+	echo &#34;ATENCION: id3v2 no está disponible&#34;
+    fi
+
+    # ffmpeg
+    if command -v ffmpeg &gt;/dev/null 2&gt;&amp;1 ; then
+	echo &#34;Versión de ffmpeg: $(ffmpeg -version | grep &#39;ffmpeg version&#39; | sed &#39;s/ffmpeg version \([-0-9.]*\).*/\1/&#39;)&#34;
+    else
+	echo &#34;ATENCION: ffmpeg no está disponible&#34;
+    fi
+}
+
+
+################################
+####       Funciones        ####
+################################
+
+#----------------------------------------------------------#
+#                   Comprobar la salida                    #
+#----------------------------------------------------------#
+comprobar(){
+
+    if [ $1 -eq 0 ]; then
+	mensaje&#43;=$&#39;OK&#39;
+    else
+	mensaje&#43;=$&#39;ERROR&#39;
+    fi
+    mensaje&#43;=$&#39;\n&#39;
+}
+
+#----------------------------------------------------------#
+#   Buscar los últimos vídeos de un canal no descargados   #
+#----------------------------------------------------------#
+
+buscar_ultimos_yt(){
+    # Valores de argumentos
+    local canal=${1:?Falta el nombre del canal}
+    local videos
+    local id
+    local duracion
+
+    # Obtiene el json de los ultimos vídeos.
+    mensaje&#43;=$&#39;Obteniendo últimos vídeos . . . . . . . . . . . . .&#39;
+    echo &#34;- Buscando últimos vídeos de $CANAL_NOMBRE&#34;
+
+    mapfile -t videos &lt; &lt;( yt-dlp --flat-playlist --print &#34;%(id)s/%(duration)s&#34; --playlist-end 10 $CANAL_YT )
+
+    comprobar $?
+
+
+    for video in ${videos[@]}
+    do
+	id=$( echo &#34;$video&#34; |cut -d\/ -f1 )
+	duracion=$( echo &#34;$video&#34; |cut -d\/ -f2 )
+	duracion=${duracion%??}
+
+	# Comprueba si el archivo es de más de 10&#39;
+	if (( $duracion &gt; 600 )) &amp;&amp; ! grep -q $id &#34;$DESCARGADOS&#34;; then
+	    # Descargando el episodio
+	    descargar_video_yt $id
+	    comprobar $?
+	else
+	    echo &#34;- El episodio $id es corto o ya descargado&#34;
+	fi
+	
+    done
+    
+}
+
+descargar_video_yt(){
+    local id=${1:?Falta el id del video}
+    local url=&#34;https://www.youtube.com/watch?v=$id&#34;
+    
+    echo &#34;- Descargando el vídeo $id&#34;
+    mensaje&#43;=$&#34;Descargando vídeo $id . . . . . . &#34;
+    yt-dlp -o &#34;%(id)s.%(ext)s&#34; --extract-audio --audio-format mp3 $url
+
+    if [ $? -eq 0 ]; then
+	# Añadiendo el episodio descargado a la lista
+	echo -e &#34;- Añadiendo a la lista de episodios descargados&#34;
+	echo $id | cat - $DESCARGADOS &gt; temp &amp;&amp; mv temp $DESCARGADOS
+    fi
+}
+
+tag_y_mover(){
+    cd $twitch_dir
+
+    echo -e &#34;- Taggeando y moviendo los archivos&#34;
+
+    # Lista todos los mp3 de la carpeta
+    for track in *.mp3 ; do
+	local nombre=&#34;${track%.*}&#34;
+	local titulo=$(yt-dlp --get-title &#34;https://www.youtube.com/watch?v=$nombre&#34;)
+
+	# Poniendo título al audio
+	id3v2 -t &#34;$titulo&#34; -a &#34;$CANAL_NOMBRE&#34; -A &#34;Youtube2Podcast&#34; $track
+
+	# Añadir el item al listado del feed
+	anadir_item $track &#34;youtube&#34; &#34;$CANAL&#34;
+
+	# Mover a la carpeta mp3
+	mv $track $CANAL/mp3
+    done
+}
+
+#----------------------------------------------------------#
+#                   Añadir un nuevo item                   #
+#----------------------------------------------------------#
+anadir_item(){
+    echo &#34;- Añadiendo elemento a la lista...&#34;
+    local file=${1:?Falta el nombre del archivo}
+    local servicio=${2:?Falta el servicio de descarga}
+    local canal=${3:?Falta el canal de descarga}
+    
+    local ID_EP=&#34;${track%.*}&#34;
+    
+    local TIT_EP=$(ffprobe -loglevel error -show_entries format_tags=title -of default=noprint_wrappers=1:nokey=1 $file)
+    local ART_EP=$(ffprobe -loglevel error -show_entries format_tags=artist -of default=noprint_wrappers=1:nokey=1 $file)
+
+    local URL_VID
+    local FEC_EP
+
+    if [ &#34;$servicio&#34; = &#34;youtube&#34; ]; then
+	# Personalización para Youtube
+	URL_VID=&#34;https://www.youtube.com/watch?v=$ID_EP&#34;
+	FEC_EP=$(yt-dlp --print &#34;%(upload_date)s&#34; $URL_VID)
+	FEC_EP=$(date -d $FEC_EP &#43;&#34;%Y-%m-%dT%H:%M:%S%:z&#34;)
+	FEC_EP=$(date --date &#34;$FEC_EP&#43;14 hours&#34; &#34;&#43;%a, %d %b %Y %T %Z&#34;)
+    else
+	# Personalización para Twitch
+	URL_VID=&#34;https://www.twitch.tv/videos/$ID_EP&#34;
+    fi
+
+    local LEN_EP=$(ffprobe -i $file -show_format -v quiet | sed -n &#39;s/duration=//p&#39;)
+    LEN_EP=$(echo ${LEN_EP%.*})
+
+    # crea el &#34;item.xml&#34; con info del episodio
+    cat &gt;&gt; $canal/item.xml &lt;&lt;END_ITEM
+    &lt;item&gt;
+      &lt;guid isPermaLink=&#34;true&#34;&gt;$servidor/$canal/$ID_EP&lt;/guid&gt;
+      &lt;title&gt;$TIT_EP&lt;/title&gt;
+      &lt;link&gt;$URL_EP&lt;/link&gt;
+      &lt;description&gt;$TIT_EP&lt;/description&gt;
+      &lt;pubDate&gt;$FEC_EP&lt;/pubDate&gt;
+      &lt;author&gt;$ART_EP&lt;/author&gt;
+      &lt;content:encoded&gt;&lt;![CDATA[&lt;p&gt;Episodio descargado de $servicio.&lt;/p&gt;]]&gt;&lt;/content:encoded&gt;
+      &lt;enclosure length=&#34;$LEN_EP&#34; type=&#34;audio/mpeg&#34; url=&#34;$SERVIDOR/twitch/$canal/mp3/$ID_EP.mp3&#34;/&gt;
+    &lt;/item&gt;
+END_ITEM
+
+    # Añade los &#34;items.xml&#34; ya descargado a continuación del &#34;item.xml&#34;
+    cat $canal/items.xml &gt;&gt; $canal/item.xml
+    mv $canal/item.xml $canal/items.xml
+}
+
+
+#----------------------------------------------------------#
+#                    Actualizar el feed                    #
+#----------------------------------------------------------#
+# (Coge la info de
+actualizar_feed () {
+    # Valores de argumentos
+    local servidor=${1:?Falta el servidor del feed}
+    local canal=${2:?Falta el nombre del canal}
+    local titulo=${3:?Falta el título del canal}
+
+    cd $twitch_dir
+
+    # Comprueba si hay algún mp3 en la carpeta del canal, si no hay sale de la función
+    if [ ! -e ./$canal/mp3/*.mp3 ]; then return; fi
+    
+    # Encabezado del feed
+    echo &#34;- Insertando el encabezado del feed&#34;
+
+    cat &gt; $canal/feed.xml &lt;&lt;END_HEADER
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;rss version=&#34;2.0&#34;
+  xmlns:atom=&#34;http://www.w3.org/2005/Atom&#34;
+  xmlns:content=&#34;http://purl.org/rss/1.0/modules/content/&#34;
+  xmlns:itunes=&#34;http://www.itunes.com/dtds/podcast-1.0.dtd&#34;&gt;
+  &lt;channel&gt;
+    &lt;atom:link href=&#34;$servidor/twitch/$canal/feed.xml&#34; rel=&#34;self&#34; type=&#34;application/rss&#43;xml&#34;/&gt;
+    &lt;title&gt;$TITULO&lt;/title&gt;
+    &lt;description&gt;Un podcast creado por Sherlockes a partir del canal de $TITULO&lt;/description&gt;
+    &lt;copyright&gt;Copyright 2022 Sherlockes&lt;/copyright&gt;
+    &lt;language&gt;es&lt;/language&gt;
+    &lt;pubDate&gt;$FECHA&lt;/pubDate&gt;
+    &lt;lastBuildDate&gt;$FECHA&lt;/lastBuildDate&gt;
+    &lt;image&gt;
+      &lt;link&gt;https://sherblog.pro&lt;/link&gt;
+      &lt;title&gt;$TITULO&lt;/title&gt;
+      &lt;url&gt;$servidor/twitch/$canal/artwork.jpg&lt;/url&gt;
+    &lt;/image&gt;
+    &lt;link&gt;https://www.sherblog.pro&lt;/link&gt;
+END_HEADER
+
+    # Añadir lista de episodios al feed
+    echo &#34;- Añadiendo lista de episodios al feed&#34;
+    cat $canal/items.xml &gt;&gt; $canal/feed.xml
+
+    # Añadiendo el pie del feed
+    echo &#34;- Añadiendo el pie del feed&#34;
+    cat &gt;&gt; $canal/feed.xml &lt;&lt;END
+  &lt;/channel&gt;
+&lt;/rss&gt;
+END
+}
+
+#----------------------------------------------------------#
+#               Subir contenido actualizado                #
+#----------------------------------------------------------#
+subir_contenido () {
+    # Valores de argumentos
+    local canal=${1:?Falta el nombre del canal}
+    
+    # Subiendo archivos a la nube via rclone
+    echo &#34;- Subiendo los mp3&#39;s al servidor remoto&#34;
+    rclone copy $canal Sherlockes78_UN3_en:twitch/$canal/ --create-empty-src-dirs
+
+    # Eliminando audio y video local
+    echo &#34;- Eliminando audios locales&#34;
+    find . -type f -name &#34;*.mp3&#34; -delete
+
+    # Borrando los archivos de la nube anteriores a 30 días
+    rclone delete Sherlockes78_UN3_en:twitch/$canal/mp3 --min-age 30d
+}
+
+
+################################
+####    Script principal    ####
+################################
+
+cd $twitch_dir
+echo &#34;- Corriendo en $twitch_dir&#34;
+
+# Comprobar dependencias
+mensaje&#43;=$&#39;Comprobando dependencias. . . . . . . . . . . &#39;
+dependencias
+comprobar $?
+
+# Buscar nuevos videos y convertirlos a mp3
+buscar_ultimos_yt &#34;$CANAL&#34;
+
+# Añadir info si hay nuevos vídeos y moverlos a la carpeta mp3
+if ls ./*.mp3 1&gt; /dev/null 2&gt;&amp;1; then
+    mensaje&#43;=$&#39;Añadiendo info del nuevo vídeo . . . . . . . . &#39;
+    tag_y_mover
+    comprobar $?
+fi
+
+# Actualizar el feed si hay nuevos vídeos
+if ls ./$CANAL/mp3/*.mp3 1&gt; /dev/null 2&gt;&amp;1; then
+    mensaje&#43;=$&#39;Actualizando el Feed . . . . . . . . . . . . . . . . &#39;
+    actualizar_feed &#34;$SERVIDOR&#34; &#34;$CANAL&#34; &#34;$TITULO&#34;
+    comprobar $?
+fi
+
+# Subir si hay nuevo contenido al servidor
+if ls ./$CANAL/mp3/*.mp3 1&gt; /dev/null 2&gt;&amp;1; then
+    mensaje&#43;=$&#34;Subiendo los mp3&#39;s al sevidor webdav . . .&#34;
+    subir_contenido &#34;$CANAL&#34;
+    comprobar $?
+fi
+
+# Envia el mensaje de telegram con el resultado
+fin=$( date &#43;%s )
+let duracion=$fin-$inicio
+mensaje&#43;=$&#39;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n&#39;
+mensaje&#43;=$&#34;Duración del Script:  $duracion segundos&#34;
+
+$notificacion &#34;$mensaje&#34;
+</code></pre></p><h3 id=enlaces-de-interés>Enlaces de interés</h3><ul><li><a href=https://gist.github.com/DiegoFleitas/c940d4b94d6b92b55a7084afe84bf571>GitHub Diego Fleitas - yt-dlp commands</a></li><li><a href=https://stackoverflow.com/questions/21356764/use-youtube-dl-to-download-new-videos-from-channel>StackOverFlow - Download new videos with youtube-dl</a></li><li><a href=https://unix.stackexchange.com/questions/463875/scripting-id3-tags-with-id3v2-and-sed>Unix Stack-Exchange - id3 tags</a></li><li><a href=https://github.com/yt-dlp/yt-dlp>yt-dlp</a></li><li><a href=https://write.corbpie.com/downloading-a-youtube-channel-with-yt-dlp/>Write - Download youtube channel with yt-dlp</a></li><li><a href=https://write.corbpie.com/downloading-youtube-videos-and-playlists-with-yt-dlp/>Write - Download youtube video & playlist with yt-dlp</a></li></ul></div><footer class=post__footer><div class="content post__content clearfix"><h3>Otros de mís artículos que te pueden interesar</h3><ul><li><a href=/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/>Del Blog a Twitter y Mastodon mediante rss y Bash</a></li><li><a href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li><li><a href=/crear-podcast-a-partir-de-un-canal-de-twitch/>Crear Podcast a partir de un canal de Twitch</a></li><li><a href=/mi-uso-de-alias-en-bash/>Mi uso de alias en bash</a></li><li><a href=/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/>Mi gestión de los archivos de configuración</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/bash/ rel=tag>bash</a></li></ul></div></footer></article></main><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=/unir-o-separar-en-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/ rel=prev><span class=pager__subtitle>«&#8201;Anterior</span><p class=pager__title>Unir o separar en varios pdf en linux desde la línea de comandos</p></a></div><div class="pager__item pager__item--next"><a class=pager__link href=/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/ rel=next><span class=pager__subtitle>Siguiente&#8201;»</span><p class=pager__title>Del Blog a Twitter y Mastodon mediante rss y Bash</p></a></div></nav><div class="content post__content clearfix"><h3>Comentarios</h3>Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href=https://emacs.ch/@sherlockes>@sherlockes</a> en Mastodon o Telegram.</div></div></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2023 Sherlockes.
+<span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span></br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a></div></div></footer></div><script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body></html>
