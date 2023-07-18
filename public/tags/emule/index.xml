@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>emule on Sherblog</title>
+    <link>https://sherlockes.github.io/tags/emule/</link>
+    <description>Recent content in emule on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Fri, 09 Jan 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/emule/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Los servidores de Emule caídos</title>
+      <link>https://sherlockes.github.io/los-servidores-de-emule-ca%C3%ADdos/</link>
+      <pubDate>Fri, 09 Jan 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/los-servidores-de-emule-ca%C3%ADdos/</guid>
+      <description>Son malos tiempos para el tema de los servidores de Emule. Es fácil que un buen día te encuentres con que no puedes conectar a ninguno de tu eterna lista de servidores ED2K pero tranquil@, lo principal es mantener la calma.
+Como primera medida (Si no la habías tomado anteriormente) es activar la Red Kademlia. El asunto es tan simple como ir al menú Preferencias-Conexión y en el apartado &amp;ldquo;Red&amp;rdquo; activar la casilla correspondiente a la red Kad.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Primeros pasos con Zerotier - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Una larga historia de como me he visto obligado a pasar de la VPN al uso de ZeroTier">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://www.sherblog.pro/images/20190314_probando_zerotier_00.jpg" />
+	<meta name="twitter:title" content="Primeros pasos con Zerotier"/>
+	<meta name="twitter:description" content="Una larga historia de como me he visto obligado a pasar de la VPN al uso de ZeroTier"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="sherblog.pro" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Primeros pasos con Zerotier">
+	<meta property="og:url"   content="https://sherlockes.github.io">
+	<meta property="og:description" content="Una larga historia de como me he visto obligado a pasar de la VPN al uso de ZeroTier"/>
+
+	<meta property="og:image" content="http://www.sherblog.pro/images/20190314_probando_zerotier_00.jpg" />
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Primeros pasos con Zerotier"/>
+<meta name="twitter:description" content="Una larga historia de como me he visto obligado a pasar de la VPN al uso de ZeroTier"/>
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Primeros pasos con Zerotier</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2019-03-27T00:00:00Z">2019-03-27</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/sherver/" rel="category">sherver</a>, <a class="meta__link" href="/categories/raspberry/" rel="category">Raspberry</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20190314_probando_zerotier_00.jpg" alt="Primeros pasos con Zerotier">
+		
+	</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Índice</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#la-situación">La situación.</a></li>
+    <li><a href="#el-diagnóstico">El diagnóstico</a></li>
+    <li><a href="#el-fallo">El fallo</a></li>
+    <li><a href="#probando-zerotier-one">Probando ZeroTier One</a>
+      <ul>
+        <li><a href="#zetorier-one-en-la-raspberry">Zetorier One en la Raspberry</a></li>
+        <li><a href="#zerotier-en-el-nas-synology-ds216ii">Zerotier en el NAS Synology DS216+II</a></li>
+        <li><a href="#zerotier-en-android">ZeroTier en Android</a></li>
+      </ul>
+    </li>
+    <li><a href="#zerotier-instalado-y-ahora-que">Zerotier instalado, y ahora que&hellip;</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<h2 id="la-situación">La situación.</h2>
+<p>Hace unos días que vengo teniendo problemas con la conexión VPN (<a href="https://sherlockes.github.io/raspberry-servidor-vpn/">Servidor VPN</a>) que utilizo para conectarme a la red de mi casa cuando estoy en movilidad. Parece que el problema no está en el servidor VPN que corre sobre la Raspberry B+ ni en el cliente de <a href="https://play.google.com/store/apps/details?id=de.blinkt.openvpn&amp;hl=es">openvpn</a> que utilizo en mi terminal Android, pero no ha sido fácil llegar a esta conclusión. Después de varias pruebas y de mucho tiempo funcionando de un día para otro y sin tocar ninguna configurando el sistema ha dejado de funcionar.</p>
+<h2 id="el-diagnóstico">El diagnóstico</h2>
+<p>A priori el fallo puede venir de varios sitios por lo que me dispongo a ir excluyendo uno tras otro.</p>
+<ul>
+<li>El cliente</li>
+<li>El servidor</li>
+<li>El redireccionamiento de ip</li>
+<li>El redireccionamiento de puertos</li>
+</ul>
+<p>En un primer momento, después de reconfigurar la conexión en el cliente vnp, de probar con distintos parámetros y de incluso reinstalarlo borrando los datos de configuración, he terminado por descartar que el fallo esté en el cliente.</p>
+<p>Puesto que la Raspberry se reinicia cada <a href="https://sherlockes.github.io/raspberry-reinicios-peri%C3%B3dicos/">dos días</a> el servidor PiVPN hace lo propio. Directamente paso a reinstalarlo pero la conexión vpn desde el exterior sigue sin funcionar.</p>
+<p>Otro motivo de error puede ser el redireccionamiento que, gracias a <a href="https://sherlockes.github.io/raspberry-acceso-desde-el-exterior/">NoIp</a>, utilizo para no tener que ir modificando continuamente la Ip dinamica que me asigna el operador telefónico.  Esta redirección parece que funciona correctamente pero con todo intento la conexión vpn sustituyendola por la ip pública asignada en ese momento y el fallo persiste en idéntica situación.</p>
+<p>La comunicación vía vpn la vengo realizando en los últimos meses a través del puerto 1194 UDP redireccionado a la ip de la Raspberry. Ya sólo me queda comprobar que esto sigue bien configurado.  Lo compruebo y parece que todo está bien pero voy un paso más allá gracias a un <a href="https://portchecker.co/">chequeador de puertos online</a> y observo como, a pesar de lo que indica la configuración del router, el puerto 1194 UDP no está abierto para mi ip pública.</p>
+<p><img src="/images/20190314_probando_zerotier_02.jpg" alt="imagen"></p>
+<h2 id="el-fallo">El fallo</h2>
+<p>Ya tengo acotado el origen de mis problemas, el router no abre el puerto para realizar la comunicación a pesar de que se lo indico adecuadamente en la configuración del mismo.</p>
+<p>Se trata de un Livebox Fibra de Orange y en la siguiente imagen se puede ver como el puerto parece estar abierto.</p>
+<p><img src="/images/20190314_probando_zerotier_01.jpg" alt="imagen"></p>
+<p>Pues nada, tal y como se puede ver en este <a href="https://comunidad.orange.es/t5/Solucionadores-Preg%C3%BAntales/Abrir-puertos-Livebox-Fibra/m-p/606138#M51023">hilo</a> con tengo abierto en el soporte de Orange realizo las siguientes pruebas con el router, unas según mi propio criterio y otras como respuesta a los comentarios de uno de los &ldquo;solucionadores&rdquo;:</p>
+<ul>
+<li>Reiniciar el Router</li>
+<li>Eliminar el puerto redireccionado y volverlo a crear</li>
+<li>Abrir el puerto mediante uPnP en lugar de desde NAT/PAT</li>
+<li>Restablecer el Router a los valores de fábrica</li>
+<li>Poner el Firewall del router al valor &ldquo;medio&rdquo;</li>
+<li>Usar un puerto por encima del 10000</li>
+</ul>
+<p>El caso es que después de todas estas pruebas y de buscar más información en la web no he sido capaz de solucionar el problema por lo que me dispongo a rodearlo usando una tecnología distinta.</p>
+<h2 id="probando-zerotier-one">Probando ZeroTier One</h2>
+<p>Uno de los productos de la compañia Zerotier es un software de código libre que establece conexiones punto a punto vpn entre computadores, teléfonos, apps&hellip; ZeroTier One es una solución alternativa al vpn clásico que es posible implementar de una forma más sencilla.  En principio utilizaré ZeroTier en los tres equipos que utilizo habitualmente:</p>
+<ul>
+<li>NAS Synology DS216+II</li>
+<li>Raspberry Pi 3 Model B+</li>
+<li>Lineage OS</li>
+</ul>
+<p>Antes de comenzar la instalación del software en cualquiera de los dispositivos nos crearemos una cuenta gratuita en <a href="https://my.zerotier.com">Zerotier</a> y en el apartado &ldquo;Networks&rdquo; crearemos una nueva red.  No voy a entrar en detalles ni peculiaridades ya que mis comocimientos todavía no me permiten dar muchas más explicaciones, si las quieres te recomiendo ver los vídeos de <a href="https://www.google.com/search?q=youtube+naseros+zerotier">Naseros</a> sobre Zerotier.</p>
+<p><img src="/images/20190314_probando_zerotier_03.jpg" alt="imagen"></p>
+<p>De aquí necesitamos el identificador de red, que en mi caso será 78898a1265hfg34b, para poder instalar el cliente Zerotier en cada uno de los dispositivos.</p>
+<h3 id="zetorier-one-en-la-raspberry">Zetorier One en la Raspberry</h3>
+<p>Bastan dos líneas de código, una de instalación del cliente y otra para unir el cliente a la red que hemos creado anteriormente.</p>
+<pre tabindex="0"><code>curl -s https://install.zerotier.com/ | sudo bash
+sudo zerotier-cli join 78898a1265hfg34b
+</code></pre><p>Ahora accederemos desde la <a href="https://my.zerotier.com">web</a> a la red que hemos creado y autorizaremos a la Raspberry a acceder a la misma habilitando el primer cuadro tal y como se muestra en la imagen.</p>
+<p><img src="/images/20190314_probando_zerotier_04.jpg" alt="imagen"></p>
+<p>Y ya está, vamos a por el siguiente dispositivo</p>
+<h3 id="zerotier-en-el-nas-synology-ds216ii">Zerotier en el NAS Synology DS216+II</h3>
+<p>Aquí la cosa se complica un poco más. Primero tenemos que determinar la versión a descargar según la arquitectura del procesador de nuestro nas.  Para Synology se puede buscar <a href="https://github.com/SynoCommunity/spksrc/wiki/Architecture-per-Synology-model">aquí</a>.  Para el caso de mi Synology DS216+II es fácil determinar que necesito descargar la versión <a href="https://download.zerotier.com/RELEASES/1.2.8/dist/zerotier-1.2.8r0-syn-braswell-6.1.spk">braswell (x64)</a>.</p>
+<p><img src="/images/20190314_probando_zerotier_05.jpg" alt="imagen"></p>
+<p>Con el archivo *.spk descargado ya podemos instalarlo en nuestro NAS, para lo cual realizeremos una instalación manual desde el centro de paquetes y seleccionando el archivo descargado en nuestro pc.</p>
+<p><img src="/images/20190314_probando_zerotier_06.jpg" alt="imagen"></p>
+<p>A partir de aquí no resta más que abrir la aplicación e introducir en el recuadro de la esquina inferior derecha (Si, tambien hay que pulsar el botón &ldquo;Join&rdquo;) el identificador de la red que hemos creado para unirnos a esta.</p>
+<p><img src="/images/20190314_probando_zerotier_07.jpg" alt="imagen"></p>
+<p>Por último hay que aceptar esta nueva onexión a las red desde la web de <a href="https://my.zerotier.com">zeroTier</a>.</p>
+<h3 id="zerotier-en-android">ZeroTier en Android</h3>
+<p>Aquí nos encontramos con un problema &ldquo;importante&rdquo; y es que la única manera oficial de instalar la aplicación Zerotioer One es desde la tienda <a href="https://play.google.com/store/apps/details?id=com.zerotier.one&amp;hl=es">Google Play</a> por lo que deberas tener instalados en tu terminal los servicios de Google.  Cierto es que por la web no es complicado encontrar apk&rsquo;s con la aplicación para descargar pero al no ser sitios soportados por el fabricante con son fuentes para nada confiables.</p>
+<p>Con la aplicación ya instalada y abierta sólo hay que seguir tres pasos tal y como se puede ver en la siguiente imagen.</p>
+<ul>
+<li>Pulsar para añadir una nueva red</li>
+<li>Introducir el identificador de red y añadirla</li>
+<li>Activar la red y comprobar que estamos &ldquo;ONLINE&rdquo;</li>
+</ul>
+<blockquote>
+<p>En la barra superior de notificaciones podremos ver como ha aparecido una &ldquo;llave&rdquo; que indica que estamos bajo una conexión VPN</p>
+</blockquote>
+<p><img src="/images/20190314_probando_zerotier_08.jpg" alt="imagen"></p>
+<p>Ahora y del mismo modo que en los casos anteriores tendremos que permitir el aceso a la red de este dispositivos desde  la web de <a href="https://my.zerotier.com">Zerotier</a>.</p>
+<blockquote>
+<p>Para realizar esta conexión en movilidad sin el amparo de una red wifi deberemos activar la opción &ldquo;Use Cellular Data&rdquo; desde el menú de configuración.</p>
+</blockquote>
+<h2 id="zerotier-instalado-y-ahora-que">Zerotier instalado, y ahora que&hellip;</h2>
+<p>Se suele dar el caso de que estoy fuera de casa y necesito acceder a la Raspberry o el NAS que tienen instalado Zerotier.  Antes de nada necesito conocer la IP que Zerotier ha asignado al dispositivo que necesito conectarme.  En mi caso se puede ver en la siguiente imagen como la Raspberry ha adquirido la IP 192.168.191.168</p>
+<p><img src="/images/20190314_probando_zerotier_09.jpg" alt="imagen"></p>
+<p>Con todo lo anterior ya estoy preparado para acceder desde fuera de mi red local a la Raspberry.  Utilizaré una aplicación u otra dependiendo del servicio al que me quiera conectarme</p>
+<ul>
+<li>Chrome para acceder al servidor web</li>
+<li>Termux para acceder a través de ssh</li>
+<li>ES Explorador de archivos para acceder a través de samba o ftp</li>
+</ul>
+
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/gesti%C3%B3n-de-usuarios-y-passwords/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Gestión de usuarios y passwords</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/flujo-de-im%C3%A1genes-en-linux/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Flujo de imágenes en Linux</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://emacs.ch/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2023 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script></body>
+</html>

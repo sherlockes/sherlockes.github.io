@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tracks on Sherblog</title>
+    <link>https://sherlockes.github.io/tags/tracks/</link>
+    <description>Recent content in tracks on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 25 Feb 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/tracks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Barrancos del sur de Zaragoza</title>
+      <link>https://sherlockes.github.io/barrancos-del-sur-de-zaragoza/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/barrancos-del-sur-de-zaragoza/</guid>
+      <description>Para todo aquel que disfrute de la bicicleta de montaña y alguna vez se deje caer por Zaragoza, aquí una recopilación con los principales barrancos que se pueden encontrar en la zona sur de la capital aragonesa.
+También puedes descargar el archivo desde aquí para abrirlo con con Google Earth o tu editor preferido.
+Intentaré periódicamente ir actualizando este archivo con nuevos barrancos y sendas. 😉</description>
+    </item>
+    
+    <item>
+      <title>La ruta perfecta por los meandros del Ebro</title>
+      <link>https://sherlockes.github.io/la-ruta-perfecta-por-los-meandros-del-ebro/</link>
+      <pubDate>Thu, 10 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/la-ruta-perfecta-por-los-meandros-del-ebro/</guid>
+      <description>Después de algunos miles de kilómetros dando vueltas por la zona, creo que estoy en condiciones de dibujar lo que para mi es la ruta perfecta para bicicleta de montaña por la extraordinaria zona de los meandros del Ebro.
+Son apenas 45 kilómetros que a priori pueden parecer cortos pero que cuesta hacer en menos de tres horas. La ruta tiene de todo, subidas de hasta un 30% de desnivel, senderos, bajadas técnicas y por desgracia un par de kilómetros de carretera.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on Sherblog</title>
+    <link>https://sherlockes.github.io/categories/hugo/</link>
+    <description>Recent content in hugo on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sat, 29 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arquetipos en Hugo (Archetypes)</title>
+      <link>https://sherlockes.github.io/arquetipos-en-hugo-archetypes/</link>
+      <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/arquetipos-en-hugo-archetypes/</guid>
+      <description>&lt;p&gt;Cada vez que se comienza la creación de un artículo en Hugo partimos del comando &lt;code&gt;hugo new post/nuevo.md&lt;/code&gt; que hace uso de los arquetipos creados para definir la plantilla de este artículo. Aquí dejo como los tengo configurados para ahorrar tiempo.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo con Github actions</title>
+      <link>https://sherlockes.github.io/hugo-con-github-actions/</link>
+      <pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/hugo-con-github-actions/</guid>
+      <description>&lt;p&gt;Durante mucho tiempo he tenido alojado este blog en &lt;a href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt; pero la publicación se realizaba en local mediante la Raspberry. Ahora voy a generar la publicación del blog a partir de un propio repositorio mediante las &lt;a href=&#34;https://github.com/features/actions&#34;&gt;acciones de GitHub&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Migrando Hugo a Gitlab</title>
+      <link>https://sherlockes.github.io/migrando-hugo-a-gitlab/</link>
+      <pubDate>Tue, 25 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/migrando-hugo-a-gitlab/</guid>
+      <description>&lt;p&gt;Me dio pereza la migración de Github de este blog creado con &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; en el momento que la compró Microsoft y ahora afronto el problema que ha sido más laborioso de lo previsto.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mathjax en Hugo</title>
+      <link>https://sherlockes.github.io/mathjax-en-hugo/</link>
+      <pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/mathjax-en-hugo/</guid>
+      <description>&lt;p&gt;En un post de Hugo podemos ser prácticos e incluir una ecuación matemática simplemente insertando una imagen de la misma o ser mucho más elegantes haciéndolo mediante &lt;a href=&#34;https://www.mathjax.org&#34;&gt;Mathjax&lt;/a&gt;. A continuación voy a explicar como lo hago.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Contenido relacionado en Hugo</title>
+      <link>https://sherlockes.github.io/contenido-relacionado-en-hugo/</link>
+      <pubDate>Tue, 14 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/contenido-relacionado-en-hugo/</guid>
+      <description>&lt;p&gt;Para que el visitante obtenga una mejor experiencia de tu contenido, es importante mostrarle contenido relaccionado para que siga leyendo a continuación de loa que ya ha consultado. Así lo he implementado en &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo - Creando una lista de artículos por categoría.</title>
+      <link>https://sherlockes.github.io/hugo-creando-una-lista-de-art%C3%ADculos-por-categor%C3%ADa./</link>
+      <pubDate>Sat, 10 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/hugo-creando-una-lista-de-art%C3%ADculos-por-categor%C3%ADa./</guid>
+      <description>&lt;p&gt;No se si será la forma más sencilla, es la que yo he utilizado para crear una lista de artículos publicados en cierta categoría de mi blog desarrollado en &lt;a href=&#34;https://gohugo.io&#34;&gt;hugo&lt;/a&gt; a partir del uso de &amp;ldquo;Shortcodes&amp;rdquo; personalizados.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Incrustar texto externo en Hugo</title>
+      <link>https://sherlockes.github.io/incrustar-texto-externo-en-hugo/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/incrustar-texto-externo-en-hugo/</guid>
+      <description>&lt;p&gt;Hace tiempo que vengo pensando en la capacidad de poder introducir texto desde un archivo externo dentro de los post que publico en &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;. Hoy se me ha encendido la bombilla.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Insertar comentarios en Hugo</title>
+      <link>https://sherlockes.github.io/insertar-comentarios-en-hugo/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/insertar-comentarios-en-hugo/</guid>
+      <description>&lt;p&gt;Cuando no se tiene mucho tiempo libre, la publicación de un post puede demorarse a lo largo de varios días. Para eso Se mantiene la entrada en modo &amp;ldquo;borrador&amp;rdquo;. Pero&amp;hellip; ¿Como lo hago al actualizar una entrada?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mis vértices geodésicos en Hugo</title>
+      <link>https://sherlockes.github.io/mis-v%C3%A9rtices-geod%C3%A9sicos-en-hugo/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/mis-v%C3%A9rtices-geod%C3%A9sicos-en-hugo/</guid>
+      <description>&lt;p&gt;Hace más de dos años desde que visité mi ultimo vértice geodésico. Durante todo este tiempo el proyecto que empecé en el ya lejano 2008 lo he tenido aparcado por unos cuantos motivos&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Insertar en Twitter enlaces a Hugo con imagen</title>
+      <link>https://sherlockes.github.io/insertar-en-twitter-enlaces-a-hugo-con-imagen/</link>
+      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/insertar-en-twitter-enlaces-a-hugo-con-imagen/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Actualización:&lt;/strong&gt; Hace un tiempo ya me encontré con este mismo problema, ahora me ocurre que, tras actualizar el tema (&lt;a href=&#34;https://themes.gohugo.io/mainroad/&#34;&gt;Mainroad&lt;/a&gt;) en la web desarrollada en &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; no aparece la imagen de la tarjeta que &lt;a href=&#34;https://twitter.com&#34;&gt;Twitter&lt;/a&gt; genera al enlazar un post de la web en un Tweet.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raspberry on Sherblog</title>
+    <link>https://sherlockes.github.io/categories/raspberry/</link>
+    <description>Recent content in Raspberry on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Tue, 01 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/raspberry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Usb externo controlado desde puerto Gpio</title>
+      <link>https://sherlockes.github.io/usb-externo-controlado-desde-puerto-gpio/</link>
+      <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/usb-externo-controlado-desde-puerto-gpio/</guid>
+      <description>&lt;p&gt;Tenemos un disco duro externo conectado a la Raspberry por un puerto Usb y alimentado por un transformador. Veamos como es posible encenderlo gracias a un relé de 5V sólo cuando cuando vayamos a emplearlo.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Clonar el disco de arranque de la raspberry</title>
+      <link>https://sherlockes.github.io/clonar-el-disco-de-arranque-de-la-raspberry/</link>
+      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/clonar-el-disco-de-arranque-de-la-raspberry/</guid>
+      <description>&lt;p&gt;La mejor copia de seguridad que puedes hacer del contenido de la Raspberry es una imagen de la tarjeta sobre la que está funcionando. Dejo a continuación un par de métodos para hacerlo de una forma rápida y sencilla.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Que hace la raspberry sin mi</title>
+      <link>https://sherlockes.github.io/que-hace-la-raspberry-sin-mi/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/que-hace-la-raspberry-sin-mi/</guid>
+      <description>&lt;p&gt;La Raspberry me sirve para hacer muchas cosas aunque aquí sólo voy a contar ahora las que hace ella sola cuando yo no estoy delante.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sincronizar Google Photos desde la Raspberry</title>
+      <link>https://sherlockes.github.io/sincronizar-google-photos-desde-la-raspberry/</link>
+      <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/sincronizar-google-photos-desde-la-raspberry/</guid>
+      <description>&lt;p&gt;Hasta ahora había sincronizado mi galería de Google Fotos con el NAS desde el pc de sobremesa con Linux Mint, voy a intentar hacerlo desde la Raspberry para no tener que encender el pc.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Instalación de Home Assistant en Raspberry</title>
+      <link>https://sherlockes.github.io/instalaci%C3%B3n-de-home-assistant-en-raspberry/</link>
+      <pubDate>Thu, 27 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/instalaci%C3%B3n-de-home-assistant-en-raspberry/</guid>
+      <description>&lt;p&gt;Las dudas surgen cuando tienes varias posibilidades. Esto es lo que me ha pasado a la hora de empezar las pruebas con Home Assistant en una Raspberry Pi 4 de 4gb de ram sobre un stick usb.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Montaje y ssh</title>
+      <link>https://sherlockes.github.io/raspberry-montaje-y-ssh/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/raspberry-montaje-y-ssh/</guid>
+      <description>&lt;h3 id=&#34;montaje-y-acceso-ssh&#34;&gt;Montaje y acceso ssh&lt;/h3&gt;
+&lt;p&gt;Ya tengo todo lo que creo que necesito.  Una &lt;a href=&#34;https://www.amazon.es/gp/product/B01CD5VC92/ref=oh_aui_detailpage_o00_s01?ie=UTF8&amp;amp;psc=1&#34;&gt;Raspberry&lt;/a&gt;, una &lt;a href=&#34;https://www.amazon.es/gp/product/B013UDL58E/ref=oh_aui_detailpage_o00_s00?ie=UTF8&amp;amp;psc=1&#34;&gt;tarjeta micro sd&lt;/a&gt;, una &lt;a href=&#34;https://www.amazon.es/gp/product/B01DDFFOYK/ref=oh_aui_detailpage_o00_s01?ie=UTF8&amp;amp;psc=1&#34;&gt;fuente de alimentación&lt;/a&gt; y un &lt;a href=&#34;https://www.amazon.es/gp/product/B001U3ZRBS/ref=oh_aui_detailpage_o00_s01?ie=UTF8&amp;amp;psc=1&#34;&gt;cable de red&lt;/a&gt;.  Total 59€ de inversión inicial que supongo no se quedarán ahí.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Termostato Raspberry</title>
+      <link>https://sherlockes.github.io/termostato-raspberry/</link>
+      <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/termostato-raspberry/</guid>
+      <description>&lt;p&gt;Con la reciente muerte de termostato inteligente de NetAtmo a causa de una simple pila sulfatada me he decidido a crear el mio propio con la raspberry y un poco de Python. Iré escribiendo aquí los procesos con el mismo.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Script de configuración para Raspberry</title>
+      <link>https://sherlockes.github.io/script-de-configuraci%C3%B3n-para-raspberry/</link>
+      <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/script-de-configuraci%C3%B3n-para-raspberry/</guid>
+      <description>&lt;p&gt;La parte más tediosa del cacharreo con la Raspberry es el tener que de nuevo comenzar la instalación desde cero y realizar siempre la misma configuración inicial.  Con este Script tengo automatizado el proceso.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Actualización: El día que he necesitado el script me ha dado varios fallos así que toca darle una vuelta&amp;hellip;&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Instalación de Moodle en Raspberry Pi</title>
+      <link>https://sherlockes.github.io/instalaci%C3%B3n-de-moodle-en-raspberry-pi/</link>
+      <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/instalaci%C3%B3n-de-moodle-en-raspberry-pi/</guid>
+      <description>&lt;p&gt;El desarrollo&amp;hellip;
+Recientemente he probado &lt;a href=&#34;https://moodle.org/?lang=es&#34;&gt;Moodle&lt;/a&gt; como plataforma para publicar cursos y me ha parecido una plataforma extremadamente potente. Aquí no voy a desgranar las posibilidades del mismo sino más bien el proceso de como he montado la plataforma sobre una &lt;a href=&#34;https://www.raspberrypi.org/products/raspberry-pi-3-model-b/&#34;&gt;Raspberry Pi 3 Model B&lt;/a&gt; gracias a &lt;a href=&#34;https://moodlebox.net/en/&#34;&gt;MoodleBox&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Raspberry configurando rclone sin entorno gráfico</title>
+      <link>https://sherlockes.github.io/raspberry-configurando-rclone-sin-entorno-gr%C3%A1fico/</link>
+      <pubDate>Thu, 11 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/raspberry-configurando-rclone-sin-entorno-gr%C3%A1fico/</guid>
+      <description>&lt;p&gt;En linux no hay cliente oficial para acceder a Google Drive pero por suerte hay varias utilizades que permiten realizar enta labor.  Hay cientos de post al respecto de la existencia de estas utilidades, por lo que no voy a crear uno más, simplemente voy a explicar mi experiencia con una de las que yo utilizo. &lt;a href=&#34;https://rclone.org&#34;&gt;Rclone&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

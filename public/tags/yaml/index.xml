@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>yaml on Sherblog</title>
+    <link>https://sherlockes.github.io/tags/yaml/</link>
+    <description>Recent content in yaml on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Mon, 24 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/yaml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reseteo automático de Home assistant</title>
+      <link>https://sherlockes.github.io/reseteo-autom%C3%A1tico-de-home-assistant/</link>
+      <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/reseteo-autom%C3%A1tico-de-home-assistant/</guid>
+      <description>&lt;p&gt;Por muy estable que sea un sistema, resetearlo de vez en cuando se suele venir bien y nos sirve para asegurar un correcto arranque. En mi caso hago que la Raspberry sobre la que corre &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; se resetee todos los días a las cuatro de la mañana mediante una automatización que a continuación paso a detallar.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

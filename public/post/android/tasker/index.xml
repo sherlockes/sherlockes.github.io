@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tasker on Sherblog</title>
+    <link>https://sherlockes.github.io/post/android/tasker/</link>
+    <description>Recent content in Tasker on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Mon, 11 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/post/android/tasker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Radares de tráfico en Android</title>
+      <link>https://sherlockes.github.io/radares-de-tr%C3%A1fico-en-android/</link>
+      <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/radares-de-tr%C3%A1fico-en-android/</guid>
+      <description>&lt;p&gt;En el coche resulta útil un avisador de radares para &amp;ldquo;levantar el pie&amp;rdquo; en determinados momentos o simplemente para ser más riguroso con el respeto de la velocidad máxima de la vía. Para esto también uso Tasker y aquí voy a mostrar cómo lo hago.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Como ahorrar batería en el trabajo con Tasker</title>
+      <link>https://sherlockes.github.io/como-ahorrar-bater%C3%ADa-en-el-trabajo-con-tasker/</link>
+      <pubDate>Sun, 11 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/como-ahorrar-bater%C3%ADa-en-el-trabajo-con-tasker/</guid>
+      <description>El problema Desde hace mucho tiempo tengo la suerte o desgracia de no llevar el móvil encima mientras estoy en el trabajo, se queda en la taquilla del vestuario y la mayoría de los días allí permanece sin tocarlo esperando a que se acabe la jornada.
+Pero esto no quiere decir que no me de ningún quebradero de cabeza, uno de los problemas que se me plantea es el gasto de batería ya que la taquilla es una perfecta jaula de faraday y el teléfono invierte mucho esfuerzo en buscar conectividad móvil.</description>
+    </item>
+    
+    <item>
+      <title>Apagar la pantalla con Tasker en Android</title>
+      <link>https://sherlockes.github.io/apagar-la-pantalla-con-tasker-en-android/</link>
+      <pubDate>Sun, 04 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/apagar-la-pantalla-con-tasker-en-android/</guid>
+      <description>La receta que mas utilizo en Tasker es al mismo tiempo una de las más sencillas. Está claro que si quieres prolongar la duración de la batería de tu teléfono la solución más sencilla pasa por tener la pantalla apagada el mayor tiempo posible. Además, cuando te metes el dispositivo móvil al bolsillo es muy interesante que este tenga la pantalla bloqueada para evitar pulsaciones fantasma. Muchos terminales ofrecen la posibilidad del bloqueo y desbloqueo con un doble toque.</description>
+    </item>
+    
+    <item>
+      <title>Tasker</title>
+      <link>https://sherlockes.github.io/tasker/</link>
+      <pubDate>Sun, 14 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/tasker/</guid>
+      <description>Es fácil caer en la compra compulsiva de un teléfono de 1000€ con el que la mayoría de usuarios sólo son capaces de hacer mejores fotos que con otro de 200. Lo difícil es hacer con un teléfono de 200€ lo que la mayoría de usuarios no saben hacer con uno de 1000.
+Pues bien, el telefono que ahora uso es un BQ Aquaris E5, ya ha cumplido los dos años y en su día no costaba los 200€.</description>
+    </item>
+    
+    <item>
+      <title>Reinicio programado con Tasker en Android</title>
+      <link>https://sherlockes.github.io/reinicio-programado-con-tasker-en-android/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/reinicio-programado-con-tasker-en-android/</guid>
+      <description>El Problema Si eres de los que no apaga nunca el smartphone esta pequeña receta te va a interesar. Aunque soy un completo desconocedor de los motivos específicos, es fácil comprobar como si nunca apagas del teléfono, con el paso de los días empiezan a aparecer consumos de batería anómalos y ciertas inestabilidades en el sistema. La solución Para evitarlo me he creado una pequeña receta en Tasker según la cual se produce un reinicio automático del terminal los lunes, miércoles y viernes a las dos de la madrugada.</description>
+    </item>
+    
+  </channel>
+</rss>

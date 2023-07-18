@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Sherblog</title>
+    <link>https://sherlockes.github.io/tags/git/</link>
+    <description>Recent content in git on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Thu, 27 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo con Github actions</title>
+      <link>https://sherlockes.github.io/hugo-con-github-actions/</link>
+      <pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/hugo-con-github-actions/</guid>
+      <description>&lt;p&gt;Durante mucho tiempo he tenido alojado este blog en &lt;a href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt; pero la publicación se realizaba en local mediante la Raspberry. Ahora voy a generar la publicación del blog a partir de un propio repositorio mediante las &lt;a href=&#34;https://github.com/features/actions&#34;&gt;acciones de GitHub&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Migrando Hugo a Gitlab</title>
+      <link>https://sherlockes.github.io/migrando-hugo-a-gitlab/</link>
+      <pubDate>Tue, 25 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/migrando-hugo-a-gitlab/</guid>
+      <description>&lt;p&gt;Me dio pereza la migración de Github de este blog creado con &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; en el momento que la compró Microsoft y ahora afronto el problema que ha sido más laborioso de lo previsto.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

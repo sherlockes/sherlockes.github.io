@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dotfiles on Sherblog</title>
+    <link>https://sherlockes.github.io/tags/dotfiles/</link>
+    <description>Recent content in dotfiles on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/dotfiles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mi gestión de los archivos de configuración</title>
+      <link>https://sherlockes.github.io/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/</guid>
+      <description>&lt;p&gt;Que dolor de cabeza resulta el perder la configuración del equipo tras la reinstalación del sistema operativo. Así evito la pérdida y realizo la sincronización de los archivos de configuración.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

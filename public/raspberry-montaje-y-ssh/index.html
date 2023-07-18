@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Raspberry Montaje y ssh - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Primera fase con el montaje, la creación de la imagen y la habilitación del acceso ssh">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://www.sherblog.pro/images/raspberry_logo.png" />
+	<meta name="twitter:title" content="Raspberry Montaje y ssh"/>
+	<meta name="twitter:description" content="Primera fase con el montaje, la creación de la imagen y la habilitación del acceso ssh"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="sherblog.pro" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Raspberry Montaje y ssh">
+	<meta property="og:url"   content="https://sherlockes.github.io">
+	<meta property="og:description" content="Primera fase con el montaje, la creación de la imagen y la habilitación del acceso ssh"/>
+
+	<meta property="og:image" content="http://www.sherblog.pro/images/raspberry_logo.png" />
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Raspberry Montaje y ssh"/>
+<meta name="twitter:description" content="Primera fase con el montaje, la creación de la imagen y la habilitación del acceso ssh"/>
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Raspberry Montaje y ssh</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-04-28T00:00:00Z">2021-04-28</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/raspberry/" rel="category">Raspberry</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/raspberry_logo.png" alt="Raspberry Montaje y ssh">
+		
+	</figure><div class="content post__content clearfix">
+			<h3 id="montaje-y-acceso-ssh">Montaje y acceso ssh</h3>
+<p>Ya tengo todo lo que creo que necesito.  Una <a href="https://www.amazon.es/gp/product/B01CD5VC92/ref=oh_aui_detailpage_o00_s01?ie=UTF8&amp;psc=1">Raspberry</a>, una <a href="https://www.amazon.es/gp/product/B013UDL58E/ref=oh_aui_detailpage_o00_s00?ie=UTF8&amp;psc=1">tarjeta micro sd</a>, una <a href="https://www.amazon.es/gp/product/B01DDFFOYK/ref=oh_aui_detailpage_o00_s01?ie=UTF8&amp;psc=1">fuente de alimentación</a> y un <a href="https://www.amazon.es/gp/product/B001U3ZRBS/ref=oh_aui_detailpage_o00_s01?ie=UTF8&amp;psc=1">cable de red</a>.  Total 59€ de inversión inicial que supongo no se quedarán ahí.</p>
+<p>Rápidamente me vengo arriba y entro el la web de Raspberry Pi para ver como empezar con el cacharro, ya que estos días desde que lo pedí todo hasta que me ha llegado no me he preocupado de nada.  Primer jarro de agua fría, ya que veo que necesito un ratón, un teclado y un cable hdmi según la <a href="https://www.raspberrypi.org/learning/hardware-guide">guía oficial</a> de Raspberry.  Pero antes de que sumerja en una profunda frustración navego un poco por la red y veo que es posible configurarla sin monitor ni teclado tal y como se explica en <a href="https://www.innerzaurus.com/diy/raspberry-pi/configurar-una-raspberry-pi-sin-monitor-ni-teclado">Innerzaurus</a> o en <a href="http://algoentremanos.com/raspberry-pi-2-raspberry-pi-b-como-configurar-tu-nueva-raspberry-pi-sin-teclados-o-pantallas-extra">Algoentremanos</a>.  Hay esperanza de poder seguir adelante sin gastar más dinero.</p>
+<p>Bueno, ya estamos metidos en el fregado&hellip;</p>
+<ul>
+<li>Descargamos <a href="https://www.raspberrypi.org/software/operating-systems/">Raspberry Pi OS</a> (La versión Lite que pesa menos y no necesitamos entorno gráfico)</li>
+<li>Para Windows descargamos <a href="https://www.sdcard.org/downloads/formatter_4">SD Card Formatter</a> para formatear la tarjeta de memoria</li>
+<li>Para Windows descargamos <a href="https://sourceforge.net/projects/win32diskimager">Win32 Disk Imager</a> para grabar la imagen en la tarjeta</li>
+<li>Para Linux Mint descargamos <a href="https://www.balena.io/?ref=etcher">Balena Etcher</a></li>
+</ul>
+<blockquote>
+<p>Recientemente, la fundacion Raspberry ha creado una utilidad para directamente descargar la ultima imagen de la distribución que deseemos y tostarla sobre la tarjeta sd o usb, es posible descargarla desde <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a> Una alternativa mucho más sencilla y rapida a descargar, descomprimir, formatear y escribir.</p>
+</blockquote>
+<p>Con la fuente de alimentación ha venido una pequeña caja transparente y unos disipadores para los microcontroladores, faena de cirujano para montar todo y ya está el hardware preparado.</p>
+<ul>
+<li>Para Windows
+<ul>
+<li>Se descomprime la imagen de Rasbian (Winzip, Winrar&hellip;)</li>
+<li>Se formatea la tarjeta de memoria con SD Card Formatter</li>
+<li>Se graba la imagen en la tarjeta con Win32 Disk Imager</li>
+</ul>
+</li>
+<li>Para Linux Mint
+<ul>
+<li>Se graba la imagen directo desde el zip con Etcher</li>
+</ul>
+</li>
+<li>En el directorio raiz hay que crear un archivo &ldquo;ssh&rdquo; sin extensión en la carpeta &ldquo;boot&rdquo;</li>
+</ul>
+<p><img src="/images/20180401_raspberry_montaje_ssh_01.jpg" alt="Imagen_01"></p>
+<blockquote>
+<p>En el caso de Windows, una altermativa al uso de SD Card Formatter y Win32 Disk Imager es usar Rufus, un software gratuito con una versión portable que puedes descargar desde <a href="http://rufus.akeo.ie">http://rufus.akeo.ie</a> y hacemos los los pasos en uno creando un disco de arranque con una imagen DD a partir de la imagen descargada.</p>
+</blockquote>
+<p>Al intentar crear el archivo &ldquo;ssh&rdquo; que habilita el terminal para poder manejar la Raspberry en remoto me encuentro con el primer problema, y es que al intentar crear el archivo me dice que la tarjeta está protegida contra la escritura.  No se si es problema del lector de tarjetas, del adaptador de SD a MicroSD o del propio windows pero el caso es que monto la MicroSD en un lector de tarjetas usb y me deja crear el archivo sin ningún problema.</p>
+<p>Ya está todo listo para conectar la Raspberry al router mediante el cable de red, introducir la tarjeta de memoria y conectarle la fuente de alimentación.  No se cuanto tiempo hay que esperar para que el sistema arranque, pero como voy escribiendo al tiempo que hago las cosas, soy lo suficientemente lento para que el sistema haya arrancado cuando estoy listo para dar el siguiente paso.  Ahora necesito otras utilidades para seguir adelante, una para averiguar la dirección ip con la que se ha conectado la Raspberry a la red local y para conectarme mediante ssh.</p>
+<ul>
+<li>En Windows
+<ul>
+<li>Para averiguar la ip utilizo <a href="http://www.the-sz.com/products/portscan">PortScan</a></li>
+<li>Para conectarme mediante ssh uso <a href="http://www.putty.org">Putty</a></li>
+</ul>
+</li>
+<li>En Linux Mint
+<ul>
+<li>Para averiguar la ip utilizo nmap
+<ol>
+<li>Averiguar la la ip del pc desde el qe estamos trabajando &lsquo;Hostname -I&rsquo;</li>
+<li>Instalar la aplicación &ldquo;nmap&rdquo;&lsquo;sudo apt install nmap&rsquo;</li>
+<li>Listar todas las ip&rsquo;s activas de la red &lsquo;sudo nmap -sn 192.168.1.0/24&rsquo;</li>
+</ol>
+</li>
+<li>Para conectarme mediante ssh uso la terminal</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Junto con nmap resulta muy interesante las instalación de &ldquo;nast&rdquo; y obtener todas las IP de la red local junto con su MAC gracias al comando &ldquo;sudo nast -m&rdquo;</p>
+</blockquote>
+<p><img src="/images/20180401_raspberry_montaje_ssh_02.jpg" alt="Imagen_02"></p>
+<p>Averiguo que la Raspberry se ha conectado a la ip 192.168.1.118 y ya puedo arrancar Putty y logarme con el usuario &ldquo;pi&rdquo; y el password &ldquo;raspberry&rdquo; o bien en linux abrir el terminal y ejecutar el comando &lsquo;ssh <a href="mailto:pi@192.168.1.118">pi@192.168.1.118</a>&rsquo;.  Ya estamos inmersos en la terminal y podemos entrar en la configuración mediante la siguiente línea de comandos.</p>
+<p><code>sudo raspi-config</code></p>
+<ul>
+<li>Cambiamos la contraseña para el usuario &ldquo;pi&rdquo;</li>
+<li>Cambiamos la codificación al castellano (ES_ ES.UTF8)</li>
+<li>Cambiamos la hora a la de Madrid</li>
+</ul>
+<pre tabindex="0"><code>sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install rpi-update
+sudo rpi-update
+</code></pre><p>Y hasta aquí el primer día, apagamos la Raspberry y mañana más&hellip;</p>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/raspberry-y-docker/">Raspberry y Docker</a></li>
+	    
+	    <li><a href="/raspberry-servidor-vpn/">Raspberry Servidor VPN</a></li>
+	    
+	    <li><a href="/raspberry-acceso-desde-el-exterior/">Raspberry Acceso desde el exterior</a></li>
+	    
+	    <li><a href="/raspberry-reinicios-peri%C3%B3dicos/">Raspberry Reinicios periódicos</a></li>
+	    
+	    <li><a href="/raspberry-copia-de-seguridad/">Raspberry Copia de seguridad</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/desarrollo/" rel="tag">Desarrollo</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/termostato-raspberry/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Termostato Raspberry</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/instalaci%C3%B3n-de-home-assistant-en-raspberry/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Instalación de Home Assistant en Raspberry</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://emacs.ch/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2023 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script></body>
+</html>

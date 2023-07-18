@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Apagar la pantalla con Tasker en Android - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Apagar la pantalla con Tasker en Android">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://www.sherblog.pro/images/20180109_tasker_pantalla.jpg" />
+	<meta name="twitter:title" content="Apagar la pantalla con Tasker en Android"/>
+	<meta name="twitter:description" content="Apagar la pantalla con Tasker en Android"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="sherblog.pro" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Apagar la pantalla con Tasker en Android">
+	<meta property="og:url"   content="https://sherlockes.github.io">
+	<meta property="og:description" content="Apagar la pantalla con Tasker en Android"/>
+
+	<meta property="og:image" content="http://www.sherblog.pro/images/20180109_tasker_pantalla.jpg" />
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Apagar la pantalla con Tasker en Android"/>
+<meta name="twitter:description" content="Apagar la pantalla con Tasker en Android"/>
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Apagar la pantalla con Tasker en Android</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-02-04T00:00:00Z">2018-02-04</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/tasker/" rel="category">Tasker</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20180109_tasker_pantalla.jpg" alt="Apagar la pantalla con Tasker en Android">
+		
+	</figure><div class="content post__content clearfix">
+			<p>La receta que mas utilizo en Tasker es al mismo tiempo una de las más sencillas. Está claro que si quieres prolongar la duración de la batería de tu teléfono la solución más sencilla pasa por tener la pantalla apagada el mayor tiempo posible. Además, cuando te metes el dispositivo móvil al bolsillo es muy interesante que este tenga la pantalla bloqueada para evitar pulsaciones fantasma. Muchos terminales ofrecen la posibilidad del bloqueo y desbloqueo con un doble toque. Es una opción realmente útil que yo usaba mientras tuve instalado el firmware oficial del fabricante pero que perdí al mudarme a Lineage de forma que ahora solo funciona de forma nativa bien para encender la pantalla o bien para apagarla desde la pantalla de bloqueo. Para combatir esta carencia he creado una pequeña tarea dentro de Tasker basada en el plugin <a href="https://play.google.com/store/apps/details?id=com.intangibleobject.securesettings.plugin">Secure Settings</a>.</p>
+<p>Software necesario:</p>
+<ul>
+<li>Tasker (2.99E) disponible en la <a href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&amp;hl=es">Play Store</a></li>
+<li>Plugin Secure Settings (gratis) disponible en la <a href="https://play.google.com/store/apps/details?id=com.intangibleobject.securesettings.plugin&amp;hl=es">Play Store</a></li>
+</ul>
+<p>Pasos a seguir:</p>
+<ul>
+<li>Crear una nueva tarea</li>
+<li>Añadir una nueva acción</li>
+<li>Seleccionar Plugin</li>
+<li>Seleccionar Secure Settings</li>
+<li>En el menú “Configuración” pulsar sobre el lápiz</li>
+<li>En el menú “Dev Admin Actions” seleccionar “Lock Device”</li>
+<li>Marcar la opción “Device Admin Enabled”</li>
+<li>Guardar los cambios y volver atrás</li>
+</ul>
+<p>Desde el botón central de la barra inferior podemos asignar una imagen a la tarea y ya la tenemos terminada. Debería quedar algo así.</p>
+<p><img src="/images/20180109_tasker_pantalla_01.jpg" alt="pantalla tasker"></p>
+<p>Ahora solo resta agregar un widget con un acceso directo a esta tarea en la pantalla que deseemos de nuestro launcher y cuando lo pulsemos se apagará la pantalla.</p>
+<p><img src="/images/20180109_tasker_pantalla_02.jpg" alt="boton apagar"></p>
+<p>Simple, rápido y efectivo. Si quieres puedes descargar desde <a href="/files/tasker_apagar_pantalla.tsk.xml">aquí</a> la tarea para importarla en tu aplicación Tasker.</p>
+
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/tasker/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Tasker</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/como-ahorrar-bater%C3%ADa-en-el-trabajo-con-tasker/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Como ahorrar batería en el trabajo con Tasker</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://emacs.ch/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2023 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script></body>
+</html>

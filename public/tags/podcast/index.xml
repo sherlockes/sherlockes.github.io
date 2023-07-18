@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Podcast on Sherblog</title>
+    <link>https://sherlockes.github.io/tags/podcast/</link>
+    <description>Recent content in Podcast on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Mon, 06 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/podcast/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Los podcast que escucho. Abril de 2020</title>
+      <link>https://sherlockes.github.io/los-podcast-que-escucho.-abril-de-2020/</link>
+      <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/los-podcast-que-escucho.-abril-de-2020/</guid>
+      <description>&lt;h2 id=&#34;100---cien-podcast-y-cien-episodios&#34;&gt;100% - Cien Podcast y cien episodios&lt;/h2&gt;
+&lt;p&gt;Así es, tal y como se puede ver en la siguiente imagen he superado los 10000 episodios escuchados en &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.bambuna.podcastaddict&amp;amp;hl=es&#34;&gt;Podcast Addict&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

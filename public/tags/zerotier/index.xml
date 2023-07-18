@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>zerotier on Sherblog</title>
+    <link>https://sherlockes.github.io/tags/zerotier/</link>
+    <description>Recent content in zerotier on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Fri, 09 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/zerotier/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Usando un tunel ssh para aceder a un servidor remoto</title>
+      <link>https://sherlockes.github.io/usando-un-tunel-ssh-para-aceder-a-un-servidor-remoto/</link>
+      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/usando-un-tunel-ssh-para-aceder-a-un-servidor-remoto/</guid>
+      <description>&lt;p&gt;Esta vez me encuentro con que tengo que acceder a la configuración de un router remoto, no tengo acceso a través de ssh pero  en la red del mismo tengo &amp;ldquo;infiltrada&amp;rdquo; una Raspberry con Zerotier.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Encender el Nas desde el teléfono</title>
+      <link>https://sherlockes.github.io/encender-el-nas-desde-el-tel%C3%A9fono/</link>
+      <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/encender-el-nas-desde-el-tel%C3%A9fono/</guid>
+      <description>&lt;p&gt;Tener el NAS encendido todo el día puede ser un gasto innecesario. El mío se enciende de forma automática las horas necesarias para las copias de seguridad y lo enciendo de forma remota desde mi teléfono si lo necesito de forma puntual fuera de este horario.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
