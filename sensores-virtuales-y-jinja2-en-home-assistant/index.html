@@ -1,0 +1,92 @@
+<!doctype html><html class=no-js lang=es><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><title>Sensores virtuales y Jinja2 en Home Assistant - Sherblog</title><script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script><meta name=description content="Mi manejo de los sensores virtuales y el motor de plantillas Jinja2 en Home Assistant"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://www.sherblog.pro/images/20210921_home_assistant_virtual_sensors_jinja2_00.jpg"><meta name=twitter:title content="Sensores virtuales y Jinja2 en Home Assistant"><meta name=twitter:description content="Mi manejo de los sensores virtuales y el motor de plantillas Jinja2 en Home Assistant"><meta name=twitter:creator content="@sherblogpro"><meta name=twitter:site content="sherblog.pro"><meta property="og:type" content="article"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="sherblog.pro"><meta property="og:locale" content="es_ES"><meta property="og:title" content="Sensores virtuales y Jinja2 en Home Assistant"><meta property="og:url" content="https://sherlockes.github.io"><meta property="og:description" content="Mi manejo de los sensores virtuales y el motor de plantillas Jinja2 en Home Assistant"><meta property="og:image" content="http://www.sherblog.pro/images/20210921_home_assistant_virtual_sensors_jinja2_00.jpg"><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//fonts.gstatic.com><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"><link rel=stylesheet href=/css/style.css><link rel=stylesheet href=/css/custom.css><link rel="shortcut icon" href=/favicon.ico></head><body class=body><div class="container container--outer"><header class=header><meta name=twitter:card content="summary"><meta name=twitter:title content="Sensores virtuales y Jinja2 en Home Assistant"><meta name=twitter:description content="Mi manejo de los sensores virtuales y el motor de plantillas Jinja2 en Home Assistant"><div class=container><div class=logo><a class=logo__link href=/ title=Sherblog rel=home><div class=logo__title>Sherblog</div><div class=logo__tagline>Sólo mi forma de hacer las cosas...</div></a></div><nav class=menu><button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menú</span></button><ul class=menu__list><li class=menu__item><a class=menu__link href=/mis-v%C3%A9rtices-geod%C3%A9sicos/><span class=menu__text>Mis vértices geodésicos</span></a></li><li class=menu__item><a class=menu__link href=/post/computing/raspberry/><span class=menu__text>Raspberry Pi desde cero</span></a></li><li class=menu__item><a class=menu__link href=/post/android/tasker/><span class=menu__text>Tasker</span></a></li></ul></nav></div></header><div class="wrapper flex"><div class=primary><main class=main role=main><article class=post><header class=post__header><h1 class=post__title>Sensores virtuales y Jinja2 en Home Assistant</h1><div class="post__meta meta"><div class="meta__item-datetime meta__item"><svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-12-09T00:00:00Z>2021-12-09</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/home-assistant/ rel=category>home assistant</a></span></div></div></header><figure class="post__thumbnail thumbnail"><img class=thumbnail__image src=/images/20210921_home_assistant_virtual_sensors_jinja2_00.jpg alt="Sensores virtuales y Jinja2 en Home Assistant"></figure><div class="post__toc toc"><div class=toc__title>Índice</div><div class=toc__menu><nav id=TableOfContents><ul><li><ul><li><a href=#creando-el-archivo-de-sensores>Creando el archivo de sensores</a></li><li><a href=#sensor-para-el-punto-cardinal-del-viento>Sensor para el punto cardinal del viento</a></li><li><a href=#sensor-para-definir-si-trabajo>Sensor para definir si trabajo</a></li><li><a href=#sensor-de-casa-vacía>Sensor de casa vacía</a></li><li><a href=#sensor-de-consigna-de-temperatura>Sensor de consigna de temperatura</a></li><li><a href=#sensor-de-horario-de-apagado-de-la-tv>Sensor de horario de apagado de la TV</a></li></ul></li></ul></nav></div></div><div class="content post__content clearfix"><p>Aquí dejo la solución que he implementado ante el problema de crear una nueva entidad en Home Assistant cuyo valor dependa del de otras entidades ya existentes gracias al uso de sensores virtuales y el motor de plantillas de Jinja2.</p><h3 id=creando-el-archivo-de-sensores>Creando el archivo de sensores</h3><p>Antes de seguir adelante es importante tener instalado el complemento <a href=https://github.com/home-assistant/addons/tree/master/configurator>File Editor</a> que puedes instalar desde la tienda oficial.</p><p><img src=/images/20210921_home_assistant_virtual_sensors_jinja2_01.jpg alt=image-01></p><p>Abriremos el complemento y a continuación hay que crear un nuevo archivo en la carpeta &ldquo;/config&rdquo; con nombre &ldquo;sensors.yaml&rdquo;</p><p>Abriremos el archivo &ldquo;configuration.yaml&rdquo; y lo editaremos añadiendo la siguiente línea</p><pre tabindex=0><code>sensor: !include sensors.yaml
+</code></pre><p>Antes de seguir adelante, guardaremos los cambios y comprobaremos que todo funciona correctamente verificando los archivos de configuración desde el apartado &ldquo;Controles del servidor&rdquo; en el menú de configuración de Home Assistant.</p><p><img src=/images/20210921_home_assistant_virtual_sensors_jinja2_02.jpg alt=image-02></p><p>Si la configuración es válida podemos seguir adelante con la creación de nuestro nuevo sensor virtual.</p><blockquote><p>El error más habitual es que ya tubieramos creado un sensor dentro del archivo &ldquo;configuration.yaml&rdquo;. Deberemos moverlos al archivo &ldquo;sensors.yaml&rdquo;</p></blockquote><h3 id=sensor-para-el-punto-cardinal-del-viento>Sensor para el punto cardinal del viento</h3><p>En mi instalación de Home Assistant hago unos de la integracion de la <a href=https://www.home-assistant.io/integrations/aemet>AEMET</a> para obtener la información del tiempo. El valor de la dirección del viento se obtiene como un valor en grados lo cual no resulta muy intuitivo por lo que me he decidido a crear una nueva entidad que lo transforme en un campo de texto que nos indique si em viento viene del norte, del sur&mldr;.</p><p>En el archivo &ldquo;sensors.yaml&rdquo; añadiremos el nuevo sensor</p><pre tabindex=0><code>  - platform: template
+    sensors:
+      aemet_dir_viento_texto:
+        friendly_name: &#34;Dirección viento&#34;
+        value_template: &gt;-
+            {% if ( states(&#39;sensor.aemet_wind_bearing&#39;) | float &lt; 22.5 ) %}
+                Norte
+            {% elif ( states(&#39;sensor.aemet_wind_bearing&#39;) | float &lt; 67.5 ) %}
+                Noreste
+            {% elif ( states(&#39;sensor.aemet_wind_bearing&#39;) | float &lt; 112.5 ) %}
+                Este
+            {% elif ( states(&#39;sensor.aemet_wind_bearing&#39;) | float &lt; 157.5 ) %}
+                Sureste
+            {% elif ( states(&#39;sensor.aemet_wind_bearing&#39;) | float &lt; 202.5 ) %}
+                Sur
+            {% elif ( states(&#39;sensor.aemet_wind_bearing&#39;) | float &lt; 247.5 ) %}
+                Suroeste
+            {% elif ( states(&#39;sensor.aemet_wind_bearing&#39;) | float &lt; 292.5 ) %}
+                Oeste
+            {% elif ( states(&#39;sensor.aemet_wind_bearing&#39;) | float &lt; 337.5 ) %}
+                Cierzo
+            {% else %}
+                Norte
+            {% endif %}
+</code></pre><p>Lo hemos nombrado como &ldquo;aemet_dir_viento_texto&rdquo; y para calcular su valor se emplea el motor de plantilla Jinja2. El valor del sensor &ldquo;aemet_wind_bearing&rdquo; se convierte a un valor numérico y se compara con los distintos rangos cada 45 grados para obtener el punto cardinal desde el que sopla el viento.</p><p>Ya sólo resta añadir este sensor en la página que deseemos de home assistant y tendremos la dirección del viento de una forma mucho más amigable.</p><p><img src=/images/20210921_home_assistant_virtual_sensors_jinja2_03.jpg alt=image-03></p><h3 id=sensor-para-definir-si-trabajo>Sensor para definir si trabajo</h3><p>Cuando no se vive solo en casa es un detalle no despertar a todos cuando uno lo tiene que hacer antes de las 5:00 AM. Dentro de los turnos de trabajo, me tengo que levantar a esta hora si trabajo en el turno de &ldquo;Mañana&rdquo; o de &ldquo;Sobrante&rdquo; lo cual tengo definido en el calendario de google &ldquo;turno_de_trabajo&rdquo;.</p><p>Vamos a crear un sensor virtual que, en función del calendario devuelva un &ldquo;On&rdquo; si tengo que madrugar o un &ldquo;Off&rdquo; si no tengo que hacerlo.</p><p>En el archivo &ldquo;sensors.yaml&rdquo; añadiremos el nuevo sensor</p><pre tabindex=0><code>  - platform: template
+    sensors:
+      madrugo_hoy:
+        friendly_name: &#34;Tengo que madrugar hoy?&#34;
+        value_template: &gt;-
+            {% set turno = state_attr(&#39;calendar.turno_de_trabajo&#39;,&#39;message&#39;) %}
+            {% set fecha_turno = state_attr(&#39;calendar.turno_de_trabajo&#39;,&#39;start_time&#39;) %}
+            {% set fecha_hoy = as_timestamp(now())|timestamp_custom(&#34;%Y-%m-%d 00:00:00&#34;) %}
+            
+            {% if (fecha_hoy == fecha_turno and (turno == &#34;Mañana&#34; or turno == &#34;Sobrante&#34;)) %}
+            On
+            {% else %}
+            Off
+            {% endif %}
+</code></pre><p>Y con esto ya puedo definir una automatización en la que, si estoy en casa y tengo que madrugar, se enciendan las luces de forma muy tenue durante unos minutos hasta que me voy de casa.</p><h3 id=sensor-de-casa-vacía>Sensor de casa vacía</h3><p>En la estancia de <a href=https://www.home-assistant.io>Home Assistant</a> tengo definidas las personas que vivimos en casa y para cada una de ellas el dispositivo a rastrear que define si la persona está en casa o no.</p><p><img src=/images/20210921_home_assistant_virtual_sensors_jinja2_04.jpg alt=image-04></p><p>Cn esto resulta sencillo crear un sensor virtual que devuelva &ldquo;true&rdquo; cuando no hay nadie en casa y &ldquo;false&rdquo; cuando si lo haya tal y como se puede ver en las siguiente líneas.</p><pre tabindex=0><code>  - platform: template
+    sensors:
+      casa_vacia:
+        friendly_name: &#34;Esta la casa vacía?&#34;
+        value_template: &gt;-
+            {% set persona_1 = states(&#39;person.sherlockes&#39;) %}
+            {% set persona_2 = states(&#39;person.sara&#39;) %}
+            
+            {% if ( persona_1 == &#34;not_home&#34; and persona_2 == &#34;not_home&#34; ) %}
+              true
+            {% else %}
+              false
+            {% endif %}
+</code></pre><h3 id=sensor-de-consigna-de-temperatura>Sensor de consigna de temperatura</h3><p>Para el cálculo de la consigna de temperatura haremos uso de varios ayudantes</p><ul><li>Hora de levantar</li><li>Hora de dormir</li><li>Modo fuera de casa</li><li>Temperatura cómoda</li><li>Temperatura eco</li></ul><pre tabindex=0><code>  - platform: template
+    sensors:
+      consigna_caldera:
+        friendly_name: &#34;Consigna de Tª para la caldera&#34;
+        value_template: &gt;-          
+            {% set ahora = as_timestamp(now()) | timestamp_custom(&#39;%H:%M:%S&#39;) %}
+            {% set levantar = states(&#34;input_datetime.hlevantar&#34;) %}
+            {% set dormir = states(&#34;input_datetime.hdormir&#34;) %}
+            {% if states (&#39;input_boolean.fuera_de_casa&#39;) == &#39;on&#39; %}
+            {% set consigna = 16.5 %}
+            {% elif states (&#39;sensor.casa_vacia&#39;) == &#39;true&#39; %}
+            {% set consigna = states(&#39;input_number.eco&#39;) %}
+            {% elif ahora &gt; dormir or ahora &lt; levantar %}
+            {% set consigna = states(&#39;input_number.eco&#39;) %}
+            {% elif ahora &gt; levantar %}
+            {% set consigna = states(&#39;input_number.ta_comoda&#39;) %}
+            {% else %}
+            {% set consigna = states(&#39;input_number.eco&#39;) %}
+            {% endif %}
+            {{ consigna }}
+</code></pre><p>De este modo obtendremos los siguientes resultados para el sensor &ldquo;consigna_caldera&rdquo;:</p><ul><li>16.5 ºC si está habilitado el modo fuera de casa</li><li>Tª eco si no hay nadie en casa entre hora de dormir y levantar</li><li>tª cómoda entre la hora de levantar y dormir si hay alguien en casa</li></ul><h3 id=sensor-de-horario-de-apagado-de-la-tv>Sensor de horario de apagado de la TV</h3><p>Para evitar que lo primero que hagn los pequeños al levantarse sea encencer la tele tengo un horario de en el que el enchufe que la alimenta permanece apagado. Este horario lo defino mediante un ayudante de hora de apagado y otro de encendido:</p><ul><li>input_datetime.tv_off &ndash;> horaOFF</li><li>input_datetime.tv_on &ndash;> horaON</li></ul><p>Teniendo en cuenta lo anterior, la tele deberá estar apagada (off) en las siguientes condiciones:</p><ul><li>horaOFF > horaON y horaACT > horaOFF</li><li>horaOFF > horaON y horaACT &lt; horaON</li><li>horaOFF &lt; horaON , horaACT > horaOFF y horaACT &lt; horaON</li></ul><p>Definiendo A, B y C de la siguiente forma:</p><ul><li>A = horaOFF > horaON</li><li>B = horaACT > horaOFF</li><li>C = horaACT &lt; horaON</li></ul><p>podemos aplicar la lógica condicional según lo anterior y obtener el siguiente resultado:
+(A y (B o C)) o (no A y B y C ) = OFF</p><p>Si lo traducimos a jinja 2, el sensor virtual quedará así.</p><pre tabindex=0><code>  - platform: template
+    sensors:
+      modo_tv:
+        friendly_name: &#34;Modo de Tv según horario&#34;
+        value_template: &gt;-          
+            {% set ahora = as_timestamp(now()) | timestamp_custom(&#39;%H:%M:%S&#39;) %}
+            {% set A = states(&#34;input_datetime.tv_off&#34;) &gt; states(&#34;input_datetime.tv_on&#34;) %}
+            {% set B = ahora &gt; states(&#34;input_datetime.tv_off&#34;) %}
+            {% set C = ahora &lt; states(&#34;input_datetime.tv_on&#34;) %}
+            
+            {% if (A and ( B or C )) or ( not A and B and C ) %}
+            off
+            {% else %}
+            on
+            {% endif %}
+</code></pre></div><footer class=post__footer><div class="content post__content clearfix"><h3>Otros de mís artículos que te pueden interesar</h3><ul><li><a href=/automatizaci%C3%B3n-de-alumbrado-con-puerta/>Automatización de alumbrado con puerta</a></li><li><a href=/el-termostato-de-la-caldera-en-home-assistant/>El termostato de la caldera en Home Assistant</a></li><li><a href=/apagar-todas-las-luces-en-home-assistant/>Apagar todas las luces en Home Assistant</a></li><li><a href=/ha-temporizador-para-luz/>HA - Temporizador para luz</a></li><li><a href=/guardando-y-recuperando-la-configuraci%C3%B3n-de-home-assistant/>Guardando y recuperando la configuración de Home Assistant</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/jinja2/ rel=tag>jinja2</a></li></ul></div></footer></article></main><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=/automatizaci%C3%B3n-de-alumbrado-con-puerta/ rel=prev><span class=pager__subtitle>«&#8201;Anterior</span><p class=pager__title>Automatización de alumbrado con puerta</p></a></div><div class="pager__item pager__item--next"><a class=pager__link href=/contenido-relacionado-en-hugo/ rel=next><span class=pager__subtitle>Siguiente&#8201;»</span><p class=pager__title>Contenido relacionado en Hugo</p></a></div></nav><div class="content post__content clearfix"><h3>Comentarios</h3>Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href=https://emacs.ch/@sherlockes>@sherlockes</a> en Mastodon o Telegram.</div></div></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2023 Sherlockes.
+<span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span></br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a></div></div></footer></div><script async defer src=/js/menu.js></script>
+<script src=/js/custom.js></script></body></html>
