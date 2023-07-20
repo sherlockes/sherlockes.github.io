@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://sherlockes.github.io/los-auriculares-qcy-que-he-usado/</loc>
+    <lastmod>2023-07-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://sherlockes.github.io/men%C3%BA-para-montar-nubes-en-bash/</loc>
     <lastmod>2023-05-12T00:00:00+00:00</lastmod>
   </url><url>
@@ -16,9 +19,6 @@
   </url><url>
     <loc>https://sherlockes.github.io/instalando-home-assistant-supervisado-en-debian-11/</loc>
     <lastmod>2023-01-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sherlockes.github.io/los-auriculares-qcy-que-he-usado/</loc>
-    <lastmod>2023-01-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sherlockes.github.io/sensores-virtuales-y-jinja2-en-home-assistant/</loc>
     <lastmod>2022-12-21T00:00:00+00:00</lastmod>
@@ -786,22 +786,25 @@
     <loc>https://sherlockes.github.io/raspberry-descargando-wordpress/</loc>
     <lastmod>2018-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://sherlockes.github.io/tags/bash/</loc>
-    <lastmod>2023-05-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://sherlockes.github.io/categories/</loc>
+    <lastmod>2023-07-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sherlockes.github.io/categories/hardware/</loc>
+    <lastmod>2023-07-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sherlockes.github.io/post/</loc>
+    <lastmod>2023-07-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sherlockes.github.io/</loc>
+    <lastmod>2023-07-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sherlockes.github.io/tags/bash/</loc>
     <lastmod>2023-05-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sherlockes.github.io/categories/computing/</loc>
     <lastmod>2023-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://sherlockes.github.io/post/</loc>
-    <lastmod>2023-05-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://sherlockes.github.io/tags/rclone/</loc>
-    <lastmod>2023-05-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sherlockes.github.io/</loc>
     <lastmod>2023-05-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sherlockes.github.io/tags/</loc>
@@ -821,9 +824,6 @@
   </url><url>
     <loc>https://sherlockes.github.io/categories/raspberry/</loc>
     <lastmod>2023-01-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sherlockes.github.io/categories/hardware/</loc>
-    <lastmod>2023-01-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sherlockes.github.io/tags/jinja2/</loc>
     <lastmod>2022-12-21T00:00:00+00:00</lastmod>

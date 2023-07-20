@@ -6,7 +6,16 @@
     <description>Recent content on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Fri, 12 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Los auriculares QCY que he usado</title>
+      <link>https://sherlockes.github.io/los-auriculares-qcy-que-he-usado/</link>
+      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/los-auriculares-qcy-que-he-usado/</guid>
+      <description>&lt;p&gt;Llevo haciendo uso de auriculares bluetooth de forma intensiva desde 2016, al principio probé varias marcas pero desde 2018 todos los que he usado han sido de la marca &lt;a href=&#34;https://www.qcy.com&#34;&gt;QCY&lt;/a&gt; y no por ser especialmente buenos ni baratos, simplemente por que me dan lo que necesito al precio más bajo posible.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Menú para montar nubes en Bash</title>
       <link>https://sherlockes.github.io/men%C3%BA-para-montar-nubes-en-bash/</link>
@@ -51,15 +60,6 @@
       
       <guid>https://sherlockes.github.io/instalando-home-assistant-supervisado-en-debian-11/</guid>
       <description>&lt;p&gt;Si quieres sacar todo el potencial de tu Raspberry al tiempo que la empleas como servidor de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; con el uso de &lt;a href=&#34;https://www.home-assistant.io/addons/&#34;&gt;Addons&lt;/a&gt;, aquí dejo el método oficial de la instalación supervisada mediante Debian 11 en una Raspberry 3B+.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Los auriculares QCY que he usado</title>
-      <link>https://sherlockes.github.io/los-auriculares-qcy-que-he-usado/</link>
-      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/los-auriculares-qcy-que-he-usado/</guid>
-      <description>&lt;p&gt;Llevo haciendo uso de auriculares bluetooth de forma intensiva desde 2016, al principio probé varias marcas pero desde 2018 todos los que he usado han sido de la marca &lt;a href=&#34;https://www.qcy.com&#34;&gt;QCY&lt;/a&gt; y no por ser especialmente buenos ni baratos, simplemente por que me dan lo que necesito al precio más bajo posible.&lt;/p&gt;</description>
     </item>
     
     <item>

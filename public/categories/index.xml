@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Fri, 12 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hardware</title>
+      <link>https://sherlockes.github.io/categories/hardware/</link>
+      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/categories/hardware/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>computing</title>
       <link>https://sherlockes.github.io/categories/computing/</link>
@@ -40,15 +49,6 @@
       <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://sherlockes.github.io/categories/raspberry/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hardware</title>
-      <link>https://sherlockes.github.io/categories/hardware/</link>
-      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/categories/hardware/</guid>
       <description></description>
     </item>
     
