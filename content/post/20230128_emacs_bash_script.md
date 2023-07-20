@@ -18,7 +18,7 @@ weight: 5
 ---
 Esta es la forma en la que utilizo [emacs] como entorno de trabajo para crear y comprobar el funcionamiento de los scripts en Bash que necesito sin utilizar más recursos que la propia aplicación.
 <!--more-->
-Tras partir la pantalla en dos ventanas verticales (C-x 3), el primer paso es crear el archivo para el script, utilizo [Dired]({{<relref"20190618_emacs_dired.md">}}) para ubicarme en la carpeta y directamente el comando `find-file` (C-x C-f) para crear el nuevo archivo que tendrá la extensión "*.sh".
+Tras partir la pantalla en dos ventanas verticales (C-x 3), el primer paso es crear el archivo para el script, utilizo Dired para ubicarme en la carpeta y directamente el comando `find-file` (C-x C-f) para crear el nuevo archivo que tendrá la extensión "*.sh".
 
 Llegados a este punto [Yasnippet](https://github.com/joaotavora/yasnippet) y [Autoinsert](https://www.emacswiki.org/emacs/AutoInsertMode) hacen el resto tal y como expliqué en otro [artículo]({{<relref"20220331_emacs_templates.md">}}). Gracias a las líneas que aparecen a continuación en el archivo de configuración de [emacs] se genera un archivo con la plantilla correspondiente y se convierte el mismo en ejecutable.
 

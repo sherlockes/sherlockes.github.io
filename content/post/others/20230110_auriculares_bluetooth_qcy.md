@@ -1,6 +1,6 @@
 ---
 title: "Los auriculares QCY que he usado"
-date: "2023-01-10"
+date: "2023-07-20"
 creation: "2023-01-10"
 description: "Una lista con todos los auriculares qcy ue he usado, sus pros y sus contras."
 thumbnail: "images/20230110_auriculares_bluetooth_qcy_00.jpg"
@@ -195,10 +195,10 @@ Bluetooth 5.0, cancelación activa de ruido, sensores mara detectar cuando te qu
 Bluetooth 5.0, mayor calidad de sonido y detección de cuando los llevas puestos son las novedades que ofrece el fabricante para este [modelo](https://www.qcyearbuds.com/qcy-t7/). Hace años que no tengo unos auriculares blancos, veremos como responden ya que todavía no los he probado.
 
 ***Lo mejor***
-- Pendiente de valorar
+- El sonido profundo que tienen y la duración de la batería
 
 ***Lo peor***
-- Pendiente de valorar
+- La sensación de que no ajustan bien en la oreja y que se van a soltar en cualquier momento aunque en realidad aguantan bastante bien
 
 ***El paso del tiempo***
 - Pendiente de valorar
@@ -209,8 +209,20 @@ Bluetooth 5.0, mayor calidad de sonido y detección de cuando los llevas puestos
 
 ---
 
+### Limpieza y mantenimiento
+Sin duda alguna, el principal problema que presentan todos los auriculares intraauditivos con el paso del tiempo es la bajada de volumen. Este problema es consecuencia de la acumulación de cera en la malla a través de la cual sale el sonido del auricular. Es posible limpiar esta malla con un poco de alcohol pero es complicado aprovechar la pegatina que lo fija al auricular por lo que desde hace un tiempo utilizo estos [discos] metálicos
+
+![image-limp01]
+
+El precio es ridículo y llevan integrada la pegatina por lo que cuando notas una bajada de volumen quitas el disco con ayuda de una aguja y pones uno nuevo. Los he comprado en diámetro de 4mm y el resultado es perfecto. Por ahora ningún problema.
+
+![image-limp02]
+
+---
+
 [QCY]: https://www.qcy.com
 [T2c]: {{< relref "#qcy---t2c-qc2" >}}
+[discos]: https://es.aliexpress.com/item/4000007843958.html
 
 [image-q26]: /images/20230110_auriculares_bluetooth_qcy_q26.jpg
 [image-qy12]: /images/20230110_auriculares_bluetooth_qcy_qy12.jpg
@@ -221,3 +233,5 @@ Bluetooth 5.0, mayor calidad de sonido y detección de cuando los llevas puestos
 [image-ht03]: /images/20230110_auriculares_bluetooth_qcy_ht03.jpg
 [image-ht01]: /images/20230110_auriculares_bluetooth_qcy_ht01.jpg
 [image-t7]: /images/20230110_auriculares_bluetooth_qcy_t7.jpg
+[image-limp01]: /images/20230110_auriculares_bluetooth_limpieza_01.jpg
+[image-limp02]: /images/20230110_auriculares_bluetooth_limpieza_02.jpg
