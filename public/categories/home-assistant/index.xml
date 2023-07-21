@@ -6,7 +6,16 @@
     <description>Recent content in home assistant on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Sat, 28 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/home-assistant/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/home-assistant/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configurar Wireguard de Home Assistant en cliente linux</title>
+      <link>https://sherlockes.github.io/configurar-wireguard-de-home-assistant-en-cliente-linux/</link>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/configurar-wireguard-de-home-assistant-en-cliente-linux/</guid>
+      <description>&lt;p&gt;Por su sencillez y efectividad, tengo instalado el servidor de &lt;a href=&#34;https://www.wireguard.com&#34;&gt;Wireguard&lt;/a&gt; como un complemento de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt;. Esta es la forma de como he configurado un cliente linux para conectarse a la vpn desde el exterior de mi red local.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Instalando Home Assistant supervisado en Debian 11</title>
       <link>https://sherlockes.github.io/instalando-home-assistant-supervisado-en-debian-11/</link>
@@ -87,15 +96,6 @@
       
       <guid>https://sherlockes.github.io/reseteo-autom%C3%A1tico-de-home-assistant/</guid>
       <description>&lt;p&gt;Por muy estable que sea un sistema, resetearlo de vez en cuando se suele venir bien y nos sirve para asegurar un correcto arranque. En mi caso hago que la Raspberry sobre la que corre &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; se resetee todos los días a las cuatro de la mañana mediante una automatización que a continuación paso a detallar.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>El termostato de la caldera en Home Assistant</title>
-      <link>https://sherlockes.github.io/el-termostato-de-la-caldera-en-home-assistant/</link>
-      <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/el-termostato-de-la-caldera-en-home-assistant/</guid>
-      <description>&lt;p&gt;La temporada pasada implementé desde cero mi propio termostato sobre la raspberry usando python, flask y muchas horas de desarrollo. Ahora he conseguido implementarlo desde cero en &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; en menos de una hora gracias a &lt;a href=&#34;https://esphome.io&#34;&gt;ESPHome&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>

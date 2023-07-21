@@ -6,13 +6,22 @@
     <description>Recent content in Tags on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Fri, 12 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>bash</title>
       <link>https://sherlockes.github.io/tags/bash/</link>
-      <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>https://sherlockes.github.io/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wireguard</title>
+      <link>https://sherlockes.github.io/tags/wireguard/</link>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/tags/wireguard/</guid>
       <description></description>
     </item>
     
@@ -85,15 +94,6 @@
       <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>https://sherlockes.github.io/tags/orgmode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hacs</title>
-      <link>https://sherlockes.github.io/tags/hacs/</link>
-      <pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/tags/hacs/</guid>
       <description></description>
     </item>
     

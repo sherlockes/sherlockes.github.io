@@ -13,7 +13,7 @@ categories:
 tags:
 - "wireguard"
 - "bash"
-draft: true
+draft: false
 weight: 5
 ---
 Por su sencillez y efectividad, tengo instalado el servidor de [Wireguard] como un complemento de [Home Assistant]. Esta es la forma de como he configurado un cliente linux para conectarse a la vpn desde el exterior de mi red local.

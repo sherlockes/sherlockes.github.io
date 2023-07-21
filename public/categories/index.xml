@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Sherblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Thu, 20 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>home assistant</title>
+      <link>https://sherlockes.github.io/categories/home-assistant/</link>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/categories/home-assistant/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>hardware</title>
       <link>https://sherlockes.github.io/categories/hardware/</link>
@@ -31,15 +40,6 @@
       <pubDate>Wed, 22 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>https://sherlockes.github.io/categories/productividad/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>home assistant</title>
-      <link>https://sherlockes.github.io/categories/home-assistant/</link>
-      <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/categories/home-assistant/</guid>
       <description></description>
     </item>
     
