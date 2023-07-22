@@ -122,6 +122,19 @@
     ((&#34;20[0-9]\\{6\\}_.&#43;\\.md\\&#39;&#34; . &#34;Markdown&#34;) . [&#34;template.md&#34; autoinsert-yas-expand])    ;; Lanzador para post del blog en markdown
 ))
 
+;; Función para cambio entre diccionarios y configuración de corrección ortográfica
+
+(defun fd-switch-dictionary()
+  (interactive)
+  (let* ((dic ispell-current-dictionary)
+	 (change (if (string= dic &#34;español&#34;) &#34;english&#34; &#34;español&#34;)))
+    (ispell-change-dictionary change)
+    ))
+
+(setq ispell-dictionary &#34;español&#34;)                                                          ;; Establece el diccionario Español pr defecto
+(add-hook &#39;markdown-mode-hook &#39;flyspell-mode)                                               ;; Habilita la correción ortográfica para archivos Markdown
+(add-hook &#39;flyspell-mode-hook &#39;flyspell-buffer)                                             ;; Corrige el buffer cuando se habilita la corrección
+
 ;; Otros
 (put &#39;upcase-region &#39;disabled nil)                                                          ;; Habilita el comando para pasar a mayúsculas
 (put &#39;erase-buffer &#39;disabled nil)                                                           ;; Habilita el comando de borrado del buffer
@@ -129,8 +142,7 @@
 (add-hook &#39;window-setup-hook &#39;toggle-frame-maximized t)                                     ;; Arrancar emacs maximizado
 ;; (add-to-list &#39;initial-frame-alist &#39;(fullscreen . maximized))                             ;; Arrancar emacs maximizado
 (add-to-list &#39;display-buffer-alist &#39;(&#34;^\\*shell\\*&#34; . (display-buffer-same-window . nil)))  ;; Mostrar la sesión de terminal en el mismo buffer
-(add-hook &#39;markdown-mode-hook &#39;flyspell-mode)                                               ;; Habilita la correción ortográfica para archivos Markdown
-(add-hook &#39;flyspell-mode-hook &#39;flyspell-buffer)                                             ;; Corrige el buffer cuando se habilita la corrección
+
 
 
 (custom-set-variables
@@ -222,6 +234,7 @@
 (global-set-key (kbd &#34;&lt;f4&gt;&#34;) &#39;sherblog_edit)
 (global-set-key (kbd &#34;&lt;f5&gt;&#34;) &#39;flyspell-mode)
 (global-set-key (kbd &#34;&lt;f6&gt;&#34;) (kbd &#34;C-u C-c C-c&#34;))
+(global-set-key (kbd &#34;&lt;f7&gt;&#34;) &#39;fd-switch-dictionary)    ;; Cambio de diccionario
 (global-set-key (kbd &#34;C-x C-b&#34;) &#39;ibuffer)
 (global-set-key (kbd &#34;C-c r&#34;) &#39;query-replace-regexp)
 
