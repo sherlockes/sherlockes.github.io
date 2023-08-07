@@ -11,7 +11,7 @@ mathjax: false
 categories:
 - "computing"
 tags:
-- "github"
+- "git"
 - "emacs"
 - "org-roam"
 draft: true

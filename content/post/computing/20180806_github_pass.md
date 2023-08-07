@@ -9,11 +9,16 @@ authorbox: false
 toc: false
 mathjax: false
 categories:
-  - "computing"
+- "computing"
+tags:
+- "git" 
 draft: falstrue
 weight: 5
 ---
 __Actualización:__ Solucionando el problema desde el origen con un correcto clonado.
+
+Como corregir los problemas de permisos de usuario al intentar actualizar un repositorio remoto que hemos clonado en nuestra máquina.
+<!--more-->
 ### El problema
 Llevo unos días adentrándome en el maravilloso mundo de [Github][1] del que hace un mes no tenía más idea que el de su mera existencia. En fin, pruebas y pruebas en las que estoy hasta el gorro de tener que introducir cada vez el nombre de usuario y contraseña cuando modifico los repositorios a través de ssh.
 
