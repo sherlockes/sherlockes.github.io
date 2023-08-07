@@ -86,7 +86,9 @@
       (dired-sort-other my-dired-ls-switches-show))))))
 
 ;; Org-roam
-(make-directory &#34;~/org-roam&#34; t)                                                             ;; Crea el directori sino existe
+(let ((default-directory &#34;~/&#34;)) 
+    (shell-command &#34;git clone https://github.com/sherlockes/org-roam.git&#34;))
+;;(make-directory &#34;~/org-roam&#34; t)                                                             ;; Crea el directorio sino existe
 (setq org-roam-directory (file-truename &#34;~/org-roam&#34;))                                      ;; Establece el directorio para ORGRoam
 (org-roam-db-autosync-mode)                                                                 ;; Sincronizar cache automáticamente
 (setq org-roam-completion-system &#39;ivy)
@@ -227,6 +229,16 @@
   )
 )
 
+(defun org-roam-update()
+    (interactive)
+
+    (let ((default-directory &#34;~/org-roam&#34;)) 
+        (shell-command &#34;git add --all&#34;)
+        (shell-command &#34;git commit -m &#39;Update&#39;&#34;)
+        (shell-command &#34;git push&#34;)
+    )
+)
+
 ;; Accesos directos
 (global-set-key (kbd &#34;&lt;f1&gt;&#34;) &#39;reiniciar)
 ;;(global-set-key (kbd &#34;&lt;f2&gt;&#34;) (lambda() (interactive)(find-file &#34;~/Google_Drive/SherloScripts/mi_diario.org&#34;)))
@@ -235,6 +247,7 @@
 (global-set-key (kbd &#34;&lt;f5&gt;&#34;) &#39;flyspell-mode)
 (global-set-key (kbd &#34;&lt;f6&gt;&#34;) (kbd &#34;C-u C-c C-c&#34;))
 (global-set-key (kbd &#34;&lt;f7&gt;&#34;) &#39;fd-switch-dictionary)    ;; Cambio de diccionario
+(global-set-key (kbd &#34;&lt;f8&gt;&#34;) &#39;org-roam-update)
 (global-set-key (kbd &#34;C-x C-b&#34;) &#39;ibuffer)
 (global-set-key (kbd &#34;C-c r&#34;) &#39;query-replace-regexp)
 
