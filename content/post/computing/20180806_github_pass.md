@@ -1,6 +1,7 @@
 ---
 title: "Acceder a Github via ssh sin password"
-date: "2018-07-27"
+date: "2023-08-07"
+creation: "2018-07-27"
 description: "Acceder a Github sin tener que poner el nombre de usuario y contraseña todas las veces"
 thumbnail: "images/20180806_hugo_github_pass_00.jpg"
 disable_comments: true
@@ -12,6 +13,7 @@ categories:
 draft: falstrue
 weight: 5
 ---
+__Actualización:__ Solucionando el problema desde el origen con un correcto clonado.
 ### El problema
 Llevo unos días adentrándome en el maravilloso mundo de [Github][1] del que hace un mes no tenía más idea que el de su mera existencia. En fin, pruebas y pruebas en las que estoy hasta el gorro de tener que introducir cada vez el nombre de usuario y contraseña cuando modifico los repositorios a través de ssh.
 
@@ -42,6 +44,8 @@ git remote set-url origin git+ssh://git@github.com/usuario/repositorio.git
 '''
 
 Y ya está, ahora ya puedo realizar modificaciones en mis repositorios de Github a través de ssh sin tener que estar continuamente introduciendo mi nombre de usuario y contraseña.
+
+>Este problema no aparece si, cuando clonamos el repositorio remoto, usamos el comando `git clone git@github.com:tu_usuario/tu_repo.git` después de haber subido a github la llave ssh de nuestro equipo.
 
 
 [1]: https://github.com

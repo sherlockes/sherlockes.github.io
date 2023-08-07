@@ -34,10 +34,50 @@ Para poder editar desde nuestro equipo el repositorio que hemos creado en [Githu
 Este paso es imprescindible ya que [Github] no permite la modificación de un repositorio desde la consola de un equipo remoto a través de la identificación mediante usuario y contraseña.
 
 ### Clonar en repositorio en nuestro equipo
+Ahora toca clonar el repositorio, nos ubicaremos en la ruta donde queremos que se cree la carpeta clonada y ejecutaremos el siguiente comando.
 
+``` bash
+git clone git@github.com:tu_usuario/tu_repo.git
+```
 
-### Enlaces de interés
-- [enlace](www.sherblog.pro)
+![image-02]
+
+>Es imprescindible usar la ruta ssh para el clonado si no queremos tener problemas al actualizarlo de forma remota.
+
+### Actualizar el repositorio local
+Ya tenemos el repositorio clonado, en mi caso ubicado en la ruta "~/org-roam" y ahora necesitamos que, al arrancar [Emacs], compruebe si la carpeta "org-roam" existe en la ruta raíz del usuario. Si la carpeta existe, se actualizará el repositorio en ella. Si la carpeta no existe, se volverá a clonar en la raíz del usuario el repositorio de [Github].
+
+Para esto incluimos el siguiente código en el archivo de configuración de [Emacs] "init.el".
+
+``` elisp
+(if (file-exists-p "~/org-roam/")
+    (let ((default-directory "~/org-roam"))(shell-command "git pull"))
+  (let ((default-directory "~/"))(shell-command "git clone git@github.com:sherlockes/org-roam.git"))
+)
+```
+
+### Modificar el repositorio remoto
+Para conseguir que el repositorio remoto se sincronice tras modificar algún archivo de nuestro repositorio clonado localmente usaremos un "hook" que se lance cuando se guarda un archivo y una función auxiliar que simplemente comprueba si el archivo que se ha modificado está dentro de la carpeta "org-roam". En caso de que se de la condición, se ejecutará otra función que actualiza el repositorio.
+
+``` elisp
+  (defun org-roam-update()
+    (interactive)
+
+	(let ((default-directory "~/org-roam")) 
+	    (shell-command "git add --all")
+	    (shell-command "git commit -m 'Update'")
+	    (shell-command "git push")
+	)
+    )
+  (defun funcion-al-guardar ()
+    (let ((directorio-org-roam (expand-file-name "org-roam" (getenv "HOME"))))
+      (when (string-prefix-p directorio-org-roam buffer-file-name)
+	(org-roam-update))))
+
+  (add-hook 'after-save-hook 'funcion-al-guardar)
+```
+
+Y ya está, a partir de ahora, cada vez que modifiquemos un archivo de nuestra base de conocimiento se actualizará el repositorio remoto de la misma.
 
 [Emacs]: https://www.gnu.org/software/emacs/
 [Github]: https://github.com
