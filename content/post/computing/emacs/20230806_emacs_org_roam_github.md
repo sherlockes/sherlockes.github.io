@@ -1,9 +1,9 @@
 ---
 title: "Sincronizando Org-Roam mediante Github en Emacs"
-date: "2023-08-06"
+date: "2023-08-08"
 creation: "2023-08-06"
 description: "Este es el método que utilizo para poder acceder desde varios equipos a mi base de conocimiento en Org-Roam para Emacs."
-thumbnail: "images/20230806_emacs_org_roam_github_00.jpg"
+thumbnail: "images/20230806_emacs_org_roam_github_00.png"
 disable_comments: true
 authorbox: false
 toc: true
@@ -14,7 +14,7 @@ tags:
 - "git"
 - "emacs"
 - "org-roam"
-draft: true
+draft: false
 weight: 5
 ---
 Está muy bien tener una base de conocimiento centralizada en una carpeta y gestionarla mediante [Org-Roam] pero mejor aun está poder acceder y modificar esta carpeta desde varios equipos gracias a un repositorio de [Github].
