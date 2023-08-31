@@ -1,12 +1,12 @@
 ---
 title: "Instalación y configuración de Zerotier"
-date: "2023-02-08"
+date: "2023-08-20"
 creation: "2023-02-08"
 description: "Descripción"
 thumbnail: "images/20230208_zerotier_configure_00.jpg"
 disable_comments: true
 authorbox: false
-toc: false
+toc: true
 mathjax: false
 categories:
 - "computing"
@@ -15,7 +15,8 @@ tags:
 draft: true
 weight: 5
 ---
-Resumen de introducción
+Hace casi cinco años que empecé a usar [Zerotier] tal y como en su día expliqué en este [artículo]({{<relref"20190314_zerotier.md">}}) como consecuencia de un problema con los puertos del router. Ahora lo reedito con todo lo que he aprendido en este tiempo.
+
 <!--more-->
 ### Creación de la red
 Antes de nada, deberemos darnos de alta mediante una cuenta en [my.zerotier.com] y posteriormente crear una red a la que podremos asignar un rango de IP's y que tendrá un identificador que nos servirá para añadir nuevos usuarios.
@@ -45,9 +46,6 @@ También es posible añadir a la red al nuevo miembro desde la terminal del equi
 ```Bash
 sudo zerotier-cli join [identificador de la red]
 ```
-
-### Instalación en Synology (DSM6)
-
 
 ### Instalación en Synology (DSM7)
 Desde la versión 7 de DSM, Synology no permite la instalación de paquetes de terceros por lo que la instalación de [Zerotier] hay que realizarla mediante un contenedor. Para mi DS920+ ha sido tan sencillo como seguir al pie de la letra las [instrucciones para Synology].
