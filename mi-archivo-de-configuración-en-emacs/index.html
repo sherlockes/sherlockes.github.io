@@ -15,7 +15,7 @@ Hay pocas cosas tan personales en informática como la configuración de <a href
 ;; Script Name: init.el                            ;;
 ;; Description: Archivo de configuración de Emacs  ;;
 ;; Args: N/A                                       ;;
-;; Creation/Update: 20200225/20230815              ;; 
+;; Creation/Update: 20200225/20230915              ;; 
 ;; Author: www.sherblog.pro                        ;;                      
 ;; Email: sherlockes@gmail.com                     ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -24,32 +24,28 @@ Hay pocas cosas tan personales en informática como la configuración de <a href
 ;; Archivo ubicado en &#34;~/.emacs&#34; ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; (setq user-dir (expand-file-name &#34;~&#34;))                                       ;; Variable para el directorio de usuario
-;; (setq user-init-file (concat user-dir &#34;/dotfiles/emacs/.emacs.d/init.el&#34;))   ;; Ubicación del archivo de configuración
-;; (load user-init-file)                                                        ;; Carga el archivo de configuración
-
+;; (setq user-dir (expand-file-name &#34;~&#34;))                                                   ;; Variable para el directorio de usuario
+;; (setq user-init-file (concat user-dir &#34;/dotfiles/emacs/.emacs.d/init.el&#34;))               ;; Ubicación del archivo de configuración
+;; (load user-init-file)                                                                    ;; Carga el archivo de configuración
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Ubicación de directorios ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq user-emacs-directory (concat user-dir &#34;/.emacs.d/&#34;))                       ;; Directorio de configuración
-(setq default-directory user-dir)                                                ;; Directorio por defecto
-(setenv &#34;HOME&#34; user-dir)                                                         ;; Directorio HOME
+(setq user-emacs-directory (concat user-dir &#34;/.emacs.d/&#34;))                                  ;; Directorio de configuración
+(setq default-directory user-dir)                                                           ;; Directorio por defecto
+(setenv &#34;HOME&#34; user-dir)                                                                    ;; Directorio HOME
+(setq brain-dir (concat user-dir &#34;/sherlockes.gitlab.io/&#34;))                                 ;; Directorio para la exportación de Org-Roam
+(setq brain-roam-dir (concat brain-dir &#34;content-org&#34;))                                      ;; Directorio para las notas en Org-Roam
+(setq brain-repo &#34;git@gitlab.com:sherlockes/sherlockes.gitlab.io.git&#34;)                     ;; Repo de la web en gitlab
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Configuración externa ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(load-file (concat user-dir &#34;/dotfiles/emacs/.emacs.d/functions.el&#34;))           ;; Carga el archivo externo de funciones
-                                                                                           
-(setq explicit-shell-file-name &#34;/bin/bash&#34;)                                     ;; Configura shell-command para permitir alias
-(setq shell-file-name &#34;bash&#34;)                                                                 
-(setq explicit-bash.exe-args &#39;(&#34;--noediting&#34; &#34;--login&#34; &#34;-ic&#34;))                                                                                        
-(setq shell-command-switch &#34;-ic&#34;)                                                                                    
-(setenv &#34;SHELL&#34; shell-file-name)
-
-(setq byte-compile-warnings &#39;(cl-functions))                                    ;; Elimina el warning cl obsoleto
+(load-file (concat user-dir &#34;/dotfiles/emacs/.emacs.d/functions.el&#34;))                       ;; Carga el archivo externo de funciones
+(setq shell-command-switch &#34;-ic&#34;)                                                           ;; Configura shell-command para permitir alias
+(setq byte-compile-warnings &#39;(cl-functions))                                                ;; Elimina el warning cl obsoleto
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Añadir repositorios ;;
@@ -57,8 +53,8 @@ Hay pocas cosas tan personales en informática como la configuración de <a href
 
 (require &#39;package)
 
-(add-to-list &#39;package-archives &#39;(&#34;melpa&#34; . &#34;https://melpa.org/packages/&#34;) t)                  ;; Melpa, no es la versión estable
-;;(add-to-list &#39;package-archives &#39;(&#34;melpa-stable&#34; . &#34;http://stable.melpa.org/packages/&#34;) t)       ;; Melpa estable
+(add-to-list &#39;package-archives &#39;(&#34;melpa&#34; . &#34;https://melpa.org/packages/&#34;) t)                    ;; Melpa, no es la versión estable
+;;(add-to-list &#39;package-archives &#39;(&#34;melpa-stable&#34; . &#34;http://stable.melpa.org/packages/&#34;) t)     ;; Melpa estable
 ;;(add-to-list &#39;package-archives &#39;(&#34;org&#34; . &#34;http://orgmode.org/elpa/&#34;) t)                       ;; Problemas al instalar Org-Roam
 (add-to-list &#39;package-archives &#39;(&#34;nongnu&#34;   . &#34;https://elpa.nongnu.org/nongnu/&#34;) t)
 ;;(add-to-list &#39;package-archives &#39;(&#34;gnu&#34;   . &#34;https://elpa.gnu.org/packages/&#34;) t)               ;; Cambiado por la versión nongnu
@@ -71,7 +67,6 @@ Hay pocas cosas tan personales en informática como la configuración de <a href
 (package-initialize)
 (setq package-enable-at-startup nil)
 
-
 (when (not package-archive-contents)
   (package-refresh-contents))
 
@@ -82,69 +77,58 @@ Hay pocas cosas tan personales en informática como la configuración de <a href
 (my-install-package-if-not-installed &#39;ivy)                                                  ;; Instalación del paquete &#34;Ivy&#34;
 (ivy-mode t)                                                                                ;; Activa el modo de autocompletado de Ivy
 
+;;;;;;;;;;;;;
+;; ox-hugo ;;
+;;;;;;;;;;;;;
+
 (my-install-package-if-not-installed &#39;ox-hugo)
 (with-eval-after-load &#39;ox
   (require &#39;ox-hugo))
+
+;;(setq org-hugo-default-static-subdirectory-for-externals &#34;~/sherlockes.gitlab.io/static&#34;)
+;;(setq org-hugo-default-section-directory &#34;notas&#34;)
+;;(setq org-hugo-external-file-extensions-allowed-for-copying t)
+
+;;;;;;;;;;;;;
+;; Counsel ;;
+;;;;;;;;;;;;;
+
+(my-install-package-if-not-installed &#39;counsel)                                              ;; Requiere tener instalado ripgrep
+(require &#39;counsel)
+(setq counsel-rg-base-command &#34;rg -S --no-heading --line-number --color never %s .&#34;)        ;; Configura el comando rg ejecutable
+
 
 ;;;;;;;;;;;;;;
 ;; Org-roam ;;
 ;;;;;;;;;;;;;;
 
 (my-install-package-if-not-installed &#39;org-roam)
-(my-install-package-if-not-installed &#39;org-roam-ui)
+;;(my-install-package-if-not-installed &#39;org-roam-ui)                                        ;; Paquete estandar de org-roam-ui
+(add-to-list &#39;load-path &#34;/home/sherlockes/Descargas/org-roam-ui&#34;)                           ;; Paquete con capacidad de exportar
+(require &#39;org-roam-ui)
 
-
-;;(add-to-list &#39;load-path &#34;/home/sherlockes/Descargas/org-roam-ui&#34;)
-;;(require &#39;org-roam-ui)
-
-(if (file-exists-p &#34;~/org-roam/&#34;)                                                           ;; Actualiza el repositorio org-roam o lo clona si no existe
-    (let ((default-directory &#34;~/org-roam&#34;))(shell-command &#34;git pull&#34;))
-  (let ((default-directory &#34;~/&#34;))(shell-command &#34;git clone git@github.com:sherlockes/org-roam.git&#34;))
+(if (file-exists-p brain-dir)                                               ;; Actualiza el repositorio brain o lo clona si no existe
+    (let ((default-directory brain-dir))(shell-command &#34;git pull&#34;))
+  (let ((default-directory &#34;~/&#34;))(shell-command (concat &#34;git clone &#34; brain-repo)))
 )
 
-(if (file-exists-p &#34;~/brain/&#34;)                                                              ;; Actualiza el repositorio brain o lo clona si no existe
-    (let ((default-directory &#34;~/brain&#34;))(shell-command &#34;git pull&#34;))
-  (let ((default-directory &#34;~/&#34;))(shell-command &#34;git clone git@gitlab.com:sherlockes/brain.git&#34;))
-)
-
-(setq org-roam-directory (file-truename &#34;~/org-roam&#34;))                                      ;; Establece el directorio para ORGRoam
+(setq org-roam-directory (file-truename brain-roam-dir))                                    ;; Establece el directorio para ORGRoam
 (org-roam-db-autosync-mode)                                                                 ;; Sincronizar cache automáticamente
 (setq org-roam-completion-system &#39;ivy)
 (setq org-roam-completion-everywhere t)
-(setq org-id-extra-files (directory-files-recursively org-roam-directory &#34;\\.org$&#34;))       ;; Habilita la exportación de enlaces hacia Ox-hugo
+(setq org-id-extra-files (directory-files-recursively org-roam-directory &#34;\\.org$&#34;))        ;; Habilita la exportación de enlaces hacia Ox-hugo
 
-(defun org-roam-update()                                                                    ;; Actualizar repositorio Org-Roam
-    (interactive)
-    (org-hugo-export-wim-to-md :all-subtrees)                                               ;; Exportar el artículo a md para la web
-    (let ((default-directory &#34;~/org-roam&#34;))
-        (shell-command &#34;git add --all&#34;)
-        (shell-command &#34;git commit -m &#39;Update&#39;&#34;)
-        (shell-command &#34;git push&#34;)
-    )
-    (let ((default-directory &#34;~/brain&#34;))
-        (shell-command &#34;git add --all&#34;)
-        (shell-command &#34;git commit -m &#39;Update&#39;&#34;)
-        (shell-command &#34;git push&#34;)
-    )
+(defun funcion-al-guardar ()                                                                ;; Funión que se ejecuta al guardar archivo de brain-dir
+  (interactive)
+  (if (string= (file-name-extension buffer-file-name) &#34;org&#34;)
+    (org-hugo-export-wim-to-md :all-subtrees))                                              ;; Exporta el archivo si es de tipo *.org
+
+  (let ((default-directory brain-dir))
+    (shell-command &#34;gitup&#34;)                                                                 ;; Actualiza el repositorio git
+  )
 )
 
-(defun funcion-al-guardar ()
-  (let ((directorio-org-roam (expand-file-name &#34;org-roam&#34; (getenv &#34;HOME&#34;))))
-    (when (string-prefix-p directorio-org-roam buffer-file-name)
-      (org-roam-update))))
-
-;;(add-hook &#39;after-save-hook &#39;funcion-al-guardar)
-
-(add-hook &#39;after-save-hook (lambda () (when (and (string= (file-name-extension buffer-file-name) &#34;org&#34;) (funcion-al-guardar))) nil t))
-
-
-(global-set-key (kbd &#34;C-c n f&#34;) &#39;org-roam-node-find)                                        ;; Buscar o crear un Nodo
-(global-set-key (kbd &#34;C-c n l&#34;) &#39;org-roam-buffer-toggle)                                    ;; Mostrar/Ocultar el Buffer Org-Roam
-(global-set-key (kbd &#34;C-c n i&#34;) &#39;org-roam-node-insert)                                      ;; Insertar un enlace
-(global-set-key (kbd &#34;C-c n t&#34;) &#39;org-roam-tag-add)                                          ;; Añadir un Tag
-(global-set-key (kbd &#34;C-c n a&#34;) &#39;org-roam-alias-add)                                        ;; Añadir un Alias
-(global-set-key (kbd &#34;C-c n o&#34;) &#39;org-id-get-create)                                         ;; Convertir encabezado en nodo
-
+(add-hook &#39;after-save-hook (lambda () (when (and buffer-file-name (string-prefix-p brain-dir buffer-file-name))(funcion-al-guardar))))
 
 ;;;;;;;;;;;;;;;;;;;
 ;; Añadir Dired&#43; ;;
@@ -269,11 +253,13 @@ Hay pocas cosas tan personales en informática como la configuración de <a href
 
 (setq ispell-dictionary &#34;español&#34;)                                                          ;; Establece el diccionario Español pr defecto
 (add-hook &#39;markdown-mode-hook &#39;flyspell-mode)                                               ;; Habilita la correción ortográfica para archivos Markdown
+(add-hook &#39;org-mode-hook &#39;flyspell-mode)                                                    ;; Habilita la correción ortográfica para archivos Org-mode
 (add-hook &#39;flyspell-mode-hook &#39;flyspell-buffer)                                             ;; Corrige el buffer cuando se habilita la corrección
 
 ;;;;;;;;;;;
 ;; Otros ;;
 ;;;;;;;;;;;
+(put &#39;downcase-region &#39;disabled nil)                                                        ;; Habilita el comando para pasar a minúsculas
 (put &#39;upcase-region &#39;disabled nil)                                                          ;; Habilita el comando para pasar a mayúsculas
 (put &#39;erase-buffer &#39;disabled nil)                                                           ;; Habilita el comando de borrado del buffer
 (global-visual-line-mode t)                                                                 ;; Ajuste de línea
@@ -303,8 +289,7 @@ Hay pocas cosas tan personales en informática como la configuración de <a href
 	   &#34; &#34; filename)))
  &#39;(org-roam-capture-templates
    &#39;((&#34;d&#34; &#34;default&#34; plain &#34;%?&#34; :target
-      (file&#43;head &#34;%&lt;%Y%m%d&gt;-${slug}.org&#34;
-        &#34;#&#43;title: ${title}
+      (file&#43;head &#34;%&lt;%Y%m%d&gt;-${slug}.org&#34; &#34;#&#43;title: ${title}
 #&#43;STARTUP: overview
 #&#43;date: %&lt;%Y-%m-%d&gt;
 #&#43;hugo_custom_front_matter: :thumbnail \&#34;images/image.jpg\&#34;
@@ -333,50 +318,35 @@ Resumen de la nota
  ;; If there is more than one, they won&#39;t work right.
  )
 
+;;;;;;;;;;;;;;;;;;;;;;;
+;; Ajatos de teclado ;;
+;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Accesos directos
-(global-set-key (kbd &#34;&lt;f1&gt;&#34;) &#39;reiniciar)
-;;(global-set-key (kbd &#34;&lt;f2&gt;&#34;) (lambda() (interactive)(find-file &#34;~/Google_Drive/SherloScripts/mi_diario.org&#34;)))
-;;(global-set-key (kbd &#34;&lt;f2&gt;&#34;) (lambda() (interactive)(browse-url-emacs &#34;https://raw.githubusercontent.com/sherlockes/SherloScripts/master/mi_diario.org&#34;)))
-(global-set-key (kbd &#34;&lt;f2&gt;&#34;) (lambda() (interactive)(org-roam-ui-mode t)))
-(global-set-key (kbd &#34;&lt;f4&gt;&#34;) &#39;sherblog_edit)
+;; generales
+(global-set-key (kbd &#34;&lt;f1&gt;&#34;) &#39;reiniciar)                                                    ;; Reiniciar emacs
+(global-set-key (kbd &#34;&lt;f2&gt;&#34;) (lambda() (interactive)(org-roam-ui-mode t)))                  ;; Lanza Org-roam-ui
+(global-set-key (kbd &#34;&lt;f4&gt;&#34;) &#39;sherblog_edit)                                                ;; Modo de edición del blog
 (global-set-key (kbd &#34;&lt;f5&gt;&#34;) &#39;flyspell-mode)
-(global-set-key (kbd &#34;&lt;f6&gt;&#34;) (kbd &#34;C-u C-c C-c&#34;))
-(global-set-key (kbd &#34;&lt;f7&gt;&#34;) &#39;fd-switch-dictionary)    ;; Cambio de diccionario
-(global-set-key (kbd &#34;C-x C-b&#34;) &#39;ibuffer)
+(global-set-key (kbd &#34;&lt;f6&gt;&#34;) (kbd &#34;C-u C-c C-c&#34;))                                           ;; Exportar de nuevo
+(global-set-key (kbd &#34;&lt;f7&gt;&#34;) &#39;fd-switch-dictionary)                                         ;; Cambio de diccionario
+
+(global-set-key (kbd &#34;C-x C-b&#34;) &#39;ibuffer)                                                   ;; Cambio de buffer
 (global-set-key (kbd &#34;C-c r&#34;) &#39;query-replace-regexp)
+(global-set-key (kbd &#34;C-c s&#34;) &#39;counsel-rg)                                                  ;; Buscar mediante counsel y ripgrep
 
-
-;; -----------------------------------
-(require &#39;org)
-(require &#39;org-element)
-
-(defvar yt-iframe-format
-  ;; You may want to change your width and height.
-  (concat &#34;&lt;iframe width=\&#34;440\&#34;&#34;
-          &#34; height=\&#34;335\&#34;&#34;
-          &#34; src=\&#34;https://www.youtube.com/embed/%s\&#34;&#34;
-          &#34; frameborder=\&#34;0\&#34;&#34;
-          &#34; allowfullscreen&gt;%s&lt;/iframe&gt;&#34;))
-
-(org-add-link-type
- &#34;yt&#34;
- (lambda (handle)
-   (browse-url
-    (concat &#34;https://www.youtube.com/embed/&#34;
-            handle)))
- (lambda (path desc backend)
-   (cl-case backend
-     (html (format yt-iframe-format
-                   path (or desc &#34;&#34;)))
-     (latex (format &#34;\href{%s}{%s}&#34;
-                    path (or desc &#34;video&#34;))))))
-
-
-(put &#39;downcase-region &#39;disabled nil)
+;; Org-Roam
+(global-set-key (kbd &#34;C-c n f&#34;) &#39;org-roam-node-find)                                        ;; Buscar o crear un Nodo
+(global-set-key (kbd &#34;C-c n l&#34;) &#39;org-roam-buffer-toggle)                                    ;; Mostrar/Ocultar el Buffer Org-Roam
+(global-set-key (kbd &#34;C-c n i&#34;) &#39;org-roam-node-insert)                                      ;; Insertar un enlace
+(global-set-key (kbd &#34;C-c n t&#34;) &#39;org-roam-tag-add)                                          ;; Añadir un Tag
+(global-set-key (kbd &#34;C-c n a&#34;) &#39;org-roam-alias-add)                                        ;; Añadir un Alias
+(global-set-key (kbd &#34;C-c n o&#34;) &#39;org-id-get-create)                                         ;; Convertir encabezado en nodo
 
 
 
-</code></pre><p>Seguro que no están aquí todas tus necesidades ni necesitas todo lo que está aquí, pero el archivo está suficientemente comentado para que puedas extraer de el todo lo que necesites.</p><blockquote><p>El archivo se actualiza diariamente de mi <a href=https://github.com/sherlockes/SherloScripts/blob/master/elisp/init.el>repositorio en GitHub</a> y así se <a href=/incrustar-texto-externo-en-hugo/>incrusta en el blog</a>.</p></blockquote><h3 id=enlaces-de-interés>Enlaces de interés</h3><ul><li><a href=www.sherblog.pro>enlace</a></li></ul></div><footer class=post__footer><div class="content post__content clearfix"><h3>Otros de mís artículos que te pueden interesar</h3><ul><li><a href=/comprobaci%C3%B3n-ortogr%C3%A1fica-en-emacs/>Comprobación ortográfica en Emacs</a></li><li><a href=/sincronizando-org-roam-mediante-github-en-emacs/>Sincronizando Org-Roam mediante Github en Emacs</a></li><li><a href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li><li><a href=/exportar-de-org-a-html-en-emacs/>Exportar de org a html en emacs</a></li><li><a href=/reemplazo-mediante-expresiones-regulares-en-emacs/>Reemplazo mediante expresiones regulares en Emacs</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/emacs/ rel=tag>emacs</a></li></ul></div></footer></article></main><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=/sincronizando-org-roam-mediante-github-en-emacs/ rel=prev><span class=pager__subtitle>«&#8201;Anterior</span><p class=pager__title>Sincronizando Org-Roam mediante Github en Emacs</p></a></div><div class="pager__item pager__item--next"><a class=pager__link href=/comprobaci%C3%B3n-ortogr%C3%A1fica-en-emacs/ rel=next><span class=pager__subtitle>Siguiente&#8201;»</span><p class=pager__title>Comprobación ortográfica en Emacs</p></a></div></nav><div class="content post__content clearfix"><h3>Comentarios</h3>Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href=https://emacs.ch/@sherlockes>@sherlockes</a> en Mastodon o Telegram.</div></div></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2023 Sherlockes.
+
+
+
+</code></pre><p>Seguro que no están aquí todas tus necesidades ni necesitas todo lo que está aquí, pero el archivo está suficientemente comentado para que puedas extraer de el todo lo que necesites.</p><blockquote><p>El archivo se actualiza diariamente de mi <a href=https://github.com/sherlockes/SherloScripts/blob/master/elisp/init.el>repositorio en GitHub</a> y así se <a href=/incrustar-texto-externo-en-hugo/>incrusta en el blog</a>.</p></blockquote><h3 id=enlaces-de-interés>Enlaces de interés</h3><ul><li><a href=www.sherblog.pro>enlace</a></li></ul></div><footer class=post__footer><div class="content post__content clearfix"><h3>Otros de mís artículos que te pueden interesar</h3><ul><li><a href=/exportar-org-roam-a-hugo-en-gitlab/>Exportar Org-Roam a Hugo en Gitlab</a></li><li><a href=/comprobaci%C3%B3n-ortogr%C3%A1fica-en-emacs/>Comprobación ortográfica en Emacs</a></li><li><a href=/sincronizando-org-roam-mediante-github-en-emacs/>Sincronizando Org-Roam mediante Github en Emacs</a></li><li><a href=/entorno-de-desarrollo-de-sherblog-en-emacs/>Entorno de desarrollo de Sherblog en Emacs</a></li><li><a href=/exportar-de-org-a-html-en-emacs/>Exportar de org a html en emacs</a></li></ul></div><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/emacs/ rel=tag>emacs</a></li></ul></div></footer></article></main><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=/sincronizando-org-roam-mediante-github-en-emacs/ rel=prev><span class=pager__subtitle>«&#8201;Anterior</span><p class=pager__title>Sincronizando Org-Roam mediante Github en Emacs</p></a></div><div class="pager__item pager__item--next"><a class=pager__link href=/comprobaci%C3%B3n-ortogr%C3%A1fica-en-emacs/ rel=next><span class=pager__subtitle>Siguiente&#8201;»</span><p class=pager__title>Comprobación ortográfica en Emacs</p></a></div></nav><div class="content post__content clearfix"><h3>Comentarios</h3>Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href=https://emacs.ch/@sherlockes>@sherlockes</a> en Mastodon o Telegram.</div></div></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2023 Sherlockes.
 <span class=footer__copyright-credits>Generado con <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> y <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a>.</span></br>Esta obra está bajo una <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Licencia de Creative Commons" style=border-width:0 src=https://i.creativecommons.org/l/by-sa/4.0/88x31.png></a></div></div></footer></div><script async defer src=/js/menu.js></script>
 <script src=/js/custom.js></script></body></html>
