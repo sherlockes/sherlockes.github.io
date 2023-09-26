@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>poppler on Sherblog</title>
+    <link>https://sherlockes.github.io/tags/poppler/</link>
+    <description>Recent content in poppler on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Thu, 16 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/poppler/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unir o separar en varios pdf en linux desde la línea de comandos</title>
+      <link>https://sherlockes.github.io/unir-o-separar-en-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/</link>
+      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/unir-o-separar-en-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/</guid>
+      <description>&lt;p&gt;En la web podemos encontrar una infinidad de servicios para unir varios archivos pdf en uno o partir uno en varios según las páginas, pero si no quieres perder tiempo en subir y bajar los archivos a los servidores remotos y tienes dudas de la privacidad que el servicio ofrezca, aquí dejo una forma sencilla para realizar el mismo trabajo con una sola línea en la consola de comandos.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Extrayendo la portada de un pdf</title>
+      <link>https://sherlockes.github.io/extrayendo-la-portada-de-un-pdf/</link>
+      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/extrayendo-la-portada-de-un-pdf/</guid>
+      <description>&lt;p&gt;Una vez más me encuentro con un problema de los que puedo optar por la solución sencilla y laboriosa o por la optima y meticulosa. Necesito convertir de varios archivos en pdf la primera página (Portada) a una imagen para lo cual voy a probar dos alternativas, primero con &lt;a href=&#34;https://imagemagick.org&#34;&gt;Imagemagick&lt;/a&gt; y posteriormente con &lt;a href=&#34;https://poppler.freedesktop.org/&#34;&gt;Poppler&lt;/a&gt; ambas desde la terminal y la línea de comandos de Linux Mint.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

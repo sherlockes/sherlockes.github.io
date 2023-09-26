@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Acceder a Github via ssh sin password - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Acceder a Github sin tener que poner el nombre de usuario y contraseña todas las veces">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://www.sherblog.pro/images/20180806_hugo_github_pass_00.jpg" />
+	<meta name="twitter:title" content="Acceder a Github via ssh sin password"/>
+	<meta name="twitter:description" content="Acceder a Github sin tener que poner el nombre de usuario y contraseña todas las veces"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="sherblog.pro" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Acceder a Github via ssh sin password">
+	<meta property="og:url"   content="https://sherlockes.github.io">
+	<meta property="og:description" content="Acceder a Github sin tener que poner el nombre de usuario y contraseña todas las veces"/>
+
+	<meta property="og:image" content="http://www.sherblog.pro/images/20180806_hugo_github_pass_00.jpg" />
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Acceder a Github via ssh sin password"/>
+<meta name="twitter:description" content="Acceder a Github sin tener que poner el nombre de usuario y contraseña todas las veces"/>
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Acceder a Github via ssh sin password</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-07-27T00:00:00Z">2018-07-27</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/hugo/" rel="category">hugo</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20180806_hugo_github_pass_00.jpg" alt="Acceder a Github via ssh sin password">
+		
+	</figure><div class="content post__content clearfix">
+			<h3 id="el-problema">El problema</h3>
+<p>Llevo unos días adentrándome en el maravilloso mundo de <a href="https://github.com">Github</a> del que hace un mes no tenía más idea que el de su mera existencia. En fin, pruebas y pruebas en las que estoy hasta el gorro de tener que introducir cada vez el nombre de usuario y contraseña cuando modifico los repositorios a través de ssh.</p>
+<h3 id="la-solución">La solución</h3>
+<p>Antes de nada nombrar que me conecto a <a href="https://github.com">Github</a> a través de la Raspberry Pi en la que tengo alojada mi web y otros servicios. Nada de ratón ni interface gráfica, solo comandos de texto a través de la terminal cuando lo hago en Linux o con Putty cuando trabajo desde Windows.</p>
+<p>Ssh-keygen es un comando del protocolo ssh que podemos encontrar en sistemas unix para establecer conexiones de terminal seguras entre sistemas remotos a través de redes inseguras. La utilidad ssh-keygen es usada para generar, gestionar y convertir llaves de autentificación (authentication Keys) usando diferentes algoritmos de firma.</p>
+<p>He seguido al pie de la letra las <a href="https://help.github.com/articles/connecting-to-github-with-ssh/">instrucciones</a> para la conexión ssh y he conseguido <a href="https://help.github.com/articles/testing-your-ssh-connection/">comprobar</a> la conexión que parece funciona con normalidad, pero cuando intento realizar alguna modificación del repositorio necesito introducir el nombre de usuario y contraseña de nuevo.</p>
+<p>Después de muchas pruebas y fracasos he dado con el problema a través de un <a href="https://stackoverflow.com/questions/8588768/how-do-i-avoid-the-specification-of-the-username-and-password-at-every-git-push/36955408">post</a> de [Stackoverflow][5] en el que explica detalladamente todo el proceso de conexión mediante llaves ssh aunque me voy a ceñir solo a la parte que difiere con el método oficial de <a href="https://github.com">Github</a>.</p>
+<ul>
+<li>
+<p>Comprobaremos la url remota de nuestro repositorio mediante el comando
+&rsquo;&rsquo;'
+git remote show origin
+&rsquo;''</p>
+</li>
+<li>
+<p>Si exite una dirección del tipo &ldquo;<a href="https://github.com/usuario/repositorio.git%22">https://github.com/usuario/repositorio.git&quot;</a> habrá que cambiarla
+por &ldquo;git+ssh://git@github.com/usuario/repositorio.git&rdquo; mediante el comando</p>
+</li>
+</ul>
+<p>&rsquo;&rsquo;'
+git remote set-url origin git+ssh://git@github.com/usuario/repositorio.git
+&rsquo;''</p>
+<p>Y ya está, ahora ya puedo realizar modificaciones en mis repositorios de Github a través de ssh sin tener que estar continuamente introduciendo mi nombre de usuario y contraseña.</p>
+<p>-password-at-every-git-push/36955408
+[5]: <a href="https://stackoverflow.com">https://stackoverflow.com</a></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/publicar-desde-iawriter/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Publicar desde iaWriter</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://emacs.ch/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2023 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script></body>
+</html>

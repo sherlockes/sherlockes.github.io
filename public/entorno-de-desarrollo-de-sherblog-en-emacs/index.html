@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Entorno de desarrollo de Sherblog en Emacs - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Emacs sherblog enviroment">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://www.sherblog.pro/images/20220206_emacs_sherblog_enviroment_00.jpg" />
+	<meta name="twitter:title" content="Entorno de desarrollo de Sherblog en Emacs"/>
+	<meta name="twitter:description" content="Emacs sherblog enviroment"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="sherblog.pro" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Entorno de desarrollo de Sherblog en Emacs">
+	<meta property="og:url"   content="https://sherlockes.github.io">
+	<meta property="og:description" content="Emacs sherblog enviroment"/>
+
+	<meta property="og:image" content="http://www.sherblog.pro/images/20220206_emacs_sherblog_enviroment_00.jpg" />
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Entorno de desarrollo de Sherblog en Emacs"/>
+<meta name="twitter:description" content="Emacs sherblog enviroment"/>
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Entorno de desarrollo de Sherblog en Emacs</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-12-17T00:00:00Z">2022-12-17</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">computing</a>, <a class="meta__link" href="/categories/hugo/" rel="category">hugo</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20220206_emacs_sherblog_enviroment_00.jpg" alt="Entorno de desarrollo de Sherblog en Emacs">
+		
+	</figure><div class="content post__content clearfix">
+			<p>Por mucho que podamos pensar &ldquo;sólo cuesta dos minutos&rdquo;, resulta más productivo invertir una hora en preparar una función para poder acomodar <a href="https://www.gnu.org/software/emacs/">Emacs</a> como entorno de desarrollo del blog con una sola tecla que tener que hacerlo a mano cada una de las veces que lo necesitemos.</p>
+<p>Para trabajar en cada uno de los post que escribo desde <a href="https://www.gnu.org/software/emacs/">Emacs</a> tengo la pantalla partida en tres ventanas, dos a la izquierda, una con un buffer de Dired y el contenido del blog y otra con una sesión de terminal en la carpeta raíz del blog para lanzar el servidor de <a href="https://gohugo.io">Hugo</a>. A la derecha pongo una ventana con todo el alto de pantalla para editar el post en el que estoy trabajando tal y como se puede ver en la siguiente imagen.</p>
+<p><img src="/images/20220206_emacs_sherblog_enviroment_01.jpg" alt="image-01"></p>
+<p>Antes de seguir adelante hay que tener en cuenta unas consideraciones particulares sobre la configuración de mi sistema.</p>
+<ul>
+<li>El blog está guardado en un repositorio sincronizado con <a href="https://github.com">GitHub</a> en la Raspberry a la la que accedo a través de ssh a la IP 192.168.10.202</li>
+<li>El servidor de <a href="https://gohugo.io">Hugo</a> está en la misma Raspberry</li>
+<li>En esta Raspberry tengo configurado el alias &ldquo;hugoser&rdquo; para lanzar el servidor de <a href="https://gohugo.io">Hugo</a> con todos los parámetros necesarios para que publique también los borradores desde la IP de la Raspberry y nos lleve directamente al archivo modificado en lugar de tener que navegar hasta el.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alias hugoser<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hugo server -D --bind=192.168.10.202 --baseURL=http://192.168.10.202:1313 --navigateToChanged
+</span></span></span></code></pre></div><p>En el archivo de configuración &ldquo;.emacs&rdquo; he incluido una función que para conseguir la disposición de este entorno de desarrollo realiza los siguientes comandos:</p>
+<ul>
+<li>Cierra todos los buffers</li>
+<li>Elimina todas las ventanas</li>
+<li>Divide el entorno de <a href="https://www.gnu.org/software/emacs/">Emacs</a> en lado izquierdo y derecho</li>
+<li>Parte la ventana izquierda en superior e inferior</li>
+<li>Asigna el directorio por defecto al del repositorio del Blog</li>
+<li>En la ventana superior izquierda abre una sesión de terminal y lanza el comando &ldquo;hugoser&rdquo;</li>
+<li>En la ventana inferior abre un <a href="https://www.emacswiki.org/emacs/DiredMode">Dired</a> al contenido del blog</li>
+<li>Abre el navegador del sistema con la dirección del servidor de <a href="https://gohugo.io">Hugo</a></li>
+<li>Asigna la tecla &ldquo;F4&rdquo; a la función &ldquo;sherblog_edit&rdquo; que realiza todo lo anterior</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(defun sherblog_edit ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">mapc</span> <span style="color:#e6db74">&#39;kill-buffer</span> (buffer-list))
+</span></span><span style="display:flex;"><span>  (delete-other-windows <span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>  (split-window-right <span style="color:#ae81ff">80</span>)
+</span></span><span style="display:flex;"><span>  (split-window-below)
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">setq</span> default-directory <span style="color:#e6db74">&#34;/ssh:pi@192.168.10.202:/home/pi/sherblog/&#34;</span>)
+</span></span><span style="display:flex;"><span>  (comint-send-string (shell) <span style="color:#e6db74">&#34;hugoser\n&#34;</span>)
+</span></span><span style="display:flex;"><span>  (other-window <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (dired <span style="color:#e6db74">&#34;/ssh:pi@192.168.10.202:/home/pi/sherblog/content/post/&#34;</span>)
+</span></span><span style="display:flex;"><span>  (enlarge-window <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>  (browse-url <span style="color:#e6db74">&#34;http://192.168.10.202:1313&#34;</span>)
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(global-set-key (kbd <span style="color:#e6db74">&#34;&lt;f4&gt;&#34;</span>) <span style="color:#e6db74">&#39;sherblog_edit</span>)
+</span></span></code></pre></div><p>Y con esto, una vez que tenemos abierto <a href="https://www.gnu.org/software/emacs/">Emacs</a> sólo hay que pulsar &ldquo;F4&rdquo; para que el entorno se configure automáticamente. No es el entorno de desarrollo más bonito del mundo pero es increíblemente práctico.</p>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="https://stackoverflow.com/questions/60464/changing-the-default-folder-in-emacs">StackOverflow - Default folder in Emacs</a></li>
+<li><a href="https://stackoverflow.com/questions/19707018/emacs-open-another-shell-in-current-window">StackOverflow - Shell in current Emacs window</a></li>
+<li><a href="https://superuser.com/questions/841178/directly-open-remote-shell-with-tramp-in-emacs">Superuser - Open remote shell in emacs</a></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Windows.html">Gnu - Windows in Emacs</a></li>
+<li><a href="https://www.emacswiki.org/emacs/WindowResize#h5o-3">EmacsWiki - Windows resizing</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/">Del Blog a Twitter y Mastodon mediante rss y Bash</a></li>
+	    
+	    <li><a href="/exportar-de-org-a-html-en-emacs/">Exportar de org a html en emacs</a></li>
+	    
+	    <li><a href="/script-de-instalaci%C3%B3n-de-hugo-en-linux/">Script de instalación de Hugo en linux</a></li>
+	    
+	    <li><a href="/de-youtube-a-podcast/">De Youtube a Podcast</a></li>
+	    
+	    <li><a href="/incrustar-texto-externo-en-hugo/">Incrustar texto externo en Hugo</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/bash/" rel="tag">bash</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/emacs/" rel="tag">emacs</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/exportar-de-org-a-html-en-emacs/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Exportar de org a html en emacs</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/sincronizando-org-roam-mediante-github-en-emacs/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Sincronizando Org-Roam mediante Github en Emacs</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://emacs.ch/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2023 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script></body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>software on Sherblog</title>
+    <link>https://sherlockes.github.io/tags/software/</link>
+    <description>Recent content in software on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Tue, 07 Sep 2010 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Editando tracks con GPX Editor</title>
+      <link>https://sherlockes.github.io/editando-tracks-con-gpx-editor/</link>
+      <pubDate>Tue, 07 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/editando-tracks-con-gpx-editor/</guid>
+      <description>Los archivos GPX son simples archivos de texto con formato XML de forma que para modificar una ruta lo único que hace falta es un editor de texto y algo de tiempo. Es un método simple pero tedioso que funciona y con el que podemos eliminar puntos de la ruta o incluso combinar varias. El problema de este método es que puede acabar con la paciencia de cualquiera, ya que hay que editar el archivo con un programa y luego abrirlo con otro para ver los resultados de la edición con el inevitable sistema de prueba y error.</description>
+    </item>
+    
+  </channel>
+</rss>

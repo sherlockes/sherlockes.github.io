@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Crear Podcast a partir de un canal de Twitch - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Una forma sencilla de crear de forma automática un podcast a partir de un canal de Twitch">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://www.sherblog.pro/images/20220317_python_download_twitch_00.jpg" />
+	<meta name="twitter:title" content="Crear Podcast a partir de un canal de Twitch"/>
+	<meta name="twitter:description" content="Una forma sencilla de crear de forma automática un podcast a partir de un canal de Twitch"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="sherblog.pro" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Crear Podcast a partir de un canal de Twitch">
+	<meta property="og:url"   content="https://sherlockes.github.io">
+	<meta property="og:description" content="Una forma sencilla de crear de forma automática un podcast a partir de un canal de Twitch"/>
+
+	<meta property="og:image" content="http://www.sherblog.pro/images/20220317_python_download_twitch_00.jpg" />
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Crear Podcast a partir de un canal de Twitch"/>
+<meta name="twitter:description" content="Una forma sencilla de crear de forma automática un podcast a partir de un canal de Twitch"/>
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Crear Podcast a partir de un canal de Twitch</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-03-23T00:00:00Z">2022-03-23</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">computing</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20220317_python_download_twitch_00.jpg" alt="Crear Podcast a partir de un canal de Twitch">
+		
+	</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Índice</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#buscar-nuevos-vídeos-publicados">Buscar nuevos vídeos publicados</a></li>
+        <li><a href="#descargar-los-vídeos-nuevos">Descargar los vídeos nuevos</a></li>
+        <li><a href="#convertir-los-vídeos-descargados-a-mp3">Convertir los vídeos descargados a mp3</a></li>
+        <li><a href="#subir-el-audio-generado-a-un-servidor-webdav">Subir el audio generado a un servidor WebDav</a></li>
+        <li><a href="#generar-el-feed-con-todos-los-archivos">Generar el feed con todos los archivos</a></li>
+        <li><a href="#script-completo">Script completo</a></li>
+        <li><a href="#enlaces-de-interés">Enlaces de interés</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p>No tengo tiempo para ver los canales de Twitch que me gustaría seguir en el momento de la emisión y tras unos días probando una aplicación Android para descargar los vídeos me he decidido a crear un podcast privado que se genere de forma automática a partir del contenido de un canal en Twitch.</p>
+<h3 id="buscar-nuevos-vídeos-publicados">Buscar nuevos vídeos publicados</h3>
+<p>Una vez más, gracias a <a href="https://ugeek.github.io/blog/post/2022-03-15-twitch-dl-aplicacion-cli-para-descargar-videos-de-twitch-tv.html">Angel</a> he descubierto <a href="https://twitch-dl.bezdomni.net/introduction.html">twitch-dl</a>, una aplicación en python con la que listar y descargar los vídeos de cualquier canal de Twitch. Para listarlos en formato &ldquo;json&rdquo; es tan sencillo como ejecutar el siguiente comando desde el directorio donde tengamos descargado &ldquo;twitch-dl&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 twitch-dl.pyz videos jordillatzer -j
+</span></span></code></pre></div><h3 id="descargar-los-vídeos-nuevos">Descargar los vídeos nuevos</h3>
+<p>Ya tenemos un precioso &ldquo;json&rdquo; del que extraer las &ldquo;id&rdquo; de los últimos vídeos publicados. En mi script he utilizado <a href="https://stedolan.github.io/jq/">jq</a> para extraer la id de los últimos vídeos y compruebo si ya lo he descargado anteriormente con las &ldquo;id&rsquo;s&rdquo; que tengo guardadas en el archivo &ldquo;descargados.txt&rdquo;. Para descargar el audio del vídeo es tan sencillo como lo siguiente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>twitch-dl.pyz download -q audio_only <span style="color:#ae81ff">221837124</span>
+</span></span></code></pre></div><h3 id="convertir-los-vídeos-descargados-a-mp3">Convertir los vídeos descargados a mp3</h3>
+<p>Pero el archivo que se descarga es muy grande para ser un audio y está en formato &ldquo;mkv&rdquo; por lo que lo proceso con FFMPEG y elimino los silencios pasándolo al mismo tiempo de mkv a mp3.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -loglevel <span style="color:#ae81ff">24</span> -i <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> -af silenceremove<span style="color:#f92672">=</span>1:0:-50dB <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>file%.mkv<span style="color:#e6db74">}</span><span style="color:#e6db74">.mp3&#34;</span>
+</span></span></code></pre></div><h3 id="subir-el-audio-generado-a-un-servidor-webdav">Subir el audio generado a un servidor WebDav</h3>
+<p>Ya he escrito en un post como tengo implementado un servidor <a href="/servidor-webdav-de-contenido-remoto-con-rclone/">webdav</a> gracias a <a href="https://rclone.org">Rclone</a> usando como almacenamiento mis nubes públicas. Uso el mismo <a href="https://rclone.org">Rclone</a> en este script para subir el contenido descargado y recodificado en local.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rclone copy $canal remoto:twitch/$canal/ --create-empty-src-dirs
+</span></span></code></pre></div><h3 id="generar-el-feed-con-todos-los-archivos">Generar el feed con todos los archivos</h3>
+<p>Como plantilla para la generación del feed he utilizado esta de <a href="http://matthewdickens.me/post/xml-template-for-a-podcast-rss-feed">Matthew Dickens</a> eliminando de la misma todo lo relativo a itunes ya que va a ser de uso privado. Guardo por un lado el encabezado del xml y por otro los archivos ya incluidos junto con el pie, así me resulta fácil poner como primer &ldquo;item&rdquo; del feed un nuevo audio que descargue. Hago uso de <a href="https://ffmpeg.org/ffprobe.html">ffprobe</a> para extraer los metadatos del mp3 que incrustar en el feed y el comando <code>awk</code> para extraer la información del nombre del archivo.</p>
+<p>Tras poner el feed en el servidor webdav donde he colocado los archivos de audio ya sólo resta añadirlo y actualizarlo en la aplicación de Podcast.</p>
+<h3 id="script-completo">Script completo</h3>
+<p>A continuación dejo el código completo de script, si quieres descargarlo o copiarlo te recomiendo que pases por mi <a href="https://github.com/sherlockes/SherloScripts">Repositorio de scripts</a> y lo <a href="https://github.com/sherlockes/SherloScripts/blob/master/bash/twitch2podcast.sh">descargues</a>  ya que Hugo no lleva bien la importación de texto externo de momento.</p>
+<pre><code>#!/bin/bash
+
+###################################################################
+#Script Name: twitch2podcast.sh
+#Description: Generación de Podcast a partir de canal de Twitch
+#Args: N/A
+#Creation/Update: 20220317/20230420
+#Author: www.sherblog.pro                                             
+#Email: sherlockes@gmail.com                               
+###################################################################
+
+CANAL=&#34;jordillatzer&#34;
+TITULO=&#34;Jordi Llatzer en Twitch&#34;
+SERVIDOR=&#34;http://192.168.10.202:5005&#34;
+FECHA=$(date)
+
+twitch_dir=~/twitch
+twdl=$twitch_dir/twitch-dl.pyz
+
+notificacion=~/SherloScripts/bash/telegram.sh
+inicio=$( date &#43;%s )
+
+mensaje=$&#39;Actualizar Twitch desde &lt;a href=&#34;https://raw.githubusercontent.com/sherlockes/SherloScripts/master/bash/twitch2podcast.sh&#34;&gt;twitch2podcast.sh&lt;/a&gt;\n&#39;
+mensaje&#43;=$&#39;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n&#39;
+
+###############
+## Funciones ##
+###############
+
+#----------------------------------------------------------#
+#                   Comprobar la salida                    #
+#----------------------------------------------------------#
+comprobar(){
+
+    if [ $1 -eq 0 ]; then
+	mensaje&#43;=$&#39;OK&#39;
+    else
+	mensaje&#43;=$&#39;ERROR&#39;
+	$notificacion &#34;$mensaje&#34;
+	#exit 0
+    fi
+    mensaje&#43;=$&#39;\n&#39;
+}
+
+#----------------------------------------------------------#
+#   Buscar los últimos vídeos de un canal no descargados   #
+#----------------------------------------------------------#
+buscar_ultimos () {
+    # Valores de argumentos
+    local canal=${1:?Falta el nombre del canal}
+    local titulo=${2:?Falta el título del canal}
+
+    # Obtiene el json de los ultimos vídeos.
+    mensaje&#43;=$&#39;Obteniendo últimos vídeos. . . . . . . . . . . . . &#39;
+    echo &#34;- Obteniendo últimos vídeos de $titulo&#34;
+    json=$(python3 $twdl videos $canal -j)
+    comprobar $?
+
+    # Limitar a 15 videos la lista de descargadoscase 
+    mensaje&#43;=$&#39;Recortando listas de descargados. . . . . . . &#39;
+    echo &#34;- Recortando listas de descargados&#34;
+    head -n15 $twitch_dir/$canal/descargados.txt &gt; tmp
+    mv tmp $twitch_dir/$canal/descargados.txt
+
+    # Limitar a 15 videos la lista de items
+    head -n150 $twitch_dir/$canal/items.xml &gt; tmp
+    mv tmp $twitch_dir/$canal/items.xml
+    comprobar $?
+
+    # Busca sobre los ultimos diez videos
+    for i in {0..9}
+    do
+	# Si el vídeo a comenzado hace menos de 3 horas pasa al siguiente
+	publicado=$(echo &#34;$json&#34; | jq &#34;.videos[$i].publishedAt&#34; | cut -c2- | rev | cut -c2- | rev)
+	publicado=$(date -d &#34;$publicado&#43;3 hours&#34; &#43;%s)
+	
+	if [[ $(date &#43;%s) &lt; $publicado ]]
+	then
+	    mensaje&#43;=$&#34;El vídeo $id está en emisión.&#34;
+            mensaje&#43;=$&#39;\n&#39;
+	    continue
+	fi
+	
+	# obtiene la identificación y minutos de duración del último vídeo
+	id=$(echo &#34;$json&#34; | jq &#34;.videos[$i].id&#34; | cut -c2- | rev | cut -c2- | rev)
+	mins=$(expr $(echo &#34;$json&#34; | jq &#34;.videos[$i].lengthSeconds&#34;) / 60)
+
+	# Comprobar si el archivo ya ha sido descargado
+	if grep -q $id $twitch_dir/$canal/descargados.txt
+	then
+	    
+        if [ $i -eq 0 ]
+        then
+            echo &#34;- No hay nuevos vídeos.&#34;;
+            mensaje&#43;=$&#34;No hay nuevos vídeos.&#34;
+            mensaje&#43;=$&#39;\n&#39;
+	    # No sigue comprobando si ya ha visto uno descargado
+	    break
+        fi
+	    echo &#34;- El vídeo $id ya ha sido descargado.&#34;;
+            mensaje&#43;=$&#34;El vídeo $id ya ha sido descargado.&#34;
+            mensaje&#43;=$&#39;\n&#39;
+	    # No sigue comprobando si ya ha visto uno descargado
+	    break
+	else
+	    echo &#34;- Descargando el audio del vídeo $id.&#34;;
+            mensaje&#43;=$&#34;Descargando el audio de $id . . .&#34;
+
+            if (( $mins &gt; 10 ))
+            then
+		# Descarga el audio en formato mkv
+		#$twdl download -q audio_only --auth-token huimxzjg56hs2xxlhx8zsj3wggej6n $id;
+        $twdl download -q audio_only $id;
+		comprobar $?
+            else
+		echo &#34;- El archivo sólo tiene $mins minutos, no se descarga.&#34;
+		mensaje&#43;=$&#34;El archivo sólo tiene $mins minutos, no se descarga.&#34;
+		mensaje&#43;=$&#39;\n&#39;
+            fi
+
+	    # Añade el archivo al principio de la lista de descargados
+	#echo $id &gt;&gt; $twitch_dir/$canal/descargados.txt;
+	echo $id | cat - $twitch_dir/$canal/descargados.txt &gt; temp &amp;&amp; mv temp $twitch_dir/$canal/descargados.txt
+	
+	fi
+    done
+}
+
+#----------------------------------------------------------#
+#      Pasa a mp3 los vídeos descargados en la carpeta     #
+#----------------------------------------------------------#
+convertir_mp3 () {
+    local canal=${1:?Falta el nombre del canal}
+    echo &#34;- Buscando archivos para convertir en $canal&#34;
+    mensaje&#43;=$&#34;Buscando archivos en $canal . . . .&#34;
+    mensaje&#43;=$&#39;\n&#39;
+
+    for file in ./*.mkv; do
+       local nombre=$(basename $file .mkv)
+       local id_ep=$(echo $nombre | awk -F&#39;_&#39; &#39;{print $2}&#39;)
+
+       echo &#34;- Episodio $id_ep, codificando audio y eliminando silencios&#34;
+       mensaje&#43;=$&#34;Recodificando audio de $id_ep . . . . &#34;
+       ffmpeg -loglevel 24 -i &#34;$file&#34; -af silenceremove=1:0:-50dB &#34;${file%.mkv}.mp3&#34;
+       comprobar $?
+
+       echo &#34;- Episodio $id_ep, moviendo mp3&#34;
+       mensaje&#43;=$&#34;Moviendo mp3 $id_ep . . . . . . . . . . . .&#34;
+       mv $nombre.mp3 $canal/mp3/$id_ep.mp3
+       comprobar $?
+
+       echo &#34;- Episodio $id_ep, eliminando el video&#34;
+       mensaje&#43;=$&#34;Eliminando vídeo $id_ep . . . . . . . . . .&#34;
+       rm $file
+       comprobar $?
+    done
+}
+#----------------------------------------------------------#
+#                    Actualizar el feed                    #
+#----------------------------------------------------------#
+# (Coge la info de
+actualizar_feed () {
+    # Valores de argumentos
+    local servidor=${1:?Falta el servidor del feed}
+    local canal=${2:?Falta el nombre del canal}
+    local titulo=${3:?Falta el título del canal}
+
+    # Encabezado del feed
+    echo &#34;- Insertando el encabezado del feed&#34;
+    mensaje&#43;=$&#34;Actualizando el Feed&#34;
+    mensaje&#43;=$&#39;\n&#39;
+
+    cat &gt; $canal/feed.xml &lt;&lt;END_HEADER
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;rss version=&#34;2.0&#34;
+  xmlns:atom=&#34;http://www.w3.org/2005/Atom&#34;
+  xmlns:content=&#34;http://purl.org/rss/1.0/modules/content/&#34;
+  xmlns:itunes=&#34;http://www.itunes.com/dtds/podcast-1.0.dtd&#34;&gt;
+  &lt;channel&gt;
+    &lt;atom:link href=&#34;$servidor/twitch/$canal/feed.xml&#34; rel=&#34;self&#34; type=&#34;application/rss&#43;xml&#34;/&gt;
+    &lt;title&gt;$TITULO&lt;/title&gt;
+    &lt;description&gt;Un podcast creado por Sherlockes a partir del canal de $TITULO&lt;/description&gt;
+    &lt;copyright&gt;Copyright 2022 Sherlockes&lt;/copyright&gt;
+    &lt;language&gt;es&lt;/language&gt;
+    &lt;pubDate&gt;$FECHA&lt;/pubDate&gt;
+    &lt;lastBuildDate&gt;$FECHA&lt;/lastBuildDate&gt;
+    &lt;image&gt;
+      &lt;link&gt;https://sherblog.pro&lt;/link&gt;
+      &lt;title&gt;$TITULO&lt;/title&gt;
+      &lt;url&gt;$servidor/twitch/$canal/artwork.jpg&lt;/url&gt;
+    &lt;/image&gt;
+    &lt;link&gt;https://www.sherblog.pro&lt;/link&gt;
+END_HEADER
+
+    # Buscando mp3&#39;s locales para extraer info
+    echo &#34;- Buscando nuevos episodios descargados&#34;
+
+    find $canal -type f -name &#34;*.mp3&#34; | while read -r file; do
+	NOM_EP=$(basename $file)
+	ART_EP=$(ffprobe -loglevel error -show_entries format_tags=artist -of default=noprint_wrappers=1:nokey=1 $file)
+	TIT_EP=$(ffprobe -loglevel error -show_entries format_tags=title -of default=noprint_wrappers=1:nokey=1 $file)
+	ID_EP=$(echo $NOM_EP | awk -F&#39;_&#39; &#39;{print $2}&#39;)
+
+	ID_EP=$(basename $file .mp3)
+	
+	# Obteniendo info a partir de la ID
+	json=$(python3 $twdl info $ID_EP -j)
+	FEC_EP=$(echo &#34;$json&#34; | jq &#34;.publishedAt&#34; | cut -c2- | rev | cut -c2- | rev)
+	FEC_EP=$(date -d $FEC_EP &#43;&#34;%Y-%m-%dT%H:%M:%S%:z&#34;)
+	FEC_EP=$(date --date &#34;$FEC_EP-2 hours&#34; &#34;&#43;%a, %d %b %Y %T %Z&#34;)
+
+	lengthSeconds=$(echo &#34;$json&#34; | jq &#34;.lengthSeconds&#34;)
+ 
+	echo &#34;- Añadiendo episodio $ID_EP a la lista de episodios&#34;
+	mensaje&#43;=$&#34;Añadiendo episodio $ID_EP a la lista&#34;
+	mensaje&#43;=$&#39;\n&#39;
+
+	# crea el &#34;item.xml&#34; con info del episodio
+	cat &gt;&gt; $canal/item.xml &lt;&lt;END_ITEM
+    &lt;item&gt;
+      &lt;guid isPermaLink=&#34;true&#34;&gt;$servidor/$canal/$ID_EP&lt;/guid&gt;
+      &lt;title&gt;$TIT_EP&lt;/title&gt;
+      &lt;link&gt;https://www.twitch.tv/videos/$ID_EP&lt;/link&gt;
+      &lt;description&gt;$TIT_EP&lt;/description&gt;
+      &lt;pubDate&gt;$FEC_EP&lt;/pubDate&gt;
+      &lt;author&gt;$ART_EP&lt;/author&gt;
+      &lt;content:encoded&gt;&lt;![CDATA[&lt;p&gt;Episodio descargado de Twitch.&lt;/p&gt;]]&gt;&lt;/content:encoded&gt;
+      &lt;enclosure length=&#34;$lengthSeconds&#34; type=&#34;audio/mpeg&#34; url=&#34;$servidor/twitch/$canal/mp3/$NOM_EP&#34;/&gt;
+    &lt;/item&gt;
+END_ITEM
+    done
+
+    # Añade los &#34;items.xml&#34; ya descargado a continuación del &#34;item.xml&#34;
+    cat $canal/items.xml &gt;&gt; $canal/item.xml
+    mv $canal/item.xml $canal/items.xml
+    
+    # Añadir lista de episodios al feed
+    echo &#34;- Añadiendo lista de episodios al feed&#34;
+    cat $canal/items.xml &gt;&gt; $canal/feed.xml
+
+    # Añadiendo el pie del feed
+    echo &#34;- Añadiendo el pie del feed&#34;
+    cat &gt;&gt; $canal/feed.xml &lt;&lt;END
+  &lt;/channel&gt;
+&lt;/rss&gt;
+END
+}
+
+
+#----------------------------------------------------------#
+#               Subir contenido actualizado                #
+#----------------------------------------------------------#
+subir_contenido () {
+    # Valores de argumentos
+    local canal=${1:?Falta el nombre del canal}
+    
+    # Subiendo archivos a la nube via rclone
+    echo &#34;- Subiendo los mp3&#39;s al sevidor remoto&#34;
+    mensaje&#43;=$&#34;Subiendo los mp3&#39;s al servidor webdav . . .&#34;
+    rclone copy $canal Sherlockes78_UN3_en:twitch/$canal/ --create-empty-src-dirs
+
+    comprobar $?
+
+    # Eliminando audio y video local
+    echo &#34;- Eliminando audios locales&#34;
+    find . -type f -name &#34;*.mp3&#34; -delete
+
+    # Borrando los archivos de la nube anteriores a 30 días
+    mensaje&#43;=$&#34;Borrando contenido antiguo . . . . . . . . . . . .&#34;
+    rclone delete Sherlockes78_UN3_en:twitch/$canal/mp3 --min-age 30d
+    comprobar $?
+}
+
+
+########################
+## Programa principal ##
+########################
+
+echo &#34;#####################################&#34;
+echo &#34;## Twitch to Podcast by Sherlockes ##&#34;
+echo &#34;#####################################&#34;
+
+cd $twitch_dir
+echo &#34;- Corriendo en $twitch_dir&#34;
+
+# Comprobar la instalación de twitch-dl en el directorio
+. ~/SherloScripts/bash/twitch-dl.sh &amp;&amp; check
+
+# Buscar nuevos videos y convertirlos a mp3
+buscar_ultimos &#34;$CANAL&#34; &#34;$TITULO&#34;
+
+# Convertir a mp3 los vídeos descargados (Si los hay)
+if ls ./*.mkv 1&gt; /dev/null 2&gt;&amp;1; then
+    convertir_mp3 &#34;$CANAL&#34;
+fi
+
+# Actualizar el feed y sube el nuevo contenido (Si lo hay)
+if ls ./$CANAL/mp3/*.mp3 1&gt; /dev/null 2&gt;&amp;1; then
+    actualizar_feed &#34;$SERVIDOR&#34; &#34;$CANAL&#34; &#34;$TITULO&#34;
+    subir_contenido &#34;$CANAL&#34;
+else
+    echo &#34;- No hay nuevo contenido.&#34;
+    mensaje&#43;=$&#34;No hay nuevo contenido que añadir al feed&#34;
+    mensaje&#43;=$&#39;\n&#39;
+fi
+
+
+# Envia el mensaje de telegram con el resultado
+fin=$( date &#43;%s )
+let duracion=$fin-$inicio
+mensaje&#43;=$&#39;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n&#39;
+mensaje&#43;=$&#34;Duración del Script:  $duracion segundos&#34;
+
+$notificacion &#34;$mensaje&#34;
+</code></pre>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="https://www.delftstack.com/howto/linux/parse-json-in-bash/">DelftStack - Parse JSON in Bash</a></li>
+<li><a href="https://ffmpeg.org/ffmpeg.html">FFMPEG</a></li>
+<li><a href="https://bytefreaks.net/gnulinux/bash/bash-remove-the-last-character-from-each-line">ByteFreaks - Remove last character</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/descargar-archivos-de-telegram/">Descargar archivos de Telegram</a></li>
+	    
+	    <li><a href="/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/">Del Blog a Twitter y Mastodon mediante rss y Bash</a></li>
+	    
+	    <li><a href="/entorno-de-desarrollo-de-sherblog-en-emacs/">Entorno de desarrollo de Sherblog en Emacs</a></li>
+	    
+	    <li><a href="/de-youtube-a-podcast/">De Youtube a Podcast</a></li>
+	    
+	    <li><a href="/mi-uso-de-alias-en-bash/">Mi uso de alias en bash</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/bash/" rel="tag">bash</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/python/" rel="tag">python</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/mi-uso-de-alias-en-bash/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Mi uso de alias en bash</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/unir-o-separar-en-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Unir o separar en varios pdf en linux desde la línea de comandos</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://emacs.ch/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2023 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script></body>
+</html>

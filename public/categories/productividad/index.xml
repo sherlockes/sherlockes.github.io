@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>productividad on Sherblog</title>
+    <link>https://sherlockes.github.io/categories/productividad/</link>
+    <description>Recent content in productividad on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Wed, 22 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/productividad/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sincronizar nubes con rclone</title>
+      <link>https://sherlockes.github.io/sincronizar-nubes-con-rclone/</link>
+      <pubDate>Wed, 22 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/sincronizar-nubes-con-rclone/</guid>
+      <description>&lt;p&gt;Hace un tiempo y gracias a &lt;a href=&#34;http://www.andresramos.pro/google-drive-gratis/&#34;&gt;Andrés Ramos&lt;/a&gt; di con un enlace a una web para crear unidades compartidas de Google Drive con espacio ilimitado y la voy a utilizar para sincronizar la nube en la guardo el contenido multimedia por si alguna de las dos &amp;ldquo;falla&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Unir o separar en varios pdf en linux desde la línea de comandos</title>
+      <link>https://sherlockes.github.io/unir-o-separar-en-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/</link>
+      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/unir-o-separar-en-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/</guid>
+      <description>&lt;p&gt;En la web podemos encontrar una infinidad de servicios para unir varios archivos pdf en uno o partir uno en varios según las páginas, pero si no quieres perder tiempo en subir y bajar los archivos a los servidores remotos y tienes dudas de la privacidad que el servicio ofrezca, aquí dejo una forma sencilla para realizar el mismo trabajo con una sola línea en la consola de comandos.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sincronizar Google Photos desde la Raspberry</title>
+      <link>https://sherlockes.github.io/sincronizar-google-photos-desde-la-raspberry/</link>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/sincronizar-google-photos-desde-la-raspberry/</guid>
+      <description>&lt;p&gt;Hasta ahora había sincronizado mi galería de Google Fotos con el NAS desde el pc de sobremesa con Linux Mint, voy a intentar hacerlo desde la Raspberry para no tener que encender el pc.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Automatizando la limpieza de Gmail</title>
+      <link>https://sherlockes.github.io/automatizando-la-limpieza-de-gmail/</link>
+      <pubDate>Sun, 29 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/automatizando-la-limpieza-de-gmail/</guid>
+      <description>&lt;p&gt;Si eres de los que realiza compras en internet, no te importa recibir ofertas, usas Gmail como gestor de correo electrónico y usas la pestaña &amp;ldquo;Promociones&amp;rdquo; creo que este artículo te va a interesar.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Script para renombrar imágenes en python en función de la fecha en la que se tomaron</title>
+      <link>https://sherlockes.github.io/script-para-renombrar-im%C3%A1genes-en-python-en-funci%C3%B3n-de-la-fecha-en-la-que-se-tomaron/</link>
+      <pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/script-para-renombrar-im%C3%A1genes-en-python-en-funci%C3%B3n-de-la-fecha-en-la-que-se-tomaron/</guid>
+      <description>&lt;p&gt;Un día te vienen de la guardería con un montón de fotos de tu hijo metidas en una carpeta y cada una con un nombre completamente aleatorio en función del dispositivo con el que se tomaron, algo hay que hacer para renombrarlas.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Como descargar el icono de un servicio web</title>
+      <link>https://sherlockes.github.io/como-descargar-el-icono-de-un-servicio-web/</link>
+      <pubDate>Sun, 06 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/como-descargar-el-icono-de-un-servicio-web/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Actualización: Inlusión de IconFinder como método de descarga de iconos.&lt;/strong&gt; Recientemente estoy ordenando y actualizando mi colección de contraseñas para los distintos servicios y webs a los que estoy registrado. Para que cada una quede más correctamente identificada y todo más homogéneo he empezado a descargar el icono correspondiente a cada servicio y así adjuntarlo al nombre se usuario, pass, url&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Encender el Nas desde el teléfono</title>
+      <link>https://sherlockes.github.io/encender-el-nas-desde-el-tel%C3%A9fono/</link>
+      <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/encender-el-nas-desde-el-tel%C3%A9fono/</guid>
+      <description>&lt;p&gt;Tener el NAS encendido todo el día puede ser un gasto innecesario. El mío se enciende de forma automática las horas necesarias para las copias de seguridad y lo enciendo de forma remota desde mi teléfono si lo necesito de forma puntual fuera de este horario.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Subtotales en Google Sheets</title>
+      <link>https://sherlockes.github.io/subtotales-en-google-sheets/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/subtotales-en-google-sheets/</guid>
+      <description>&lt;p&gt;En este post comentaré las dos formas que utilizo en mis archivos de Google Sheets para hacer cálculos de subtotales de forma &amp;ldquo;dinamica&amp;rdquo;, es decir, en función del valor de otra columna. Para ello utilizo las funciones &amp;ldquo;filter&amp;rdquo; y &amp;ldquo;sumar.si&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ordenar listas en Google Keep</title>
+      <link>https://sherlockes.github.io/ordenar-listas-en-google-keep/</link>
+      <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/ordenar-listas-en-google-keep/</guid>
+      <description>Para el que no lo conozca, Google Keep es una pequeña utilidad que sirve básicamente para crear notas y recordatorios. Las opciones que presenta son muy limitadas pero tiene dos características que la dirán de una gran potencia y versatilidad.
+La sincronización entre dispositivos La compartición con otras personas Un tiempo atrás, antes de que descubriera iawriter, la utilizaba para muchas cosas pero ahora tengo que reconocer que solo la empleo para la lista de la compra.</description>
+    </item>
+    
+    <item>
+      <title>Deshabilitar cache en chrome</title>
+      <link>https://sherlockes.github.io/deshabilitar-cache-en-chrome/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/deshabilitar-cache-en-chrome/</guid>
+      <description>Segun un artículo de Acceso Directo, la cache del navegador se entiende como &amp;ldquo;un lugar de almacenamiento temporal que se encuentra en la computadora y que guarda archivos que han sido descargados por el navegador para mostrar sitios. Dentro de estos archivos se encuentran aquellos documentos necesarios para la visualización de un sitio como archivos html, hojas de estilo de CSS, sripts de JavaScript, gráficos, imágenes y contenido multimedia en general&amp;rdquo;.</description>
+    </item>
+    
+  </channel>
+</rss>

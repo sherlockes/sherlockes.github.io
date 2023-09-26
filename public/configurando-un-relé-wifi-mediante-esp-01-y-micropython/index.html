@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Configurando un relé wifi mediante esp-01 y micropython - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Configurando un relé wifi mediante esp-01 y micropython">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://www.sherblog.pro//images/20210412_esp01_wifi_relay_00.jpg" />
+	<meta name="twitter:title" content="Configurando un relé wifi mediante esp-01 y micropython"/>
+	<meta name="twitter:description" content="Configurando un relé wifi mediante esp-01 y micropython"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="sherblog.pro" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Configurando un relé wifi mediante esp-01 y micropython">
+	<meta property="og:url"   content="https://sherlockes.github.io">
+	<meta property="og:description" content="Configurando un relé wifi mediante esp-01 y micropython"/>
+
+	<meta property="og:image" content="http://www.sherblog.pro//images/20210412_esp01_wifi_relay_00.jpg" />
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Configurando un relé wifi mediante esp-01 y micropython"/>
+<meta name="twitter:description" content="Configurando un relé wifi mediante esp-01 y micropython"/>
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Configurando un relé wifi mediante esp-01 y micropython</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-04-13T00:00:00Z">2021-04-13</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/iot/" rel="category">iot</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20210412_esp01_wifi_relay_00.jpg" alt="Configurando un relé wifi mediante esp-01 y micropython">
+		
+	</figure><div class="content post__content clearfix">
+			<p>Hace un tiempo hice un artículo con los <a href="https://sherblog.pro/primeros-pasos-con-nodemcu-y-micropython-en-linux/">primeros pasos con nodemcu</a> en linux con micropython. Hoy voy a trabajar con otro microcontrolador menos potente pero mucho más pequeño, el ESP01. Linux Mint, Thonny y Micropython es el entorno que voy a utilizar.</p>
+<p>Un nuevo reto al que me enfrento ahora es sustituir el <a href="https://sherblog.pro/termostato-raspberry/#el-rel%C3%A9-de-la-caldera">relé de la caldera</a> artesanal que vengo utilizando por este pequeño módulo conjunto de relé y ESP01 de poco menos de 3€.</p>
+<p><img src="/images/20210412_esp01_wifi_relay_02.jpg" alt="image-02"></p>
+<h3 id="capacidad-del-esp-01">Capacidad del ESP-01</h3>
+<p>Conectamos el ESP-01 al programador y lo ponemos en el puerto usb con el botón de reset pulsado, sin soltarlo, ejecutamos el siguiente comando.</p>
+<pre tabindex="0"><code>esptool.py --port /dev/ttyUSB0 --baud 460800
+</code></pre><p>para ver la siguente respuesta en la consola</p>
+<pre tabindex="0"><code>esptool.py v3.0
+Serial port /dev/ttyUSB0
+Connecting....
+Detecting chip type... ESP8266
+Chip is ESP8266EX
+Features: WiFi
+Crystal is 26MHz
+MAC: e8:db:84:96:b9:9f
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Manufacturer: 20
+Device: 4014
+Detected flash size: 1MB
+Hard resetting via RTS pin...
+</code></pre><p>De donde se deduce que la capacidad de la memoria flash es de 1MB. con esta información acudimos a la web de <a href="https://micropython.org/download/esp8266/">descargas de micropython</a> y descargamos la última versión estable de esta capacidad.</p>
+<blockquote>
+<p>Una vez que el chip ha sido detectado tras la ejecución del comando ya se puede soltar el botón del progarmador.</p>
+</blockquote>
+<h3 id="borrado-de-memoria-e-instalación-de-micropython">Borrado de memoria e instalación de Micropython</h3>
+<p>Nuevamente la misma jugada, sacamos el conjunto de programador y ESP-01 del usb del pc y lo volvemos a meter con el botón de reseteo del programador pulsado. Sin soltarlo, ejecutamos el siguiente comando.</p>
+<pre tabindex="0"><code>esptool.py --port /dev/ttyUSB0 --baud 460800 erase_flash
+</code></pre><p>Para obtener la siguiente respuesta en la consola.</p>
+<pre tabindex="0"><code>esptool.py v3.0
+Serial port /dev/ttyUSB0
+Connecting....
+Detecting chip type... ESP8266
+Chip is ESP8266EX
+Features: WiFi
+Crystal is 26MHz
+MAC: e8:db:84:96:b9:9f
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Erasing flash (this may take a while)...
+Chip erase completed successfully in 5.4s
+Hard resetting via RTS pin...
+</code></pre><p>Ya tenemos borrada la memoria del chip, ahora vamos a instalar el firmware de Micropyton que hemos descargado ejecutando el siguiente comando desde la carpea donde tenemos descargada la imagen. Si, esta vez tambien toca soltar el conjunto de programador y ESP-01 del usb del pc y volverlo a pinchar con el botón de reset pulsado, sin soltarlo ejecutar el siguiente comando.</p>
+<pre tabindex="0"><code>esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-1m-20210202-v1.14.bin
+</code></pre><p>Si todo ha ido bien, se obtiene una respuesta como esta en la terminal.</p>
+<pre tabindex="0"><code>esptool.py v3.0
+Serial port /dev/ttyUSB0
+Connecting....
+Detecting chip type... ESP8266
+Chip is ESP8266EX
+Features: WiFi
+Crystal is 26MHz
+MAC: e8:db:84:96:b9:9f
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Auto-detected Flash size: 1MB
+Flash params set to 0x0020
+Compressed 588960 bytes to 389085...
+Wrote 588960 bytes (389085 compressed) at 0x00000000 in 9.4 seconds (effective 498.7 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+</code></pre><h3 id="desarrollando-en-thonny">Desarrollando en Thonny</h3>
+<p>Sacamos nuevamente el conjunto de programador y ESP-01 del slot usb del ordenador y lo volvems a introducir para que se resetee el chip (esta vez no es necesario pulsar el botón del programador para entrar en modo programación) y abrimos Thonny. Ya tenemos listo en entorno de desarrollo.</p>
+<p><img src="/images/20210412_esp01_wifi_relay_01.jpg" alt="image-01"></p>
+<pre tabindex="0"><code>import machine
+import time
+led = machine.Pin(1, machine.Pin.OUT)
+while True:
+    led.value(1)
+    time.sleep(1)
+    led.value(0)
+    time.sleep(1)
+</code></pre><blockquote>
+<p>El Pin 1 es el correspondiente al led que va integrado en el propio ESP01, para activar el relé del módulo anexo deberemos activar el Pin 0.</p>
+</blockquote>
+<h3 id="fallos-de-conexión-en-thonny">Fallos de conexión en Thonny</h3>
+<p>Tras una ejecución del código o cuando se quiere reprogramar el microcontrolador resulta muy habitual encontrarse con el siguiente mensaje de error en la consola.</p>
+<pre tabindex="0"><code>Device is busy or does not respond. Your options:
+
+  - wait until it completes current work;
+  - use Ctrl+C to interrupt current work;
+  - use Stop/Restart to interrupt more and enter REPL.
+</code></pre><p>Para restablecer la comunicación con el ESP01, Thonny dispone de varios comandos en la parte inferior del menú ejecutar.</p>
+<ul>
+<li>Detener/Reiniciar el Back-end (Ctrl+F2)</li>
+<li>Interrumpir la ejecución (Ctrl+C)</li>
+<li>Envía EOF / Reinicion suave (Ctrl+D)</li>
+<li>Desconectar</li>
+</ul>
+<p>Tal y como explique en el artículo de <a href="https://sherblog.pro/primeros-pasos-con-nodemcu-y-micropython-en-linux/">primeros pasos con nodemcu</a>, en esa ocasión para salir del fallo de la conexión era suficiente con pulsar varias veces seguidas Ctrl+F2 pero con el ESP01 esto no funciona y método alternativo que he encontrado es</p>
+<ol>
+<li>Ctrl+F2</li>
+<li>Ctrl+C</li>
+<li>Ctrl+F2</li>
+<li>Ctrl+D</li>
+</ol>
+<p>Esperando unos segundos entre pulsaciones para dar tiempo a reaccionar a la placa, con este modo he conseguido salir todas las veces del fallo.</p>
+<p>Links relaccionados
+<a href="https://randomnerdtutorials.com/micropython-relay-module-esp32-esp8266/">https://randomnerdtutorials.com/micropython-relay-module-esp32-esp8266/</a></p>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/esphome-en-home-assistant/">ESPHome en Home Assistant</a></li>
+	    
+	    <li><a href="/esphome-en-home-assistant/">ESPHome en Home Assistant</a></li>
+	    
+	    <li><a href="/apagar-todas-las-luces-en-home-assistant/">Apagar todas las luces en Home Assistant</a></li>
+	    
+	    <li><a href="/apagar-todas-las-luces-en-home-assistant/">Apagar todas las luces en Home Assistant</a></li>
+	    
+	    <li><a href="/guardando-y-recuperando-la-configuraci%C3%B3n-de-home-assistant/">Guardando y recuperando la configuración de Home Assistant</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/upython/" rel="tag">upython</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/esp/" rel="tag">esp</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/thonny/" rel="tag">thonny</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/montar-carpeta-del-nas-mediante-sshfs/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Montar carpeta del NAS mediante sshfs</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/renombrado-de-lotes-de-archivos-en-emacs/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Renombrado de lotes de archivos en Emacs</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://emacs.ch/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2023 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script></body>
+</html>

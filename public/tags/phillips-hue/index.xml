@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>phillips hue on Sherblog</title>
+    <link>https://sherlockes.github.io/tags/phillips-hue/</link>
+    <description>Recent content in phillips hue on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Fri, 18 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/phillips-hue/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Controlar las luces de Philips hue con un script en bash</title>
+      <link>https://sherlockes.github.io/controlar-las-luces-de-philips-hue-con-un-script-en-bash/</link>
+      <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/controlar-las-luces-de-philips-hue-con-un-script-en-bash/</guid>
+      <description>&lt;p&gt;Hay muchas formas de controlar las luces de Phillis Hue, aquí dejo la que empleo para apagar las luces mediante una simple línea de comando gracias a la Raspberry.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shortcodes on Sherblog</title>
+    <link>https://sherlockes.github.io/tags/shortcodes/</link>
+    <description>Recent content in shortcodes on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Fri, 25 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/shortcodes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Incrustar texto externo en Hugo</title>
+      <link>https://sherlockes.github.io/incrustar-texto-externo-en-hugo/</link>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/incrustar-texto-externo-en-hugo/</guid>
+      <description>&lt;p&gt;Hace tiempo que vengo pensando en la capacidad de poder introducir texto desde un archivo externo dentro de los post que publico en &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;. Hoy se me ha encendido la bombilla.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Actualización:&lt;/strong&gt; Inclusión de texto desde un servidor remoto.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Como añado enlaces en Hugo</title>
+      <link>https://sherlockes.github.io/como-a%C3%B1ado-enlaces-en-hugo/</link>
+      <pubDate>Wed, 23 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/como-a%C3%B1ado-enlaces-en-hugo/</guid>
+      <description>&lt;p&gt;Hay diversas formas de incluir los enlaces dentro de los documentos en &lt;a href=&#34;https://es.wikipedia.org/wiki/Markdown&#34;&gt;Markdown&lt;/a&gt; que &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; usa como fuente para generar la web. Aquí voy a explicar la que yo utilizo.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Lista de artículos por categoría en Hugo</title>
+      <link>https://sherlockes.github.io/lista-de-art%C3%ADculos-por-categor%C3%ADa-en-hugo/</link>
+      <pubDate>Sat, 10 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/lista-de-art%C3%ADculos-por-categor%C3%ADa-en-hugo/</guid>
+      <description>&lt;p&gt;No se si será la forma más sencilla, es la que yo he utilizado para crear una lista de artículos publicados en cierta categoría de mi blog desarrollado en &lt;a href=&#34;https://gohugo.io&#34;&gt;hugo&lt;/a&gt; a partir del uso de &amp;ldquo;Shortcodes&amp;rdquo; personalizados.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Insertar comentarios en Hugo</title>
+      <link>https://sherlockes.github.io/insertar-comentarios-en-hugo/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/insertar-comentarios-en-hugo/</guid>
+      <description>&lt;p&gt;Cuando no se tiene mucho tiempo libre, la publicación de un post puede demorarse a lo largo de varios días. Para eso Se mantiene la entrada en modo &amp;ldquo;borrador&amp;rdquo;. Pero&amp;hellip; ¿Como lo hago al actualizar una entrada?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mis vértices geodésicos en Hugo</title>
+      <link>https://sherlockes.github.io/mis-v%C3%A9rtices-geod%C3%A9sicos-en-hugo/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/mis-v%C3%A9rtices-geod%C3%A9sicos-en-hugo/</guid>
+      <description>&lt;p&gt;Hace más de dos años desde que visité mi ultimo vértice geodésico. Durante todo este tiempo el proyecto que empecé en el ya lejano 2008 lo he tenido aparcado por unos cuantos motivos&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

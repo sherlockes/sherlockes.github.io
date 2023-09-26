@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Mi gestión de los archivos de configuración - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Lo más valioso que tengo en mi pc son los archivos de configuración (dotfiles) del mismo, con este script voy a crear una gestión centralizada.">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://www.sherblog.pro//images/20210416_dotfiles_00.jpg" />
+	<meta name="twitter:title" content="Mi gestión de los archivos de configuración"/>
+	<meta name="twitter:description" content="Lo más valioso que tengo en mi pc son los archivos de configuración (dotfiles) del mismo, con este script voy a crear una gestión centralizada."/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="sherblog.pro" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Mi gestión de los archivos de configuración">
+	<meta property="og:url"   content="https://sherlockes.github.io">
+	<meta property="og:description" content="Lo más valioso que tengo en mi pc son los archivos de configuración (dotfiles) del mismo, con este script voy a crear una gestión centralizada."/>
+
+	<meta property="og:image" content="http://www.sherblog.pro//images/20210416_dotfiles_00.jpg" />
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mi gestión de los archivos de configuración"/>
+<meta name="twitter:description" content="Lo más valioso que tengo en mi pc son los archivos de configuración (dotfiles) del mismo, con este script voy a crear una gestión centralizada."/>
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Mi gestión de los archivos de configuración</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-02-12T00:00:00Z">2022-02-12</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">computing</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20210416_dotfiles_00.jpg" alt="Mi gestión de los archivos de configuración">
+		
+	</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Índice</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#configuración-ssh">Configuración ssh</a></li>
+        <li><a href="#configuración-de-alias-en-bash">Configuración de Alias en Bash</a></li>
+        <li><a href="#configuración-de-emacs">Configuración de Emacs</a></li>
+        <li><a href="#configuración-de-rclone">Configuración de Rclone</a></li>
+        <li><a href="#configuración-de-gphotos-sync">Configuración de gphotos-sync</a></li>
+        <li><a href="#configuración-de-gspread">Configuración de gspread</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p>Que dolor de cabeza resulta el perder la configuración del equipo tras la reinstalación del sistema operativo. Así evito la pérdida y realizo la sincronización de los archivos de configuración.</p>
+<p>En un primer momento pensé en crear un repositorio en GitHub para estos archivos de configuración, luego pensé en que este repositorio debería ser privado ya que parte de los archivos no quiero que sean visibles para cualquiera. finalmente he optado por guardarlos en una nube pública con respaldo en el Nas ya que me parece un sitio más alejado de las miradas ajenas.</p>
+<p>Todos estos archivos de configuración estarán metidos en la carpeta &ldquo;dotfiles&rdquo; (o un enlace simbólico a la misma) dentro de la carpeta de usuario.</p>
+<h3 id="configuración-ssh">Configuración ssh</h3>
+<p>La única configuración que voy a guardar y que interesa compartir con otros equipos es el archivo &ldquo;config&rdquo; en el que tengo guardadas los datos de acceso a otros servidores</p>
+<ul>
+<li>Ubicación -&gt; dotfiles/ssh</li>
+<li>Archivo -&gt; config</li>
+<li>Enlace -&gt; <code>ln -si ~/dotfiles/ssh/config ~/.ssh/config</code></li>
+</ul>
+<h3 id="configuración-de-alias-en-bash">Configuración de Alias en Bash</h3>
+<p>El uso de alias es una herramienta muy importante cuando trabajamos con Bash en la terminal, guardando y compartiendo el archivo &ldquo;.bash_aliases&rdquo; estos se encuentran bien organizados.</p>
+<ul>
+<li>Ubicación -&gt; dotfiles/bash</li>
+<li>Archivo -&gt; .bash_aliases</li>
+<li>Enlace -&gt; <code>ln -si ~/dotfiles/bash/.bash_aliases ~/.bash_aliases</code></li>
+</ul>
+<p>Tras crear el enlace simbólico, habrá que ejecutar el comando <code>source ~/.bashrc</code> para que los cambios tengan efecto.</p>
+<h3 id="configuración-de-emacs">Configuración de Emacs</h3>
+<ul>
+<li>Ubicación -&gt; dotfiles/emacs</li>
+<li>Archivo -&gt; .emacs_home</li>
+<li>Enlace -&gt; <code>ln -si ~/dotfiles/emacs/.emacs_home ~/.emacs</code></li>
+</ul>
+<h3 id="configuración-de-rclone">Configuración de Rclone</h3>
+<ul>
+<li>Ubicación -&gt; dotfiles/rclone</li>
+<li>Archivo -&gt; rclone.conf</li>
+<li>Enlace -&gt; <code>ln -si ~/dotfiles/rclone/rclone.conf ~/.config/rclone/rclone.conf</code></li>
+</ul>
+<h3 id="configuración-de-gphotos-sync">Configuración de gphotos-sync</h3>
+<ul>
+<li>Ubicación -&gt; dotfiles/gphotos-sync</li>
+<li>Archivo -&gt; client_secret.json</li>
+<li>Enlace -&gt; <code>ln -si ~/dotfiles/gphotos-sync/client_secret.json ~/.config/gphotos-sync/client_secret.json</code></li>
+</ul>
+<h3 id="configuración-de-gspread">Configuración de gspread</h3>
+<ul>
+<li>Ubicación -&gt; dotfiles/gspread</li>
+<li>Archivo -&gt; service_account.json</li>
+<li>Enlace -&gt; <code>ln -si ~/dotfiles/gspread/service_account.json ~/.config/gspread/service_account.json</code></li>
+</ul>
+<p>Para hacer más fácil todo el proceso de creación de enlaces simbólicos he creado el script <a href="https://github.com/sherlockes/SherloScripts/blob/master/bash/dotfiles.sh">dotfiles.sh</a>. Por supuesto, tanto este artículo como el mismo script estarán en continua modificación para adaptarse a mis necesidades.</p>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/">Del Blog a Twitter y Mastodon mediante rss y Bash</a></li>
+	    
+	    <li><a href="/entorno-de-desarrollo-de-sherblog-en-emacs/">Entorno de desarrollo de Sherblog en Emacs</a></li>
+	    
+	    <li><a href="/de-youtube-a-podcast/">De Youtube a Podcast</a></li>
+	    
+	    <li><a href="/crear-podcast-a-partir-de-un-canal-de-twitch/">Crear Podcast a partir de un canal de Twitch</a></li>
+	    
+	    <li><a href="/mi-uso-de-alias-en-bash/">Mi uso de alias en bash</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/bash/" rel="tag">bash</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/dotfiles/" rel="tag">dotfiles</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/servidor-webdav-de-contenido-remoto-con-rclone/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Servidor Webdav de contenido remoto con Rclone</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/mi-uso-de-alias-en-bash/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Mi uso de alias en bash</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://emacs.ch/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2023 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script></body>
+</html>

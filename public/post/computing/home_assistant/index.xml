@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home assistant on Sherblog</title>
+    <link>https://sherlockes.github.io/post/computing/home_assistant/</link>
+    <description>Recent content in Home assistant on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language><atom:link href="https://sherlockes.github.io/post/computing/home_assistant/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configurar Wireguard de Home Assistant en cliente linux</title>
+      <link>https://sherlockes.github.io/configurar-wireguard-de-home-assistant-en-cliente-linux/</link>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/configurar-wireguard-de-home-assistant-en-cliente-linux/</guid>
+      <description>&lt;p&gt;Por su sencillez y efectividad, tengo instalado el servidor de &lt;a href=&#34;https://www.wireguard.com&#34;&gt;Wireguard&lt;/a&gt; como un complemento de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt;. Esta es la forma de como he configurado un cliente linux para conectarse a la vpn desde el exterior de mi red local.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Instalando Home Assistant supervisado en Debian 11</title>
+      <link>https://sherlockes.github.io/instalando-home-assistant-supervisado-en-debian-11/</link>
+      <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/instalando-home-assistant-supervisado-en-debian-11/</guid>
+      <description>&lt;p&gt;Si quieres sacar todo el potencial de tu Raspberry al tiempo que la empleas como servidor de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; con el uso de &lt;a href=&#34;https://www.home-assistant.io/addons/&#34;&gt;Addons&lt;/a&gt;, aquí dejo el método oficial de la instalación supervisada mediante Debian 11 en una Raspberry 3B+.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sensores virtuales y Jinja2 en Home Assistant</title>
+      <link>https://sherlockes.github.io/sensores-virtuales-y-jinja2-en-home-assistant/</link>
+      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/sensores-virtuales-y-jinja2-en-home-assistant/</guid>
+      <description>&lt;p&gt;Aquí dejo la solución que he implementado ante el problema de crear una nueva entidad en Home Assistant cuyo valor dependa del de otras entidades ya existentes gracias al uso de sensores virtuales y el motor de plantillas de Jinja2.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Actualización:&lt;/strong&gt; Sensor de día lectivo&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tarjetas inteligentes en Home Assistant</title>
+      <link>https://sherlockes.github.io/tarjetas-inteligentes-en-home-assistant/</link>
+      <pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/tarjetas-inteligentes-en-home-assistant/</guid>
+      <description>&lt;p&gt;Para que el contenido de una tarjeta del panel de control de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; sea dinámico y potenciar toda su funcionalidad, la forma más sencilla es mediante el uso de &lt;a href=&#34;https://github.com/thomasloven/lovelace-auto-entities&#34;&gt;auto-entities&lt;/a&gt;. Aquí dejo la forma de realizarlo.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Calcular temperatura media en Home Assistant</title>
+      <link>https://sherlockes.github.io/calcular-temperatura-media-en-home-assistant/</link>
+      <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/calcular-temperatura-media-en-home-assistant/</guid>
+      <description>&lt;p&gt;¿Que pasa si en casa tenemos varios sensores y queremos calcular la temperatura media de ellos para controlar la calefacción? Con esta sencilla integración personalizada es posible crear un sensor virtual de una forma rápida y sencilla.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Realizar acciones mediante plantillas en Home Assistant</title>
+      <link>https://sherlockes.github.io/realizar-acciones-mediante-plantillas-en-home-assistant/</link>
+      <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/realizar-acciones-mediante-plantillas-en-home-assistant/</guid>
+      <description>&lt;p&gt;El editor visual de acciones en las automatizaciones de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; presenta muchas limitaciones. Encender o apagar una luz cuando lo hace otra o en función del estado de la puerta son dos de las que tengo implementadas.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Configuración de Home Assistant en github</title>
+      <link>https://sherlockes.github.io/configuraci%C3%B3n-de-home-assistant-en-github/</link>
+      <pubDate>Fri, 04 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/configuraci%C3%B3n-de-home-assistant-en-github/</guid>
+      <description>&lt;p&gt;Guardar la configuración de Home Assistant en un repositorio de GitHub puede llegar a ser muy útil de cara a compartirla o ver los parámetros que han sido modificados. Esta es la forma en la que mi Raspberry lo realiza a diario.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Reseteo automático de Home assistant</title>
+      <link>https://sherlockes.github.io/reseteo-autom%C3%A1tico-de-home-assistant/</link>
+      <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/reseteo-autom%C3%A1tico-de-home-assistant/</guid>
+      <description>&lt;p&gt;Por muy estable que sea un sistema, resetearlo de vez en cuando se suele venir bien y nos sirve para asegurar un correcto arranque. En mi caso hago que la Raspberry sobre la que corre &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; se resetee todos los días a las cuatro de la mañana mediante una automatización que a continuación paso a detallar.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>El termostato de la caldera en Home Assistant</title>
+      <link>https://sherlockes.github.io/el-termostato-de-la-caldera-en-home-assistant/</link>
+      <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/el-termostato-de-la-caldera-en-home-assistant/</guid>
+      <description>&lt;p&gt;La temporada pasada implementé desde cero mi propio termostato sobre la raspberry usando python, flask y muchas horas de desarrollo. Ahora he conseguido implementarlo desde cero en &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; en menos de una hora gracias a &lt;a href=&#34;https://esphome.io&#34;&gt;ESPHome&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Automatización de alumbrado con puerta</title>
+      <link>https://sherlockes.github.io/automatizaci%C3%B3n-de-alumbrado-con-puerta/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/automatizaci%C3%B3n-de-alumbrado-con-puerta/</guid>
+      <description>&lt;p&gt;Hacer una automatización para que se encienda una luz cuando se cierre una puerta y se apague al cerrarla es sencillo en &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt;, la cosa se complica cuando quieres hacerlo de la forma más simple posible.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

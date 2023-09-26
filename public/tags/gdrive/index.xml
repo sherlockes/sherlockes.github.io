@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gdrive on Sherblog</title>
+    <link>https://sherlockes.github.io/tags/gdrive/</link>
+    <description>Recent content in Gdrive on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Thu, 13 Dec 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/gdrive/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Backup de WordPress en Google Drive</title>
+      <link>https://sherlockes.github.io/backup-de-wordpress-en-google-drive/</link>
+      <pubDate>Thu, 13 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/backup-de-wordpress-en-google-drive/</guid>
+      <description>Estamos de nuevo aquí para buscar la solución a un problema que tarde o temprano todo webmaster debe afrontar como es crear una copia de seguridad para nuestra web en WordPress. Como siempre, intentaré buscar algo sencillo, práctico y sobre todo gratuito.
+Antes de nada necesito un sitio para guardar la copia de seguridad &amp;ldquo;en la nube&amp;rdquo;. No he probado otros, pero por el precio y características Google Drive es una buena alternativa.</description>
+    </item>
+    
+  </channel>
+</rss>

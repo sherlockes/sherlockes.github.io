@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>computing on Sherblog</title>
+    <link>https://sherlockes.github.io/categories/computing/</link>
+    <description>Recent content in computing on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Fri, 15 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/computing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exportar Org-Roam a Hugo en Gitlab</title>
+      <link>https://sherlockes.github.io/exportar-org-roam-a-hugo-en-gitlab/</link>
+      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/exportar-org-roam-a-hugo-en-gitlab/</guid>
+      <description>&lt;p&gt;Creo que todavía no he hablado de &lt;a href=&#34;https://www.orgroam.com&#34;&gt;Org-Roam&lt;/a&gt; aunque, antes de se me olviden algunos pasos voy a dejar descrito todo el proceso de exportación a una web estática en &lt;a href=&#34;https://gitlab.com&#34;&gt;Gitlab&lt;/a&gt; mediante &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ordenar post en Hugo</title>
+      <link>https://sherlockes.github.io/ordenar-post-en-hugo/</link>
+      <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/ordenar-post-en-hugo/</guid>
+      <description>&lt;p&gt;Por defecto &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; ordena los post en función de la fecha de creación, para ordenarlos por la fecha de actualización estos son los pasos que hay que seguir.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Comprobación ortográfica en Emacs</title>
+      <link>https://sherlockes.github.io/comprobaci%C3%B3n-ortogr%C3%A1fica-en-emacs/</link>
+      <pubDate>Sat, 19 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/comprobaci%C3%B3n-ortogr%C3%A1fica-en-emacs/</guid>
+      <description>&lt;p&gt;Por defecto, &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt; no realiza comprobación ortográfica de nuestro documentos. Hay que realizar una configuración previa que el lo que aquí paso a mostrar.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mi archivo de configuración en Emacs</title>
+      <link>https://sherlockes.github.io/mi-archivo-de-configuraci%C3%B3n-en-emacs/</link>
+      <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/mi-archivo-de-configuraci%C3%B3n-en-emacs/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Actualización:&lt;/strong&gt; El archivo &amp;ldquo;init.el&amp;rdquo; se me está haciendo grande y ahora me apoyo en un &amp;ldquo;functions.el&amp;rdquo; y en una comprobación de paquetes en el arranque.
+Hay pocas cosas tan personales en informática como la configuración de &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt;. En mi caso uso una combinación de &lt;code&gt;.emacs&lt;/code&gt; e &lt;code&gt;init.el&lt;/code&gt; de la que seguro puedes sacar algo que aprender.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sincronizando Org-Roam mediante Github en Emacs</title>
+      <link>https://sherlockes.github.io/sincronizando-org-roam-mediante-github-en-emacs/</link>
+      <pubDate>Tue, 08 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/sincronizando-org-roam-mediante-github-en-emacs/</guid>
+      <description>&lt;p&gt;Está muy bien tener una base de conocimiento centralizada en una carpeta y gestionarla mediante &lt;a href=&#34;https://www.orgroam.com&#34;&gt;Org-Roam&lt;/a&gt; pero mejor aun está poder acceder y modificar esta carpeta desde varios equipos gracias a un repositorio de &lt;a href=&#34;https://github.com&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Acceder a Github via ssh sin password</title>
+      <link>https://sherlockes.github.io/acceder-a-github-via-ssh-sin-password/</link>
+      <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/acceder-a-github-via-ssh-sin-password/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Actualización:&lt;/strong&gt; Solucionando el problema desde el origen con un correcto clonado.&lt;/p&gt;
+&lt;p&gt;Como corregir los problemas de permisos de usuario al intentar actualizar un repositorio remoto que hemos clonado en nuestra máquina.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Menú para montar nubes en Bash</title>
+      <link>https://sherlockes.github.io/men%C3%BA-para-montar-nubes-en-bash/</link>
+      <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/men%C3%BA-para-montar-nubes-en-bash/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Actualización:&lt;/strong&gt; Instalación de &amp;ldquo;fuse3&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Ya hace un tiempo que vengo utilizando la terminal para montar las distintas nubes de las que hago uso a diario en mi terminal con &lt;a href=&#34;https://linuxmint.com/&#34;&gt;Linux Mint&lt;/a&gt;. Ahora he creado un pequeño script en bash que me ahorra tiempo en esta operación y con el que he conseguido aprender abundantes conceptos en bash que a continuación paso a desgranar.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Crear y configurar una instancia gratuita en Oracle</title>
+      <link>https://sherlockes.github.io/crear-y-configurar-una-instancia-gratuita-en-oracle/</link>
+      <pubDate>Tue, 18 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/crear-y-configurar-una-instancia-gratuita-en-oracle/</guid>
+      <description>&lt;p&gt;Tener un pequeño servidor privado virtual a modo de laboratorio en el que hacer nuestras pruebas es gratis gracias a &lt;a href=&#34;https://cloud.oracle.com&#34;&gt;Oracle Cloud&lt;/a&gt;, aquí dejo la forma de conseguirlo y las pruebas que con el he realizado&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Configuración de Rclone mediante Dotfiles</title>
+      <link>https://sherlockes.github.io/configuraci%C3%B3n-de-rclone-mediante-dotfiles/</link>
+      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/configuraci%C3%B3n-de-rclone-mediante-dotfiles/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://rclone.org&#34;&gt;Rclone&lt;/a&gt; presenta un problema si pretendemos trabajar a través de un enlace simbólico como archivo de configuración ya que al actualizarla elimina el enlace y genera un nuevo archivo &amp;ldquo;rclone.conf&amp;rdquo;. De esta forma le he conseguido dar solución.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Del Blog a Twitter y Mastodon mediante rss y Bash</title>
+      <link>https://sherlockes.github.io/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/</link>
+      <pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/</guid>
+      <description>&lt;p&gt;Una buena forma de dar algo de visibilidad a los post en el blog es publicándolos en &lt;a href=&#34;https://twitter.com/sherblogpro&#34;&gt;Twitter&lt;/a&gt; y &lt;a href=&#34;https://joinmastodon.org/es&#34;&gt;Mastodon&lt;/a&gt;. Aunque no es muy laborioso, resulta más cómodo que se realice de forma automática y aquí dejo como he creado mi propio script para hacerlo.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WordPress on Sherblog</title>
+    <link>https://sherlockes.github.io/categories/wordpress/</link>
+    <description>Recent content in WordPress on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Fri, 05 May 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Error al exportar base de datos de WordPress en Synology webStation</title>
+      <link>https://sherlockes.github.io/error-al-exportar-base-de-datos-de-wordpress-en-synology-webstation/</link>
+      <pubDate>Fri, 05 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/error-al-exportar-base-de-datos-de-wordpress-en-synology-webstation/</guid>
+      <description>Hace unos días que publiqué el modo en el que hacía la copia de seguridad de la base de datos de WordPress desde el propio hosting hasta una unidad de Google Drive. Haciendo pruebas para alojar la web en el Nas de Synology me doy cuenta de que el plugin para exportar la base de datos y enviarla por correo electrónico periódicamente no funciona.
+Pruebo con otros plugins similares y todos me dan el mismo error y tras unas pruebas y un poco de buceo por la red me doy cuenta que el problema reside en la incapacidad del servidor web para tratar los archivos comprimidos.</description>
+    </item>
+    
+    <item>
+      <title>Copia de seguridad de la base de datos de WordPress</title>
+      <link>https://sherlockes.github.io/copia-de-seguridad-de-la-base-de-datos-de-wordpress/</link>
+      <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/copia-de-seguridad-de-la-base-de-datos-de-wordpress/</guid>
+      <description>Hace unos días expliqué como gestiona la copia de seguridad de los archivos de WordPress (la carpeta wp-content) y aquí vamos a ver como hago lo propio con la base de datos. El flujo de trabajo es simple, periódicamente me llega un correo electrónico con la base de datos comprimida como archivo adjunto y guardo ese archivo en mi unidad de Google Drive.
+El plugin de WordPress WP-DB-Backup es el que se encarga de enviar un correo electrónico periódicamente con la copia de la base de datos.</description>
+    </item>
+    
+    <item>
+      <title>Flujo de trabajo con imágenes en WordPress</title>
+      <link>https://sherlockes.github.io/flujo-de-trabajo-con-im%C3%A1genes-en-wordpress/</link>
+      <pubDate>Thu, 30 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/flujo-de-trabajo-con-im%C3%A1genes-en-wordpress/</guid>
+      <description>Al publicar un post en WordPress una de las cosas que más pereza da es la inclusión de imágenes ya que hay que capturarlas, recortarlas, guardarlas, renombrarlas, subirlas al servidor e incrustarlas en el post. En este proceso pueden intervenir varias utilidades y programas por lo que resulta laborioso.
+Para todo esto utilizo Faststone Capture en su versión portable que puedes descargar desde aquí. Una pequeña pero potente utilidad que cubre todas las fases arriba mencionadas para la edición de imágenes.</description>
+    </item>
+    
+    <item>
+      <title>Descarga fallida. No working transports found</title>
+      <link>https://sherlockes.github.io/descarga-fallida.-no-working-transports-found/</link>
+      <pubDate>Mon, 13 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/descarga-fallida.-no-working-transports-found/</guid>
+      <description>Después de la instalación de WordPress en el servidor Synology al intentar actualizar los temas o los plugins me encuentro con el siguiente error.
+Pues nada, toca &amp;ldquo;Googlear&amp;rdquo; un rato y pronto me doy cuenta de que la solución es bastante sencilla y basta con habilitar la extensión &amp;ldquo;Curl&amp;rdquo; dentro de la configuración de php de la aplicación Web Station tal y como se puede ver en la siguiente captura de pantalla.</description>
+    </item>
+    
+    <item>
+      <title>Instalación manual de WordPress en Synology</title>
+      <link>https://sherlockes.github.io/instalaci%C3%B3n-manual-de-wordpress-en-synology/</link>
+      <pubDate>Tue, 28 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/instalaci%C3%B3n-manual-de-wordpress-en-synology/</guid>
+      <description>Desde el centro de paquetes de DSM en posible acceder a la instalación de WordPress de una forma sencilla tal y como puedes es en este tutorial, pero si lo que tu quieres es realizar una instalación manual con la que consigas un mayor control aquí te dejo los pasos a seguir.
+Antes de comenzar con la instalación de WordPress hay que instalar &amp;ldquo;Web Station&amp;rdquo; como servidor de archivos, &amp;ldquo;Maria Db&amp;rdquo; para el alojamiento de las bases de datos y &amp;ldquo;PhpMyAdmin&amp;rdquo; para gestionar las bases de datos.</description>
+    </item>
+    
+    <item>
+      <title>Backup de la web al Nas mediante ftp y ssh en Synology</title>
+      <link>https://sherlockes.github.io/backup-de-la-web-al-nas-mediante-ftp-y-ssh-en-synology/</link>
+      <pubDate>Sun, 26 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/backup-de-la-web-al-nas-mediante-ftp-y-ssh-en-synology/</guid>
+      <description>Esta vez y como casi siempre el objetivo es sencillo, crear una copia de seguridad del contenido de una página web al Nas que tengo en casa, de una forma automática y periódica.
+Después de valorar varias alternativas, la que me ha parecido más apropiada es mediante una conexión ftp. Puesto que esta web trabaja bajo WordPress resultará suficiente la copia de la carpeta &amp;ldquo;wp-content&amp;rdquo; desde el servidor del hosting a nuestro Nas.</description>
+    </item>
+    
+    <item>
+      <title>Instalar WordPress en cinco minutos.  Mito o realidad.</title>
+      <link>https://sherlockes.github.io/instalar-wordpress-en-cinco-minutos.-mito-o-realidad./</link>
+      <pubDate>Wed, 21 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/instalar-wordpress-en-cinco-minutos.-mito-o-realidad./</guid>
+      <description>Desde wordpress.org presumen de poder instalar su sistema de gestión de contenidos en tan sólo cinco minutos y a continuación me dispongo a comprobar si es un mito o una realidad.
+Los pasos a realizar son los siguiente:
+Descargar la última versión de es.wordpress.org Descomprimir el instalador Conexión ftp y subir archivos Acceder al panel de control Entrar en bases de datos MySQL Crear nueva base de datos Crear un nuevo usario MySQL Añadir usuario a base de datos Asignar privilegios al usuario Renombrar el archivo &amp;ldquo;wp-config-sample&amp;rdquo; en la carpeta raiz de la instalación por &amp;ldquo;wp-config.</description>
+    </item>
+    
+    <item>
+      <title>Publicar automáticamente en Facebook al hacerlo en WordPress</title>
+      <link>https://sherlockes.github.io/publicar-autom%C3%A1ticamente-en-facebook-al-hacerlo-en-wordpress/</link>
+      <pubDate>Tue, 13 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/publicar-autom%C3%A1ticamente-en-facebook-al-hacerlo-en-wordpress/</guid>
+      <description>Que algo sencillo se convierta en un dolor de cabeza es una de las cosas que más frustra. He estado mucho tiempo buscando una forma rápida y sencilla de que mis publicaciones en el blog se conviertan también en entradas de mi página en Facebook para que al menos mis &amp;ldquo;amigos&amp;rdquo; tengan la oportunidad de enterarse de los artículos que escribo y los lean en caso de que les interese.</description>
+    </item>
+    
+    <item>
+      <title>Sincronizar WordPress en local y servidor</title>
+      <link>https://sherlockes.github.io/sincronizar-wordpress-en-local-y-servidor/</link>
+      <pubDate>Tue, 06 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/sincronizar-wordpress-en-local-y-servidor/</guid>
+      <description>Si de algo carece WordPress, o al menos yo no he sido capaz de encontrarlo después de mucho navegar por la red, es de un entorno de desarrollo en local. A que me refiero, cada vez que nos ponemos a realizar modificaciones en la web algo más allá que publicar un post nos encontramos con la tediosa labor de descargar, modificar, guardar, subir y comprobar cada modificación hasta que conseguimos dejar la web a nuestro gusto.</description>
+    </item>
+    
+    <item>
+      <title>Marcos de imágenes en WordPress</title>
+      <link>https://sherlockes.github.io/marcos-de-im%C3%A1genes-en-wordpress/</link>
+      <pubDate>Wed, 29 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/marcos-de-im%C3%A1genes-en-wordpress/</guid>
+      <description>Escribiendo hoy un post he encontrado la solución a un problema que ya se me había planteado anteriormente y hasta ahora no había sido capaz de encontrar de una forma sencilla como esta. Se trata de los marcos alrededor de las imágenes en WordPress.
+Por defecto, si insertamos en la entrada una imagen desde la galería en una entrada de WordPress el código que se genera es el siguiente
+&amp;lt;img src=&amp;#34;sherblog/wp-content/uploads/Homer.</description>
+    </item>
+    
+  </channel>
+</rss>

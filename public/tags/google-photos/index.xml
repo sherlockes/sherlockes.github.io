@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>google photos on Sherblog</title>
+    <link>https://sherlockes.github.io/tags/google-photos/</link>
+    <description>Recent content in google photos on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Tue, 22 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/google-photos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sincronizar Google Photos desde la Raspberry</title>
+      <link>https://sherlockes.github.io/sincronizar-google-photos-desde-la-raspberry/</link>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/sincronizar-google-photos-desde-la-raspberry/</guid>
+      <description>&lt;p&gt;Hasta ahora había sincronizado mi galería de Google Fotos con el NAS desde el pc de sobremesa con Linux Mint, voy a intentar hacerlo desde la Raspberry para no tener que encender el pc.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

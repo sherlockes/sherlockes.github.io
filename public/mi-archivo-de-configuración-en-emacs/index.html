@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Mi archivo de configuración en Emacs - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Así es la forma en la que tengo configuraco Emacs">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://www.sherblog.pro/images/20220403_emacs_archivo_configuracion_00.jpg" />
+	<meta name="twitter:title" content="Mi archivo de configuración en Emacs"/>
+	<meta name="twitter:description" content="Así es la forma en la que tengo configuraco Emacs"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="sherblog.pro" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Mi archivo de configuración en Emacs">
+	<meta property="og:url"   content="https://sherlockes.github.io">
+	<meta property="og:description" content="Así es la forma en la que tengo configuraco Emacs"/>
+
+	<meta property="og:image" content="http://www.sherblog.pro/images/20220403_emacs_archivo_configuracion_00.jpg" />
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mi archivo de configuración en Emacs"/>
+<meta name="twitter:description" content="Así es la forma en la que tengo configuraco Emacs"/>
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Mi archivo de configuración en Emacs</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-08-15T00:00:00Z">2023-08-15</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">computing</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20220403_emacs_archivo_configuracion_00.jpg" alt="Mi archivo de configuración en Emacs">
+		
+	</figure><div class="content post__content clearfix">
+			<p><strong>Actualización:</strong> El archivo &ldquo;init.el&rdquo; se me está haciendo grande y ahora me apoyo en un &ldquo;functions.el&rdquo; y en una comprobación de paquetes en el arranque.
+Hay pocas cosas tan personales en informática como la configuración de <a href="https://www.gnu.org/software/emacs/">Emacs</a>. En mi caso uso una combinación de <code>.emacs</code> e <code>init.el</code> de la que seguro puedes sacar algo que aprender.</p>
+<p>Tal y como dejé reflejado en un <a href="/mi-gesti%C3%B3n-de-los-archivos-de-configuraci%C3%B3n/">artículo</a> anterior, tengo mis archivos de configuración en la carpeta &ldquo;dotfiles&rdquo;. Durante un tiempo me ha funcionado este método sin mayores problemas hasta que la instalación de un paquete ha requerido la compilación del mismo para adaptarlo al hardware de la máquina. En este momento nos encontramos con que los archivos de la carpeta de configuración son distintos para las distintas máquinas y no tiene sentido compartirlos. Por esto, ahora sólo comparto</p>
+<ul>
+<li>&ldquo;init.el&rdquo; como archivo principal de configuración</li>
+<li>&ldquo;functions.el&rdquo; como archivo auxiliar de funciones</li>
+<li>&ldquo;snippets&rdquo; como la carpeta donde ubico la configuración personalizara de Yasnippet</li>
+</ul>
+<p>En cada arranque de <a href="https://www.gnu.org/software/emacs/">Emacs</a> se comprobará si cada uno de los paquetes que utilizo están instalados en el equipo mediante la función &ldquo;my-install-package-if-not-installed&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(defun my-install-package-if-not-installed (<span style="color:#a6e22e">package</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Instala el paquete PACKAGE si no está instalado.&#34;</span>
+</span></span><span style="display:flex;"><span>  (unless (featurep <span style="color:#a6e22e">package</span>)
+</span></span><span style="display:flex;"><span>    (unless (package-installed-p <span style="color:#a6e22e">package</span>)
+</span></span><span style="display:flex;"><span>      (message <span style="color:#e6db74">&#34;Instalando el paquete &#39;%s&#39;...&#34;</span> <span style="color:#a6e22e">package</span>)
+</span></span><span style="display:flex;"><span>      (package-refresh-contents)
+</span></span><span style="display:flex;"><span>      (package-install <span style="color:#a6e22e">package</span>)
+</span></span><span style="display:flex;"><span>      (message <span style="color:#e6db74">&#34;Paquete &#39;%s&#39; instalado.&#34;</span> <span style="color:#a6e22e">package</span>))))
+</span></span></code></pre></div><p>Para que <a href="https://www.gnu.org/software/emacs/">Emacs</a> sea consciente de donde se ubica el archivo principal de configuración al abrir, en la carpeta raíz del usuario tengo alojado el archivo &ldquo;.emacs&rdquo; con el siguiente contenido:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#66d9ef">setq</span> user-dir (expand-file-name <span style="color:#e6db74">&#34;~&#34;</span>))
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">setq</span> user-init-file (concat user-dir <span style="color:#e6db74">&#34;/dotfiles/emacs/.emacs.d/init.el&#34;</span>))
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">load</span> user-init-file)
+</span></span></code></pre></div><p>Estas tres líneas simplemente declaran la variable &ldquo;user-dir&rdquo; como la ruta a la carpeta del usuario activo y &ldquo;user-init-file&rdquo; como la ruta al archivo principal de configuración. Posteriormente carga el archivo de configuración principal &ldquo;init.el&rdquo;</p>
+<pre><code>;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Script Name: init.el                            ;;
+;; Description: Archivo de configuración de Emacs  ;;
+;; Args: N/A                                       ;;
+;; Creation/Update: 20200225/20230921              ;; 
+;; Author: www.sherblog.pro                        ;;                      
+;; Email: sherlockes@gmail.com                     ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Archivo ubicado en &#34;~/.emacs&#34; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; (setq user-dir (expand-file-name &#34;~&#34;))                                                   ;; Variable para el directorio de usuario
+;; (setq user-init-file (concat user-dir &#34;/dotfiles/emacs/.emacs.d/init.el&#34;))               ;; Ubicación del archivo de configuración
+;; (load user-init-file)                                                                    ;; Carga el archivo de configuración
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Ubicación de directorios ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq user-emacs-directory (concat user-dir &#34;/.emacs.d/&#34;))                                  ;; Directorio de configuración
+(setq default-directory user-dir)                                                           ;; Directorio por defecto
+(setenv &#34;HOME&#34; user-dir)                                                                    ;; Directorio HOME
+(setq brain-dir (concat user-dir &#34;/sherlockes.gitlab.io/&#34;))                                 ;; Directorio para la exportación de Org-Roam
+(setq blog-dir (concat user-dir &#34;/sherlockes.github.io/&#34;))                                 ;; Directorio para la Actualizacion del Blog
+(setq blog-repo &#34;git@github.com:sherlockes/sherlockes.github.io.git&#34;)
+(setq brain-roam-dir (concat brain-dir &#34;content-org&#34;))                                      ;; Directorio para las notas en Org-Roam
+(setq brain-repo &#34;git@gitlab.com:sherlockes/sherlockes.gitlab.io.git&#34;)                      ;; Repo de la web en gitlab
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Configuración externa ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(load-file (concat user-dir &#34;/dotfiles/emacs/.emacs.d/functions.el&#34;))                       ;; Carga el archivo externo de funciones
+(setq shell-command-switch &#34;-ic&#34;)                                                           ;; Configura shell-command para permitir alias
+(setq byte-compile-warnings &#39;(cl-functions))                                                ;; Elimina el warning cl obsoleto
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Añadir repositorios ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(require &#39;package)
+
+(add-to-list &#39;package-archives &#39;(&#34;melpa&#34; . &#34;https://melpa.org/packages/&#34;) t)                    ;; Melpa, no es la versión estable
+;;(add-to-list &#39;package-archives &#39;(&#34;melpa-stable&#34; . &#34;http://stable.melpa.org/packages/&#34;) t)     ;; Melpa estable
+;;(add-to-list &#39;package-archives &#39;(&#34;org&#34; . &#34;http://orgmode.org/elpa/&#34;) t)                       ;; Problemas al instalar Org-Roam
+(add-to-list &#39;package-archives &#39;(&#34;nongnu&#34;   . &#34;https://elpa.nongnu.org/nongnu/&#34;) t)
+;;(add-to-list &#39;package-archives &#39;(&#34;gnu&#34;   . &#34;https://elpa.gnu.org/packages/&#34;) t)               ;; Cambiado por la versión nongnu
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Inicializar y actualizar paquetes ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(package-initialize)
+(setq package-enable-at-startup nil)
+
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+;;;;;;;;;
+;; Ivy ;;
+;;;;;;;;;
+(my-install-package-if-not-installed &#39;wgrep)                                                ;; Requiere tener instalado &#34;wgrep&#34;
+(my-install-package-if-not-installed &#39;ivy)                                                  ;; Instalación del paquete &#34;Ivy&#34;
+(ivy-mode t)                                                                                ;; Activa el modo de autocompletado de Ivy
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Actualización del Blog ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(if (file-exists-p blog-dir)                                                               ;; Actualiza el repositorio brain o lo clona si no existe
+    (let ((default-directory blog-dir))(shell-command &#34;git pull&#34;))
+  (let ((default-directory &#34;~/&#34;))(shell-command (concat &#34;git clone &#34; blog-repo)))
+)
+
+;;;;;;;;;;;;;
+;; ox-hugo ;;
+;;;;;;;;;;;;;
+
+(my-install-package-if-not-installed &#39;ox-hugo)
+(with-eval-after-load &#39;ox
+  (require &#39;ox-hugo))
+
+;;;;;;;;;;;;;
+;; Counsel ;;
+;;;;;;;;;;;;;
+
+(my-install-package-if-not-installed &#39;counsel)                                              ;; Requiere tener instalado ripgrep
+(require &#39;counsel)
+(setq counsel-rg-base-command &#34;rg -S --no-heading --line-number --color never %s .&#34;)        ;; Configura el comando rg ejecutable
+
+;;;;;;;;;;;;;;
+;; Org-roam ;;
+;;;;;;;;;;;;;;
+
+(my-install-package-if-not-installed &#39;org-roam)                                             ;; Instala paquete Org-Roam
+
+(if (file-exists-p brain-dir)                                                               ;; Actualiza el repositorio brain o lo clona si no existe
+    (let ((default-directory brain-dir))(shell-command &#34;git pull&#34;))
+  (let ((default-directory &#34;~/&#34;))(shell-command (concat &#34;git clone &#34; brain-repo)))
+)
+
+(setq org-roam-directory (file-truename brain-roam-dir))                                    ;; Establece el directorio para ORGRoam
+(org-roam-db-autosync-mode)                                                                 ;; Sincronizar cache automáticamente
+(setq org-roam-completion-system &#39;ivy)                                                      ;; Define ivy como sistema de completado
+(setq org-roam-completion-everywhere t)                                                     ;; Completa en cualquier lugar
+(setq org-id-extra-files (directory-files-recursively org-roam-directory &#34;\\.org$&#34;))        ;; Habilita la exportación de enlaces hacia Ox-hugo
+
+(defun funcion-al-guardar ()                                                                ;; Función que se ejecuta al guardar archivo de brain-dir
+  (interactive)
+  (if (string= (file-name-extension buffer-file-name) &#34;org&#34;)
+    (org-hugo-export-wim-to-md :all-subtrees))                                              ;; Exporta el archivo si es de tipo *.org
+
+  (let ((default-directory brain-dir))
+    (shell-command &#34;gitup&#34;)                                                                 ;; Actualiza el repositorio git
+  )
+)
+
+(add-hook &#39;after-save-hook (lambda () (when (and buffer-file-name (string-prefix-p brain-dir buffer-file-name))(funcion-al-guardar))))
+
+;;;;;;;;;;;;;;;;;
+;; Org-roam-ui ;;
+;;;;;;;;;;;;;;;;;
+
+(my-install-package-if-not-installed &#39;org-roam-ui)                                        ;; Paquete estandar de org-roam-ui
+;;(add-to-list &#39;load-path &#34;/home/sherlockes/Descargas/org-roam-ui&#34;)                           ;; Paquete con capacidad de exportar
+(require &#39;org-roam-ui)
+
+;;;;;;;;;;;;;;;;;;;
+;; Añadir Dired&#43; ;;
+;;;;;;;;;;;;;;;;;;;
+
+(let ((url &#34;https://www.emacswiki.org/emacs/download/dired&#43;.el&#34;))
+  (my-download-file-if-not-exists url (concat user-dir &#34;/.emacs.d/dired&#43;/dired&#43;.el&#34;)))
+(add-to-list &#39;load-path (concat user-dir &#34;/.emacs.d/dired&#43;/&#34;))
+(load &#34;dired&#43;.el&#34;)
+(require &#39;dired&#43;)
+
+;;;;;;;;;;;;;;;;;;;;;;
+;; Añadir Yasnippet ;;
+;;;;;;;;;;;;;;;;;;;;;;
+
+(my-install-package-if-not-installed &#39;yasnippet)
+(require &#39;yasnippet)
+(yas-global-mode 1)
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Añadir Markdown ;;
+;;;;;;;;;;;;;;;;;;;;;
+
+(my-install-package-if-not-installed &#39;markdown-mode)
+(require &#39;markdown-mode)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Crear la copia de seguridad en la papelera en lugar de en la carpeta del archivo ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq backup-directory-alist `((&#34;.*&#34; . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((&#34;.*&#34; ,temporary-file-directory t)))
+;;(setq temporary-file-directory &#34;~/.emacs_backup&#34;)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Ocultar barras y pantalla de inicio ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(tool-bar-mode -1)                                                                          ;; Oculta la barra de herramientas superior
+(tooltip-mode -1)                                                                           ;; Mostrar consejos en la barra inferior
+(menu-bar-mode -1)                                                                          ;; Oculta la barra de menús superior
+(setq inhibit-startup-screen t)                                                             ;; No mostrar la pantalla de bienvenida
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Modo para copiar la línea completa ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(my-install-package-if-not-installed &#39;whole-line-or-region)
+(whole-line-or-region-global-mode 1)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Configuración de Dired ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq dired-dwim-target t)                                                                  ;; Fija como objetivo el otro buffer con Dired
+(setq dired-listing-switches &#34;-laGh1v --group-directories-first&#34;)                           ;; Configuración ls defecto
+(put &#39;dired-find-alternate-file &#39;disabled nil)                                              ;; Habilita la &#34;a&#34; en Dired
+;;(add-hook &#39;dired-mode-hook (lambda()(dired-hide-details-mode)))                           ;; Ocultar detalles al ejecutar el modo dired
+
+(setq my-dired-ls-switches-show &#34;-laGh1v --group-directories-first&#34;)                        ;; Modo para mostrar detalles
+(setq my-dired-ls-switches-hide &#34;-lGh1v --group-directories-first&#34;)                         ;; Modo para ocultar detalles
+(setq my-dired-switch 1)                                                                    ;; Variable para alternar modo
+
+(add-hook &#39;dired-mode-hook                                                                  ;; Hook al activar el Modo Dired
+ (lambda ()
+  (dired-hide-details-mode)
+  (if (= my-dired-switch 1)(dired-sort-other my-dired-ls-switches-hide))
+  (define-key dired-mode-map (kbd &#34;M-&lt;up&gt;&#34;) (                                               ;; Ir a directorio superior &#34;Alt-arriba&#34;
+    lambda () (interactive) (find-alternate-file &#34;..&#34;))
+  )
+  (define-key dired-mode-map (kbd &#34;M-&lt;down&gt;&#34;) &#39;dired-find-alternate-file)                   ;; Entrar en directorio &#34;Alt-abajo&#34;
+  (define-key dired-mode-map (kbd &#34;&lt;f1&gt;&#34;) &#39;restart-emacs)                                   ;; Atajo para reiniciar Emacs desde Dired
+  (define-key dired-mode-map (kbd &#34;M-o&#34;)                                                    ;; Función Mostrar/Ocultar detalles &#34;Alt-o&#34;
+   (lambda ()
+    &#34;Alterna entre mostrar y ocultar&#34;
+    (interactive)
+    (setq my-dired-switch (- my-dired-switch))
+    (if (= my-dired-switch 1)
+      (dired-sort-other my-dired-ls-switches-hide)
+      (dired-sort-other my-dired-ls-switches-show))))))
+
+;;;;;;;;;;;;;;;;;;;
+;; All-the-icons ;;
+;;;;;;;;;;;;;;;;;;;
+(my-install-package-if-not-installed &#39;all-the-icons-dired)                                        ;; Instala el paquete para mostrar iconos en dired
+(add-hook &#39;dired-mode-hook &#39;all-the-icons-dired-mode)                                       ;; Habilita el modo cuando entramos en Dired
+
+;;;;;;;;;;;;
+;; Python ;;
+;;;;;;;;;;;;
+
+(my-install-package-if-not-installed &#39;elpy)
+(elpy-enable)
+(setq python-shell-interpreter &#34;python3&#34;)
+(setq elpy-rpc-python-command &#34;python3&#34;)
+(setq elpy-rpc-virtualenv-path (quote system))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Plantillas con Auto-insert ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(auto-insert-mode)                                                                          ;; Habilitar el modo Auto-insert
+(setq auto-insert &#39;other)                                                                   ;; Lanzar el modo en otra ventana
+(setq auto-insert-directory &#34;~/dotfiles/templates/&#34;)                                        ;; Directorio de plantillas
+(setq auto-insert-query nil)                                                                ;; No preguntar sobre la inserción
+
+(defun autoinsert-yas-expand()
+    &#34;Reemplaza el texto en una plantilla de yasnippet.&#34;
+    
+    ;; Caso si es un Script
+    (if (string-match &#34;\.sh&#34; (file-name-nondirectory buffer-file-name))
+            (shell-command (concat &#34;chmod u&#43;x &#34; buffer-file-name))
+    )
+    
+    (yas/expand-snippet (buffer-string) (point-min) (point-max))
+    (save-buffer)
+)
+
+;; Lanzadores de plantillas con Auto-insert
+(setq auto-insert-alist &#39;(
+    ((&#34;\\.sh\\&#39;&#34; . &#34;Shell script&#34;) . [&#34;template.sh&#34; autoinsert-yas-expand])                 ;; Lanzador para reación de scripts en Bash
+    ((&#34;20[0-9]\\{6\\}_.&#43;\\.md\\&#39;&#34; . &#34;Markdown&#34;) . [&#34;template.md&#34; autoinsert-yas-expand])    ;; Lanzador para post del blog en markdown
+))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Corrección ortográfica ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq ispell-dictionary &#34;español&#34;)                                                          ;; Establece el diccionario Español pr defecto
+(add-hook &#39;markdown-mode-hook &#39;flyspell-mode)                                               ;; Habilita la correción ortográfica para archivos Markdown
+(add-hook &#39;org-mode-hook &#39;flyspell-mode)                                                    ;; Habilita la correción ortográfica para archivos Org-mode
+(add-hook &#39;flyspell-mode-hook &#39;flyspell-buffer)                                             ;; Corrige el buffer cuando se habilita la corrección
+
+;;;;;;;;;;;
+;; Otros ;;
+;;;;;;;;;;;
+(put &#39;downcase-region &#39;disabled nil)                                                        ;; Habilita el comando para pasar a minúsculas
+(put &#39;upcase-region &#39;disabled nil)                                                          ;; Habilita el comando para pasar a mayúsculas
+(put &#39;erase-buffer &#39;disabled nil)                                                           ;; Habilita el comando de borrado del buffer
+(global-visual-line-mode t)                                                                 ;; Ajuste de línea
+(add-hook &#39;window-setup-hook &#39;toggle-frame-maximized t)                                     ;; Arrancar emacs maximizado
+(add-to-list &#39;display-buffer-alist &#39;(&#34;^\\*shell\\*&#34; . (display-buffer-same-window . nil)))  ;; Mostrar la sesión de terminal en el mismo buffer
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won&#39;t work right.
+ &#39;(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ &#39;(custom-enabled-themes &#39;(wombat))
+ &#39;(debug-on-error nil)
+ &#39;(delete-selection-mode 1)
+ &#39;(ibuffer-formats
+   &#39;((mark modified read-only locked &#34; &#34;
+	   (name 48 48 :left :elide)
+	   &#34; &#34;
+	   (size 9 -1 :right)
+	   &#34; &#34;
+	   (mode 16 16 :left :elide))
+     (mark &#34; &#34;
+	   (name 16 -1)
+	   &#34; &#34; filename)))
+ &#39;(org-roam-capture-templates
+   &#39;((&#34;d&#34; &#34;default&#34; plain &#34;%?&#34; :target
+      (file&#43;head &#34;%&lt;%Y%m%d&gt;-${slug}.org&#34; &#34;#&#43;title: ${title}
+#&#43;STARTUP: overview
+#&#43;date: %&lt;%Y-%m-%d&gt;
+#&#43;hugo_custom_front_matter: :thumbnail \&#34;images/image.jpg\&#34;
+#&#43;setupfile: ./setup.conf
+#&#43;hugo_tags: nemo
+#&#43;hugo_categories: apps
+#&#43;hugo_draft: false
+Resumen de la nota
+#&#43;BEGIN_export html
+&lt;!--more--&gt;
+#&#43;END_export
+&#34;)
+      :unnarrowed t)))
+ &#39;(org-tags-column -60)
+ &#39;(package-selected-packages
+   &#39;(ox-hugo wgrep ivy vertico whole-line-or-region markdown-mode htmlize gnu-elpa-keyring-update elpy))
+ &#39;(remote-shell-program &#34;ssh&#34;)
+ &#39;(safe-local-variable-values &#39;((ENCODING . UTF-8) (encoding . utf-8)))
+ &#39;(tramp-default-method &#34;ssh&#34;)
+ &#39;(tramp-encoding-shell &#34;/bin/bash&#34;))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won&#39;t work right.
+ )
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;; Ajatos de teclado ;;
+;;;;;;;;;;;;;;;;;;;;;;;
+
+;; generales
+(global-set-key (kbd &#34;&lt;f1&gt;&#34;) &#39;reiniciar)                                                    ;; Reiniciar emacs
+(global-set-key (kbd &#34;&lt;f2&gt;&#34;) (lambda() (interactive)(org-roam-ui-mode t)))                  ;; Lanza Org-roam-ui
+(global-set-key (kbd &#34;&lt;f4&gt;&#34;) &#39;sherblog_edit)                                                ;; Modo de edición del blog
+(global-set-key (kbd &#34;&lt;f5&gt;&#34;) &#39;flyspell-mode)
+(global-set-key (kbd &#34;&lt;f6&gt;&#34;) (kbd &#34;C-u C-c C-c&#34;))                                           ;; Exportar de nuevo
+(global-set-key (kbd &#34;&lt;f7&gt;&#34;) &#39;fd-switch-dictionary)                                         ;; Cambio de diccionario
+
+(global-set-key (kbd &#34;C-x C-b&#34;) &#39;ibuffer)                                                   ;; Cambio de buffer
+(global-set-key (kbd &#34;C-c r&#34;) &#39;query-replace-regexp)                                        ;; Buscar y reemplazar
+(global-set-key (kbd &#34;C-c s&#34;) &#39;counsel-rg)                                                  ;; Buscar mediante counsel y ripgrep
+
+;; Org-Roam
+(global-set-key (kbd &#34;C-c n f&#34;) &#39;org-roam-node-find)                                        ;; Buscar o crear un Nodo
+(global-set-key (kbd &#34;C-c n l&#34;) &#39;org-roam-buffer-toggle)                                    ;; Mostrar/Ocultar el Buffer Org-Roam
+(global-set-key (kbd &#34;C-c n i&#34;) &#39;org-roam-node-insert)                                      ;; Insertar un enlace
+(global-set-key (kbd &#34;C-c n t&#34;) &#39;org-roam-tag-add)                                          ;; Añadir un Tag
+(global-set-key (kbd &#34;C-c n a&#34;) &#39;org-roam-alias-add)                                        ;; Añadir un Alias
+(global-set-key (kbd &#34;C-c n o&#34;) &#39;org-id-get-create)                                         ;; Convertir encabezado en nodo
+</code></pre>
+<p>Seguro que no están aquí todas tus necesidades ni necesitas todo lo que está aquí, pero el archivo está suficientemente comentado para que puedas extraer de el todo lo que necesites.</p>
+<blockquote>
+<p>El archivo se actualiza diariamente de mi <a href="https://github.com/sherlockes/SherloScripts/blob/master/elisp/init.el">repositorio en GitHub</a> y así se <a href="/incrustar-texto-externo-en-hugo/">incrusta en el blog</a>.</p>
+</blockquote>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="www.sherblog.pro">enlace</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/exportar-org-roam-a-hugo-en-gitlab/">Exportar Org-Roam a Hugo en Gitlab</a></li>
+	    
+	    <li><a href="/comprobaci%C3%B3n-ortogr%C3%A1fica-en-emacs/">Comprobación ortográfica en Emacs</a></li>
+	    
+	    <li><a href="/sincronizando-org-roam-mediante-github-en-emacs/">Sincronizando Org-Roam mediante Github en Emacs</a></li>
+	    
+	    <li><a href="/entorno-de-desarrollo-de-sherblog-en-emacs/">Entorno de desarrollo de Sherblog en Emacs</a></li>
+	    
+	    <li><a href="/exportar-de-org-a-html-en-emacs/">Exportar de org a html en emacs</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/emacs/" rel="tag">emacs</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/sincronizando-org-roam-mediante-github-en-emacs/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Sincronizando Org-Roam mediante Github en Emacs</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/comprobaci%C3%B3n-ortogr%C3%A1fica-en-emacs/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Comprobación ortográfica en Emacs</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://emacs.ch/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2023 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script></body>
+</html>

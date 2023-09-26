@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Scripts on Sherblog</title>
+    <link>https://sherlockes.github.io/tags/google-scripts/</link>
+    <description>Recent content in Google Scripts on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Thu, 02 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/google-scripts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Archivos de Telegram al NAS</title>
+      <link>https://sherlockes.github.io/archivos-de-telegram-al-nas/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/archivos-de-telegram-al-nas/</guid>
+      <description>&lt;p&gt;Hace mucho tiempo que llevo buscando un método para descargar archivos desde Telegram (en mi teléfono Android) al NAS sin estar en la misma red local ni usar datos de mi tarifa móvil. Ahora creo que he dado con una forma rápida y sencilla&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

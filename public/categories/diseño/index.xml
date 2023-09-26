@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>diseño on Sherblog</title>
+    <link>https://sherlockes.github.io/categories/dise%C3%B1o/</link>
+    <description>Recent content in diseño on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Fri, 29 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/dise%C3%B1o/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Extrayendo la portada de un pdf</title>
+      <link>https://sherlockes.github.io/extrayendo-la-portada-de-un-pdf/</link>
+      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/extrayendo-la-portada-de-un-pdf/</guid>
+      <description>&lt;p&gt;Una vez más me encuentro con un problema de los que puedo optar por la solución sencilla y laboriosa o por la optima y meticulosa. Necesito convertir de varios archivos en pdf la primera página (Portada) a una imagen para lo cual voy a probar dos alternativas, primero con &lt;a href=&#34;https://imagemagick.org&#34;&gt;Imagemagick&lt;/a&gt; y posteriormente con &lt;a href=&#34;https://poppler.freedesktop.org/&#34;&gt;Poppler&lt;/a&gt; ambas desde la terminal y la línea de comandos de Linux Mint.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Flujo de imágenes en Linux</title>
+      <link>https://sherlockes.github.io/flujo-de-im%C3%A1genes-en-linux/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/flujo-de-im%C3%A1genes-en-linux/</guid>
+      <description>El origen de las imágenes Las imágenes con las que suelo tratar más habitualmente tienen dos procedencias claramente diferenciadas.
+Capturas de pantalla Cada vez que escribo un post para el blog me encuentro con que necesito incluir alguna imagen para el mismo. Desde que uso Linux Mint el flujo ha cambiado notablemente ya que ahora uso simplemente la captura de pantalla nativa y Gimp para la edición.
+Para capturar un area de pantalla al portapapeles uso el atajo de teclado Ctrl + Mays + ImprPant (Importante tenerlo punsado un segundo hasta que el cursor cambia por una cruz con la que seleccionar el area a capturar).</description>
+    </item>
+    
+    <item>
+      <title>Redimensionar imágenes desde la línea de comandos</title>
+      <link>https://sherlockes.github.io/redimensionar-im%C3%A1genes-desde-la-l%C3%ADnea-de-comandos/</link>
+      <pubDate>Mon, 07 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/redimensionar-im%C3%A1genes-desde-la-l%C3%ADnea-de-comandos/</guid>
+      <description>Hace unos días me encontré con un problema a la hora de mandar imprimir unas fotografías y es que dentro de las seleccionadas había diversos tamaños por lo que tuve que igualarlas.
+Si solo fueran unas pocas fotos no me hubiera planteado &amp;ldquo;automatizar&amp;rdquo; la tarea pero al tratarse de casi cien fotografías me da pereza hacerlo una a una manualmente mediante.
+Habitualmente uso Gimp para el retoque y ajuste de imágenes.</description>
+    </item>
+    
+    <item>
+      <title>Crear panorámica a partir de un vídeo</title>
+      <link>https://sherlockes.github.io/crear-panor%C3%A1mica-a-partir-de-un-v%C3%ADdeo/</link>
+      <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/crear-panor%C3%A1mica-a-partir-de-un-v%C3%ADdeo/</guid>
+      <description>Hasta hace un tiempo, en mis salidas con la bicicleta a la caza de vértices geodésicos cargaba con una cámara fotográfica digital compacta. Para hacer una vista panorámica desde el vértice tomaba varias instantáneas que luego fundía con paciencia y photoshop. Ahora cargo con la pequeña Gopro y realizo un barrido panorámico en vídeo. Pues bien, el problema pasa por la forma de convertir el vídeo tomado en una fotografía panorámica.</description>
+    </item>
+    
+    <item>
+      <title>Insertar un título a un vídeo con Virtualdub (Otra forma)</title>
+      <link>https://sherlockes.github.io/insertar-un-t%C3%ADtulo-a-un-v%C3%ADdeo-con-virtualdub-otra-forma/</link>
+      <pubDate>Tue, 06 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/insertar-un-t%C3%ADtulo-a-un-v%C3%ADdeo-con-virtualdub-otra-forma/</guid>
+      <description>Hace casi un año expuse aquí una forma de incluir un título delante de un vídeo con VirtualDub de una forma rápida y sencilla. El caso es que si el vídeo en cuestión lleva sonido el asunto no es tan fácil haciéndolo de esta manera ya que al programa no le gusta unir vídeos con diferencias en la pista de audio.
+En el siguiente videotutorial muestro otra forma de incluir este título de una forma más fácil todavía (Aunque menos intuitiva) haciendo uso del filtro &amp;ldquo;logo&amp;rdquo; y de las curvas de opacidad del mismo.</description>
+    </item>
+    
+    <item>
+      <title>Abrir archivos RAW con Gimp Portable</title>
+      <link>https://sherlockes.github.io/abrir-archivos-raw-con-gimp-portable/</link>
+      <pubDate>Sun, 09 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/abrir-archivos-raw-con-gimp-portable/</guid>
+      <description>Cada vez son más las cámaras fotográficas capaces de guardar las instantáneas en formato Raw. No voy a analizar todas las ventajas e inconvenientes de guardar la información de esta manera aunque hay que tener claro que la principal razón para usarla es que no existe pérdida de datos por el procesado interno de la cámara.
+Gimp no es capaz de forma nativa de manejar este formato por lo que será necesaria la ayuda de Ufraw, también gratuito y de libre distribución como Gimp, para abrir este tipo de archivos.</description>
+    </item>
+    
+    <item>
+      <title>Tirando HDR con compacta en automático</title>
+      <link>https://sherlockes.github.io/tirando-hdr-con-compacta-en-autom%C3%A1tico/</link>
+      <pubDate>Fri, 13 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/tirando-hdr-con-compacta-en-autom%C3%A1tico/</guid>
+      <description>A estas alturas de partido no vamos a entrar en lo que es un HDR, ya que para esto está la Wikipedia. Este post resulta como consecuencia de una experiencia hace unos días en el monte al intentar hacer una foto en la que no era posible que no aparecieran zonas quemadas o subexpuestas.
+Vamos a pasar esta vez de la reflex, el trípode, apertura del diafragma, tiempos de exposición, valores de ISO o control de la cámara en manual.</description>
+    </item>
+    
+    <item>
+      <title>Insertar título a un vídeo con VirtualDub</title>
+      <link>https://sherlockes.github.io/insertar-t%C3%ADtulo-a-un-v%C3%ADdeo-con-virtualdub/</link>
+      <pubDate>Thu, 24 Mar 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/insertar-t%C3%ADtulo-a-un-v%C3%ADdeo-con-virtualdub/</guid>
+      <description>Seguro que hay cientos de alternativas que nos permiten anteponer un título de cierta duración a una secuencia de vídeo. No se si esta será la mejor forma de hacerlo, aunque está claro que es una forma rápida, sencilla, libre y gratuita, lo cual la hace digna de ser considerada como una muy buena solución.
+Una vez utilizaremos VirtualDub como principal programa en la edición y de forma auxiliar también se empleará el clásico &amp;ldquo;Paint&amp;rdquo; de windows (Crearemos un título extremadamente simple, para algo más trabajado será necesario un programa de edición gráfica más potente) y &amp;ldquo;VideoInspector&amp;rdquo;, este último un sencillo programa gratuito que nos da información sobre el formato de los vídeos que seleccionemos.</description>
+    </item>
+    
+    <item>
+      <title>Creando un vídeo panorámico a partir de una fotografía</title>
+      <link>https://sherlockes.github.io/creando-un-v%C3%ADdeo-panor%C3%A1mico-a-partir-de-una-fotograf%C3%ADa/</link>
+      <pubDate>Tue, 08 Mar 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/creando-un-v%C3%ADdeo-panor%C3%A1mico-a-partir-de-una-fotograf%C3%ADa/</guid>
+      <description>Una vez más, una solución sencilla a un problema sencillo. Esta vez estamos buscando la creación de un vídeo que realice un barrido a una fotografía panorámica creada anteriormente.
+Buscando un poco en la red he encontrado un software gratuito que es capaz de hacer esto de una forma rápida y sencilla. Se trata de WPanorama que combinado con VirtualDub para la compresión del resultado hacen la solución perfecta a este problema.</description>
+    </item>
+    
+    <item>
+      <title>Time-Lapse / Stop-Motion con VirtualDub</title>
+      <link>https://sherlockes.github.io/time-lapse-/-stop-motion-con-virtualdub/</link>
+      <pubDate>Wed, 28 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/time-lapse-/-stop-motion-con-virtualdub/</guid>
+      <description>Resumiendo bastante, podemos definir Time-Lapse y Stop-Motion como dos técnicas fotográficas que permiten crear un vídeo a partir de una secuencia de imágenes.
+En el mercado hay muchos programas capaces de hacer esta labor e incluso hay algumos específicos que es lo único que saben hacer. Pero una vez más vamos a utilizar VirtualDub como ya hemos hecho en otras ocasiones y para muy diferentes propositos.
+Si tienes problemas de visión te aconsejo que maximices el vídeo y lo pauses en cada paso hasta haber entendido todo el contenido del mismo.</description>
+    </item>
+    
+  </channel>
+</rss>

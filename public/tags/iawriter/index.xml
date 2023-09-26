@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iAWriter on Sherblog</title>
+    <link>https://sherlockes.github.io/tags/iawriter/</link>
+    <description>Recent content in iAWriter on Sherblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Tue, 04 Sep 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/iawriter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Publicar desde iaWriter</title>
+      <link>https://sherlockes.github.io/publicar-desde-iawriter/</link>
+      <pubDate>Tue, 04 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sherlockes.github.io/publicar-desde-iawriter/</guid>
+      <description>Publicar solo con el editor de texto Hace un tiempo que estoy intentando escribir en Markdown y para WordPress he estado utilizando el Plugin Wp-MarkDown que me ha permitido realizar la maquetación del post directamente en Markdown. Una vez que he dejado atrás WordPress en favor de Hugo uno de mis objetivos de los últimos meses ha sido poder publicar en el blog simplemente usando un editor de texto.
+Pues bien, no sin algo de esfuerzo, al final lo he conseguido.</description>
+    </item>
+    
+  </channel>
+</rss>
