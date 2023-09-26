@@ -1,0 +1,6 @@
+@reboot /home/pi/SherloScripts/bash/webdav.sh > /home/pi/logs/webdav.log 2>&1
+@daily ~/SherloScripts/bash/pidiario.sh 2>&1 ~/logs/diario.log
+@weekly ~/SherloScripts/bash/radares.sh 2>&1 ~/logs/radares.log
+#@hourly ~/SherloScripts/bash/publish.sh
+30 0 * * * ~/SherloScripts/bash/gphotos-sync.sh > ~/logs/gphotos.log 2>&1
+
