@@ -22,7 +22,7 @@ Caí en el uso de [Emacs] como editor de texto pero con el tiempo me he dado cue
 
 Es gratis, es libre y me ofrece un entorno de trabajo sin distracciones con el que estoy encantado.
 
-Pepe es un tipo de grandes espectativas
+Pepe es un tipo de grandes expectativas 
 
 #### Que necesito?
 * [Descargar aquí] la aplicación.
