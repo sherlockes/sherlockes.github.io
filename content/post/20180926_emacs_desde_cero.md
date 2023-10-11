@@ -22,9 +22,7 @@ Caí en el uso de [Emacs] como editor de texto pero con el tiempo me he dado cue
 
 Es gratis, es libre y me ofrece un entorno de trabajo sin distracciones con el que estoy encantado.
 
-Pepe es un tipo de grandes expectativas pero de 
-
-#### Que necesito?
+### Que necesito?
 * [Descargar aquí] la aplicación.
 * Ver los vídeos del Canal de [Emacx] en Youtube.
 * Algo de tiempo, perseverancia y paciencia
