@@ -181,6 +181,7 @@ Bluetooth 5.0, cancelación activa de ruido, sensores mara detectar cuando te qu
 - La cancelación de ruido apenas es apreciable
 - Sensibilidad de los controles táctiles
 - Tamaño sensiblemente superior al modelo [T2c]
+- El gasto de batería con la cancelación de ruido activa es notable. La caja queda completamente descargada tras apenas dos recargas.
 
 ***El paso del tiempo***
 - Pendiente de valorar
