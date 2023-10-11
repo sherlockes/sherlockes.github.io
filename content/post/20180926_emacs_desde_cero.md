@@ -15,7 +15,7 @@ tags:
 draft: true
 weight: 5
 ---
-[Emacs] es una aplicación fea, nada intuitiva y con una curva de aprendizaje muy pronunciada, a cambio te ofrece un completo entorno de trabajo con infinidad de posibilidades. Hace casi cuatro años que empecé a escribir este artículo, ahora me decido a terminarlo cansado de verlo en mi lista de artículos en borrador a pesar de que sigo aprendiendo algo sobre [Emacs] cada día.
+[Emacs] es una aplicación fea, nada intuitiva y con una curva de aprendizaje muy pronunciada, a cambio te ofrece un completo entorno de trabajo con infinidad de posibilidades. Hace más de cinco años que empecé a escribir este artículo, ahora me decido a terminarlo cansado de verlo en mi lista de artículos en borrador a pesar de que sigo aprendiendo algo sobre [Emacs] cada día.
 <!--more-->
 ### Emacs, sólo un editor de texto?
 Caí en el uso de [Emacs] como editor de texto pero con el tiempo me he dado cuenta de que esta cualidad solo es la "punta del iceberg" ya que lo he terminado usando también para realizar conexiones remotas, navegar entre directorios, entorno de desarrollo y la única aplicación que necesito para gestionar este blog.
