@@ -13,7 +13,7 @@ categories:
 tags:
 - "zigbee"
 - "jinja2"
-draft: true
+draft: flase
 weight: 5
 ---
 De vez en cuando, hay dispositivos [Zigbee] que dejan de estar disponibles para [Home Assistant] y hay que volver a configurarlos, con esta sencilla tarjeta podremos ver cuales son y así no tener duda de que es lo que falla.
