@@ -22,14 +22,40 @@ Una vez más hago uso de plantillas en [Jinja2] para llevar a cabo una automatiz
 
 ![image-01]
 
+Para conectar todos los dispositivos [Zigbee] que tengo en casa uso la integración [zha] por lo que el objetivo de este artículo es que buscar los dispositivos de esta integración que no están disponibles.
 
+Después de unas horas de investigación he conseguido crear esta plantilla:
 
+``` jinja
+{% set zigbee = namespace(unavailable=[]) %}
+{% for entity in integration_entities('zha') %}
+  {% if states(entity) == 'unavailable' %}
+    {% set nombre = device_attr(device_id(entity), 'name_by_user') %}
+    {% if nombre not in zigbee.unavailable %}
+      {% set zigbee.unavailable = zigbee.unavailable + [nombre] %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{{ zigbee.unavailable }}
+```
+
+Son apenas diez líneas pero con mucha "miga" detrás y su funcionamiento es el siguiente:
+- Genera una matriz "zigbee.unavailable" donde almacenar una lista de deshabilitados
+- Recorre mediante un bucle "for" todos los dispositivos de la integración "zha"
+- Si el estado del dispositivo es "unavailable" sigue adelante
+- Extrae la id del dispositivo mediante "device_id(entity)"
+- Extrae el atributo del nombre asignado por el usuario a partir de la id
+- Si el nombre no está dentro de la matriz "zigbee.unavailable" sigue adelante
+- Añade el nombre como un nuevo elemento de la matriz "zigbee.unavailable"
+- Muestra los resultados
 
 ### Enlaces de interés
-- [enlace](www.sherblog.pro)
+- [GitHub - Allow list.append in jinja2](https://github.com/home-assistant/core/issues/33678)
+- [Home Assistant - Append item to list in Template](https://community.home-assistant.io/t/solved-how-to-append-items-to-list-using-template/309899)
 
 [Home Assistant]: https://www.home-assistant.io
 [Jinja2]: https://codeburst.io/jinja-2-explained-in-5-minutes-88548486834e
+[zha]: https://www.home-assistant.io/integrations/zha/
 [Zigbee]: https://es.wikipedia.org/wiki/Zigbee
 
 [image-01]: /images/20231021_zigbee_devices_not_available_01.jpg
