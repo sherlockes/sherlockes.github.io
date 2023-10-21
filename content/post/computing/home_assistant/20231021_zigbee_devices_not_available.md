@@ -80,6 +80,7 @@ mode: single
 
 ### Enlaces de interés
 - [GitHub - Allow list.append in jinja2](https://github.com/home-assistant/core/issues/33678)
+- [Home Assistant - Automation conditions](https://www.home-assistant.io/docs/automation/condition/)
 - [Home Assistant - Append item to list in Template](https://community.home-assistant.io/t/solved-how-to-append-items-to-list-using-template/309899)
 - [Home Assistant - Enumerate entities](https://community.home-assistant.io/t/how-to-enumerate-entities-belonging-to-an-integration/343748/12)
 
