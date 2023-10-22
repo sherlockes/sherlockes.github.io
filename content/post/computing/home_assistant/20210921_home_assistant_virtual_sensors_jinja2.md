@@ -15,7 +15,7 @@ tags:
 draft: false
 weight: 5
 ---
-Aquí dejo la solución que he implementado ante el problema de crear una nueva entidad en Home Assistant cuyo valor dependa del de otras entidades ya existentes gracias al uso de sensores virtuales y el motor de plantillas de Jinja2.
+Aquí dejo la solución que he implementado ante el problema de crear una nueva entidad en [Home Assistant] cuyo valor dependa del de otras entidades ya existentes gracias al uso de sensores virtuales y el motor de plantillas de Jinja2.
 
 **Actualización:** Sensor nº de dispositivos zigbee no disponibles
 <!--more-->
@@ -39,7 +39,7 @@ Antes de seguir adelante, guardaremos los cambios y comprobaremos que todo funci
 
 Si la configuración es válida podemos seguir adelante con la creación de nuestro nuevo sensor virtual.
 
-> El error más habitual es que ya tubieramos creado un sensor dentro del archivo "configuration.yaml". Deberemos moverlos al archivo "sensors.yaml"
+> El error más habitual es que ya hubiera creado un sensor dentro del archivo "configuration.yaml". Deberemos moverlo al archivo "sensors.yaml"
 
 A continuación dejo los sensores virtuales de los que hago uso en mi configuración de [Home Assistant]
 
