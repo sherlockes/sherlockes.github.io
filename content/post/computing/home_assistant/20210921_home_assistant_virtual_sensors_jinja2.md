@@ -1,6 +1,6 @@
 ---
 title: "Sensores virtuales y Jinja2 en Home Assistant"
-date: "2022-12-21"
+date: "2023-10-22"
 creation: "2021-09-21"
 description: "Mi manejo de los sensores virtuales y el motor de plantillas Jinja2 en Home Assistant"
 thumbnail: "images/20210921_home_assistant_virtual_sensors_jinja2_00.jpg"
@@ -41,8 +41,10 @@ Si la configuración es válida podemos seguir adelante con la creación de nues
 
 > El error más habitual es que ya tubieramos creado un sensor dentro del archivo "configuration.yaml". Deberemos moverlos al archivo "sensors.yaml"
 
+A continuación dejo los sensores virtuales de los que hago uso en mi configuración de [Home Assistant]
+
 ### Nº de dispositivos Zigbee no disponibles
-Tratar con dispositivos Zigbee de distintos fabricantes bajo un sólo controlador hace que en ocasiones alguno de ellos pase a estar "no disponible". Con este sensor obtenemos el nº de ellos que hay en este modo. Toda la info sobre este sensor en este artículo.
+Tratar con dispositivos Zigbee de distintos fabricantes bajo un sólo controlador hace que en ocasiones alguno de ellos pase a estar "no disponible". Con este sensor obtenemos el nº de ellos que hay en este modo. Toda la info sobre este sensor en este  [artículo]({{<relref"20231021_zigbee_devices_not_available.md">}}).
 
 ``` yaml
   - platform: template
@@ -99,7 +101,7 @@ Ya sólo resta añadir este sensor en la página que deseemos de home assistant 
 
 ![image-03]
 
-### Sensor para definir si trabajo
+### Día de trabajo
 Cuando no se vive solo en casa es un detalle no despertar a todos cuando uno lo tiene que hacer antes de las 5:00 AM. Dentro de los turnos de trabajo, me tengo que levantar a esta hora si trabajo en el turno de "Mañana" o de "Sobrante" lo cual tengo definido en el calendario de google "turno_de_trabajo".
 
 Vamos a crear un sensor virtual que, en función del calendario devuelva un "On" si tengo que madrugar o un "Off" si no tengo que hacerlo.
@@ -125,7 +127,7 @@ En el archivo "sensors.yaml" añadiremos el nuevo sensor
 
 Y con esto ya puedo definir una automatización en la que, si estoy en casa y tengo que madrugar, se enciendan las luces de forma muy tenue durante unos minutos hasta que me voy de casa.
 
-### Sensor de casa vacía
+### Casa vacía
 En la estancia de [Home Assistant] tengo definidas las personas que vivimos en casa y para cada una de ellas el dispositivo a rastrear que define si la persona está en casa o no.
 
 ![image-04]
@@ -148,7 +150,7 @@ Cn esto resulta sencillo crear un sensor virtual que devuelva "true" cuando no h
             {% endif %}
 ```
 
-### Sensor de consigna de temperatura
+### Consigna de temperatura
 Para el cálculo de la consigna de temperatura haremos uso de varios ayudantes
 - Hora de levantar
 - Hora de dormir
@@ -184,7 +186,7 @@ De este modo obtendremos los siguientes resultados para el sensor "consigna_cald
 - Tª eco si no hay nadie en casa entre hora de dormir y levantar
 - tª cómoda entre la hora de levantar y dormir si hay alguien en casa
 
-### Sensor de horario de apagado de la TV
+### Horario de apagado de la TV
 Para evitar que lo primero que hagn los pequeños al levantarse sea encencer la tele tengo un horario de en el que el enchufe que la alimenta permanece apagado. Este horario lo defino mediante un ayudante de hora de apagado y otro de encendido:
 - input_datetime.tv_off --> horaOFF
 - input_datetime.tv_on --> horaON
@@ -222,7 +224,7 @@ Si lo traducimos a jinja 2, el sensor virtual quedará así.
             {% endif %}
 ```
 
-### Sensor de estado de la TV
+### Estado de la TV
 Mi TV no es "inteligente" y para poder encenderla o apagarla a través de [Home Assistant] lo hago a través de un [Broadlink RM mini] colocado en el salón gracias a la integración [SmartIR]. Esta integración hace uso de un sensor de encendido denominado "power_sensor" de forma que cuando está a "on" ofrece todos los controles de la TV y cuando esta a "off" sólo ofrece la posibilidad de encenderla.
 
 Para crear este sensor de encendido tengo conectada la TV a un enchufe inteligente que me da información de consumo. No se si la medición es muy fiable, pero la experiencia me dice que cuando está encendida gasta por encima de los 30w lo que es información suficiente para crear este sensor de estado de la TV que incluyo dentro del archivo "sensors.yaml"
@@ -241,7 +243,7 @@ Para crear este sensor de encendido tengo conectada la TV a un enchufe inteligen
             {% endif %}
 ```
 
-### Sensor de día lectivo
+### Día lectivo
 Desde hace varios años tengo una automatización en Alexa como despertador para los días de colegio, ahora voy a integrarla en [Home Assistant] mediante un calendario "festivos_escolares" en el que he insertado el [calendario escolar] con todos los días que no hay que ir al cole (Lo he hecho a través de la integración con Google Calendar aunque también se podría haber hecho directamente en [Home Assistant]).
 
 El sensor que he creado para saber si hoy es lectivo pasa por comprobar que no haya ningún festivo escolar ni que sea fin de semana. Así de sencillo.
