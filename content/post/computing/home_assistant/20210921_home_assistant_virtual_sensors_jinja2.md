@@ -17,7 +17,7 @@ weight: 5
 ---
 Aquí dejo la solución que he implementado ante el problema de crear una nueva entidad en Home Assistant cuyo valor dependa del de otras entidades ya existentes gracias al uso de sensores virtuales y el motor de plantillas de Jinja2.
 
-**Actualización:** Sensor de día lectivo
+**Actualización:** Sensor nº de dispositivos zigbee no disponibles
 <!--more-->
 
 ### Creando el archivo de sensores
@@ -41,8 +41,29 @@ Si la configuración es válida podemos seguir adelante con la creación de nues
 
 > El error más habitual es que ya tubieramos creado un sensor dentro del archivo "configuration.yaml". Deberemos moverlos al archivo "sensors.yaml"
 
-### Sensor para el punto cardinal del viento
-En mi instalación de Home Assistant hago unos de la integracion de la [AEMET] para obtener la información del tiempo. El valor de la dirección del viento se obtiene como un valor en grados lo cual no resulta muy intuitivo por lo que me he decidido a crear una nueva entidad que lo transforme en un campo de texto que nos indique si em viento viene del norte, del sur....
+### Nº de dispositivos Zigbee no disponibles
+Tratar con dispositivos Zigbee de distintos fabricantes bajo un sólo controlador hace que en ocasiones alguno de ellos pase a estar "no disponible". Con este sensor obtenemos el nº de ellos que hay en este modo. Toda la info sobre este sensor en este artículo.
+
+``` yaml
+  - platform: template
+    sensors:
+        zha_no_disponibles:
+          friendly_name: "Sensores zigbee no disponibles"
+          value_template: >
+            {% set zigbee = namespace(unavailable=[]) %}
+            {% for entity in integration_entities('zha') %}
+              {% if states(entity) == 'unavailable' %}
+                {% set nombre = device_attr(device_id(entity), 'name_by_user') %}
+                {% if nombre not in zigbee.unavailable %}
+                  {% set zigbee.unavailable = zigbee.unavailable + [nombre] %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+            {{ zigbee.unavailable | length }}
+```
+
+### Dirección del viento
+En mi instalación de Home Assistant hago unos de la integración de la [AEMET] para obtener la información del tiempo. El valor de la dirección del viento se obtiene como un valor en grados lo cual no resulta muy intuitivo por lo que me he decidido a crear una nueva entidad que lo transforme en un campo de texto que nos indique si el viento viene del norte, del sur....
 
 En el archivo "sensors.yaml" añadiremos el nuevo sensor
 
