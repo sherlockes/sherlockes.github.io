@@ -71,7 +71,7 @@ Ahora crearemos un script en bash que debe realizar las siguiente funciones:
  
 Y este es el resultado
 
-{{</* texto_externo "https://raw.githubusercontent.com/sherlockes/SherloScripts/master/bash/test-online.sh" */>}}
+{{ texto_externo "https://raw.githubusercontent.com/sherlockes/SherloScripts/master/bash/test-online.sh" }}
 
 Ahora sólo falta añadir una línea al crontab de la raspberry para que ejecute el script cada hora
 
