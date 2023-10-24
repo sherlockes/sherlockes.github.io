@@ -12,7 +12,7 @@ categories:
 - "computing"
 tags:
 - "bash"
-draft: true
+draft: false
 weight: 5
 ---
 Cuando tienes varios dispositivos en distintas ubicaciones formando una misma red puede llegar a ser un dolor de cabeza que alguno de ellos deje de estar accesible y no darte cuenta. Así compruebo que todos ellos están conectados correctamente.
