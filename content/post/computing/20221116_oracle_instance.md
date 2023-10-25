@@ -1,6 +1,6 @@
 ---
 title: "Crear y configurar una instancia gratuita en Oracle"
-date: "2023-04-18"
+date: "2023-10-25"
 creation: "2022-11-16"
 description: "Descripción"
 thumbnail: "images/20221116_oracle_instance_00.jpg"
@@ -15,7 +15,9 @@ tags:
 draft: false
 weight: 5
 ---
-Tener un pequeño servidor privado virtual a modo de laboratorio en el que hacer nuestras pruebas es gratis gracias a [Oracle Cloud], aquí dejo la forma de conseguirlo y las pruebas que con el he realizado
+Tener un pequeño servidor privado virtual a modo de laboratorio en el que hacer nuestras pruebas es gratis gracias a [Oracle Cloud], aquí dejo la forma de conseguirlo y las pruebas que con el he realizado.
+
+Actualización: Simular que trabaja
 <!--more-->
 El proceso de la creación de la cuenta en [Oracle Cloud] puede llegar a ser desesperante por la lentitud del entorno. A la hora de crear una nueva instancia el asunto resulta bastante sencillo e intuitivo. Lo más importante a tener en cuenta es descargar las llaves ssh para poder tener acceso a la máquina remota que hemos creado o bien subir a la instancia creada la llave pública de nuestro equipo.
 
@@ -161,6 +163,35 @@ rclone serve webdav nube_publica: --addr 10.0.0.173:5005 --read-only --user usua
 ```
 
 > Tener en cuenta que se esperan 30 segundos antes de lanzar el comando del servidor para asegurar que la infraestructura de red está montada.
+
+### Simular que trabaja
+
+A los señores de Oracle no les gusta que la instancia esté sin hacer nada y te informa que de seguir así será parada. Todo esto en un perfecto inglés.
+
+> Oracle Cloud Infrastructure (OCI) will be reclaiming idle Always Free compute resources from Always Free customers only. Reclaiming idle resources allows OCI to efficiently provide services to Always Free customers. Your account has been identified as having one or more compute instances that have been idle for the past 7 days. These idle instances will be stopped 7 days from now. If your idle Always Free compute instance is stopped, you can restart it as long as the associated compute shape is available in your region.
+
+De momento no tengo claro el objetivo de producción de la instancia y supongo que si la paro voy a tener problemas para volverla a arrancar así que vamos a darle un poco de trabajo mediante la aplicación "NeverIdle"
+
+``` bash
+wget https://github.com/layou233/NeverIdle/releases/download/0.1/NeverIdle-linux-arm64 -O NeverIdle
+chmod 777 NeverIdle
+```
+
+> Hay que tener en cuenta que en caso de servidores AMD el archivo es distinto y habrá que acudir a GitHub para descargarlo.
+
+Ahora mediante el comando `crontab -e` editaremos el cron de usuario y añadimos la siguiente línea
+
+``` bash
+@reboot /home/sherlockes/NeverIdle -c 2h1m2s -m 2 -n 4h 
+```
+
+De esta forma cada vez que reinicie la instancia se ejecutará la aplicación "NeverIdle" y para forzar un reinicio diario ejecutamos `sudo crontab -e` y añadimos la siguiente línea para que la instancia se reinicie todos los días a las 4 de la mañana.
+
+``` bash
+0 4 * * * /sbin/reboot
+```
+
+A ver si con esto conseguimos que oracle no apague la instancia.
 
 
 ### Enlaces de interés
