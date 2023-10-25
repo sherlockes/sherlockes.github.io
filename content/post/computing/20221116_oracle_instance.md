@@ -197,6 +197,7 @@ A ver si con esto conseguimos que oracle no apague la instancia.
 ### Enlaces de interés
 - [Ask Ubuntu - Keys not working in terminal](https://askubuntu.com/questions/163802/backspace-tab-del-and-arrow-keys-not-working-in-terminal-using-ssh)
 - [Ask Ubuntu - Terminal colors not working](https://askubuntu.com/questions/39731/terminal-colors-not-working)
+- [Blog 51 - Oracle idle compute](https://blog.51sec.org/2023/02/oracle-cloud-cleaning-up-idle-compute.html?expand_article=1)
 - [Oracle - Add ssh user](https://docs.oracle.com/en/cloud/cloud-at-customer/occ-get-started/add-ssh-enabled-user.html)
 - [Oracle - Conexión a una instancia](https://docs.oracle.com/es-ww/iaas/Content/Compute/Tasks/accessinginstance.htm)
 
