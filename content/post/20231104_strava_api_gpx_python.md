@@ -6,7 +6,7 @@ description: "Como he gestionado la descarga automatizada de las actividades de 
 thumbnail: "images/20231104_strava_api_gpx_python_00.jpg"
 disable_comments: true
 authorbox: false
-toc: false
+toc: True
 mathjax: false
 categories:
 - "computing"
@@ -37,7 +37,7 @@ El siguiente paso es la creación y activación del entorno virtual para lo que,
 virtualenv mientorno
 source mientorno/bin/activate
 ```
-Ahora ya tenemos la carpeta "mientorno" creada para almacenar nuestro proyecto y activado el entorno virtual para aislarlo del sistema. El prompt de la terminal habrá cambiado y ahora tendremos algo como lo siguiente.
+Ahora ya tenemos la carpeta "mientorno" creada para almacenar nuestro proyecto y activado el entorno virtual para aislarlo del sistema. El "prompt" de la terminal habrá cambiado y ahora tendremos algo como lo siguiente.
 
 ``` bash
 (mientorno) user@host:~$ 
@@ -46,11 +46,20 @@ Ahora ya tenemos la carpeta "mientorno" creada para almacenar nuestro proyecto y
 > Para desactivar el entorno virtual usaremos directamente el comando `deactivate`.
 ![image-01]
 
+Antes de empezar a programar necesitamos conocer el "id de cliente" y el "secreto de cliente" de nuestra cuenta. Ambos los podemos encontrar en los ajustes del [API de Strava].
+
+### Librerías a instalar
+ - [python-dotenv] - Lectura de variables desde texto externo
+ - [requests] - Hacer peticiones http
+
 ### Enlaces de interés
 - [enlace](www.sherblog.pro)
 
+[API de Strava]: https://www.strava.com/settings/api
 [Linux Mint]: https://linuxmint.com
 [Python]: https://www.python.org
+[python-dotenv]: https://pypi.org/project/python-dotenv/
+[requests]: https://pypi.org/project/requests/
 [Strava]: https://www.strava.com
 [virtualenv]: https://pypi.org/project/virtualenv/
 
