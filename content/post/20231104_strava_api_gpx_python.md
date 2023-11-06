@@ -44,9 +44,50 @@ Ahora ya tenemos la carpeta "mientorno" creada para almacenar nuestro proyecto y
 ```
 
 > Para desactivar el entorno virtual usaremos directamente el comando `deactivate`.
-![image-01]
 
 Antes de empezar a programar necesitamos conocer el "id de cliente" y el "secreto de cliente" de nuestra cuenta. Ambos los podemos encontrar en los ajustes del [API de Strava].
+
+![image-01]
+
+Con esta información crearemos un archivo ".env" en la carpeta que se ha creado para nuestro entorno virtual y cuyo contenido será el siguiente con los correspondientes parámetros de [Strava]
+
+``` txt
+CLIENT_ID=123456
+CLIENT_SECRET=d4cd6r8ec6uca55dhee5ef535b776g286f074576
+```
+
+Ya estamos listos para crear nuestro archivo "strava.py" en la carpeta donde hemos incluido anteriormente el ".env" y lo empezamos a dotar de funcionalidad.
+
+### Carga de .env
+Mediante la librería [python-dotenv] vamos a posibilitar que las variables almacenadas en el archivo de texto externo se carguen como variables de entorno en el entorno virtual que hemos creado sin más que hacer una llamada a la función.
+
+``` bash
+load_dotenv()
+```
+
+### Declaración de variables
+Necesitamos unas cuantas variables para las llaves de [Strava], la identificación del cliente, el código y la url de autorización que pasamos a definir a continuación.
+
+``` bash
+client_id = os.getenv('CLIENT_ID')
+client_secret = os.getenv('CLIENT_SECRET')
+authorization_code = None
+strava_authorization_url = "https://www.strava.com/oauth/authorize?" + \
+    "client_id=" + client_id + "&" + \
+    "redirect_uri=http://localhost:5000/authorization&" + \
+    "response_type=code&scope=read,activity:read_all"
+```
+
+### Autorización
+Esta es la parte más farragosa ya que el proceso de autentificación es completamente manual siguiendo los siguientes pasos.
+- Abrir en el navegador la url de autorización
+- Esperar a la redirección del explorador
+- Copiar de la url de redirección el código de autorización
+
+Este proceso, aunque no es complicado, es muy latoso ya que hay que realizarlo cada vez que ejecutemos el script. Para automatizarlo un poco vamos a "matar moscas a cañonazos" haciendo una visita automática a la url de autorización y corriendo en nuestra máquina un servidor que "escuche" la redirección para captar el código de autorización.
+
+### Abrir url
+
 
 ### Librerías a instalar
  - [python-dotenv] - Lectura de variables desde texto externo
