@@ -27,6 +27,8 @@ En la guía está descrito para la instalación con monitor y teclado. Para hace
  - A continuación incluir nuestra llave pública
  - Guardar el archivo
  - Sacar la memoria usb y ponerla en la Raspberry
+ 
+ >La llave ssh la podemos encontrar en el directorio "~/.ssh/id_rsa.pub" y la podemos editar para ver el contenido con cualquier editor de texto. Importante copiar la llave completa, "ssh-rsa xxxxxxxxx". Si la llave no se encuentra, ejecuta el comando `ssh-keygen`
 
 ![image-01]
 
