@@ -27,9 +27,21 @@ En la guía está descrito para la instalación con monitor y teclado. Para hace
  - A continuación incluir nuestra llave pública
  - Guardar el archivo
  - Sacar la memoria usb y ponerla en la Raspberry
+ - Esperar un par de minutos a que arranque
  
  >La llave ssh la podemos encontrar en el directorio "~/.ssh/id_rsa.pub" y la podemos editar para ver el contenido con cualquier editor de texto. Importante copiar la llave completa, "ssh-rsa xxxxxxxxx". Si la llave no se encuentra, ejecuta el comando `ssh-keygen`
-
+ 
+ - Nos logeamos en la raspberry via ssh mediante `ssh root@ip`
+ - Editamos el archivo "/etc/network/interfaces.d/eth0" con lo siguiente
+ 
+``` bash
+auto eth0         
+iface eth0 inet static
+    address 192.168.10.202    
+    netmask 255.255.255.0       
+    gateway 192.168.10.1     
+```
+> Con esto definimos la IP local de la raspberry a la "192.168.10.202" para que no sea el servidor DHPC quien se la asigne.
 ![image-01]
 
 ### Enlaces de interés
