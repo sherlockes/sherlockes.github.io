@@ -66,6 +66,20 @@ sudo systemctl restart systemd-resolved
 [solución](https://community.home-assistant.io/t/installing-home-assistant-supervised-using-debian-12/200253/1075)
 
 
+Nada. olvidamos el método y probamos la instalación con el sistema operativo de Home assistant
+
+- Añadir la extensión "ssh terminal"
+- Cambiar la ip local (Ajustes - Sistema - Red)
+- Hacks
+  - [Descargar](https://hacs.xyz/)
+  - Ejecutar en la terminal `wget -O - https://get.hacs.xyz | bash -`
+  - Reiniciar (Herramientas para desarrolladores - YAML - Reiniciar)
+  - Añadir HACS (Ajustes - Integraciones - Añadir integración - HACS)
+- Wireguard
+  - Abrir puerto 51820 UDP en el router para la IP de Home Assistant
+  -
+
+
 
 
 
