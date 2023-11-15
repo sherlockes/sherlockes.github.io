@@ -31,6 +31,7 @@ En la guía está descrito para la instalación con monitor y teclado. Para hace
  
  >La llave ssh la podemos encontrar en el directorio "~/.ssh/id_rsa.pub" y la podemos editar para ver el contenido con cualquier editor de texto. Importante copiar la llave completa, "ssh-rsa xxxxxxxxx". Si la llave no se encuentra, ejecuta el comando `ssh-keygen`
  
+ - Antes de seguir deberemos averigura la IP que el router de ha asignado a la Raspberry. Es posible utilizar "nmap", "nast" o simplemente la app "Fing" en nuestro smartphone para conseguirlo.
  - Nos logeamos en la raspberry via ssh mediante `ssh root@ip`
  - Editamos el archivo "/etc/network/interfaces.d/eth0" con lo siguiente
  
@@ -41,7 +42,34 @@ iface eth0 inet static
     netmask 255.255.255.0       
     gateway 192.168.10.1     
 ```
-> Con esto definimos la IP local de la raspberry a la "192.168.10.202" para que no sea el servidor DHPC quien se la asigne.
+> Con esto definimos la IP local de la raspberry a la "192.168.10.202" para que no sea el servidor DHPC quien se la asigne. Atención que si la IP ha sido utilizada con anterioridad se nos mostrará una advertencia para eliminar la llave ssh.
+
+A partir de aquí seguimos por el punto 1.4 y 1.5 de la guía del enlace anterior para añadir un nuevo usuario.
+
+### Install OS Agent, Docker and Dependencies
+Seguimos por el apartado 2 de la guía
+
+Error de resolución de DNS
+Después de instalar "systemd-resolved" se corrompe la resolución de nombres de dominio (DNS) por lo que no es posible instalar Docker. Para restablecerlo hay que editar el archivo "/etc/systemd/resolved.conf" y descomentar las siguientes líneas.
+
+``` txt
+DNS=192.168.1.1
+DNSStubListener=no
+```
+
+Guardar el archivo y reiniciar el servicio "systemd-resolved"
+
+``` bash
+sudo systemctl restart systemd-resolved
+```
+
+[solución](https://community.home-assistant.io/t/installing-home-assistant-supervised-using-debian-12/200253/1075)
+
+
+
+
+
+
 ![image-01]
 
 ### Enlaces de interés
