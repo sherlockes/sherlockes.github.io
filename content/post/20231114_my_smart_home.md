@@ -79,6 +79,7 @@ Nada. olvidamos el método y probamos la instalación con el sistema operativo d
   - Abrir puerto 51820 UDP en el router para la IP de Home Assistant
   -
 
+### Cuarto
 
 
 
