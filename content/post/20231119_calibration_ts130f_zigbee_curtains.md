@@ -20,6 +20,10 @@ La parte más importante de la domotización de las persianas es un correcto aju
 
 Partimos de un controlador "barato" de [Aliexpress] que no es más que un TS130F de Tuya del que no hay ni rastro en la web del fabricante y del que no he sido capaz de encontrar un manual de usuario completo.
 
+Mi centro de control domótico en [Home Assistant] y mediante la integración [Zha] gestiono todos los elementos zigbee que tengo instalados en casa a través de un controlador [Sonoff] y es para este caso porticular para el que voy ha dar la explicación.
+
+Tras el cableado del controlador, el emparejamiento con la red domótica no presenta ninguna dificultad. Simplemente se pulsa el botón de "reset" durante unos segundos hasta que el led empieza a parpadear y se busca un nuevo dispositivo zigbee
+
 - Información de Dispositivo
 - Administrar dispositivo Zigbee (Tres puntos)
 - En la pestana "Clústeres" seleccionar "TuyaCoveringCluster"
@@ -39,9 +43,12 @@ Partimos de un controlador "barato" de [Aliexpress] que no es más que un TS130F
 ![image-01]
 
 ### Enlaces de interés
-- [enlace](www.sherblog.pro)
+- [Calibrar persianas zibee de Vivogar](https://www.youtube.com/watch?v=AYZHKyLMS8w)
 
 [Aliexpress]: https://es.aliexpress.com/item/1005005225077998.html?spm=a2g0o.order_list.order_list_main.24.6d91194dVqAnVc&gatewayAdapt=glo2esp
+[Home Assistant]: https://www.home-assistant.io/
+[Sonoff]: https://sonoff.tech/product/gateway-and-sensors/sonoff-zigbee-3-0-usb-dongle-plus-e/
+[Zha]: https://www.home-assistant.io/integrations/zha/
 
 [image-01]: /images/20231119_calibration_ts130f_zigbee_curtains_01.jpg
 
