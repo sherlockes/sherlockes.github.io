@@ -22,11 +22,25 @@ Partimos de un controlador "barato" de [Aliexpress] que no es más que un TS130F
 
 Mi centro de control domótico en [Home Assistant] y mediante la integración [Zha] gestiono todos los elementos zigbee que tengo instalados en casa a través de un controlador [Sonoff] y es para este caso porticular para el que voy ha dar la explicación.
 
-Tras el cableado del controlador, el emparejamiento con la red domótica no presenta ninguna dificultad. Simplemente se pulsa el botón de "reset" durante unos segundos hasta que el led empieza a parpadear y se busca un nuevo dispositivo zigbee
+Tras el cableado del controlador, el emparejamiento con la red domótica no presenta ninguna dificultad. Simplemente se pulsa el botón de "reset" durante unos segundos hasta que el led empieza a parpadear y se busca un nuevo dispositivo zigbee.
 
-- Información de Dispositivo
-- Administrar dispositivo Zigbee (Tres puntos)
-- En la pestana "Clústeres" seleccionar "TuyaCoveringCluster"
+![image-01]
+
+Tras esto ni mucho menos el dispositivo está listo ya que al darle a subir o bajar la persiana se menea un poco y se para. Necesita una calibración de las posiciones "cerrada" y "abierta". Seguiremos los siguientes pasos:
+
+- Accedemos al menú "Ajustes"
+- "Dispositivos y servicios"
+- Seleccionamos el dispositivo que acabamos de emparejar.
+- Nos fijamos en el menú "Información del dispositivo"
+
+![image-02]
+
+- Pinchamos el en menú de los tres puntos
+- Seleccionamos la opción "Administrar dispositivo Zigbee"
+
+![image-03]
+
+- En la pestana "Clústeres" selecciona los clústeres "TuyaCoveringCluster"
 - En el atributo "Calibration" poner "0" como valor
 - Escribir atributo para entrar en el modo de calibración
 - En la pestaña comandos seleccionar "down_close" y emitir el comando
@@ -40,7 +54,7 @@ Tras el cableado del controlador, el emparejamiento con la red domótica no pres
 - Escribir el atributo para salir del modo de calibración.
 
 
-![image-01]
+
 
 ### Enlaces de interés
 - [Calibrar persianas zibee de Vivogar](https://www.youtube.com/watch?v=AYZHKyLMS8w)
@@ -51,6 +65,8 @@ Tras el cableado del controlador, el emparejamiento con la red domótica no pres
 [Zha]: https://www.home-assistant.io/integrations/zha/
 
 [image-01]: /images/20231119_calibration_ts130f_zigbee_curtains_01.jpg
+[image-02]: /images/20231119_calibration_ts130f_zigbee_curtains_02.jpg
+[image-03]: /images/20231119_calibration_ts130f_zigbee_curtains_03.jpg
 
 
 
