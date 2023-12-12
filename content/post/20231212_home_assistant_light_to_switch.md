@@ -12,7 +12,7 @@ categories:
 - "home assistant"
 tags:
 - "zigbee"
-draft: true
+draft: false
 weight: 5
 ---
 Es posible utilizar un módulo zigbee de luces como si fuera un enchufe cableado, el problema aparece cuando intentas encender o apagar todas las luces de un área en la que lo tienes incluido y se activa al son de las bombillas.
