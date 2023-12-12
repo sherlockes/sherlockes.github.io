@@ -48,6 +48,8 @@ Ya tenemos declarado nuestro módulo como entidad de tipo "switch".
 
 ![image-03]
 
+Para terminar, si es necesario eliminaremos la entidad "light" creada anteriormente y que ahora aparecerá deshabilitada.
+
 ### Enlaces de interés
 - [Home Assistant - Modifying device](https://community.home-assistant.io/t/zigbee-modifying-the-device-type/349830)
 
