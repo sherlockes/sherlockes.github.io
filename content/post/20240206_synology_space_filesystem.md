@@ -118,6 +118,7 @@ tmpfs                   1.9G  1.7M  1.9G   1% /tmp
 - [Fernian - Liberar espacio](https://fernian.blogspot.com/2020/04/liberar-espacio-de-un-nas-synology.html)
 - [Stackoverflow - pip cache ](https://stackoverflow.com/questions/37513597/is-it-safe-to-delete-cache-pip-directory)
 - [Stackoverflow - Uninstalla pip](https://es.stackoverflow.com/questions/261810/c%C3%B3mo-puedo-desinstalar-un-paquete-instalado-con-pip)
+- [Reddit - Nas /dev/md0 Full](https://www.reddit.com/r/synology/comments/i8gpbe/help_nas_acting_up_devmd0_full/)
 
 [link]: https://www.google.es
 
