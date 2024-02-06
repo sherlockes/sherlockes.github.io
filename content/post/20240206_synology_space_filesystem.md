@@ -99,6 +99,8 @@ Ya parece que hemos dado con el problema, la cache de "pip" que vamos a borrar m
 
 > Además, como ya no utilizo pip en el NAS, elimino todos los paquetes pip mediante el comando `pip freeze | xargs pip uninstall -y` y el propio pip mediante `pip uninstall pip`
 
+Podemos omprobar como hemos ganado algo de espacio para realizar al actualizaciones.
+
 ``` Bash
 root@sherver:/# df -h
 Filesystem              Size  Used Avail Use% Mounted on
