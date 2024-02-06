@@ -97,6 +97,8 @@ root@sherver:~/.cache# du -hd 1 --exclude=volume1
 
 Ya parece que hemos dado con el problema, la cache de "pip" que vamos a borrar mediante el comando `pip cache purge`
 
+> Además, como ya no utilizo pip en el NAS, elimino todos los paquetes pip mediante el comando `pip freeze | xargs pip uninstall -y` y el propio pip mediante `pip uninstall pip`
+
 ``` Bash
 root@sherver:/# df -h
 Filesystem              Size  Used Avail Use% Mounted on
@@ -115,6 +117,7 @@ tmpfs                   1.9G  1.7M  1.9G   1% /tmp
 ### Enlaces de interés
 - [Fernian - Liberar espacio](https://fernian.blogspot.com/2020/04/liberar-espacio-de-un-nas-synology.html)
 - [Stackoverflow - pip cache ](https://stackoverflow.com/questions/37513597/is-it-safe-to-delete-cache-pip-directory)
+- [Stackoverflow - Uninstalla pip](https://es.stackoverflow.com/questions/261810/c%C3%B3mo-puedo-desinstalar-un-paquete-instalado-con-pip)
 
 [link]: https://www.google.es
 
