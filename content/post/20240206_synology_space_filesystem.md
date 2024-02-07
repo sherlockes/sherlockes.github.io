@@ -12,12 +12,14 @@ categories:
 - "computing"
 tags:
 - "synololgy"
-draft: true
+draft: false
 weight: 5
 ---
 En NAS de Synology no se actualiza por falta de espacio en la unidad de sistema y estos son los pasos que he dado para dar con la solución.
 <!--more-->
-El primer paso es acceder via ssh al NAS y ejecutar los comandos:
+No es la primera vez que me pasa, hace tres años tuve lugar un error similar que afronté de manera distinta tal y como explico en este [artículo]({{</* relref"20211117_error_actualizacion_synology.md" */>}}). Hoy la solución no es tan trivial como la última vez y lo afronto de otra manera.
+
+El primer paso es acceder vía ssh al NAS y ejecutar los comandos:
 
 ``` bash
 sudo -i
@@ -70,7 +72,7 @@ root@sherver:~# ls
 'FOR SYSTEM USE ONLY. DO NOT UPLOAD FILES HERE.'
 ```
 
-Sólo es postureo ya que si lanzamos un `ls -a` vemos el contenido real de la carpeta "root"
+Sólo es una advertencia, ya que si lanzamos un `ls -a` vemos el contenido real de la carpeta "root" vemos lo siguiente:
 
 ``` Bash
 root@sherver:~# ls -a
@@ -99,7 +101,7 @@ Ya parece que hemos dado con el problema, la cache de "pip" que vamos a borrar m
 
 > Además, como ya no utilizo pip en el NAS, elimino todos los paquetes pip mediante el comando `pip freeze | xargs pip uninstall -y` y el propio pip mediante `pip uninstall pip`
 
-Podemos omprobar como hemos ganado algo de espacio para realizar al actualizaciones.
+Podemos comprobar como hemos ganado algo de espacio para realizar al actualizaciones.
 
 ``` Bash
 root@sherver:/# df -h
@@ -113,18 +115,11 @@ tmpfs                   1.9G  1.7M  1.9G   1% /tmp
 /dev/mapper/cachedev_0  1.8T  1.2T  621G  66% /volume1
 ```
 
-
-![image-01]
-
 ### Enlaces de interés
 - [Fernian - Liberar espacio](https://fernian.blogspot.com/2020/04/liberar-espacio-de-un-nas-synology.html)
 - [Stackoverflow - pip cache ](https://stackoverflow.com/questions/37513597/is-it-safe-to-delete-cache-pip-directory)
 - [Stackoverflow - Uninstalla pip](https://es.stackoverflow.com/questions/261810/c%C3%B3mo-puedo-desinstalar-un-paquete-instalado-con-pip)
 - [Reddit - Nas /dev/md0 Full](https://www.reddit.com/r/synology/comments/i8gpbe/help_nas_acting_up_devmd0_full/)
-
-[link]: https://www.google.es
-
-[image-01]: /images/20240206_synology_space_filesystem_01.jpg
 
 
 
