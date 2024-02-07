@@ -26,13 +26,13 @@ Una primera búsqueda en la red me lleva hasta la [Base de conocimientos de Syno
 
 > El espacio disponible mostrado en el Administrador de almacenamiento no es el espacio disponible en la partición del sistema.
 
-Navegando un poco más doy con un post de [Bimotech], quien parece que ha pasado por el mismo error y según explica, para reconocer posibles grandes archivos que esten llenando la partición del sistema hay que:
+Navegando un poco más doy con un post de [Bimotech], quien parece que ha pasado por el mismo error y según explica, para reconocer posibles grandes archivos que estén llenando la partición del sistema hay que:
 
 - Abrir una consola
-- Acceder al NAS via ssh `ssh usuario_del_nas@ip_del_nas`
-- Ganar privilegios de adminitrador `sudo -i`
-- Acceder al directorio raiz `cd /`
-- listar el tamaño de los arvhivos y directorios `du -hs [a-u]* va*`
+- Acceder al NAS vía ssh `ssh usuario_del_nas@ip_del_nas`
+- Ganar privilegios de administrador `sudo -i`
+- Acceder al directorio raíz `cd /`
+- listar el tamaño de los archivos y directorios `du -hs [a-u]* va*`
 
 Y es resultado es la siguiente salida por la consola
 
