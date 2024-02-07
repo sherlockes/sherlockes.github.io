@@ -40,6 +40,8 @@ Tras esto ni mucho menos el dispositivo está listo ya que al darle a subir o ba
 
 ![image-03]
 
+### Calibración por movimiento
+Este tipo de calibración consiste en activar el modo de calibración y realizar un movimiento de la persiana entre sus extremos siguiendo estos pasos:
 - En la pestana "Clústeres" selecciona los clústeres "TuyaCoveringCluster"
 - En el atributo "Calibration" poner "0" como valor
 - Escribir atributo para entrar en el modo de calibración
@@ -53,7 +55,7 @@ Tras esto ni mucho menos el dispositivo está listo ya que al darle a subir o ba
 - En el atributo "Calibration" poner "1" como valor
 - Escribir el atributo para salir del modo de calibración.
 
-
+### Calibración por tiempo
 
 
 ### Enlaces de interés
