@@ -1,6 +1,6 @@
 ---
 title: "Calibración de las persianas con en controlador TS130F"
-date: "2023-11-19"
+date: "2024-02-08"
 creation: "2023-11-19"
 description: "Forma de calibrar la apertura y cierre de las persianas mediante zha y el controlador TS130F de Tuya"
 thumbnail: "images/20231119_calibration_ts130f_zigbee_curtains_00.jpg"
@@ -12,7 +12,7 @@ categories:
 - "home assistant"
 tags:
 - "zigbee"
-draft: true
+draft: false
 weight: 5
 ---
 La parte más importante de la domotización de las persianas es un correcto ajuste de las posiciones de apertura y cierre. Parece sencillo, pero sin un manual de instrucciones del fabricante se convierte en un dolor de cabeza.
@@ -42,7 +42,7 @@ Tras esto ni mucho menos el dispositivo está listo ya que al darle a subir o ba
 
 ### Calibración por movimiento
 Este tipo de calibración consiste en activar el modo de calibración y realizar un movimiento de la persiana entre sus extremos siguiendo estos pasos:
-- En la pestana "Clústeres" selecciona los clústeres "TuyaCoveringCluster"
+- En la pestaña "Clústeres" selecciona los clústeres "TuyaCoveringCluster"
 - En el atributo "Calibration" poner "0" como valor
 - Escribir atributo para entrar en el modo de calibración
 - En la pestaña comandos seleccionar "down_close" y emitir el comando
@@ -56,10 +56,18 @@ Este tipo de calibración consiste en activar el modo de calibración y realizar
 - Escribir el atributo para salir del modo de calibración.
 
 ### Calibración por tiempo
+Es muy probable que a que la persiana va haciendo varios ciclos de subidas y bajadas esta no llegue a alcanzar una de las posiciones extremas. En este caso realizaremos una recalibración del tiempo de subida/bajada. Para definir los pasos supondremos el caso de que la persiana no llegue a subir del todo.
+- En la pestaña "Clústeres" selecciona los clústeres "TuyaCoveringCluster"
+- En la pestaña "Atributos" seleccionamos y leemos "current position lift percentage"
+- Introducimos y escribimos el porcentaje real de subida para poder seguir subiendo.
+- Subir la persiana (Si no alcanza la pos superior, repetir el paso anterior)
+- Leer el atributo "Calibration time" (Décimas de segundo)
+- Incrementar y escribir el valor con el tiempo que le faltaba para llegar arriba
+
 
 
 ### Enlaces de interés
-- [Calibrar persianas zibee de Vivogar](https://www.youtube.com/watch?v=AYZHKyLMS8w)
+- [Calibrar persianas zigbee de Vivogar](https://www.youtube.com/watch?v=AYZHKyLMS8w)
 
 [Aliexpress]: https://es.aliexpress.com/item/1005005225077998.html?spm=a2g0o.order_list.order_list_main.24.6d91194dVqAnVc&gatewayAdapt=glo2esp
 [Home Assistant]: https://www.home-assistant.io/
