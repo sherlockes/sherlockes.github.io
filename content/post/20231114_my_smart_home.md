@@ -1,6 +1,6 @@
 ---
 title: "Mi casa inteligente desde cero"
-date: "2023-11-14"
+date: "2024-02-08"
 creation: "2023-11-14"
 description: "Paso a paso como construyo mi casa inteligente en la Raspberry con Home Assistant."
 thumbnail: "images/20231114_my_smart_home_00.jpg"
