@@ -3,7 +3,7 @@ title: "Synology. Falta de espacio en la unidad de sistema"
 date: "2024-02-06"
 creation: "2024-02-06"
 description: "Solución al problema de la falta de espacio en la unidad de sistema"
-thumbnail: "images/20240206_synology_space_filesystem_00.jpg"
+thumbnail: "images/20211117_error_actualizacion_synology_00.jpg"
 disable_comments: true
 authorbox: false
 toc: false
