@@ -17,7 +17,7 @@ weight: 5
 ---
 En NAS de Synology no se actualiza por falta de espacio en la unidad de sistema y estos son los pasos que he dado para dar con la solución.
 <!--more-->
-No es la primera vez que me pasa, hace tres años tuve lugar un error similar que afronté de manera distinta tal y como explico en este [artículo]({{</* relref"20211117_error_actualizacion_synology.md" */>}}). Hoy la solución no es tan trivial como la última vez y lo afronto de otra manera.
+No es la primera vez que me pasa, hace tres años tuve lugar un error similar que afronté de manera distinta tal y como explico en este [artículo]({{</ relref"20211117_error_actualizacion_synology.md" />}}). Hoy la solución no es tan trivial como la última vez y lo afronto de otra manera.
 
 El primer paso es acceder vía ssh al NAS y ejecutar los comandos:
 
