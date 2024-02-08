@@ -20,7 +20,7 @@ La parte más importante de la domotización de las persianas es un correcto aju
 
 Partimos de un controlador "barato" de [Aliexpress] que no es más que un TS130F de Tuya del que no hay ni rastro en la web del fabricante y del que no he sido capaz de encontrar un manual de usuario completo.
 
-Mi centro de control domótico en [Home Assistant] y mediante la integración [Zha] gestiono todos los elementos zigbee que tengo instalados en casa a través de un controlador [Sonoff] y es para este caso porticular para el que voy ha dar la explicación.
+Mi centro de control domótico en [Home Assistant] y mediante la integración [Zha] gestiono todos los elementos zigbee que tengo instalados en casa a través de un controlador [Sonoff] y es para este caso particular para el que voy ha dar la explicación.
 
 Tras el cableado del controlador, el emparejamiento con la red domótica no presenta ninguna dificultad. Simplemente se pulsa el botón de "reset" durante unos segundos hasta que el led empieza a parpadear y se busca un nuevo dispositivo zigbee.
 
