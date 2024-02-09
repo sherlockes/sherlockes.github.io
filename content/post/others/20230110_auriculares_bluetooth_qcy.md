@@ -127,6 +127,8 @@ Los auriculares [QCY T4](https://www.qcyearbuds.com/qcy-t4/) ofrecen sonido clar
 
 [Manual de instrucciones](https://t.me/sherblog_archivo/26)
 
+---
+
 ### QCY - Q29 pro
 El primer fracaso de la marca con el que me he encontrado. La ergonomía es peor que el los modelos anteriores ya que los auriculares son bastante más grandes, los adaptadores para la oreja tienden a soltarse al quitártelos o sacarlos de la caja. el contacto de carga en la caja no se realiza por medio de imanes sino que es por presión, lo que obliga a tener que estar ajustando la posición de los auriculares en la caja hasta dar con la posición de carga. Además los auriculares no se encienden automáticamente al sacarlos de la caja lo que resulta un poco tedioso
 
