@@ -1,8 +1,8 @@
 ---
-title: "Título"
+title: "Automatizando las luces del salón"
 date: "2024-03-12"
 creation: "2024-03-12"
-description: "Como tengo organizado el funcionamiento de las luces del salón"
+description: "Como tengo organizado el funcionamiento de las luces del salón mediante el uso de acciones y triggers id."
 thumbnail: "images/20240312_home_assistant_living_room_lights_00.jpg"
 disable_comments: true
 authorbox: false
@@ -12,6 +12,7 @@ categories:
 - "home assistant"
 tags:
 - "jinja2"
+- "yaml"
 draft: false
 weight: 5
 ---
