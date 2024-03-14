@@ -3,7 +3,7 @@ title: "Título"
 date: "2024-03-12"
 creation: "2024-03-12"
 description: "Como tengo organizado el funcionamiento de las luces del salón"
-	thumbnail: "images/20240312_home_assistant_living_room_lights_00.jpg"
+thumbnail: "images/20240312_home_assistant_living_room_lights_00.jpg"
 disable_comments: true
 authorbox: false
 toc: false
