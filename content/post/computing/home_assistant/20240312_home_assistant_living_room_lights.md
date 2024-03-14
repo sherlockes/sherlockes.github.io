@@ -12,7 +12,7 @@ categories:
 - "home assistant"
 tags:
 - "jinja2"
-draft: falso
+draft: false
 weight: 5
 ---
 Esta es la forma en la que tengo dispuesto el funcionamiento de las luces del salón mediante una sola automatización dentro de [Home Assistant].
