@@ -1,6 +1,6 @@
 ---
 title: "Automatizando las luces del salón"
-date: "2024-03-12"
+date: "2024-03-25"
 creation: "2024-03-12"
 description: "Como tengo organizado el funcionamiento de las luces del salón mediante el uso de acciones y triggers id."
 thumbnail: "images/20240312_home_assistant_living_room_lights_00.jpg"
@@ -69,28 +69,16 @@ En el salón hay un único interruptor que está conectado al módulo de la lám
 
 A partir de aquí es cuando voy a automatizar algunos comportamientos para hacer el control de las luces más sencillo. Recientemente leí un post de [Aguacatec] sobre las automatizaciones mediante "Trigger id" que resulta muy práctico para aglutinar en una solo automatización varios disparadores y varias acciones. En este caso tengo varios disparadores para los que tengo que crear una plantilla:
 
-#### Que se apague la luz del centro con la TV encendida
-Se termina de cenar, la TV está encendida y nos trasladamos de la mesa al sofá. En ese momento se pulsa el botón de la luz del salón que apagará sólo la luz del centro pero lo convertimos en un disparador para, mediante una acción posterior dejar sólo encendida la luz del sofá con un tono tenue y cálido.
+#### Que se apague la luz del centro
+Cuando se apague la luz del centro quiero que se apaguen todas las luces si la TV está apagada o que sólo deje la del sofá de forma tenue cuando la TV está encendida. No he sido capaz de crear un disparador mediante una plantilla que sea capaz de diferenciar si la TV está encendida o apagada en el momento que se apaga la luz central así que lo he programado en la condición de la acción.
 
-La plantilla para este disparador será la siguiente
+Para definir cuando la luz es suficiente con la siguiente plantilla:
+
 ``` yaml
-{{ trigger.event.data.entity_id.startswith('light') and
-      states("media_player.living_room_tv") == "on" and
-      states("light.salon_centro") == "off" }}
-```
->Imprescindible la primera línea, es la que discrimina que el disparador sea verdadero cuando apagamos la luz con la TV encendida pero no cuando encendemos la TV con la luz apagada. 
-
-#### Que se apague la luz del centro con la TV apagada
-A diferencia del caso anterior, buscamos un disparador para los casos en los que después de la cena no nos quedamos en el sofá viendo la TV de forma que el apagado de la luz del centro apague todas las luces del salón.
-
-La plantilla para este disparador quedará así:
-``` yaml
-{{ trigger.event.data.entity_id.startswith('light') and
-      states("media_player.living_room_tv") == "off" and
-      states("light.salon_centro") == "off" }}
+{{ states("light.salon_centro") == "off" ) }}
 ```
 
-Como en el caso anterior, hay que discriminar el disparador para que se evalúe cuando hay un cambio en la luz y no en la TV.
+Posteriormente, en las acciones definidas para este disparador, incluiremos la condición de que si la TV está encendida o apagada para efectuar unas u otras acciones.
 
 #### Que se encienda la luz del sofá al mismo tiempo que alguna otra
 Para los casos en los que se encienden todas las luces del salón, la del sofá debe hacerlo con el mismo tono frío que el resto y al 100% de potencia para que la iluminación queda más homogénea. He creado un disparador con la siguiente plantilla:
@@ -122,19 +110,6 @@ description: ""
 trigger:
   - platform: template
     value_template: >-
-      {{ states("media_player.living_room_tv") == "off" and
-      states("light.salon_centro") == "off" }}
-    id: apagar_todas
-    alias: Se apaga el centro con la TV apagada
-  - platform: template
-    value_template: >-
-      {{ trigger.event.data.entity_id.startswith('light') and
-      states("media_player.living_room_tv") == "on" and
-      states("light.salon_centro") == "off" }}
-    alias: Se apaga el centro con la TV encendida
-    id: solo_tv
-  - platform: template
-    value_template: >-
       {{ states("light.salon_sofa") == "on" and ( states("light.salon_mesa") ==
       "on" or states("light.salon_centro") == "on" ) }}
     id: sofa_blanca
@@ -145,22 +120,38 @@ trigger:
       "off" and states("light.salon_centro") == "off" }}
     id: solo_tv
     alias: Sólo la luz del sofá
+    enabled: true
+  - platform: state
+    entity_id:
+      - light.salon_centro
+    from: "on"
+    to: "off"
+    id: apagar_centro
+    enabled: true
+    alias: Se apaga la luz del centro
 condition: []
 action:
   - choose:
       - conditions:
           - condition: trigger
             id:
-              - apagar_todas
+              - apagar_centro
+          - condition: state
+            entity_id: media_player.living_room_tv
+            state: "off"
         sequence:
           - service: light.turn_off
             target:
               area_id: salon
             data: {}
+        alias: Se apaga el centro con la TV apagada
       - conditions:
           - condition: trigger
             id:
-              - solo_tv
+              - apagar_centro
+          - condition: state
+            entity_id: media_player.living_room_tv
+            state: "on"
         sequence:
           - service: light.turn_off
             metadata: {}
@@ -176,6 +167,7 @@ action:
               kelvin: 2000
               transition: 20
               brightness_step_pct: 40
+        alias: Se apaga el centro con la TV encendida
       - conditions:
           - condition: trigger
             id:
@@ -187,6 +179,20 @@ action:
             data:
               kelvin: 6500
               brightness_step_pct: 100
+        alias: Se enciende alguna luz además de la del sofá
+      - conditions:
+          - condition: trigger
+            id:
+              - solo_tv
+        sequence:
+          - service: light.turn_on
+            target:
+              entity_id: light.salon_sofa
+            data:
+              kelvin: 2000
+              transition: 20
+              brightness_step_pct: 40
+        alias: Se enciende sólo la luz del sofá
 mode: single
 ```
 
