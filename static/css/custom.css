@@ -10,7 +10,7 @@ h2::after {
     display: block;
     width: 100%;
     height: 1px;
-    background-color: #000; /* Cambia esto al color que desees */
+    background-color: #555; /* Cambia esto al color que desees */
     margin-top: 10px; /* Espacio entre el texto y la línea horizontal */
 }
 
