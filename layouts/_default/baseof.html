@@ -8,6 +8,9 @@
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.Description }}{{ end }}">
 
+	<!-- Verificación en Mastodon ---->
+	<a rel="me" href="https://mas.to/@sherlockes">Mastodon</a>
+	
 	<!-- Tarjetas en Twitter ---->
 	<meta name="twitter:card" content="summary_large_image"/>
 	{{ if (.Params.thumbnail) }}<meta name="twitter:image" content="http://www.sherblog.pro/{{ .Params.thumbnail }}" />{{else}}<meta name="twitter:image" content="http://www.sherblog.pro/images/logo.png" />{{end}}
