@@ -56,7 +56,7 @@ Con esto ya podemos guardar el firmware que hemos creado en una carpeta de nuest
 ### Volcando el firmware al CC2530
 Como ya he comentado anteriormente, voy a usar un [CC-DEBUGGER] para programar el CC2530 desde mi ordenador. Para hacerlo desde linux es necesario tener instalado [cc-tool] lo que puede llegar a ser un fuerte dolor de cabeza tal y como puedes ver en esta [nota].
 
-Ahora necesitamos conectar el CC2530 al cc-debugger mediante unos puentes con cables dupont siguiendo el siguiente esquema.
+Ahora necesitamos conectar el CC2530 al cc-debugger mediante unos puentes con cables dupont según el siguiente esquema.
 
 ![image-01]
 
