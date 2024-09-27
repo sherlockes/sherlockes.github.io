@@ -31,40 +31,57 @@ Por poco más de 1€ podemos encontrar la sonda de temperatura [DS18B20] que co
 Para un primer prototipo, lo anterior junto a alguna resistencia y unos cables dupont va a ser todo lo necesario. Posteriormente lo meteremos todo en una caja con una fuente de alimentación.
 
 ### Firmware
-En ningún momento me he planteado desarrollar mi propio software para controlar este dispositivo. Buscando información he encontrado (Pvto), un firmware para controlar el CC2530 personalizable desde un entorno gráfico
+En ningún momento me he planteado desarrollar mi propio software para controlar este dispositivo. Buscando información he encontrado (Pvto), un firmware para controlar el CC2530 personalizable desde un entorno gráfico. Parece que la última actualización es de hace más de tres años, con todo creo que puede funcionar.
 
-
-
-Problema, El software de configuración de ptvo sólo corre en windows por lo que para ejecutarlo en Linux Mint he necesitado Wine
+Problema, El software de configuración de ptvo sólo corre en windows por lo que para ejecutarlo en [Linux Mint] he necesitado el uso de [Wine] ejecutando los siguientes comandos en la carpeta donde haya descargado y descomprimido el [instalador de Ptvo].
 
 ``` bash
 sudo apt update
 sudo apt install wine
 sudo wine FirmwareConfig.exe
 ```
+> Aunque salen algunos errores a la hora de lanzar el ejecutable de windows mediante Wine, termina arrancando y es completamente funcional.
 
-Conexión de cc-debugger a CC2530
-https://ptvo.info/how-to-select-and-flash-cc2530-144/
+![image-05]
+
+- Seleccionamos el CC2530 como tipo de placa sobre el que vamos a trabajar
+- La seleccionamos como dispositivo final
+- La selección o no del "Status led" es irrelevante
+- Seleccionamos la salida 1
+- Le asignamos un pin de la placa
+- Seleccionamos nuestra sonda y que la vamos a colocar con una resistencia externa.
+
+Con esto ya podemos guardar el firmware que hemos creado en una carpeta de nuestro pc. Se generará un archivo *.txt con la información de la configuración y otro archivo *.hex con el contenido del firmware que debemos volcar al CC2530.
+
+### Volcando el firmware al CC2530
+Como ya he comentado anteriormente, voy a usar un [CC-DEBUGGER] para programar el CC2530 desde mi ordenador. Para hacerlo desde linux es necesario tener instalado [cc-tool] lo que puede llegar a ser un fuerte dolor de cabeza tal y como puedes ver en esta [nota].
+
+Ahora necesitamos conectar el CC2530 al cc-debugger mediante unos puentes con cables dupont siguiendo el siguiente esquema.
+
 ![image-01]
+
+
 
 ### Enlaces de interés
 - [Domótica en casa - CC2530](https://domoticaencasa.es/tutorial-ampliamos-cobertura-zigbee2mqtt-cc2530-cc2531/)
 - [HA - DIY zigbee temperature measurement](https://community.home-assistant.io/t/diy-zigbee-4x-ds18b20-temperature-measurement/246584)
 - [pvto - external sensors](https://ptvo.info/zigbee-configurable-firmware-features/external-sensors/ds18b20/)
+- [pvto - flash cc2530](https://ptvo.info/how-to-select-and-flash-cc2530-144/)
 
 
 [Aliexpress]: https://aliexpress.com/
 [CC2530]: https://www.ti.com/lit/gpn/cc2530
 [CC-DEBUGGER]: https://www.ti.com/tool/CC-DEBUGGER
+[cc-tool]: https://github.com/dashesy/cc-tool
 [DS18B20]: https://www.analog.com/en/products/ds18b20.html#part-details
+[instalador de Ptvo]: https://ptvo.info/download/ptvo-firmware-latest.zip
+[Linux Mint]: https://www.linuxmint.com
+[nota]: https://sherblog.es/brain/#0b8d3fe0-0bc7-4845-8028-7a2042137b4b
 [Pvto]: https://ptvo.info
+[Wine]: https://www.winehq.org
 
 [image-01]: /images/20240913_zigbee_custom_temperature_sensor_01.jpg
 [image-02]: /images/20240913_zigbee_custom_temperature_sensor_02.jpg
 [image-03]: /images/20240913_zigbee_custom_temperature_sensor_03.jpg
 [image-04]: /images/20240913_zigbee_custom_temperature_sensor_04.jpg
-
-
-
-
-
+[image-05]: /images/20240913_zigbee_custom_temperature_sensor_05.jpg
