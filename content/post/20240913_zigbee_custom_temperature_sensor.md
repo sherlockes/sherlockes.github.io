@@ -69,9 +69,14 @@ Ahora necesitamos conectar el CC2530 al cc-debugger mediante unos puentes con ca
 | 7          | Reset       | Reset    |
 | 9          | Vcc         | Vcc      |
 
-
-
-
+Así están dispuestos los pines del ccdebugger
++----+
+|1  2|
+|3  4|
+ 5  6|
+|7  8|
+|9 10|
++----+
 ### Enlaces de interés
 - [Domótica en casa - CC2530](https://domoticaencasa.es/tutorial-ampliamos-cobertura-zigbee2mqtt-cc2530-cc2531/)
 - [HA - DIY zigbee temperature measurement](https://community.home-assistant.io/t/diy-zigbee-4x-ds18b20-temperature-measurement/246584)
