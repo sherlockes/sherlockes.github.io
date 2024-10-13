@@ -95,7 +95,7 @@ Completed
 Writing flash (236 KB)...
 Completed (16.62 s.)
 ```
-
+                              
 ### Enlaces de interés
 - [Domótica en casa - CC2530](https://domoticaencasa.es/tutorial-ampliamos-cobertura-zigbee2mqtt-cc2530-cc2531/)
 - [HA - DIY zigbee temperature measurement](https://community.home-assistant.io/t/diy-zigbee-4x-ds18b20-temperature-measurement/246584)
