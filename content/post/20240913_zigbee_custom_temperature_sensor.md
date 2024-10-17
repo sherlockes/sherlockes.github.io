@@ -95,7 +95,12 @@ Completed
 Writing flash (236 KB)...
 Completed (16.62 s.)
 ```
-                              
+
+### Montando el prototipo
+![image-07]
+
+
+
 ### Enlaces de interés
 - [Domótica en casa - CC2530](https://domoticaencasa.es/tutorial-ampliamos-cobertura-zigbee2mqtt-cc2530-cc2531/)
 - [HA - DIY zigbee temperature measurement](https://community.home-assistant.io/t/diy-zigbee-4x-ds18b20-temperature-measurement/246584)
@@ -120,3 +125,4 @@ Completed (16.62 s.)
 [image-04]: /images/20240913_zigbee_custom_temperature_sensor_04.jpg
 [image-05]: /images/20240913_zigbee_custom_temperature_sensor_05.jpg
 [image-06]: /images/20240913_zigbee_custom_temperature_sensor_06.jpg
+[image-07]: /images/20240913_zigbee_custom_temperature_sensor_07.jpg
