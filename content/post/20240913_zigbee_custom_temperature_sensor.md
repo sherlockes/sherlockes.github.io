@@ -12,7 +12,7 @@ categories:
 - "home assistant"
 tags:
 - "zigbee"
-draft: true
+draft: false
 weight: 5
 ---
 En [Aliexpress] puedes encontrar infinidad de sensores zigbee pero no uno al que conectar varias sondas de temperatura a un precio razonable. Por esto me he decidido a crear el mio propio.
