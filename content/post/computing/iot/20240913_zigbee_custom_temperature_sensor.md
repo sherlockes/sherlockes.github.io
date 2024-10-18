@@ -19,7 +19,7 @@ En [Aliexpress] puedes encontrar infinidad de sensores zigbee pero no uno al que
 <!--more-->
 
 ### Materiales
-Partiremos de un pequeño y económico [CC2530] que no es difícil encontrar por menos de 5€ con antena incluida
+Vamos a partir de un pequeño y económico [CC2530] que no es difícil encontrar por menos de 5€ con antena incluida
 ![image-02]
 
 Hay varias alternativas para programar el controlador, personalmente me he decantado por usar el [CC-DEBUGGER] con un coste inferior a 10€
