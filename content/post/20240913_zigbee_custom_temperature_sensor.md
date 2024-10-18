@@ -97,8 +97,23 @@ Completed (16.62 s.)
 ```
 
 ### Montando el prototipo
+Finalmente mi prototipo tendrá tres sondas de temperatura para el control de la caldera y el agua caliente sanitaria, dos relés para el termostato y encendido de la propia caldera y finalmente un led que indique el funcionamiento. Según esto el firmware generado tiene estas características:
+
+``` txt
+Board type: CC2530
+Device type: End device without routing
+Status LED: P11, Periodic (every 5 seconds)
+
+Output pins:
+P14: Output 1, DS18B20, External pull-up (Sensor ID (optional, hex): AA-BB-CC-DD-EE-FF-01-02, Mode: Multiple on bus, Auto-detect)
+P15: Output 2, DS18B20, External pull-up (Sensor ID (optional, hex): AA-BB-CC-DD-EE-FF-01-02, Mode: Multiple on bus, Auto-detect)
+P16: Output 3, DS18B20, External pull-up (Sensor ID (optional, hex): AA-BB-CC-DD-EE-FF-01-02, Mode: Multiple on bus, Auto-detect)
+P00: Output 4, GPIO, External pull-up (Role: Generic), Remember state
+P01: Output 5, GPIO, External pull-up (Role: Generic), Remember state
+```
 ![image-07]
 
+La teoría queda muy despejada pero a la hora de llevar este prototipo a la práctica
 
 
 ### Enlaces de interés
