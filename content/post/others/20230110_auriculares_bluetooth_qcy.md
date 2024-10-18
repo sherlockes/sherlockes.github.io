@@ -2,7 +2,7 @@
 title: "Los auriculares QCY que he usado"
 date: "2024-02-09"
 creation: "2023-01-10"
-description: "Una lista con todos los auriculares qcy ue he usado, sus pros y sus contras."
+description: "Una lista con todos los auriculares qcy que he usado, sus pros y sus contras."
 thumbnail: "images/20230110_auriculares_bluetooth_qcy_00.jpg"
 disable_comments: true
 authorbox: false
@@ -148,6 +148,9 @@ Pero el mayor de los defectos y lo que los ha relegado para un uso exclusivo en 
 
 > Los he terminado usando en modo independiente (uso alterno de uno u otro) para cuando me voy a dormir ya que así está siempre la caja conectada y no presentan los problemas de carga.
 
+***El fin***
+Deterioro del plástico que los hace inusables
+
 ---
 
 ### QCY - T17
@@ -167,6 +170,8 @@ En este modelo tienen lugar dos cambios importantes, uno en lo relativo a la for
 
 [Manual de instrucciones](https://t.me/sherblog_archivo/17)
 
+***El fin***
+Un paseo por la lavadora los ha dejado inservibles
 ---
 
 ### QCY - HT03
