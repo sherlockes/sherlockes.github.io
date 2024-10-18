@@ -113,7 +113,16 @@ P01: Output 5, GPIO, External pull-up (Role: Generic), Remember state
 ```
 ![image-07]
 
-La teoría queda muy despejada pero a la hora de llevar este prototipo a la práctica
+La teoría queda muy despejada pero a la hora de llevar este prototipo a la práctica este es el resultado que he conseguido con una placa de pruebas pequeña, un poco de pegamento, una caja de conexiones eléctricas de superficie, cables y paciencia...
+![image-08]
+
+> He intentado usar un módulo con los dos relés pero aunque los leds del módulo indicaban un correcto funcionamiento, los relés no llegaban a hacer el movimiento mecánico.
+
+El módulo estará conectado a la red eléctrica de 220v con un modulo de alimentación de 3V dará alimentación a todos los componentes.
+
+### Añadiendo a Home Assistant
+Para añadir el módulo que he creado sólo hay que acceder a la extensión Zigbee2Mqtt, permitir unirse a todos los dispositivos durante 5 minutos y entonces conectar el prototipo a la corriente. Obtendremos un dispositivo en HA como el siguiente.
+![image-09]
 
 
 ### Enlaces de interés
@@ -141,3 +150,6 @@ La teoría queda muy despejada pero a la hora de llevar este prototipo a la prá
 [image-05]: /images/20240913_zigbee_custom_temperature_sensor_05.jpg
 [image-06]: /images/20240913_zigbee_custom_temperature_sensor_06.jpg
 [image-07]: /images/20240913_zigbee_custom_temperature_sensor_07.jpg
+[image-08]: /images/20240913_zigbee_custom_temperature_sensor_08.jpg
+[image-09]: /images/20240913_zigbee_custom_temperature_sensor_09.jpg
+
