@@ -152,4 +152,3 @@ Para añadir el módulo que he creado sólo hay que acceder a la extensión Zigb
 [image-07]: /images/20240913_zigbee_custom_temperature_sensor_07.jpg
 [image-08]: /images/20240913_zigbee_custom_temperature_sensor_08.jpg
 [image-09]: /images/20240913_zigbee_custom_temperature_sensor_09.jpg
-
