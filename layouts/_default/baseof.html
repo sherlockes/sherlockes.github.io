@@ -10,7 +10,7 @@
 
 	<!-- Tarjetas en Twitter ---->
 	<meta name="twitter:card" content="summary_large_image"/>
-	{{ if (.Params.thumbnail) }}<meta name="twitter:image" content="http://www.sherblog.pro/{{ .Params.thumbnail }}" />{{else}}<meta name="twitter:image" content="http://www.sherblog.pro/images/logo.png" />{{end}}
+	{{ if (.Params.thumbnail) }}<meta name="twitter:image" content="{{ .Site.BaseURL }}/{{ .Params.thumbnail }}" />{{else}}<meta name="twitter:image" content="http://www.sherblog.pro/images/logo.png" />{{end}}
 	<meta name="twitter:title" content="{{ .Params.title }}"/>
 	<meta name="twitter:description" content="{{ .Params.description }}"/>
 	<meta name="twitter:creator" content="@sherblogpro">
@@ -19,13 +19,13 @@
 	<!-- Open Graph para Mastodon ---->
 	<meta property="og:type" content="article">
 	<meta property="og:locale" content="es_ES">
-	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:site_name" content="sherblog.es">
 	<meta property="og:locale" content="es_ES">
 	<meta property="og:title"   content="{{ .Params.title }}">
 	<meta property="og:url"   content="{{ .Site.BaseURL }}">
 	<meta property="og:description" content="{{ .Params.description }}"/>
 
-	{{ if (.Params.thumbnail) }}<meta property="og:image" content="http://www.sherblog.pro/{{ .Params.thumbnail }}" />{{else}}<meta property="og:image" content="http://www.sherblog.pro/images/logo.png" />{{end}}
+	{{ if (.Params.thumbnail) }}<meta property="og:image" content="{{ .Site.BaseURL }}/{{ .Params.thumbnail }}" />{{else}}<meta property="og:image" content="{{ .Site.BaseURL }}/images/logo.png" />{{end}}
 
 	
 	
