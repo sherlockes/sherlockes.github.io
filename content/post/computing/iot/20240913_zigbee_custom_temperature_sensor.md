@@ -112,6 +112,7 @@ El módulo estará conectado a la red eléctrica de 220v con un modulo de alimen
 
 ### Añadiendo a Home Assistant
 Para añadir el módulo que he creado sólo hay que acceder a la extensión Zigbee2Mqtt, permitir unirse a todos los dispositivos durante 5 minutos y entonces conectar el prototipo a la corriente. Obtendremos un dispositivo en HA como el siguiente.
+
 ![image-09]
 
 
