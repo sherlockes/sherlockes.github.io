@@ -60,23 +60,13 @@ Ahora necesitamos conectar el CC2530 al cc-debugger mediante unos puentes con ca
 
 ![image-01]
 
-| CCdebugger |             | CC2530   |
-| Pin        | Utilidad    | Conexión |
-|------------|-------------|----------|
-| 1          | GND         | GND      |
-| 3          | Degug Clock | P2.2     |
-| 4          | Debug Data  | P2.1     |
-| 7          | Reset       | Reset    |
-| 9          | Vcc         | Vcc      |
-
-Así están dispuestos los pines del ccdebugger
-+----+
-|1  2|
-|3  4|
- 5  6|
-|7  8|
-|9 10|
-+----+
+| Pin | CCdebugger  | CC2530 |
+|-----|-------------|--------|
+| 1   | GND         | GND    |
+| 3   | Degug Clock | P2.2   |
+| 4   | Debug Data  | P2.1   |
+| 7   | Reset       | Reset  |
+| 9   | Vcc         | Vcc    |
 
 Con unos cuantos cables conectamos el cc-debugger al cc2530
 ![image-06]
