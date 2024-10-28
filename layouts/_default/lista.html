@@ -1,7 +1,7 @@
 {{ define "main" }}
   <h1>Mis artículos</h1>
   <ul>
-    {{ range .Pages.ByDate.Reverse }} <!-- Ordena del más reciente al más antiguo -->
+    {{ range .Site.RegularPages.ByDate.Reverse }} <!-- Ordena del más reciente al más antiguo -->
       <li>
         <a href="{{ .Permalink }}">{{ .Title }}</a> - {{ .Date.Format "2006-01-02" }}
       </li>
