@@ -2,19 +2,16 @@
   <h2>Todos mis artículos</h2>
   <ul>
     {{ range where .Site.RegularPages.ByDate.Reverse "Section" "post" }}
-      <li>
-        <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }} - {{ .Title }}</a>
+    <li>
+        {{ .Date.Format "20060102" }} - 
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <!-- Mostrar categorías -->
         {{ with .Params.categories }}
-          ({{ delimit . ", " }})
+          - Cats: {{ delimit . ", " }}
         {{ end }}
-	<!-- Mostrar tags como enlaces -->
+	<!-- Mostrar tags -->
         {{ with .Params.tags }}
-          - Tags: 
-          {{ $tags := slice }}
-          {{ range . }}
-            {{ $tags = append $tags (printf "<a href=\"/tags/%s\">%s</a>" (urlize .) .) }}
-          {{ end }}
-          {{ delimit $tags ", " }}
+          - Tags: {{ delimit . ", " }}
         {{ end }}
 	
       </li>
