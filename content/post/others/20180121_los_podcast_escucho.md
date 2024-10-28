@@ -24,7 +24,7 @@ En los poco más de 8 años que llevo escuchando podcast ya he escuchado más de
 
 Esta es la lista de los [cien podcast] que escucho y estos los diez más escuchados.
 
-![image-01]
+![image-02]
 
 Destaca en el primer lugar de la lista Jordi LLatzer del que me he creado un podcast a partir de su canal de Twitch gracias a mi propio script [Twitch2Podcast].
 
