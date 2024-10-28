@@ -1,9 +1,9 @@
 {{ define "main" }}
   <h2>Todos mis artículos</h2>
   <ul>
-    {{ range where .Site.RegularPages.ByDate.Reverse "Section" "post" }}
+    {{ range sort (where .Site.RegularPages "Section" "post") ".Params.creation" "desc" }}
     <li>
-        {{ .Date.Format "20060102" }} - 
+        {{ .Params.creation.Format "20060102" }}({{ .Date.Format "20060102" }}) - 
         <a href="{{ .Permalink }}">{{ .Title }}</a>
         <!-- Mostrar categorías -->
         {{ with .Params.categories }}
