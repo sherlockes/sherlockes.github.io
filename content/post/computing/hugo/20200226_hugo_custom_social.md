@@ -1,6 +1,7 @@
 ---
 title: "Añadir una red social a Hugo con el tema Mainroad"
 date: "2020-02-26"
+creation: "2020-02-26"
 description: "Como he conseguido añadir nuevas redes sociales a mi blog creado con Hugo y el tema Mainroad."
 thumbnail: "images/20200226_hugo_custom_social_00.jpg"
 disable_comments: true
