@@ -1,6 +1,7 @@
 ---
 title: "Apurada de frenada"
 date: "2018-08-21"
+creation: "2018-08-21"
 description: "Por falta de mantenimiento preventivo, la salida de hoy se ha visto reducida considerablemente."
 thumbnail: "images/20180821_pastillas_00.jpg"
 disable_comments: true
