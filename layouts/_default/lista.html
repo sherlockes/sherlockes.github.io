@@ -6,18 +6,25 @@
     <li>
         <!-- Mostrar fecha y título -->
         {{ .Date.Format "20060102" }} - <a href="{{ .Permalink }}">{{ .Title }}</a>
-
-	<!-- Mostrar categorías -->
-        {{ with .Params.categories }}
-          - Cats: 
-          {{ $tags := slice }} <!-- Inicializa el slice -->
-          {{ range . }}
-            {{ $tags = $tags | append (printf "<a href=\"/categories/%s\">%s</a>" (urlize .) .) }}
+        
+        {{ if .Params.creation }} <!-- Verifica si creation está definido -->
+          {{ $creation := (time .Params.creation) }} <!-- Convierte creation a un objeto de tiempo -->
+          {{ if ne .Date $creation }} <!-- Compara las fechas -->
+            ({{ $creation.Format "20060102" }}) <!-- Muestra creation si es diferente de date -->
           {{ end }}
-          {{ delimit $tags ", " }} <!-- Une los tags con comas -->
         {{ end }}
 
-	<!-- Mostrar tags -->
+        <!-- Mostrar categorías -->
+        {{ with .Params.categories }}
+          - Cats: 
+          {{ $cats := slice }} <!-- Inicializa el slice -->
+          {{ range . }}
+            {{ $cats = $cats | append (printf "<a href=\"/categories/%s\">%s</a>" (urlize .) .) }}
+          {{ end }}
+          {{ delimit $cats ", " }} <!-- Une las categorías con comas -->
+        {{ end }}
+
+        <!-- Mostrar tags -->
         {{ with .Params.tags }}
           - Tags: 
           {{ $tags := slice }} <!-- Inicializa el slice -->
@@ -26,9 +33,9 @@
           {{ end }}
           {{ delimit $tags ", " }} <!-- Une los tags con comas -->
         {{ end }}
-	
     </li>
     {{ end }}
     {{ end }}
   </ul>
 {{ end }}
+
