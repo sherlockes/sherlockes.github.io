@@ -3,14 +3,18 @@
   <ul>
     {{ range where .Site.RegularPages.ByDate.Reverse "Section" "post" }}
       <li>
-        <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }} - {{ .Title }}
+        <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }} - {{ .Title }}</a>
         {{ with .Params.categories }}
           ({{ delimit . ", " }})
         {{ end }}
-	{{ with .Params.tags }}
-          [{{ delimit . ", " }}]
+	<!-- Mostrar tags como enlaces -->
+        {{ with .Params.tags }}
+          - Tags: 
+          {{ range $index, $tag := . }}
+            <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}">{{ $tag }}</a>{{ if ne (add $index 1) (len .) }}, {{ end }}
+          {{ end }}
         {{ end }}
-	</a>
+	
       </li>
     {{ end }}
   </ul>
