@@ -7,6 +7,9 @@
         {{ with .Params.categories }}
           ({{ delimit . ", " }})
         {{ end }}
+	{{ with .Params.tags }}
+          [{{ delimit . ", " }}]
+        {{ end }}
 	</a>
       </li>
     {{ end }}
