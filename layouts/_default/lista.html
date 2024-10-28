@@ -3,10 +3,11 @@
   <ul>
     {{ range where .Site.RegularPages.ByDate.Reverse "Section" "post" }}
       <li>
-        <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }} - {{ .Title }}</a>
+        <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }} - {{ .Title }}
         {{ with .Params.categories }}
           ({{ delimit . ", " }})
         {{ end }}
+	</a>
       </li>
     {{ end }}
   </ul>
