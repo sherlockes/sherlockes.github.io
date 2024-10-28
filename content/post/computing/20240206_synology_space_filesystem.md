@@ -11,7 +11,7 @@ mathjax: false
 categories:
 - "computing"
 tags:
-- "synololgy"
+- "synology"
 draft: false
 weight: 5
 ---
