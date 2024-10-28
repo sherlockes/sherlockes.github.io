@@ -7,7 +7,12 @@
         <a href="{{ .Permalink }}">{{ .Title }}</a>
         <!-- Mostrar categorías -->
         {{ with .Params.categories }}
-          - Cats: {{ delimit . ", " }}
+          - Cats: 
+          {{ $tags := slice }} <!-- Inicializa el slice -->
+          {{ range . }}
+            {{ $tags = $tags | append (printf "<a href=\"/categories/%s\">%s</a>" (urlize .) .) }}
+          {{ end }}
+          {{ delimit $tags ", " }} <!-- Une los tags con comas -->
         {{ end }}
 	<!-- Mostrar tags -->
         {{ with .Params.tags }}
