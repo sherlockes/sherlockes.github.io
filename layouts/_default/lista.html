@@ -9,8 +9,10 @@
         
         {{ if .Params.creation }} <!-- Verifica si creation está definido -->
           {{ $creation := (time .Params.creation) }} <!-- Convierte creation a un objeto de tiempo -->
-          {{ if ne .Date $creation }} <!-- Compara las fechas -->
-            ({{ $creation.Format "20060102" }}) <!-- Muestra creation si es diferente de date -->
+          {{ if $creation }} <!-- Asegúrate de que $creation no sea nil -->
+            {{ if ne .Date $creation }} <!-- Compara las fechas -->
+              ({{ $creation.Format "20060102" }}) <!-- Muestra creation si es diferente de date -->
+            {{ end }}
           {{ end }}
         {{ end }}
 
@@ -38,4 +40,5 @@
     {{ end }}
   </ul>
 {{ end }}
+
 
