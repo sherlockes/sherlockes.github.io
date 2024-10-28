@@ -5,7 +5,7 @@
       <li>
         <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }} - {{ .Title }}</a>
         {{ with .Params.categories }}
-          - Categoría: {{ delimit . ", " }}
+          ({{ delimit . ", " }})
         {{ end }}
       </li>
     {{ end }}
