@@ -1,6 +1,7 @@
 ---
 title: "Fuga en cisterna Roca"
 date: "2018-06-10"
+creation: "2018-06-10"
 description: "La batalla por corregir una fuga de agua en una cisterna Roca de doble pulsador."
 thumbnail: "images/20180606_junta_roca_ampollas_00.jpg"
 disable_comments: true # Optional, disable Disqus comments if true
