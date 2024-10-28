@@ -9,7 +9,9 @@
         {{ end }}
 	<!-- Mostrar tags como enlaces -->
         {{ with .Params.tags }}
-          [{{ delimit (slice .) ", " | urlizeTags }}]
+          [{{ range $index, $tag := . }}
+            <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}">{{ $tag }}</a>{{ if lt (add $index 1) (len .) }}, {{ end }}
+          {{ end }}]
         {{ end }}
 	
       </li>
