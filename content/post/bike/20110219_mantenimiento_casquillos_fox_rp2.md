@@ -1,6 +1,7 @@
 ---
 title: "Cambiando los casquillos del Fox RP2"
-date: "aaaa-mm-dd"
+date: "2011-02-19"
+creation: "2011-02-19"
 description: "Cambiando los casquillos del Fox RP2"
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true
