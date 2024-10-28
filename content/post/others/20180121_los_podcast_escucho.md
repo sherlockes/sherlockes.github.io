@@ -1,5 +1,5 @@
 ---
-title: "Los podcast que escucho."
+title: "Los podcast que escucho"
 date: "2024-10-28"
 creation: "2018-01-21"
 description: "Sólo una lista de los podcast que más escucho"
