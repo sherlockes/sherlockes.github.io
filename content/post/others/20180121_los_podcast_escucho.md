@@ -15,6 +15,9 @@ tags:
 draft: false
 weight: 5
 ---
+Me considero un escucha avanzado de Podcast y desde hace varios años los escucho en [Podcast Addict] , aplicación que me ofrece todo lo que necesito.  Tanto tiempo de escucha hace que continuamente se reciban menciones a nuevos Podcast a los que dar una oportunidad de escucha para agregarlo a mi lista de feeds.
+
+<!--more-->
 ### 700 días escuchados (Octubre de 2024)
 En los poco más de 8 años que llevo escuchando podcast ya he escuchado más de 700 días con [Podcast Addict] en android.
 ![image-01]
@@ -37,7 +40,7 @@ Ahora ya no tengo muy claro cuando empecé a escuchar podcast (Creo que sobre 20
 
 ![PodcastAddict][101]
 
-Me considero un escucha avanzado de Podcast y desde hace varios años los escucho en [Podcast Addict][50] ya que es una aplicación que me ofrece todo lo que necesito.  Tanto tiempo de escucha hace que continuamente se reciban menciones a nuevos Podcast a los que dar una oportunidad de escucha para agregarlo a mi lista de feeds. Lista en la que tengo autoimpuesto un límite de 100 feeds que, como ya lo tengo aislado, me obliga a tener que borrar uno para poder añadir otro. Este hecho hasta ahora no ha sido muy complicado ya que en este mundo del podcasting es muy habitual dar con productores de contenido que al cabo de unos meses dejan de publicar por falta de ganas, motivación, ideas... Con esto solo tengo que ordenar mi lista de feeds por el último podcast publicado y borrar el último para poder añadir uno nuevo. 
+En la lista de feeds tengo autoimpuesto un límite de 100 feeds que, como ya lo tengo aislado, me obliga a tener que borrar uno para poder añadir otro. Este hecho hasta ahora no ha sido muy complicado ya que en este mundo del podcasting es muy habitual dar con productores de contenido que al cabo de unos meses dejan de publicar por falta de ganas, motivación, ideas... Con esto solo tengo que ordenar mi lista de feeds por el último podcast publicado y borrar el último para poder añadir uno nuevo. 
 
 Los diez Podcast más escuchados dentro de mi "podcatcher" son los siguientes.
 
