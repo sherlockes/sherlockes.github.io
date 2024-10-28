@@ -11,7 +11,12 @@
         {{ end }}
 	<!-- Mostrar tags -->
         {{ with .Params.tags }}
-          - Tags: {{ delimit . ", " }}
+          - Tags: 
+          {{ $tags := slice }}
+          {{ range . }}
+            {{ $tags = append $tags (printf "<a href=\"/tags/%s\">%s</a>" (urlize .) .) }}
+          {{ end }}
+          {{ delimit $tags ", " }}
         {{ end }}
 	
       </li>
