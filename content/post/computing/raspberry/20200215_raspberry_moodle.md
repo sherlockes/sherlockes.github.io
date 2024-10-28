@@ -1,6 +1,7 @@
 ---
 title: "Instalación de Moodle en Raspberry Pi"
 date: "2020-02-15"
+creation: "2020-02-15"
 description: "La forma que he usado para crear un servidor de Moodle a partir de una modesta Raspberry Pi 3 Model B."
 thumbnail: "images/20200215_raspberry_moodle_00.jpg"
 disable_comments: true
