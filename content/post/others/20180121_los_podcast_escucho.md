@@ -1,12 +1,12 @@
 ---
-title: "Los podcast que escucho. Abril de 2020"
-date: "2020-04-06"
+title: "Los podcast que escucho."
+date: "2024-10-28"
 creation: "2018-01-21"
 description: "Sólo una lista de los podcast que más escucho"
 thumbnail: "images/20180121_homer_headphones.jpg"
 disable_comments: true
 authorbox: false
-toc: false
+toc: true
 mathjax: false
 categories:
   - "Varios"
@@ -15,16 +15,24 @@ tags:
 draft: false
 weight: 5
 ---
-## 100% - Cien Podcast y cien episodios
+### 700 días escuchados (Octubre de 2024)
+En los poco más de 8 años que llevo escuchando podcast ya he escuchado más de 700 días con [Podcast Addict] en android.
+![image-01]
+
+Esta es la lista de los [cien podcast] que escucho y estos los diez más escuchados.
+
+![image-01]
+
+Destaca en el primer lugar de la lista Jordi LLatzer del que me he creado un podcast a partir de su canal de Twitch gracias a mi propio script [Twitch2Podcast].
+
+
+### 100% - Cien Podcast y cien episodios (Abril de 2020)
 Así es, tal y como se puede ver en la siguiente imagen he superado los 10000 episodios escuchados en [Podcast Addict][50].
 <!--more-->
 ![PodcastAddict][102]
 Hace varios años que tengo fijado mi límite de suscripciones a [cien podcast][150] y recientemente he alcanzado los 10000 episodios reproducidos entre todas mis suscripciones activas lo cual quiere decir que, de cada podcast que sigo, de media al menos he escuchado cien episodios.
 
-## 100% - Cien días y cien podcast
-
-Marzo de 2019
-
+### 100% - Cien días y cien podcast (Marzo de 2019)
 Ahora ya no tengo muy claro cuando empecé a escuchar podcast (Creo que sobre 2016), lo que si puedo afirmar es que por lo menos he escuchado cien días de podcast tal y como muestra mi aplicación de cabecera en android [Podcast Addict][50]
 
 ![PodcastAddict][101]
@@ -93,3 +101,12 @@ El resto de feeds que sigo es posible descargarlos desde [aquí][150]. Como es p
 [102]: /images/20200406_10000_podcast.jpg
 
 [150]: /files/podcast.opml
+
+[Podcast Addict]: https://podcastaddict.com
+[cien podcast]: /files/podcast.opml
+[Twitch2Podcast]: /crear-podcast-a-partir-de-un-canal-de-twitch/
+
+[image-01]: /images/20180121_podcast_01.jpg
+[image-02]: /images/20180121_podcast_02.jpg
+
+
