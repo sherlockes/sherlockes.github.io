@@ -1,6 +1,6 @@
 ---
 title: "Sensores virtuales y Jinja2 en Home Assistant"
-date: "2023-10-22"
+date: "2021-12-09"
 creation: "2021-09-21"
 description: "Mi manejo de los sensores virtuales y el motor de plantillas Jinja2 en Home Assistant"
 thumbnail: "images/20210921_home_assistant_virtual_sensors_jinja2_00.jpg"
@@ -15,9 +15,7 @@ tags:
 draft: false
 weight: 5
 ---
-Aquí dejo la solución que he implementado ante el problema de crear una nueva entidad en [Home Assistant] cuyo valor dependa del de otras entidades ya existentes gracias al uso de sensores virtuales y el motor de plantillas de Jinja2.
-
-**Actualización:** Sensor nº de dispositivos zigbee no disponibles
+Aquí dejo la solución que he implementado ante el problema de crear una nueva entidad en Home Assistant cuyo valor dependa del de otras entidades ya existentes gracias al uso de sensores virtuales y el motor de plantillas de Jinja2.
 <!--more-->
 
 ### Creando el archivo de sensores
@@ -39,33 +37,10 @@ Antes de seguir adelante, guardaremos los cambios y comprobaremos que todo funci
 
 Si la configuración es válida podemos seguir adelante con la creación de nuestro nuevo sensor virtual.
 
-> El error más habitual es que ya hubiera creado un sensor dentro del archivo "configuration.yaml". Deberemos moverlo al archivo "sensors.yaml"
+> El error más habitual es que ya tubieramos creado un sensor dentro del archivo "configuration.yaml". Deberemos moverlos al archivo "sensors.yaml"
 
-A continuación dejo los sensores virtuales de los que hago uso en mi configuración de [Home Assistant]
-
-### Nº de dispositivos Zigbee no disponibles
-Tratar con dispositivos Zigbee de distintos fabricantes bajo un sólo controlador hace que en ocasiones alguno de ellos pase a estar "no disponible". Con este sensor obtenemos el nº de ellos que hay en este modo. Toda la info sobre este sensor en este  [artículo]({{<relref"20231021_zigbee_devices_not_available.md">}}).
-
-``` yaml
-  - platform: template
-    sensors:
-        zha_no_disponibles:
-          friendly_name: "Sensores zigbee no disponibles"
-          value_template: >
-            {% set zigbee = namespace(unavailable=[]) %}
-            {% for entity in integration_entities('zha') %}
-              {% if states(entity) == 'unavailable' %}
-                {% set nombre = device_attr(device_id(entity), 'name_by_user') %}
-                {% if nombre not in zigbee.unavailable %}
-                  {% set zigbee.unavailable = zigbee.unavailable + [nombre] %}
-                {% endif %}
-              {% endif %}
-            {% endfor %}
-            {{ zigbee.unavailable | length }}
-```
-
-### Dirección del viento
-En mi instalación de Home Assistant hago unos de la integración de la [AEMET] para obtener la información del tiempo. El valor de la dirección del viento se obtiene como un valor en grados lo cual no resulta muy intuitivo por lo que me he decidido a crear una nueva entidad que lo transforme en un campo de texto que nos indique si el viento viene del norte, del sur....
+### Sensor para el punto cardinal del viento
+En mi instalación de Home Assistant hago unos de la integracion de la [AEMET] para obtener la información del tiempo. El valor de la dirección del viento se obtiene como un valor en grados lo cual no resulta muy intuitivo por lo que me he decidido a crear una nueva entidad que lo transforme en un campo de texto que nos indique si em viento viene del norte, del sur....
 
 En el archivo "sensors.yaml" añadiremos el nuevo sensor
 
@@ -101,7 +76,7 @@ Ya sólo resta añadir este sensor en la página que deseemos de home assistant 
 
 ![image-03]
 
-### Día de trabajo
+### Sensor para definir si trabajo
 Cuando no se vive solo en casa es un detalle no despertar a todos cuando uno lo tiene que hacer antes de las 5:00 AM. Dentro de los turnos de trabajo, me tengo que levantar a esta hora si trabajo en el turno de "Mañana" o de "Sobrante" lo cual tengo definido en el calendario de google "turno_de_trabajo".
 
 Vamos a crear un sensor virtual que, en función del calendario devuelva un "On" si tengo que madrugar o un "Off" si no tengo que hacerlo.
@@ -127,7 +102,7 @@ En el archivo "sensors.yaml" añadiremos el nuevo sensor
 
 Y con esto ya puedo definir una automatización en la que, si estoy en casa y tengo que madrugar, se enciendan las luces de forma muy tenue durante unos minutos hasta que me voy de casa.
 
-### Casa vacía
+### Sensor de casa vacía
 En la estancia de [Home Assistant] tengo definidas las personas que vivimos en casa y para cada una de ellas el dispositivo a rastrear que define si la persona está en casa o no.
 
 ![image-04]
@@ -150,7 +125,7 @@ Cn esto resulta sencillo crear un sensor virtual que devuelva "true" cuando no h
             {% endif %}
 ```
 
-### Consigna de temperatura
+### Sensor de consigna de temperatura
 Para el cálculo de la consigna de temperatura haremos uso de varios ayudantes
 - Hora de levantar
 - Hora de dormir
@@ -186,7 +161,7 @@ De este modo obtendremos los siguientes resultados para el sensor "consigna_cald
 - Tª eco si no hay nadie en casa entre hora de dormir y levantar
 - tª cómoda entre la hora de levantar y dormir si hay alguien en casa
 
-### Horario de apagado de la TV
+### Sensor de horario de apagado de la TV
 Para evitar que lo primero que hagn los pequeños al levantarse sea encencer la tele tengo un horario de en el que el enchufe que la alimenta permanece apagado. Este horario lo defino mediante un ayudante de hora de apagado y otro de encendido:
 - input_datetime.tv_off --> horaOFF
 - input_datetime.tv_on --> horaON
@@ -224,49 +199,9 @@ Si lo traducimos a jinja 2, el sensor virtual quedará así.
             {% endif %}
 ```
 
-### Estado de la TV
-Mi TV no es "inteligente" y para poder encenderla o apagarla a través de [Home Assistant] lo hago a través de un [Broadlink RM mini] colocado en el salón gracias a la integración [SmartIR]. Esta integración hace uso de un sensor de encendido denominado "power_sensor" de forma que cuando está a "on" ofrece todos los controles de la TV y cuando esta a "off" sólo ofrece la posibilidad de encenderla.
-
-Para crear este sensor de encendido tengo conectada la TV a un enchufe inteligente que me da información de consumo. No se si la medición es muy fiable, pero la experiencia me dice que cuando está encendida gasta por encima de los 30w lo que es información suficiente para crear este sensor de estado de la TV que incluyo dentro del archivo "sensors.yaml"
-
-```
-  - platform: template
-    sensors:
-      estado_tv:
-        friendly_name: "Como está la tele?"
-        value_template: >-
-            {% set consumo_tv = state_attr('sensor.salon_tv_enchufe_corriente','current') %}
-            {% if consumo_tv > 30 %}
-            on
-            {% else %}
-            off
-            {% endif %}
-```
-
-### Día lectivo
-Desde hace varios años tengo una automatización en Alexa como despertador para los días de colegio, ahora voy a integrarla en [Home Assistant] mediante un calendario "festivos_escolares" en el que he insertado el [calendario escolar] con todos los días que no hay que ir al cole (Lo he hecho a través de la integración con Google Calendar aunque también se podría haber hecho directamente en [Home Assistant]).
-
-El sensor que he creado para saber si hoy es lectivo pasa por comprobar que no haya ningún festivo escolar ni que sea fin de semana. Así de sencillo.
-
-```yaml
-- platform: template
-    sensors:
-        es_lectivo_hoy:
-          entity_id: sensor.date
-          value_template: >
-            {% if states('calendar.festivos_escolares') == 'on' or now().isoweekday() >= 6 %}
-              no
-            {% else %}
-              si
-            {% endif %}
-```
-
 [AEMET]: https://www.home-assistant.io/integrations/aemet
-[Broadlink RM mini]: https://www.broadlink.com.es/broadlink-rm-mini3-domotica-mando-distancia-universal.html
-[calendario escolar]: https://educa.aragon.es/calendario-escolar
 [File Editor]: https://github.com/home-assistant/addons/tree/master/configurator
 [Home Assistant]: https://www.home-assistant.io
-[SmartIR]: https://github.com/smartHomeHub/SmartIR
 
 [image-01]: /images/20210921_home_assistant_virtual_sensors_jinja2_01.jpg
 [image-02]: /images/20210921_home_assistant_virtual_sensors_jinja2_02.jpg

@@ -17,4 +17,5 @@ Son increíbles las posibilidades que ofrece [Home Assistant] y aquí dejo todo 
 
 ### Post en el Blog
 
+
 [Home Assistant]: https://www.home-assistant.io

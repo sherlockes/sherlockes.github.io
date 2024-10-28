@@ -1,6 +1,6 @@
 ---
 title: "Apagar todas las luces en Home Assistant"
-date: "2023-12-23"
+date: "2021-11-05"
 creation: "2021-11-05"
 description: "Unos métodos para apagar todas las luces en Home assistant"
 thumbnail: "images/20211105_home_assistant_apagar_todas_luces_00.jpg"
@@ -85,21 +85,10 @@ La automatización que creemos para apagar todas las luces ahora si podrá llama
 
 ![image-03]
 
-## Apagando todas las luces
-Si tenemos declaradas como "light" todas las luces de casa y no tenemos ningún otra entidad que no siendo una luz está declarada como tal, para encenderlas o apagarlas todas al mismo tiempo no es necesario hacer un grupo. Sólo hay que llamar al servicio y editar en yaml para que quede algo como lo siguiente:
-
-``` yaml
-service: light.turn_off
-data: {}
-target:
-  entity_id: all
-```
-
 ## Enlaces de utilidad
-- [Cyan-Automation][]
-- [HA - Light group][]
-- [HA - Light switch][]
-- [Home Assistant - Turn off all lights](https://community.home-assistant.io/t/turning-off-all-house-lights-with-automation/177784/9)
+[Cyan-Automation][]
+[HA - Light group][]
+[HA - Light switch][]
 
 [image-01]: /images/20211105_home_assistant_apagar_todas_luces_01.jpg
 [image-02]: /images/20211105_home_assistant_apagar_todas_luces_02.jpg
