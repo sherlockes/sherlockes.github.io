@@ -2,10 +2,12 @@
   <h2>Todos mis artículos</h2>
   <ul>
     {{ range where .Site.RegularPages.ByDate.Reverse "Section" "post" }}
+    {{ if and .Params.creation (ne .Params.creation "") (ne .Title "") }} <!-- Verifica creation y Title -->
     <li>
-        {{ .Date.Format "20060102" }} - 
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-        <!-- Mostrar categorías -->
+        <!-- Mostrar fecha y título -->
+        {{ .Date.Format "20060102" }} - <a href="{{ .Permalink }}">{{ .Title }}</a>
+
+	<!-- Mostrar categorías -->
         {{ with .Params.categories }}
           - Cats: 
           {{ $tags := slice }} <!-- Inicializa el slice -->
@@ -14,6 +16,7 @@
           {{ end }}
           {{ delimit $tags ", " }} <!-- Une los tags con comas -->
         {{ end }}
+
 	<!-- Mostrar tags -->
         {{ with .Params.tags }}
           - Tags: 
@@ -24,7 +27,8 @@
           {{ delimit $tags ", " }} <!-- Une los tags con comas -->
         {{ end }}
 	
-      </li>
+    </li>
+    {{ end }}
     {{ end }}
   </ul>
 {{ end }}
