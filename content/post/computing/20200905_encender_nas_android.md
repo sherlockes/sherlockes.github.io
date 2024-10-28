@@ -1,6 +1,7 @@
 ---
 title: "Encender el Nas desde el teléfono"
 date: "2020-09-05"
+creation: "2020-09-05"
 description: "Aquí describo el método que empleo para encender el NAS cuando no estoy cerca del botón de encendido del mismo."
 thumbnail: "images/20200905_encender_nas_android_00.jpg"
 disable_comments: true
