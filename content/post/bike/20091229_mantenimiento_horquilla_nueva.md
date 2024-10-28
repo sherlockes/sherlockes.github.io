@@ -1,6 +1,7 @@
 ---
 title: "Acondicionando una horquilla nueva"
-date: "20091229"
+date: "2009-12-29"
+creation: "2009-12-29"
 description: "Acondicionando una horquilla nueva"
 #thumbnail: 'images/titulo_00.jpg'
 disable_comments: true
