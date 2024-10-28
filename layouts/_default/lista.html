@@ -2,7 +2,7 @@
   <h2>Todos mis artículos</h2>
   <ul>
     {{ range where .Site.RegularPages.ByDate.Reverse "Section" "post" }}
-    {{ if and .Params.creation (ne .Params.creation "") (ne .Title "") }} <!-- Verifica creation y Title -->
+    {{ if ne .Title "" }} <!-- Verifica Title -->
     <li>
         <!-- Mostrar fecha y título -->
         {{ .Date.Format "20060102" }} - <a href="{{ .Permalink }}">{{ .Title }}</a>
