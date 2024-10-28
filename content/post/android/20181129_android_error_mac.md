@@ -1,6 +1,7 @@
 ---
 title: "Cuando una App deja KO a Android"
 date: "2018-11-29"
+creation: "2018-11-29"
 description: "Una de esas veces que piensas que el teléfono lo tienes perdido y lo consigues recuperar de una forma rápida y sencilla."
 thumbnail: "images/20181129_android_error_mac_00.jpg"
 disable_comments: true
