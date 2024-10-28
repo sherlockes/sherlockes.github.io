@@ -1,6 +1,7 @@
 ---
 title: "Acceder a Github via ssh sin password"
 date: "2018-07-27"
+creation: "2018-07-27"
 description: "Acceder a Github sin tener que poner el nombre de usuario y contraseña todas las veces"
 thumbnail: "images/20180806_hugo_github_pass_00.jpg"
 disable_comments: true
