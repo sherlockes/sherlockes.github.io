@@ -1,6 +1,7 @@
 ---
 title: "Publicar desde iaWriter"
 date: "2018-09-04"
+creation: "2018-09-04"
 description: "El modo que utilizo para publicar en el blog usando sólo el editor de texto."
 thumbnail: "images/20180904_hugo_publicar_editor_texto_00.jpg"
 disable_comments: true
