@@ -1,6 +1,7 @@
 ---
 title: "Adios WordPress"
 date: "2018-07-11"
+creation: "2018-07-11"
 description: "La historia de porque abandono WordPress en favor de Hugo"
 thumbnail: "images/20180712_wordpress_hugo.jpg"
 disable_comments: true
