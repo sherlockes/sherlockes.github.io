@@ -5,7 +5,8 @@
     {{ if ne .Title "" }} <!-- Verifica Title -->
     <li>
         <!-- Mostrar fecha y título -->
-        {{ .Date.Format "20060102" }} - <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ .Date.Format "20060102" }}{{ if not .Params.creation }}*{{ end }} -
+	<a href="{{ .Permalink }}">{{ .Title }}</a>
         
 
         <!-- Mostrar categorías -->
