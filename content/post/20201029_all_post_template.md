@@ -1,23 +1,24 @@
 ---
-title: "Título"
+title: "Mostranso todos mis artículos"
 date: "2024-10-29"
 creation: "2024-10-29"
-description: "Descripción"
+description: "Como he creado una plantilla en Hugo para mostrar todos los artículos del Blog"
 thumbnail: "images/20201029_all_post_template_00.jpg"
 disable_comments: true
 authorbox: false
 toc: false
 mathjax: false
 categories:
-- "computing"
+- "hugo"
 tags:
-- "bash"
+- "chatgpt"
 draft: true
 weight: 5
 ---
-Resumen de introducción
+Instrucciónes para crear una plantilla en la que mostrar todos los artículos del Blog con la inestimable ayuda de chatgpt.
 <!--more-->
 
+https://chatgpt.com/share/672123ac-3e80-800d-91d9-c710ccbbcfbd
 
 ![image-01]
 
