@@ -12,7 +12,7 @@ categories:
 - "computing"
 tags:
 - "git" 
-draft: falstrue
+draft: false
 weight: 5
 ---
 __Actualización:__ Solucionando el problema desde el origen con un correcto clonado.
