@@ -15,7 +15,7 @@ tags:
 draft: true
 weight: 5
 ---
-Instrucciónes para crear una plantilla en la que mostrar todos los artículos del Blog con la inestimable ayuda de chatgpt.
+Instrucciones para crear una plantilla en la que mostrar todos los artículos del Blog con la inestimable ayuda de [chatgpt].
 <!--more-->
 
 https://chatgpt.com/share/672123ac-3e80-800d-91d9-c710ccbbcfbd
@@ -25,7 +25,7 @@ https://chatgpt.com/share/672123ac-3e80-800d-91d9-c710ccbbcfbd
 ### Enlaces de interés
 - [enlace](www.sherblog.pro)
 
-[link]: https://www.google.es
+[chatgpt]: https://chatgpt.com
 
 [image-01]: /images/20201029_all_post_template_01.jpg
 

@@ -2,7 +2,13 @@
 <main class="main list" role="main">
   {{- with .Title }}
   <header class="main__header">
-    <h1 class="main__title">{{ . }}</h1>
+    {{ $articles := where $.Site.RegularPages "Section" "post" }} <!-- Asegúrate de usar $ para el contexto de la página -->
+    {{ $postCount := len $articles }} <!-- Cuenta el número de artículos -->
+    
+    {{ $yearsSince2007 := 2007 | sub now.Year }} <!-- Calcula los años desde 2007 -->
+    <h1 class="main__title">Mis {{ $postCount }} artículo{{ if gt $postCount 1 }}s{{ end }} desde hace {{ $yearsSince2007 }} año{{ if ne $yearsSince2007 1 }}s{{ end }}</h1> <!-- Título actualizado -->
+
+
   </header>
   {{- end }}
 
@@ -12,8 +18,8 @@
     {{- end }}
 
     <ul>
-      {{- range where .Site.RegularPages "Section" "post" }}
-      {{ if ne .Title "" }} <!-- Verifica Title -->
+      {{- range where .Site.RegularPages.ByDate.Reverse "Section" "post" }}
+      {{ if and (ne .Title "") .Date }} <!-- Verifica Title y que haya Date -->
       <li>
         <!-- Mostrar fecha y título -->
         {{ .Date.Format "20060102" }}{{ if not .Params.creation }}*{{ end }} - <a href="{{ .Permalink }}">{{ .Title }}</a>
@@ -44,4 +50,3 @@
   </div>
 </main>
 {{ end }}
-
