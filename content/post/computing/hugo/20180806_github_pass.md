@@ -10,7 +10,7 @@ toc: false
 mathjax: false
 categories:
   - "hugo"
-draft: falstrue
+draft: false
 weight: 5
 ---
 ### El problema
