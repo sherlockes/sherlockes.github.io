@@ -12,7 +12,7 @@ categories:
   - "a pedales"
 tags:
   - "mantenimiento"
-draft: true
+draft: false
 weight: 5
 ---
 Tras lavar y secar la bicicleta observo que el pedalier no gira con la "finura" habitual por lo que me dispongo a revisar el estado de las cazoletas. Sospechosamente, la cazoleta izquierda gira mucho peor que la derecha de forma que le quito el sello a ambos rodamientos para comprobar su estado.
