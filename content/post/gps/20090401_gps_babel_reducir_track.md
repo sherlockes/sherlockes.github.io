@@ -13,7 +13,7 @@ categories:
 tags:
   - "gpsbabel"
   - "tracks"
-draft: true
+draft: false
 weight: 5
 ---
 Cada día más, la gente comparte las rutas mediante algún servicio online ([Wikiloc][1] es el que yo utilizo) para que cualquiera pueda verlas e incluso descargarlas para meterlas en el navegado gps y de esta forma poder seguirlas de una forma rápida y sencilla. Es cierto que la aventura pierde un poco de encanto pero ayuda a planificar el trayecto evitando así sorpresas que nos podrían arruinar un bonito día en el campo.
