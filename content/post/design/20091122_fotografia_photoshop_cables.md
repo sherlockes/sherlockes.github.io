@@ -12,7 +12,7 @@ categories:
   - 'diseño'
 tags:
   - 'photoshop'
-draft: true
+draft: false
 weight: 5
 ---
 Muy buenas fotografías en potencia no han llegado a serlo por culpa de los malditos (pero necesarios) cables del tendido eléctrico. Hay muchos métodos para eliminarlos con photoshop, en el siguiente video dejo el que yo empleo.
