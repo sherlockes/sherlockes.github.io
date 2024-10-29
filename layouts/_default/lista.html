@@ -1,13 +1,22 @@
 {{ define "main" }}
-  <h2>Todos mis artículos</h2>
-  <ul>
-    {{ range where .Site.RegularPages.ByDate.Reverse "Section" "post" }}
-    {{ if ne .Title "" }} <!-- Verifica Title -->
-    <li>
+<main class="main list" role="main">
+  {{- with .Title }}
+  <header class="main__header">
+    <h1 class="main__title">{{ . }}</h1>
+  </header>
+  {{- end }}
+
+  <div class="content main__content clearfix">
+    {{- with .Content }}
+    {{ . }}
+    {{- end }}
+
+    <ul>
+      {{- range where .Site.RegularPages "Section" "post" }}
+      {{ if ne .Title "" }} <!-- Verifica Title -->
+      <li>
         <!-- Mostrar fecha y título -->
-        {{ .Date.Format "20060102" }}{{ if not .Params.creation }}*{{ end }} -
-	<a href="{{ .Permalink }}">{{ .Title }}</a>
-        
+        {{ .Date.Format "20060102" }}{{ if not .Params.creation }}*{{ end }} - <a href="{{ .Permalink }}">{{ .Title }}</a>
 
         <!-- Mostrar categorías -->
         {{ with .Params.categories }}
@@ -28,11 +37,11 @@
           {{ end }}
           {{ delimit $tags ", " }} <!-- Une los tags con comas -->
         {{ end }}
-    </li>
-    {{ end }}
-    {{ end }}
-  </ul>
+      </li>
+      {{ end }}
+      {{- end }}
+    </ul>
+  </div>
+</main>
 {{ end }}
-
-
 

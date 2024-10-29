@@ -1,6 +1,7 @@
 ---
 title: "Editando tracks con GPX Editor"
 date: "2010-09-07"
+creation: "2010-09-07"
 description: "Editando tracks con GPX Editor"
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true

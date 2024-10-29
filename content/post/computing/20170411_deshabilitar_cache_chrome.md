@@ -1,6 +1,7 @@
 ---
 title: "Deshabilitar cache en chrome"
 date: "2017-04-11"
+creation: "2017-04-11"
 description: "Como deshabilitar la caché en Google Chrome para comprobar cambios en el servidor"
 thumbnail: "images/20170411_cache_00.jpg"
 disable_comments: true

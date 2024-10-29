@@ -1,6 +1,7 @@
 ---
 title: "Raspberry Copia de seguridad"
 date: "2018-04-09"
+creation: "2018-04-09"
 description: "Sería de mal gusto perder la web por un fallo de la tarjeta sd."
 thumbnail: "images/20180409_raspberry_backup.jpg"
 disable_comments: true

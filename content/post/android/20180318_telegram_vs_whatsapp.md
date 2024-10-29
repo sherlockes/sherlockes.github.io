@@ -1,6 +1,7 @@
 ---
 title: "Telegram Vs Whatsapp"
 date: "2018-03-18"
+creation: "2018-03-18"
 description: "No entiendo como la mayoría usa WhatsApp cuando Telegram ofrece más posibilidades."
 thumbnail: "images/20180301_whatsapp_vs_telegram.jpg"
 disable_comments: true # Optional, disable Disqus comments if true

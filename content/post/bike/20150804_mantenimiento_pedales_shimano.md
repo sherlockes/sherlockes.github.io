@@ -1,6 +1,7 @@
 ---
 title: "Mantenimiento pedales Shimano Spd"
 date: "2015-08-03"
+creation: "2015-08-03"
 description: "Mi manera de prolongar la vida de los pedales automáticos spd de Shimano"
 thumbnail: "images/20150804_mto_pedales_01.jpg"
 disable_comments: true

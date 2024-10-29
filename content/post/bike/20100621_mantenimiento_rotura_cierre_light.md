@@ -1,6 +1,7 @@
 ---
 title: "Mi primer fracaso con piezas “light”"
 date: "2010-06-21"
+creation: "2010-06-21"
 description: "Mi primer fracaso con piezas “light”"
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true

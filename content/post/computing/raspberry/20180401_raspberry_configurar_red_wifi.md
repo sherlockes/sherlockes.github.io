@@ -1,6 +1,7 @@
 ---
 title: "Raspberry red y wifi"
 date: "2018-04-02"
+creation: "2018-04-02"
 description: "Configurando en nuestra Raspberry Pi la Ip estáica dentro de nuestra red local y la red wifi"
 thumbnail: "images/raspberry_logo.png"
 disable_comments: true

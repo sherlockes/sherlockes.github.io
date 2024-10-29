@@ -1,6 +1,7 @@
 ---
 title: "Una avería rara… una solución fácil."
 date: "2018-01-07"
+creation: "2018-01-07"
 description: "Hay días que la mayor de las tonterías te pueden amargar una salida..."
 thumbnail: "images/20171231_plastico_cassete_02-1.jpg"
 disable_comments: true

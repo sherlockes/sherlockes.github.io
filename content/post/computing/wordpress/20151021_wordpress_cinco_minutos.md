@@ -1,6 +1,7 @@
 ---
 title: "Instalar WordPress en cinco minutos.  Mito o realidad."
 date: "2015-10-21"
+creation: "2015-10-21"
 description: "Descripcion"
 thumbnail: "images/20151021_wordpress_clock.jpg"
 disable_comments: true

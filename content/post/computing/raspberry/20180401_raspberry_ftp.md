@@ -1,6 +1,7 @@
 ---
 title: "Raspberry Servidor ftp"
 date: "2018-04-06"
+creation: "2018-04-06"
 description: "Instalando un servidor ftp a nuestra Raspberry Pi."
 thumbnail: "images/20180406_raspberry_vsftpd.jpg"
 disable_comments: true

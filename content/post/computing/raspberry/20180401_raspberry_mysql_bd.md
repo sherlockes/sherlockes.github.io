@@ -1,6 +1,7 @@
 ---
 title: "Raspberry mysql y DB"
 date: "2018-04-04"
+creation: "2018-04-04"
 description: "Instalando mysql como motor debase de datos y creando una base de datos para WordPress."
 thumbnail: "images/raspberry_logo.png"
 disable_comments: true

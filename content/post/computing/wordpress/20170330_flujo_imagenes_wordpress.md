@@ -1,6 +1,7 @@
 ---
 title: "Flujo de trabajo con imágenes en WordPress"
 date: "2017-03-30"
+creation: "2017-03-30"
 description: "Mi forma de trabajar con las imágenes en WordPress"
 thumbnail: "images/20170330_faststone_00.jpg"
 disable_comments: true

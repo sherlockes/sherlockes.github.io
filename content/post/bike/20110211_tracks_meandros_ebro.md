@@ -1,6 +1,7 @@
 ---
 title: "La ruta perfecta por los meandros del Ebro"
 date: "2011-02-10"
+creation: "2011-02-10"
 description: "La ruta perfecta por los meandros del Ebro"
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true

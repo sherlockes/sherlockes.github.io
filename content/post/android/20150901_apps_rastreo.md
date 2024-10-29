@@ -1,6 +1,7 @@
 ---
 title: "Aplicaciones para rastrear personas, coches, perros…"
 date: "2015-09-01"
+creation: "2015-09-01"
 description: "En los últimos tiempos están floreciendo todo tipo de aplicaciones para rastrear personas, coches, motos, perros..."
 thumbnail: "images/20150901_emergencia_03.jpg"
 disable_comments: true

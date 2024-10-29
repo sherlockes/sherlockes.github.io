@@ -1,6 +1,7 @@
 ---
 title: "No compres en Ikea"
 date: "2016-04-20"
+creation: "2016-04-20"
 description: "Mi experiencia con la compra de una cocina en Ikea, toda una aventura de la que saco la conclusión de que no vuelvo a comprar nada que no me pueda llevar yo mismo."
 thumbnail: "images/20160420_ikea_car.jpg"
 disable_comments: true

@@ -1,6 +1,7 @@
 ---
 title: "Tirando HDR con compacta en automático"
 date: "2011-05-13"
+creation: "2011-05-13"
 description: "Tirando HDR con compacta en automático"
 thumbnail: "images/20110513_camara.jpg"
 disable_comments: true

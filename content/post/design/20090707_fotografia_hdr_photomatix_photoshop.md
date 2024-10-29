@@ -1,6 +1,7 @@
 ---
 title: "HDR con Photomatix y Photoshop"
 date: "2009-07-07"
+creation: "2009-07-07"
 description: "HDR con Photomatix y Photoshop"
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true

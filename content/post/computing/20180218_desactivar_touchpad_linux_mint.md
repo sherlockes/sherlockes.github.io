@@ -1,6 +1,7 @@
 ---
 title: "Desactivar el TouchPad en Linux Mint"
 date: "2018-02-18"
+creation: "2018-02-18"
 description: "Como desactivar el touchpad en un portatil con Linux Mint"
 thumbnail: "images/20180127_touchpad_0.jpg"
 disable_comments: true

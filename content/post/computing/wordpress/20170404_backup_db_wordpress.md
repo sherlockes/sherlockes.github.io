@@ -1,6 +1,7 @@
 ---
 title: "Copia de seguridad de la base de datos de WordPress"
 date: "2017-04-04"
+creation: "2017-04-04"
 description: "Así es como realizo la copia de seguridad de la base de datos de WordPress hacia Google Drive"
 thumbnail: "images/20170228_db_backup_00.jpg"
 disable_comments: true

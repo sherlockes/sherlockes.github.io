@@ -1,6 +1,7 @@
 ---
 title: "Raspberry Reinicios periódicos"
 date: "2018-04-10"
+creation: "2018-04-10"
 description: "Pare que no se cuelgue la Raspberry no está de más reiniciarla periódicamente."
 thumbnail: "images/20180501_raspberry_reinicio.jpg"
 disable_comments: true

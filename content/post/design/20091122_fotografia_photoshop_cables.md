@@ -1,6 +1,7 @@
 ---
 title: 'Como quitar los cables de las fotos con Photoshop'
 date: '2009-11-22'
+creation: "date: '2009-11-22'"
 description: 'Como quitar los cables de las fotos con Photoshop'
 #thumbnail: 'images/titulo_00.jpg'
 disable_comments: true

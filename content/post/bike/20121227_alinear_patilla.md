@@ -1,6 +1,7 @@
 ---
 title: "Alinear patilla de cambio doblada"
 date: "2012-12-27"
+creation: "2012-12-27"
 description: "Ese gran desconocido del mantinimiento de la bicicleta, la alineación de la patilla del cambio"
 thumbnail: "images/20121227_alinear_patilla_00.jpg"
 disable_comments: true

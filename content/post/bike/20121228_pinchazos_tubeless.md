@@ -1,6 +1,7 @@
 ---
 title: "Pinchazos en tubeless"
 date: "2012-12-27"
+creation: "2012-12-27"
 description: "Pinchazos y más pinchazon en mis ruedas tubeless"
 thumbnail: "images/20121227_pinchazo_tubeless.jpg"
 disable_comments: true

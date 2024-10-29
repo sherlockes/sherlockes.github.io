@@ -1,6 +1,7 @@
 ---
 title: "Error en WordPress (Elegir la base de datos)"
 date: "2011-05-10"
+creation: "2011-05-10"
 description: "Error en WordPress (Elegir la base de datos)"
 thumbnail: "images/20110510_wordpress_phpmyadmin.jpg"
 disable_comments: true

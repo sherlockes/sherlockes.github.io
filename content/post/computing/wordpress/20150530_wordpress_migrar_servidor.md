@@ -1,6 +1,7 @@
 ---
 title: "Migrando WordPress a otro servidor"
 date: "2015-05-30"
+creation: "2015-05-30"
 description: "Mi experiencia para migrar la instalación de WordPress de un servidor a otro con cambio de dominio incluido"
 thumbnail: "images/20150530_migrando_wordpress.jpg"
 disable_comments: true

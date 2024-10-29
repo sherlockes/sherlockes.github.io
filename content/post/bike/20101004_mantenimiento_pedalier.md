@@ -1,6 +1,7 @@
 ---
 title: "Después de varios miles de kilómetros el agua ha podido con el"
 date: "2010-10-04"
+creation: "2010-10-04"
 description: "Después de varios miles de kilómetros el agua ha podido con el"
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true

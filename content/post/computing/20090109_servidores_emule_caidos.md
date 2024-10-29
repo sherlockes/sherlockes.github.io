@@ -1,6 +1,7 @@
 ---
 title: "Los servidores de Emule caídos"
 date: "2009-01-09"
+creation: "2009-01-09"
 description: "Los servidores de Emule caídos"
 #thumbnail: "images/titulo_00.jpg" # 300x200px
 disable_comments: true

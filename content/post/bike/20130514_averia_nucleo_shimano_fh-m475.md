@@ -1,6 +1,7 @@
 ---
 title: "Avería en el núcleo shimano fh-m475"
 date: "2013-05-14"
+creation: "2013-05-14"
 description: "Uhhhh, una de esas averías de volver andando a casa"
 thumbnail: "images/20130307_nucleo_sano.jpg"
 disable_comments: true

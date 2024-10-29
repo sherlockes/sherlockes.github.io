@@ -1,6 +1,7 @@
 ---
 title: "Lo barato no siempre es suficiente"
 date: "2016-06-04"
+creation: "2016-06-04"
 description: "Hay veces que por intentar ahorrar un poco de dinero terminas gastando más de lo previsto.  Esta es una de esas ocasiones"
 thumbnail: "/images/20160604_gopro_door_banggood_02.jpg"
 disable_comments: true

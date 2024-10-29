@@ -1,6 +1,7 @@
 ---
 title: "Mis copias de seguridad"
 date: "2019-06-04"
+creation: "2019-06-04"
 description: "Cada uno guarda su valiosa información donde quiere, este sólo es mi modo de hacerlo"
 thumbnail: "images/20190603_mis_backups_00.jpg"
 disable_comments: true

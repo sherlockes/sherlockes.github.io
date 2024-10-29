@@ -1,6 +1,7 @@
 ---
 title: "Geoposicionando post en WordPress"
 date: "2012-12-04"
+creation: "2012-12-04"
 description: "Ubicando los post en el mapa dentro de WordPress"
 thumbnail: "images/20121204_osm_02.jpg"
 disable_comments: true

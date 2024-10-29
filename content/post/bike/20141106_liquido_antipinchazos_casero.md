@@ -1,6 +1,7 @@
 ---
 title: "Liquido anti-pinchazos casero. Pros y contras"
 date: "2014-11-06"
+creation: "2014-11-06"
 description: "Hace un tiempo que utilizo para el tubeless de mis bicicletas de montaña un líquido antipinchazos casero, aquí dejo mis experiencias..."
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true

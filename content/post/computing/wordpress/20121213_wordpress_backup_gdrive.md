@@ -1,6 +1,7 @@
 ---
 title: "Backup de WordPress en Google Drive"
 date: "2012-12-13"
+creation: "2012-12-13"
 description: "En algún sitio hay que guardar la copia de seguridad, Google Drive es barato y accesible"
 thumbnail: "images/20121212_backup_01.jpg"
 disable_comments: true

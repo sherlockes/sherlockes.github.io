@@ -1,6 +1,7 @@
 ---
 title: "Cambiar el casquillo interior de un Fox RP2"
 date: "2011-08-29"
+creation: "2011-08-29"
 description: "Cambiar el casquillo interior de un Fox RP2"
 thumbnail: "images/20110829_casquillo_fox_rp2.jpg"
 disable_comments: true

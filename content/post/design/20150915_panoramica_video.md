@@ -1,6 +1,7 @@
 ---
 title: "Crear panorámica a partir de un vídeo"
 date: "2015-09-15"
+creation: "2015-09-15"
 description: "Aquí muestro el método que empleo para crear fotografías panorámicas a partir de una toma de vídeo de una forma sencilla y gratuita."
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true

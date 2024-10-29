@@ -1,6 +1,7 @@
 ---
 title: "Reducir puntos de un track gpx"
 date: "2009-04-01"
+creation: "2009-04-01"
 description: "Reducir puntos de un track gpx"
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true

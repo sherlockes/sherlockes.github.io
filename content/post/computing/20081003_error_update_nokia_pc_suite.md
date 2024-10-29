@@ -1,6 +1,7 @@
 ---
 title: "Error al actualizar Nokia Pc Suite"
 date: "2008-10-03"
+creation: "2008-10-03"
 description: "Error al actualizar Nokia Pc Suite"
 #thumbnail: "images/titulo_00.jpg" # 300x200px
 disable_comments: true

@@ -1,6 +1,7 @@
 ---
 title: "Que hacer sin un móvil de última generación"
 date: "2008-01-09"
+creation: "2008-01-09"
 description: "Que hacer sin un móvil de última generación"
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true

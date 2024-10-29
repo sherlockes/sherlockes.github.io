@@ -1,6 +1,7 @@
 ---
 title: "2011 a pedales y sobre ruedas"
 date: "2012-01-06"
+creation: "2012-01-06"
 description: "2011 a pedales y sobre ruedas"
 thumbnail: "images/20120107_pedales_2011.jpg"
 disable_comments: true

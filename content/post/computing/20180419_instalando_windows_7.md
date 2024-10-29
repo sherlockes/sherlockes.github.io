@@ -1,6 +1,7 @@
 ---
 title: "Instalando Windows 7"
 date: "2018-04-19"
+creation: "2018-04-19"
 description: "Atrás han quedado los tiempos de la piratería, colaboremos todos con Microsoft."
 thumbnail: "images/20180419_win7.jpg"
 disable_comments: true # Optional, disable Disqus comments if true

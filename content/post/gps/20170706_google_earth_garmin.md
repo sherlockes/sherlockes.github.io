@@ -1,6 +1,7 @@
 ---
 title: "De Google Earth a mapa para Garmin en 5 minutos"
 date: "2017-07-06"
+creation: "2017-07-06"
 description: "Un método para pasar las sendas, rutas o caminos que tengas dibujadas en Google Earth a un gps Garmin"
 thumbnail: "images/20170706_google_to_garmin.jpg"
 disable_comments: true

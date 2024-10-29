@@ -1,6 +1,7 @@
 ---
 title: "Descarga fallida. No working transports found"
 date: "2017-03-13"
+creation: "2017-03-13"
 description: "Fallo al actualizar temas o plugins en WordPress instalado sobre Synology"
 thumbnail: "images/20170215_descarga_fallida_00.jpg"
 disable_comments: true

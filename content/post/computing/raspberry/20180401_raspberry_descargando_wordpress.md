@@ -1,6 +1,7 @@
 ---
 title: "Raspberry Descargando Wordpress"
 date: "2018-04-05"
+creation: "2018-04-05"
 description: "Descargando la última versión de WordPress a nuestra Raspberry Pi."
 thumbnail: "images/raspberry_logo.png"
 disable_comments: true

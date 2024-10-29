@@ -1,6 +1,7 @@
 ---
 title: "WordPress K.O. Fatal error. Allowed memory size"
 date: "2013-05-14"
+creation: "2013-05-14"
 description: "Otra forma más de dejar WordPress fuera de servicio..."
 thumbnail: "images/20130515_wordpress_php.jpg"
 disable_comments: true

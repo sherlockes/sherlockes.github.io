@@ -1,6 +1,7 @@
 ---
 title: "Instalación manual de WordPress en Synology"
 date: "2017-02-28"
+creation: "2017-02-28"
 description: "Pasando de la instalación automática de WordPress y realizándola a mano en Synology"
 thumbnail: "images/20170228_wordpress_manual_00.jpg"
 disable_comments: true

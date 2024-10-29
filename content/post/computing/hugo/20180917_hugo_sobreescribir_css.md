@@ -1,6 +1,7 @@
 ---
 title: "Sobreescribir el css de un tema en Hugo"
 date: "2018-09-17"
+creation: "2018-09-17"
 description: "La batalla por corregir una fuga de agua en una cisterna Roca de doble pulsador."
 thumbnail: "images/20180917_hugo_sobreescribir_css_00.jpg"
 disable_comments: true

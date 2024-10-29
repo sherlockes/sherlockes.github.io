@@ -1,6 +1,7 @@
 ---
 title: "Cuanto dinero gastarse en una Btt"
 date: "2009-10-30"
+creation: "2009-10-30"
 description: "Cuanto dinero gastarse en una Btt"
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true

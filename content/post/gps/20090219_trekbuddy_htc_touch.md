@@ -1,6 +1,7 @@
 ---
 title: "Trekbuddy 0.9.83 en un HTC Touch Diamond"
 date: "2009-02-19"
+creation: "2009-02-19"
 description: "Trekbuddy 0.9.83 en un HTC Touch Diamond"
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true

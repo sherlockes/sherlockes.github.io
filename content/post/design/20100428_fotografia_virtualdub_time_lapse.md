@@ -1,6 +1,7 @@
 ---
 title: "Time-Lapse / Stop-Motion con VirtualDub"
 date: "2010-04-28"
+creation: "2010-04-28"
 description: "Time-Lapse / Stop-Motion con VirtualDub"
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true

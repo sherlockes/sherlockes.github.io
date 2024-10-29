@@ -1,6 +1,7 @@
 ---
 title: "En que apps Android me he gastado dinero"
 date: "2016-03-15"
+creation: "2016-03-15"
 description: "No merece la pena piratear aplicaciones Android con el precio que llevan, estas son las que hasta ahora yo he comprado y por que"
 thumbnail: "images/20160315_logos_money.jpg"
 disable_comments: true

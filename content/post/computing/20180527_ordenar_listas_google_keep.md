@@ -1,6 +1,7 @@
 ---
 title: "Ordenar listas en Google Keep"
 date: "2018-05-27"
+creation: "2018-05-27"
 description: "Una solución sencilla al problema de ordenar alfabeticamente las listas de Google Keep"
 thumbnail: "images/20180523_ordenar_lista_google_keep.jpg"
 disable_comments: true

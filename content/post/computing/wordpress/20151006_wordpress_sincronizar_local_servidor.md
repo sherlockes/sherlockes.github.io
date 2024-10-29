@@ -1,6 +1,7 @@
 ---
 title: "Sincronizar WordPress en local y servidor"
 date: "2015-10-06"
+creation: "2015-10-06"
 description: "Está muy bien tener una instalación de WordPress en un servidor local de pruebas que puedas sincronizar con el servidor de producción cuando todo lo tengas listo, aquí te muestro como hacerlo."
 thumbnail: "images/20151006_wordpress_db_sync.jpg"
 disable_comments: true

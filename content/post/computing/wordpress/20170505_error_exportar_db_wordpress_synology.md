@@ -1,6 +1,7 @@
 ---
 title: "Error al exportar base de datos de WordPress en Synology webStation"
 date: "2017-05-05"
+creation: "2017-05-05"
 description: "Una prueba."
 thumbnail: "images/20170505_error_export_database_00.jpg"
 disable_comments: true

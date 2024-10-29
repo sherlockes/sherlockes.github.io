@@ -1,6 +1,7 @@
 ---
 title: "De Garmin a Google drive"
 date: "2018-03-25"
+creation: "2018-03-25"
 description: "Como me lo monto para pasar las rutas y generar estadísticas del Garmin hasta Google Drive."
 #thumbnail: "images/20180606_junta_roca_ampollas_00.jpg"
 disable_comments: true # Optional, disable Disqus comments if true

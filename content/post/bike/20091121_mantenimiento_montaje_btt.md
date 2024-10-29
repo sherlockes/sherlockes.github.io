@@ -1,6 +1,7 @@
 ---
 title: "Como montar tu Btt, trucos y experiencias"
 date: "2009-11-21"
+creation: "2009-11-21"
 description: "Como montar tu Btt, trucos y experiencias"
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true

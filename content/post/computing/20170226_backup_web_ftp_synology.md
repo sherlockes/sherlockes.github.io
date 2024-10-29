@@ -1,6 +1,7 @@
 ---
 title: "Backup de la web al Nas mediante ftp y ssh en Synology"
 date: "2017-02-26"
+creation: "2017-02-26"
 description: "Backup de la carpeta wp-content al nas mediante ftp"
 thumbnail: "images/20170226_backup_ftp_01.jpg"
 disable_comments: true

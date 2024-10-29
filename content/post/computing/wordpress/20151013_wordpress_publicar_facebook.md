@@ -1,6 +1,7 @@
 ---
 title: "Publicar automáticamente en Facebook al hacerlo en WordPress"
 date: "2015-10-13"
+creation: "2015-10-13"
 description: "De las muchas formas que hay para publicar en Facebook las entradas de Wordpress, aquí pongo la que yo utilizo."
 thumbnail: "images/20151013_wordpress_facebook.jpg"
 disable_comments: true

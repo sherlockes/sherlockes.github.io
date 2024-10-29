@@ -1,6 +1,7 @@
 ---
 title: "Mantenimiento Mavic Crossride delantera"
 date: "2010-05-02"
+creation: "2010-05-02"
 description: "Mantenimiento Mavic Crossride delantera"
 thumbnail: "images/titulo_00.jpg"
 disable_comments: true

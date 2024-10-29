@@ -1,6 +1,7 @@
 ---
 title: "Raspberry Instalando Dokuwiki"
 date: "2018-04-08"
+creation: "2018-04-08"
 description: "La forma más sencilla de crear unaestra wiki en Raspberry Pi."
 thumbnail: "images/20180408_raspberry_dokuwiki.jpg"
 disable_comments: true

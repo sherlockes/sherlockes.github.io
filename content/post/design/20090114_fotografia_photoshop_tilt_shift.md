@@ -1,6 +1,7 @@
 ---
 title: "Tilt-Shift con Photoshop"
 date: "2009-01-13"
+creation: "2009-01-13"
 description: "Tilt-Shift con Photoshop"
 #thumbnail: "images/titulo_00.jpg" # 300x200px
 disable_comments: true

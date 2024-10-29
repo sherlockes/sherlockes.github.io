@@ -1,6 +1,7 @@
 ---
 title: "Reparar pinchazos tubeless en el monte"
 date: "2014-09-07"
+creation: "2014-09-07"
 description: "Hacerlo en el taller es sencillo, pero en el monte... es otro cantar, aquí dejo mi método."
 thumbnail: "images/20140907_pinchazo_tubeless_00.jpg"
 disable_comments: true

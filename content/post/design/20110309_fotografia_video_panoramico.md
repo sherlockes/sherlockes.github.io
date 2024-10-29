@@ -1,6 +1,7 @@
 ---
 title: "Creando un vídeo panorámico a partir de una fotografía"
 date: "2011-03-08"
+creation: "2011-03-08"
 description: "Creando un vídeo panorámico a partir de una fotografía"
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true

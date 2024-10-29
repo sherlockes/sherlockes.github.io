@@ -1,6 +1,7 @@
 ---
 title: "Abrir archivos RAW con Gimp Portable"
 date: "2011-10-09"
+creation: "2011-10-09"
 description: "Abrir archivos RAW con Gimp Portable"
 thumbnail: "images/20111009_gimp.jpg"
 disable_comments: true

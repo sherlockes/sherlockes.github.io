@@ -1,6 +1,7 @@
 ---
 title: "Cuando una rueda pierde aire y no está pinchada…"
 date: "2011-07-19"
+creation: "2011-07-19"
 description: "Cuando una rueda pierde aire y no está pinchada…"
 thumbnail: "images/20110719_nucleo_presta.jpg"
 disable_comments: true

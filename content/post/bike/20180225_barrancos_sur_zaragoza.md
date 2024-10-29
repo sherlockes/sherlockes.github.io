@@ -1,6 +1,7 @@
 ---
 title: "Barrancos del sur de Zaragoza"
 date: "2018-02-25"
+creation: "2018-02-25"
 description: "Un mapa con los barrancos para bajar en bicicleta de montaña por el sur de la capital aragonesa"
 thumbnail: "images/20180202_barrancos_zgz_01.jpg"
 disable_comments: true

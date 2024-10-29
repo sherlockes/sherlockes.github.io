@@ -1,6 +1,7 @@
 ---
 title: "Sincronizar contactos entre HTC y Gmail"
 date: "2009-02-07"
+creation: "2009-02-07"
 description: "Sincronizar contactos entre HTC y Gmail"
 #thumbnail: "images/titulo_00.jpg" # 300x200px
 disable_comments: true

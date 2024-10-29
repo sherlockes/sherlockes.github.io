@@ -1,6 +1,7 @@
 ---
 title: "Excesivo gasto de batería de los Servicios de Google Play"
 date: "2016-03-15"
+creation: "2016-03-15"
 description: "Las cosas de Android, tiras una moneda al aire, unas veces triunfas y otras te quedas con un bonito pisapapeles.  Hoy he triunfado"
 thumbnail: "images/20160315_slimsaber.jpg"
 disable_comments: true

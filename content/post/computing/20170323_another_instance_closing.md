@@ -1,6 +1,7 @@
 ---
 title: "Another instance is currently closing… Portable app error"
 date: "2017-03-23"
+creation: "2017-03-23"
 description: "Un dolor de cabeza con algunas aplicaciones portables"
 thumbnail: "images/20170322_another_instance_00.jpg"
 disable_comments: true

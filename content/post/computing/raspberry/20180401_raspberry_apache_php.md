@@ -1,6 +1,7 @@
 ---
 title: "Raspberry apache y php"
 date: "2018-04-03"
+creation: "2018-04-03"
 description: "Instalando en la Raspberry los servicios Apache y Php"
 thumbnail: "images/raspberry_logo.png"
 disable_comments: true

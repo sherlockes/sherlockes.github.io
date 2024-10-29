@@ -1,6 +1,7 @@
 ---
 title: "Marcos de imágenes en WordPress"
 date: "2015-07-29"
+creation: "2015-07-29"
 description: "Como tratar los marcos de las imágenes en WordPress, un método sencillo para ponerlos o quitarlos"
 thumbnail: "images/20150729_wordpress_frame.jpg.jpg"
 disable_comments: true

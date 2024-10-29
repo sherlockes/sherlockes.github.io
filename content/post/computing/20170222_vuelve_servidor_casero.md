@@ -1,6 +1,7 @@
 ---
 title: "Se cierra el círculo, vuelve el servidor casero."
 date: "2017-02-22"
+creation: "2017-02-22"
 description: "Después de varios años, vuelvo a intentarlo con un servidor casero"
 thumbnail: "images/logo.jpg"
 disable_comments: true

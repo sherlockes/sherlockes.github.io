@@ -1,6 +1,7 @@
 ---
 title: "La joya de la corona"
 date: "2007-12-30"
+creation: "2007-12-30"
 description: "La joya de la corona"
 #thumbnail: "images/titulo_00.jpg" # 300x200px
 disable_comments: true

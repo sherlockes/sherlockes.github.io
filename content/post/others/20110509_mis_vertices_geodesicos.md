@@ -1,6 +1,7 @@
 ---
 title: "Mis vértices geodésicos"
 date: "2011-05-09"
+creation: "2011-05-09"
 update: "2020-06-09"
 description: "Un resumen de lo que está siendo mi aprendizaje en el mundo de las Raspberry Pi"
 thumbnail: "images/vertice.jpg"

@@ -1,6 +1,7 @@
 ---
 title: "Fixie o Single Speed"
 date: "2016-06-29"
+creation: "2016-06-29"
 description: "Mi experiencia circulando en Fixie y Single Speed por la ciudad"
 thumbnail: "images/20160229_flip_flop_hub.jpg"
 disable_comments: true

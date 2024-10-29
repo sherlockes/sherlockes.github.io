@@ -1,6 +1,7 @@
 ---
 title: "Herramienta para la BTT"
 date: "2008-11-22"
+creation: "2008-11-22"
 description: "Herramienta para la BTT"
 #thumbnail: "images/titulo_00.jpg" # 300x200px
 disable_comments: true

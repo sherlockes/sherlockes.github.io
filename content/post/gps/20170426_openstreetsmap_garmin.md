@@ -1,6 +1,7 @@
 ---
 title: "Openstreetmap en Gps Garmin"
 date: "2017-04-26"
+creation: "2017-04-26"
 description: "Un método para meter los mapas de Open Street Maps en un gps Garmin"
 thumbnail: "images/20170426_openstreetmaps_garmin_00.jpg"
 disable_comments: true

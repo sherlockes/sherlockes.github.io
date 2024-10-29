@@ -1,6 +1,7 @@
 ---
 title: "Avería de las roldanas del cambio"
 date: "2015-11-03"
+creation: "2015-11-03"
 description: "Si te encuentras con que los enlaces"
 thumbnail: "images/20151103_roldana_07.jpg"
 disable_comments: true

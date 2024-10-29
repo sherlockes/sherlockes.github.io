@@ -1,6 +1,7 @@
 ---
 title: "Perímetro CENAD del BOE a gpx"
 date: "2015-04-30"
+creation: "2015-04-30"
 description: "Que manera de perder la mañana para convertir la información del BOE en algo legible por Google Earth para delimitar el campo de maniobras de San Gregorio"
 thumbnail: "images/20150427_cenad_00.jpg"
 disable_comments: true

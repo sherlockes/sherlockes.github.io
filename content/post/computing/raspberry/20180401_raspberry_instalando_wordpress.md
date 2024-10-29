@@ -1,6 +1,7 @@
 ---
 title: "Raspberry Instalando WordPress"
 date: "2018-04-07"
+creation: "2018-04-07"
 description: "Ya tenemos todo listo para instalar WordPress en nuestra Raspberry Pi."
 thumbnail: "images/20180407_raspberry_wordpress.jpg"
 disable_comments: true

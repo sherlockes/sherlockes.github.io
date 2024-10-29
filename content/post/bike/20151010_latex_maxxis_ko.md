@@ -1,6 +1,7 @@
 ---
 title: "El látex y las maxxis se llevan mal"
 date: "2015-10-10"
+creation: "2015-10-10"
 description: "Una crónica de los problemas que me ha traído usar latex con cubiertas maxxis"
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true

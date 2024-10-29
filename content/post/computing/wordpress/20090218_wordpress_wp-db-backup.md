@@ -1,6 +1,7 @@
 ---
 title: "Problema con WP-DB-Backup"
 date: "2009-02-18"
+creation: "2009-02-18"
 description: "Problema con WP-DB-Backup"
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true

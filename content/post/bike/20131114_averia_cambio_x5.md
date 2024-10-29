@@ -1,6 +1,7 @@
 ---
 title: "Avería en cambio Sram x5"
 date: "2013-11-14"
+creation: "2013-11-14"
 description: "Avería en el cambio Sram X5 de mi Giant Reign"
 thumbnail: "images/20131009_averia_sx5_00.jpg"
 disable_comments: true

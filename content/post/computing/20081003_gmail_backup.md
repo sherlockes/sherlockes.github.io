@@ -1,6 +1,7 @@
 ---
 title: "Copia de seguridad de Gmail"
 date: "2008-10-03"
+creation: "2008-10-03"
 description: "Copia de seguridad de Gmail"
 #thumbnail: "images/titulo_00.jpg" # 300x200px
 disable_comments: true

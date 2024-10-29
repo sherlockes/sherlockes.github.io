@@ -1,6 +1,7 @@
 ---
 title: "La obsolescencia prematura de unos puños"
 date: "2016-07-13"
+creation: "2016-07-13"
 description: "Hay componentes que se degradan sin apenas usarlos como es el caso de estos puños para el manillar de la bicicleta."
 thumbnail: "images/20160713_ritchey_01.jpg"
 disable_comments: true

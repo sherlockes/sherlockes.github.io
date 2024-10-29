@@ -1,6 +1,7 @@
 ---
 title: "Insertar título a un vídeo con VirtualDub"
 date: "2011-03-24"
+creation: "2011-03-24"
 description: "Insertar título a un vídeo con VirtualDub"
 #thumbnail: "images/titulo_00.jpg"
 disable_comments: true

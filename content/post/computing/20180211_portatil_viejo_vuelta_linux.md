@@ -1,6 +1,7 @@
 ---
 title: "Portatil viejo, nueva vida.  Mi vuelta a Linux"
 date: "2018-02-11"
+creation: "2018-02-11"
 description: "Después de muchos años vuelvo a linux de la mano de un viejo portatil..."
 thumbnail: ""
 disable_comments: true
