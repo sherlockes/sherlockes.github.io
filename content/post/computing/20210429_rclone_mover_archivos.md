@@ -13,7 +13,7 @@ categories:
 tags:
 - "bash"
 - "rclone"
-draft: true
+draft: false
 weight: 5
 ---
 Cuando se trata de mover muchos o grandes archivos desde el dispositivo local a la nube hay varias formas de hacerlo, de las que he probado, esta es la más cómoda y práctica.
