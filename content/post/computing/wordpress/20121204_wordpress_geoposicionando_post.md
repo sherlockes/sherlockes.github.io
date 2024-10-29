@@ -12,7 +12,7 @@ categories:
   - "WordPress"
 tags:
   - "osm"
-draft: true
+draft: false
 weight: 5
 ---
 Esta es una demostración de que muchas veces la solución a un problema es mucho más sencilla de lo que nos parece, simplemente hay que invertir un poco de tiempo en [buscar][11] información y tener paciencia en la consecución de los objetivos.
