@@ -12,7 +12,7 @@ categories:
 - "computing"
 tags:
 - "emacs"
-draft: true
+draft: false
 weight: 5
 ---
 En [Emacs] es sencillo repetir las cosas pero muchas de ellas la primera vez son difíciles de llevar a cabo. Aquí dejo el método para desinstalar tanto paquetes como las dependecias de los mismos.
