@@ -11,7 +11,7 @@ mathjax: false
 categories:
   - "Hugo"
   - "Raspberry"
-draft: true
+draft: false
 weight: 5
 ---
 Ya hace unos días que le he cogido la medida al uso de Hugo como plataforma de1 creación de contenido para mi web y ahora, con cierta perspectiva voy a intentar explicar los tres conceptos fundamentales sobre Hugo a modo de introducción, que es, que hace y como funciona.
