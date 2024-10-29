@@ -12,7 +12,7 @@ categories:
   - "hugo"
 tags:
   - "css"
-draft: true
+draft: false
 weight: 5
 ---
 Uno de los problemas con los que me he encontrado recientemente en la edición de la web  es la modificación del css para reducir un poco el tamaño de la imagen de cabecera dentro de cada post (Thumbnail) para el tema [Mainroad][11]
