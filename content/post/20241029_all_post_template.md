@@ -1,5 +1,5 @@
 ---
-title: "Mostranso todos mis artículos"
+title: "Mostrando todos mis artículos"
 date: "2024-10-29"
 creation: "2024-10-29"
 description: "Como he creado una plantilla en Hugo para mostrar todos los artículos del Blog"
