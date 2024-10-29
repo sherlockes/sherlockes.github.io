@@ -12,7 +12,7 @@ categories:
   - "Varios"
 tags:
   - "Bricolaje"
-draft: true
+draft: false
 weight: 5
 ---
 Esta es la crónica de mis vivencias en Hugo desde el primer día trabajando sobre una instalación de Linux Mint en un antiguo portatil.
