@@ -21,8 +21,22 @@
       {{- range where .Site.RegularPages.ByDate.Reverse "Section" "post" }}
       {{ if and (ne .Title "") .Date }} <!-- Verifica Title y que haya Date -->
       <li>
-        <!-- Mostrar fecha y título -->
-        {{ .Date.Format "20060102" }}{{ if not .Params.creation }}*{{ end }} - <a href="{{ .Permalink }}">{{ .Title }}</a>
+
+	<!-- Mostrar fecha y título -->
+	{{ if and .Params.creation .Params.date }}
+	  {{ $creationDate := .Params.creation }}
+	  {{ $modificationDate := .Date }}
+
+	  {{ $showAsterisk := not (and (ne $creationDate "") $creationDate) }} <!-- Mostrar asterisco si no hay creation -->
+	  {{ $edited := false }} <!-- Inicializar como falso -->
+
+	  {{ if and (ne $creationDate "") }}
+	    {{ $creationDate := time $creationDate }} <!-- Convierte creation a fecha -->
+	    {{ $edited = gt (sub $modificationDate.Unix $creationDate.Unix) (mul 12 2592000) }} <!-- Verifica si han pasado más de 6 meses -->
+	  {{ end }}
+
+	  {{ .Date.Format "20060102" }}{{ if $showAsterisk }}*{{ end }}{{ if $edited }} (Ed){{ end }} - <a href="{{ .Permalink }}">{{ .Title }}</a>
+	{{ end }}
 
         <!-- Mostrar categorías -->
         {{ with .Params.categories }}
