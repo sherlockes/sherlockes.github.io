@@ -1,4 +1,4 @@
 ---
 title: "Lista de Artículos"
-layout: "lista"
+layout: "all_post_list"
 ---
