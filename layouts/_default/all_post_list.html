@@ -27,10 +27,9 @@
 	{{ $modificationDate := .Date }}
 	{{ $edited := false }}
 
-	{{ if and (ne $creationDate "") }}
-	  {{ $creationDate := time $creationDate }}
-	  {{ $edited = gt (sub $modificationDate.Unix $creationDate.Unix) (mul 12 2592000) }}
-	{{ end }}
+	{{ $creationDate := time $creationDate }}
+	{{ $edited = gt (sub $modificationDate.Unix $creationDate.Unix) (mul 12 2592000) }}
+	
 
 	{{ .Date.Format "20060102" }}{{ if $edited }} (Ed){{ end }} -
 	<a href="{{ .Permalink }}">{{ .Title }}</a>
