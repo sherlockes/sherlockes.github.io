@@ -25,11 +25,11 @@
 	<!-- Mostrar fecha y título -->
 	{{ $creationDate := .Params.creation }}
 	{{ $modificationDate := .Date }}
-	{{ $edited := false }} <!-- Inicializar como falso -->
+	{{ $edited := false }}
 
 	{{ if and (ne $creationDate "") }}
-	  {{ $creationDate := time $creationDate }} <!-- Convierte creation a fecha -->
-	  {{ $edited = gt (sub $modificationDate.Unix $creationDate.Unix) (mul 12 2592000) }} <!-- Verifica si han pasado más de 6 meses -->
+	  {{ $creationDate := time $creationDate }}
+	  {{ $edited = gt (sub $modificationDate.Unix $creationDate.Unix) (mul 12 2592000) }}
 	{{ end }}
 
 	{{ .Date.Format "20060102" }}{{ if $edited }} (Ed){{ end }} -
