@@ -26,6 +26,7 @@ Busco crear una página en mi web en la que se listen todos los artículos que h
  - Aparezca la fecha de modificación de cada artículo
  - Aparezcan las categorías y etiquetas de cada artículo
  - Mantenga el formato del resto de páginas del site
+ - Mostrar si el artículo se ha editado al menos un año después
  
 La idea es sencilla, hay que crear una plantilla que me liste todos los artículos y a continuación crear una página que haga uso de dicha plantilla. Para ello
  - Accedemos a la carpeta "/layouts/_default/"
@@ -40,7 +41,7 @@ layout: "all_post_list"
  ```
 Y ya está, ahora sólo queda crear la plantilla que nos liste los artículos. En esta ocasión he decidido tirar por la calle de en medio y tras una larga [conversación] con [chargpt] he conseguido el siguiente resultado.
 
-
+{{< texto_remoto "https://raw.githubusercontent.com/sherlockes/sherlockes.github.io/refs/heads/main/layouts/_default/all_post_list.html" >}}
 
 ![image-01]
 
