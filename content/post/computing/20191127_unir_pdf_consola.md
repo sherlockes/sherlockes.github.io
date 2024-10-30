@@ -1,7 +1,7 @@
 ---
 title: "Unir o separar en varios pdf en linux desde la línea de comandos"
 date: "2022-06-16"
-creation: “2019-11-27”
+creation: "2019-11-27"
 description: "Uno de los muchos métodos para unir en uno varios archivos *.pdf y viceversa, en línea de comandos."
 thumbnail: "images/20191127_unir_pdf_00.jpg"
 disable_comments: true
