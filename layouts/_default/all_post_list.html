@@ -27,7 +27,6 @@
 	  {{ $creationDate := .Params.creation }}
 	  {{ $modificationDate := .Date }}
 
-	  {{ $showAsterisk := not (and (ne $creationDate "") $creationDate) }} <!-- Mostrar asterisco si no hay creation -->
 	  {{ $edited := false }} <!-- Inicializar como falso -->
 
 	  {{ if and (ne $creationDate "") }}
@@ -35,7 +34,7 @@
 	    {{ $edited = gt (sub $modificationDate.Unix $creationDate.Unix) (mul 12 2592000) }} <!-- Verifica si han pasado más de 6 meses -->
 	  {{ end }}
 
-	  {{ .Date.Format "20060102" }}{{ if $showAsterisk }}*{{ end }}{{ if $edited }} (Ed){{ end }} - <a href="{{ .Permalink }}">{{ .Title }}</a>
+	  {{ .Date.Format "20060102" }}{{ if $edited }} (Ed){{ end }} - <a href="{{ .Permalink }}">{{ .Title }}</a>
 	{{ end }}
 
         <!-- Mostrar categorías -->
