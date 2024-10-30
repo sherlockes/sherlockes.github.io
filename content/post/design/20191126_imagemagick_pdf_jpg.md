@@ -1,7 +1,7 @@
 ---
 title: "Extrayendo la portada de un pdf"
 date: "2019-11-29"
-creation: “2019-11-13”
+creation: "2019-11-13"
 description: "Aquí el método que esta vez he utilizado para extraer la portada de varios archivos en pdf desde la consola de comandos gracias a Imagemagick y Poppler."
 thumbnail: "images/20181210_redimensionar_linea_comando_00.jpg"
 disable_comments: true
