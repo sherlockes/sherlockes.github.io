@@ -1,7 +1,7 @@
 ---
 title: "Radares de tráfico en Android"
 date: "2020-01-07"
-creation: “2019-11-13”
+creation: "2019-11-13"
 description: "Usando Tasker para avisar de radares de tráfico cuando vas en el coche."
 thumbnail: "images/20191113_radares_android_00.jpg"
 toc: false
