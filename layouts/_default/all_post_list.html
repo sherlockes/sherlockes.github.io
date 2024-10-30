@@ -24,13 +24,10 @@
 
 	<!-- Mostrar fecha y título -->
 	{{ $creationDate := .Params.creation }}
-	{{ $modificationDate := .Date }}
-	{{ $edited := false }}
-
 	{{ $creationDate := time $creationDate }}
+	{{ $modificationDate := .Date }}
 	{{ $edited = gt (sub $modificationDate.Unix $creationDate.Unix) (mul 12 2592000) }}
 	
-
 	{{ .Date.Format "20060102" }}{{ if $edited }} (Ed){{ end }} -
 	<a href="{{ .Permalink }}">{{ .Title }}</a>
 
