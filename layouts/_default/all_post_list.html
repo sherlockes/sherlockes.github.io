@@ -23,19 +23,17 @@
       <li>
 
 	<!-- Mostrar fecha y título -->
-	{{ if and .Params.creation .Params.date }}
-	  {{ $creationDate := .Params.creation }}
-	  {{ $modificationDate := .Date }}
-	  {{ $edited := false }} <!-- Inicializar como falso -->
+	{{ $creationDate := .Params.creation }}
+	{{ $modificationDate := .Date }}
+	{{ $edited := false }} <!-- Inicializar como falso -->
 
-	  {{ if and (ne $creationDate "") }}
-	    {{ $creationDate := time $creationDate }} <!-- Convierte creation a fecha -->
-	    {{ $edited = gt (sub $modificationDate.Unix $creationDate.Unix) (mul 12 2592000) }} <!-- Verifica si han pasado más de 6 meses -->
-	  {{ end }}
-
-	  {{ .Date.Format "20060102" }}{{ if $edited }} (Ed){{ end }} -
-	  <a href="{{ .Permalink }}">{{ .Title }}</a>
+	{{ if and (ne $creationDate "") }}
+	  {{ $creationDate := time $creationDate }} <!-- Convierte creation a fecha -->
+	  {{ $edited = gt (sub $modificationDate.Unix $creationDate.Unix) (mul 12 2592000) }} <!-- Verifica si han pasado más de 6 meses -->
 	{{ end }}
+
+	{{ .Date.Format "20060102" }}{{ if $edited }} (Ed){{ end }} -
+	<a href="{{ .Permalink }}">{{ .Title }}</a>
 
         <!-- Mostrar categorías -->
         {{ with .Params.categories }}
