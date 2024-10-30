@@ -1,7 +1,7 @@
 ---
 title: "Raspberry configurando rclone sin entorno gráfico"
 date: "2019-07-11"
-creation: "2018-19-10"
+creation: "2018-10-19"
 description: "Como instalar y configurar una nube en rclone dentro de nuestra Raspberry"
 thumbnail: "images/20180910_raspberry_rclone_00.jpg"
 disable_comments: true
