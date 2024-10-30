@@ -19,7 +19,7 @@
 
     <ul>
       {{- range where .Site.RegularPages.ByDate.Reverse "Section" "post" }}
-      {{ if and (ne .Title "") .Date }} <!-- Verifica Title y que haya Date -->
+      {{ if and (ne .Title "") .Date .Params.creation }} <!-- Verifica Title y que haya Date -->
       <li>
 
 	<!-- Mostrar fecha y título -->
