@@ -16,13 +16,13 @@ weight: 5
 No va a ser este otro sitio en el que te explique la necesidad de las copias de seguridad para nuestros contenidos digitales, solo voy a mostrar la forma como yo las hago y las gestiono en una combinación entre mi NAS y algunas de las nubes públicas.
 <!--more-->
 
-# Las fotografías
+# Las fotografías personales
 Sin duda alguna, lo más difícil en el archivo de fotografías hay en día es separar al polvo de la paja. Utilizo Google Photos como eje central de la gestión de las fotografías y es necesario invertir un poco de tiempo todos los días en eliminar todas aquellas que no me interesa guardar ya que en una misma cuenta de Google terminan las fotografías de toda la familia.
 
 Un tiempo atrás, resultaba muy sencillo configurar en la cuenta de Google que la galería de fotos se mostrara como una carpeta más dentro del contenido mostrado en Google Drive de la que hacer una copia de seguridad. Ahora, Google lo ha puesto un poco más complicado. Por otro lado Amazon tampoco está por a labor de facilitar las cosas.
 
-En el artículo sobre como [sincronizar Google Photos desde la Raspberry] explico detalladamente el proceso que tengo implimentado para llevar la galería de Google Photos al NAS.Además, todos los meses, aunque de forma manual, subo el mes anterior a la galería de fotos de Amazon siguiendo estos pasos:
- - Copio del NAS a una carpeta del pc el contenido del mes anterior
+En el artículo sobre como [sincronizar Google Photos desde la Raspberry] explico detalladamente el proceso que tengo implementado para llevar la galería de Google Photos al NAS.Además, todos los meses, aunque de forma manual, subo el mes anterior a la galería de fotos de Amazon siguiendo estos pasos:
+ - Copio del NAS a una carpeta del PC el contenido del mes anterior
  - Reviso las fotos y elimino los vídeos
  - Ejecuto [exif_create] en la carpeta
  - Abro [Amazon Photos] en el navegador
