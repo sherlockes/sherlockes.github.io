@@ -15,9 +15,9 @@ tags:
 draft: false
 weight: 5
 ---
-Como he conseguido crear una plantilla en la que mostrar todos los artículos del Blog con la inestimable ayuda de [chatgpt].
+Como he conseguido crear una plantilla para [Hugo] en la que mostrar todos los artículos del Blog con la inestimable ayuda de [chatgpt].
 <!--more-->
-Busco crear una página en mi web en la que se listen todos los artículos que hasta la fecha he creado y que cumpla con las siguientes características:
+El objetivo de hoy es simple, busco crear una página en mi web en la que se listen todos los artículos que hasta la fecha he creado y que cumpla con las siguientes características:
  - Listados sólo los artículos de la carpeta "/content/post"
  - Ordenados en orden cronológico inverso
  - No aparezcan los artículos sin fecha ni título
@@ -79,6 +79,7 @@ El resultado lo puedes ver en mi lista de [artículos]
 [artículos]: /articulos
 [chatgpt]: https://chatgpt.com
 [conversación]: https://chatgpt.com/share/672123ac-3e80-800d-91d9-c710ccbbcfbd
+[Hugo]: https://gohugo.io
 
 
 
