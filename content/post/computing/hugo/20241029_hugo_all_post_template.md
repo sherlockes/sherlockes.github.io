@@ -38,7 +38,7 @@ title: "Lista de Artículos"
 layout: "all_post_list"
 ---
  ```
-Y ya está, ahora sólo queda crear la plantilla que nos liste los artículos. En esta ocasión he decidido tirar por la calle de en medio y tras una larga [conversación] con [chargpt] he conseguido el siguiente resultado para el archivo "all_post_template.html".
+Y ya está, ahora sólo queda crear la plantilla que nos liste los artículos. En esta ocasión he decidido tirar por la calle de en medio y tras una larga [conversación] con [chatgpt] he conseguido el siguiente resultado para el archivo "all_post_template.html".
 
 {{< texto_remoto "https://raw.githubusercontent.com/sherlockes/sherlockes.github.io/refs/heads/main/layouts/_default/all_post_list.html" >}}
 
