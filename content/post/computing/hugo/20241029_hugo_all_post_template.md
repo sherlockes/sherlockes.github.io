@@ -12,7 +12,7 @@ categories:
 - "hugo"
 tags:
 - "chatgpt"
-draft: true
+draft: false
 weight: 5
 ---
 Como he conseguido crear una plantilla en la que mostrar todos los artículos del Blog con la inestimable ayuda de [chatgpt].
@@ -22,8 +22,7 @@ Busco crear una página en mi web en la que se listen todos los artículos que h
  - Ordenados en orden cronológico inverso
  - No aparezcan los artículos sin fecha ni título
  - Quede reflejado el número total de artículos
- - Los años que han pasado desde el primer artículo
- - Aparezca la fecha de modificación de cada artículo
+ - Muestre los años que han pasado desde el primer artículo
  - Aparezcan las categorías y etiquetas de cada artículo
  - Mantenga el formato del resto de páginas del site
  - Mostrar si el artículo se ha editado al menos un año después
