@@ -1,5 +1,5 @@
 ---
-title: "Título"
+title: "Configurar Nginx Proxy Manager en Ubuntu server"
 date: "2024-11-13"
 creation: "2024-11-13"
 description: "Descripción"
@@ -11,18 +11,20 @@ mathjax: false
 categories:
 - "computing"
 tags:
-- "bash"
+- "docker"
 draft: true
 weight: 5
 ---
 Resumen de introducción
 <!--more-->
+- Crear un sub dominio o redirección *.pepe.tudominio.com
 
 
 ![image-01]
 
 ### Enlaces de interés
-- [enlace](www.sherblog.pro)
+- [Cursos de desarrollo - Nginx proxy manager](https://cursosdedesarrollo.com/2022/01/nginx-proxy-manager-o-la-manera-sencilla-de-manejar-acceso-a-tus-servicios-docker/)
+
 
 [link]: https://www.google.es
 
