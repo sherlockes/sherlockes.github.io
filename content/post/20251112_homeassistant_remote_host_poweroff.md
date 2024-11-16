@@ -107,6 +107,7 @@ A continuación accedemos a la terminal de [Home Assistant] que deberemos tener 
 - Nos logeamos como superusuario ~sudo -i~
 - Copiamos la "ssh-key" al equipo remoto ~ssh-copy-id -i /config/ssh/id_rsa.pub usuario@ip_remoto~
 
+Ya sólo falta crear un "shell_command" y vincularlo al apagado del "switch" en el archivo "configuration.yaml" de [Home Assistant].
 
 
 ``` yaml
