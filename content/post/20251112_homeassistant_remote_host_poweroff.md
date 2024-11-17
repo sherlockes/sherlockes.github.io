@@ -1,6 +1,6 @@
 ---
 title: "Apagado remoto de un equipo desde Home Assistant"
-date: "2024-11-16"
+date: "2024-11-17"
 creation: "2024-11-12"
 description: "Como he implementado un botón para encender y apagar un servidor remoto desde Home Assistant"
 thumbnail: "images/20251112_homeassistant_remote_host_poweroff_00.jpg"
@@ -19,11 +19,13 @@ weight: 5
 Tengo un pequeño servidor local con [Ubuntu server] que quiero poder encender y apagar de forma remota. Así es como lo he conseguido un interruptor en mi panel de control de [Home Assistant].
 <!--more-->
 ### Encendido remoto
-Gracias al [WoL] el encendido remoto de un equipo es realmente sencillo. Lo primero es acceder a la bios del equipo y habilitar el "Wake On LAN". Cada fabricante lo tiene escondido en un menú diferente así que las capturas de pantalla seguramente no sirvan de ayuda.
+Gracias al [WoL] el encendido remoto de un equipo es realmente sencillo. Lo primero es acceder a la BIOS del equipo y habilitar el "Wake On LAN". Cada fabricante lo tiene escondido en un menú diferente así que las capturas de pantalla de mi caso particular que pueda poner seguramente no sirvan de ayuda.
 
-> Además de WoL, si vas a usar el equipo como servidor, resulta imprescindible habilitar también desde la Bios en encendido automático para que el equipo vuelva a arrancar tras un corte de corriente.
+> Además de WoL, si vas a usar el equipo como servidor, resulta imprescindible habilitar también desde la BIOS en encendido automático para que el equipo vuelva a arrancar tras un corte de corriente.
 
-Con esto, todavía no es posible arrancar el equipo mediante WoL ya que las distribuciones basadas en Debian requieren una configuración posterior de la interface de red. Empezaremos listando las interfaces de red para conocer el nombre y ver cual corresponde a la que tenemos activa.
+Con esto, todavía no es posible arrancar el equipo mediante WoL ya que las distribuciones basadas en Debian, como es mi caso, requieren una configuración posterior de la interface de red.
+
+Empezaremos listando las interfaces de red para conocer el nombre y ver cual corresponde a la que tenemos activa.
 ``` bash
 ip link show
 ```
@@ -34,7 +36,7 @@ El comando produce la siguiente salida:
 3: enp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000 link/ether 54:43:0e:2a:9e:fc brd ff:ff:ff:ff:ff:ff
 4: wlp0s20f3: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000 link/ether b0:dc:ef:ca:9d:65 brd ff:ff:ff:ff:ff:ff
 ```
-De lo anterior podemos deducir que la interface de red activa es "enp2s0" y pasaremos a analizarla con ethtool. Si no tenemos instalada la aplicación la instalaremos con ~sudo apt install ethtool~ y lanzaremos el análisis.
+De lo anterior (La red activa aparece como "state UP") podemos deducir que la interface de red activa es "enp2s0" y pasaremos a analizarla con la utilidad [ethtool]. Si no tenemos instalada la aplicación la instalaremos con ~sudo apt install ethtool~ y lanzaremos el análisis.
 ``` bash
 sudo ethtool enp2s0
 ```
@@ -68,7 +70,7 @@ Resulta que este método funciona pero no es persistente y después de un reinic
   #!/bin/bash
   ethtool -s enp2s0 wol g
 ```
- - Permiso de ejecución ~sudo chmod +x /etc/network/if-up.d/wol~
+ - Dar permiso de ejecución al archivo con ~sudo chmod +x /etc/network/if-up.d/wol~
  - Para ejecutar en cada reinicio editamos el crontab de root ~sudo crontab -e~ y añadimos la siguiente línea:
 ``` bash
 @reboot /etc/network/if-up.d/wol	 
@@ -77,7 +79,7 @@ Ahora y tenemos el equipo listo para encenderlo de forma remota desde [Home Assi
 
 > Mediante el comando ~ip link show~ no sólo hemos visto el nombre de la interface de red, también podemos conocer la MAC de la misma.
 
-Ahora necesitamos añadir un "switch" en el archivo "configuration.yaml" de [Home Assistant] mediante las siguientes línes:
+Ahora necesitamos añadir un "switch" en el archivo "configuration.yaml" de [Home Assistant] mediante las siguientes líneas:
 
 ```yaml
 switch:
@@ -101,7 +103,7 @@ En primer lugar necesitamos que para ejecutar el comando ~poweroff~ en el equipo
 mi_usuario ALL=NOPASSWD:/sbin/poweroff
 ```
 
-A continuación accedemos a la terminal de [Home Assistant] que deberemos tener instalada mediante el complemente [Advanced SSH & Web Terminal]
+A continuación accedemos a la terminal de [Home Assistant] que deberemos tener instalada mediante el complemento [Advanced SSH & Web Terminal]
 
 - Generamos una llave ssh ~ssh-keygen~ en el directorio "/config/ssh/id_rsa" y sin ningún tipo de contraseña
 - Nos logeamos como superusuario ~sudo -i~
@@ -132,6 +134,7 @@ shell_command:
 - [Community HA - Remote shell command](https://community.home-assistant.io/t/running-a-shell-command-from-home-assistant-to-remote-linux-pc/135221/74)
 
 [Advanced SSH & Web Terminal]: https://github.com/hassio-addons/addon-ssh
+[ethtool]: https://www.kernel.org/pub/software/network/ethtool/
 [Home Assistant]: https://www.home-assistant.io
 [Ubuntu server]: https://ubuntu.com/download/server
 [Wake on LAN]: https://www.home-assistant.io/integrations/wake_on_lan/
