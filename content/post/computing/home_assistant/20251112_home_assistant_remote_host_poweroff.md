@@ -13,7 +13,7 @@ categories:
 tags:
 - "ssh"
 - "linux"
-draft: true
+draft: false
 weight: 5
 ---
 Tengo un pequeño servidor local con [Ubuntu server] que quiero poder encender y apagar de forma remota. Así es como lo he conseguido un interruptor en mi panel de control de [Home Assistant].
