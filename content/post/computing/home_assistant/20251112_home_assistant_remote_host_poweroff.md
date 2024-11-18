@@ -36,7 +36,7 @@ El comando produce la siguiente salida:
 3: enp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000 link/ether 54:43:0e:2a:9e:fc brd ff:ff:ff:ff:ff:ff
 4: wlp0s20f3: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000 link/ether b0:dc:ef:ca:9d:65 brd ff:ff:ff:ff:ff:ff
 ```
-De lo anterior (La red activa aparece como "state UP") podemos deducir que la interface de red activa es "enp2s0" y pasaremos a analizarla con la utilidad [ethtool]. Si no tenemos instalada la aplicación la instalaremos con ~sudo apt install ethtool~ y lanzaremos el análisis.
+De lo anterior (La red activa aparece como "state UP") podemos deducir que la interface de red activa es "enp2s0" y pasaremos a analizarla con la utilidad [ethtool]. Si no tenemos instalada la aplicación la instalaremos con `sudo apt install ethtool` y lanzaremos el análisis.
 ``` bash
 sudo ethtool enp2s0
 ```
@@ -51,27 +51,26 @@ Wake-on: d
 Link detected: yes
 ```
 
-Podemos habilitar WoL en el modo "magic packet" mediante el comando ~ethtool -s enp2s0 wol g~ y obtendremos la confirmación de que este modo se ha habilitado.
+Podemos habilitar WoL en el modo "magic packet" mediante el comando `ethtool -s enp2s0 wol g` y obtendremos la confirmación de que este modo se ha habilitado.
 ``` bash
-  #+begin_src txt
-    PHYAD: 0
-    Transceiver: external
-    MDI-X: Unknown
-    Supports Wake-on: pumbg
-    Wake-on: g
-    Link detected: yes
+PHYAD: 0
+Transceiver: external
+MDI-X: Unknown
+Supports Wake-on: pumbg
+Wake-on: g
+Link detected: yes
 ```
 
 Resulta que este método funciona pero no es persistente y después de un reinicio se desactiva el WOL por lo que hay que crear un script que lo active en cada reinicio del servidor.
 
- - Crear archivo "wol" ~sudo nano /etc/network/if-up.d/wol~
+ - Crear archivo "wol" `sudo nano /etc/network/if-up.d/wol`
 
 ``` bash
   #!/bin/bash
   ethtool -s enp2s0 wol g
 ```
- - Dar permiso de ejecución al archivo con ~sudo chmod +x /etc/network/if-up.d/wol~
- - Para ejecutar en cada reinicio editamos el crontab de root ~sudo crontab -e~ y añadimos la siguiente línea:
+ - Dar permiso de ejecución al archivo con `sudo chmod +x /etc/network/if-up.d/wol`
+ - Para ejecutar en cada reinicio editamos el crontab de root `sudo crontab -e` y añadimos la siguiente línea:
 ``` bash
 @reboot /etc/network/if-up.d/wol	 
 ```
@@ -94,10 +93,10 @@ Añadimos el "switch" a nuestro panel de [Home Assistant] y listo para encender 
 ### Apagado remoto
 Llegados a este punto tenemos un equipo remoto que queremos apagar y un equipo donde tenemos instalado [Home Assistant]
 
-En primer lugar necesitamos que para ejecutar el comando ~poweroff~ en el equipo remoto no se solicite contraseña. Seguimos los siguientes pasos
+En primer lugar necesitamos que para ejecutar el comando `poweroff` en el equipo remoto no se solicite contraseña. Seguimos los siguientes pasos
 
-- Accedemos al equipo remoto mediante ssh ~ssh usuario@ip_remoto~
-- Ejecutamos  en el equipo remoto ~sudo visudo~
+- Accedemos al equipo remoto mediante ssh `ssh usuario@ip_remoto`
+- Ejecutamos  en el equipo remoto `sudo visudo`
 - Añadimos la siguiente línea
 ``` bash
 mi_usuario ALL=NOPASSWD:/sbin/poweroff
@@ -105,9 +104,9 @@ mi_usuario ALL=NOPASSWD:/sbin/poweroff
 
 A continuación accedemos a la terminal de [Home Assistant] que deberemos tener instalada mediante el complemento [Advanced SSH & Web Terminal]
 
-- Generamos una llave ssh ~ssh-keygen~ en el directorio "/config/ssh/id_rsa" y sin ningún tipo de contraseña
-- Nos logeamos como superusuario ~sudo -i~
-- Copiamos la "ssh-key" al equipo remoto ~ssh-copy-id -i /config/ssh/id_rsa.pub usuario@ip_remoto~
+- Generamos una llave ssh `ssh-keygen` en el directorio "/config/ssh/id_rsa" y sin ningún tipo de contraseña
+- Nos logeamos como superusuario `sudo -i`
+- Copiamos la "ssh-key" al equipo remoto `ssh-copy-id -i /config/ssh/id_rsa.pub usuario@ip_remoto`
 
 Ya sólo falta crear un "shell_command" y vincularlo al apagado del "switch" en el archivo "configuration.yaml" de [Home Assistant].
 
