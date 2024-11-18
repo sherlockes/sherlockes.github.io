@@ -76,7 +76,7 @@ Resulta que este método funciona pero no es persistente y después de un reinic
 ```
 Ahora y tenemos el equipo listo para encenderlo de forma remota desde [Home Assistant]. Utilizaremos la integración [Wake on LAN] capaz de enviar un "magic packet" a un equipo remoto para encenderlo sin más necesidades que la MAC y la IP local de dicho equipo.
 
-> Mediante el comando ~ip link show~ no sólo hemos visto el nombre de la interface de red, también podemos conocer la MAC de la misma.
+> Mediante el comando `ip link show` no sólo hemos visto el nombre de la interface de red, también podemos conocer la MAC de la misma.
 
 Ahora necesitamos añadir un "switch" en el archivo "configuration.yaml" de [Home Assistant] mediante las siguientes líneas:
 
