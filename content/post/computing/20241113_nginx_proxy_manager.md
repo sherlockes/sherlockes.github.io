@@ -16,7 +16,7 @@ tags:
 draft: false
 weight: 5
 ---
-Resumen de introducción
+Hace tiempo que estoy dándole vueltas a montar un proxy inverso para mis servicios locales. Hoy me he decidido a montarlo con Nginx Proxy Manager.
 <!--more-->
 Antes de nada tengo que definir mis condiciones particulares
 - Dominio creado en DonDominio
