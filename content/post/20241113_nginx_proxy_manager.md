@@ -12,6 +12,7 @@ categories:
 - "computing"
 tags:
 - "docker"
+- "nginx"
 draft: true
 weight: 5
 ---
