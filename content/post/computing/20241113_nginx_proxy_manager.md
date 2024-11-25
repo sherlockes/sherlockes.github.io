@@ -13,7 +13,7 @@ categories:
 tags:
 - "docker"
 - "nginx"
-draft: true
+draft: false
 weight: 5
 ---
 Resumen de introducción
