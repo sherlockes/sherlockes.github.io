@@ -31,9 +31,7 @@ El primer paso es crear un sub dominio o redirección de tipo A "*.tu_servidor.t
 En mi caso, [DonDominio] tiene la utilidad [DonDNS] que, mediante una pequeña aplicación que instalaremos en nuestro servidor y una llave API personal de usuario, es posible actualizar la IP de una redirección a medida que la IP pública de nuestro servidor vaya cambiando. Las instrucciones para un servidor linux están perfectamente descritas en su [documentación].
 
 ### Abriendo los puertos en el router
-Para el proxy necesitaremos tener abiertos los puertos 80,81 y 443 y redireccionados a la IP local de nuestro servidor casero. Esto lo haremos desde la página de configuración del router.
-
-Necesitamos redireccionar los puertos 80,81 y 443 a la ip de nuesro servidor local donde estamos instalado Nginx Proxy Manager tal y como se muestra en la imagen.
+Para la configuración y funcionanmiento del proxy necesitaremos tener abiertos los puertos 80,81 y 443 y redireccionados a la IP local de nuestro servidor casero. Esto lo haremos desde la página de configuración del router. Una vez terminemos con la configuración, se puede cerrar al puerto 81. Nginx Proxy Manager seguirá funcionando con normalidad.
 
 [image-02]
 
@@ -98,6 +96,7 @@ El siguiente paso en configurar el acceso seguro a la redirección. Para esto ed
 - Aceptamos los términos
 - Guardamos los cambios
 
+Ahora ya podemos acceder al host mediante `https://ngin.tu_servidor.tudominio.com`
 
 ### Enlaces de interés
 - [Cursos de desarrollo - Nginx proxy manager](https://cursosdedesarrollo.com/2022/01/nginx-proxy-manager-o-la-manera-sencilla-de-manejar-acceso-a-tus-servicios-docker/)
