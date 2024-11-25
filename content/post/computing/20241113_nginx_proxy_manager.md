@@ -1,6 +1,6 @@
 ---
 title: "Configurar Nginx Proxy Manager en Ubuntu server"
-date: "2024-11-13"
+date: "2024-11-25"
 creation: "2024-11-13"
 description: "Descripción"
 thumbnail: "images/20241113_nginx_proxy_manager_00.jpg"
@@ -34,7 +34,7 @@ En mi caso, [DonDominio] tiene la utilidad [DonDNS] que, mediante una pequeña a
 ### Abriendo los puertos en el router
 Para la configuración y funcionanmiento del proxy necesitaremos tener abiertos los puertos 80,81 y 443 y redireccionados a la IP local de nuestro servidor casero. Esto lo haremos desde la página de configuración del router. Una vez terminemos con la configuración, se puede cerrar al puerto 81. Nginx Proxy Manager seguirá funcionando con normalidad.
 
-[image-02]
+![image-02]
 
 > Cada router tiene una forma distinta de hacerlo, en mi caso tengo un router ZTE F6640 y se puede acceder mediante el menú "Internet - Security - Port Forwarding"
 
@@ -61,7 +61,7 @@ services:
 
 Así accedemos directamente al panel de control de Nginx Proxy Manager
 
-[image-03]
+![image-03]
 
 
 ### Configuración del Host
@@ -76,11 +76,11 @@ Ya estamos listos para crear nuestra primera redirección. Para un servidor http
 - Activamos la opción "Block Common Exploits"
 - Guardamos los cambios
 
-[image-04]
+![image-04]
 
 Con esto ya tendremos un nuevo host añadido
 
-[image-05]
+![image-05]
 
 Podemos acceder a el mediante `http://ngin.tu_servidor.tudominio.com`
 
@@ -90,7 +90,7 @@ El siguiente paso en configurar el acceso seguro a la redirección. Para esto ed
 - Pulsamos sobre el cuadro "SSL Certificate"
 - Solicitamos n nuevo certificado SSL
 
-[image-06]
+![image-06]
 
 - Marcamos "Force SSL", "HSTS Enabled", "HTTP/2 Support" y "HSTS Subdomanins"
 - Introducimos la dirección de correo
