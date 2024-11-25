@@ -88,7 +88,7 @@ El siguiente paso en configurar el acceso seguro a la redirección. Para esto ed
 
 - Seleccionamos la pestaña SSL
 - Pulsamos sobre el cuadro "SSL Certificate"
-- Solicitamos n nuevo certificado SSL
+- Solicitamos un nuevo certificado SSL
 
 ![image-06]
 
