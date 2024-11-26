@@ -13,7 +13,7 @@ categories:
 tags:
 - "bash"
 - "zerotier"
-draft: true
+draft: False
 weight: 5
 ---
 Hace más de cinco años que empecé a usar [Zerotier] tal y como en su día expliqué en este [artículo]({{<relref"20190314_zerotier.md">}}) como consecuencia de un problema con los puertos del router. Ahora lo reedito con todo lo que he aprendido en este tiempo.
