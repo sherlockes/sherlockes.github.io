@@ -1,6 +1,6 @@
 ---
 title: "Instalación y configuración de Zerotier"
-date: "2023-08-20"
+date: "2024-11-26"
 creation: "2023-02-08"
 description: "Descripción"
 thumbnail: "images/20230208_zerotier_configure_00.jpg"
@@ -12,10 +12,11 @@ categories:
 - "computing"
 tags:
 - "bash"
+- "zerotier"
 draft: true
 weight: 5
 ---
-Hace casi cinco años que empecé a usar [Zerotier] tal y como en su día expliqué en este [artículo]({{<relref"20190314_zerotier.md">}}) como consecuencia de un problema con los puertos del router. Ahora lo reedito con todo lo que he aprendido en este tiempo.
+Hace más de cinco años que empecé a usar [Zerotier] tal y como en su día expliqué en este [artículo]({{<relref"20190314_zerotier.md">}}) como consecuencia de un problema con los puertos del router. Ahora lo reedito con todo lo que he aprendido en este tiempo.
 
 <!--more-->
 ### Creación de la red
