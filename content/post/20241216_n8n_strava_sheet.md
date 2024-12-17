@@ -49,18 +49,51 @@ Y ya está, simplemente funciona. Cada hora comprueba si las últimas cinco acti
 > Este flujo de trabajo se puede simplificar bastante si usamos como disparador el webhook que Strava lanza cuando se añade una nueva actividad pero esto nos obliga a tener el servidor encendido continuamente.
 
 ### Formateando campos
-Como fecha, strava devuelve un valor completo como este "2024-10-19T16:13:16Z" que quiero simplificar a "19/10/2024". Para esto utilizo esta conversión.
+- El campo "id" no es necesario modificarlo, guardo el mismo valor que devuelve Strava
+
+- Como fecha, strava devuelve un valor completo como este "2024-10-19T16:13:16Z" que quiero simplificar a "19/10/2024". Para esto utilizo esta conversión.
 ``` javascript
 {{ DateTime.fromISO($json.start_date_local).toFormat('d/M/yyyy') }}
 ```
 
-Para la distancia necesito convertir la distancia devuelta en metros a kilómetros con un sólo decimal. 
+- Para la distancia necesito convertir la distancia devuelta en metros a kilómetros con un sólo decimal. 
 ``` javascript
 {{ Math.round($json.distance / 100) / 10 }}
 ```
 
+- La altitud acumulada de la ruta tampoco es necesario modificarla ya que se obtiene un valor en metros con un solo decimal.
+
+- El tiempo si que hay que formatearlo. Strava devuelve un valor de segundos que quiero dar forma de horas, minutos y segundos. Para esto uso el siguiente código:
+``` javascript
+{{ `${Math.floor($json.moving_time / 3600)}:${Math.floor(($json.moving_time % 3600) / 60).toString().padStart(2, '0')}:${($json.moving_time % 60).toString().padStart(2, '0')}` }}
+```
+### Comparando resultados
+La parte más importante de este flujo es la encargada de comprobar cuales de las nuevas actividades no están ya guardadas. Para esto se desprecias de las últimas actividades descargadas de Strava las que existan en las últimas actividades guardadas según este código:
+
+``` javascript
+// Obtén los items del nodo "Strava"
+const stravaItems = $('strava_last').all();
+
+// Obtén los items del nodo "ultimas_id"
+const ultimasGuardadasItems = $('ultimas_id').all();
+
+// Extrae las referencias guardadas en un Set, asegurando el formato como cadena
+const referenciasGuardadas = new Set(
+    ultimasGuardadasItems.map(item => String(item.json.id))
+);
+
+// Filtra los items de "Strava" cuyos IDs no estén en las referencias guardadas
+const filteredItems = stravaItems.filter(item => {
+    // Convertir el ID actual de Strava a cadena para comparar correctamente
+    return !referenciasGuardadas.has(String(item.json.id));
+});
+
+// Devuelve los items filtrados
+return filteredItems;
+```
+
 ### Enlaces de interés
-- [enlace](www.sherblog.pro)
+	- [enlace](www.sherblog.es)
 
 [Docker]: https://www.docker.com
 [feedmyride]: https://feedmyride.net
