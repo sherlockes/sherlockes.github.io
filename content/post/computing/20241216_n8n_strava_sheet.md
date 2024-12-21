@@ -12,7 +12,7 @@ categories:
 - "computing"
 tags:
 - "strava"
-draft: true
+draft: false
 weight: 5
 ---
 Tras varias pruebas, al fin he conseguido la manera de enviar el resumen de cada actividad de [Strava] a la hoja donde genero mis estadísticas en Google Sheets de forma autoalojada y desatendida gracias a n8n.
@@ -21,7 +21,7 @@ Desde hace varios años vengo recopilando todas mis actividades de [Strava] en u
 
 Después de un tiempo trasteando con [Stravalib], una librería de python para interactuar con la API de Strava, he llegado a un callejón sin salida en lo referente a la autentificación y gestión de credenciales de forma desatendida por lo que me he puesto a buscar una solución alternativa.
 
-[n8n] es una plataforma de automatización de flujos de trabajo que conecta aplicaciones, servicios y bases de datos sin necesidad de programar. Es altamente personalizable y de código abierto, lo que permite integraciones complejas mediante nodos configurables. Es fácil autoalojarlo mediante [Docker] en un servidor y uniéndolo a un proxy inverso resulta trivial acceder a el de forma remota.
+[n8n] es una plataforma de automatización de flujos de trabajo que conecta aplicaciones, servicios y bases de datos sin necesidad de programar. Es altamente personalizable y de código abierto, lo que permite integraciones complejas mediante nodos configurables. Es fácil autoalojarlo mediante [Docker] en un servidor y, uniéndolo a un proxy inverso, resulta trivial acceder a el de forma remota.
 
 ### El workflow
 Pues bien, por un lado tengo mi cuenta de Strava y por otro una hoja de cálculo en un archivo de Google Sheets en el que después de cada actividad quiero guardar la fecha, tiempo, distancia, altitud ganada... Para esto me he creado este "Workflow":
