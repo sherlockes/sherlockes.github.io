@@ -92,9 +92,6 @@ const filteredItems = stravaItems.filter(item => {
 return filteredItems;
 ```
 
-### Enlaces de interés
-	- [enlace](www.sherblog.es)
-
 [Docker]: https://www.docker.com
 [feedmyride]: https://feedmyride.net
 [IFTTT]: https://ifttt.com
