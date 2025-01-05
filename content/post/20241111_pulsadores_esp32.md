@@ -89,7 +89,7 @@ Puesto que vamos a conectar varios leds al ESP32 he optado por usar unos relés 
 
 Las primeras pruebas fueron mal, ya que al trabajar con una carga tan pequeña (Un par de leds alimentados a 5V por relé), la corriente de fuga es suficiente para mantenerlos encendidos aunque cambiemos el estado de la entrada.
 
-Por esto me decido por usar relés mecánicos, más exactamente el módulo 
+Por esto me decido por usar relés mecánicos, más exactamente el módulo.
 
 ### Enlaces de interés
 - [enlace](www.sherblog.pro)
