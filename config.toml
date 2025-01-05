@@ -3,7 +3,6 @@ baseurl = "https://sherlockes.github.io"
 title = "Sherblog"
 languageCode = "es"
 DefaultContentLanguage = "es"
-paginate = "9" # Number of posts per page
 rssLimit = "10"
 theme = "mainroad"
 disqusShortname = "" # Enable comments by entering your Disqus shortname
@@ -16,6 +15,9 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 
 [permalinks]
     post = "/:title/"
+
+[pagination]
+pagerSize = 9
 
 [related]
   includeNewer = true
