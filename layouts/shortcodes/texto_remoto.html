@@ -1,5 +1,6 @@
 {{- $remote_url := (.Get 0) -}}
-{{- $remote_data := getJSON "https://texto-remoto.sherlockes.workers.dev/fetch?url=" $remote_url -}}
+{{- $remote := resources.GetRemote "https://texto-remoto.sherlockes.workers.dev/fetch?url=" $remote_url -}}
+{{- $remote_data := transform.Unmarshal $remote -}}
 {{- with $remote_data -}}
-    <pre><code>{{ $remote_data.body }}</code></pre>
+    <pre><code>{{ .body }}</code></pre>
 {{- end -}}
