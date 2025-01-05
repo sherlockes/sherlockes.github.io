@@ -41,9 +41,6 @@
 	<link rel="stylesheet" href="{{ . | relURL }}">
 	{{- end }}
 	<link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}">
-	{{- if not .Site.IsServer }}
-		{{ template "_internal/google_analytics_async.html" . }}
-	{{- end }}
 
 	{{ if .Params.css }}
 	<link rel="stylesheet" href="{{ .Params.css }}">
