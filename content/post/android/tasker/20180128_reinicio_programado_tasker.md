@@ -1,7 +1,7 @@
 ---
 title: "Reinicio programado con Tasker en Android"
-date: "20180128"
-creation: "20180128"
+date: "2018-01-28"
+creation: "2018-01-28"
 description: "No está de más reiniciar Android de vez en cuando y si es de forma programada mejor..."
 thumbnail: "images/20180117_tasker_reinicio.jpg"
 disable_comments: true
