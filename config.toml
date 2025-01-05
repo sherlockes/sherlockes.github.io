@@ -6,7 +6,7 @@ DefaultContentLanguage = "es"
 rssLimit = "10"
 theme = "mainroad"
 disqusShortname = "" # Enable comments by entering your Disqus shortname
-googleAnalytics = "" # Enable Google Analytics by entering your tracking id
+ignoreLogs = ['warning-goldmark-raw-html']
 
 [Author] # Used in authorbox
     name = "Sherlockes"
