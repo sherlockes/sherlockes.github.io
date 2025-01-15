@@ -28,7 +28,7 @@ Usando la integración [ZHA] para [Home Asssistant] la he tenido funcionando sin
 
 Es posible encender la luz que lleva integrada pero no activar la sirena. Para hacerlo hay que recurrir directamente a la publicación de un "topic" mqtt del mismo modo que para desactivarla.
 
-En mi caso la
+En mi caso la entidad se llama "pasillo_alarma".
 
 ``` yaml
 action: mqtt.publish
