@@ -1,6 +1,6 @@
 ---
 title: "Activar sirena TS0224 mediante Z2M en Home assistant"
-date: "2025-01-15"
+date: "2025-01-16"
 creation: "2025-01-07"
 description: "Como lanzar una publicación para activar o parar la sirena zigbee que uso en caso de alarma."
 thumbnail: "images/20250107_ha_sirena_zigbee_00.jpg"
