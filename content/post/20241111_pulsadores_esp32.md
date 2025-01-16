@@ -1,6 +1,6 @@
 ---
 title: "Sistema de pulsadores con Esp32 y micropython"
-date: "2024-11-11"
+date: "2025-01-16"
 creation: "2024-11-11"
 description: "Pequeño proyecto para construir un sistema de pulsadores para un juego escolar"
 thumbnail: "images/20241111_pulsadores_esp32_00.jpg"
@@ -90,6 +90,8 @@ Puesto que vamos a conectar varios leds al ESP32 he optado por usar unos relés 
 Las primeras pruebas fueron mal, ya que al trabajar con una carga tan pequeña (Un par de leds alimentados a 5V por relé), la corriente de fuga es suficiente para mantenerlos encendidos aunque cambiemos el estado de la entrada.
 
 Por esto me decido por usar relés mecánicos, más exactamente el módulo.
+
+probando...
 
 ### Enlaces de interés
 - [enlace](www.sherblog.pro)
