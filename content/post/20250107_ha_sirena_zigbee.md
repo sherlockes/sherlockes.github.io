@@ -1,5 +1,5 @@
 ---
-title: "Activar sirena zigbee en Home assistant"
+title: "Activar sirena TS0224 mediante Z2M en Home assistant"
 date: "2025-01-15"
 creation: "2025-01-07"
 description: "Como lanzar una publicación para activar o parar la sirena zigbee que uso en caso de alarma."
@@ -26,10 +26,11 @@ Usando la integración [ZHA] para [Home Asssistant] la he tenido funcionando sin
 
 ![image-02]
 
-Es posible encender la luz que lleva integrada pero no activar la sirena. Para hacerlo hay que recurrir directamente a la publicación de un "topic" mqtt del mismo modo que para desactivarla.
+Es posible encender la luz que lleva integrada pero no activar la sirena. Para hacerlo hay que recurrir directamente a la publicación de un "topic" mqtt mediante el servicio "mqtt.publish", del mismo modo habrá que hacer para desactivarla.
 
-En mi caso la entidad se llama "pasillo_alarma".
+En mi caso la entidad se llama "pasillo_alarma" y estos son los topic a publicar para activar y desactivar la sirena.
 
+Activar:
 ``` yaml
 action: mqtt.publish
 data:
@@ -39,6 +40,7 @@ data:
   payload: "{\"warning\": {\"mode\": \"burglar\"}}"
 ```
 
+Parar:
 ``` yaml
 action: mqtt.publish
 data:
@@ -48,12 +50,13 @@ data:
   payload: "{\"warning\": {\"mode\": \"stop\"}}"
 ```
 
-
+> Según la web de [Z2M], la sirena expone varios tipos de tonos y volúmenes aunque la que yo he comprado en [aliexpress] sólo reacciona a los comandos de activar y parar.
 
 ### Enlaces de interés
 - [HA - Connect tuya siren](https://community.home-assistant.io/t/how-to-connect-the-zigbee-tuya-siren-ts0224-to-ha/668855/11)
 
 [Home Assistant]: https://www.home-assistant.io
+[aliexpress]: https://es.aliexpress.com/item/1005006115347609.html
 [TS0224]: https://www.zigbee2mqtt.io/devices/TS0224.html
 [ZHA]: https://www.home-assistant.io/integrations/zha/
 [Z2M]: https://www.zigbee2mqtt.io
