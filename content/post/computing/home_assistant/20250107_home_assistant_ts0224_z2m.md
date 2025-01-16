@@ -13,7 +13,7 @@ categories:
 tags:
 - "zigbee"
 - "z2m"
-draft: true
+draft: false
 weight: 5
 ---
 Muchas veces, activar un elemento zigbee no es tan obvio en Home Assistant. Esta es la muestra de lo que tengo que hacer para hacer sonar la sirena zigbee que tengo instalada a modo de alarma.
