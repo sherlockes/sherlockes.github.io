@@ -22,7 +22,7 @@ Este es la sirena que tengo instalada en el falso techo de casa para que suene s
 
 ![image-01]
 
-Usando la integración [ZHA] para [Home Asssistant] la he tenido funcionando sin problemas durante mucho tiempo, pero en el cambio a [Z2M] y con la reciente actualización a la versión 2.0 me he encontrado con el problema de que la integración no ofrece directamente la opción de activar la sirena.
+Usando la integración [ZHA] para [Home Assistant] la he tenido funcionando sin problemas durante mucho tiempo, pero en el cambio a [Z2M] y con la reciente actualización a la versión 2.0 me he encontrado con el problema de que la integración no ofrece directamente la opción de activar la sirena.
 
 ![image-02]
 
