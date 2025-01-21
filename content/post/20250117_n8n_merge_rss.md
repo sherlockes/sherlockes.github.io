@@ -1,6 +1,6 @@
 ---
 title: "Unir Rss y enviar a Telegram mediante n8n"
-date: "2025-01-17"
+date: "2025-01-21"
 creation: "2025-01-17"
 description: "Como obtener la info de de varios rss y enviar un resumen combinado a Telegram"
 thumbnail: "images/20250117_n8n_merge_rss_00.jpg"
@@ -33,7 +33,8 @@ Nos servirá para combinar varias fuentes de Rss, curar el contenido y enviar el
 ## Instrucciones de configuración
 - Cuando abramos el flujo de trabajo por primera vez deberemos configurar la credencial de Telegram.
 - En los nodos "Rss" insertaremos las url de las fuentes que vamos a consultar.
-- En el nodo "Sort" podemos modificar la antigüedad máxima de los elementos que vamos a enviar. Es necesario tener en cuenta que Telegram tiene una longitud máxima de mensaje.
+- En los nodos "Edit Fields" deberemos ajustar las expresiones regulares para obtener el resultado deseado en función de nuestras fuentes Rss. En este caso yo he ajustado las expresiones para obtener el nombre, tamaño y enlace de cada archivo publicado.
+- En el nodo "Sort" podemos modificar la antigüedad máxima de los elementos que vamos a enviar. En este caso, se han incluido 2 dias (2 * 24 * 60 * 60 * 1000 milisegundos) ya que es necesario tener en cuenta que Telegram tiene una longitud máxima de mensaje y si nos excedemos devolverá un error en lugar de enviarlo.
 - Finalmente, incluiremos en el nodo "Telegram" la identificación del canal donde vamos a enviar los mensajes.
 
 The rest of the information is available at  [sherblog.es](https://sherblog.es/de-strava-a-google-sheets-gracias-a-n8n/)
