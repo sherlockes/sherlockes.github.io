@@ -1,6 +1,6 @@
 ---
 title: "De Strava a Google Sheets gracias a n8n"
-date: "2024-12-16"
+date: "2025-01-22"
 creation: "2024-12-16"
 description: "Como he conseguido enviar el resumen de cada actividad de Strava a una hoja de cálculo de Google Sheets mediante n8n."
 thumbnail: "images/20241216_n8n_strava_sheet_00.jpg"
@@ -92,10 +92,13 @@ const filteredItems = stravaItems.filter(item => {
 return filteredItems;
 ```
 
+Puedes revisar completamente el workflow en la [plantilla de n8n].
+
 [Docker]: https://www.docker.com
 [feedmyride]: https://feedmyride.net
 [IFTTT]: https://ifttt.com
 [n8n]: https://n8n.io
+[plantilla de n8n]: https://n8n.io/workflows/2678-export-all-strava-activity-data-to-google-sheets/
 [Strava]: https://www.strava.com/
 [Stravalib]: https://github.com/stravalib/stravalib
 
