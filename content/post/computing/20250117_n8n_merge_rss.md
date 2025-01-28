@@ -12,7 +12,7 @@ categories:
 - "computing"
 tags:
 - "n8n"
-draft: true
+draft: false
 weight: 5
 ---
 Combinar varios rss y enviar el resultado filtrado a Telegram sin apenas escribir código es coser y cantar gracias a n8n.
