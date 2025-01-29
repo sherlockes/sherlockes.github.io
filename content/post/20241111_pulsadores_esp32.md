@@ -22,7 +22,7 @@ El sistema va a ser sencillo. Tenemos cuatro pulsadores y cuatro indicadores lum
 
 Por sencillez, precio, posibilidades y conocimiento, desde un principio he tenido claro que iba a usar un ESP32 y micropython como en algún [proyecto] anterior. Usaré una placa de desarrollo [ESP32-WROOM-32U] y el entorno de desarrollo [Thonny].
 
-Tendremos cuatro pulsadores de activación y uno de reinicio. Cuando el pulsador de reinicio se pulse se encenderán todas las luces correspondientes a los pulsadores de activación y permanecerán encendidas un tiempo aleatorio entre 5 y 10 segundos. Pasado el tiempo se apagarán todas las luces y sólo se encenderá la del pulsador que se active primero a partir de ese momento. La luz del pulsador "ganador" quedará encendida hasta que se reinicie la secuencia.
+Tendremos cuatro pulsadores de activación y uno de reinicio. Cuando el pulsador de reinicio se pulse se encenderán todas las luces correspondientes a los pulsadores de activación y permanecerán encendidas un tiempo aleatorio entre 5 y 10 segundos. Pasado el tiempo se apagarán todas las luces y sólo se encenderá la del pulsador que se active primero a partir de ese momento. La luz del pulsador "ganador" quedará encendida hasta que se reinicie la secuencia..
 
 El código a usar será el siguiente:
 
