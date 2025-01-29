@@ -24,7 +24,7 @@ Por sencillez, precio, posibilidades y conocimiento, desde un principio he tenid
 
 Tendremos cuatro pulsadores de activación y uno de reinicio. Cuando el pulsador de reinicio se pulse se encenderán todas las luces correspondientes a los pulsadores de activación y permanecerán encendidas un tiempo aleatorio entre 5 y 10 segundos. Pasado el tiempo se apagarán todas las luces y sólo se encenderá la del pulsador que se active primero a partir de ese momento. La luz del pulsador "ganador" quedará encendida hasta que se reinicie la secuencia.
 
-El código a usar será el siguiente.
+El código a usar será el siguiente:
 
 ``` python
 from machine import Pin
