@@ -12,7 +12,7 @@ categories:
 - "computing"
 tags:
 - "emacs"
-draft: true
+draft: false
 weight: 5
 ---
 Tener que modificar la fecha de actualización de la cabecera de un archivo cada vez que se realiza una modificación es una tarea "rutinaria" que debe ser automatizada si no queremos perder el tiempo ni que caiga en el olvido. Así lo he conseguido gracias a elisp en emacs.
