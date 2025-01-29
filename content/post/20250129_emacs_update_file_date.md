@@ -23,7 +23,9 @@ En un principio son tres los tipos de archivos a los que necesito actualizar la 
 - Archivos Org-Mode del brain: #+date: <2025-01-29>
 - Scripts en Bash: #Creation/Update: 20240411/20250129
 
-![image-01]
+La idea es hacer un condicional que se ejecute antes de guardar el archivo y en caso de que sea de uno de los tres tipos anteriores realizar una sustitución de la fecha existente por la actual.
+
+La función quedará como la siguiente.
 
 ``` elisp
 (defun update-file-date ()
@@ -52,12 +54,7 @@ En un principio son tres los tipos de archivos a los que necesito actualizar la 
 (add-hook 'before-save-hook 'update-file-date)
 ```
 
-### Enlaces de interés
-- [enlace](www.sherblog.pro)
-
-[link]: https://www.google.es
-
-[image-01]: /images/20250129_emacs_update_file_date_01.jpg
+Ya sólo falta colocar la función y el hook dentro del archivo "init.el" y reiniciar Emacs para ver el resultado.
 
 
 
