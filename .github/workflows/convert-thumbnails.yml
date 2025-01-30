@@ -3,7 +3,7 @@ name: Convert Thumbnails to 16:9
 on:
   push:
     paths:
-      - 'images/*00.jpg'
+      - 'static/images/*00.jpg'
   workflow_dispatch:
 
 jobs:
