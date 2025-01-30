@@ -17,23 +17,28 @@ jobs:
       - name: Install ImageMagick
         run: sudo apt-get install -y imagemagick
 
+      - name: Verify images exist
+        run: |
+          if [ ! -d "static/images" ]; then echo "No existe la carpeta static/images"; exit 1; fi
+          if [ -z "$(ls -A static/images/*00.jpg 2>/dev/null)" ]; then echo "No hay imágenes *00.jpg en static/images"; exit 1; fi
+
       - name: Convert square thumbnails to 16:9
         run: |
-          for img in images/*00.jpg; do
+          for img in static/images/*00.jpg; do
             filename=$(basename "$img")
             extension="${filename##*.}"
             base="${filename%.*}"
             width=$(identify -format "%w" "$img")
             height=$(identify -format "%h" "$img")
             new_width=$(( height * 16 / 9 ))
-            convert "$img" -gravity center -background white -extent "${new_width}x${height}" "images/${base}_xl.${extension}"
+            convert "$img" -gravity center -background white -extent "${new_width}x${height}" "static/images/${base}_xl.${extension}"
           done
 
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add images/*_xl.jpg
+          git add static/images/*_xl.jpg
           git commit -m "Auto-generate 16:9 thumbnails"
           git push
         continue-on-error: true
