@@ -22,16 +22,26 @@ jobs:
           if [ ! -d "static/images" ]; then echo "No existe la carpeta static/images"; exit 1; fi
           if [ -z "$(ls -A static/images/*00.jpg 2>/dev/null)" ]; then echo "No hay imágenes *00.jpg en static/images"; exit 1; fi
 
-      - name: Convert square thumbnails to 16:9
+      - name: Convert square thumbnails to 16:9 with bands
         run: |
           for img in static/images/*00.jpg; do
             filename=$(basename "$img")
             extension="${filename##*.}"
             base="${filename%.*}"
-            width=$(identify -format "%w" "$img")
-            height=$(identify -format "%h" "$img")
+            
+            # Añadir franjas de 25px por encima y debajo
+            convert "$img" -background white -gravity center -extent $(identify -format "%w" "$img")x$(identify -format "%h" "$img")+0+25 "static/images/${base}_temp.${extension}"
+            
+            # Calcular la nueva anchura para relación 16:9
+            width=$(identify -format "%w" "static/images/${base}_temp.${extension}")
+            height=$(identify -format "%h" "static/images/${base}_temp.${extension}")
             new_width=$(( height * 16 / 9 ))
-            convert "$img" -gravity center -background white -extent "${new_width}x${height}" "static/images/${base}_xl.${extension}"
+
+            # Ajustar la imagen a 16:9
+            convert "static/images/${base}_temp.${extension}" -gravity center -background white -extent "${new_width}x${height}" "static/images/${base}_xl.${extension}"
+            
+            # Eliminar el archivo temporal
+            rm "static/images/${base}_temp.${extension}"
           done
 
       - name: Commit and push changes
@@ -39,6 +49,6 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add static/images/*_xl.jpg
-          git commit -m "Auto-generate 16:9 thumbnails"
+          git commit -m "Auto-generate 16:9 thumbnails with bands"
           git push
         continue-on-error: true
