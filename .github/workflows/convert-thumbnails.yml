@@ -30,9 +30,10 @@ jobs:
             base="${filename%.*}"
 
             # Añadir franjas de 25px por encima y debajo de la imagen
-            convert "$img" -background white -gravity North -extent $(identify -format "%w" "$img")x$(identify -format "%h" "$img") +0+25 "static/images/${base}_temp.${extension}"
-            convert "static/images/${base}_temp.${extension}" -background white -gravity South -extent $(identify -format "%w" "static/images/${base}_temp.${extension}")x$(identify -format "%h" "static/images/${base}_temp.${extension}") +0+25 "static/images/${base}_temp.${extension}"
-
+            ##convert "$img" -background white -gravity North -extent $(identify -format "%w" "$img")x$(identify -format "%h" "$img") +0+25 "static/images/${base}_temp.${extension}"
+            ##convert "static/images/${base}_temp.${extension}" -background white -gravity South -extent $(identify -format "%w" "static/images/${base}_temp.${extension}")x$(identify -format "%h" "static/images/${base}_temp.${extension}") +0+25 "static/images/${base}_temp.${extension}"
+            convert "$img" -bordercolor white -border 0x50 "static/images/${base}_temp.${extension}"
+            
             # Calcular la nueva anchura para relación 16:9
             width=$(identify -format "%w" "static/images/${base}_temp.${extension}")
             height=$(identify -format "%h" "static/images/${base}_temp.${extension}")
