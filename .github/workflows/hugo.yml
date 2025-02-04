@@ -24,7 +24,7 @@ concurrency:
 # Default to bash
 defaults:
   run:
-    shell: bashg
+    shell: bash
 
 jobs:
   # Build job
