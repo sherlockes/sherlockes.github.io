@@ -1,49 +1,54 @@
-name: Convert Thumbnails to OG Format
+name: Convert Thumbnails to 16:9
+
 on:
   push:
     paths:
       - 'static/images/*00.jpg'
   workflow_dispatch:
+
 jobs:
   convert:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
       - name: Install ImageMagick
         run: sudo apt-get install -y imagemagick
+
       - name: Verify images exist
         run: |
           if [ ! -d "static/images" ]; then echo "No existe la carpeta static/images"; exit 1; fi
           if [ -z "$(ls -A static/images/*00.jpg 2>/dev/null)" ]; then echo "No hay imágenes *00.jpg en static/images"; exit 1; fi
-      - name: Convert square thumbnails to OG format (1200x630)
+
+      - name: Convert square thumbnails to 16:9 with bands
         run: |
           for img in static/images/*00.jpg; do
             filename=$(basename "$img")
             extension="${filename##*.}"
             base="${filename%.*}"
+
+            # Añadir franjas de 50px por encima y debajo de la imagen
+            #convert "$img" -bordercolor white -border 0x50 "static/images/${base}_temp.${extension}"
             
-            # Obtener dimensiones de la imagen original
-            width=$(identify -format "%w" "$img")
-            
-            # Redimensionar a 1200x1200 manteniendo el aspecto cuadrado
-            convert "$img" -resize 1200x1200 "static/images/${base}_temp.${extension}"
-            
-            # Añadir espacio arriba y abajo para lograr 1200x630
-            convert "static/images/${base}_temp.${extension}" \
-              -gravity center \
-              -extent 1200x630 \
-              -background white \
-              "static/images/${base}_xl.${extension}"
+            # Calcular la nueva anchura para relación 16:9
+            width=$(identify -format "%w" "static/images/${base}_temp.${extension}")
+            height=$(identify -format "%h" "static/images/${base}_temp.${extension}")
+            new_width=$(( height * 16 / 9 ))
+
+            # Ajustar la imagen a 16:9
+            convert "static/images/${base}_temp.${extension}" -gravity center -background white -extent "${new_width}x${height}" "static/images/${base}_xl.${extension}"
             
             # Eliminar el archivo temporal
             rm "static/images/${base}_temp.${extension}"
           done
+
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add static/images/*_xl.jpg
-          git commit -m "Auto-generate OG format thumbnails (1200x630)"
+          git commit -m "Auto-generate 16:9 thumbnails with bands"
           git push
         continue-on-error: true
