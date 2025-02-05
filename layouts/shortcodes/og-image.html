@@ -1,0 +1,8 @@
+{{ $src := printf "static/%s" (.Get 0) }}
+{{ if (fileExists $src) }}
+{{ $image := resources.GetMatch $src }}
+{{ with $image }}
+    {{ $ogImage := .Resize "1200x630 fill" }}
+    {{ $ogImage.RelPermalink }}
+{{ end }}
+{{ end }}
