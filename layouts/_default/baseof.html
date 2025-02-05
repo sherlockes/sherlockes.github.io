@@ -26,13 +26,13 @@
 	<meta property="og:description" content="{{ .Params.description }}"/>
 
 	{{ if .Params.thumbnail }}
-	{{ $thumbnail := .Params.thumbnail }}
-	{{ $xlThumbnail := replace $thumbnail ".jpg" "_xl.jpg" }}
-	{{ if (fileExists (printf "static/%s" $xlThumbnail)) }}
-	<meta property="og:image" content="{{ .Site.BaseURL }}{{ $xlThumbnail }}" />
-	{{ else }}
-	<meta property="og:image" content="{{ .Site.BaseURL }}{{ $thumbnail }}" />
-	{{ end }}
+	<meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}" />
+	<meta property="og:image:width" content="300" />
+	<meta property="og:image:height" content="300" />
+	<!-- Versión OG -->
+	<meta property="og:image" content="{{ .Site.BaseURL }}images/og/{{ replace .Params.thumbnail ".jpg" "_og.jpg" }}" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 	{{ else }}
 	<meta property="og:image" content="{{ .Site.BaseURL }}images/logo.png" />
 	{{ end }}
