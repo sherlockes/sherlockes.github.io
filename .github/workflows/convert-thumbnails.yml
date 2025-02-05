@@ -29,8 +29,8 @@ jobs:
             extension="${filename##*.}"
             base="${filename%.*}"
 
-            # Añadir franjas de 50px por encima y debajo de la imagen
-            #convert "$img" -bordercolor white -border 0x50 "static/images/${base}_temp.${extension}"
+            # Añadir franjas de 5px por encima y debajo de la imagen
+            convert "$img" -bordercolor white -border 0x5 "static/images/${base}_temp.${extension}"
             
             # Calcular la nueva anchura para relación 16:9
             width=$(identify -format "%w" "static/images/${base}_temp.${extension}")
