@@ -1,6 +1,6 @@
 ---
 title: "Configurar Wireguard de Home Assistant en cliente linux"
-date: "2023-07-21"
+date: "2025-02-25"
 creation: "2023-07-21"
 description: "Como conectar a la vpn de nuestro servidor de Wireguar en Home Assistant desde un cliente en linux."
 thumbnail: "images/20230721_home_assistant_wireguard_linux_00.png"
@@ -78,9 +78,11 @@ Tal y como tengo apuntado en mi chuleta personal, para la creación de estos dos
 
 - Comprobar si existe el archivo ~/.bash_aliases
 - Editar el archivo ~/.bashrc si no existe el anterior
-- Añadir el nuevo alias de encendido -> alias vpnon='sudo wg-quick up vpn'
-- Añadir el nuevo alias de apagado -> alias vpnoff='sudo wg-quick down vpn'
+- Añadir el nuevo alias de encendido -> alias vpnon='sudo wg-quick up mivpn'
+- Añadir el nuevo alias de apagado -> alias vpnoff='sudo wg-quick down mivpn'
 - Habilitar los cambios -> source ~/.bashrc
+
+> Cuidado con las comillas al copiar los comandos, deben ser las simples verticales.
 
 Con esto, la fricción se ha reducido bastante aunque todavía nos queda el inconveniente de que tenemos que introducir la contraseña del usuario cada vez que ejecutemos el alias puesto que en su interior alberga un "sudo"
 
