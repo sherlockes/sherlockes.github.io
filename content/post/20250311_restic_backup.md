@@ -26,7 +26,11 @@ Todos los datos que necesito para montar los contenedores que uso habitualmente 
 Comencé copiando esta carpeta comprimida al ordenador de sobremesa de forma regular o incluso subiéndola a un canal de Telegram. Empecé incluso a hacer un script para automatizar la tarea pero el otro día tuve una revelación gracias a [Atareao] y me he decidido a probar [Restic] Como gestor de la copia de seguridad. Una de las razones de peso ha sido la posibilidad que ofrece [Restic] de combinarse con [Rclone] para hacer directamente la copia en la nube.
 
 ### Que voy a utilizar
-
+ - Restic como gestor de backups
+ - Rclone como herramienta para subir el backup a la nube
+ - Bash para crear un script con el que automatizar la tarea
+ - Cron para programar el script
+ - Claude para ayudarme en el proceso.
 
 ![image-01]
 
@@ -34,6 +38,7 @@ Comencé copiando esta carpeta comprimida al ordenador de sobremesa de forma reg
 - [Atareao](www.atareao.es)
 
 [Atareao]: https://www.atareao.es
+[Claude]: https://claude.ai
 [Rclone]: https://rclone.org
 [Restic]: https://restic.net
 
