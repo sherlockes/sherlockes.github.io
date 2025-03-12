@@ -81,6 +81,29 @@ Aunque la copia de seguridad ya funciona hay una serie de aspectos en los que se
  - Ejecución mediante sudo para evitar problemas con permisos de archivos
  - Automatizar la tarea
  
+#### Excluir determinado tipo de archivos
+En mi caso, dentro de las carpetas de datos hay archivos "*.mp3" que son de uso temporal y de los que no necesito hacer copia de seguridad. para esto usaremos el argumento "exclude" en el comando de Restic.
+
+``` bash
+restic -r $REPO backup ~/dockers --exclude="*.mp3"
+```
+
+#### Contraseña en archivo externo
+Puesto que todos mis scripts los guardo en un repositorio público de [Github] no resulta práctico que la contraseña de mi copia de seguridad esté ahí expuesta. Restic ofrece la posibilidad de guardarla en un archivo externo.
+
+En mi caso voy a crear el archivo ".restic-password" que únicamente contiene la contraseña y modificaré el script con lo siguiente:
+
+``` bash
+PASSWORD_FILE="/home/sherlockes/.restic-password"
+restic -r $REPO --password-file $PASSWORD_FILE backup ~/dockers --exclude="*.mp3"
+```
+
+#### Ejecución como root
+A la hora de realizar la copia de seguridad he de dado cuenta de que hay determinados archivos a los que mi usuario no tiene acceso por lo que me veo obligado a ejecutar la copia como "root" mediante "sudo" pero es necesario que:
+ - Rclone use la configuración de mi usuario al lanzarlo como "root".
+ - No pida la contraseña para poder automatizarlo posteriormente.
+
+
 ![image-01]
 
 ### Enlaces de interés
@@ -89,6 +112,7 @@ Aunque la copia de seguridad ya funciona hay una serie de aspectos en los que se
 [artículos]: https://sherblog.es/tags/rclone/
 [Atareao]: https://www.atareao.es
 [Claude]: https://claude.ai
+[Github]: https://github.com/sherlockes/SherloScripts/tree/master/bash
 [Mega]: https://mega.nz
 [Rclone]: https://rclone.org
 [Restic]: https://restic.net
