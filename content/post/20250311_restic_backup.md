@@ -1,6 +1,6 @@
 ---
-title: "Backups con Restic"
-date: "2025-03-11"
+title: "Backups en la nube con Restic"
+date: "2025-03-12"
 creation: "2025-03-11"
 description: "Gestión de las copias de seguridad de los datos de contenedores dockers con Restic"
 thumbnail: "images/20250311_restic_backup_00.jpg"
@@ -32,13 +32,64 @@ Comencé copiando esta carpeta comprimida al ordenador de sobremesa de forma reg
  - Cron para programar el script
  - Claude para ayudarme en el proceso.
 
+### Instalación de Restic y Rclone
+Para linux, la instalación de [Restic] y [Rclone] es realmente sencilla
+
+``` bash
+sudo apt update
+sudo apt install restic
+sudo -v ; curl https://rclone.org/install.sh | sudo bash
+```
+El siguiente paso es configurar un remoto para [Rclone] a partir de una nube mediante el comando `rclone config` tal y como ya he explicado en otros [artículos]. En mi caso particular voy a utilizar la nube de [Mega] que ofrece gratis 50 Gb para configurar el remoto.
+
+``` bash
+sherlockes@uber:~$ rclone config
+Current remotes:
+
+Name                 Type
+====                 ====
+Sherlockes78_GD      drive
+Sherlockes_Mega      mega
+```
+
+### Configuración del repositorio
+El sitio donde se van a guardar las copias de seguridad lo llamaremos "repositorio" y es un directorio donde [Restic] va a guardar todos los datos necesarios. Para acceder al repositorio será necesaria una contraseña y el primer paso para configurarlo es inicializarlo.
+
+``` bash
+export RESTIC_PASSWORD="tu_contraseña_segura"
+restic -r rclone:Sherlockes_Mega:docker_backups init
+```
+
+> En este caso estoy usando el remoto de rclone "Sherlockes_Mega" y la carpeta "docker_backups" como ubicación para el repositorio de Restic.
+
+### Realizando la copia de seguridad
+Crearemos un archivo "backup.sh" al que daremos permisos de ejecución y en el que incluiremos el siguiente contenido:
+
+``` bash
+#!/bin/bash
+
+export RESTIC_PASSWORD="tu_contraseña_segura"
+REPO="rclone:Sherlockes_Mega:docker_backups"
+
+restic -r $REPO backup ~/dockers
+```
+
+### ¿Que más se le puede pedir?
+Aunque la copia de seguridad ya funciona hay una serie de aspectos en los que se podría mejorar:
+ - Excluir determinado tipo de archivos de la copia
+ - Poner la contraseña en un archivo externo al script
+ - Ejecución mediante sudo para evitar problemas con permisos de archivos
+ - Automatizar la tarea
+ 
 ![image-01]
 
 ### Enlaces de interés
 - [Atareao](www.atareao.es)
 
+[artículos]: https://sherblog.es/tags/rclone/
 [Atareao]: https://www.atareao.es
 [Claude]: https://claude.ai
+[Mega]: https://mega.nz
 [Rclone]: https://rclone.org
 [Restic]: https://restic.net
 
