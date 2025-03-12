@@ -102,6 +102,25 @@ restic -r $REPO --password-file $PASSWORD_FILE backup ~/dockers --exclude="*.mp3
 A la hora de realizar la copia de seguridad he de dado cuenta de que hay determinados archivos a los que mi usuario no tiene acceso por lo que me veo obligado a ejecutar la copia como "root" mediante "sudo" pero es necesario que:
  - Rclone use la configuración de mi usuario al lanzarlo como "root".
  - No pida la contraseña para poder automatizarlo posteriormente.
+ 
+Al ejecutarlo con "sudo", rclone busca la configuración de "root" y no va a encontrar los remotos que hemos creado con nuestro usuario. Para evitar esto vamos a utilizar una variable de entorno mediante la que le vamos a pasar a Restic la ubicación del archivo de configuración de Rclone. Añadiremos lo siguiente:
+
+``` bash
+export RCLONE_CONFIG="/home/sherlockes/.config/rclone/rclone.conf"
+```
+
+Para que la ejecución mediante "sudo" haga uso de las variables de entorno debemos usar el argumento "-E" y para que no nos pida la contraseña al ejecutar restic añadiremos la siguiente línea al archivo "/etc/sudoers" usando el comando `sudo visudo"
+
+``` bash
+sherlockes ALL=(ALL) NOPASSWD:SETENV: /usr/bin/restic
+```
+
+ya con esto sólo nos queda modificar el script para que restic sea lanzado bajo "sudo"
+
+``` bash
+sudo -E restic -r $REPO --password-file $PASSWORD_FILE backup ~/dockers --exclude="*.mp3"
+```
+
 
 
 ![image-01]
