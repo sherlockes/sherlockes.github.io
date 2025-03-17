@@ -14,7 +14,7 @@ tags:
 - "bash"
 - "rclone"
 - "restic"
-draft: true
+draft: false
 weight: 5
 ---
 Después de valorar algunas alternativas para la creación de las copias de seguridad de los datos de mis contenedores he encontrado una buena solución en restic.
