@@ -132,6 +132,7 @@ A partir de esto, cada vez que arranca el servidor se realizar una copia de segu
  
 
 ### Script completo
+Puedes encontrar el [script] en mi repositorio de [Github]
 
 {{< texto_remoto "https://raw.githubusercontent.com/sherlockes/SherloScripts/refs/heads/master/bash/backup_dockers.sh" >}}
 
@@ -146,6 +147,7 @@ A partir de esto, cada vez que arranca el servidor se realizar una copia de segu
 [Mega]: https://mega.nz
 [Rclone]: https://rclone.org
 [Restic]: https://restic.net
+[script]: https://github.com/sherlockes/SherloScripts/blob/master/bash/backup_dockers.sh
 
 
 
