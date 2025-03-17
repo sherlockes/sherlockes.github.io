@@ -1,6 +1,6 @@
 ---
 title: "Backups en la nube con Restic"
-date: "2025-03-12"
+date: "2025-03-17"
 creation: "2025-03-11"
 description: "Gestión de las copias de seguridad de los datos de contenedores dockers con Restic"
 thumbnail: "images/20250311_restic_backup_00.jpg"
@@ -78,7 +78,7 @@ restic -r $REPO backup ~/dockers
 Aunque la copia de seguridad ya funciona hay una serie de aspectos en los que se podría mejorar:
  - Excluir determinado tipo de archivos de la copia
  - Poner la contraseña en un archivo externo al script
- - Ejecución mediante sudo para evitar problemas con permisos de archivos
+ - Ejecución como root para evitar problemas con permisos de archivos
  - Automatizar la tarea
  
 #### Excluir determinado tipo de archivos
@@ -121,9 +121,20 @@ ya con esto sólo nos queda modificar el script para que restic sea lanzado bajo
 sudo -E restic -r $REPO --password-file $PASSWORD_FILE backup ~/dockers --exclude="*.mp3"
 ```
 
+#### Automatizar la tarea
+El último paso es que la tarea se ejecute automáticamente. Yo he escogido el método del "cron" por ser el más sencillo de todos.
 
+ - Ejecutamos `crontab -e`
+ - Añadimos al final `@reboot ~/backup.sh > ~/backup.log 2>&1`
+ - Guardamos mediante `Ctrl + x`
+ 
+A partir de esto, cada vez que arranca el servidor se realizar una copia de seguridad de los datos de los contenedores docker que hemos seleccionado.
+ 
 
-![image-01]
+### Script completo
+
+{{< texto_remoto "https://raw.githubusercontent.com/sherlockes/SherloScripts/refs/heads/master/bash/backup_dockers.sh" >}}
+
 
 ### Enlaces de interés
 - [Atareao](www.atareao.es)
@@ -135,8 +146,6 @@ sudo -E restic -r $REPO --password-file $PASSWORD_FILE backup ~/dockers --exclud
 [Mega]: https://mega.nz
 [Rclone]: https://rclone.org
 [Restic]: https://restic.net
-
-[image-01]: /images/20250311_restic_backup_01.jpg
 
 
 
