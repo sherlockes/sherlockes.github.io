@@ -136,6 +136,8 @@ Puedes encontrar el [script] en mi repositorio de [Github]
 
 {{< texto_remoto "https://raw.githubusercontent.com/sherlockes/SherloScripts/refs/heads/master/bash/backup_dockers.sh" >}}
 
+Aquí un salto de línea
+
 {{< github-script title="Mi Script" file="backup_dockers.sh" lang="bash" url="https://raw.githubusercontent.com/sherlockes/SherloScripts/refs/heads/master/bash/backup_dockers.sh" >}}
 
 ### Enlaces de interés
