@@ -107,7 +107,7 @@ CMD ["/bin/bash", "/app/scripts/start.sh"]
 ```
 
 ### start.sh
-Es el archivo al que llama el Dockerfile tras ser montado. Su misión es descargar los scripts de mi repositorio de Github copiarlos al volumen del contenedor y lanzarlos. Con esto realizar modificaciones en los scripts no implica tener que actualizar el contenedor y resulta muy últil en la fase de desarrollo.
+Es el archivo al que llama el Dockerfile tras ser montado. Su misión es descargar los scripts de mi repositorio de Github copiarlos al volumen del contenedor y lanzarlos. Con esto realizar modificaciones en los scripts no implica tener que actualizar el contenedor y resulta muy útil en la fase de desarrollo.
 
 ``` bash
 #!/bin/bash
