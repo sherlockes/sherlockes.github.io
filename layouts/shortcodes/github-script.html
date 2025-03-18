@@ -1,0 +1,6 @@
+<!-- layouts/shortcodes/github-script.html -->
+<div class="github-script">
+  <h4>{{ .Get "title" }}</h4>
+  <pre><code class="{{ .Get "lang" }}">{{ .Page.Site.Data.scripts.GetScript .Get "file" }}</code></pre>
+  <a href="{{ .Get "url" }}" target="_blank">Ver en GitHub</a>
+</div>
