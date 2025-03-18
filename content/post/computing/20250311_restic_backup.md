@@ -132,7 +132,7 @@ A partir de esto, cada vez que arranca el servidor se realizar una copia de segu
  
 
 ### Script completo
-Puedes encontrar este [script] en mi repositorio de [Github]
+Puedes encontrar este [script] en mi repositorio de [Github].
 
 {{< texto_remoto_bak "https://raw.githubusercontent.com/sherlockes/SherloScripts/refs/heads/master/bash/backup_dockers.sh" >}}
 
