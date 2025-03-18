@@ -1,6 +1,6 @@
 ---
 title: "Backups en la nube con Restic"
-date: "2025-03-17"
+date: "2025-03-18"
 creation: "2025-03-11"
 description: "Gestión de las copias de seguridad de los datos de contenedores dockers con Restic"
 thumbnail: "images/20250311_restic_backup_00.jpg"
@@ -134,7 +134,7 @@ A partir de esto, cada vez que arranca el servidor se realizar una copia de segu
 ### Script completo
 Puedes encontrar el [script] en mi repositorio de [Github]
 
-{{< texto_remoto "https://raw.githubusercontent.com/sherlockes/SherloScripts/refs/heads/master/bash/backup_dockers.sh" >}}
+{{ texto_remoto "https://raw.githubusercontent.com/sherlockes/SherloScripts/refs/heads/master/bash/backup_dockers.sh" }}
 
 
 ### Enlaces de interés
