@@ -1,6 +1,6 @@
 ---
 title: "Enviar enlaces desde telegram a hoarder y readeck mediante n8n"
-date: "2025-04-04"
+date: "2025-04-09"
 creation: "2025-04-04"
 description: "Como enviar enlaces desde Telegram al mismo tiempo a los servidores de favoritos Hoarder y Readeck"
 thumbnail: "images/20250404_n8n_tg_hoarder_readeck_00.jpg"
@@ -45,11 +45,13 @@ TG_SHERLINK_BOT_TOKEN=4523891492:AAFBPE2TS4h8r2sNd7F4t8u7mQmd4AVzRuJow
 # Id Telegram Channel Sherlink
 TG_SHERLINK_ID=-1002349285684
 
-# Readeck server url
+# Readeck server
 READECK_SERVER=http://readeck.midomain.com
+READECK_API_KEY=xxxxxxxxxxxxx
 
-# Hoarder server url
+# Hoarder server
 HOARDER_SERVER=http://hoarder.midomain.com
+HOARDER_API_KEY=xxxxxxxxxxxxxx
 ```
 
 He realizado esta plantilla en la versión 1.85.4 de [n8n]
