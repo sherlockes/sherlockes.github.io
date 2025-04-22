@@ -11,7 +11,9 @@ mathjax: false
 categories:
 - "computing"
 tags:
-- "bash"
+- "n8n"
+- "telegram"
+- "synology"
 draft: true
 weight: 5
 ---
@@ -20,6 +22,8 @@ Cuando usas [Download Station] para Synology una de las características que ech
 [Download Station] es una utilidad de Synology para el control de descargas que es muy sencilla pero con un funcionamiento robusto. Para comprobar que un archivo que tengo en propagación está correctamente conectado al Tracker de Torrents del que ha sido descargado tengo que acceder manualmente a dicho archivo.
 
 Cuando la conexión al tracker falla no existe una forma automatizada de saberlo por lo que me voy a apoyar en el log de la aplicación y una plantilla de [n8n] para hacerlo.
+
+![image-01]
 
 ### Para que nos va a servir esta plantilla:
 La única utilidad de esta plantilla en notificarnos, a través de un canal de Telegram, de los errores existentes en los archivos torrent en propagación gestionados por [Download Station]. Para esto se comprobará de forma remota el contenido del archivo "transmissiond.log" que genera la aplicación.
@@ -72,10 +76,12 @@ return [{ json: { message: formattedList } }];
 - Finalmente se envía el contenido a un canal de Telegram.
 
 ### Instrucciones de configuración
-ssh
-telegram
-
-![image-01]
+- En primer lugar necesitamos un acceso al NAS remoto desde el equipo en el que corre n8n. Este acceso se realiza mediante ssh y gracias a la llave publico-privada será posible sin el uso de contraseña.
+- Para Telegram necesitamos tener configurada la credencial del bot que vamos a utilizar para mandar los mensajes a un canal determinado (El bot deberá estar como administrador en dicho canal). La id del canal al que se enviarán los mensajes queda configurada como una variable de entorno en el contenedor que hace correr n8n.
+``` yaml
+environment:
+	- TG_NOTIF_ID=-XXXXXXXXXXXX
+```
 
 ### Enlaces de interés
 - [enlace](www.sherblog.pro)
