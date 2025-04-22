@@ -1,6 +1,6 @@
 ---
 title: "Enviar enlaces desde telegram a hoarder y readeck mediante n8n"
-date: "2025-04-09"
+date: "2025-04-22"
 creation: "2025-04-04"
 description: "Como enviar enlaces desde Telegram al mismo tiempo a los servidores de favoritos Hoarder y Readeck"
 thumbnail: "images/20250404_n8n_tg_hoarder_readeck_00.jpg"
@@ -61,6 +61,7 @@ He realizado esta plantilla en la versión 1.85.4 de [n8n]
 - [enlace](www.sherblog.pro)
 
 [Hoarder]: https://hoarder.app
+[n8n]: https://n8n.io
 [Telegram]: https://telegram.org
 [Readeck]: https://readeck.org
 
