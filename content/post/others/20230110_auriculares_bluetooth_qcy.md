@@ -81,14 +81,14 @@ He tenido varios auriculares de este modelo y tienen, al menos, dos métodos dif
 - Pulsar los dos botones durante 20 sg (El led parpadeará en rojo y blanco y 10 sg después parpadeará tres veces en rojo y blanco)
 - Pulsar los dos botones durante 1 sg para encenderlos (El led parpadeará roo y blanco) y los dos auriculares se emparejarán entre si.
 - El auricular derecho entrará en modo de emparejado (Parpadeo del led) y el led del auricular izquierdo se apagará.
-- En el teléfono buscar la conexión bluetooth "CY-T1 R" y conectarse.
+- En el teléfono buscar la conexión bluetooth "QCY-T1 R" y conectarse.
 ##### Método 2
 - Borrar la conexión bluetooth de los auriculares en el teléfono
 - Sacar de la caja y apagar los dos auriculares (Pulsar los botones 3 sg)
 - Pulsar los dos botones durante unos segundos hasta que ambos auriculares quedan parpadeando en rojo y blanco.
 - Soltar los botones y realizar una pulsación corta. Los dos auriculares parpadearán en blanco durante unos segundos para después apagarse las luces
 - El auricular derecho entrará en modo de emparejado (Parpadeo del led) y el led del auricular izquierdo se apagará.
-- En el teléfono buscar la conexión bluetooth "CY-T1" y conectarse.
+- En el teléfono buscar la conexión bluetooth "QCY-T1" y conectarse.
 
 [Manual de instruciones](https://t.me/sherblog_archivo/10)
 
