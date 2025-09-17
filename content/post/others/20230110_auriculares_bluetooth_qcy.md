@@ -1,6 +1,6 @@
 ---
 title: "Los auriculares QCY que he usado"
-date: "2024-02-09"
+date: "2025-09-17"
 creation: "2023-01-10"
 description: "Una lista con todos los auriculares qcy que he usado, sus pros y sus contras."
 thumbnail: "images/20230110_auriculares_bluetooth_qcy_00.jpg"
@@ -74,12 +74,21 @@ Aparecen aquí los primeros auriculares sin puerto de carga en los mismos y que 
 - Desgaste de pines y contactos de los puertos de carga
 
 #### Como restaurar los valores de fábrica
+He tenido varios auriculares de este modelo y tienen, al menos, dos métodos diferentes de realizar la restauración de los valores de fábrica.
+##### Método 1
 - Borrar la conexión bluetooth de los auriculares en el teléfono
 - Sacar de la caja y apagar los dos auriculares (Pulsar los botones 3 sg)
 - Pulsar los dos botones durante 20 sg (El led parpadeará en rojo y blanco y 10 sg después parpadeará tres veces en rojo y blanco)
 - Pulsar los dos botones durante 1 sg para encenderlos (El led parpadeará roo y blanco) y los dos auriculares se emparejarán entre si.
 - El auricular derecho entrará en modo de emparejado (Parpadeo del led) y el led del auricular izquierdo se apagará.
 - En el teléfono buscar la conexión bluetooth "CY-T1 R" y conectarse.
+##### Método 2
+- Borrar la conexión bluetooth de los auriculares en el teléfono
+- Sacar de la caja y apagar los dos auriculares (Pulsar los botones 3 sg)
+- Pulsar los dos botones durante unos segundos hasta que ambos auriculares quedan parpadeando en rojo y blanco.
+- Soltar los botones y realizar una pulsación corta. Los dos auriculares parpadearán en blanco durante unos segundos para después apagarse las luces
+- El auricular derecho entrará en modo de emparejado (Parpadeo del led) y el led del auricular izquierdo se apagará.
+- En el teléfono buscar la conexión bluetooth "CY-T1" y conectarse.
 
 [Manual de instruciones](https://t.me/sherblog_archivo/10)
 
@@ -160,18 +169,18 @@ En este modelo tienen lugar dos cambios importantes, uno en lo relativo a la for
 
 ***Lo mejor***
 - Tamaño compacto de la caja
+- Duración de la batería
 
 ***Lo peor***
 - Aislamiento con el exterior
 - Controles táctiles
+- Ausencia de graves
 
 ***El paso del tiempo***
-- Pendiente de valorar
+- Al primer par que tuve, un paseo por la lavadora los dejó inservibles pero pasado un tiempo he adquirido un nuevo par.
 
 [Manual de instrucciones](https://t.me/sherblog_archivo/17)
 
-***El fin***
-Un paseo por la lavadora los ha dejado inservibles
 ---
 
 ### QCY - HT03
@@ -245,7 +254,10 @@ El precio es ridículo y llevan integrada la pegatina por lo que cuando notas un
 
 ![image-limp02]
 
----
+
+### Enlaces de interés
+- [Zonacel.net](https://hardreset.zonacel.net/hard-reset-los-auriculares-qcy/)
+
 
 [QCY]: https://www.qcy.com
 [T2c]: {{< relref "#qcy---t2c-qc2" >}}
