@@ -8,6 +8,10 @@ theme = "mainroad"
 disqusShortname = "" # Enable comments by entering your Disqus shortname
 ignoreLogs = ['warning-goldmark-raw-html']
 
+[markup.goldmark.renderer]
+unsafe = true
+
+
 [Author] # Used in authorbox
     name = "Sherlockes"
     bio = "Solo un discípulo de San Google..."
