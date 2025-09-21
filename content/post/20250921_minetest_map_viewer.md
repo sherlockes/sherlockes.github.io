@@ -12,17 +12,27 @@ categories:
 - "computing"
 tags:
 - "bash"
-draft: true
+draft: false
 weight: 5
 ---
 Resumen de introducción
 <!--more-->
 
+<div id="viewer" style="width:100%; height:75vh;"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.1/openseadragon.min.js"></script>
+<script>
+  OpenSeadragon({
+    id: "viewer",
+    prefixUrl: "https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.1/images/",
+    tileSources: "/mineclone2/tiles/map.dzi",
+    showNavigator: true
+  });
+</script>
 
 ![image-01]
 
 ### Enlaces de interés
-- [enlace](www.sherblog.pro)
+- [enlace](www.sherblog.es)
 
 [link]: https://www.google.es
 
