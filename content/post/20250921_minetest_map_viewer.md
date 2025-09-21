@@ -12,7 +12,7 @@ categories:
 - "computing"
 tags:
 - "bash"
-draft: false
+draft: true
 weight: 5
 ---
 Resumen de introducción
