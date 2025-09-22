@@ -32,6 +32,7 @@ No le daré más vueltas, este es el resultado y a continuación dejaré la expl
   });
 </script>
 
+
 ### Mi servidor de Luanti
 Tengo el servidor del juego instalado mediante Docker en una máquina con Ubuntu Server junto con otros servicios. Para la generación del mapa vamos a necesitar el contenido del mundo en el que estamos jugando que se encuentra, en mi caso, en la carpeta "~/dockers/minetest/data/worlds/world"
 y más específicamente en el archivo "map.sqlite"
