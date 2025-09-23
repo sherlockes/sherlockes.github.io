@@ -2,7 +2,7 @@
 title: "Visor de mapa conquistado en Minetest"
 date: "2025-09-23"
 creation: "2025-09-21"
-description: "Descripción"
+description: "Como he conseguido mostrar el mapa de codo el terreno conquistado en Luanti dentro de un post de Hugo"
 thumbnail: "images/20250921_minetest_map_viewer_00.jpg"
 disable_comments: true
 authorbox: false
@@ -12,7 +12,8 @@ categories:
 - "computing"
 tags:
 - "luanti"
-draft: false
+- "hugo"
+draft: true
 weight: 5
 ---
 Si juegas a Minetest te gustará tener un mapa en el que poder ver toda la zona que has conquistado  de una forma rápida y sencilla.
