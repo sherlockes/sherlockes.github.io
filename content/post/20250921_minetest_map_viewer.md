@@ -1,6 +1,6 @@
 ---
 title: "Visor de mapa conquistado en Minetest"
-date: "2025-09-22"
+date: "2025-09-23"
 creation: "2025-09-21"
 description: "Descripción"
 thumbnail: "images/20250921_minetest_map_viewer_00.jpg"
@@ -96,6 +96,13 @@ Para visualizar el contenido de las losetas vamos a utilizar [openseadragon] ins
     showNavigator: true
   });
 </script>
+```
+
+Para que [hugo] permita la visualización del html crudo incrustado hay que añadir en el archivo de configuración "hugo.toml" las siguientes líneas:
+
+``` yaml
+[markup.goldmark.renderer]
+unsafe = true
 ```
 
 ![image-01]
