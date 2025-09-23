@@ -105,9 +105,6 @@ Para que [hugo] permita la visualización del html crudo incrustado hay que aña
 [markup.goldmark.renderer]
 unsafe = true
 ```
-
-![image-01]
-
 ### Enlaces de interés
 - [enlace](www.sherblog.es)
 
