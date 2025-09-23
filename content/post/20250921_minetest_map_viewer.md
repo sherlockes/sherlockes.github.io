@@ -12,7 +12,7 @@ categories:
 - "computing"
 tags:
 - "luanti"
-draft: true
+draft: false
 weight: 5
 ---
 Si juegas a Minetest te gustará tener un mapa en el que poder ver toda la zona que has conquistado  de una forma rápida y sencilla.
