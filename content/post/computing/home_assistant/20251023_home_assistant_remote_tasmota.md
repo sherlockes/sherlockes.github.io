@@ -14,7 +14,7 @@ tags:
 - "zerotier"
 - "tasmota"
 - "bash"
-draft: true
+draft: false
 weight: 5
 ---
 Tengo problemas con el [SLZB-06] de mi segunda residencia cuando se va la luz, así es como lo he solucionado gracias a un enchufe inteligente.
