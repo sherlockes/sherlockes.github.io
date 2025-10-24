@@ -1,6 +1,6 @@
 ---
 title: "Controlando un Tasmota remoto desde Home Assistant"
-date: "2025-10-23"
+date: "2025-10-24"
 creation: "2025-10-23"
 description: "El método que he utilizado para controlar un enchufe inteligente con Tasmota desde Home Assistant gracias a Zerotier y una máquina de salto"
 thumbnail: "images/20251023_home_assistant_remote_tasmota_00.jpg"
@@ -56,14 +56,15 @@ command_line:
         pi@192.168.191.205 "curl -s 'http://192.168.1.32/cm?cmnd=Power'"
       value_template: >
         {{ value_json.POWER == 'ON' }}
-      scan_interval: 0
+      command_timeout: 10
+      scan_interval: 600
 ```
 Tras un reinicio de [Home Assistant] ya queda el interruptor listo para funcionar.
 
 Con esta configuración, Home Assistant ejecuta los comandos SSH hacia la Raspberry remota (192.168.191.205), que a su vez lanza las peticiones HTTP al enchufe Tasmota (192.168.1.32).
 Gracias al túnel de Zerotier, todo ocurre dentro de una red privada virtual, sin abrir puertos ni depender de IPs públicas.
 
-El interruptor ahora enciende, apaga y refleja el estado real del enchufe con un retardo mínimo. Además, scan_interval permite que el estado se actualice automáticamente cada cierto tiempo por si el dispositivo se cambia manualmente, para evitar consultas innecesarias lo he dejado en "0" de forma que sólo lo consulte al abrir el panel donde está el switch, recargar la página, o reiniciar [Home Assistant].
+El interruptor ahora enciende, apaga y refleja el estado real del enchufe con un retardo mínimo. Además, scan_interval permite que el estado se actualice automáticamente cada cierto tiempo por si el dispositivo se cambia manualmente, para evitar demasiadas consultas lo he dejado en "600" segundos.
 
 
 
