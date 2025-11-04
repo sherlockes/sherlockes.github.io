@@ -1,6 +1,6 @@
 ---
 title: "Los auriculares QCY que he usado"
-date: "2025-09-17"
+date: "2025-11-04"
 creation: "2023-01-10"
 description: "Una lista con todos los auriculares qcy que he usado, sus pros y sus contras."
 thumbnail: "images/20230110_auriculares_bluetooth_qcy_00.jpg"
@@ -193,17 +193,17 @@ Bluetooth 5.1, cancelación de ruido activa, control desde aplicación en el tel
 
 ***Lo peor***
 - La posición de la superficie táctil no es intuitiva
-- La ergonomía. Se mueven y son dífíciles de ajustar.
+- La ergonomía. Se mueven y son difíciles de ajustar.
 
 ***El paso del tiempo***
-- Pendiente de valorar
+- Muerte por degradación de la batería
 
 [Manual de instrucciones](https://t.me/sherblog_archivo/19)
 
 ---
 
 ### QCY - HT01
-Bluetooth 5.0, cancelación activa de ruido, sensores mara detectar cuando te quitas los auriculares de la oreja, capacidad impermeable IPx4 y una carga inalámbrica son las principales cualidades que el fabricante destaca para este [modelo](https://www.qcyearbuds.com/qcy-ht01/).
+Bluetooth 5.0, cancelación activa de ruido, sensores para detectar cuando te quitas los auriculares de la oreja, capacidad impermeable IPx4 y una carga inalámbrica son las principales cualidades que el fabricante destaca para este [modelo](https://www.qcyearbuds.com/qcy-ht01/).
 
 ***Lo mejor***
 - Caja con carga inalámbrica y aspecto premium
@@ -219,7 +219,7 @@ Bluetooth 5.0, cancelación activa de ruido, sensores mara detectar cuando te qu
 - El gasto de batería con la cancelación de ruido activa es notable. La caja queda completamente descargada tras apenas dos recargas.
 
 ***El paso del tiempo***
-- Pendiente de valorar
+- Casi todo el hardware ha resistido muy bien el paso del tiempo, excepto la batería, La primera en morir ha sido la de la caja y los auriculares no cargaban si esta no estaba conectada al cargador. Progresivamente, la batería del auricular derecho ha ido mermando su duración hasta el punto de hacerlo inusable, razón por la que me he desprendido de ellos.
 
 ![image-ht01]
 
