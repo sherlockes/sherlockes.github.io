@@ -1,5 +1,11 @@
-{{- $remote_url := (.Get 0) -}}
-{{- $remote_data := getJSON "https://hugo-remote-url-proxy.quinn934.workers.dev/fetch?url=" $remote_url -}}
-{{- with $remote_data -}}
-    <pre>{{ $remote_data.body | safeHTML }}</pre>
+{{- $remote_url := .Get 0 -}}
+{{- $proxy := "https://hugo-remote-url-proxy.quinn934.workers.dev/fetch?url=" -}}
+{{- $full := printf "%s%s" $proxy $remote_url -}}
+
+{{- $res := resources.GetRemote $full -}}
+{{- $json := $res | transform.Unmarshal -}}
+
+{{- with $json.body -}}
+<pre>{{ . | safeHTML }}</pre>
 {{- end -}}
+
