@@ -1,0 +1,112 @@
+{
+  "name": "Rss Sherblog to Mastodon & Telegram",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyHour"
+            }
+          ]
+        },
+        "feedUrl": "https://sherblog.es/index.xml"
+      },
+      "id": "c86d5d69-a698-455f-8750-29ad7e19840c",
+      "name": "RSS Feed Trigger",
+      "type": "n8n-nodes-base.rssFeedReadTrigger",
+      "typeVersion": 1,
+      "position": [
+        -960,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://mas.to/api/v1/statuses",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "status",
+              "value": "={{ $json.contentSnippet }}\n{{ $json.link }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "575a08b1-88c8-4f81-bd55-da0b717bad80",
+      "name": "Mastodon API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -576,
+        208
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "zkmgeLGpegQGlRsK",
+          "name": "Mastodon (mas.to)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "-1001216307043",
+        "text": "=Nuevo artículo en el Blog\n{{ $json.title }}\n{{ $json.link }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "14f703b1-e411-40f3-9615-41fb16ae93dd",
+      "name": "Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -576,
+        480
+      ],
+      "notesInFlow": false,
+      "webhookId": "97bd7bfb-a356-4335-80f7-4749a11f0edc",
+      "credentials": {
+        "telegramApi": {
+          "id": "7PHYK39uh1jMzOBd",
+          "name": "Telegram account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "RSS Feed Trigger": {
+      "main": [
+        [
+          {
+            "node": "Mastodon API",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "88a46e3d-932d-4e3a-8d2d-27d17d5ee98d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8fb543b511022c43ab705107ba101545bb8b0fdb9bd6ebc4cca28dc9591a036e"
+  },
+  "id": "vVkuj92HyfZOyaaF",
+  "tags": []
+}
