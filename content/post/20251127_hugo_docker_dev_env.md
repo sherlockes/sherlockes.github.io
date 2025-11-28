@@ -1,8 +1,8 @@
 ---
-title: "Título"
-date: "2025-11-27"
+title: "Entorno de desarrollo de Hugo en Docker"
+date: "2025-11-28"
 creation: "2025-11-27"
-description: "Descripción"
+description: "Un contenedor que he creado para que las pruebas que hago en Hugo no sean en el entorno de producción"
 thumbnail: "images/20251127_hugo_docker_dev_env_00.jpg"
 disable_comments: true
 authorbox: false
@@ -18,7 +18,7 @@ tags:
 draft: true
 weight: 5
 ---
-Resumen de introducción
+No es el primero ni seguramente el último modo que utilizo para realizar las pruebas en un entorno de desarrollo de este blog. Esta vez usando un contenedor en mi homelab.
 <!--more-->
 
 Durante años he tenido mi blog de Hugo desplegado desde GitHub usando GitHub Actions, pero no tenía un entorno de desarrollo cómodo y aislado donde trastear sin miedo a romper nada. En esta entrada cuento cómo he montado un **entorno de desarrollo efímero con Docker** en mi servidor, que:
