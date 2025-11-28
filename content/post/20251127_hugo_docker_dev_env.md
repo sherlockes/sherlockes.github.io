@@ -173,6 +173,7 @@ services:
   hugo-dev:
     build: .
     container_name: hugo-dev
+	user: "1000:1000"
     ports:
       - "1313:1313"
     volumes:
@@ -185,6 +186,7 @@ Detalles clave:
 
 - `build: .` indica que Compose debe construir la imagen usando el `Dockerfile` del directorio actual.
 - `container_name: hugo-dev` me permite identificar y ejecutar comandos fácilmente contra el contenedor.
+- `user: "1000:1000"` me permite trabajar sobre la carpeta creada por el usuario
 - Exponemos el puerto `1313` del contenedor al mismo puerto en el host: puedo abrir el navegador en `http://mi-servidor:1313` y ver el blog en modo desarrollo.
 - El volumen `./repo:/site/repo` hace que la copia del blog quede en `~/dockers/hugo-dev/repo` en el servidor:
   - Puedo inspeccionar el repositorio desde el host.
@@ -309,14 +311,7 @@ Puedo romper cosas, cambiar shortcodes, probar nuevas versiones de Hugo, reorgan
 La clave está en que todo el “estado” importante vive en Git; el contenedor solo es una herramienta para ver y experimentar de forma segura.
 
 
-![image-01]
-
 ### Enlaces de interés
-- [enlace](www.sherblog.pro)
-
-[link]: https://www.google.es
-
-[image-01]: /images/20251127_hugo_docker_dev_env_01.jpg
-
+- [Entorno de desarrollo en Emacs](https://sherblog.es/entorno-de-desarrollo-de-sherblog-en-emacs/)
 
 
