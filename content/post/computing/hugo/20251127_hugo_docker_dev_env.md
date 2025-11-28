@@ -15,7 +15,7 @@ tags:
 - "hugo"
 - "emacs"
 - "github"
-draft: true
+draft: false
 weight: 5
 ---
 No es el primero ni seguramente el último modo que utilizo para realizar las pruebas en un entorno de desarrollo de este blog. Esta vez usando un contenedor en mi homelab.
