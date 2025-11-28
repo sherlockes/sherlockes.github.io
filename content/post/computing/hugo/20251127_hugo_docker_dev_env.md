@@ -15,42 +15,35 @@ tags:
 - "hugo"
 - "emacs"
 - "github"
-draft: true
+draft: false
 weight: 5
 ---
-No es el primero ni seguramente el último modo que utilizo para realizar las pruebas en un entorno de desarrollo de este blog. Esta vez usando un contenedor en mi homelab.
+Hace años que tengo mi blog de Hugo desplegado desde GitHub usando GitHub Actions, pero todavía no tenía un entorno de desarrollo cómodo y aislado donde trastear sin miedo a romper nada. Aquí cuento cómo he montado un **entorno de desarrollo efímero con Docker** en mi servidor casero.
 <!--more-->
-
-Hace años que tengo mi blog de Hugo desplegado desde GitHub usando GitHub Actions, pero todavía no tenía un entorno de desarrollo cómodo y aislado donde trastear sin miedo a romper nada. En esta entrada cuento cómo he montado un **entorno de desarrollo efímero con Docker** en mi servidor, que:
-
+Estas van a ser las características del entorno de desarrollo:
 - Usa la **misma versión de Hugo Extended** que utilizo en GitHub Actions (en mi caso, `0.152.0`).
 - Clona automáticamente el repositorio del blog desde GitHub al arrancar.
 - Limpia el estado del repositorio cada vez que se levanta el contenedor (no guarda cambios locales).
 - Me permite editar los archivos desde Emacs como si fuesen locales.
 - No deja “basura” permanente en el contenedor: si algo se rompe, paro y vuelvo a arrancar.
 
-A continuación explico **solo la solución final que ha quedado funcionando**, junto con el contenido completo de los archivos que he creado.
-
-> Nota: sustitúyase `sherlockes` y `sherlockes.github.io` por el usuario/repositorio que corresponda en tu caso.
-
----
-
 ## 1. Estructura del entorno en el servidor
 
-En mi servidor he creado un directorio específico para este entorno de desarrollo:
+En mi servidor he creado un directorio específico para este entorno de desarrollo jnto con una carpeta para el contenido del blog:
 
 ```bash
 mkdir -p ~/dockers/hugo-dev
 cd ~/dockers/hugo-dev
+mkdir -p repo
+sudo chown -R sherlockes:sherlockes repo
 ```
 
-Dentro de esa carpeta tengo tres piezas clave:
+Dentro de esa carpeta tengo cuatro piezas clave:
 
 - `Dockerfile` – Imagen personalizada con Hugo Extended 0.152.0.
 - `start.sh` – Script de arranque del contenedor (clona/actualiza repo y lanza Hugo).
 - `docker-compose.yml` – Orquestación del contenedor y volúmenes.
-
-Además, Docker monta una carpeta `repo/` en el host que contiene la copia del blog:
+- `repo`- Contenido del blog clonado de Github
 
 ```text
 ~/dockers/hugo-dev/
@@ -118,24 +111,16 @@ set -e
 REPO_URL="https://github.com/sherlockes/sherlockes.github.io.git"
 REPO_DIR="/site/repo"
 
-if [ -d "$REPO_DIR/.git" ]; then
-  echo "🧹 Limpiando copia anterior de $REPO_DIR..."
-  cd "$REPO_DIR"
-  # Descartar cualquier cambio local y dejar el repo como en la última commit
-  git reset --hard
-  git clean -fdx
+echo "🧹 Borrando contenido anterior..."
+rm -rf "${REPO_DIR:?}/"*
 
-  echo "🔄 Actualizando desde GitHub (git pull)..."
-  git pull --ff-only
-else
-  echo "📥 Clonando repositorio por primera vez..."
-  rm -rf "$REPO_DIR"
-  git clone "$REPO_URL" "$REPO_DIR"
-  cd "$REPO_DIR"
-fi
+echo "📥 Clonando repositorio de GitHub..."
+git clone "$REPO_URL" "$REPO_DIR"
 
-echo "🚀 Lanzando servidor de desarrollo Hugo..."
-hugo server -D --bind 0.0.0.0 --baseURL http://localhost:1313
+cd "$REPO_DIR"
+
+echo "🚀 Lanzando Hugo..."
+hugo server -D --bind 0.0.0.0 --baseURL http://localhost:1313 --disableFastRender
 ```
 
 Y en el host me aseguro de que es ejecutable:
@@ -147,15 +132,12 @@ chmod +x start.sh
 ¿Qué hace este script?
 
 1. Define la URL del repositorio (`REPO_URL`) y el directorio donde debe clonar (`REPO_DIR`).
-2. Si ya existe un repositorio Git en `/site/repo`:
-   - Ejecuta `git reset --hard` y `git clean -fdx` para **eliminar cualquier cambio local** y archivos no versionados.
-   - Hace `git pull --ff-only` para traer la última versión del blog desde GitHub.
-3. Si no existe el repositorio:
-   - Borra cualquier resto de carpeta previa y clona desde cero.
-4. Por último, arranca `hugo server -D`:
+2. Borra cualquier resto de carpeta previa y clona desde cero.
+3. Por último, arranca `hugo server -D`:
    - `-D` incluye borradores.
    - `--bind 0.0.0.0` lo hace accesible desde fuera del contenedor.
    - `--baseURL` se queda en `http://localhost:1313` para el entorno de desarrollo.
+   - `--disableFastRender` para renderizar por completo la web ante un cambio
 
 El comportamiento final es el que buscaba:
 
@@ -240,76 +222,6 @@ Eso me abre un `dired` en la raíz del blog, y desde ahí puedo navegar a:
 - `config.yaml` o `config.toml`, según mi configuración.
 
 Los archivos que edito por TRAMP aparecen además en la lista de “recientes” de Emacs, lo cual encaja muy bien con el uso de `dashboard`.
-
-### 5.2. Añadir el proyecto a Dashboard como favorito
-
-Si utilizo `dashboard` junto con `projectile`, puedo añadir el proyecto remoto como uno de mis “projects” favoritos para acceder a él rápidamente desde la pantalla de inicio. Un ejemplo sencillo de configuración podría ser:
-
-```elisp
-;; Asegurar que Dashboard muestra proyectos
-(add-to-list 'dashboard-items '(projects . 5))
-
-;; Añadir el proyecto del blog (ruta en el servidor o vía TRAMP)
-(add-to-list 'projectile-known-projects
-             "/ssh:sherlockes@uber:/home/sherlockes/dockers/hugo-dev/repo/")
-```
-
-Con esto, al abrir Emacs, en el dashboard me aparece el proyecto del blog y puedo saltar a él con un solo atajo.
-
----
-
-## 6. Flujo de trabajo diario
-
-Con todo esto montado, mi flujo de trabajo para tocar el blog y probar cosas nuevas es:
-
-1. **Arrancar el entorno de desarrollo en el servidor**
-
-   ```bash
-   cd ~/dockers/hugo-dev
-   docker compose up
-   ```
-
-2. **Abrir el proyecto en Emacs** (en el propio servidor o vía TRAMP):
-
-   - Navego a `~/dockers/hugo-dev/repo/content/post/` y edito o creo nuevas entradas en Markdown.
-   - Ajusto `layouts`, shortcodes, etc., según necesite.
-
-3. **Visualizar los cambios en el navegador** entrando a:
-
-   ```text
-   http://mi-servidor:1313
-   ```
-
-   Hugo recarga automáticamente cuando guardo archivos.
-
-4. Si una idea me gusta de verdad y la quiero “promocionar” fuera del entorno efímero:
-   - Hago `git add`, `git commit` y `git push` desde cualquier clon “serio” del repositorio (por ejemplo, en mi máquina local).
-   - O, si quiero, directamente desde `~/dockers/hugo-dev/repo` en el servidor.
-
-5. Cuando termino de experimentar, simplemente:
-
-   ```bash
-   docker compose down
-   ```
-
-   El siguiente `docker compose up` volverá a dejar el repositorio limpio y sincronizado con GitHub.
-
----
-
-## 7. Conclusión
-
-Con estos tres archivos:
-
-- `Dockerfile` (imagen con Hugo Extended 0.152.0),
-- `start.sh` (script que clona, limpia y arranca),
-- `docker-compose.yml` (orquestación y volúmenes),
-
-he conseguido tener un **entorno de desarrollo de Hugo en Docker, efímero pero cómodo**, que no se cruza con GitHub Pages ni con el entorno de producción, y que se integra bien con mi forma de trabajar con Emacs.
-
-Puedo romper cosas, cambiar shortcodes, probar nuevas versiones de Hugo, reorganizar layouts… y si no me convence, paro el contenedor y al siguiente arranque todo vuelve a estar limpio y actualizado desde GitHub.
-
-La clave está en que todo el “estado” importante vive en Git; el contenedor solo es una herramienta para ver y experimentar de forma segura.
-
 
 ### Enlaces de interés
 - [Entorno de desarrollo en Emacs](https://sherblog.es/entorno-de-desarrollo-de-sherblog-en-emacs/)
