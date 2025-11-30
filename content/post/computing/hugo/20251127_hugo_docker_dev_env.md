@@ -47,7 +47,7 @@ Dentro de esa carpeta tengo cuatro piezas clave:
 - `start.sh` – Script de arranque del contenedor (clona/actualiza repo y lanza Hugo).
 - `docker-compose.yml` – Orquestación del contenedor y volúmenes.
 - `repo`- Contenido del blog clonado de Github
-. `.env` - El usuario que va a editar los archivos del blog
+- `.env` - El usuario que va a editar los archivos del blog
 
 El contenido de ".env" simplemente va a ser:
 ``` bash
