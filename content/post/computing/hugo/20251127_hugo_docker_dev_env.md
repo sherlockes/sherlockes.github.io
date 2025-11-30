@@ -1,6 +1,6 @@
 ---
 title: "Entorno de desarrollo de Hugo en Docker"
-date: "2025-11-28"
+date: "2025-11-30"
 creation: "2025-11-27"
 description: "Un contenedor que he creado para que las pruebas que hago en Hugo no sean en el entorno de producción"
 thumbnail: "images/20251127_hugo_docker_dev_env_00.jpg"
@@ -29,14 +29,17 @@ Estas van a ser las características del entorno de desarrollo:
 
 ## 1. Estructura del entorno en el servidor
 
-En mi servidor he creado un directorio específico para este entorno de desarrollo jnto con una carpeta para el contenido del blog:
+En mi servidor he creado un directorio específico para este entorno de desarrollo junto con una carpeta para el contenido del blog:
 
 ```bash
 mkdir -p ~/dockers/hugo-dev
 cd ~/dockers/hugo-dev
 mkdir -p repo
-sudo chown -R sherlockes:sherlockes repo
+sudo chown -R $USER:$USER repo
 ```
+
+> El propietario de la carpeta donde va a alojarse el contenido del blog es importante que sea nuestro usuario y no "root" para que podamos modificarlo y hacer pruebas.
+
 
 Dentro de esa carpeta tengo cuatro piezas clave:
 
@@ -44,9 +47,19 @@ Dentro de esa carpeta tengo cuatro piezas clave:
 - `start.sh` – Script de arranque del contenedor (clona/actualiza repo y lanza Hugo).
 - `docker-compose.yml` – Orquestación del contenedor y volúmenes.
 - `repo`- Contenido del blog clonado de Github
+. `.env` - El usuario que va a editar los archivos del blog
+
+El contenido de ".env" simplemente va a ser:
+``` bash
+UID=1000
+GID=1000
+```
+
+Y así quedará la estructura de directorios y carpetas de nuestro proyecto.
 
 ```text
 ~/dockers/hugo-dev/
+  ├── .env
   ├── Dockerfile
   ├── start.sh
   ├── docker-compose.yml
@@ -113,9 +126,13 @@ REPO_DIR="/site/repo"
 
 echo "🧹 Borrando contenido anterior..."
 rm -rf "${REPO_DIR:?}/"*
+rm -rf "${REPO_DIR:?}/."* 2>/dev/null || true
 
-echo "📥 Clonando repositorio de GitHub..."
+echo "📥 Clonando repositorio..."
 git clone "$REPO_URL" "$REPO_DIR"
+
+echo "👤 Ajustando permisos..."
+chown -R "$(id -u)":"$(id -g)" "$REPO_DIR"
 
 cd "$REPO_DIR"
 
@@ -155,20 +172,20 @@ services:
   hugo-dev:
     build: .
     container_name: hugo-dev
-	user: "1000:1000"
+    user: "${UID}:${GID}"
     ports:
       - "1313:1313"
     volumes:
       - ./repo:/site/repo
       - ./start.sh:/site/start.sh
-    restart: unless-stopped
+    restart: no
 ```
 
 Detalles clave:
 
 - `build: .` indica que Compose debe construir la imagen usando el `Dockerfile` del directorio actual.
 - `container_name: hugo-dev` me permite identificar y ejecutar comandos fácilmente contra el contenedor.
-- `user: "1000:1000"` me permite trabajar sobre la carpeta creada por el usuario
+- `user: "${UID}:${GID}"` me permite trabajar sobre la carpeta creada por el usuario y cuyo id hemos guardado en el archivo ".env"
 - Exponemos el puerto `1313` del contenedor al mismo puerto en el host: puedo abrir el navegador en `http://mi-servidor:1313` y ver el blog en modo desarrollo.
 - El volumen `./repo:/site/repo` hace que la copia del blog quede en `~/dockers/hugo-dev/repo` en el servidor:
   - Puedo inspeccionar el repositorio desde el host.
