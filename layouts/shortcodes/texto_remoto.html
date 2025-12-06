@@ -1,11 +1,7 @@
 {{- $remote_url := .Get 0 -}}
-{{- $proxy := "https://hugo-remote-url-proxy.quinn934.workers.dev/fetch?url=" -}}
-{{- $full := printf "%s%s" $proxy $remote_url -}}
 
-{{- $res := resources.GetRemote $full -}}
-{{- $json := $res | transform.Unmarshal -}}
-
-{{- with $json.body -}}
-<pre>{{ . | safeHTML }}</pre>
+{{- with resources.GetRemote $remote_url -}}
+  {{ .Content | safeHTML }}
+{{- else -}}
+  <p><em>No se pudo cargar el contenido remoto desde {{ $remote_url }}.</em></p>
 {{- end -}}
-
