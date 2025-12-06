@@ -1,0 +1,294 @@
+{
+  "name": "Torrent errors from Synology to Telegram",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "text",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        -48,
+        -400
+      ],
+      "id": "b4bf44cc-835e-4b74-84c3-4aed0c728916",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c66fdfed-f626-4988-a37a-3ae0cd35a555",
+              "leftValue": "={{ $('File to Lines').item.json.timestamp }}",
+              "rightValue": "={{ (new Date(new Date().getTime() - 1 * 60 * 60 * 1000)).toISOString() }}\n",
+              "operator": {
+                "type": "dateTime",
+                "operation": "afterOrEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        -528,
+        -128
+      ],
+      "id": "32ff80c6-abaa-4d2f-8775-b6e3c460d71a",
+      "name": "Filter"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Escape simbols function\nfunction escapeMarkdown(text) {\n    return text\n        .replace(/\\\\/g, \"\\\\\\\\\")\n        .replace(/\\*/g, \"\\\\*\")\n        .replace(/\\_/g, \"\\\\_\")\n        .replace(/\\[/g, \"\\\\[\")\n        .replace(/\\]/g, \"\\\\]\")\n        .replace(/~/g, \"\\\\~\")\n        .replace(/`/g, \"\\\\`\")\n        .replace(/>/g, \"\\\\>\")\n        .replace(/#/g, \"\\\\#\")\n        .replace(/\\+/g, \"\\\\+\")\n        .replace(/=/g, \"\\\\=\")\n        .replace(/\\|/g, \"\\\\|\")\n        .replace(/!/g, \"\\\\!\");\n}\n\n// Generate list with links\nconst formattedList = items.map(item => {\n    const title = escapeMarkdown(item.json.file || \"No title\");\n    const link = item.json.errorMessage || \"#\";\n\n    // Telegram Markdown Format: [Text](URL)\n    return `${title} - ${link} \\n`;\n}).join(\"\\n\"); // Join with line break\n\n// Return generated list\nreturn [{ json: { message: formattedList } }];\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -48,
+        -128
+      ],
+      "id": "40a6ab22-76a5-40d8-9330-a226d4c8fccb",
+      "name": "Markdown list"
+    },
+    {
+      "parameters": {
+        "chatId": "={{$env.TG_NOTIF_ID}}",
+        "text": "=`-- Ds920 Torrent Errors --`\n`--------------------------`\n{{ $json.message }}",
+        "additionalFields": {
+          "appendAttribution": false,
+          "parse_mode": "Markdown"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        224,
+        -128
+      ],
+      "id": "8d911c7b-780c-4c13-82df-95d7566e1c73",
+      "name": "Telegram",
+      "webhookId": "4c7aa48a-093c-498b-872d-11583379c8f3",
+      "credentials": {
+        "telegramApi": {
+          "id": "7PHYK39uh1jMzOBd",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "maxItems": 10,
+        "keep": "lastItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -768,
+        -128
+      ],
+      "id": "7f64c774-4c6f-4e12-870b-0577ac71eb0c",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -768,
+        -400
+      ],
+      "id": "ec8046bc-e7e0-485a-b34a-d87959a35805",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "command": "ssh sherlockes@192.168.10.200 \"cat /volume1/@download/transmissiond.log\" > /tmp/transmissiond.log"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -528,
+        -400
+      ],
+      "id": "d13a008d-5d98-424f-9ad7-a850fa81e1ed",
+      "name": "Copy \"transmissiond.log\""
+    },
+    {
+      "parameters": {
+        "fileSelector": "/tmp/transmissiond.log",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        -288,
+        -400
+      ],
+      "id": "bf25b081-386c-4d39-8f1b-4c3e8a64f9f0",
+      "name": "Read File"
+    },
+    {
+      "parameters": {
+        "jsCode": "const rawData = $json[\"data\"];\nconst lines = rawData.split(\"\\n\");\n\nconst regex = /^\\[(.*?)\\]\\s(.*?)\\sTracker\\serror:\\s\"(.*?)\"\\s\\((.*?)\\)$/;\n\nconst jsonData = lines.map(line => {\n    const match = line.match(regex);\n    if (match) {\n        return {\n            timestamp: match[1],\n            file: match[2],\n            errorMessage: match[3],\n            source: match[4]\n        };\n    }\n    return null;\n}).filter(entry => entry !== null);\n\nreturn jsonData.map(entry => ({ json: entry }));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        -400
+      ],
+      "id": "68b23d8b-35fa-410b-9008-10eb961322a9",
+      "name": "File to Lines"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.removeDuplicates",
+      "typeVersion": 2,
+      "position": [
+        -288,
+        -128
+      ],
+      "id": "a82188fd-7acb-4631-a36e-5cc6e10d29b1",
+      "name": "Remove Duplicates"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "File to Lines",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Markdown list": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Remove Duplicates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Copy \"transmissiond.log\"",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram": {
+      "main": [
+        []
+      ]
+    },
+    "Copy \"transmissiond.log\"": {
+      "main": [
+        [
+          {
+            "node": "Read File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read File": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "File to Lines": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Remove Duplicates": {
+      "main": [
+        [
+          {
+            "node": "Markdown list",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "73f8b429-edc8-4ee2-b474-3977f3382881",
+  "meta": {
+    "instanceId": "8fb543b511022c43ab705107ba101545bb8b0fdb9bd6ebc4cca28dc9591a036e"
+  },
+  "id": "bSXACrTKoYAbfIAq",
+  "tags": []
+}
