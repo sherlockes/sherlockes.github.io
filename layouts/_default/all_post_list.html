@@ -38,7 +38,7 @@
           {{ range . }}
             {{ $cats = $cats | append (printf "<a href=\"/categories/%s\">%s</a>" (urlize .) .) }}
           {{ end }}
-          {{ delimit $cats ", " }} <!-- Une las categorías con comas -->
+          {{ delimit $cats ", " | safeHTML }} <!-- <- AQUÍ EL CAMBIO -->
         {{ end }}
 
         <!-- Mostrar tags -->
@@ -48,8 +48,9 @@
           {{ range . }}
             {{ $tags = $tags | append (printf "<a href=\"/tags/%s\">%s</a>" (urlize .) .) }}
           {{ end }}
-          {{ delimit $tags ", " }} <!-- Une los tags con comas -->
+          {{ delimit $tags ", " | safeHTML }} <!-- <- AQUÍ TAMBIÉN -->
         {{ end }}
+
       </li>
       {{ end }}
       {{- end }}
