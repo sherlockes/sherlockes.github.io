@@ -14,7 +14,7 @@ tags:
 - "n8n"
 - "telegram"
 - "synology"
-draft: true
+draft: false
 weight: 5
 ---
 Cuando usas [Download Station] para Synology una de las características que echas de menos es el control del seguimiento de torrents compartidos en trackers para saber cuando los puedes borrar de tu lista de propagación. Así me las apaño yo gracias a [n8n].
