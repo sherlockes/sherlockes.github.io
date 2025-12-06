@@ -1,6 +1,9 @@
 {{- $remote_url := .Get 0 -}}
 
 {{- with resources.GetRemote $remote_url -}}
-````txt
+{{ print "````txt" }}
 {{ .Content | htmlEscape }}
-
+{{ print "````" }}
+{{- else -}}
+<p><em>No se pudo cargar el contenido remoto desde {{ $remote_url }}.</em></p>
+{{- end -}}
