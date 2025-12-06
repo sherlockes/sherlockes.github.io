@@ -1,6 +1,6 @@
 ---
 title: "Incrustar texto externo en Hugo"
-date: "2022-03-25"
+date: "2025-12-06"
 creation: "2021-04-21"
 description: "Como incrustar texto de un archivo externo dentro de un post en Hugo"
 thumbnail: "images/20210421_hugo_incrustar_texto_00.jpg"
@@ -18,7 +18,7 @@ weight: 5
 ---
 Hace tiempo que vengo pensando en la capacidad de poder introducir texto desde un archivo externo dentro de los post que publico en [Hugo]. Hoy se me ha encendido la bombilla.
 
-**Actualización:** Inclusión de texto desde un servidor remoto.
+**Actualización:** Inclusión de texto desde un servidor remoto de forma nativa.
 <!--more-->
 
 Una potente herramienta que posee [Hugo] es la posibilidad de uso de [Shortcodes] (Fragmentos simples dentro de los archivos de contenido que llaman a plantillas integradas o personalizadas), pero más potente todavía es el uso de [Shortcodes personalizados] que ya he utilizado en otras ocasiones como en mi proyecto de [Vértices Geodésicos].
@@ -42,7 +42,7 @@ Ahora ya sólo resta insertar el siguiente código en la zona del post o la pág
 
 Para que se cargue correctamente, el archivo deberá alojarse en la carpeta "static" ya que es lo que [Hugo] entiende como la raíz de los documentos en el Blog.
 
-### Desde un servidor externo
+### Desde un servidor externo (A través de Cloudflare)
 Muchas veces me encuentro con la necesidad de incluir en un post código de github que no quiero tener que estar pendiente de actualizar cuando este se modifique. Como este método no funciona si queremos incluir texto desde un servidor remoto por lo que he creado un segundo "shortcut" gracias a una herramienta de [Quinn Casey] que he duplicado en [Cloudflare Workers] de forma gratuita. Para realizar esta función crearemos el archivo "texto_remoto.html" en la carpeta "shortcodes" con el siguiente contenido:
 
 ``` html
@@ -61,6 +61,21 @@ Con esto ya sólo hay que insertar el "shortcode" donde deseemos y se incluirá 
 ```
 
 > No es la mejor solución depender de la herramienta de un tercero para mi desarrollo pero de momento es una buena solución a un buen precio.
+
+### Desde un servidor externo (Solución nativa)
+
+Con las últimas versiones de [Hugo] ya es posible implementar una solución al problema de incluir texto externo sin depender de recursos de terceros. Así quedará el shortcode "texto_remoto.html".
+
+``` txt
+{{- $remote_url := .Get 0 -}}
+
+{{- with resources.GetRemote $remote_url -}}
+<pre><code class="language-txt">{{ .Content | htmlEscape | safeHTML }}</code></pre>
+{{- else -}}
+<p><em>No se pudo cargar el contenido remoto desde {{ $remote_url }}.</em></p>
+{{- end -}}
+```
+
 
 ### Enlaces de interés
 - [Quinn Casey - Remote content in hgo](https://quinncasey.com/tools/hugo-remote-content-from-url/)
