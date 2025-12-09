@@ -81,6 +81,32 @@
     .vacaciones{ background: #d9d9d9; color: #555; } /* gris */
     .quitar    { background: #ffffff; border-style: dashed; } /* día sin evento forzado */
 
+    /* ===== LISTAS CON BOTÓN DE ELIMINAR BIEN ALINEADO ===== */
+
+    ul {
+      padding-left: 18px;
+    }
+
+ul li {
+  display: flex;              /* vuelve a ocupar toda la línea */
+  align-items: center;        /* alineación vertical correcta */
+  justify-content: flex-start;
+  gap: 8px;                   /* espacio justo entre fecha y botón */
+  margin-bottom: 8px;
+}
+
+ul li button {
+  width: auto;
+  min-width: 30px;
+  height: 26px;               /* igualamos visualmente con el texto */
+  padding: 0 8px;
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;       /* centra la ❌ verticalmente */
+  justify-content: center;
+}
+
 /* ========= MODO MÓVIL COMPLETO ========= */
 @media (max-width: 768px) {
 
@@ -150,6 +176,15 @@
     font-size: 14px;
   }
 
+  ul li {
+    gap: 10px;
+  }
+
+  ul li button {
+    height: 30px;
+    font-size: 15px;
+  }
+
 }
 
 
@@ -181,8 +216,6 @@
   Fecha sobrante:
   <input type="date" id="fechaSobrante">
 </label>
-
-<button onclick="añadirSobrante()">Añadir Sobrante</button>
 
 <ul id="listaSobrantes"></ul>
 
@@ -220,7 +253,6 @@
 <hr>
 
 <button onclick="generarICS()">Descargar calendario (.ics)</button>
-<button onclick="generarVistaPreviaVisual()">Actualizar vista previa</button>
 
 <hr>
 
@@ -304,6 +336,7 @@ function eliminarSobrante(fecha) {
   sobrantes = sobrantes.filter(f => f !== fecha);
   guardarSesion();
   actualizarSobrantes();
+  autoActualizarVista();
 }
 
 function actualizarSobrantes() {
@@ -330,12 +363,14 @@ function añadirQuitar() {
   }
 
   document.getElementById("fechaQuitar").value = "";
+  autoActualizarVista();
 }
 
 function eliminarQuitar(fecha) {
   quitarDias = quitarDias.filter(f => f !== fecha);
   guardarSesion();
   actualizarQuitar();
+  autoActualizarVista();
 }
 
 function actualizarQuitar() {
@@ -367,12 +402,14 @@ function añadirVacaciones() {
 
   document.getElementById("vacInicio").value = "";
   document.getElementById("vacFin").value = "";
+  autoActualizarVista();
 }
 
 function eliminarVacaciones(index) {
   vacaciones.splice(index, 1);
   guardarSesion();
   actualizarVacaciones();
+  autoActualizarVista();
 }
 
 function actualizarVacaciones() {
@@ -400,9 +437,6 @@ function generarICS() {
   }
 
   const añoObjetivo = fechaInicio.getFullYear();
-
-  // Cargar automáticamente los festivos fijos del año
-  cargarFestivosFijos(añoObjetivo);
 
   guardarSesion();
 
@@ -505,7 +539,6 @@ function generarVistaPreviaVisual() {
   }
 
   const añoObjetivo = fechaInicio.getFullYear();
-  cargarFestivosFijos(añoObjetivo);
 
   const RUEDA = ["Mañana", "Tarde", "Noche", "Descanso"];
   let ruedaIndex = RUEDA.indexOf(turnoInicial);
@@ -793,9 +826,55 @@ function dibujarCalendarioICS(eventos) {
   }
 }
 
+function autoActualizarVista() {
+  generarVistaPreviaVisual();
+}
+
+function activarActualizacionAutomatica() {
+  // Fecha inicio y turno
+
+  document.getElementById("fechaInicio").addEventListener("change", () => {
+      const fechaVal = document.getElementById("fechaInicio").value;
+      if (!fechaVal) return;
+
+      const año = new Date(fechaVal).getFullYear();
+
+      limpiarFestivosAnteriores();     // limpia los del año anterior
+      cargarFestivosFijos(año);        // añade los del nuevo año
+
+      guardarSesion();
+      generarVistaPreviaVisual();
+  });
+
+
+  document.getElementById("turnoInicial").addEventListener("change", autoActualizarVista);
+
+  // Sobrantes
+  document.getElementById("fechaSobrante").addEventListener("change", añadirSobrante);
+
+  // Quitar días
+  document.getElementById("fechaQuitar").addEventListener("change", autoActualizarVista);
+
+  // Vacaciones
+  document.getElementById("vacInicio").addEventListener("change", autoActualizarVista);
+  document.getElementById("vacFin").addEventListener("change", autoActualizarVista);
+}
+
+function limpiarFestivosAnteriores() {
+  quitarDias = quitarDias.filter(f => {
+    const mesDia = f.slice(5); // MM-DD
+    return !["01-01", "05-01", "10-12", "10-13", "12-25"].includes(mesDia);
+  });
+
+  actualizarQuitar();
+}
+
 
 // Cargar datos al iniciar
 cargarSesion();
+activarActualizacionAutomatica();
+generarVistaPreviaVisual(); // primera carga automática
+
 </script>
 
 </body>
