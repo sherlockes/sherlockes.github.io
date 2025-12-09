@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Generador de Turnos (ICS)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    h3 {
+      margin-top: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 8px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    ul {
+      margin-top: 8px;
+      padding-left: 20px;
+    }
+    hr {
+      margin: 20px 0;
+    }
+
+    /* Vista previa calendario */
+
+    .preview-mes {
+      margin-bottom: 30px;
+    }
+
+    .preview-mes h4 {
+      text-align: center;
+      margin: 8px 0;
+    }
+
+    .calendario {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+    }
+
+    .dia {
+      border: 1px solid #999;
+      min-height: 60px;
+      font-size: 12px;
+      padding: 4px;
+    }
+
+    .cabecera {
+      font-weight: bold;
+      background: #ddd;
+      text-align: center;
+      min-height: 30px;
+      padding: 2px;
+    }
+
+    .numero {
+      font-weight: bold;
+      display: block;
+    }
+
+    /* Colores por tipo */
+
+    .manana    { background: #ffe599; }  /* amarillo */
+    .tarde     { background: #9fc5e8; }  /* azul */
+    .noche     { background: #b4a7d6; }  /* violeta */
+    .sobrante  { background: #f6b26b; }  /* naranja */
+    .vacaciones{ background: #d9d9d9; color: #555; } /* gris */
+    .quitar    { background: #ffffff; border-style: dashed; } /* día sin evento forzado */
+  </style>
+</head>
+<body>
+
+<h1>Generador de Turnos</h1>
+
+<label>
+  Fecha primer día de trabajo:
+  <input type="date" id="fechaInicio">
+</label>
+
+<label>
+  Turno inicial:
+  <select id="turnoInicial">
+    <option value="Mañana">Mañana</option>
+    <option value="Tarde">Tarde</option>
+    <option value="Noche">Noche</option>
+  </select>
+</label>
+
+<hr>
+
+<h3>Añadir días "Sobrante"</h3>
+
+<label>
+  Fecha sobrante:
+  <input type="date" id="fechaSobrante">
+</label>
+
+<button onclick="añadirSobrante()">Añadir Sobrante</button>
+
+<ul id="listaSobrantes"></ul>
+
+<hr>
+
+<h3>Quitar días (no crear evento)</h3>
+
+<label>
+  Fecha a quitar:
+  <input type="date" id="fechaQuitar">
+</label>
+
+<button onclick="añadirQuitar()">Añadir día a quitar</button>
+
+<ul id="listaQuitar"></ul>
+
+<hr>
+
+<h3>Añadir vacaciones</h3>
+
+<label>
+  Inicio vacaciones:
+  <input type="date" id="vacInicio">
+</label>
+
+<label>
+  Fin vacaciones:
+  <input type="date" id="vacFin">
+</label>
+
+<button onclick="añadirVacaciones()">Añadir Vacaciones</button>
+
+<ul id="listaVacaciones"></ul>
+
+<hr>
+
+<button onclick="generarICS()">Descargar calendario (.ics)</button>
+<button onclick="generarVistaPreviaVisual()">Actualizar vista previa</button>
+
+<hr>
+
+<h3>Vista previa del calendario</h3>
+<div id="vistaCalendario" style="margin-top:15px;"></div>
+
+<hr>
+
+<h3>Vista previa de un archivo .ics</h3>
+
+<input type="file" id="archivoICS" accept=".ics">
+<button onclick="previsualizarICS()">Vista previa del ICS</button>
+
+<div id="vistaCalendarioICS" style="margin-top:15px;"></div>
+
+
+<script>
+let sobrantes = [];
+let vacaciones = [];
+let quitarDias = [];
+
+// ---------- UTILIDADES FECHAS ----------
+
+function fechaToYMD(fecha) {
+  const yyyy = fecha.getFullYear();
+  const mm = String(fecha.getMonth() + 1).padStart(2, "0");
+  const dd = String(fecha.getDate()).padStart(2, "0");
+  return `${yyyy}-${mm}-${dd}`;
+}
+
+// Vacaciones: rango inicio-fin incluido (evitamos toISOString/UTC)
+function esVacaciones(fecha) {
+  const f = fechaToYMD(fecha);
+  return vacaciones.some(v => f >= v.inicio && f <= v.fin);
+}
+
+// ---------- SESIÓN ----------
+
+function guardarSesion() {
+  sessionStorage.setItem("fechaInicio", document.getElementById("fechaInicio").value);
+  sessionStorage.setItem("turnoInicial", document.getElementById("turnoInicial").value);
+  sessionStorage.setItem("sobrantes", JSON.stringify(sobrantes));
+  sessionStorage.setItem("vacaciones", JSON.stringify(vacaciones));
+  sessionStorage.setItem("quitarDias", JSON.stringify(quitarDias));
+}
+
+function cargarSesion() {
+  const fecha = sessionStorage.getItem("fechaInicio");
+  const turno = sessionStorage.getItem("turnoInicial");
+  const sob = sessionStorage.getItem("sobrantes");
+  const vac = sessionStorage.getItem("vacaciones");
+  const quit = sessionStorage.getItem("quitarDias");
+
+  if (fecha) document.getElementById("fechaInicio").value = fecha;
+  if (turno) document.getElementById("turnoInicial").value = turno;
+  if (sob) sobrantes = JSON.parse(sob);
+  if (vac) vacaciones = JSON.parse(vac);
+  if (quit) quitarDias = JSON.parse(quit);
+
+  actualizarSobrantes();
+  actualizarVacaciones();
+  actualizarQuitar();
+}
+
+// ---------- SOBRANTES ----------
+
+function añadirSobrante() {
+  const fecha = document.getElementById("fechaSobrante").value;
+  if (!fecha) return;
+
+  if (!sobrantes.includes(fecha)) {
+    sobrantes.push(fecha);
+    guardarSesion();
+    actualizarSobrantes();
+  }
+
+  document.getElementById("fechaSobrante").value = "";
+}
+
+function eliminarSobrante(fecha) {
+  sobrantes = sobrantes.filter(f => f !== fecha);
+  guardarSesion();
+  actualizarSobrantes();
+}
+
+function actualizarSobrantes() {
+  const ul = document.getElementById("listaSobrantes");
+  ul.innerHTML = "";
+
+  sobrantes.forEach(f => {
+    const li = document.createElement("li");
+    li.innerHTML = `${f} <button onclick="eliminarSobrante('${f}')">❌</button>`;
+    ul.appendChild(li);
+  });
+}
+
+// ---------- QUITAR DÍAS ----------
+
+function añadirQuitar() {
+  const fecha = document.getElementById("fechaQuitar").value;
+  if (!fecha) return;
+
+  if (!quitarDias.includes(fecha)) {
+    quitarDias.push(fecha);
+    guardarSesion();
+    actualizarQuitar();
+  }
+
+  document.getElementById("fechaQuitar").value = "";
+}
+
+function eliminarQuitar(fecha) {
+  quitarDias = quitarDias.filter(f => f !== fecha);
+  guardarSesion();
+  actualizarQuitar();
+}
+
+function actualizarQuitar() {
+  const ul = document.getElementById("listaQuitar");
+  ul.innerHTML = "";
+
+  quitarDias.forEach(f => {
+    const li = document.createElement("li");
+    li.innerHTML = `${f} <button onclick="eliminarQuitar('${f}')">❌</button>`;
+    ul.appendChild(li);
+  });
+}
+
+// ---------- VACACIONES ----------
+
+function añadirVacaciones() {
+  const inicio = document.getElementById("vacInicio").value;
+  const fin = document.getElementById("vacFin").value;
+
+  if (!inicio || !fin) return;
+  if (inicio > fin) {
+    alert("La fecha de inicio no puede ser posterior a la de fin");
+    return;
+  }
+
+  vacaciones.push({ inicio, fin });
+  guardarSesion();
+  actualizarVacaciones();
+
+  document.getElementById("vacInicio").value = "";
+  document.getElementById("vacFin").value = "";
+}
+
+function eliminarVacaciones(index) {
+  vacaciones.splice(index, 1);
+  guardarSesion();
+  actualizarVacaciones();
+}
+
+function actualizarVacaciones() {
+  const ul = document.getElementById("listaVacaciones");
+  ul.innerHTML = "";
+
+  vacaciones.forEach((v, i) => {
+    const li = document.createElement("li");
+    li.innerHTML = `${v.inicio} → ${v.fin} <button onclick="eliminarVacaciones(${i})">❌</button>`;
+    ul.appendChild(li);
+  });
+}
+
+// ---------- GENERADOR ICS ----------
+
+function generarICS() {
+  const fechaInicioVal = document.getElementById("fechaInicio").value;
+  const turnoInicial = document.getElementById("turnoInicial").value;
+
+  const fechaInicio = new Date(fechaInicioVal);
+
+  if (isNaN(fechaInicio)) {
+    alert("Selecciona una fecha válida");
+    return;
+  }
+
+  const añoObjetivo = fechaInicio.getFullYear();
+
+  // Cargar automáticamente los festivos fijos del año
+  cargarFestivosFijos(añoObjetivo);
+
+  guardarSesion();
+
+  const RUEDA = ["Mañana", "Tarde", "Noche", "Descanso"];
+  let ruedaIndex = RUEDA.indexOf(turnoInicial);
+
+  let ics = `BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+`;
+
+  let fecha = new Date(fechaInicio);
+
+  while (fecha.getFullYear() === añoObjetivo) {
+    let turnoActual = RUEDA[ruedaIndex];
+
+    if (turnoActual === "Descanso") {
+      const diaInicioDescanso = fecha.getDay(); // 1=lunes
+      let descanso = (diaInicioDescanso === 1) ? 4 : 5;
+      fecha.setDate(fecha.getDate() + descanso);
+      ruedaIndex = (ruedaIndex + 1) % RUEDA.length;
+      continue;
+    }
+
+    const diaSemanaInicio = fecha.getDay(); // 0=Dom,1=Lun,...,5=Vie,6=Sáb
+    const diasGrupo = (diaSemanaInicio === 5) ? 3 : 2; // Vie→3 días; resto (L-M / X-J)→2
+
+    for (let i = 0; i < diasGrupo; i++) {
+      if (fecha.getFullYear() !== añoObjetivo) break;
+
+      const fStr = fechaToYMD(fecha);
+
+      if (
+          !esVacaciones(fecha) &&
+          !quitarDias.includes(fStr) &&
+          !esTardeONocheNoPermitida(fecha, turnoActual)
+        ) {
+          ics += crearEvento(fecha, turnoActual);
+        }
+
+      fecha.setDate(fecha.getDate() + 1);
+    }
+
+    ruedaIndex = (ruedaIndex + 1) % RUEDA.length;
+  }
+
+  // Sobrantes: se añaden siempre que no sean vacaciones ni día quitado
+  sobrantes.forEach(f => {
+    const fechaS = new Date(f);
+    if (fechaS.getFullYear() === añoObjetivo &&
+        !esVacaciones(fechaS) &&
+        !quitarDias.includes(f)) {
+      ics += crearEvento(fechaS, "Sobrante");
+    }
+  });
+
+  ics += "END:VCALENDAR";
+
+  descargarArchivo(ics, "turnos_" + añoObjetivo + ".ics");
+}
+
+function crearEvento(fecha, turno) {
+  const yyyy = fecha.getFullYear();
+  const mm = String(fecha.getMonth() + 1).padStart(2, "0");
+  const dd = String(fecha.getDate()).padStart(2, "0");
+
+  const fechaICS = `${yyyy}${mm}${dd}`;
+
+  return `BEGIN:VEVENT
+DTSTART;VALUE=DATE:${fechaICS}
+DTEND;VALUE=DATE:${fechaICS}
+SUMMARY:${turno}
+END:VEVENT
+`;
+}
+
+function descargarArchivo(contenido, nombre) {
+  const blob = new Blob([contenido], { type: "text/calendar" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = nombre;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+// ---------- VISTA PREVIA VISUAL ----------
+
+function generarVistaPreviaVisual() {
+  const fechaInicioVal = document.getElementById("fechaInicio").value;
+  const turnoInicial = document.getElementById("turnoInicial").value;
+
+  const fechaInicio = new Date(fechaInicioVal);
+
+  if (isNaN(fechaInicio)) {
+    alert("Selecciona una fecha válida");
+    return;
+  }
+
+  const añoObjetivo = fechaInicio.getFullYear();
+  cargarFestivosFijos(añoObjetivo);
+
+  const RUEDA = ["Mañana", "Tarde", "Noche", "Descanso"];
+  let ruedaIndex = RUEDA.indexOf(turnoInicial);
+
+  let mapaEventos = {}; // "YYYY-MM-DD" → tipo (manana, tarde, noche, sobrante, vacaciones, quitar)
+
+  let fecha = new Date(fechaInicio);
+
+  // Generamos base (turnos + vacaciones + quitar)
+  while (fecha.getFullYear() === añoObjetivo) {
+    let turnoActual = RUEDA[ruedaIndex];
+
+    if (turnoActual === "Descanso") {
+      const diaInicioDescanso = fecha.getDay();
+      let descanso = (diaInicioDescanso === 1) ? 4 : 5;
+      fecha.setDate(fecha.getDate() + descanso);
+      ruedaIndex = (ruedaIndex + 1) % RUEDA.length;
+      continue;
+    }
+
+    const diaSemanaInicio = fecha.getDay();
+    const diasGrupo = (diaSemanaInicio === 5) ? 3 : 2;
+
+    for (let i = 0; i < diasGrupo; i++) {
+      if (fecha.getFullYear() !== añoObjetivo) break;
+
+      const fStr = fechaToYMD(fecha);
+
+      if (esVacaciones(fecha)) {
+          mapaEventos[fStr] = "vacaciones";
+        } else if (quitarDias.includes(fStr)) {
+          mapaEventos[fStr] = "quitar";
+        } else if (!esTardeONocheNoPermitida(fecha, turnoActual)) {
+
+          let claseTurno =
+            turnoActual === "Mañana" ? "manana" :
+            turnoActual === "Tarde"  ? "tarde"  :
+            turnoActual === "Noche"  ? "noche"  : "";
+
+          if (claseTurno) {
+            mapaEventos[fStr] = claseTurno;
+          }
+        }
+
+
+      fecha.setDate(fecha.getDate() + 1);
+    }
+
+    ruedaIndex = (ruedaIndex + 1) % RUEDA.length;
+  }
+
+  // Sobrantes: sobrescriben lo que haya salvo vacaciones/quitar
+  sobrantes.forEach(f => {
+    const fechaS = new Date(f);
+    if (fechaS.getFullYear() === añoObjetivo &&
+        !esVacaciones(fechaS) &&
+        !quitarDias.includes(f)) {
+      mapaEventos[f] = "sobrante";
+    }
+  });
+
+  // Dibujamos meses
+  const contenedor = document.getElementById("vistaCalendario");
+  contenedor.innerHTML = "";
+
+  const nombresMeses = [
+    "Enero","Febrero","Marzo","Abril","Mayo","Junio",
+    "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"
+  ];
+
+  for (let mes = 0; mes < 12; mes++) {
+    const primerDia = new Date(añoObjetivo, mes, 1);
+    const ultimoDia = new Date(añoObjetivo, mes + 1, 0).getDate();
+
+    const bloqueMes = document.createElement("div");
+    bloqueMes.className = "preview-mes";
+
+    bloqueMes.innerHTML = `<h4>${nombresMeses[mes]}</h4>`;
+
+    const grid = document.createElement("div");
+    grid.className = "calendario";
+
+    ["L","M","X","J","V","S","D"].forEach(d => {
+      const cab = document.createElement("div");
+      cab.className = "dia cabecera";
+      cab.textContent = d;
+      grid.appendChild(cab);
+    });
+
+    let offset = (primerDia.getDay() + 6) % 7; // convertimos 0=Dom a 6
+    for (let i = 0; i < offset; i++) {
+      grid.appendChild(document.createElement("div"));
+    }
+
+    for (let dia = 1; dia <= ultimoDia; dia++) {
+      const celda = document.createElement("div");
+      celda.className = "dia";
+
+      const mm = String(mes + 1).padStart(2, "0");
+      const dd = String(dia).padStart(2, "0");
+      const f = `${añoObjetivo}-${mm}-${dd}`;
+
+      celda.innerHTML = `<span class="numero">${dia}</span>`;
+
+      if (mapaEventos[f]) {
+        celda.classList.add(mapaEventos[f]);
+        // Texto corto en la celda
+        let texto = "";
+        switch (mapaEventos[f]) {
+          case "manana": texto = "Mañana"; break;
+          case "tarde": texto = "Tarde"; break;
+          case "noche": texto = "Noche"; break;
+          case "sobrante": texto = "Sobrante"; break;
+          case "vacaciones": texto = "Vacaciones"; break;
+          case "quitar": texto = "Festivo"; break;
+        }
+        celda.innerHTML += texto;
+      }
+
+      grid.appendChild(celda);
+    }
+
+    bloqueMes.appendChild(grid);
+    contenedor.appendChild(bloqueMes);
+  }
+}
+
+function cargarFestivosFijos(año) {
+  const festivos = [
+    `${año}-01-01`, // 1 de enero
+    `${año}-05-01`, // 1 de mayo
+    `${año}-10-12`, // 12 de octubre
+    `${año}-10-13`, // 13 de octubre
+    `${año}-12-25`  // 25 de diciembre
+  ];
+
+  festivos.forEach(f => {
+    if (!quitarDias.includes(f)) {
+      quitarDias.push(f);
+    }
+  });
+
+  guardarSesion();
+  actualizarQuitar();
+}
+
+function esTardeONocheNoPermitida(fecha, turno) {
+  const mm = String(fecha.getMonth() + 1).padStart(2, "0");
+  const dd = String(fecha.getDate()).padStart(2, "0");
+
+  const es24o31Dic = (mm === "12" && (dd === "24" || dd === "31"));
+
+  if (!es24o31Dic) return false;
+
+  return turno === "Tarde" || turno === "Noche";
+}
+
+function previsualizarICS() {
+  const input = document.getElementById("archivoICS");
+  if (!input.files.length) {
+    alert("Selecciona un archivo .ics");
+    return;
+  }
+
+  const file = input.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function (e) {
+    const texto = e.target.result;
+    const eventos = parsearICS(texto);
+    dibujarCalendarioICS(eventos);
+  };
+
+  reader.readAsText(file);
+}
+
+function parsearICS(textoICS) {
+  const lineas = textoICS.split(/\r?\n/);
+  let eventos = {}; // "YYYY-MM-DD" → tipo
+  let fecha = null;
+  let resumen = null;
+
+  lineas.forEach(linea => {
+    if (linea.startsWith("DTSTART")) {
+      const match = linea.match(/(\d{8})/);
+      if (match) {
+        const f = match[1];
+        fecha = `${f.slice(0,4)}-${f.slice(4,6)}-${f.slice(6,8)}`;
+      }
+    }
+
+    if (linea.startsWith("SUMMARY")) {
+      resumen = linea.split(":")[1];
+    }
+
+    if (linea === "END:VEVENT" && fecha && resumen) {
+      let tipo = "";
+
+      if (resumen === "Mañana") tipo = "manana";
+      else if (resumen === "Tarde") tipo = "tarde";
+      else if (resumen === "Noche") tipo = "noche";
+      else if (resumen === "Sobrante") tipo = "sobrante";
+      else tipo = "otro";
+
+      eventos[fecha] = tipo;
+
+      fecha = null;
+      resumen = null;
+    }
+  });
+
+  return eventos;
+}
+
+function dibujarCalendarioICS(eventos) {
+  const contenedor = document.getElementById("vistaCalendarioICS");
+  contenedor.innerHTML = "";
+
+  const fechas = Object.keys(eventos);
+  if (fechas.length === 0) {
+    contenedor.textContent = "No se han encontrado eventos válidos.";
+    return;
+  }
+
+  const añoObjetivo = parseInt(fechas[0].slice(0, 4), 10);
+
+  const nombresMeses = [
+    "Enero","Febrero","Marzo","Abril","Mayo","Junio",
+    "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"
+  ];
+
+  for (let mes = 0; mes < 12; mes++) {
+    const primerDia = new Date(añoObjetivo, mes, 1);
+    const ultimoDia = new Date(añoObjetivo, mes + 1, 0).getDate();
+
+    const bloqueMes = document.createElement("div");
+    bloqueMes.className = "preview-mes";
+    bloqueMes.innerHTML = `<h4>${nombresMeses[mes]}</h4>`;
+
+    const grid = document.createElement("div");
+    grid.className = "calendario";
+
+    ["L","M","X","J","V","S","D"].forEach(d => {
+      const cab = document.createElement("div");
+      cab.className = "dia cabecera";
+      cab.textContent = d;
+      grid.appendChild(cab);
+    });
+
+    let offset = (primerDia.getDay() + 6) % 7;
+    for (let i = 0; i < offset; i++) {
+      grid.appendChild(document.createElement("div"));
+    }
+
+    for (let dia = 1; dia <= ultimoDia; dia++) {
+      const celda = document.createElement("div");
+      celda.className = "dia";
+
+      const mm = String(mes + 1).padStart(2, "0");
+      const dd = String(dia).padStart(2, "0");
+      const f = `${añoObjetivo}-${mm}-${dd}`;
+
+      celda.innerHTML = `<span class="numero">${dia}</span>`;
+
+      if (eventos[f]) {
+        celda.classList.add(eventos[f]);
+
+        let texto = "";
+        switch (eventos[f]) {
+          case "manana": texto = "Mañana"; break;
+          case "tarde": texto = "Tarde"; break;
+          case "noche": texto = "Noche"; break;
+          case "sobrante": texto = "Sobrante"; break;
+          default: texto = "";
+        }
+
+        celda.innerHTML += texto;
+      }
+
+      grid.appendChild(celda);
+    }
+
+    bloqueMes.appendChild(grid);
+    contenedor.appendChild(bloqueMes);
+  }
+}
+
+
+// Cargar datos al iniciar
+cargarSesion();
+</script>
+
+</body>
+</html>
+
