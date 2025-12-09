@@ -326,10 +326,10 @@ function añadirSobrante() {
     sobrantes.push(fecha);
     guardarSesion();
     actualizarSobrantes();
-    autoActualizarVista();
   }
 
-  document.getElementById("fechaSobrante").value = "";
+    document.getElementById("fechaSobrante").value = "";
+    autoActualizarVista();
 }
 
 function eliminarSobrante(fecha) {
