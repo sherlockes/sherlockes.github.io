@@ -228,8 +228,6 @@ ul li button {
   <input type="date" id="fechaQuitar">
 </label>
 
-<button onclick="añadirQuitar()">Añadir día a quitar</button>
-
 <ul id="listaQuitar"></ul>
 
 <hr>
@@ -360,11 +358,13 @@ function añadirQuitar() {
     quitarDias.push(fecha);
     guardarSesion();
     actualizarQuitar();
+    generarVistaPreviaVisual();
   }
 
+  // Vaciar selector para poder elegir otro día seguido
   document.getElementById("fechaQuitar").value = "";
-  autoActualizarVista();
 }
+
 
 function eliminarQuitar(fecha) {
   quitarDias = quitarDias.filter(f => f !== fecha);
@@ -851,7 +851,7 @@ function activarActualizacionAutomatica() {
   document.getElementById("fechaSobrante").addEventListener("change", añadirSobrante);
 
   // Quitar días
-  document.getElementById("fechaQuitar").addEventListener("change", autoActualizarVista);
+document.getElementById("fechaQuitar").addEventListener("change", añadirQuitar);
 
   // Vacaciones
   document.getElementById("vacInicio").addEventListener("change", autoActualizarVista);
