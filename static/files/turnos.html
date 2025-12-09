@@ -79,6 +79,79 @@
     .sobrante  { background: #f6b26b; }  /* naranja */
     .vacaciones{ background: #d9d9d9; color: #555; } /* gris */
     .quitar    { background: #ffffff; border-style: dashed; } /* día sin evento forzado */
+
+/* ========= MODO MÓVIL COMPLETO ========= */
+@media (max-width: 768px) {
+
+  body {
+    padding: 8px;
+    max-width: 100%;
+    font-size: 16px;   /* Texto base más grande */
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  input, select {
+    width: 100%;
+    font-size: 16px;
+    padding: 8px;
+    margin-top: 6px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 12px;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  ul {
+    font-size: 15px;
+  }
+
+  /* -------- CALENDARIO -------- */
+
+  .preview-mes {
+    margin-bottom: 24px;
+  }
+
+  .preview-mes h4 {
+    font-size: 18px;
+  }
+
+  .calendario {
+    gap: 3px;
+  }
+
+  .dia {
+    min-height: 55px;
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .cabecera {
+    min-height: 26px;
+    font-size: 13px;
+    padding: 3px;
+  }
+
+  .numero {
+    font-size: 14px;
+  }
+
+}
+
+
   </style>
 </head>
 <body>
