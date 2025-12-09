@@ -531,12 +531,10 @@ function generarVistaPreviaVisual() {
   const fechaInicioVal = document.getElementById("fechaInicio").value;
   const turnoInicial = document.getElementById("turnoInicial").value;
 
-  const fechaInicio = new Date(fechaInicioVal);
+  // ✅ Si aún no hay fecha, no hacemos nada y NO mostramos aviso
+  if (!fechaInicioVal) return;
 
-  if (isNaN(fechaInicio)) {
-    alert("Selecciona una fecha válida");
-    return;
-  }
+  const fechaInicio = new Date(fechaInicioVal);
 
   const añoObjetivo = fechaInicio.getFullYear();
 
