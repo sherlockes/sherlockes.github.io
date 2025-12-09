@@ -251,6 +251,7 @@ ul li button {
 <hr>
 
 <button onclick="generarICS()">Descargar calendario (.ics)</button>
+<button onclick="borrarSesion()">🗑️ Borrar datos</button>
 
 <hr>
 
@@ -866,6 +867,34 @@ function limpiarFestivosAnteriores() {
 
   actualizarQuitar();
 }
+
+function borrarSesion() {
+  if (!confirm("¿Seguro que quieres borrar todos los datos guardados?")) return;
+
+  sessionStorage.clear();
+
+  // Vaciar arrays en memoria
+  sobrantes = [];
+  vacaciones = [];
+  quitarDias = [];
+
+  // Limpiar formularios
+  document.getElementById("fechaInicio").value = "";
+  document.getElementById("turnoInicial").value = "Mañana";
+  document.getElementById("fechaSobrante").value = "";
+  document.getElementById("fechaQuitar").value = "";
+  document.getElementById("vacInicio").value = "";
+  document.getElementById("vacFin").value = "";
+
+  // Limpiar listas visuales
+  actualizarSobrantes();
+  actualizarVacaciones();
+  actualizarQuitar();
+
+  // Limpiar vista previa
+  document.getElementById("vistaCalendario").innerHTML = "";
+}
+
 
 
 // Cargar datos al iniciar
