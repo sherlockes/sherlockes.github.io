@@ -15,7 +15,7 @@ tags:
 draft: false
 weight: 5
 ---
-Hacer pequeñas aplicaciones cada día es más sencillo sin tener mucha idea de programar. Aquí dejo unas cuantas que he creado para satisfacer necesidades puntuales. Hasta la descripción de la aplicación va a ser cortesía de la inteligencia artificial.
+Hacer pequeñas aplicaciones cada día que pasa es más sencillo sin tener mucha idea de programar. Aquí dejo unas cuantas que he creado para satisfacer necesidades puntuales. Hasta la descripción de la aplicación va a ser cortesía de la inteligencia artificial.
 <!--more-->
 ### Generador de Turnos
 Esta aplicación web es una herramienta práctica e intuitiva para la generación automática de calendarios laborales con turnos rotatorios, pensada para trabajadores con sistemas de rotación de mañana, tarde, noche y descansos. Funciona de manera completamente local en el navegador, sin necesidad de registro ni conexión a servidores externos, garantizando la privacidad del usuario.
