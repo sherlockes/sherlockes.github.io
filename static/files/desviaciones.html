@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Informe de Desviaciones v1.9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+  body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f5f5; margin: 0; padding: 1rem; }
+  .app { max-width: 900px; margin: auto; }
+  .card { background: white; padding: 1rem; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,.1); margin-bottom: 1rem;}
+  input, select, textarea { width:100%; padding:.5rem; margin-bottom:.7rem; border-radius:8px; border:1px solid #ccc; box-sizing:border-box; }
+  button { padding:.6rem 1rem; border:none; border-radius:8px; cursor:pointer; margin-right:.5rem; margin-bottom:.5rem; }
+  .btn-primary { background:#1976d2; color:white;}
+  .btn-secondary { background:#e0e0e0;}
+  .btn-danger { background:#d32f2f; color:white;}
+  .btn-small { padding: .3rem .6rem; font-size: 0.8rem; border-radius: 6px; }
+  .btn-new { background:#6a1b9a; color:white;}
+  .thumb { width:70px; height:70px; object-fit:cover; border-radius:8px; border:1px solid #ccc; margin-right:.6rem;}
+  .desv-item { display:flex; justify-content:space-between; align-items:flex-start; border-bottom:1px solid #ddd; padding:.4rem 0;}
+  .section-bar { display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; }
+  .section-bar select { width:auto; min-width:160px; }
+  .advanced { background:#fff8e1; border:1px solid #ffe082; border-radius:12px; padding:1rem; }
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<h1>Informe de Desviaciones <span style="font-size:14px; color:#555;">v1.9</span></h1>
+
+<!-- Selector de sección -->
+<div class="card">
+  <div class="section-bar">
+    <strong>Sección actual:</strong>
+    <select id="seccionSelect"></select>
+    <button id="btnNuevaSeccion" class="btn-new">Nueva sección</button>
+    <button id="btnRenombrarSeccion" class="btn-secondary">Renombrar sección</button>
+  </div>
+</div>
+
+<!-- Formulario desviaciones -->
+<div class="card">
+<form id="formDesv">
+<h2 id="formTitulo">Nueva desviación</h2>
+
+<label>Tipo</label>
+<select id="tipo">
+  <option value="">Selecciona…</option>
+  <option>Almacenamiento</option>
+  <option>Productos químicos</option>
+  <option>Mangueras</option>
+  <option>Herramientas</option>
+  <option>Equipos e instalaciones</option>
+  <option>Elementos de seguridad y EPI's</option>
+  <option>Zonas de paso y comunes</option>
+  <option>Señalización y comunicación</option>
+  <option>Residuos</option>
+</select>
+
+<label>Descripción</label>
+<textarea id="descripcion"></textarea>
+
+<label>Ubicación</label>
+<input type="text" id="ubicacion">
+
+<label>Foto</label>
+<input type="file" id="foto" accept="image/*" capture="environment">
+
+<button type="submit" class="btn-primary" id="btnGuardar">Añadir desviación</button>
+<button type="button" class="btn-secondary" id="btnCancelarEdicion" style="display:none;">Cancelar edición</button>
+</form>
+</div>
+
+<!-- Lista desviaciones -->
+<div class="card">
+<h2>Desviaciones añadidas</h2>
+<div id="lista"></div>
+<p id="noDatos">No hay desviaciones aún.</p>
+</div>
+
+<!-- Zona avanzada -->
+<div class="card advanced">
+  <h3>⚠️ Opciones avanzadas</h3>
+  <p style="margin-top:0; font-size:0.9rem; color:#555;">Estas acciones afectan a las desviaciones guardadas en esta aplicación.</p>
+  <button id="btnBorrarSeccion" class="btn-danger">Borrar sección</button>
+  <button id="btnBorrarTodas" class="btn-danger">Borrar todas las secciones</button>
+</div>
+
+<!-- Exportación -->
+<div style="text-align:center; margin-top:2rem;">
+<button id="btnDescargarHTML" class="btn-secondary">Descargar HTML</button>
+<button id="btnDescargarPDF" class="btn-secondary">Descargar PDF</button>
+</div>
+
+</div>
+
+<script>
+let desviaciones = [];
+let editIndex = null;
+
+// Gestión de secciones
+const SECCIONES_KEY = "desviaciones_v1_9_secciones";
+const SECCION_ACTUAL_KEY = "desviaciones_v1_9_seccion_actual";
+const DATA_PREFIX = "desviaciones_v1_9_";
+
+function $(id){ return document.getElementById(id); }
+
+const ORDEN_TIPOS = [
+  "Almacenamiento","Productos químicos","Mangueras","Herramientas",
+  "Equipos e instalaciones","Elementos de seguridad y EPI's",
+  "Zonas de paso y comunes","Señalización y comunicación","Residuos"
+];
+
+function cargarSecciones(){
+  let lista = [];
+  try{
+    const raw = localStorage.getItem(SECCIONES_KEY);
+    if(raw){
+      const parsed = JSON.parse(raw);
+      if(Array.isArray(parsed)) lista = parsed;
+    }
+  }catch(e){}
+  if(lista.length === 0){
+    lista = ["seccion_1"];
+    localStorage.setItem(SECCIONES_KEY, JSON.stringify(lista));
+  }
+  return lista;
+}
+
+function guardarSecciones(lista){
+  localStorage.setItem(SECCIONES_KEY, JSON.stringify(lista));
+}
+
+function getSeccionActualId(){
+  let id = localStorage.getItem(SECCION_ACTUAL_KEY);
+  const secciones = cargarSecciones();
+  if(!id || !secciones.includes(id)){
+    id = secciones[0];
+    localStorage.setItem(SECCION_ACTUAL_KEY, id);
+  }
+  return id;
+}
+
+function setSeccionActualId(id){
+  localStorage.setItem(SECCION_ACTUAL_KEY, id);
+}
+
+function cargarDatosSeccion(id){
+  desviaciones = [];
+  try{
+    const raw = localStorage.getItem(DATA_PREFIX + id);
+    if(raw){
+      const parsed = JSON.parse(raw);
+      if(Array.isArray(parsed)) desviaciones = parsed;
+    }
+  }catch(e){}
+  editIndex = null;
+  $("btnGuardar").textContent = "Añadir desviación";
+  $("btnCancelarEdicion").style.display = "none";
+  $("formTitulo").textContent = "Nueva desviación";
+  render();
+}
+
+function guardarDatosSeccion(id){
+  localStorage.setItem(DATA_PREFIX + id, JSON.stringify(desviaciones));
+}
+
+function actualizarSelectorSecciones(){
+  const secciones = cargarSecciones();
+  const actual = getSeccionActualId();
+  const sel = $("seccionSelect");
+  sel.innerHTML = "";
+  secciones.forEach(id=>{
+    const opt = document.createElement("option");
+    opt.value = id;
+    opt.textContent = id;
+    if(id === actual) opt.selected = true;
+    sel.appendChild(opt);
+  });
+}
+
+// Reducir imagen
+async function reducir(file){
+ return new Promise(res=>{
+  let r=new FileReader();
+  r.onload=e=>{
+   let img=new Image();
+   img.onload=()=>{
+    let MAX=500;
+    let sc=MAX/img.width;
+    let c=document.createElement("canvas");
+    c.width=MAX;
+    c.height=img.height*sc;
+    c.getContext("2d").drawImage(img,0,0,c.width,c.height);
+    res(c.toDataURL("image/webp",0.8));
+   };
+   img.src=e.target.result;
+  };
+  r.readAsDataURL(file);
+ });
+}
+
+// Render lista
+function render(){
+ let lista=$("lista");
+ lista.innerHTML="";
+ if(desviaciones.length===0){$("noDatos").style.display="block";return;}
+ $("noDatos").style.display="none";
+
+ [...desviaciones].reverse().forEach((d,i)=>{
+  let real=desviaciones.length-1-i;
+  let div=document.createElement("div");
+  div.className="desv-item";
+
+  let left=document.createElement("div");
+  left.style.display="flex";
+
+  if(d.foto){
+    let img=document.createElement("img");
+    img.src=d.foto; img.className="thumb";
+    left.appendChild(img);
+  }
+
+  let info=document.createElement("div");
+  info.innerHTML=`<strong>${d.tipo}</strong><br>${d.descripcion||""}<br><span style='color:#666'>Ubicación: ${d.ubicacion||"—"}</span>`;
+  left.appendChild(info);
+
+  let right=document.createElement("div");
+  right.innerHTML=`<button class='btn-secondary btn-small' onclick='editar(${real})'>Editar</button>
+  <button class='btn-danger btn-small' onclick='borrar(${real})'>Borrar</button>`;
+
+  div.appendChild(left); div.appendChild(right);
+  lista.appendChild(div);
+ });
+}
+
+// Form submit
+$("formDesv").addEventListener("submit", async e=>{
+ e.preventDefault();
+ let tipo=$("tipo").value;
+ if(!tipo){alert("Selecciona un tipo");return;}
+ let desc=$("descripcion").value.trim();
+ let ub=$("ubicacion").value.trim();
+ let file=$("foto").files[0];
+ let foto=null;
+ if(file) foto=await reducir(file);
+ let obj={tipo,descripcion:desc,ubicacion:ub,foto};
+
+ if(editIndex===null) desviaciones.push(obj);
+ else{
+   if(!foto) obj.foto=desviaciones[editIndex].foto;
+   desviaciones[editIndex]=obj;
+   editIndex=null;
+   $("btnGuardar").textContent="Añadir desviación";
+   $("btnCancelarEdicion").style.display="none";
+   $("formTitulo").textContent="Nueva desviación";
+ }
+
+ $("descripcion").value="";$("ubicacion").value="";$("foto").value="";$("tipo").value="";
+ guardarDatosSeccion(getSeccionActualId());
+ render();
+});
+
+function editar(i){
+ editIndex=i; let d=desviaciones[i];
+ $("tipo").value=d.tipo; $("descripcion").value=d.descripcion; $("ubicacion").value=d.ubicacion;
+ $("btnGuardar").textContent="Guardar cambios"; $("btnCancelarEdicion").style.display="inline-block";
+ $("formTitulo").textContent="Editar desviación";
+}
+
+function borrar(i){
+ if(!confirm("¿Seguro que quieres borrar esta desviación?"))return;
+ desviaciones.splice(i,1);
+ guardarDatosSeccion(getSeccionActualId());
+ render();
+}
+
+$("btnCancelarEdicion").onclick=()=>{
+ editIndex=null;
+ $("btnGuardar").textContent="Añadir desviación";
+ $("btnCancelarEdicion").style.display="none";
+ $("formTitulo").textContent="Nueva desviación";
+ $("descripcion").value="";$("ubicacion").value="";$("foto").value="";$("tipo").value="";
+};
+
+// Nueva sección
+$("btnNuevaSeccion").onclick=()=>{
+  let nombre = prompt("Nombre de la nueva sección (usa letras, números y guiones bajos \"_\"):");
+  if(!nombre) return;
+  nombre = nombre.trim();
+  if(!nombre) return;
+  nombre = nombre.replace(/\s+/g, "_");
+  nombre = nombre.replace(/[^A-Za-z0-9_]/g, "");
+  if(!nombre){
+    alert("Nombre no válido.");
+    return;
+  }
+  let secciones = cargarSecciones();
+  if(secciones.includes(nombre)){
+    alert("Ya existe una sección con ese nombre.");
+    return;
+  }
+  secciones.push(nombre);
+  guardarSecciones(secciones);
+  setSeccionActualId(nombre);
+  desviaciones = [];
+  editIndex = null;
+  actualizarSelectorSecciones();
+  cargarDatosSeccion(nombre);
+};
+
+// Renombrar sección
+$("btnRenombrarSeccion").onclick=()=>{
+  const actual = getSeccionActualId();
+  let nuevo = prompt("Nuevo nombre para la sección (usa letras, números y guiones bajos \"_\"):", actual);
+  if(!nuevo) return;
+  nuevo = nuevo.trim();
+  if(!nuevo) return;
+  nuevo = nuevo.replace(/\s+/g,"_");
+  nuevo = nuevo.replace(/[^A-Za-z0-9_]/g,"");
+  if(!nuevo){
+    alert("Nombre no válido.");
+    return;
+  }
+  let secciones = cargarSecciones();
+  if(secciones.includes(nuevo) && nuevo !== actual){
+    alert("Ya existe una sección con ese nombre.");
+    return;
+  }
+  if(nuevo === actual) return;
+
+  const datos = localStorage.getItem(DATA_PREFIX + actual);
+  if(datos !== null){
+    localStorage.setItem(DATA_PREFIX + nuevo, datos);
+    localStorage.removeItem(DATA_PREFIX + actual);
+  }
+  secciones = secciones.map(id=>id===actual?nuevo:id);
+  guardarSecciones(secciones);
+  setSeccionActualId(nuevo);
+  actualizarSelectorSecciones();
+  cargarDatosSeccion(nuevo);
+};
+
+// Cambio de sección
+$("seccionSelect").addEventListener("change",()=>{
+  const id = $("seccionSelect").value;
+  setSeccionActualId(id);
+  cargarDatosSeccion(id);
+});
+
+// Borrar sección
+$("btnBorrarSeccion").onclick=()=>{
+  const secciones = cargarSecciones();
+  const actual = getSeccionActualId();
+  if(!confirm("¿Borrar la sección \""+actual+"\" y todas sus desviaciones?")) return;
+  localStorage.removeItem(DATA_PREFIX + actual);
+  const nuevas = secciones.filter(s=>s!==actual);
+  if(nuevas.length === 0){
+    nuevas.push("seccion_1");
+    localStorage.setItem(DATA_PREFIX + "seccion_1", JSON.stringify([]));
+  }
+  guardarSecciones(nuevas);
+  setSeccionActualId(nuevas[0]);
+  actualizarSelectorSecciones();
+  cargarDatosSeccion(getSeccionActualId());
+};
+
+// Borrar todas las secciones
+$("btnBorrarTodas").onclick=()=>{
+  if(!confirm("¿Borrar TODAS las secciones y todas las desviaciones?")) return;
+  const secciones = cargarSecciones();
+  secciones.forEach(id=>{
+    localStorage.removeItem(DATA_PREFIX + id);
+  });
+  localStorage.removeItem(SECCIONES_KEY);
+  localStorage.removeItem(SECCION_ACTUAL_KEY);
+  const lista = ["seccion_1"];
+  guardarSecciones(lista);
+  setSeccionActualId("seccion_1");
+  desviaciones = [];
+  editIndex = null;
+  actualizarSelectorSecciones();
+  cargarDatosSeccion("seccion_1");
+};
+
+// Resumen
+function resumen(grupos){
+ let arr=[];
+ ORDEN_TIPOS.forEach(t=>{
+  if(grupos[t]&&grupos[t].length>0){
+   let n=grupos[t].length;
+   arr.push(`${t}: ${n} ${n===1?"desviación":"desviaciones"}`);
+  }
+ });
+ return arr;
+}
+
+// Exportar HTML
+$("btnDescargarHTML").onclick=()=>{
+ if(desviaciones.length===0){alert("No hay datos");return;}
+
+ let grupos={};
+ desviaciones.forEach(d=>{ if(!grupos[d.tipo]) grupos[d.tipo]=[]; grupos[d.tipo].push(d); });
+
+ let res=resumen(grupos);
+
+ let html=`<!DOCTYPE html><html><head><meta charset='UTF-8'>
+ <style>
+ body{font-family:Arial;padding:1rem;}
+ h2{background:#eee;padding:6px;border-radius:6px;}
+ table{width:100%;border-collapse:collapse;margin-bottom:25px;}
+ td{border:1px solid black;width:50%;padding:10px;vertical-align:top;}
+ img{max-width:100%;margin-bottom:10px;}
+ </style></head><body>
+ <h1>Informe de desviaciones</h1>`;
+
+ if(res.length>0){
+   html+=`<h2>Resumen</h2><ul>`;
+   res.forEach(l=>html+=`<li>${l}</li>`);
+   html+=`</ul>`;
+ }
+
+ ORDEN_TIPOS.forEach(t=>{
+  if(!grupos[t])return;
+  html+=`<h2>${t} (${grupos[t].length})</h2>`;
+  grupos[t].forEach(d=>{
+   html+=`<table><tr><td>${d.foto?`<img src="${d.foto}">`:""}
+   <strong>Descripción:</strong> ${d.descripcion}<br><br>
+   <strong>Ubicación:</strong> ${d.ubicacion||"—"}</td><td></td></tr></table>`;
+  });
+ });
+
+ html+="</body></html>";
+
+ let blob=new Blob([html],{type:"text/html"});
+ let url=URL.createObjectURL(blob);
+ let a=document.createElement("a");a.href=url;a.download="informe_desviaciones_v1.9.html";
+ document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+};
+
+// Exportar PDF
+$("btnDescargarPDF").onclick=async()=>{
+ if(desviaciones.length===0){alert("No hay datos");return;}
+
+ const {jsPDF}=window.jspdf;
+ let doc=new jsPDF("p","mm","a4");
+
+ let y=15,margin=10;
+ let pw=doc.internal.pageSize.getWidth();
+ let ph=doc.internal.pageSize.getHeight();
+ let fw=pw-margin*2, cw=fw/2;
+
+ doc.setFontSize(18);
+ doc.text("Informe de desviaciones",margin,y);
+ y+=8;
+
+ let grupos={};
+ desviaciones.forEach(d=>{ if(!grupos[d.tipo]) grupos[d.tipo]=[]; grupos[d.tipo].push(d); });
+
+ let res=resumen(grupos);
+ if(res.length>0){
+  doc.setFontSize(12);
+  doc.text("Resumen:",margin,y); y+=6;
+  res.forEach(l=>{
+    if(y>ph-10){ doc.addPage(); y=15; }
+    doc.text("- "+l,margin+4,y); y+=5;
+  });
+  y+=4;
+ }
+
+ async function dims(base){
+  return new Promise(ok=>{
+    let img=new Image();
+    img.onload=()=>{
+      let max=45;
+      let w=img.width,h=img.height;
+      let r=w/h;
+      let W,H;
+      if(r>=1){W=max;H=max/r;} else {H=max;W=max*r;}
+      ok({W,H});
+    };
+    img.src=base;
+ });
+ }
+
+ for(const t of ORDEN_TIPOS){
+  if(!grupos[t])continue;
+
+  if(y+10>ph-10){doc.addPage();y=15;}
+  doc.setFontSize(14);
+  doc.text(`${t} (${grupos[t].length})`,margin,y);
+  y+=6;
+
+  for(const d of grupos[t]){
+    let W=0,H=0;
+    if(d.foto){
+      try{ let dd=await dims(d.foto);W=dd.W;H=dd.H; }catch(e){}
+    }
+
+    let cellH=H+18;
+
+    if(y+cellH>ph-10){doc.addPage();y=15;}
+
+    doc.setDrawColor(0,0,0);
+    doc.rect(margin,y,fw,cellH);
+    doc.line(margin+cw,y,margin+cw,y+cellH);
+
+    if(d.foto && W>0 && H>0){
+      try{ doc.addImage(d.foto,"WEBP",margin+4,y+4,W,H); }catch(e){}
+    }
+
+    doc.setFontSize(10);
+    let tx=margin+4;
+    let ty=y+H+8;
+
+    doc.text("Descripción: "+(d.descripcion||""),tx,ty);
+    ty+=5;
+    doc.text("Ubicación: "+(d.ubicacion||"—"),tx,ty);
+
+    y+=cellH+4;
+  }
+
+  y+=2;
+ }
+
+ doc.save("informe_desviaciones_v1.9.pdf");
+};
+
+// Inicio
+(function init(){
+  const secciones = cargarSecciones();
+  const actual = getSeccionActualId();
+  actualizarSelectorSecciones();
+  cargarDatosSeccion(actual);
+})();
+</script>
+
+</body></html>
