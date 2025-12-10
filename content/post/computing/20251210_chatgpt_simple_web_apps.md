@@ -12,7 +12,7 @@ categories:
 - "computing"
 tags:
 - "html"
-draft: true
+draft: false
 weight: 5
 ---
 Hacer pequeñas aplicaciones cada día es más sencillo sin tener mucha idea de programar. Aquí dejo unas cuantas que he creado para satisfacer necesidades puntuales. Hasta la descripción de la aplicación va a ser cortesía de la inteligencia artificial.
