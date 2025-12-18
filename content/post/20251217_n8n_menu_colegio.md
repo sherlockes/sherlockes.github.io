@@ -1,6 +1,6 @@
 ---
 title: "Automatizando el menú escolar con n8n"
-date: "2025-12-17"
+date: "2025-12-18"
 creation: "2025-12-17"
 description: "Como he pasado de un pdf a una notificación diaria en Telegram para saber el menú de los niños en el colegio."
 thumbnail: "images/20251217_n8n_menu_colegio_00.jpg"
@@ -22,143 +22,99 @@ En muchos colegios el menú mensual se publica en un PDF que acaba olvidado en u
 
 En este artículo explico cómo he construido un **flujo completo en n8n** que resuelve este problema de principio a fin:
 
-- Recibe el **PDF mensual del menú**
-- Extrae la información usando **visión artificial**
-- La guarda de forma estructurada en **Google Sheets**
-- Y **envía cada día automáticamente el menú por Telegram**
+Una de esas pequeñas automatizaciones que, sin ser especialmente complejas, terminan teniendo un impacto real en el día a día. En este caso, el objetivo es sencillo: **tener el menú del colegio disponible y recibir cada mañana un aviso automático con lo que toca comer**.
 
-Todo ello con un único workflow bien organizado.
+## Qué hace este flujo
 
----
+El flujo cubre todo el ciclo de vida del menú mensual:
 
-## El problema: PDFs no estructurados
-El menú del colegio llega como un PDF mensual. Aunque visualmente es claro para una persona, para una automatización tiene varios problemas:
+- Detecta la llegada de un nuevo PDF con el menú.
+- Extrae la información diaria usando IA.
+- Guarda los menús en una hoja de Google Sheets.
+- Cada mañana, comprueba si hay menú para hoy.
+- Si lo hay y no es festivo, envía un mensaje por Telegram.
+- Marca el menú como enviado para no repetir avisos.
 
-- No sigue un formato de tabla estándar
-- Mezcla texto, días, festivos y notas
-- No se puede parsear de forma fiable con expresiones regulares
+Todo esto sin intervención manual una vez configurado.
 
-Tras probar soluciones clásicas como `pdftotext`, quedó claro que el parseo iba a ser frágil. La solución fue **tratar el PDF como una imagen** y delegar la interpretación a un modelo de inteligencia artificial con capacidades de visión.
+{{< n8n_workflow src="/workflows/menu_miraflores" >}}
 
-## Arquitectura general del flujo
-El workflow se divide en **dos grandes ramas**, cada una con su propio disparador:
+## Entrada del menú: PDF y automatización
 
-1. **Importación mensual (Webhook)**
-2. **Envío diario automático (Cron + Arranque)**
+El flujo admite dos formas de entrada del PDF del menú:
 
-Ambas ramas comparten el mismo almacenamiento: una hoja de cálculo en Google Sheets llamada `menu_colegio`.
+1. **Webhook** al que se puede subir el archivo manualmente.
+2. **Google Drive Trigger**, que vigila una carpeta concreta y se activa cuando aparece un nuevo PDF.
 
-## Parte 1: Importación mensual del menú
+El nombre del archivo no es casual: sigue el formato `YYYYMM.pdf`, lo que permite extraer automáticamente el año y el mes. Si el nombre no cumple el patrón esperado, el flujo simplemente no continúa.
 
-### 1. Recepción del PDF por Webhook
-El flujo comienza con un **Webhook** que recibe el archivo PDF. Para evitar errores, se valida que el nombre siga el patrón `YYYYMM.pdf`. De este nombre se extraen directamente el **año y el mes**, que luego se usarán para contextualizar el análisis.
+Este pequeño detalle evita muchos errores aguas abajo.
 
-Esto permite subir simplemente archivos del tipo 202512.pdf sin necesidad de más metadatos.
+## De PDF a imagen (porque la IA ve mejor así)
 
-### 2. Conversión del PDF a imagen
+Una vez recibido el PDF, se guarda temporalmente y se convierte en imagen usando `pdftoppm`.  
+El menú suele estar en una sola página, así que se trabaja directamente con la primera imagen generada.
 
-El PDF se guarda temporalmente en disco y se convierte a PNG usando `pdftoppm`. Este paso es clave: los modelos de visión trabajan mucho mejor con imágenes que con texto mal estructurado. Se genera la primera página del menú como imagen, que suele contener toda la información relevante.
+¿Por qué imagen y no texto? Porque el siguiente paso es clave.
 
-### 3. Análisis del menú con IA (Vision)
+## Interpretando el menú con IA
 
-La imagen se envía a **OpenRouter**, utilizando el modelo `gpt-4o-mini`, junto con un prompt muy estricto:
+Aquí entra en juego un modelo de lenguaje con capacidad multimodal. Se le pasa:
 
-- El modelo debe devolver **únicamente JSON**
-- Cada elemento debe contener:
-  - `date` en formato `YYYY-MM-DD`
-  - `menu` como texto plano
-- Festivos y vacaciones deben indicarse explícitamente
+- El mes y año deducidos del nombre del archivo.
+- La imagen del menú.
+- Una instrucción muy concreta: devolver **exclusivamente un array JSON**, con una entrada por día lectivo y el menú estructurado en tres líneas (primero, segundo y postre).
 
-El resultado es un bloque JSON encapsulado en Markdown, que se limpia y parsea en un nodo de código.
+Los días marcados como festivos o vacaciones directamente se ignoran.
 
-El flujo transforma así un PDF visual en **datos estructurados y fiables**.
+El resultado se parsea y se transforma para que n8n trabaje con una fila por día.
 
-### 4. Guardado en Google Sheets
+## Persistencia: Google Sheets como base de datos
 
-Cada día del mes se guarda como una fila en Google Sheets con dos columnas principales:
+Cada día del menú se guarda (o actualiza) en una hoja de cálculo de Google Sheets usando la fecha como clave única.
 
-- `Fecha`
-- `Menu`
+Esto tiene varias ventajas:
 
-Si una fecha ya existe, se actualiza; si no, se inserta. De esta forma, subir de nuevo el PDF no rompe nada y el sistema es idempotente.
+- Es fácil de revisar manualmente.
+- Permite correcciones rápidas si algo falla.
+- Sirve como histórico del menú.
 
-## Parte 2: Envío diario automático por Telegram
+Además, se añade una columna para marcar si el menú diario ya ha sido enviado por Telegram.
 
-Una vez los datos están estructurados, el problema se reduce a algo mucho más sencillo.
+## El envío diario: lógica antes de notificar
 
-### 1. Disparadores: Cron y Arranque
+Cada mañana a las 8:00 el flujo se activa automáticamente y sigue varios pasos antes de enviar nada:
 
-El envío diario se activa de dos formas:
+1. Comprueba qué día es hoy.
+2. Verifica que sea día lectivo (lunes a viernes).
+3. Consulta un calendario de Google con los festivos escolares.
+4. Busca el menú correspondiente en la hoja de cálculo.
+5. Comprueba que no se haya enviado ya.
 
-- Un **Schedule Trigger** todos los días a las 8:00
-- Un **Trigger de Arranque**, por si el servidor no estaba encendido a esa hora
+Solo si todas esas condiciones se cumplen, se envía el mensaje.
 
-Ambos disparadores confluyen en el mismo flujo.
+Si no hay menú cargado para ese día, se manda un aviso alternativo indicando que falta el menú mensual.
 
-### 2. Cálculo de la fecha actual
+## Telegram como canal de salida
 
-Un nodo `Set` genera la variable `hoy` con la fecha actual en formato `YYYY-MM-DD`. Este formato coincide exactamente con el almacenado en Google Sheets, evitando conversiones innecesarias.
+El mensaje final es simple y directo:
 
-### 3. Búsqueda del menú del día
+> Menú en el colegio para hoy:  
+> (contenido del menú)
 
-Se consulta Google Sheets filtrando únicamente por la fecha de hoy. Esto devuelve, como máximo, una fila.
+Sin formatos raros ni florituras. Lo importante es que llegue rápido y sea legible desde el móvil.
 
-A partir de aquí, toda la lógica se hace **dentro de n8n**, no en el filtro de Google Sheets, lo que evita problemas con celdas vacías.
-
-### 4. Evitar envíos duplicados
-
-Para garantizar que el mensaje se envía **una sola vez al día**, se añadió una tercera columna en la hoja:
-
-- `Enviado`
-
-Un nodo IF comprueba:
-
-- Que exista una fila para hoy
-- Que la columna `Enviado` esté vacía
-
-Solo en ese caso se continúa.
-
-Tras enviar el mensaje por Telegram, la fila se actualiza marcando `Enviado` con la fecha, lo que hace el sistema **completamente robusto frente a reinicios**.
-
-### 5. Envío del mensaje por Telegram
-
-El mensaje enviado es simple y directo:
-
-``` txt
-Menú en el colegio para hoy:
-<contenido del menú>
-```
-
-Este paso podría ampliarse fácilmente con emojis, formatos distintos para festivos o incluso botones interactivos.
-
-## Ventajas de este enfoque
-
-Este diseño tiene varias ventajas claras:
-- No depende de servicios externos adicionales
-- Es fácil de depurar (todo queda visible en Sheets)
-- No requiere estado interno complejo
-- Funciona igual en pruebas y en producción
-- Tolera reinicios del servidor sin duplicar mensajes
-
-Además, el uso de visión artificial evita uno de los problemas clásicos de la automatización: **intentar forzar a los PDFs a ser algo que no son**.
+Una vez enviado, el menú se marca como “enviado” en Google Sheets, cerrando el ciclo.
 
 ## Conclusión
 
-Este workflow demuestra cómo n8n puede actuar como **pegamento entre IA, automatización y herramientas cotidianas**. Con unas pocas decisiones bien pensadas, un documento pensado para humanos se convierte en un sistema automático, fiable y mantenible.
+No es una automatización compleja ni especialmente original, pero sí muy representativa de lo que me gusta hacer con n8n:
 
-Y lo mejor: una vez montado, **nadie tiene que volver a preguntarse qué comen hoy los niños en el cole**. 🍽️
+- Resolver problemas cotidianos.
+- Eliminar tareas repetitivas.
+- Aprovechar la IA donde realmente aporta valor.
+- Usar herramientas simples (Sheets, Telegram) como piezas clave del sistema.
 
-
-
-
-![image-01]
-
-### Enlaces de interés
-- [enlace](www.sherblog.es)
-
-[link]: https://www.google.es
-
-[image-01]: /images/20251217_n8n_menu_colegio_01.jpg
-
+Y, sobre todo, **olvidarme del problema una vez montado**. Que al final de eso va todo esto.
 
 
