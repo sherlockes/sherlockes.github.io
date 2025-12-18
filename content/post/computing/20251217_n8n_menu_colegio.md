@@ -14,7 +14,7 @@ tags:
 - "google sheets"
 - "n8n"
 - "telegram"
-draft: true
+draft: false
 weight: 5
 ---
 En muchos colegios el menú mensual se publica en un PDF que acaba olvidado en una web, en un correo o en el grupo de WhatsApp de las familias. Consultarlo cada mañana es poco práctico, y automatizarlo no es trivial. De esta forma he conseguido convertirlo en una notificación diaria a Telegram
