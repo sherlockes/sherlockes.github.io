@@ -1,6 +1,6 @@
 ---
 title: "Automatizando el menú escolar con n8n"
-date: "2025-12-18"
+date: "2025-12-19"
 creation: "2025-12-17"
 description: "Como he pasado de un pdf a una notificación diaria en Telegram para saber el menú de los niños en el colegio."
 thumbnail: "images/20251217_n8n_menu_colegio_00.jpg"
@@ -37,7 +37,7 @@ El flujo cubre todo el ciclo de vida del menú mensual:
 
 Todo esto sin intervención manual una vez configurado.
 
-{{< n8n_workflow src="/workflows/menu_miraflores" >}}
+{{< n8n_workflow src="/workflows/menu_miraflores.json" >}}
 
 ## Entrada del menú: PDF y automatización
 
