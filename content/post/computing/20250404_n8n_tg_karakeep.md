@@ -12,7 +12,7 @@ categories:
 - "computing"
 tags:
 - "n8n"
-draft: true
+draft: false
 weight: 5
 ---
 La forma más sencilla de guardar un favorito es reenviarlo a un canal de [Telegram] pero la organización allí es compleja. Vamos a crear una automatización en [n8n] que reenvíe estos enlaces a nuestra instalación de [Karakeep].
