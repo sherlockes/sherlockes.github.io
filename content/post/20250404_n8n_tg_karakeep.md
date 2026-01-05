@@ -3,7 +3,7 @@ title: "Enviar enlaces desde telegram a hoarder y readeck mediante n8n"
 date: "2026-01-05"
 creation: "2025-04-04"
 description: "Como enviar enlaces desde Telegram al mismo tiempo a los servidores de favoritos Hoarder y Readeck"
-thumbnail: "images/20250404_n8n_tg_karakeep_00.jpg"
+	thumbnail: "images/20250404_n8n_tg_karakeep_00.jpg"
 disable_comments: true
 authorbox: false
 toc: false
