@@ -24,18 +24,18 @@ Una vez más nos vamos a apoyar en [n8n] para realizar una automatización, en e
 ### Para que nos va a servir esta plantilla:
 Dispongo de un canal personal de [Telegram] en el que me guardo los enlaces interesantes que quiero guardar o leer en otro momento. La idea es que [n8n] se encargue de leer los nuevos enlaces añadidos a este canal y los envíe, a través de la correspondiente API a la instalación de [Karakeep].
 
-{{< n8n_workflow src="/workflows/telegram_karakeep.json" >}}
-
 ### Enlace con Karakeep
 En un principio usé el nodo "http request" pero después di con el nodo de la comunidad de n8n [n8n-nodes-karakeep] que permite añadir las credenciales de [Karakeep] a la instancia de [n8n] y de esta forma hacer el proceso mucho más sencillo. 
+
+{{< n8n_workflow src="/workflows/telegram_karakeep.json" >}}
+
+> Los nodos que aparecen reflejados con un "?" son los correspondientes al nodo de la comunidad de n8n para Karakeep
 
 ### Como funciona
 - Puesto que mi servidor conde corre [n8n] no está siempre encendido, será un "Schedule Trigger" el que se encargue cada cierto tiempo si hay algún contenido nuevo en el canal de [Telegram] donde guardo los enlaces. Esta petición se realiza mediante "http request" y la API de [Telegram].
 - A continuación se extrae una lista de url's con los enlaces incluidos en los nuevos mensajes.
 - Para cada uno de los enlaces, se normaliza y busca coincidencias en la base de datos de karakeep.
 - En caso de existir coincidencias se pasa al siguiente enlace, si no hay coincidencias se guarda en [Karakeep] y se informa del guardado mediante un mensaje de Telegram.
-
-![image-01]
 
 ### Instrucciones de configuración
 La plantilla hace uso de las variables de entorno que tengo declaradas en el archivo "docker-compose.yml" de [n8n] mediante un archivo ".env" externo. Estas son las variables que utilizo:
