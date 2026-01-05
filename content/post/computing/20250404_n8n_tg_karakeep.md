@@ -27,7 +27,7 @@ Dispongo de un canal personal de [Telegram] en el que me guardo los enlaces inte
 {{< n8n_workflow src="/workflows/telegram_karakeep.json" >}}
 
 ### Enlace con Karakeep
-En un principio usé el nodo "http request" pero después di con el nodo de la comunidad de n8n [n8n-nodes-karakeep] que permite añadir las credenciales de [karakeep] a la instancia de [n8n] y de esta forma hacer el proceso mucho más sencillo. 
+En un principio usé el nodo "http request" pero después di con el nodo de la comunidad de n8n [n8n-nodes-karakeep] que permite añadir las credenciales de [Karakeep] a la instancia de [n8n] y de esta forma hacer el proceso mucho más sencillo. 
 
 ### Como funciona
 - Puesto que mi servidor conde corre [n8n] no está siempre encendido, será un "Schedule Trigger" el que se encargue cada cierto tiempo si hay algún contenido nuevo en el canal de [Telegram] donde guardo los enlaces. Esta petición se realiza mediante "http request" y la API de [Telegram].
