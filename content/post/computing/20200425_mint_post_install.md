@@ -26,6 +26,15 @@ Antes de nada me logeo en google ya que la mayor parte de los archivos con los q
 
 Es importante que las carpetas sincronizadas de Google Drive se ubiquen dentro de la ruta "/home/sherlockes/Google_Drive/" para que el resto de aplicaciones puedan acceder a los archivos de configuración
 
+## Enlaces simbólicos y alias
+Para que todo vaya funcionando, hay que crear unos enlaces simbólicos. Por un lado a la carpeta "dotfiles" que hemos sincronizado con Insync para que esta sea accesible desde la raiz del usuario. Otro para los alias que ya tengo creados.
+
+``` bash
+ln -s ~/Google_Drive/dotfiles ~/dotfiles
+ln -s ~/dotfiles/bash/.bash_aliases ~/.bash_aliases
+source ~/.bashrc
+```
+
 ## Keeweb (Gestor de contraseñas)
 Descargamos el paquete .deb desde la web de [Keeweb] y lo instalamos manualmente. Con esto ya puedo acceder a todos los nombres de usuario y contraseñas que tengo guardadas en una archivo de [Google Drive]. En las últimas versiones de Linux Mint está dando problemas esta aplicación por lo que hago uso de KeepassXC que se puede instalar directamente desde los repositorios de Linux Mint.
 
