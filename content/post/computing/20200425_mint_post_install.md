@@ -57,7 +57,13 @@ ssh -T git@github.com
 ```
 
 ## Emacs (Editor de texto)
-Desde el repositorio de paquetes de Linux Mint aunque no sea la última versión. El archivo de configuración de Emacs llamado ".emacs" se creará en "/home/usuario/" y tendrá el siguiente contenido.
+Desde el repositorio de paquetes de Linux Mint aunque no sea la última versión.
+Antes de seguir adelante deberemos comprobar que están las librerías de sqlite que nos serán necesaria para org-roam. Lo haremos mediante el siguiente comando:
+``` bash
+sudo apt install sqlite3 libsqlite3-dev
+```
+
+El archivo de configuración de Emacs llamado ".emacs" se creará en "/home/usuario/" y tendrá el siguiente contenido.
 ```
 (setq user-init-file "/home/sherlockes/Google_Drive/SherloScripts/emacs/.emacs")
 (setq user-emacs-directory "/home/sherlockes/Google_Drive/SherloScripts/emacs/.emacs.d/")
