@@ -12,7 +12,7 @@ categories:
 - "computing"
 tags:
 - "windows"
-draft: true
+draft: false
 weight: 5
 ---
 Hasta ayer no tenía ni idea de la existencia de [Robocopy] pero hoy me ha salvado de un buen rato de faena.
