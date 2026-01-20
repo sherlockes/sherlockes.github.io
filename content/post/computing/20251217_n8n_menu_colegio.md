@@ -1,6 +1,6 @@
 ---
 title: "Automatizando el menú escolar con n8n"
-date: "2025-12-19"
+date: "2026-01-20"
 creation: "2025-12-17"
 description: "Como he pasado de un pdf a una notificación diaria en Telegram para saber el menú de los niños en el colegio."
 thumbnail: "images/20251217_n8n_menu_colegio_00.jpg"
