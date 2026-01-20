@@ -117,7 +117,6 @@ sudo apt-get install zerotier-one
 
 {{< borrador >}}
 ## ImageMagick
-
 ```
 sudo apt install imagemagick
 ```
