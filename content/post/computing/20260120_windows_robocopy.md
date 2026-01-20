@@ -1,6 +1,6 @@
 ---
 title: "Salvado por Robocopy"
-date: "2026-01-20"
+date: "2026-01-21"
 creation: "2026-01-20"
 description: "No había oído hablar de el pero esta utilidad me ha quitado un dolor de cabeza."
 thumbnail: "images/20260120_windows_robocopy_00.jpg"
@@ -15,7 +15,7 @@ tags:
 draft: false
 weight: 5
 ---
-Hasta ayer no tenía ni idea de la existencia de [Robocopy] pero hoy me ha salvado de un buen rato de faena.
+Hasta ayer no tenía ni idea de la existencia de [Robocopy] pero hoy me ha salvado de un buen rato de faena y quitado un dolor de cabeza.
 <!--more-->
 
 Finalmente me he decidido a quitar Windows 7 de mi viejo Asus con i5 de 2ª generación. He dejado todos los datos susceptibles de ser útiles en una carpeta "Datos". En un primer intento de copiarla al nas se ha quedado colgada la copia sin terminar. En un segundo intento de copiarla a una unidad usb ha pasado lo mismo.
