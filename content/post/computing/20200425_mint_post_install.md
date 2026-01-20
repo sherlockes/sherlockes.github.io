@@ -72,7 +72,8 @@ El archivo de configuración de Emacs llamado ".emacs" se creará en "/home/usua
 (setenv "HOME" "/home/sherlockes/")
 (load user-init-file)
 ```
-
+{{< borrador >}}
+Ha dejado de funcionar el repo
 ## Touchpad Indicator (Gestor táctil portatil)
 Para los que somos un poco manazas es fácil que se nos vaya algún pulgar al táctil del portatil mientras escribimos, de forma que nos mueve el puntero a otro punto del documento de forma que, como agaches un momento la cabeza... ya no estás escribiendo en el punto que lo estabas haciendo.
 
@@ -84,6 +85,7 @@ sudo add-apt-repository ppa:atareao/atareao
 sudo apt-get update
 sudo apt-get install touchpad-indicator
 ```
+{{< / borrador >}}
 
 ## Inkscape (Diseño vectorial)
 Desde que empece a trabajar con el, apenas abro Gimp y me he acostumbrado a crear imágenes vectoriales mucho más ligeras y fáciles de redimensionar sin perder calidad.
