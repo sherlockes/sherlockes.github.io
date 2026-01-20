@@ -35,7 +35,5 @@ La utilidad reintenta 3 veces los archivos que le dan problemas y sigue adelante
 
 [Robocopy]: https://learn.microsoft.com/es-es/windows-server/administration/windows-commands/robocopy
 
-[image-01]: /images/20260120_windows_robocopy_01.jpg
-
 
 
