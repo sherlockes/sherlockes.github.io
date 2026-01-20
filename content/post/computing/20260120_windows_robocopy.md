@@ -2,7 +2,7 @@
 title: "Salvado por Robocopy"
 date: "2026-01-21"
 creation: "2026-01-20"
-description: "Esta es la forma con la que he conseguido copiar una serie de archivos con la utilidad Robocopy"
+description: "Esta es la forma con la que he conseguido copiar una serie de archivos gracias a la utilidad Robocopy"
 thumbnail: "images/20260120_windows_robocopy_00.jpg"
 disable_comments: true
 authorbox: false
@@ -29,8 +29,6 @@ robocopy "C:\Datos" "E:\Copia" /E /Z /R:3 /W:5
 ```
 
 La utilidad reintenta 3 veces los archivos que le dan problemas y sigue adelante con el resto. Sin más.
-
-![image-01]
 
 ### Enlaces de interés
 - [enlace](www.sherblog.es)
