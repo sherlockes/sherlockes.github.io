@@ -1,6 +1,6 @@
 ---
 title: "Flujo de imágenes en Linux"
-date: "2019-04-08"
+date: "2026-01-20"
 creation: "2019-04-08"
 description: "Otro de mis post incrementales en el que voy a explicar mi modo de trabajo con imágenes en linux"
 thumbnail: "images/20190408_flujo_imagenes_linux_00.jpg"
@@ -20,6 +20,8 @@ tags:
 draft: false
 weight: 5
 ---
+Este es el modo en el que trabajo con las imágenes en linux.
+<!--more-->
 
 ## El origen de las imágenes
 Las imágenes con las que suelo tratar más habitualmente tienen dos procedencias claramente diferenciadas.
