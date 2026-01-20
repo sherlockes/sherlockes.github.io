@@ -2,7 +2,7 @@
 title: "Salvado por Robocopy"
 date: "2026-01-21"
 creation: "2026-01-20"
-description: "No había oído hablar de el pero esta utilidad me ha quitado un dolor de cabeza."
+description: "Esta es la forma con la que he conseguido copiar una serie de archivos con Robocopy"
 thumbnail: "images/20260120_windows_robocopy_00.jpg"
 disable_comments: true
 authorbox: false
