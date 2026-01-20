@@ -1,6 +1,6 @@
 ---
 title: "Mi Post-instalación de Linux Mint"
-date: "2020-10-01"
+date: "2026-01-20"
 creation: "2020-04-25"
 description: "Aquí están todos los pasos que doy después de la instalación de Linux Mint, perfectamente documentado para que no se me olvide..."
 thumbnail: "images/20200425_mint_post_install_00.jpg"
@@ -21,16 +21,31 @@ Hay cientos de artículos sobre post-instalaciones de sistemas operativos. Este 
 ## Vivaldi (Navegador web)
 Después de la polémica creada sobre el navegador Brave, he cambiado a [Vivaldi] por la privacidad y todas las funciones que tiene. Rápido, sencillo y potente...
 
+## Insync (Sincronizador de archivos)
+Antes de nada me logeo en google ya que la mayor parte de los archivos con los que trabajo a diario están en [Google Drive]. La forma más sencilla que conozco para trabajar con estos archivos es mediante el uso de [Insync].
+
+Es importante que las carpetas sincronizadas de Google Drive se ubiquen dentro de la ruta "/home/sherlockes/Google_Drive/" para que el resto de aplicaciones puedan acceder a los archivos de configuración
+
+## Keeweb (Gestor de contraseñas)
+Descargamos el paquete .deb desde la web de [Keeweb] y lo instalamos manualmente. Con esto ya puedo acceder a todos los nombres de usuario y contraseñas que tengo guardadas en una archivo de [Google Drive]. En las últimas versiones de Linux Mint está dando problemas esta aplicación por lo que hago uso de KeepassXC que se puede instalar directamente desde los repositorios de Linux Mint.
+
 ### Telegram Desktop (Mensajería instantanea y...)
 Mis usos de Telegram los puedes ver en este post [Whatsapp Vs Telegram] y la instalación es tan simple como descargar [Telegram], descomprimir el archivo y ejecutar la aplicación desde la carpeta descomprimida (Tambien es posible instalarlo desde el "Gestor de software" de Linux Mint. Es posible fijar la aplicación a la barra de inicio o crear un lanzador en el escritorio si no eres de los de abrir las aplicaciones desde el teclado... 
 
-## Keeweb (Gestor de contraseñas)
-Descargamos el paquete .deb desde la web de [Keeweb] y lo instalamos manualmente. Con esto ya puedo acceder a todos los nombres de usuario y contraseñas que tengo guardadas en una archivo de [Google Drive].
+### Github
+Para trabajar con mis repositorios voy a necesitar conectarme por [ssh a Github] así que se debe generar una llave y copiarla en [Github]. Tambien hay que instalar git.
 
-## Insync (Sincronizador de archivos)
-La mayor parte de los archivos con los que trabajo a diario están en [Google Drive]. La forma más sencilla que conozco para trabajar con estos archivos es mediante el uso de [Insync].
+```
 
-Es importante que las carpetas sincronizadas de Google Drive se ubiquen dentro de la ruta "/home/sherlockes/Google_Drive/" para que el resto de aplicaciones puedan acceder a los archivos de configuración
+# Instalamos git
+apt install git
+
+# Generamos la llave
+ssh-keygen -t ed25519 -C "your_email@example.com"
+
+# Probamos la conexión con Github
+ssh -T git@github.com
+```
 
 ## Emacs (Editor de texto)
 Desde el repositorio de paquetes de Linux Mint aunque no sea la última versión. El archivo de configuración de Emacs llamado ".emacs" se creará en "/home/usuario/" y tendrá el siguiente contenido.
@@ -90,6 +105,7 @@ Y por ahora esto es todo lo que tengo instalado en mi ordenador, poco a poco ir�
 [Insync]: https://www.insynchq.com/downloads?start=true
 [Keeweb]: https://keeweb.info
 [Rclone]: https://rclone.org/downloads/
+[ssh a Github]: https://docs.github.com/es/authentication/connecting-to-github-with-ssh
 [Telegram]: https://telegram.org/dl/desktop/linux
 [Touchpad Indicator]: https://www.atareao.es/aplicacion/touchpad-indicator-para-ubuntu/#
 [Whatsapp Vs Telegram]: https://sherblog.pro/telegram-vs-whatsapp/
