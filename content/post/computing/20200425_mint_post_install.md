@@ -58,9 +58,10 @@ ssh -T git@github.com
 
 ## Emacs (Editor de texto)
 Desde el repositorio de paquetes de Linux Mint aunque no sea la última versión.
-Antes de seguir adelante deberemos comprobar que están las librerías de sqlite que nos serán necesaria para org-roam. Lo haremos mediante el siguiente comando:
+Antes de seguir adelante deberemos comprobar que están las librerías de sqlite que nos serán necesaria para org-roam. También el diccionario de español. Lo haremos mediante el siguiente comando:
 ``` bash
 sudo apt install sqlite3 libsqlite3-dev
+sudo apt install aspell-es
 ```
 
 El archivo de configuración de Emacs llamado ".emacs" se creará en "/home/usuario/" y tendrá el siguiente contenido.
@@ -91,14 +92,28 @@ En el momento de escribir esto, es posible instalar la versión 0.92 de [Inkscap
 
 
 ## Rclone (Sincronizar nubes desde terminal)
-Hasta ahora he escrito varios [artículos sobre Rclone] en los que explico algunos de mis usos de esta fantástica utilidad para conectar con casi cualquiera de las nubes públicas desde nuestra tarminal. Tal y como podemos comprobar en la web de [Rclone] la instalación es tan simple como una línea de terminal.
+Hasta ahora he escrito varios [artículos sobre Rclone] en los que explico algunos de mis usos de esta fantástica utilidad para conectar con casi cualquiera de las nubes públicas desde nuestra terminal. Tal y como podemos comprobar en la web de [Rclone] la instalación es tan simple como una línea de terminal.
 ```
 curl https://rclone.org/install.sh | sudo bash
 ```
 La configuración completa de todas mis nubes la realizo copiando el archivo de respaldo "rclone.conf" al directorio "usuario/.config/rclone/rclone.conf"
 
-### Zerotier (Virtual VPN)
+## Zerotier (Virtual VPN)
 La instalación es tan sencilla como `curl -s https://install.zerotier.com | sudo bash` y añadimos el cliente a la red que tengamos creada en [Zerotier] mediante el comando `sudo zerotier-cli join 78898a1265hfg34b`
+
+En la última instalación ha dado problemas y he tenido que cambiar el nombre en clave de la distribución en
+
+/etc/apt/sources.list.d/zerotier.list
+
+``` bash
+deb [signed-by=/usr/share/keyrings/zerotier-debian-package-key.gpg] http://download.zerotier.com/debian/noble noble main
+```
+
+Después ya se puede actualizar e instalar:
+``` bash
+sudo apt-get update
+sudo apt-get install zerotier-one
+```
 
 {{< borrador >}}
 ## ImageMagick
