@@ -103,9 +103,7 @@ La configuración completa de todas mis nubes la realizo copiando el archivo de 
 ## Zerotier (Virtual VPN)
 La instalación es tan sencilla como `curl -s https://install.zerotier.com | sudo bash` y añadimos el cliente a la red que tengamos creada en [Zerotier] mediante el comando `sudo zerotier-cli join 78898a1265hfg34b`
 
-En la última instalación ha dado problemas y he tenido que cambiar el nombre en clave de la distribución en
-
-/etc/apt/sources.list.d/zerotier.list
+En la última instalación ha dado problemas y he tenido que cambiar el nombre en clave de la distribución en "/etc/apt/sources.list.d/zerotier.list" para que quede así:
 
 ``` bash
 deb [signed-by=/usr/share/keyrings/zerotier-debian-package-key.gpg] http://download.zerotier.com/debian/noble noble main
