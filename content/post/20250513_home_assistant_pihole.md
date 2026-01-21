@@ -29,7 +29,7 @@ Antes de seguir adelante, tener en cuenta que [Pi-hole] y [Home Assistant] está
 Puesto que la [integración] de [Pi-hole] para [Home Assistant] no lo permite, vamos a modificar el listado de dominios a filtrar desde la línea de comandos mediante un script que se ejecutará en la máquina que tiene [Pi-hole] pero que será lanzado mediante un interruptor o automatización en la máquina que corre [Home Assistant].
 
 ### Los Scripts
-Vamos a partir de un archivo "youtube_blocklist.txt" en el que se incluirán todos los servidores que necesitamos filtrar. De esta forma, añadir o quitar un servidor es tan sencillo como editar este archivo. Pepe
+Vamos a partir de un archivo "youtube_blocklist.txt" en el que se incluirán todos los servidores que necesitamos filtrar. De esta forma, añadir o quitar un servidor es tan sencillo como editar este archivo.
 
 ``` bash
 youtube.com
