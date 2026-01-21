@@ -1,6 +1,6 @@
 ---
 title: "Youtube y Twitch a Podcast en Docker"
-date: "2026-01-21"
+date: "2026-01-23"
 creation: "2025-02-20"
 description: "Como he creado un sencillo contenedor a partir del script yt2pcst.sh"
 thumbnail: "images/20250220_yt_tw_to_podcast_docker_00.jpg"
