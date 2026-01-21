@@ -1,6 +1,6 @@
 ---
 title: "Modificando Pi-hole desde Home assistant"
-date: "2025-05-13"
+date: "2022-02-01"
 creation: "2025-05-13"
 description: "Como añadir y quitar dominios de la lista negra de Pi-hole desde Home Assistant"
 thumbnail: "images/20250513_home_assistant_pihole_00.jpg"
