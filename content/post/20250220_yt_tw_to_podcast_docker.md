@@ -1,6 +1,6 @@
 ---
 title: "Youtube y Twitch a Podcast en Docker"
-date: "2025-03-18"
+date: "2026-01-21"
 creation: "2025-02-20"
 description: "Como he creado un sencillo contenedor a partir del script yt2pcst.sh"
 thumbnail: "images/20250220_yt_tw_to_podcast_docker_00.jpg"
@@ -25,7 +25,7 @@ Para [Youtube] uso [yt2pcst] y para [Twitch] hago lo mismo con [tw2pcst]. Básic
 Pero de esto ya he hablado en otros artículos así que ahora nos vamos a centrar en como unir ambos scripts en un contenedor docker que corra en nuestro servidor.
 
 ### Estructura del proyecto
-Vamos a meter todos los archivos dentro de la carpeta "Sherlocast" y el árbol quedará como aparece a continuación. Pepe
+Vamos a meter todos los archivos dentro de la carpeta "Sherlocast" y el árbol quedará como aparece a continuación.
 
 ``` bash
 ├── config
