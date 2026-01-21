@@ -1,6 +1,6 @@
 ---
 title: "Modificando Pi-hole desde Home assistant"
-date: "2022-01-01"
+date: "2026-01-21"
 creation: "2025-05-13"
 description: "Como añadir y quitar dominios de la lista negra de Pi-hole desde Home Assistant"
 thumbnail: "images/20250513_home_assistant_pihole_00.jpg"
@@ -29,7 +29,7 @@ Antes de seguir adelante, tener en cuenta que [Pi-hole] y [Home Assistant] está
 Puesto que la [integración] de [Pi-hole] para [Home Assistant] no lo permite, vamos a modificar el listado de dominios a filtrar desde la línea de comandos mediante un script que se ejecutará en la máquina que tiene [Pi-hole] pero que será lanzado mediante un interruptor o automatización en la máquina que corre [Home Assistant].
 
 ### Los Scripts
-Vamos a partir de un archivo "youtube_blocklist.txt" en el que se incluirán todos los servidores que necesitamos filtrar. De esta forma, añadir o quitar un servidor es tan sencillo como editar este archivo.
+Vamos a partir de un archivo "youtube_blocklist.txt" en el que se incluirán todos los servidores que necesitamos filtrar. De esta forma, añadir o quitar un servidor es tan sencillo como editar este archivo. Pepe
 
 ``` bash
 youtube.com
