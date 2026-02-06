@@ -28,7 +28,7 @@ Uno de los aspectos más interesantes es la capa de interactividad añadida con 
 
 Además, existe un modo de lista completa con búsqueda integrada y filtros por tipo de comida (desayuno, comida, merienda o cena). Esta vista transforma el archivo en algo más cercano a una base de datos personal de recetas que a una simple página web, facilitando encontrar rápidamente qué cocinar según el momento del día o los ingredientes disponibles.
 
-![image-01]
+![image-03]
 
 En conjunto, la webapp demuestra que con HTML, CSS y JavaScript bien utilizados se pueden construir herramientas funcionales, rápidas y totalmente autónomas. Un recordatorio de que, a veces, la mejor tecnología no es la más compleja, sino la que desaparece y deja paso a lo importante: resolver un problema cotidiano con elegancia y sencillez.
 
@@ -93,5 +93,6 @@ Aquí tienes la aplicación [Informe de desviaciones]
 
 [image-01]: /images/20251210_chatgpt_simple_web_apps_01.jpg
 [image-02]: /images/20251210_chatgpt_simple_web_apps_02.jpg
+[image-03]: /images/20251210_chatgpt_simple_web_apps_03.jpg
 
 
