@@ -1,6 +1,6 @@
 ---
 title: "Simple web apps by Chatgpt"
-date: "2025-12-10"
+date: "2026-02-06"
 creation: "2025-12-10"
 description: "Aquí dejo unas simples aplicaciones web que he creado con la ayuda de Chatgpt"
 thumbnail: "images/20251210_chatgpt_simple_web_apps_00.jpg"
@@ -17,6 +17,23 @@ weight: 5
 ---
 Hacer pequeñas aplicaciones cada día que pasa es más sencillo sin tener mucha idea de programar. Aquí dejo unas cuantas que he creado para satisfacer necesidades puntuales. Hasta la descripción de la aplicación va a ser cortesía de la inteligencia artificial.
 <!--more-->
+### Menú diario
+Esta pequeña webapp de menú semanal es un buen ejemplo: todo vive en un único archivo HTML, listo para abrir en cualquier navegador y empezar a usar sin instalación ni configuración previa. Una solución directa, portátil y sorprendentemente completa.
+
+El diseño apuesta por la claridad visual y la navegación inmediata. Desde la pantalla principal se puede recorrer el menú mediante un selector de semanas y, dentro de cada una, un selector de días que permite cambiar de forma instantánea el contenido mostrado. Cada jornada despliega sus recetas organizadas en tarjetas limpias, con jerarquía tipográfica clara y una lectura cómoda tanto en escritorio como en móvil gracias al enfoque responsive.
+
+Cada receta está estructurada de manera muy práctica: incluye ingredientes, pasos de preparación y consejos finales, lo que convierte la página en una referencia rápida para el día a día en la cocina. No es solo un visor estático, sino una pequeña aplicación pensada para el uso real, donde la información importante está siempre a un clic de distancia.
+
+Uno de los aspectos más interesantes es la capa de interactividad añadida con JavaScript puro. La app permite marcar platos como favoritos, visualizar una lista filtrada solo con ellos e incluso acceder directamente a un plato concreto desde esa lista. Todo esto se gestiona mediante almacenamiento local del navegador, que guarda preferencias y recuerda la última semana consultada sin necesidad de conexión ni servicios externos.
+
+Además, existe un modo de lista completa con búsqueda integrada y filtros por tipo de comida (desayuno, comida, merienda o cena). Esta vista transforma el archivo en algo más cercano a una base de datos personal de recetas que a una simple página web, facilitando encontrar rápidamente qué cocinar según el momento del día o los ingredientes disponibles.
+
+![image-01]
+
+En conjunto, la webapp demuestra que con HTML, CSS y JavaScript bien utilizados se pueden construir herramientas funcionales, rápidas y totalmente autónomas. Un recordatorio de que, a veces, la mejor tecnología no es la más compleja, sino la que desaparece y deja paso a lo importante: resolver un problema cotidiano con elegancia y sencillez.
+
+Aquí tienes la aplicación [Menú semanal]
+
 ### Generador de Turnos
 Esta aplicación web es una herramienta práctica e intuitiva para la generación automática de calendarios laborales con turnos rotatorios, pensada para trabajadores con sistemas de rotación de mañana, tarde, noche y descansos. Funciona de manera completamente local en el navegador, sin necesidad de registro ni conexión a servidores externos, garantizando la privacidad del usuario.
 
@@ -70,14 +87,11 @@ Una solución práctica, portable y eficaz para dejar de usar papel y organizar 
 
 Aquí tienes la aplicación [Informe de desviaciones]
 
-### Enlaces de interés
-- [enlace](www.sherblog.pro)
-
 [Informe de desviaciones]: /files/desviaciones.html
 [Generador de turnos]: /files/turnos.html
+[Menú semanal]: /files/menu.html
 
 [image-01]: /images/20251210_chatgpt_simple_web_apps_01.jpg
 [image-02]: /images/20251210_chatgpt_simple_web_apps_02.jpg
-
 
 
