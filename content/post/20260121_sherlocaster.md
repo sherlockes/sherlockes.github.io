@@ -1,6 +1,6 @@
 ---
 title: "Sherlocaster"
-date: "2026-01-21"
+date: "2026-02-12"
 creation: "2026-01-21"
 description: "Un podcst a partir de audios desdargados de Youtube y Twitch"
 thumbnail: "images/20260121_sherlocaster_00.jpg"
@@ -52,7 +52,7 @@ Este enfoque es excelente porque permite extender la herramienta sin tocar códi
 
 ---
 
-## 🧠 2. Lógica de la aplicación: cómo se transforma cada canal
+## 2. Lógica de la aplicación: cómo se transforma cada canal
 
 El corazón de Sherlocaster vive en la carpeta `app/`, donde está la lógica de procesamiento.
 

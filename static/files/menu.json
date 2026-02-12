@@ -1,0 +1,224 @@
+{
+  "semanas": {
+    "1": {
+      "lunes": [
+        { "tipo": "Desayuno", "titulo": "Bocadillo integral de jamón con tomate", "ingredientes": ["40 g de pan integral.", "35 g de jamón serrano.", "1/2 tomate.", "1/2 cdta de AOVE.", "1 pieza de fruta (150g)"], "pasos": ["Tostamos ligeramente el pan si lo queremos más crujiente.", "Rallamos el tomate y lo mezclamos con el AOVE.", "Untamos esta mezcla sobre ambas mitades del pan.", "Repartimos el jamón serrano generosamente por encima.", "Cerramos y servimos."], "consejo": "Si lo preparas con antelación, monta el bocadillo justo antes de comer o lleva el pan y el relleno por separado para que no se humedezca." },
+        { "tipo": "Comida", "titulo": "Salmón a la naranja con arroz", "ingredientes": ["110 g de salmón.", "35 g de arroz blanco o integral.", "1 naranja de zumo.", "1 cda de salsa de soja.", "100 g de ensalada."], "pasos": ["En un c azo cocemos el arroz y lo reservamos.", "Exprimimos las naranjas para obtener su zumo y reservamos (si aprovechamos la pulpa, mucho mejor).", "Preparamos una sartén antiadherente a fuego alto y, cuando esté bien caliente, introducimos los lomos de salmón.", "Lo doramos bien por ambos lados.", "Cuando los lomos de salmón estén dorados por ambos lados, agregamos el zumo de naranja y la salsa de soja y dejamos reducir a fuego muy alto hasta que el zumo evapore su agua, espese y caramelice.", "Apagamos el fuego y servimos inmediatamente con el arroz."], "consejo": "Cuidado con la salsa de soja, ya aporta sal." },
+        { "tipo": "Merienda", "titulo": "Yogur tipo Skyr con chocolate y fruta", "ingredientes": ["150 g de yogur natural alto en proteína tipo Skyr.", "1 onza de chocolate negro 85%.", "1 pieza de fruta (150g)."], "pasos": ["En un bol mezclamos el yogur con el chocolate y la fruta troceados."], "consejo": null },
+        { "tipo": "Cena", "titulo": "Delicia de pavo, queso y calabacín", "ingredientes": ["2 huevos.", "100 g de queso cottage.", "80 g de calabacín.", "40 g de mozzarella rallada.", "5 lonchas de pechuga de pavo cocida.", "Sal."], "pasos": ["Rallamos el calabacín lavado y escurrimos el exceso de agua.", "En un bol mezclamos bien todos los ingredientes.", "Pasamos la mezcla a un recipiente forrado con papel de horno y agregamos un extra de mozzarella rallada por encima.", "Lo cocinamos en el horno a 180ºC durante 25 minutos.", "Lo sacamos y servimos."], "consejo": "Agrega las verduras y especias que más te gusten. Lo puedes hacer en la freidora de aire a 180ºC durante 20 minutos." }
+      ],
+      "martes": [
+        { "tipo": "Desayuno", "titulo": "Smoothie bowl de frutos del bosque", "ingredientes": ["90 g de frutos del bosque congelados.", "1 plátano.", "15 g de proteína en polvo.", "80 g yogur natural tipo Skyr.", "25 g de granola sin azúcar."], "pasos": ["Tritura los frutos congelados con el yogur y la proteína.", "Vierte en un bol.", "Coloca por encima la granola y el plátano."], "consejo": "Guarda la base en la nevera y añade la granola justo antes de comer." },
+        { "tipo": "Comida", "titulo": "Gnocchi a la boloñesa", "ingredientes": ["120 g de gnocchi.", "140 g de ternera picada.", "150 g de tomate triturado.", "1 cdta de AOVE.", "1 cdta de orégano.", "30 g de queso proteico."], "pasos": ["Cocemos los gnocchi.", "Doramos la carne, añadimos tomate y orégano.", "Mezclamos y servimos con queso."], "consejo": "Puedes hacer los gnocchi en airfryer a 200ºC 6 min." },
+        { "tipo": "Merienda", "titulo": "Tortitas de arroz con tomate y pavo", "ingredientes": ["2 tortitas de arroz.", "80 g de tomate.", "80 g de pechuga de pavo.", "1 pieza de fruta."], "pasos": ["Colocamos tomate y pavo sobre las tortitas."], "consejo": null },
+        { "tipo": "Cena", "titulo": "Crema de brócoli con queso + Pollo", "ingredientes": ["200 g de brócoli.", "120 g de patata.", "150 ml de caldo.", "35 g queso crema light.", "150 g pollo."], "pasos": ["Cocemos verdura con caldo.", "Trituramos con el queso.", "Pollo a la plancha."], "consejo": "Saltea ramilletes de brócoli para decorar." }
+      ],
+      "miercoles": [
+        { "tipo": "Desayuno", "titulo": "Tostadas integrales con aguacate y huevo", "ingredientes": ["30 g pan integral", "30 g aguacate", "1 huevo", "Fruta"], "pasos": ["Tostar pan", "Untar aguacate", "Huevo a la plancha encima"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Ensalada de quinoa con pollo", "ingredientes": ["100 g pollo", "40 g quinoa", "Verduras variadas", "Aguacate"], "pasos": ["Cocer quinoa", "Pollo a la plancha", "Mezclar todo en bol"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Batido de proteína", "ingredientes": ["20 g proteína", "150 ml leche", "Frutos secos", "Fruta"], "pasos": ["Batir todo"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Burritos cremosos de atún", "ingredientes": ["2 tortillas integrales", "100 g atún", "Yogur griego", "Verduras"], "pasos": ["Mezclar atún con yogur y verduras picadas", "Rellenar tortillas"], "consejo": "Dora los burritos en sartén" }
+      ],
+      "jueves": [
+        { "tipo": "Desayuno", "titulo": "Tostadas francesas fit", "ingredientes": ["40 g pan", "1 huevo", "Leche", "Canela", "Yogur", "Frutos rojos"], "pasos": ["Mojar pan en huevo+leche", "Plancha", "Servir con yogur y fruta"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Garbanzos salteados con verduras", "ingredientes": ["120 g garbanzos", "1 huevo", "90 g jamón", "Verduras"], "pasos": ["Pochar verduras", "Añadir garbanzos y jamón", "Cuajar huevo encima"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Pulguita de jamón y rúcula", "ingredientes": ["40 g pan", "40 g jamón", "Tomate", "Rúcula"], "pasos": ["Montar bocadillo"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Arroz de coliflor con langostinos", "ingredientes": ["300 g coliflor rallada", "200 g langostinos", "Verduras", "1 huevo"], "pasos": ["Saltear verduras y langostinos", "Añadir coliflor", "Cuajar huevo"], "consejo": "" }
+      ],
+      "viernes": [
+        { "tipo": "Desayuno", "titulo": "Sándwich de salmón y queso", "ingredientes": ["Pan integral", "Salmón ahumado", "Queso cottage", "Aguacate"], "pasos": ["Montar sándwich"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Arroz a la cubana fit", "ingredientes": ["50 g arroz", "1 huevo", "Pollo", "Plátano", "Tomate"], "pasos": ["Cocer arroz", "Pollo y plátano a la plancha", "Montar plato"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Parfait de yogur", "ingredientes": ["Yogur", "Granola", "Chocolate", "Frutos rojos"], "pasos": ["Montar capas"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Huevos rotos saludables", "ingredientes": ["Patata", "Jamón", "Huevos", "Alcachofa"], "pasos": ["Patatas en airfryer", "Saltear alcachofa", "Huevo plancha"], "consejo": "" }
+      ],
+      "sabado": [
+        { "tipo": "Desayuno", "titulo": "Tortitas de manzana", "ingredientes": ["Avena", "Manzana", "Huevo", "Yogur"], "pasos": ["Triturar y plancha"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Burger Big Mac saludable", "ingredientes": ["Ternera", "Pan", "Queso", "Salsa fit"], "pasos": ["Cocinar carne", "Montar burger"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Tortitas arroz pizza", "ingredientes": ["Tortitas", "Tomate", "Atún", "Queso"], "pasos": ["Montar y gratinar"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Taco César", "ingredientes": ["Tortilla", "Pollo", "Queso", "Salsa césar"], "pasos": ["Dorar tortilla con carne pegada", "Añadir ensalada"], "consejo": "" }
+      ],
+      "domingo": [
+        { "tipo": "Desayuno", "titulo": "Sándwich mixto", "ingredientes": ["Pan", "Jamón", "Queso"], "pasos": ["Plancha"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Merluza al horno con patatas", "ingredientes": ["Merluza", "Patatas", "Limón"], "pasos": ["Hornear patatas", "Añadir pescado"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Brownie mug cake", "ingredientes": ["Avena", "Plátano", "Cacao", "Huevo"], "pasos": ["Microondas 1 min"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Tortipizza", "ingredientes": ["Huevos", "Tomate", "Queso", "Verduras"], "pasos": ["Cuajar base huevo", "Añadir toppings y tapar"], "consejo": "" }
+      ]
+    },
+    "2": {
+      "lunes": [
+        { "tipo": "Desayuno", "titulo": "Sándwich vegetal con atún y huevo", "ingredientes": ["40 g de pan integral", "30 g de atún", "1 huevo cocido", "Yogur", "Verduras"], "pasos": ["Mezclar atún y huevo con yogur", "Montar sándwich"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Pasta Alfredo con pollo", "ingredientes": ["Pasta", "Pollo", "Brócoli", "Queso crema", "Parmesano"], "pasos": ["Cocer pasta y brócoli", "Dorar pollo", "Hacer salsa con quesos"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Batido de proteína", "ingredientes": ["Proteína", "Leche", "Choco", "Fruta"], "pasos": ["Mezclar"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Wrap crujiente de coliflor", "ingredientes": ["Coliflor rallada", "Huevos", "Queso", "Jamón"], "pasos": ["Mezclar coliflor y huevo", "Cuajar en sartén", "Rellenar y doblar"], "consejo": "" }
+      ],
+      "martes": [
+        { "tipo": "Desayuno", "titulo": "Bol de avena", "ingredientes": ["Avena", "Leche", "Proteína", "Plátano"], "pasos": ["Mezclar"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Arroz con pisto y huevos", "ingredientes": ["Arroz", "Huevos", "Verduras pisto"], "pasos": ["Cocer arroz", "Hacer pisto", "Huevo plancha"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Tortitas arroz guacamole", "ingredientes": ["Tortitas", "Guacamole", "Pollo"], "pasos": ["Montar"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Calamares a la romana no fritos", "ingredientes": ["Calamares", "Huevo", "Harina avena"], "pasos": ["Rebozar", "Airfryer 9 min"], "consejo": "" }
+      ],
+      "miercoles": [
+        { "tipo": "Desayuno", "titulo": "Pulguita salmón", "ingredientes": ["Pan", "Salmón", "Queso crema"], "pasos": ["Montar"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Wok verduras y ternera", "ingredientes": ["Quinoa", "Ternera", "Verduras", "Soja"], "pasos": ["Saltear todo"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Yogur y fruta", "ingredientes": ["Yogur", "Fruta", "Nueces"], "pasos": ["Mezclar"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Quesadilla pollo aguacate", "ingredientes": ["Tortilla", "Pollo", "Aguacate", "Queso"], "pasos": ["Rellenar", "Dorar"], "consejo": "" }
+      ],
+      "jueves": [
+        { "tipo": "Desayuno", "titulo": "Crepes con yogur", "ingredientes": ["Avena", "Huevo", "Leche", "Yogur"], "pasos": ["Hacer crepes", "Rellenar"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Guiso lentejas express", "ingredientes": ["Lentejas bote", "Jamón", "Espinacas"], "pasos": ["Saltear todo junto"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Dip aguacate y queso", "ingredientes": ["Queso cottage", "Aguacate", "Pan wasa"], "pasos": ["Mezclar y untar"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Crema calabacín + Pollo", "ingredientes": ["Calabacín", "Patata", "Puerro", "Pollo"], "pasos": ["Cocer y triturar crema", "Pollo plancha"], "consejo": "" }
+      ],
+      "viernes": [
+        { "tipo": "Desayuno", "titulo": "Tostadas queso fresco plancha", "ingredientes": ["Pan", "Queso fresco", "Jamón"], "pasos": ["Queso a la plancha", "Montar"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Sartén garbanzos especiados", "ingredientes": ["Garbanzos", "Huevos", "Tomate", "Especias"], "pasos": ["Saltear garbanzos con tomate", "Cuajar huevos"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Plátano caramelizado", "ingredientes": ["Plátano", "Yogur", "Pistachos"], "pasos": ["Plátano airfryer/sartén", "Servir con yogur"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Pizza rápida", "ingredientes": ["Tortilla", "Atún", "Queso", "Verduras"], "pasos": ["Hornear 8 min"], "consejo": "" }
+      ],
+      "sabado": [
+        { "tipo": "Desayuno", "titulo": "Tortitas Ferrero", "ingredientes": ["Avena", "Plátano", "Cacao", "Avellanas"], "pasos": ["Hacer tortitas"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Burger pollo guacamole", "ingredientes": ["Pollo", "Pan", "Guacamole", "Queso"], "pasos": ["Cocinar burger", "Montar"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Pera asada yogur", "ingredientes": ["Pera", "Yogur", "Nueces"], "pasos": ["Asar pera", "Servir"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Flautas berenjena", "ingredientes": ["Berenjena", "Ricotta", "Salmón", "Queso"], "pasos": ["Asar láminas berenjena", "Rellenar y enrollar"], "consejo": "" }
+      ],
+      "domingo": [
+        { "tipo": "Desayuno", "titulo": "Sándwich hummus pavo", "ingredientes": ["Pan", "Hummus", "Pavo"], "pasos": ["Montar"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Dorada bilbaína", "ingredientes": ["Dorada", "Patata", "Ajo", "Pimentón"], "pasos": ["Patata micro", "Pescado plancha", "Refrito ajos"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Mug cake manzana", "ingredientes": ["Avena", "Manzana", "Huevo"], "pasos": ["Microondas"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Revuelto calabacín", "ingredientes": ["Calabacín", "Jamón", "Huevos", "Cottage"], "pasos": ["Saltear y cuajar"], "consejo": "" }
+      ]
+    },
+    "3": {
+      "lunes": [
+        { "tipo": "Desayuno", "titulo": "Sándwich de tortilla francesa", "ingredientes": ["Pan integral", "Huevo", "Tomate", "Lechuga"], "pasos": ["Hacer tortilla plegada sobre el pan"], "consejo": "Sartén grande" },
+        { "tipo": "Comida", "titulo": "Pollo cremoso con champiñones", "ingredientes": ["Patatas", "Pollo", "Champiñones", "Yogur", "Jamón"], "pasos": ["Patatas airfryer", "Pollo con salsa de yogur"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Batido proteína", "ingredientes": ["Proteína", "Leche", "Frutos secos"], "pasos": ["Mezclar"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Espaguetis de calabacín carbonara fit", "ingredientes": ["Calabacín", "Huevo", "Queso", "Jamón"], "pasos": ["Hacer espaguetis verdura", "Mezclar con huevo y jamón"], "consejo": "" }
+      ],
+      "martes": [
+        { "tipo": "Desayuno", "titulo": "Porridge chocolate", "ingredientes": ["Avena", "Leche", "Cacao", "Fruta"], "pasos": ["Cocer avena", "Añadir resto"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Arroz con atún y tomate", "ingredientes": ["Arroz", "Atún", "Tomate", "Huevo"], "pasos": ["Mezclar arroz cocido con resto"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Tortitas arroz pavo", "ingredientes": ["Tortitas", "Pavo", "Queso"], "pasos": ["Montar"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Pescado blanco con verduras al vapor", "ingredientes": ["Merluza", "Brócoli", "Zanahoria"], "pasos": ["Todo al vapor 10 min"], "consejo": "" }
+      ],
+      "miercoles": [
+        { "tipo": "Desayuno", "titulo": "Tostadas con queso y mermelada sin azúcar", "ingredientes": ["Pan", "Queso cottage", "Mermelada"], "pasos": ["Untar y listo"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Ensalada de garbanzos", "ingredientes": ["Garbanzos", "Atún", "Huevo", "Pimiento", "Cebolla"], "pasos": ["Mezclar todo frío"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Yogur con semillas", "ingredientes": ["Yogur", "Chía", "Fruta"], "pasos": ["Mezclar"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Fajitas de pollo", "ingredientes": ["Tortilla integral", "Pollo", "Pimientos"], "pasos": ["Saltear relleno", "Montar"], "consejo": "" }
+      ],
+      "jueves": [
+        { "tipo": "Desayuno", "titulo": "Smoothie verde", "ingredientes": ["Espinacas", "Manzana", "Proteína", "Agua"], "pasos": ["Batir"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Ternera con patatas asadas", "ingredientes": ["Filete ternera", "Patatas", "Ensalada"], "pasos": ["Plancha y horno"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Frutos secos y fruta", "ingredientes": ["Nueces", "Pieza fruta"], "pasos": ["Comer directo"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Revuelto de espárragos y gambas", "ingredientes": ["Espárragos", "Gambas", "Huevos"], "pasos": ["Saltear y cuajar"], "consejo": "" }
+      ],
+      "viernes": [
+        { "tipo": "Desayuno", "titulo": "Tostada con aguacate y salmón", "ingredientes": ["Pan", "Aguacate", "Salmón ahumado"], "pasos": ["Montar"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Pasta boloñesa", "ingredientes": ["Pasta integral", "Carne picada", "Tomate"], "pasos": ["Hacer salsa y mezclar"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Queso fresco con miel", "ingredientes": ["Queso fresco", "Miel", "Nueces"], "pasos": ["Mezclar"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Pizza de base pollo", "ingredientes": ["Pollo picado", "Huevo", "Toppings pizza"], "pasos": ["Hacer base con pollo", "Hornear con resto"], "consejo": "" }
+      ],
+      "sabado": [
+        { "tipo": "Desayuno", "titulo": "Pancakes de avena", "ingredientes": ["Avena", "Huevo", "Leche"], "pasos": ["Batir y sartén"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Arroz con pollo y curry", "ingredientes": ["Arroz", "Pollo", "Leche coco", "Curry"], "pasos": ["Guisar pollo en salsa", "Servir con arroz"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Zumo natural y galletas avena", "ingredientes": ["Naranja", "Galletas fit"], "pasos": ["Exprimir"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Hamburguesa de salmón", "ingredientes": ["Salmón picado", "Pan burger", "Aguacate"], "pasos": ["Hacer burger salmón", "Montar"], "consejo": "" }
+      ],
+      "domingo": [
+        { "tipo": "Desayuno", "titulo": "Huevos revueltos", "ingredientes": ["Huevos", "Pan", "Bacon pavo"], "pasos": ["Hacer en sartén"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Lasaña vegetal", "ingredientes": ["Láminas pasta", "Verduras", "Bechamel fit"], "pasos": ["Montar y hornear"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Helado de plátano", "ingredientes": ["Plátano congelado", "Yogur"], "pasos": ["Batir"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Ensalada César saludable", "ingredientes": ["Lechuga", "Pollo", "Yogur para salsa"], "pasos": ["Mezclar"], "consejo": "" }
+      ]
+    },
+    "4": {
+      "lunes": [
+        { "tipo": "Desayuno", "titulo": "Tostadas con tomate y aceite", "ingredientes": ["Pan integral", "Tomate", "Aceite"], "pasos": ["Tostar y untar"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Guiso de patatas con carne", "ingredientes": ["Patatas", "Ternera", "Verduras"], "pasos": ["Cocer todo a fuego lento"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Manzana con crema de cacahuete", "ingredientes": ["Manzana", "Crema cacahuete"], "pasos": ["Cortar y untar"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Sopa de fideos y pollo", "ingredientes": ["Caldo", "Fideos", "Pollo deshilachado"], "pasos": ["Hervir caldo y añadir pasta"], "consejo": "" }
+      ],
+      "martes": [
+        { "tipo": "Desayuno", "titulo": "Bol de yogur y cereales", "ingredientes": ["Yogur", "Avena", "Frutos rojos"], "pasos": ["Mezclar"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Lentejas estofadas", "ingredientes": ["Lentejas", "Verduras", "Chorizo pavo"], "pasos": ["Cocer todo"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Barrita de proteína", "ingredientes": ["Barrita"], "pasos": ["Comer"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Tortilla de espinacas", "ingredientes": ["Huevos", "Espinacas"], "pasos": ["Saltear verdura y cuajar"], "consejo": "" }
+      ],
+      "miercoles": [
+        { "tipo": "Desayuno", "titulo": "Sandwich de pavo y queso", "ingredientes": ["Pan", "Pavo", "Queso"], "pasos": ["Montar"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Pescado a la plancha con puré", "ingredientes": ["Merluza", "Patata para puré"], "pasos": ["Hacer pescado y puré"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Yogur de beber", "ingredientes": ["Yogur"], "pasos": ["Beber"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Ensalada de tomate y queso fresco", "ingredientes": ["Tomate", "Queso fresco", "Orégano"], "pasos": ["Cortar y aliñar"], "consejo": "" }
+      ],
+      "jueves": [
+        { "tipo": "Desayuno", "titulo": "Fruta variada", "ingredientes": ["Fruta de temporada"], "pasos": ["Cortar"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Macarrones con atún", "ingredientes": ["Pasta", "Atún", "Tomate"], "pasos": ["Cocer y mezclar"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Tortitas de maíz", "ingredientes": ["Tortitas"], "pasos": ["Comer"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Pechuga de pavo con ensalada", "ingredientes": ["Pavo", "Lechuga"], "pasos": ["Plancha y ensalada"], "consejo": "" }
+      ],
+      "viernes": [
+        { "tipo": "Desayuno", "titulo": "Tostada con jamón cocido", "ingredientes": ["Pan", "Jamón cocido"], "pasos": ["Montar"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Arroz con verduras", "ingredientes": ["Arroz", "Verduras variadas"], "pasos": ["Saltear verdura y cocer arroz"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Batido de frutas", "ingredientes": ["Frutas", "Leche"], "pasos": ["Batir"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Sandwich vegetal", "ingredientes": ["Pan", "Lechuga", "Tomate", "Huevo"], "pasos": ["Montar"], "consejo": "" }
+      ],
+      "sabado": [
+        { "tipo": "Desayuno", "titulo": "Bizcocho casero saludable", "ingredientes": ["Harina avena", "Huevo", "Yogur"], "pasos": ["Mezclar y hornear"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Canelones de carne", "ingredientes": ["Pasta canelones", "Carne", "Bechamel"], "pasos": ["Rellenar y hornear"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Frutos secos", "ingredientes": ["Almendras", "Nueces"], "pasos": ["Comer"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Brochetas de pollo y verdura", "ingredientes": ["Pollo", "Pimientos", "Cebolla"], "pasos": ["Montar brochetas y plancha"], "consejo": "" }
+      ],
+      "domingo": [
+        { "tipo": "Desayuno", "titulo": "Tostadas francesas", "ingredientes": ["Pan", "Leche", "Huevo"], "pasos": ["Mojar y plancha"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Paella de verduras", "ingredientes": ["Arroz", "Verduras"], "pasos": ["Cocer todo"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Gelatina sin azúcar", "ingredientes": ["Gelatina"], "pasos": ["Comer"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Crema de calabaza", "ingredientes": ["Calabaza", "Patata"], "pasos": ["Cocer y triturar"], "consejo": "" }
+      ]
+    },
+    "5": {
+      "lunes": [
+        { "tipo": "Desayuno", "titulo": "Bol de kéfir y fruta", "ingredientes": ["Kéfir", "Fruta", "Semillas"], "pasos": ["Mezclar"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Albóndigas con arroz", "ingredientes": ["Albóndigas", "Salsa tomate", "Arroz"], "pasos": ["Guisar albóndigas y cocer arroz"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Edamames", "ingredientes": ["Edamames"], "pasos": ["Cocer 5 min"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Cuscús con pollo", "ingredientes": ["Cuscús", "Pollo", "Verduras"], "pasos": ["Hidratar cuscús y saltear resto"], "consejo": "" }
+      ],
+      "martes": [
+        { "tipo": "Desayuno", "titulo": "Tostada con ricotta y miel", "ingredientes": ["Pan", "Ricotta", "Miel"], "pasos": ["Montar"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Ensalada de legumbres", "ingredientes": ["Lentejas", "Garbanzos", "Verduras"], "pasos": ["Mezclar todo frío"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Zumo de tomate", "ingredientes": ["Tomate"], "pasos": ["Beber"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Merluza al papillote", "ingredientes": ["Merluza", "Verduras finas"], "pasos": ["Envolver y hornear"], "consejo": "" }
+      ],
+      "miercoles": [
+        { "tipo": "Desayuno", "titulo": "Batido de avena y plátano", "ingredientes": ["Avena", "Plátano", "Leche"], "pasos": ["Batir"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Quiche de jamón y queso", "ingredientes": ["Masa quebrada", "Jamón", "Queso", "Huevo"], "pasos": ["Montar y hornear"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Yogur griego", "ingredientes": ["Yogur griego"], "pasos": ["Comer"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Wok de pavo y brócoli", "ingredientes": ["Pavo", "Brócoli", "Salsa soja"], "pasos": ["Saltear a fuego fuerte"], "consejo": "" }
+      ],
+      "jueves": [
+        { "tipo": "Desayuno", "titulo": "Pan con hummus", "ingredientes": ["Pan", "Hummus"], "pasos": ["Untar"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Pasta con gambas", "ingredientes": ["Pasta", "Gambas", "Ajo"], "pasos": ["Cocer pasta y saltear gambas"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Fruta con canela", "ingredientes": ["Fruta", "Canela"], "pasos": ["Cortar y espolvorear"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Crema de puerros", "ingredientes": ["Puerros", "Patata"], "pasos": ["Cocer y triturar"], "consejo": "" }
+      ],
+      "viernes": [
+        { "tipo": "Desayuno", "titulo": "Tostada con crema de frutos secos", "ingredientes": ["Pan", "Crema almendra"], "pasos": ["Montar"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Ternera con champiñones", "ingredientes": ["Ternera", "Champiñones"], "pasos": ["Saltear todo"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Queso batido con fruta", "ingredientes": ["Queso batido", "Fruta"], "pasos": ["Mezclar"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Hamburguesa vegetal", "ingredientes": ["Hamb. lentejas", "Pan", "Ensalada"], "pasos": ["Plancha y montar"], "consejo": "" }
+      ],
+      "sabado": [
+        { "tipo": "Desayuno", "titulo": "Tortitas de calabaza", "ingredientes": ["Calabaza asada", "Huevo", "Avena"], "pasos": ["Batir y plancha"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Risotto de setas", "ingredientes": ["Arroz arborio", "Setas", "Parmesano"], "pasos": ["Cocer arroz añadiendo caldo"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Tortitas de arroz con chocolate", "ingredientes": ["Tortitas", "Chocolate negro"], "pasos": ["Fundir chocolate y cubrir"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Tacos de pescado", "ingredientes": ["Tortilla maíz", "Pescado rebozado", "Col"], "pasos": ["Montar tacos"], "consejo": "" }
+      ],
+      "domingo": [
+        { "tipo": "Desayuno", "titulo": "Brunch: huevos benedict fit", "ingredientes": ["Pan", "Huevo poché", "Salsa yogur"], "pasos": ["Montar capas"], "consejo": "" },
+        { "tipo": "Comida", "titulo": "Pollo al horno con limón", "ingredientes": ["Muslos pollo", "Limón", "Hierbas"], "pasos": ["Hornear todo junto"], "consejo": "" },
+        { "tipo": "Merienda", "titulo": "Mousse de chocolate fit", "ingredientes": ["Aguacate", "Cacao"], "pasos": ["Batir y enfriar"], "consejo": "" },
+        { "tipo": "Cena", "titulo": "Sopa de miso", "ingredientes": ["Miso", "Tofu", "Algas"], "pasos": ["Calentar agua y disolver miso"], "consejo": "" }
+      ]
+    }
+  }
+}
