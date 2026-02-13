@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Comedor Mira</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f4f7f6;
+            --card: #ffffff;
+            --text: #2c3e50;
+            --muted: #7f8c8d;
+        }
+
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            width: 100%;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 92%;
+            max-width: 500px;
+            margin: 1rem 0;
+            background: var(--card);
+            padding: 0.6rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        button:active { transform: scale(0.95); opacity: 0.9; }
+
+        #week-info {
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .menu-list {
+            width: 92%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .day-card {
+            background: var(--card);
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 6px solid #dcdde1;
+            transition: all 0.3s ease;
+        }
+
+        .day-card.today {
+            border-left-color: #27ae60;
+            background: #f0fff4;
+        }
+
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .day-name { font-weight: 850; text-transform: uppercase; color: var(--primary); font-size: 0.8rem; }
+        .day-date { color: var(--muted); font-size: 0.8rem; }
+
+        .menu-body {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            white-space: pre-line; /* Mantiene saltos de línea del JSON */
+        }
+
+        .loading { margin-top: 30px; color: var(--muted); }
+        .error { color: #e74c3c; padding: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 style="margin:0; font-size: 1.3rem;">🍴 Menú Escolar</h1>
+    </header>
+
+    <div class="nav-bar">
+        <button onclick="changeWeek(-7)">❮</button>
+        <div id="week-info">Cargando...</div>
+        <button onclick="changeWeek(7)">❯</button>
+    </div>
+
+    <div id="app" class="menu-list">
+        <div class="loading">Obteniendo datos del servidor...</div>
+    </div>
+
+    <script>
+        let menuData = null;
+        let currentMonday = getMonday(new Date());
+
+        function getMonday(d) {
+            d = new Date(d);
+            const day = d.getDay();
+            const diff = d.getDate() - day + (day === 0 ? -6 : 1);
+            const monday = new Date(d.setDate(diff));
+            monday.setHours(0,0,0,0);
+            return monday;
+        }
+
+        async function loadMenu() {
+            const url = 'https://raw.githubusercontent.com/sherlockes/sherlockes.github.io/refs/heads/main/static/files/menu_mira.json';
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('No se pudo acceder al archivo');
+                menuData = await response.json();
+                render();
+            } catch (err) {
+                document.getElementById('app').innerHTML = `<div class="error">⚠️ Error al cargar: ${err.message}<br>Comprueba tu conexión.</div>`;
+            }
+        }
+
+        // Función clave: busca la fecha en múltiples formatos posibles dentro del JSON
+        function getMenuForDate(date) {
+            if (!menuData) return "---";
+
+            const d = date.getDate();
+            const m = date.getMonth() + 1;
+            const y = date.getFullYear();
+
+            // Formatos posibles: 2025-02-13, 13/02/2025, 13-02-2025, 13/2/2025...
+            const pad = (n) => n.toString().padStart(2, '0');
+            const candidates = [
+                `${y}-${pad(m)}-${pad(d)}`,
+                `${pad(d)}/${pad(m)}/${y}`,
+                `${pad(d)}-${pad(m)}-${y}`,
+                `${d}/${m}/${y}`,
+                `${y}/${pad(m)}/${pad(d)}`
+            ];
+
+            // Si el JSON es un Array, buscamos el objeto que contenga la fecha
+            if (Array.isArray(menuData)) {
+                const found = menuData.find(item => {
+                    const itemDate = (item.fecha || item.date || item.dia || "").toString();
+                    return candidates.includes(itemDate);
+                });
+                return found ? (found.menu || found.comida || found.texto) : "---";
+            }
+
+            // Si el JSON es un Objeto, buscamos la key
+            for (let c of candidates) {
+                if (menuData[c]) return menuData[c];
+            }
+
+            return "---";
+        }
+
+        function render() {
+            const container = document.getElementById('app');
+            const info = document.getElementById('week-info');
+            container.innerHTML = '';
+
+            const endOfWeek = new Date(currentMonday);
+            endOfWeek.setDate(currentMonday.getDate() + 4);
+
+            const options = { day: 'numeric', month: 'short' };
+            info.innerHTML = `Semana del<br>${currentMonday.toLocaleDateString('es-ES', options)} al ${endOfWeek.toLocaleDateString('es-ES', options)}`;
+
+            const todayStr = new Date().toDateString();
+
+            for (let i = 0; i < 5; i++) {
+                const date = new Date(currentMonday);
+                date.setDate(currentMonday.getDate() + i);
+                
+                const menuText = getMenuForDate(date);
+                const isToday = date.toDateString() === todayStr;
+
+                const card = document.createElement('div');
+                card.className = `day-card ${isToday ? 'today' : ''}`;
+                
+                const dayName = new Intl.DateTimeFormat('es-ES', { weekday: 'long' }).format(date);
+                const dateNum = date.toLocaleDateString('es-ES');
+
+                card.innerHTML = `
+                    <div class="day-header">
+                        <span class="day-name">${dayName}</span>
+                        <span class="day-date">${dateNum}</span>
+                    </div>
+                    <div class="menu-body">${menuText}</div>
+                `;
+                container.appendChild(card);
+            }
+        }
+
+        function changeWeek(days) {
+            currentMonday.setDate(currentMonday.getDate() + days);
+            render();
+        }
+
+        loadMenu();
+    </script>
+</body>
+</html>
