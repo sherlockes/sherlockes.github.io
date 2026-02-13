@@ -1,6 +1,6 @@
 ---
 title: "Simple web apps by Chatgpt"
-date: "2026-02-06"
+date: "2026-02-13"
 creation: "2025-12-10"
 description: "Aquí dejo unas simples aplicaciones web que he creado con la ayuda de Chatgpt"
 thumbnail: "images/20251210_chatgpt_simple_web_apps_00.jpg"
@@ -17,6 +17,11 @@ weight: 5
 ---
 Hacer pequeñas aplicaciones cada día que pasa es más sencillo sin tener mucha idea de programar. Aquí dejo unas cuantas que he creado para satisfacer necesidades puntuales. Hasta la descripción de la aplicación va a ser cortesía de la inteligencia artificial.
 <!--more-->
+{{< borrador >}}
+### Menú para el colegio
+
+{{< / borrador >}}
+
 ### Menú diario
 Esta pequeña webapp de menú semanal es un buen ejemplo: todo vive en un único archivo HTML, listo para abrir en cualquier navegador y empezar a usar sin instalación ni configuración previa. Una solución directa, portátil y sorprendentemente completa.
 
