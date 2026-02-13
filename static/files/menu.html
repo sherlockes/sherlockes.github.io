@@ -2,1512 +2,289 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Menú semanal de recetas</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menú de Sarita</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <style>
     :root {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color-scheme: light dark;
-    }
-    body {
-      margin: 0;
-      padding: 1.5rem;
-      background: #f5f5f5;
-      color: #111;
+      --primary: #ff8c42;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --text: #2d3436;
+      --text-muted: #636e72;
+      --border: #dfe6e9;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
     @media (prefers-color-scheme: dark) {
-      body {
-        background: #111;
-        color: #eee;
-      }
-      .card {
-        background: #1c1c1c;
-        color: #111;
-      }
-      .day-button {
-        background: #222;
-        color: #eee;
-        border-color: rgba(255,255,255,0.15);
+      :root {
+        --bg: #121212;
+        --card-bg: #1e1e1e;
+        --text: #dfe6e9;
+        --text-muted: #b2bec3;
+        --border: #2d3436;
+        --shadow: 0 4px 12px rgba(0,0,0,0.3);
       }
     }
+
+    body {
+      margin: 0;
+      padding: 1rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     main {
-      max-width: 900px;
+      max-width: 800px;
       margin: 0 auto;
+      padding-bottom: 4rem;
     }
-    h1 {
-      font-size: 1.8rem;
-      margin: 0 0 0.25rem;
-      text-align: center;
-    }
-    p.subtitle {
-      text-align: center;
-      margin: 0 0 1rem;
-      font-size: 0.95rem;
-      opacity: 0.8;
-    }
-    .day-selector {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .day-button {
-      border-radius: 999px;
-      border: 1px solid rgba(0,0,0,0.1);
-      padding: 0.35rem 0.85rem;
-      font-size: 0.9rem;
-      background: #fff;
-      color: #111;
-      cursor: pointer;
-      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
-    }
-    .day-button.active {
-      background: #ff8c42;
-      color: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-      border-color: transparent;
-    }
-    .day-button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-    .card {
-      background: #fff;
-      border-radius: 1rem;
-      padding: 1rem 1.1rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    .meal-header {
+
+    /* Header Compacto */
+    header {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    h1 { font-size: 1.25rem; margin: 0; color: var(--primary); }
+    .week-badge { 
+      font-size: 0.85rem; 
+      background: var(--card-bg); 
+      padding: 4px 10px; 
+      border-radius: 12px; 
+      box-shadow: var(--shadow);
+      font-weight: bold;
+    }
+
+    /* Botones Superiores */
+    .controls-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+      padding: 0.6rem 0.2rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+    .btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      font-weight: 700;
+      box-shadow: 0 2px 5px rgba(255, 140, 66, 0.3);
+    }
+
+    /* Scroll Horizontal Optimizado para 7 elementos */
+    .scroll-container {
+      display: flex;
+      overflow-x: hidden; /* Forzamos a que no haya scroll si queremos que quepan todos */
+      gap: 4px; /* Espacio mínimo necesario entre botones */
+      padding: 10px 0; /* Eliminamos el padding lateral del contenedor para ganar espacio */
+      margin-bottom: 0.5rem;
+      width: 100%;
+    }
+
+    .scroll-container .btn {
+      /* CÁLCULO MÁGICO: (100% de la pantalla - espacio de los 6 huecos) / 7 botones */
+      flex: 0 0 calc((100% - (4px * 6)) / 7); 
+      min-width: 0; /* Permite que el cálculo mande sobre el tamaño */
+      padding: 10px 0; /* Padding vertical cómodo, horizontal 0 para no empujar el texto */
+      font-size: 0.72rem; /* Tamaño de letra ajustado para que quepa "Mier." o "Dom." */
+      border-radius: 8px;
+      white-space: nowrap;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    /* Buscador */
+    .search-box {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      box-sizing: border-box;
+      outline: none;
+    }
+    .search-box:focus { border-color: var(--primary); }
+
+    /* Tarjetas */
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
       margin-bottom: 0.5rem;
     }
+
     .meal-type {
-      font-size: 0.85rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #ff8c42;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      background: rgba(255, 140, 66, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .fav-icon {
+      cursor: pointer;
+      font-size: 1.5rem;
+      line-height: 1;
+      color: #dfe6e9;
+      transition: color 0.2s;
+      padding: 0 5px;
+    }
+    .fav-icon.active { color: #ffd700; }
+
+    h3 { margin: 0.5rem 0 0.75rem 0; font-size: 1.1rem; line-height: 1.3; }
+
+    .section-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
       font-weight: 700;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      display: block;
+      border-bottom: 2px solid var(--bg);
+      padding-bottom: 4px;
+      margin-bottom: 8px;
     }
-    .meal-title {
-      font-size: 1.05rem;
-      margin: 0.1rem 0 0.25rem;
+
+    /* --- CAMBIO: LISTA DE INGREDIENTES ESTÁNDAR --- */
+    ul.ing-list { 
+      list-style: disc; /* Pone los puntos */
+      padding-left: 1.2rem; /* Espacio para los puntos */
+      margin: 0.5rem 0; 
     }
-    .section-title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin: 0.6rem 0 0.25rem;
+    ul.ing-list li {
+      padding: 4px 0;
+      /* Eliminado el grid y el cursor pointer */
+      font-size: 0.95rem;
+      color: var(--text);
     }
-    ul, ol {
-      margin: 0.25rem 0 0.5rem 1.1rem;
-      padding: 0;
-      font-size: 0.9rem;
-    }
-    li {
-      margin-bottom: 0.2rem;
-    }
+    
+    ol { padding-left: 1.2rem; margin: 0; color: var(--text); }
+    ol li { margin-bottom: 0.5rem; font-size: 0.95rem; }
+
     .tip {
-      margin-top: 0.4rem;
-      padding: 0.45rem 0.6rem;
-      border-left: 3px solid #ff8c42;
-      background: rgba(255,140,66,0.08);
-      border-radius: 0.35rem;
-      font-size: 0.85rem;
+      background: var(--bg);
+      border: 1px dashed var(--primary);
+      padding: 0.8rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      font-style: italic;
     }
-    footer {
-      margin-top: 1.5rem;
+
+    .empty-state {
       text-align: center;
-      font-size: 0.75rem;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-weight: 500;
       opacity: 0.7;
     }
-  
-  .fav-btn {
-    cursor: pointer;
-    font-size: 1.2em;
-    margin-left: auto;
-    user-select: none;
-  }
-  .fav-btn.active { color: gold; }
-    
-  /* Filtros por tipo – responsive */
-  #type-filters {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.4rem 0.6rem; /* fila / columna */
-  }
 
-  
-</style>
+    .hidden { display: none !important; }
+    
+  </style>
 </head>
 <body>
+
 <main>
-  <div class="day-selector">
-    <button class="day-button" id="fav-toggle">⭐ Favoritos</button>
-    <button class="day-button" id="list-toggle">📋 Lista</button>
+  <header>
+    <h1>El menú de Sarita</h1>
+    <span class="week-badge" id="current-week-label">Semana 1</span>
+  </header>
+
+  <div class="controls-grid">
+    <button class="btn" id="view-daily" onclick="app.setView('daily')">Día</button>
+    <button class="btn" id="view-search" onclick="app.setView('search')">Buscar</button>
+    <button class="btn" id="view-favs" onclick="app.setView('favs')">Fav</button>
   </div>
-<div class="day-selector" id="week-selector"></div>
 
-<div id="fav-list-container" style="display:none; margin:0.5rem 0;">
-  <strong>Favoritos</strong>
-  <ul id="fav-list" style="padding-left:1.2rem;"></ul>
-</div>
+  <div class="scroll-container" id="week-selector"></div>
 
-<div id="list-container" style="display:none; margin:0.5rem 0;">
-  <input id="list-search" placeholder="Buscar plato…" style="width:100%; margin-bottom:0.5rem;">
-  <div id="type-filters" style="margin-bottom:0.5rem;">
-  <button class="day-button active" data-type="Todos">Todos</button>
-  <button class="day-button" data-type="Desayuno">Desayuno</button>
-  <button class="day-button" data-type="Comida">Comida</button>
-  <button class="day-button" data-type="Merienda">Merienda</button>
-  <button class="day-button" data-type="Cena">Cena</button>
-</div>
+  <div id="container-daily">
+    <div class="scroll-container" id="day-selector"></div>
+  </div>
 
-  <ul id="list-all" style="padding-left:1.2rem;"></ul>
-</div>
+  <div id="container-search" class="hidden">
+    <input type="text" id="search-input" class="search-box" placeholder="Busca un plato o ingrediente..." onkeyup="app.handleSearch(this.value)">
+    <div class="scroll-container" id="type-filter">
+      <button class="btn active" onclick="app.setFilter('Todos')">Todos</button>
+      <button class="btn" onclick="app.setFilter('Desayuno')">Desayuno</button>
+      <button class="btn" onclick="app.setFilter('Comida')">Comida</button>
+      <button class="btn" onclick="app.setFilter('Merienda')">Merienda</button>
+      <button class="btn" onclick="app.setFilter('Cena')">Cena</button>
+    </div>
+  </div>
 
+  <div id="container-favs" class="hidden">
+    <p class="subtitle" style="text-align: center; margin-bottom:1rem; font-size: 0.9rem; color: var(--text-muted);">Tus platos guardados ❤️</p>
+  </div>
 
-  <div class="day-selector" id="day-selector"></div>
+  <div id="content-area"></div>
 
-  <section id="recipes"></section>
-
-  <footer>
-    Mini-site de recetas generado a partir de tu menú semanal.
-  </footer>
 </main>
 
-
 <script>
+let MENUS = {}; // ← ahora vacío, se cargará desde la URL
 
-  function saveWeek(w) {
-    try { localStorage.setItem("ultimaSemana", w); } catch {}
+async function loadMenus() {
+  try {
+    const res = await fetch("https://raw.githubusercontent.com/sherlockes/sherlockes.github.io/main/static/files/menu.json");
+    if (!res.ok) throw new Error("HTTP " + res.status);
+
+    const data = await res.json();
+    MENUS = data.semanas || data; // 👈 clave: usar "semanas" si existe
+
+    app.init();
+  } catch (err) {
+    console.error("Error cargando el menú:", err);
+    document.getElementById("content-area").innerHTML =
+      '<div class="empty-state">No se pudo cargar el menú.</div>';
   }
-  function loadWeek(defaultW) {
-    try {
-      const w = parseInt(localStorage.getItem("ultimaSemana"), 10);
-      return isNaN(w) ? defaultW : w;
-    } catch {
-      return defaultW;
-    }
-  }
+}
 
 
-  function renderFavList() {
-    const container = document.getElementById("fav-list-container");
-    const list = document.getElementById("fav-list");
-    const favs = getFavs();
-
-    
-    // ⛔ salir del modo Lista completa si estaba activo
-    showOnlyList = false;
-
-    const listContainer = document.getElementById("list-container");
-    if (listContainer) listContainer.style.display = "none";
-
-    const listToggle = document.getElementById("list-toggle");
-    if (listToggle) listToggle.textContent = "📋 Lista";
-
-    if (!showOnlyFavs || favs.length === 0) {
-      container.style.display = "none";
-      return;
-    }
-      
-
-    // ⭐ MODO FAVORITOS: SOLO LISTA DE FAVS
-    document.getElementById("recipes").innerHTML = "";
-    document.getElementById("week-selector").style.display = "none";
-    document.getElementById("day-selector").style.display = "none";
-
-    container.style.display = "block";
-    list.innerHTML = "";
-
-    container.style.display = "block";
-    list.innerHTML = "";
-
-    favs.forEach(id => {
-      const parts = id.split("-");
-      const week = parseInt(parts[0].replace("w",""),10);
-      const day = parts[1];
-      const tipo = parts[2];
-      const titulo = parts.slice(3).join("-");
-
-      const li = document.createElement("li");
-      li.textContent = titulo + " (Semana " + week + ")";
-      li.style.cursor = "pointer";
-      li.addEventListener("click", () => {
-        renderSingleFav(id);
-      });
-      list.appendChild(li);
-    });
-  }
-
-
-  function getFavs() {
-    try { return JSON.parse(localStorage.getItem("favoritos") || "[]"); }
-    catch { return []; }
-  }
-  function toggleFav(id, el) {
-    const favs = getFavs();
-    const i = favs.indexOf(id);
-    if (i >= 0) {
-      favs.splice(i,1);
-      el.textContent = "☆";
-      el.classList.remove("active");
-    } else {
-      favs.push(id);
-      el.textContent = "★";
-      el.classList.add("active");
-    }
-    localStorage.setItem("favoritos", JSON.stringify(favs));
-  }
-
-
-  let showOnlyFavs = false;
-  let showOnlyList = false;
-  let currentTypeFilter = "Todos";
-
-
-  function filterByFavs(dayData, dayKey) {
-    if (!showOnlyFavs) return dayData;
-    const favs = getFavs();
-    return dayData.filter(meal => {
-      const id = 'w' + currentWeek + '-' + dayKey + '-' + meal.tipo + '-' + meal.titulo;
-      return favs.includes(id);
-    });
-  }
-
-  function renderSingleFav(favId) {
-    const parts = favId.split("-");
-    const week = parseInt(parts[0].replace("w", ""), 10);
-    const day = parts[1];
-    const tipo = parts[2];
-    const titulo = parts.slice(3).join("-");
-
-    const meal = MENUS[week][day].find(m =>
-      m.tipo === tipo && m.titulo === titulo
-    );
-
-    if (!meal) return;
-
-    // limpiar vista
-    document.getElementById("recipes").innerHTML = "";
-
-    // renderizar SOLO este plato
-    renderMeal(meal, week, day);
-
-    // 👇 SCROLL SUAVE AL PLATO
-    recipes.scrollIntoView({ behavior: "smooth" });
-      
-  }
-
-
-  // Menús por semana (1–4)
-  const MENUS = {
-    1: {"lunes": [{"tipo": "Desayuno", "titulo": "Bocadillo integral de jamón con tomate", "ingredientes": ["40 g de pan integral.", "35 g de jamón serrano.", "1/2 tomate.", "1/2 cdta de AOVE.", "1 pieza de fruta (150g)"], "pasos": ["Tostamos ligeramente el pan si lo queremos más crujiente.", "Rallamos el tomate y lo mezclamos con el AOVE.", "Untamos esta mezcla sobre ambas mitades del pan.", "Repartimos el jamón serrano generosamente por encima.", "Cerramos y servimos."], "consejo": "Si lo preparas con antelación, monta el bocadillo justo antes de comer o lleva el pan y el relleno por separado para que no se humedezca."}, {"tipo": "Comida", "titulo": "Salmón a la naranja con arroz", "ingredientes": ["110 g de salmón.", "35 g de arroz blanco o integral.", "1 naranja de zumo.", "1 cda de salsa de soja.", "100 g de ensalada."], "pasos": ["En un c azo cocemos el arroz y lo reservamos.", "Exprimimos las naranjas para obtener su zumo y reservamos (si aprovechamos", "la pulpa, mucho mejor).", "Preparamos una sartén antiadherente a fuego alto y, cuando esté bien caliente,", "introducimos los lomos de salmón.", "Lo doramos bien por ambos lados.", "Cuando los lomos de salmón estén dorados por ambos lados, agregamos el", "zumo de naranja y la salsa de soja y dejamos reducir a fuego muy alto hasta que", "el zumo evapore su agua, espese y caramelice.", "Apagamos el fuego y servimos inmediatamente con el arroz."], "consejo": "Si lo preparas con antelación, monta el bocadillo justo antes de comer o lleva el pan y el relleno por separado para que no se humedezca."}, {"tipo": "Merienda", "titulo": "Yogur tipo Skyr con chocolate y fruta", "ingredientes": ["150 g de yogur natural alto en proteína tipo Skyr.", "1 onza de chocolate negro 85%.", "1 pieza de fruta (150g)."], "pasos": ["En un bol mezclamos el yogur con el chocolate y la fruta troceados."], "consejo": null}, {"tipo": "Cena", "titulo": "Delicia de pavo, queso y calabacín", "ingredientes": ["2 huevos.", "100 g de queso cottage.", "80 g de calabacín.", "40 g de mozzarella rallada.", "5 lonchas de pechuga de pavo cocida.", "Sal."], "pasos": ["Rallamos el calabacín lavado y escurrimos el exceso de agua.", "En un bol mezclamos bien todos los ingredientes.", "Pasamos la mezcla a un recipiente forrado con papel de horno y", "agregamos un extra de mozzarella rallada por encima.", "Lo cocinamos en el horno a 180ºC durante 25 minutos.", "Lo sacamos y servimos."], "consejo": "Agrega las verduras y especias que más te gusten. Lo puedes hacer en la freidora de aire a 180ºC durante 20 minutos. Puedes sustituir el queso cottage por queso fresco batido."}], "martes": [{"tipo": "Desayuno", "titulo": "Smoothie bowl de frutos del bosque con granola", "ingredientes": ["90 g de frutos del bosquecongelados.", "1 plátano.", "15 g de proteína en polvo.", "80 g yogur natural alto en proteína tipo Skyr.", "25 g de granola sin azúcar."], "pasos": ["Tritura 100 g de frutos del bosque congelados con el yogur y la proteína", "hasta obtener una textura cremosa y espesa.", "Vierte el smoothie en un bol.", "Coloca por encima la granola, el medio plátano en rodajas y el resto de", "fruto del bosque más para decorar."], "consejo": "Si lo preparas con antelación, guarda la base del smoothie en la nevera y añade la granola justo antes de comerlo para que se mantenga crujiente."}, {"tipo": "Comida", "titulo": "Gnocchi a la boloñesa", "ingredientes": ["120 g de gnocchi.", "140 g de carne de ternera picada.", "150 g de tomate natural triturado.", "1 cdta de AOVE.", "1 cdta de orégano.", "30 g de queso proteico rallado.", "Sal."], "pasos": ["Introducimos l os gnocchi en abundante agua hirviendo con sal y cocemos hasta", "que floten (2-3 min) los escurrimos y reservamos.", "Calentamos un poco AOVE, añadimos la carne picada y cocinamos hasta que se", "dore.", "Vertemos el tomate triturado, el orégano una pizca de sal y cocinamos a fuego", "medio-bajo durante 5-7 minutos.", "Servimos los gnocchi cocidos con la salsa boloñesa y terminamos con el queso", "rallado."], "consejo": "Puedes hacer los gnocchi en la freidora de aire a 200ºC durante 6 minutos si lo prefieres."}, {"tipo": "Merienda", "titulo": "Tortitas de arroz con tomate, pavo y fruta", "ingredientes": ["2 tortitas de arroz.", "80 g de tomate.", "80 g de pechuga de pavo 99%.", "1 pieza de fruta (150g)."], "pasos": ["Colocamos encima de las tortitas el tomate y la pechuga de pavo"], "consejo": null}, {"tipo": "Cena", "titulo": "Crema de brócoli con queso + Filetes de pollo", "ingredientes": ["200 g de brócoli en ramilletes.", "120 g de patata.", "150 ml de caldo de verduras.", "1 cdta de AOVE.", "35 g de queso Cremette classic (oqueso crema light).", "150 g de pechuga de pollo", "Sal."], "pasos": ["En un a olla pequeña, añadimos el AOVE e incorporamos el brócoli y la patata", "troceada, mezclamos y cubrimos con el caldo de verduras.", "Cocinamos a fuego medio 15 minutos, hasta que las verduras estén blandas.", "Trituramos todo con una batidora hasta obtener una crema homogénea.", "Añadimos el queso Cremette y volvemos a triturar. Si está muy espesa,", "añadimos un chorrito de caldo o agua caliente.", "Cocinamos los filetes de pollo a la plancha."], "consejo": "Para ganar textura y sabor, saltea unos mini ramilletes de brócoli aparte y colócalos por encima como topping crujiente. MÍERCOLES"}, {"tipo": "Desayuno", "titulo": "Tostadas integrales con aguacate y huevo", "ingredientes": ["30 g de pan integral.", "30 g de aguacate maduro.", "1 huevo.", "1/2 cdta de AOVE.", "Sal.", "1 pieza de fruta (150g)."], "pasos": ["Tostamos el pan integral.", "Machacamos el aguacate con un tenedor y añadimos sal.", "Untamos el aguacate sobre las tostadas.", "Cocinamos los huevos en una sartén con unas gotas de aceite, dejando", "la yema al gusto.", "Colocamos un huevo sobre cada tostada."], "consejo": "Puedes añadir unas escamas de sal en la yema para potenciar el sabor. Acompaña con tomate en rodajas o rúcula para una versión más completa."}, {"tipo": "Comida", "titulo": "Ensalada de quinoa con pollo a la parrilla y", "ingredientes": ["aderezo cremoso de aguacate", "Ingredientes:", "100 g de pechuga de pollo.", "40 g de quinoa.", "50 g de lechuga romana.", "60 g de aguacate.", "40 g de tomates cherry.", "30 g de pepino."], "pasos": ["Enjuagamos la quin oa bajo el grifo, la cocemos en el doble de volumen de agua", "con una pizca de sal durante 12-15 minutos. Escurrimos y dejamos templar.", "Cocinamos la pechuga de pollo con un poco de sal en una sartén o parrilla con", "AOVE, hasta que esté bien hecha y reservamos.", "Para el aderezo, trituramos el aguacate con el yogur, zumo de limón y sal.", "Montamos la ensalada colocando la lechuga como base.", "Añadimos la quinoa, el maíz, el pepino, los tomates cherry y el aguacate.", "Añadimos el pollo en tiras encima y regamos con el aderezo de aguacate."], "consejo": "Si te apetece una textura más crujiente, tuesta ligeramente los granos de maíz. Prueba a pasar los tomates cherry por la parrilla.30 g de maíz. 1 cdta de AOVE. 40 g de yogur natural alto en proteína tipo Skyr. 10 ml de zumo de limón. Sal."}, {"tipo": "Merienda", "titulo": "Batido de proteína + pieza de fruta + frutos secos", "ingredientes": ["20 g de proteína en polvo.", "150 ml de leche desnatada.", "7 g de frutos secos.", "1 pieza de fruta (150g)."], "pasos": ["Mezclamos la proteína en polvo con la leche."], "consejo": "Puedes usar proteína en polvo aislada (isolate), de soja, de huevo o caseína que son proteínas completas. Puedes usarla con o sin sabor."}, {"tipo": "Cena", "titulo": "Burritos cremosos de atún y verduras", "ingredientes": ["2 tortillas de trigo integral.", "100 g de atún al natural.", "100 g de yogur griego natural.", "1/4 de tomate.", "1/4 de pimiento verde.", "1/4 de pimiento rojo.", "4 hojas de lechuga."], "pasos": ["Picamos el pimiento rojo y verde finos y cortamos en rodajas el tomate.", "Para el relleno, en un bol mezclamos todos los ingredientes, salvo el tomate y la", "lechuga, e integramos hasta obtener una mezcla cremosa.", "Para montar el burrito, ponemos dos hojas de lechuga en el centro de la tortilla", "integral, añadimos tres cucharadas de relleno encima de las hojas de lechuga,", "unas rodajas de tomate y cerramos.", "De manera opcional, pasamos los burritos por la sartén para dorarlos."], "consejo": "Utiliza tus verduras favoritas."}], "jueves": [{"tipo": "Desayuno", "titulo": "Tostadas francesas con yogur y frutos del bosque", "ingredientes": ["40 g de pan integral.", "1 huevo.", "30 ml de leche o bebida vegetal.", "1/2 cdta de canela en polvo.", "60 g de yogur natural alto en proteína tipo Skyr.", "60 g de frutos del bosque (frescos o congelados).", "1 cdta de AOVE."], "pasos": ["Batimos el huevo con la leche y la canela en polvo.", "Sumergimos las rebanadas de pan en la mezcla y dejamos que se empapen", "bien por ambos lados.", "Calentamos una sartén con un poquito de AOVE y cocinamos las tostadas a", "fuego medio, 2-3 minutos por cada lado, hasta que estén doradas por fuera y", "jugosas por dentro.", "Servimos las tostadas calientes en un plato con el yogur y los frutos del bosque", "por encima."], "consejo": "Puedes calentar los frutos del bosque frescos o congelados en el microondas y después aplastarlos con un tenedor para conseguir una “mermelada rápida”."}, {"tipo": "Comida", "titulo": "Garbanzos salteados con verduras, huevo y jamón", "ingredientes": ["120 g de garbanzos cocidos.", "1 huevo.", "90 g de taquitos de jamón curado.", "1 calabacín.", "1 pimiento rojo.", "1 cdta de AOVE.", "Sal."], "pasos": ["Cortamos el calabacín y el pimiento en dados pequeños.", "En una sartén con AOVE añadimos el pimiento y el calabacín,", "salpimentamos y cocinamos 5-7 minutos.", "Agregamos los garbanzos cocidos y el jamón en taquitos, removemos", "bien y cocinamos 2-3 minutos más.", "Hacemos un hueco en la sartén y cascamos el huevo en el centro.", "Tapamos y dejamos que cuaje al gusto."], "consejo": "Puedes darle un toque extra con pimentón dulce o ahumado para potenciar el sabor."}, {"tipo": "Merienda", "titulo": "Pulguita integral de jamón con tomate y rúcula", "ingredientes": ["40 g de pan integral.", "40 g de jamón ibérico o serrano.", "1/2 tomate maduro.", "Un puñado de rúcula fresca.", "1 pieza de fruta (150g)."], "pasos": ["Abrimos la pulguita integral por la mitad y la tostamos ligeramente para", "que quede crujiente.", "Rallamos el tomate y lo untamos en la base del pan.", "Colocamos el jamón por encima.", "Añadimos la rúcula fresca.", "Terminamos con un chorrito de AOVE y cerramos con la otra parte del", "pan."], "consejo": "Frota ligeramente la base del pan con medio diente de ajo antes de poner el tomate rallado, así conseguirás un sabor más intenso y mediterráneo."}, {"tipo": "Cena", "titulo": "Arroz de coliflor con langostinos", "ingredientes": ["300 g de migas de coliflor de Mercadona.", "200 g de langostinos/gambas cocidos y pelados.", "150 g de zanahoria.", "1 huevo.", "1 cdta de AOVE.", "Sal."], "pasos": ["Picamos finita la zanahoria y la sofreímos con el AOVE y sal durante 6-8", "minutos. En los últimos 2 minutos agregamos los langostinos para que", "cojan sabor.", "Añadimos las migas de coliflor directamente congeladas, mezclamos y", "cocinamos 5–6 minutos hasta que pierdan el agua.", "Batimos el huevo, hacemos un hueco en el centro de la sartén y lo", "vertemos. Dejamos que cuaje 1–2 minutos y mezclamos con el resto del", "salteado."], "consejo": "Deja que los huevos se cuajen con el calor residual para que queden jugosos."}], "viernes": [{"tipo": "Desayuno", "titulo": "Sándwich de salmón, aguacate y queso cottage", "ingredientes": ["40 g de pan integral.", "30 g de salmón ahumado.", "20 g de aguacate maduro.", "40 g de queso cottage.", "Zumo de limón.", "1 pieza de fruta (150g)."], "pasos": ["Tostamos ligeramente el pan integral para conseguir una base", "crujiente.", "Machacamos el aguacate con un chorrito de zumo de limón.", "Untamos el aguacate sobre una de las rebanadas de pan.", "Colocamos el queso cottage por encima y añadimos el salmón", "ahumado.", "Cubrimos con la otra rebanada de pan y servimos."], "consejo": "Añade unas hojas de rúcula o espinacas baby para aportar frescor, o unas alcaparras para un toque más sabroso."}, {"tipo": "Comida", "titulo": "Arroz a la cubana", "ingredientes": ["50 g de arroz crudo.", "1 huevo.", "70 g de pechuga de pollo entera.", "100 g de plátano.", "120 g de tomate natural triturado.", "1 cda de AOVE.", "Sal."], "pasos": ["Cocemos el arroz en agua con sal durante 20 minutos y lo reservamos. O", "podemos usar un vasito de arroz listo para consumir para agilizar.", "En una sartén, cocinamos la pechuga de pollo con sal en dados hasta que esté", "dorada.", "Cocinamos a la plancha el plátano cortado a lo largo hasta que esté dorado y", "cocinamos los huevos a la plancha.", "Montamos el plato con una base de arroz, el tomate natural con una pizca de", "sal, el pollo en dados, los huevos y el plátano a la plancha."], "consejo": "Puedes añadir un poco de comino o curry suave al tomate natural para darle un toque distinto."}, {"tipo": "Merienda", "titulo": "Parfait con granola, chocolate negro y frutos rojos", "ingredientes": ["120 g de yogur natural alto en proteína tipo Skyr.", "30 g de granola sin azúcar.", "10 g de chocolate negro 85%.", "50 g de frutos rojos."], "pasos": ["En un vaso o bol, colocamos una capa de yogur proteico en la base.", "Añadimos la mitad de la granola, de los frutos rojos y del chocolate", "negro troceado.", "Incorporamos otra capa de yogur y repetimos con la granola.", "Terminamos con los frutos rojos, el chocolate negro troceado."], "consejo": "Puedes mezclar el yogur con un poquito de stevia o miel si lo quieres más dulce."}, {"tipo": "Cena", "titulo": "Huevos rotos con patatas, jamón y alcachofa", "ingredientes": ["1 huevo campero.", "120 g de patata.", "5 corazones de alcachofa  (en conserva o frescos).", "65 g de jamón ibérico o serrano en lonchas.", "1 cdta de AOVE.", "Sal."], "pasos": ["Lavamos bien las patatas y las cortamos en gajos o bastones finos.", "Mezclamos las patatas con 1/2 cdta de AOVE y una pizca de sal.", "Cocinamos en la freidora de aire a 200°C durante 15-18 minutos o en el horno a", "220°C durante 25 minutos, removiendo a mitad de cocción.", "Si usamos alcachofas frescas, las cocemos en agua con sal y limón durante 15", "minutos hasta que estén tiernas.", "En una sartén con 1/2 cdta de AOVE, doramos los corazones de alcachofa", "troceados a fuego medio hasta que estén ligeramente crujientes y reservamos.", "Añadimos los huevos y los cocinamos a la plancha a fuego medio-bajo.", "Servimos las patatas doradas junto a las alcachofas salteadas, las lonchas de", "jamón ibérico y colocamos los huevos a la plancha encima."], "consejo": "Si te gustan las alcachofas más crujientes, pásalas por la freidora de aire 5 minutos a 180°C."}], "sabado": [{"tipo": "Desayuno", "titulo": "Tortitas de manzana y yogur con canela", "ingredientes": ["40 g de harina de avena.", "60 g de manzana sin piel.", "60 g de yogur natural alto en proteína tipo skyr.", "1 huevo.", "5 g de polvo para hornear.", "1 cdta de canela."], "pasos": ["Pelamos y trituramos la manzana junto con el yogur skyr hasta obtener una", "mezcla suave.", "Añadimos el huevo, la harina de avena, la canela, la levadura, la stevia o", "endulzante sin calorías (opcional) y mezclamos bien hasta obtener una masa", "homogénea.", "Calentamos una sartén antiadherente a fuego medio.", "Vertemos pequeñas porciones de masa y cocinamos a fuego medio-bajo 1–2", "minutos por cada lado, hasta que estén doraditas.", "Servimos calientes con un toque extra de canela."], "consejo": "Si quieres tortitas más esponjosas, separa la clara, móntala a punto de nieve."}, {"tipo": "Comida", "titulo": "Burger Big Mac saludable", "ingredientes": ["100 g de carne 100% de ternera.", "1 pan de hamburguesa integral.", "1 loncha de queso cheddar.", "2 hojas de lechuga.", "4 rodajas finas de pepinillo.", "1 cdta de AOVE."], "pasos": ["En un b ol preparamos la salsa mezclando el yogur, el tomate triturado, la", "mostaza, el pepinillo muy picado, una pizca de sal y reservamos.", "Echamos sal a la carne de ternera y le damos forma de hamburguesa.", "Calentamos una sartén a fuego medio-alto con el AOVE y cocinamos la", "hamburguesa por ambos lados dejándola en el punto deseado.", "Colocamos la loncha de cheddar encima de la carne para que se funda.", "Tostamos ligeramente el pan de hamburguesa integral por la cara interior.", "Montamos la burger, una capa de lechuga picada con salsa, la carne con el", "queso cheddar fundido, las rodajas finas de pepinillo, más lechuga picada con", "salsa y cerramos con la tapa del pan."], "consejo": "Si quieres un sabor aún más tipo Big Mac, tuesta ligeramente el interior de los panes en la misma sartén donde has hecho la carne, aprovechando los jugos que ha soltado.60 g de yogur natural alto en proteína tipo Skyr. 25 g de tomate natural triturado. 10 g de mostaza. Sal."}, {"tipo": "Merienda", "titulo": "Tortitas de arroz al estilo pizza con atún, queso", "ingredientes": ["y aceitunas", "Ingredientes:", "2 tortitas de arroz.", "60 g de tomate natural triturado.", "90 g de atún al natural escurrido.", "45 g de queso proteico rallado.", "7 aceitunas negras.", "1 cdta de orégano."], "pasos": ["Mezclamos el tomate natural triturado con el atún bien escurrido y una", "pizca de sal si hace falta.", "Extendemos la mezcla sobre las tortitas de arroz.", "Añadimos por encima el queso proteico rallado, las rodajas de", "aceitunas negras y el orégano.", "Cocinamos en freidora de aire a 180ºC durante 3–4 minutos, en horno a", "200ºC durante 6–7 minutos o en microondas 30–40 segundos."], "consejo": "Para que queden más crujientes, pon primero solo las tortitas 1 minuto en la freidora de aire u horno antes de añadir los ingredientes."}, {"tipo": "Cena", "titulo": "Taco de ensalada César saludable", "ingredientes": ["1 tortilla de trigo integral.", "120 g de pechuga de pollo picada.", "2 hojas de lechuga.", "15 g de queso parmesano rallado.", "1 cdta de AOVE.", "90 g de yogur natural alto en proteína tipo Skyr.", "1 cdta de zumo de limón.", "1 cdta de ajo en polvo.", "Sal."], "pasos": ["Salamos el pollo picado en un bol y hacemos una bolita.", "Extendemos la bolita sobre la tortilla de trigo integral y presionamos bien.", "En una sartén a fuego alto con un poco de AOVE, cocinamos la tortilla por el", "lado de la carne hasta que esté dorada. Le damos la vuelta y dejamos que dore", "un poco la tortilla.", "Mientras tanto, mezclamos todos los ingredientes de la salsa César hasta", "obtener una textura cremosa.", "Montamos el taco con la lechuga, el parmesano y la salsa por encima."], "consejo": "Puedes preparar varias porciones de pollo picado y tenerlo listo en la nevera para montar tacos exprés durante la semana."}], "domingo": [{"tipo": "Desayuno", "titulo": "Sándwich mixto con jamón cocido, queso", "ingredientes": ["havarti y tomate", "Ingredientes:", "40 g de pan 100% integral.", "50 g de jamón cocido 97%.", "1 loncha de queso havarti.", "1/2 tomate tomate.", "1/2 cdta de AOVE."], "pasos": ["Colocamos una rebanada de pan integral sobre una tabla.", "Disponemos el jamón cocido y el queso havarti encima.", "Añadimos las rodajas de tomate bien escurridas para evitar que humedezcan el", "pan.", "Cerramos con la otra rebanada de pan y presionamos ligeramente.", "Calentamos una sartén o sandwichera con un poco de AOVE y cocinamos el", "sándwich a fuego medio hasta que el pan esté dorado y el queso fundido.", "Servimos caliente y cortado a la mitad."], "consejo": "Si quieres un toque extra de sabor, añade una pizca de orégano o albahaca seca junto con el tomate antes de cerrarlo."}, {"tipo": "Comida", "titulo": "Merluza al horno con patatas panadera y", "ingredientes": ["aliño de limón", "Ingredientes:", "150 g de merluza.", "150 g de patata.", "1 diente de ajo.", "10 ml de zumo de limón."], "pasos": ["Precalentamos el horno a 200°C con calor arriba y abajo.", "Cortamos la patata en rodajas finas y las colocamos en una bandeja de  horno.", "Añadimos AOVE, la sal y horneamos durante 20-25 minutos o hasta que estén", "doradas.", "Mientras, preparamos el aliño mezclando el ajo picado muy fino, el zumo de", "limón y una pizca de sal.", "Pasados los 20 minutos de cocción de las patatas, colocamos la merluza encima", "y la horneamos otros 10-12 minutos hasta que el pescado esté en su punto.", "Sacamos del horno, añadimos el aliño de limón y ajo por encima y servimos."], "consejo": "Puedes añadir unas rodajas de cebolla junto con las patatas para potenciar el sabor o espolvorear un poco de pimentón dulce antes de hornear.1 cdta de AOVE. 175 g de ensalada. Sal."}, {"tipo": "Merienda", "titulo": "Brownie mug cake", "ingredientes": ["35 g de harina de avena.", "1 huevo.", "40 g de plátano maduro.", "5 g de cacao puro en polvo desgrasado.", "5 g de chocolate negro 85%.", "2 g de polvo para hornear."], "pasos": ["En un bol mezclamos todos los ingredientes hasta que no queden", "grumos.", "Vertemos la mezcla en una taza o ramequin hasta 3/4 partes de su", "capacidad y colocamos unas pepitas de chocolate negro por encima.", "Cocinamos en el microondas a 750 W durante 1 minuto.", "Sacamos del microondas y dejamos atemperar 1 minuto antes de", "disfrutarlo."], "consejo": "Vigila el tiempo de cocción del mug cake, cada microondas es un mundo."}, {"tipo": "Cena", "titulo": "Tortipizza de verduras a la sartén", "ingredientes": ["2 huevos.", "100 g de tomate natural triturado.", "50 g de champiñones laminados.", "1/2 de pimiento rojo.", "10 g de rúcula.", "50 g de mozzarella rallada.", "Sal."], "pasos": ["Batimos los huevos en un bol con una pizca de sal.", "En una sartén antiadherente, vertemos los huevos y los extendemos como si", "hiciéramos una tortilla fina.", "Cocinamos a fuego medio-bajo hasta que empiece a cuajar por la base pero", "siga algo húmeda por encima.", "Extendemos el tomate natural triturado sobre la superficie.", "Añadimos la mozzarella rallada y colocamos encima los champiñones, las tiras", "de pimiento rojo y la rúcula.", "Tapamos la sartén y cocinamos a fuego medio-bajo durante 5-7 minutos."], "consejo": "Puedes sustituir la mozzarella por queso proteico o añadir aceitunas negras laminadas para más sabor."}]},
-    2: {
-  "lunes": [
-    {
-      "tipo": "Desayuno",
-      "titulo": "Sándwich vegetal con atún y huevo",
-      "ingredientes": [
-        "40 g de pan integral",
-        "30 g de atún al natural escurrido",
-        "1 huevo cocido",
-        "30 g de yogur natural alto en proteína tipo Skyr",
-        "30 g de tomate",
-        "2 hojas de lechuga",
-        "1/2 cdta de AOVE",
-        "Sal",
-        "1 pieza de fruta (150 g)"
-      ],
-      "pasos": [
-        "Picar el huevo cocido y mezclarlo con el atún escurrido, el yogur y una pizca de sal hasta obtener una mezcla cremosa.",
-        "Tostar ligeramente el pan integral para darle textura crujiente.",
-        "Untar la mezcla de atún y huevo sobre una de las rebanadas de pan.",
-        "Colocar la lechuga y el tomate en rodajas encima.",
-        "Terminar con un chorrito de AOVE y tapar con la otra rebanada de pan."
-      ],
-      "consejo": "Añade unas rodajas de pepino o cebolla morada en tiras finas para un extra de frescura y sabor."
-    },
-    {
-      "tipo": "Comida",
-      "titulo": "Pasta Alfredo con pollo y brócoli",
-      "ingredientes": [
-        "50 g de pasta integral",
-        "120 g de pechuga de pollo",
-        "120 g de brócoli en ramilletes",
-        "40 g de queso crema light",
-        "10 g de queso parmesano rallado",
-        "1 cdta de AOVE",
-        "Sal"
-      ],
-      "pasos": [
-        "Cocer la pasta integral en agua con sal según las instrucciones del paquete y reservar un poco de agua de cocción.",
-        "Cocer el brócoli 4–5 minutos al vapor o en agua hasta que esté tierno.",
-        "En una sartén con AOVE, dorar los dados de pollo salpimentados hasta que estén hechos.",
-        "En un bol, mezclar el queso crema light con el parmesano rallado y añadir unas cucharadas del agua caliente de la pasta hasta obtener una salsa suave.",
-        "Incorporar la pasta escurrida, el pollo y el brócoli a la sartén, retirar del fuego y agregar la salsa Alfredo ligera.",
-        "Mezclar bien y servir caliente, con pimienta negra si se desea."
-      ],
-      "consejo": "Añade una pizca de nuez moscada a la salsa para darle el toque clásico Alfredo."
-    },
-    {
-      "tipo": "Merienda",
-      "titulo": "Batido de proteína con fruta y chocolate",
-      "ingredientes": [
-        "20 g de proteína en polvo",
-        "150 ml de leche desnatada",
-        "1 onza de chocolate negro 85 %",
-        "1 pieza de fruta (150 g)"
-      ],
-      "pasos": [
-        "Mezclar la proteína en polvo con la leche hasta que no queden grumos.",
-        "Tomar acompañado de la fruta y la onza de chocolate."
-      ],
-      "consejo": "Puedes rallar el chocolate sobre el batido si prefieres tomarlo mezclado."
-    },
-    {
-      "tipo": "Cena",
-      "titulo": "Wrap crujiente de coliflor",
-      "ingredientes": [
-        "150 g de coliflor",
-        "2 huevos",
-        "3 lonchas de jamón cocido",
-        "50 g de mozzarella rallada",
-        "1/2 tomate",
-        "20 g de espinacas frescas",
-        "Sal"
-      ],
-      "pasos": [
-        "Rallar la coliflor cruda en un bol.",
-        "Agregar los huevos, una pizca de sal y mezclar bien.",
-        "En una sartén antiadherente a fuego medio, añadir la mitad de la mozzarella rallada y dejar que se funda.",
-        "Añadir encima la mezcla de coliflor y huevo, tapar la sartén y cocinar unos 5 minutos, hasta que cuaje.",
-        "Colocar en una mitad las lonchas de jamón cocido, el tomate en rodajas, el resto de mozzarella y las espinacas frescas.",
-        "Doblar por la mitad para cerrar el wrap, tapar y cocinar 1 minuto más para que el queso se funda."
-      ],
-      "consejo": "Puedes rellenarlo con tus ingredientes favoritos o sustituir la coliflor por brócoli rallado."
-    }
-  ],
-  "martes": [
-    {
-      "tipo": "Desayuno",
-      "titulo": "Bol de avena con leche, plátano y frutos secos",
-      "ingredientes": [
-        "20 g de avena crunchy 85 %",
-        "150 ml de leche o bebida vegetal",
-        "20 g de proteína en polvo sabor chocolate",
-        "1 plátano",
-        "8 g de frutos secos"
-      ],
-      "pasos": [
-        "Batir la leche con la proteína en polvo hasta que no queden grumos.",
-        "Colocar la avena crujiente en un bol amplio.",
-        "Añadir el plátano cortado en rodajas y los frutos secos picados por encima.",
-        "Verter la mezcla proteica sobre los cereales y servir al momento para mantener la textura crujiente."
-      ],
-      "consejo": "Puedes usar avena crujiente normal o de chocolate según prefieras."
-    },
-    {
-      "tipo": "Comida",
-      "titulo": "Arroz con pisto y huevos",
-      "ingredientes": [
-        "60 g de arroz redondo o integral",
-        "2 huevos",
-        "1/4 de cebolla dulce",
-        "1/4 de pimiento rojo",
-        "1/4 de pimiento verde",
-        "60 g de calabacín",
-        "100 g de tomate natural triturado",
-        "1 cdta de AOVE",
-        "Sal"
-      ],
-      "pasos": [
-        "Cocer el arroz en agua con sal siguiendo las indicaciones del paquete. Escurrir y reservar.",
-        "Picar la cebolla, los pimientos y el calabacín en dados pequeños.",
-        "En una sartén con AOVE, pochar las verduras hasta que estén tiernas.",
-        "Agregar el tomate natural triturado, una pizca de sal y dejar reducir unos 8 minutos hasta obtener un pisto jugoso.",
-        "En otra sartén antiadherente, cocinar los huevos a la plancha con tapa, sin aceite, hasta que las claras se cuajen.",
-        "Servir el arroz con el pisto y colocar los huevos a la plancha por encima o al lado."
-      ],
-      "consejo": "Añade una pizca de pimentón dulce o picante al pisto al final de la cocción para potenciar el sabor."
-    },
-    {
-      "tipo": "Merienda",
-      "titulo": "Tortitas de arroz con guacamole y pollo",
-      "ingredientes": [
-        "2 tortitas de arroz",
-        "30 g de guacamole",
-        "100 g de pechuga de pollo 99 %",
-        "Pimienta negra molida",
-        "1 pieza de fruta (150 g)"
-      ],
-      "pasos": [
-        "Untar el guacamole sobre las tortitas de arroz y espolvorear pimienta negra.",
-        "Colocar encima las lonchas de pechuga de pollo.",
-        "Tomar acompañado de la fruta."
-      ],
-      "consejo": "Para que las tortitas queden más crujientes, tuéstalas unos segundos en sartén o freidora de aire antes de montar la receta."
-    },
-    {
-      "tipo": "Cena",
-      "titulo": "Calamares a la romana no fritos",
-      "ingredientes": [
-        "300 g de anillas de calamar limpias",
-        "1 huevo",
-        "20 g de harina de avena",
-        "1 cdta de AOVE",
-        "Sal",
-        "100 g de ensalada",
-        "Limón para servir"
-      ],
-      "pasos": [
-        "Secar muy bien las anillas de calamar con papel de cocina.",
-        "Colocar la harina de avena con una pizca de sal en un bol.",
-        "Batir el huevo en otro bol.",
-        "Pasar cada anilla primero por el huevo batido y luego por la harina de avena, cubriéndolas bien.",
-        "Colocar las anillas en la cesta de la freidora de aire sin amontonarlas, pulverizar con AOVE y cocinar 9 minutos a 180 ºC o 18 minutos a 200 ºC, dándoles la vuelta a mitad del tiempo.",
-        "Servir con gajos de limón y ensalada."
-      ],
-      "consejo": "Añade ajo en polvo y pimentón a la harina de avena para dar más sabor al rebozado."
-    }
-  ],
-  "miercoles": [
-    {
-      "tipo": "Desayuno",
-      "titulo": "Pulguita de salmón, queso crema light y brotes verdes",
-      "ingredientes": [
-        "40 g de panecillo 100 % integral",
-        "40 g de salmón ahumado",
-        "20 g de brotes verdes",
-        "50 g de queso crema light",
-        "1 pieza de fruta (150 g)"
-      ],
-      "pasos": [
-        "Abrir la pulguita por la mitad y tostarla ligeramente si se prefiere crujiente.",
-        "Untar una de las mitades con el queso crema light.",
-        "Colocar por encima los brotes verdes y el salmón ahumado.",
-        "Cerrar con la otra mitad del pan y servir."
-      ],
-      "consejo": "Aromatiza el queso crema con zumo de limón, pimienta, eneldo o cebollino picado."
-    },
-    {
-      "tipo": "Comida",
-      "titulo": "Wok de verduras, quinoa y ternera",
-      "ingredientes": [
-        "50 g de quinoa en crudo",
-        "120 g de ternera magra",
-        "40 g de cebolla dulce",
-        "60 g de pimiento rojo",
-        "60 g de zanahoria",
-        "80 g de brócoli (solo las flores)",
-        "1 cdta de AOVE",
-        "1 cucharada de salsa de soja baja en sodio"
-      ],
-      "pasos": [
-        "Lavar la quinoa y cocinarla en agua hirviendo 12–15 minutos hasta que esté tierna. Escurrir y reservar.",
-        "Cortar la cebolla, el pimiento y la zanahoria en tiras finas y el brócoli en ramilletes pequeños.",
-        "En un wok o sartén amplia con AOVE, saltear la ternera a fuego fuerte 2–3 minutos hasta dorar. Retirar y reservar.",
-        "En la misma sartén, saltear las verduras 4–5 minutos a fuego medio-alto hasta que queden tiernas pero crujientes.",
-        "Incorporar la quinoa cocida y la salsa de soja, saltear 1 minuto más.",
-        "Añadir de nuevo la ternera, mezclar todo y servir caliente."
-      ],
-      "consejo": "Si vas justo de tiempo, utiliza quinoa ya cocida en vasitos y añádela directamente al wok."
-    },
-    {
-      "tipo": "Merienda",
-      "titulo": "Yogur natural, pieza de fruta y frutos secos",
-      "ingredientes": [
-        "120 g de yogur natural alto en proteína tipo Skyr",
-        "7 g de frutos secos",
-        "1 pieza de fruta (150 g)"
-      ],
-      "pasos": [
-        "Trocear la fruta.",
-        "Mezclar el yogur con la fruta y los frutos secos justo antes de tomar."
-      ],
-      "consejo": "Añade los frutos secos al final para que conserven bien su textura crujiente."
-    },
-    {
-      "tipo": "Cena",
-      "titulo": "Quesadilla rápida de pollo y aguacate",
-      "ingredientes": [
-        "1 tortilla de trigo integral",
-        "80 g de pollo al natural deshilachado",
-        "40 g de aguacate",
-        "1 cucharada de zumo de limón",
-        "40 g de queso rallado alto en proteína",
-        "Sal",
-        "100 g de ensalada"
-      ],
-      "pasos": [
-        "Machacar el aguacate en un bol hasta obtener un puré.",
-        "Añadir el zumo de limón, una pizca de sal y mezclar.",
-        "Cortar la tortilla por la mitad.",
-        "Extender la crema de aguacate sobre una de las mitades.",
-        "Colocar el pollo deshilachado y la mitad del queso rallado, y cerrar con la otra mitad.",
-        "Añadir el resto del queso por encima y cocinar en freidora de aire a 200 ºC durante unos 5 minutos, hasta que el queso se gratine."
-      ],
-      "consejo": "También puedes hacerla en el horno a 200 ºC durante unos 10 minutos."
-    }
-  ],
-  "jueves": [
-    {
-      "tipo": "Desayuno",
-      "titulo": "Crepes con yogur y frambuesas",
-      "ingredientes": [
-        "40 g de harina de avena",
-        "1 huevo",
-        "100 ml de leche o bebida vegetal",
-        "1 cdta de stevia (opcional)",
-        "70 g de yogur natural alto en proteína tipo Skyr",
-        "40 g de frambuesas frescas",
-        "Unas gotas de AOVE para la sartén"
-      ],
-      "pasos": [
-        "Mezclar en un bol la harina de avena, el huevo, la leche y la stevia hasta conseguir una masa ligera y sin grumos.",
-        "Calentar una sartén antiadherente con unas gotas de AOVE a fuego medio.",
-        "Verter una parte de la mezcla, mover la sartén para cubrir la base en una capa fina y cocinar 1–2 minutos por cada lado.",
-        "Repetir hasta terminar la masa.",
-        "Servir los crepes con el yogur natural y las frambuesas por encima."
-      ],
-      "consejo": "Puedes preparar los crepes con antelación y guardarlos en la nevera bien tapados para tener un desayuno rápido listo."
-    },
-    {
-      "tipo": "Comida",
-      "titulo": "Guiso rápido de lentejas con espinacas y jamón",
-      "ingredientes": [
-        "200 g de lentejas cocidas de bote (escurridas y lavadas)",
-        "80 g de jamón curado en taquitos",
-        "60 g de espinacas frescas",
-        "1 diente de ajo",
-        "1 cdta de AOVE",
-        "30 g de pan 100 % integral"
-      ],
-      "pasos": [
-        "Escurrir y lavar las lentejas bajo el grifo.",
-        "En una sartén amplia, calentar el AOVE y dorar el ajo picado muy fino a fuego medio.",
-        "Añadir los taquitos de jamón y saltear 1–2 minutos.",
-        "Incorporar las lentejas, mezclar y cocinar 3–4 minutos para que se calienten.",
-        "Añadir las espinacas frescas, remover y dejar que se reduzcan.",
-        "Agregar unas cucharadas de agua caliente y dejar hervir 1 minuto para ligar el guiso."
-      ],
-      "consejo": "Añade una pizca de pimentón dulce o ahumado al apagar el fuego para un sabor más tradicional."
-    },
-    {
-      "tipo": "Merienda",
-      "titulo": "Dip cremoso de aguacate y queso cottage con pan wasa",
-      "ingredientes": [
-        "80 g de queso cottage",
-        "40 g de aguacate maduro",
-        "Zumo de 1/2 limón",
-        "Sal",
-        "2 rebanadas de pan wasa",
-        "1 pieza de fruta (150 g)"
-      ],
-      "pasos": [
-        "Machacar el aguacate en un bol hasta obtener una textura suave con algún trocito.",
-        "Añadir el queso cottage y el zumo de limón y mezclar bien.",
-        "Salpimentar al gusto.",
-        "Servir el dip acompañado del pan wasa para ir untando y tomar junto con la fruta."
-      ],
-      "consejo": "Añade cilantro o perejil picado para darle un toque más fresco."
-    },
-    {
-      "tipo": "Cena",
-      "titulo": "Crema de calabacín con parmesano y filete de pollo a la plancha",
-      "ingredientes": [
-        "200 g de calabacín con piel",
-        "100 g de patata pelada y troceada",
-        "100 g de puerro",
-        "150 ml de caldo de verduras",
-        "1 cucharada de AOVE",
-        "Sal",
-        "10 g de parmesano",
-        "120 g de filetes de pollo a la plancha"
-      ],
-      "pasos": [
-        "En una olla, calentar una cucharadita de AOVE y pochar el puerro picado 2–3 minutos.",
-        "Añadir el calabacín y la patata en trozos, mezclar y cocinar unos minutos.",
-        "Verter el caldo de verduras, salpimentar y cocinar a fuego medio unos 15 minutos, hasta que la patata esté tierna.",
-        "Triturar hasta obtener una crema suave y homogénea.",
-        "Servir caliente con las lascas de parmesano por encima y acompañar del pollo a la plancha."
-      ],
-      "consejo": "Puedes congelar la crema en recipientes herméticos para tener raciones listas durante varias semanas."
-    }
-  ],
-  "viernes": [
-    {
-      "tipo": "Desayuno",
-      "titulo": "Tostadas de queso fresco a la plancha, tomate y jamón",
-      "ingredientes": [
-        "1 rebanada de pan integral",
-        "40 g de queso fresco tipo Burgo de Arias",
-        "2 lonchas de jamón serrano",
-        "1 tomate",
-        "1 cdta de AOVE",
-        "1 pieza de fruta (150 g)"
-      ],
-      "pasos": [
-        "Laminar el queso fresco y marcarlo en una sartén con unas gotas de AOVE, dorando 2–3 minutos por cada lado.",
-        "Tostar la rebanada de pan integral.",
-        "Cortar el tomate lavado en rodajas y colocarlo sobre el pan.",
-        "Añadir el jamón serrano y el queso fresco a la plancha.",
-        "Terminar con un chorrito de AOVE y especias al gusto."
-      ],
-      "consejo": "Acompaña con rúcula fresca para añadir más fibra y saciedad."
-    },
-    {
-      "tipo": "Comida",
-      "titulo": "Sartén de garbanzos especiados con huevo",
-      "ingredientes": [
-        "220 g de garbanzos cocidos",
-        "2 huevos",
-        "150 g de tomate natural triturado",
-        "1/2 cebolla dulce",
-        "1 cdta de AOVE",
-        "1 cdta de pimentón dulce o picante",
-        "Sal"
-      ],
-      "pasos": [
-        "En una sartén con AOVE, pochar la cebolla picada a fuego medio 5–6 minutos hasta que esté dorada.",
-        "Añadir los garbanzos escurridos, salpimentar y agregar el pimentón, removiendo rápidamente para que no se queme.",
-        "Verter el tomate natural triturado, mezclar y cocinar 4–5 minutos para que reduzca un poco.",
-        "Abrir dos huecos en la sartén y cascar los huevos dentro.",
-        "Tapar y cocinar hasta que las claras estén cuajadas y la yema al gusto."
-      ],
-      "consejo": "Para un toque más cremoso, añade una cucharada de queso cottage a la salsa antes de poner los huevos."
-    },
-    {
-      "tipo": "Merienda",
-      "titulo": "Plátano caramelizado con yogur y pistachos",
-      "ingredientes": [
-        "1 plátano",
-        "150 g de yogur alto en proteína tipo Skyr",
-        "15 g de pistachos pelados",
-        "Canela (opcional)"
-      ],
-      "pasos": [
-        "Cortar el plátano a lo largo en dos mitades.",
-        "Cocinarlo en la freidora de aire a 190 ºC durante 5–6 minutos sobre papel de horno, hasta que se dore.",
-        "Servir el yogur en un bol formando una base cremosa.",
-        "Colocar encima las mitades de plátano caramelizado.",
-        "Añadir los pistachos picados y un toque de canela si se desea."
-      ],
-      "consejo": "También puedes hacer el plátano en el horno a 200 ºC durante 12–15 minutos."
-    },
-    {
-      "tipo": "Cena",
-      "titulo": "Pizza rápida de verduras y atún",
-      "ingredientes": [
-        "1 tortilla de trigo 100 % integral",
-        "100 g de tomate natural triturado",
-        "60 g de queso rallado alto en proteína",
-        "150 g de atún al natural escurrido",
-        "30 g de pimiento rojo",
-        "30 g de pimiento verde",
-        "30 g de cebolla morada",
-        "6 aceitunas negras",
-        "Orégano seco"
-      ],
-      "pasos": [
-        "Colocar la tortilla sobre la bandeja del horno o la rejilla de la freidora de aire.",
-        "Extender el tomate triturado por la superficie y espolvorear orégano.",
-        "Repartir el queso rallado y, encima, el atún desmenuzado.",
-        "Añadir los pimientos en tiras, la cebolla en juliana y las aceitunas en rodajas.",
-        "Cocinar en horno a 200 ºC durante 8–10 minutos o en freidora de aire a 200 ºC durante 5–6 minutos, hasta que el queso se derrita y los bordes estén crujientes."
-      ],
-      "consejo": "Para una base más crujiente, tuesta la tortilla unos minutos antes de añadir los ingredientes y añade rúcula fresca al servir."
-    }
-  ],
-  "sabado": [
-    {
-      "tipo": "Desayuno",
-      "titulo": "Tortitas estilo Ferrero Rocher",
-      "ingredientes": [
-        "40 g de harina de avena",
-        "100 g de plátano maduro",
-        "1 huevo",
-        "3 g de polvo para hornear",
-        "15 g de crema de avellana y cacao sin azúcar",
-        "5 g de avellanas tostadas"
-      ],
-      "pasos": [
-        "Triturar el plátano con la harina de avena, el huevo y el polvo para hornear hasta obtener una mezcla homogénea.",
-        "Calentar una sartén antiadherente a fuego medio-bajo.",
-        "Verter porciones de masa y cocinar las tortitas por ambos lados hasta que estén doradas.",
-        "Servir las tortitas calientes con la crema de avellana y cacao por encima.",
-        "Terminar con las avellanas tostadas picadas."
-      ],
-      "consejo": "Calienta ligeramente la crema de avellana en el microondas para que quede más fluida."
-    },
-    {
-      "tipo": "Comida",
-      "titulo": "Burger de pollo con guacamole y queso",
-      "ingredientes": [
-        "120 g de pechuga de pollo picada",
-        "1 pan de hamburguesa integral",
-        "1 loncha de queso havarti",
-        "3 hojas de lechuga",
-        "1 tomate",
-        "40 g de guacamole casero o comercial saludable",
-        "Sal",
-        "Un poco de AOVE para la sartén"
-      ],
-      "pasos": [
-        "Salpimentar la carne de pollo picada y formar una hamburguesa.",
-        "Cocinarla en una sartén con un poco de AOVE a fuego medio-alto 3–4 minutos por cada lado.",
-        "En el último minuto, colocar la loncha de queso encima y tapar para que se funda.",
-        "Abrir el pan y tostarlo ligeramente si se desea.",
-        "Montar la burger con una base de pan, el guacamole, la hamburguesa con queso, la lechuga y las rodajas de tomate, y cerrar."
-      ],
-      "consejo": "Añade hierbas frescas como albahaca o cilantro al guacamole para un toque más aromático."
-    },
-    {
-      "tipo": "Merienda",
-      "titulo": "Pera asada con yogur, nueces y canela",
-      "ingredientes": [
-        "160 g de yogur natural alto en proteína tipo Skyr",
-        "120 g de pera",
-        "15 g de nueces",
-        "1 cdta de canela en polvo"
-      ],
-      "pasos": [
-        "Lavar la pera, cortarla en dados y retirar el corazón.",
-        "Cocinarla hasta que esté tierna: 2–3 minutos en microondas, 5–6 minutos en sartén o 8–15 minutos en horno/freidora a 190 ºC.",
-        "Colocar el yogur en un bol.",
-        "Añadir la pera caliente por encima.",
-        "Terminar con las nueces troceadas y espolvorear la canela."
-      ],
-      "consejo": "Añade las nueces justo antes de servir para que no se humedezcan con el calor."
-    },
-    {
-      "tipo": "Cena",
-      "titulo": "Flautas de berenjena crujientes",
-      "ingredientes": [
-        "200 g de berenjena",
-        "70 g de queso rallado proteico",
-        "70 g de ricotta",
-        "70 g de salmón ahumado en dados",
-        "1 cucharada de AOVE",
-        "Sal"
-      ],
-      "pasos": [
-        "Precalentar el horno a 210 ºC con calor arriba y abajo.",
-        "Cortar la berenjena en láminas finas y colocarlas superpuestas sobre una bandeja con papel de horno.",
-        "Rociar con AOVE, salar y espolvorear el queso rallado por encima.",
-        "Hornear 15 minutos o hasta que el queso esté gratinado.",
-        "Mezclar en un bol el queso ricotta con el salmón ahumado en dados.",
-        "Dar la vuelta a las láminas de berenjena, extender el relleno y enrollar con cuidado."
-      ],
-      "consejo": "También puedes hacerlas en freidora de aire a 200 ºC durante unos 10 minutos."
-    }
-  ],
-  "domingo": [
-    {
-      "tipo": "Desayuno",
-      "titulo": "Sándwich de hummus, pavo y tomate",
-      "ingredientes": [
-        "2 rebanadas de pan 100 % integral",
-        "40 g de pechuga de pavo 95 %",
-        "20 g de hummus saludable",
-        "1 tomate",
-        "Canónigos o brotes verdes",
-        "1 pieza de fruta (150 g)"
-      ],
-      "pasos": [
-        "Tostar las rebanadas de pan integral hasta que queden doradas.",
-        "Untar el hummus sobre una de las rebanadas.",
-        "Colocar las rodajas de tomate y los canónigos por encima.",
-        "Añadir el pavo en lonchas y cerrar con la otra rebanada de pan."
-      ],
-      "consejo": "Añade pepino en láminas finas o cebolla morada para un plus de frescor."
-    },
-    {
-      "tipo": "Comida",
-      "titulo": "Dorada a la bilbaína con patatas",
-      "ingredientes": [
-        "150 g de filete de dorada",
-        "100 g de patatas",
-        "1/2 cebolla dulce",
-        "1 diente de ajo",
-        "1/2 cdta de pimentón picante",
-        "1 cdta de AOVE",
-        "Pimienta negra molida",
-        "Sal",
-        "100 g de ensalada"
-      ],
-      "pasos": [
-        "Pelar la patata, pincharla y cocinarla en el microondas 5–6 minutos tapada hasta que esté tierna.",
-        "Cortarla en rodajas y añadir una pizca de sal.",
-        "Cortar la cebolla en tiras finas y pocharla en una sartén con unas gotas de AOVE hasta que esté tierna y dorada.",
-        "Cocinar el filete de dorada a la plancha con sal, 2–3 minutos por cada lado.",
-        "En la misma sartén, dorar el ajo laminado con un poco de AOVE, retirar del fuego, añadir el pimentón y mezclar rápidamente.",
-        "Montar el plato con las patatas, la cebolla, la dorada y regar con la salsa bilbaína."
-      ],
-      "consejo": "Puedes tener las patatas cocidas con antelación en la nevera para ahorrar tiempo."
-    },
-    {
-      "tipo": "Merienda",
-      "titulo": "Mug cake de manzana y canela",
-      "ingredientes": [
-        "35 g de harina de avena",
-        "1 huevo",
-        "80 g de manzana pelada",
-        "3 g de polvo para hornear",
-        "1 cdta de canela en polvo",
-        "70 g de yogur natural alto en proteína tipo Skyr"
-      ],
-      "pasos": [
-        "Triturar la manzana pelada hasta hacerla puré.",
-        "En una taza apta para microondas, mezclar el puré de manzana con el huevo, la harina de avena, la canela y la levadura.",
-        "Batir hasta obtener una mezcla homogénea.",
-        "Cocinar en el microondas a 750 W durante unos 60 segundos, hasta que el bizcocho esté cuajado.",
-        "Dejar templar, desmoldar si se desea y servir con el yogur por encima."
-      ],
-      "consejo": "Prepara varios mug cakes y guárdalos en la nevera; añade el yogur justo antes de comer."
-    },
-    {
-      "tipo": "Cena",
-      "titulo": "Revuelto cremoso de calabacín y jamón",
-      "ingredientes": [
-        "150 g de calabacín",
-        "50 g de taquitos de jamón curado",
-        "50 g de queso cottage",
-        "2 huevos",
-        "1 cdta de AOVE",
-        "Sal"
-      ],
-      "pasos": [
-        "En una sartén con AOVE, saltear el calabacín en dados 4–5 minutos a fuego medio hasta que esté tierno pero con textura.",
-        "Añadir los taquitos de jamón y cocinar 1 minuto más.",
-        "Batir los huevos en un bol con el queso cottage hasta obtener una mezcla cremosa.",
-        "Verter sobre el calabacín y el jamón, salpimentar y remover suavemente hasta que el revuelto quede cremoso."
-      ],
-      "consejo": "Retira la sartén del fuego cuando los huevos estén aún ligeramente jugosos; el calor residual terminará de cuajarlos."
-    }
-  ]
-},
-    3: {
-    lunes: [
-      {
-        tipo: "Desayuno",
-        titulo: "Sándwich de tortilla francesa con tomate y lechuga",
-        ingredientes: [
-          "50 g de pan de molde integral",
-          "1 huevo",
-          "1 tomate",
-          "2 hojas de lechuga",
-          "1 pieza de fruta (150 g)"
-        ],
-        pasos: [
-          "Batir el huevo en un bol.",
-          "Empapar las rebanadas de pan por ambos lados en el huevo.",
-          "Cocinar en una sartén a fuego medio hasta que el huevo se cuaje casi por completo y dar la vuelta.",
-          "Plegar los laterales hacia dentro como si fuera una tortilla.",
-          "Colocar el tomate en rodajas y la lechuga sobre una de las rebanadas.",
-          "Doblar una rebanada sobre la otra para formar el sándwich, tapar 1 minuto y servir."
-        ],
-        consejo: "Usa una sartén grande donde quepan bien las dos rebanadas de pan."
-      },
-      {
-        tipo: "Comida",
-        titulo: "Pollo cremoso con champiñones y patatas crujientes",
-        ingredientes: [
-          "150 g de patatas",
-          "80 g de pechuga de pollo",
-          "70 g de champiñones",
-          "20 g de taquitos de jamón",
-          "1/4 de cebolla dulce",
-          "80 g de yogur griego natural",
-          "10 g de parmesano rallado",
-          "1/2 cdta de AOVE",
-          "100 g de ensalada",
-          "Sal al gusto"
-        ],
-        pasos: [
-          "Pelar las patatas, cortar en dados pequeños, mezclar con AOVE y sal.",
-          "Cocinar las patatas en freidora de aire a 200 ºC unos 16 minutos, removiendo a mitad, hasta que estén doradas y crujientes (o en horno a 200 ºC unos 22-25 minutos).",
-          "En una sartén sin aceite, saltear los taquitos de jamón hasta que estén crujientes. Retirar y reservar.",
-          "En la misma sartén, pochar la cebolla picada fina y los champiñones laminados.",
-          "Añadir el pollo en dados y dorar bien.",
-          "Bajar el fuego, incorporar el yogur, el parmesano y una pizca de sal. Mezclar hasta obtener una salsa cremosa.",
-          "Servir las patatas en el plato, cubrir con el pollo cremoso y terminar con los taquitos de jamón crujiente por encima."
-        ],
-        consejo: "Corta las patatas en dados pequeños y del mismo tamaño para que se doren de forma uniforme."
-      },
-      {
-        tipo: "Merienda",
-        titulo: "Batido de proteína, fruta y frutos secos",
-        ingredientes: [
-          "20 g de proteína en polvo",
-          "150 ml de leche desnatada o bebida vegetal",
-          "10 g de frutos secos",
-          "1 pieza de fruta (150 g)"
-        ],
-        pasos: [
-          "Mezclar la proteína con la leche hasta que no queden grumos.",
-          "Acompañar con la fruta y los frutos secos."
-        ],
-        consejo: "Si lo quieres más fresco, añade unos cubitos de hielo al batido."
-      },
-      {
-        tipo: "Cena",
-        titulo: "Espaguetis de calabacín salteados con gambas, ajo y limón",
-        ingredientes: [
-          "250 g de calabacín",
-          "250 g de gambas peladas (frescas o congeladas)",
-          "1 diente de ajo",
-          "Zumo y ralladura de 1/2 limón",
-          "1 cdta de AOVE",
-          "Sal",
-          "1 pieza de fruta (150 g) de postre"
-        ],
-        pasos: [
-          "Lavar el calabacín y hacer espaguetis con un espiralizador o pelador. Secarlos con papel de cocina.",
-          "Picar el ajo muy fino y sofreír en una sartén con el AOVE.",
-          "Añadir las gambas, salpimentar y cocinar 2-3 minutos hasta que cambien de color.",
-          "Incorporar los espaguetis de calabacín y saltear 2 minutos.",
-          "Regar con el zumo de limón y añadir un poco de ralladura. Retirar del fuego y servir."
-        ],
-        consejo: "No cocines demasiado el calabacín para que no suelte agua y mantenga una textura firme. Puedes añadir guindilla si te gusta el picante."
-      }
-    ],
-
-    martes: [
-      {
-        tipo: "Desayuno",
-        titulo: "Tostadas francesas con crema de cacahuete y plátano caramelizado",
-        ingredientes: [
-          "50 g de pan de molde 100 % integral",
-          "1 huevo",
-          "50 ml de leche o bebida vegetal",
-          "1 plátano",
-          "5 g de crema de cacahuete",
-          "1 cdta de AOVE"
-        ],
-        pasos: [
-          "Batir el huevo con la leche en un bol.",
-          "Empapar bien las rebanadas de pan por ambos lados.",
-          "Calentar una sartén con el AOVE a fuego medio.",
-          "Colocar las tostadas en la sartén y, a la vez, añadir el plátano cortado en rodajas.",
-          "Cocinar todo junto 2-3 minutos por cada lado hasta dorar el pan y caramelizar ligeramente el plátano.",
-          "Servir las tostadas con la crema de cacahuete y el plátano por encima."
-        ],
-        consejo: "Para unas tostadas más jugosas, deja reposar el pan empapado 1-2 minutos antes de llevarlo a la sartén."
-      },
-      {
-        tipo: "Comida",
-        titulo: "Bol de ternera, boniato, queso cottage y aguacate con toque de miel",
-        ingredientes: [
-          "100 g de carne de ternera picada magra",
-          "150 g de boniato",
-          "80 g de queso cottage",
-          "40 g de aguacate",
-          "1 cdta de AOVE",
-          "5 g de miel cruda",
-          "Sal al gusto",
-          "Cayena (opcional)"
-        ],
-        pasos: [
-          "Pelar y cortar el boniato en dados pequeños. Colocarlo en un recipiente apto para microondas con un chorrito de AOVE y sal; tapar y cocinar 5-6 minutos hasta que esté tierno.",
-          "En una sartén, cocinar la carne picada con sal al gusto.",
-          "Cortar el aguacate en láminas.",
-          "Montar el bol con el boniato, la carne, el queso cottage y el aguacate.",
-          "Regar con la miel cruda y espolvorear cayena si se desea."
-        ],
-        consejo: "Puedes sustituir el boniato por calabaza asada o patata para variar."
-      },
-      {
-        tipo: "Merienda",
-        titulo: "Tortitas de arroz con hummus y pechuga de pollo",
-        ingredientes: [
-          "2 tortitas de arroz",
-          "30 g de hummus",
-          "50 g de pechuga de pollo cocida o fiambre 99 %",
-          "Pimienta negra molida",
-          "1 pieza de fruta (150 g)"
-        ],
-        pasos: [
-          "Untar el hummus sobre las tortitas de arroz y espolvorear pimienta negra.",
-          "Colocar encima las lonchas de pechuga de pollo.",
-          "Servir acompañado de la fruta."
-        ],
-        consejo: "Tuesta las tortitas unos segundos en sartén o freidora de aire para que queden más crujientes y no se humedezcan con el hummus."
-      },
-      {
-        tipo: "Cena",
-        titulo: "Quiché exprés de verduras, jamón y queso de cabra",
-        ingredientes: [
-          "1 tortilla integral de trigo",
-          "1 huevo",
-          "25 g de champiñones",
-          "1 puñado de espinacas frescas",
-          "30 g de taquitos de jamón curado",
-          "20 g de rulo de cabra",
-          "20 g de mozzarella rallada",
-          "Especias al gusto (orégano, pimienta...)"
-        ],
-        pasos: [
-          "Trocear las verduras y el rulo de cabra.",
-          "En un bol, mezclar el huevo batido con las verduras, los taquitos de jamón y el queso de cabra en dados.",
-          "Colocar la tortilla integral en una cazuelita o molde apto para horno, formando la base.",
-          "Verter la mezcla sobre la tortilla y cubrir con la mozzarella y las especias.",
-          "Cocinar en airfryer a 190 ºC durante unos 10 minutos, o en horno a 190 ºC unos 15 minutos, hasta que el huevo cuaje.",
-          "Sacar y servir caliente."
-        ],
-        consejo: "Es muy versátil: puedes usar las verduras que tengas por casa."
-      }
-    ],
-
-    miercoles: [
-      {
-        tipo: "Desayuno",
-        titulo: "Rollitos crujientes de lomo, queso cottage y rúcula",
-        ingredientes: [
-          "1 rebanada grande de pan 100 % integral",
-          "30 g de queso cottage",
-          "25 g de lomo embuchado en lonchas",
-          "Un puñado de rúcula fresca",
-          "1 huevo",
-          "20 ml de leche desnatada",
-          "1/2 cdta de AOVE",
-          "1 pieza de fruta (150 g)"
-        ],
-        pasos: [
-          "Aplanar la rebanada de pan con un rodillo.",
-          "Colocar en el centro el queso cottage, el lomo y la rúcula.",
-          "Enrollar apretando bien para que no se salga el relleno.",
-          "Mezclar en un bol el huevo con la leche.",
-          "Impregnar el rollito en la mezcla.",
-          "Dorar en una sartén con AOVE, girándolo hasta que quede crujiente por todas sus caras."
-        ],
-        consejo: "Añade orégano o pimienta negra al queso cottage para darle más sabor."
-      },
-      {
-        tipo: "Comida",
-        titulo: "Gnocchi cremosos con cherry, espinacas y pavo",
-        ingredientes: [
-          "100 g de gnocchi",
-          "100 g de pechuga de pavo picada",
-          "60 g de tomates cherry",
-          "30 g de espinacas frescas",
-          "100 ml de leche evaporada",
-          "10 g de parmesano rallado",
-          "5 g de nueces troceadas",
-          "1/2 cdta de AOVE",
-          "Sal al gusto"
-        ],
-        pasos: [
-          "Cocer los gnocchi en agua con sal 2-3 minutos hasta que suban a la superficie. Escurrir y reservar.",
-          "En una sartén con AOVE, saltear los tomates cherry y las espinacas.",
-          "Hacer un hueco en el centro y cocinar ahí la pechuga de pavo picada con sal; cuando esté casi hecha, mezclar con las verduras.",
-          "Añadir la leche evaporada y cocinar unos minutos a fuego medio-suave.",
-          "Incorporar el parmesano y mezclar hasta que se funda.",
-          "Añadir los gnocchi, mezclar bien y ajustar de sal.",
-          "Servir con las nueces troceadas por encima."
-        ],
-        consejo: "Si quieres un toque extra, tuesta ligeramente las nueces antes de añadirlas."
-      },
-      {
-        tipo: "Merienda",
-        titulo: "Yogur natural con chocolate negro y fruta",
-        ingredientes: [
-          "120 g de yogur natural alto en proteína (tipo Skyr)",
-          "1 onza de chocolate negro 85 %",
-          "1 pieza de fruta (150 g)"
-        ],
-        pasos: [
-          "Trocear la fruta y la onza de chocolate.",
-          "Mezclar con el yogur y servir."
-        ],
-        consejo: "Puedes dejar el chocolate en virutas por encima para que aporte más textura crujiente."
-      },
-      {
-        tipo: "Cena",
-        titulo: "Judías verdes salteadas con limón, huevo y queso feta",
-        ingredientes: [
-          "250 g de judías verdes cocidas (de bote, escurridas)",
-          "2 huevos",
-          "70 g de queso feta",
-          "Un puñado de tomates cherry",
-          "1/2 cdta de AOVE",
-          "Zumo de 1/2 limón",
-          "Sal"
-        ],
-        pasos: [
-          "Cocer los huevos 9-10 minutos, enfriar, pelar y reservar.",
-          "En una sartén con AOVE, saltear las judías verdes y los tomates cherry partidos por la mitad durante 2-3 minutos.",
-          "Añadir el zumo de limón y mezclar.",
-          "Picar uno de los huevos cocidos y mezclarlo con las judías en la sartén.",
-          "Servir en el plato, desmenuzar el queso feta por encima y añadir el otro huevo partido por la mitad."
-        ],
-        consejo: "Ralla un poco de piel de limón justo al final para intensificar el aroma cítrico."
-      }
-    ],
-
-    jueves: [
-      {
-        tipo: "Desayuno",
-        titulo: "Bizcochito de cacao y chocolate en bol",
-        ingredientes: [
-          "35 g de harina de avena",
-          "80 g de plátano maduro",
-          "1 huevo",
-          "40 g de yogur natural alto en proteína (tipo Skyr)",
-          "20 g de proteína en polvo sabor vainilla (opcional, se puede sustituir por más harina)",
-          "5 g de polvo de hornear",
-          "5 g de chocolate negro 85 % troceado"
-        ],
-        pasos: [
-          "En un bol, triturar o chafar el plátano y mezclar con el huevo, la harina de avena, el yogur, la proteína y la levadura.",
-          "Verter la mezcla en un bol apto para horno, microondas o airfryer.",
-          "Repartir por encima los trocitos de chocolate.",
-          "Hornear a 180 ºC unos 25 minutos, o en freidora de aire 18 minutos, o en microondas a 750 W unos 2 minutos.",
-          "Dejar templar y servir."
-        ],
-        consejo: "Si lo haces en microondas, ve comprobando para que no se pase. La proteína en polvo puede sustituirse por más harina."
-      },
-      {
-        tipo: "Comida",
-        titulo: "Curry cremoso de garbanzos, verduras y gambas",
-        ingredientes: [
-          "120 g de garbanzos cocidos y escurridos",
-          "175 g de gambas crudas peladas",
-          "1/4 de cebolla dulce",
-          "1/3 de pimiento rojo",
-          "1/3 de pimiento verde",
-          "150 ml de leche de coco en lata",
-          "1 cdta de curry en polvo",
-          "1 cdta de AOVE",
-          "Sal"
-        ],
-        pasos: [
-          "Picar la cebolla y los pimientos.",
-          "En una sartén amplia con AOVE, pochar cebolla y pimientos a fuego medio hasta que estén blandos.",
-          "Añadir los garbanzos y el curry en polvo y mezclar.",
-          "Incorporar la leche de coco y una pizca de sal; cocinar a fuego medio-bajo unos 8 minutos, removiendo de vez en cuando, hasta que la salsa espese.",
-          "Añadir las gambas peladas y cocinar 3 minutos más, hasta que cambien de color.",
-          "Servir caliente."
-        ],
-        consejo: "El curry está incluso más rico de un día para otro: ideal para llevar en tupper."
-      },
-      {
-        tipo: "Merienda",
-        titulo: "Pulguita integral de jamón cocido, tomate y aguacate",
-        ingredientes: [
-          "60 g de pulguita integral",
-          "50 g de jamón cocido de calidad (97 %)",
-          "1 tomate",
-          "30 g de aguacate"
-        ],
-        pasos: [
-          "Abrir la pulguita por la mitad y tostarla ligeramente.",
-          "Cortar el tomate en rodajas.",
-          "Rellenar con el aguacate (en láminas o chafado), el tomate y el jamón.",
-          "Cerrar y servir."
-        ],
-        consejo: "Si el aguacate está muy maduro, aplástalo con unas gotas de limón para que quede cremoso y no se oxide."
-      },
-      {
-        tipo: "Cena",
-        titulo: "Espinacas a la crema gratinadas con huevo",
-        ingredientes: [
-          "150 g de espinacas frescas",
-          "10 g de harina de avena",
-          "80 ml de leche o bebida vegetal",
-          "2 huevos",
-          "50 g de queso proteico rallado",
-          "1 cdta de AOVE",
-          "Sal"
-        ],
-        pasos: [
-          "En una sartén, calentar el AOVE y añadir la harina de avena. Cocinar 1 minuto mezclando.",
-          "Verter la leche caliente poco a poco, removiendo hasta que espese ligeramente.",
-          "Añadir las espinacas y una pizca de sal; cocinar 2-3 minutos hasta que reduzcan.",
-          "Precalentar el horno en modo grill a 200 ºC.",
-          "Hacer dos huecos en la mezcla y cascar los huevos dentro.",
-          "Cubrir con el queso rallado y gratinar 7 minutos o hasta que las claras estén cuajadas.",
-          "Servir caliente."
-        ],
-        consejo: "Si te gustan las yemas más líquidas, apaga el grill un par de minutos antes y deja reposar con el calor residual."
-      }
-    ],
-
-    viernes: [
-      {
-        tipo: "Desayuno",
-        titulo: "Sándwich mediterráneo",
-        ingredientes: [
-          "50 g de pan integral",
-          "30 g de queso feta",
-          "1 huevo cocido",
-          "1 tomate",
-          "5 aceitunas negras sin hueso",
-          "1 cdta de AOVE",
-          "1 pieza de fruta (150 g)"
-        ],
-        pasos: [
-          "Tostar ligeramente el pan integral.",
-          "Cortar el tomate y el huevo cocido en rodajas.",
-          "Montar el sándwich con tomate, huevo, queso feta desmigado y aceitunas en rodajitas.",
-          "Regar con un chorrito de AOVE y cerrar."
-        ],
-        consejo: "Añade rúcula o albahaca fresca para darle un toque más mediterráneo."
-      },
-      {
-        tipo: "Comida",
-        titulo: "Bol de salmón teriyaki con arroz, aguacate y verduras",
-        ingredientes: [
-          "100 g de salmón fresco en dados",
-          "40 g de arroz blanco",
-          "100 g de pepino",
-          "1 zanahoria",
-          "40 g de aguacate",
-          "20 ml de salsa de soja baja en sodio",
-          "10 g de miel cruda",
-          "1 cdta de vinagre",
-          "1 diente de ajo"
-        ],
-        pasos: [
-          "Cocer el arroz en abundante agua con una pizca de sal y escurrir.",
-          "En una sartén, marcar el salmón en dados a fuego medio-alto 2 minutos por cada lado.",
-          "Mezclar la salsa de soja, la miel, el vinagre y el ajo picado para hacer la salsa teriyaki.",
-          "Bajar el fuego, añadir la salsa a la sartén y cocinar 2 minutos más hasta que reduzca ligeramente.",
-          "Cortar el pepino en dados, rallar la zanahoria y trocear el aguacate.",
-          "Montar el bol con una base de arroz, el salmón teriyaki y las verduras por encima. Repartir la salsa restante."
-        ],
-        consejo: "Unas gotas de limón o lima sobre las verduras equilibran el dulzor de la salsa teriyaki."
-      },
-      {
-        tipo: "Merienda",
-        titulo: "Tarta de queso cremosa rápida",
-        ingredientes: [
-          "80 g de queso crema light",
-          "40 g de yogur natural alto en proteína (tipo Skyr)",
-          "1 huevo pequeño",
-          "1 cdta de stevia u otro endulzante"
-        ],
-        pasos: [
-          "Mezclar todos los ingredientes hasta obtener una crema homogénea.",
-          "Repartir en moldes o recipientes aptos para horno o airfryer.",
-          "Cocinar en airfryer a 200 ºC unos 8 minutos, o en horno a 200 ºC unos 15 minutos.",
-          "Dejar enfriar por completo antes de desmoldar y servir."
-        ],
-        consejo: "Está más rica fría. Puedes usar el endulzante que prefieras."
-      },
-      {
-        tipo: "Cena",
-        titulo: "Pizza rápida de verduras y atún",
-        ingredientes: [
-          "1 tortilla de trigo 100 % integral",
-          "100 g de tomate natural triturado",
-          "50 g de queso rallado alto en proteína",
-          "100 g de atún al natural escurrido",
-          "30 g de pimiento rojo",
-          "30 g de pimiento verde",
-          "30 g de cebolla morada",
-          "6 aceitunas negras",
-          "Orégano seco"
-        ],
-        pasos: [
-          "Colocar la tortilla sobre una bandeja de horno o airfryer.",
-          "Extender el tomate triturado por la superficie y espolvorear orégano.",
-          "Repartir el queso rallado y, encima, el atún desmenuzado.",
-          "Añadir los pimientos en tiras, la cebolla en juliana y las aceitunas en rodajas.",
-          "Hornear a 200 ºC unos 8-10 minutos (o en airfryer 5-6 minutos) hasta que el queso se derrita y los bordes estén crujientes.",
-          "Servir caliente."
-        ],
-        consejo: "Si quieres la base más crujiente, tuesta la tortilla unos minutos sola antes de añadir los ingredientes."
-      }
-    ],
-
-    sabado: [
-      {
-        tipo: "Desayuno",
-        titulo: "Crepes de cacao con yogur y fresas",
-        ingredientes: [
-          "25 g de harina de avena",
-          "5 g de cacao puro en polvo desgrasado",
-          "1 huevo",
-          "90 ml de leche o bebida vegetal",
-          "Endulzante al gusto (stevia, etc.)",
-          "80 g de yogur natural alto en proteína (tipo Skyr)",
-          "60 g de fresas",
-          "5 g de chocolate negro 85 %"
-        ],
-        pasos: [
-          "Mezclar harina, cacao, huevo, leche y endulzante hasta obtener una masa ligera sin grumos.",
-          "Calentar una sartén antiadherente con unas gotas de AOVE a fuego medio.",
-          "Verter una porción de masa, mover la sartén para cubrir la base y cocinar 1-2 minutos por cada lado.",
-          "Repetir hasta acabar la masa.",
-          "Endulzar el yogur si se desea.",
-          "Rellenar los crepes con yogur y fresas en rodajas, doblar y rallar por encima la onza de chocolate."
-        ],
-        consejo: "Añade unas hojas de menta fresca para un toque más aromático y colorido."
-      },
-      {
-        tipo: "Comida",
-        titulo: "Burger caprese de pollo",
-        ingredientes: [
-          "1 pan de hamburguesa integral",
-          "120 g de pechuga de pollo picada",
-          "40 g de mozzarella fresca",
-          "3 rodajas de tomate",
-          "15 g de pesto (casero o comercial)",
-          "Albahaca fresca",
-          "1 cdta de AOVE",
-          "100 g de ensalada",
-          "Sal al gusto"
-        ],
-        pasos: [
-          "Salpimentar la carne de pollo picada y formar una hamburguesa.",
-          "Cocinarla en una sartén con AOVE a fuego medio unos 4 minutos por cada lado.",
-          "Colocar la mozzarella encima, tapar la sartén y dejar que se funda 1 minuto.",
-          "Tostar ligeramente el pan de hamburguesa.",
-          "Montar la burger con la carne, el tomate, la albahaca y el pesto.",
-          "Servir acompañada de ensalada."
-        ],
-        consejo: "No aplastes la hamburguesa mientras se cocina para que quede más jugosa."
-      },
-      {
-        tipo: "Merienda",
-        titulo: "Volcán proteico de chocolate",
-        ingredientes: [
-          "20 g de harina de avena",
-          "20 g de proteína en polvo sabor chocolate",
-          "10 g de cacao puro en polvo desgrasado",
-          "60 ml de leche o bebida vegetal",
-          "10 g de chocolate negro 85 %"
-        ],
-        pasos: [
-          "Mezclar harina, proteína, cacao y leche hasta tener una masa homogénea.",
-          "Verter en un molde apto para microondas.",
-          "Colocar la onza de chocolate en el centro y cubrirla con un poco de masa.",
-          "Cocinar en el microondas a 750 W durante unos 50 segundos, hasta que el exterior esté hecho pero el centro cremoso.",
-          "Servir caliente."
-        ],
-        consejo: "También puedes hacerlo en airfryer a 180 ºC unos 10 minutos o en horno a 180 ºC unos 18 minutos."
-      },
-      {
-        tipo: "Cena",
-        titulo: "Ensalada templada de puerros asados, burrata y pavo",
-        ingredientes: [
-          "150 g de puerros medianos",
-          "70 g de pechuga de pavo en lonchas (95 %)",
-          "60 g de burrata",
-          "1 cdta de AOVE",
-          "Sal"
-        ],
-        pasos: [
-          "Lavar bien los puerros, retirar la parte verde dura y cortarlos por la mitad a lo largo.",
-          "Colocarlos en una fuente, añadir AOVE y sal.",
-          "Cocinar en airfryer a 200 ºC 10-12 minutos, o en horno a 200 ºC unos 20 minutos, o en microondas 6-8 minutos, hasta que estén tiernos.",
-          "Dejar reposar unos minutos y, si hace falta, retirar la primera capa externa.",
-          "Extender la burrata en la base del plato.",
-          "Colocar encima los puerros asados y la pechuga de pavo en lonchas.",
-          "Añadir especias al gusto."
-        ],
-        consejo: "Puedes asar los puerros con antelación y guardarlos en la nevera; solo tendrás que montar el plato al momento."
-      }
-    ],
-
-    domingo: [
-      {
-        tipo: "Desayuno",
-        titulo: "Tostadas con crema de huevo y aguacate, rúcula y jamón",
-        ingredientes: [
-          "40 g de pan integral",
-          "1 huevo",
-          "30 g de aguacate",
-          "30 g de jamón serrano o ibérico",
-          "Un puñado de rúcula",
-          "1 pieza de fruta (150 g)"
-        ],
-        pasos: [
-          "Cocer el huevo 10 minutos, enfriar, pelar y picar.",
-          "Machacar el huevo con el aguacate hasta obtener una crema.",
-          "Salpimentar al gusto.",
-          "Tostar el pan y untar la crema de huevo y aguacate.",
-          "Añadir rúcula por encima y terminar con el jamón en lonchas finas."
-        ],
-        consejo: "Añade unas gotas de limón al aguacate para que no se oxide. Un poco de pimentón ahumado le va muy bien."
-      },
-      {
-        tipo: "Comida",
-        titulo: "Pasta integral al pesto rosso con pollo",
-        ingredientes: [
-          "40 g de pasta integral",
-          "100 g de pechuga de pollo",
-          "5 tomates cherry",
-          "10 g de queso parmesano rallado",
-          "1 cdta de AOVE",
-          "20 g de tomates secos",
-          "10 hojas grandes de albahaca fresca",
-          "1 diente de ajo pequeño",
-          "30 g de queso cottage",
-          "100 g de ensalada",
-          "Sal"
-        ],
-        pasos: [
-          "Cocer la pasta siguiendo las instrucciones del paquete. Reservar un vaso del agua de cocción.",
-          "En una sartén con AOVE, saltear el pollo en tiras con sal hasta dorar. Añadir los tomates cherry y cocinar 2-3 minutos.",
-          "Triturar tomates secos, albahaca, ajo y queso cottage para obtener un pesto rosso cremoso.",
-          "Añadir el pesto a la sartén y un chorrito del agua de cocción para aligerar la salsa.",
-          "Incorporar la pasta, mezclar bien y cocinar 1 minuto más.",
-          "Servir con parmesano rallado y albahaca fresca."
-        ],
-        consejo: "Un chorrito de zumo de limón al final aporta un toque fresco."
-      },
-      {
-        tipo: "Merienda",
-        titulo: "Yogur natural con fruta y frutos secos",
-        ingredientes: [
-          "120 g de yogur natural alto en proteína (tipo Skyr)",
-          "15 g de frutos secos",
-          "1 pieza de fruta (150 g)"
-        ],
-        pasos: [
-          "Trocear la fruta y mezclarla con el yogur.",
-          "Añadir los frutos secos por encima y servir."
-        ],
-        consejo: "Si lo preparas con antelación, añade los frutos secos justo antes de comer para que no pierdan el crujiente."
-      },
-      {
-        tipo: "Cena",
-        titulo: "Lasaña de calabacín y atún",
-        ingredientes: [
-          "2 calabacines medianos",
-          "1/2 pimiento rojo",
-          "1/2 pimiento verde",
-          "1/3 de cebolla dulce",
-          "200 g de tomate natural triturado",
-          "175 g de atún al natural escurrido",
-          "30 g de queso rallado alto en proteína",
-          "1 cdta de AOVE",
-          "Sal"
-        ],
-        pasos: [
-          "Cortar el calabacín en láminas finas con mandolina o pelador y secar con papel de cocina.",
-          "En una sartén con AOVE, pochar la cebolla picada.",
-          "Añadir los pimientos en dados y cocinar hasta que estén tiernos.",
-          "Incorporar el atún escurrido, el tomate triturado y sal; cocinar unos 5 minutos.",
-          "Montar la lasaña en una fuente: capas alternas de calabacín y relleno, terminando con calabacín.",
-          "Cubrir con el queso rallado y hornear a 180 ºC durante 15 minutos; gratinar 5 minutos más hasta dorar.",
-          "Sacar y dejar reposar unos minutos antes de servir."
-        ],
-        consejo: "Si quieres una lasaña más firme, pasa las láminas de calabacín por la plancha 1-2 minutos antes de montar."
-      }
-    ]
+const app = {
+  state: {
+    week: 1,
+    day: 'lunes',
+    view: 'daily',
+    filterType: 'Todos',
+    searchQuery: '',
+    favs: JSON.parse(localStorage.getItem('favoritos') || '[]')
   },
-    4: {"lunes": [{"tipo": "Desayuno", "titulo": "Tostadas con hummus, tomate y salmón ahumado", "ingredientes": ["1 tostada de pan 100% integral.", "30 g de hummus.", "1 tomate.", "35 g de salmón ahumado.", "1 pieza de fruta (150g)."], "pasos": ["Tosta mos el pan integral hasta que quede dorado y crujiente.", "Untamos el hummus de forma uniforme sobre las tostadas calientes.", "Lavamos el tomate, lo cortamos en rodajas finas y lo colocamos sobre el", "hummus.", "Añadimos el salmón ahumado por encima, repartiéndolo bien."], "consejo": "Si quieres, puedes agregar encima del salmón unas gotas de zumo de limón y un toque de pimienta negra molida."}, {"tipo": "Comida", "titulo": "Pollo cremoso a la toscana con pasta integral", "ingredientes": ["55 g de pasta integral.", "130 g de pechuga de pollo.", "80 g de tomates cherry.", "30 g de espinacas frescas."], "pasos": ["Cocemos la pasta integral en abundante agua con sal. Escurrimos y reservamos.", "Salpimentamos la pechuga de pollo.", "En una sartén amplia, calentamos el AOVE y doramos el pollo a fuego medio-", "alto hasta que esté bien sellado. Retiramos y reservamos.", "En la misma sartén, añadimos los tomates cherry cortados por la mitad y las", "espinacas. Salteamos 3 minutos hasta que empiecen a ablandarse.", "Bajamos el fuego y añadimos la leche, el parmesano rallado, el pimentón y una", "pizca de sal, removiendo hasta obtener una salsa cremosa", "Volvemos a añadir el pollo y la pasta cocida, mezclamos bien para que se", "impregne de la salsa."], "consejo": "Si quieres la salsa más fluida, añade un chorrito del agua de cocción de la pasta.120 ml de leche desnatada. 15 g de parmesano rallado. 1 cdta de AOVE. 1 cdta de pimentón dulce."}, {"tipo": "Merienda", "titulo": "Yogur natural + Chocolate 85% + pieza de fruta", "ingredientes": ["150 g de yogur natural alto en proteína tipo Skyr", "15 g de chocolate negro 85%.", "1 pieza de fruta (150g)."], "pasos": ["Mezclamos el chocolate y la fruta con el yogur."], "consejo": null}, {"tipo": "Cena", "titulo": "Sartenada rápida de berenjena y pollo con queso y", "ingredientes": ["huevo", "Ingredientes:", "220 g de berenjena.", "120 g de pechuga de pollo picada.", "1 huevo.", "100 g de tomate natural triturado."], "pasos": ["Cort amos la berenjena en dados pequeños, la ponemos en un bol con agua y una pizca de", "sal durante 5 minutos para quitar el amargor. Escurrimos y secamos.", "Calentamos una sartén con el AOVE y salteamos la berenjena a fuego medio-alto hasta", "que esté tierna.", "Añadimos el pollo picado, salpimentamos y cocinamos hasta que esté bien hecho.", "Incorporamos el tomate triturado con una pizca de sal y cocinamos 3 minutos para que se", "concentre el sabor.", "Hacemos un hueco, añadimos el huevo y dejamos que se cocine al gusto.", "Agregamos el queso rallado por encima, tapamos la sartén y dejamos que se funda."], "consejo": "Puedes añadir un toque de orégano o albahaca para darle un aire italiano.50 g de queso rallado proteico. 1 cdta de AOVE. Sal."}], "martes": [{"tipo": "Desayuno", "titulo": "Bol de yogur con granola, plátano y crema de", "ingredientes": ["cacahuete", "Ingredientes:", "140 g de yogur natural alto en proteína tipo skyr.", "1 plátano.", "20 g de granola sin azúcar añadido.", "10 g de crema de cacahuete 100%."], "pasos": ["Colocamos el yogur skyr en un bol.", "Cortamos el plátano en rodajas y lo distribuimos por encima del yogur.", "Añadimos la granola y terminamos con la crema de cacahuete por."], "consejo": "Si la crema de cacahuete está espesa, caliéntala unos segundos en el micro y remuévela bien para que se integre."}, {"tipo": "Comida", "titulo": "Ternera cremosa con setas y arroz", "ingredientes": ["90 g de filete magro de ternera.", "40 g de arroz.", "90 g de champiñones laminados.", "1/2 cebolla dulce."], "pasos": ["Cocinamos el  arroz en abundante agua con sal. Escurrimos y reservamos.", "Salpimentamos la ternera y la marcamos en una sartén, vuelta y vuelta, hasta", "que esté dorada y reservamos.", "En la misma sartén añadimos el aceite y pochamos la cebolla picada a fuego", "medio hasta que esté blandita.", "Incorporamos los champiñones y salteamos hasta que se doren.", "Añadimos la leche evaporada, las una pizca de sal y pimienta y dejamos cocinar", "3–4 minutos hasta que la salsa espese ligeramente.", "Volvemos a incorporar la ternera y cocinamos 2 minutos para que se impregne", "bien de la salsa.", "Servimos la ternera cremosa junto al arroz caliente."], "consejo": "Si te sobra salsa, mézclala con el arroz al final, queda súper meloso y hace que el plato sea aún más reconfortante.90 ml de leche evaporada. 1 cdta de AOVE. Sal."}, {"tipo": "Merienda", "titulo": "Pulguita integral de jamón, queso y tomate", "ingredientes": ["60 g de pulguita integral.", "50 g de jamón cocido 97%.", "1 loncha de queso havarti.", "1  tomate."], "pasos": ["Abrimos la pulguita integral por la mitad y la tostamos ligeramente para", "que quede crujiente por fuera y tierna por dentro.", "Cortamos el tomate en rodajas.", "Rellenamos con el queso, el tomate, el jamón y cerramos la pulguita."], "consejo": null}, {"tipo": "Cena", "titulo": "Crema suave de zanahoria +", "ingredientes": ["filetes de pechuga de pollo", "Ingredientes:", "200 g de zanahoria.", "1/2 cebolla dulce.", "350 ml de caldo de verduras.", "50 ml de leche evaporada.", "1 cdta de AOVE."], "pasos": ["Pelamos y cortamos la ceboll a en juliana fina. La pochamos en una cacerola con", "el AOVE a fuego medio durante 5 minutos.", "Pelamos las zanahorias, las cortamos en rodajas y las añadimos a la cacerola.", "Rehogamos 2 minutos.", "Cubrimos con el caldo de verduras, salpimentamos y dejamos cocer a fuego", "medio 15 minutos, hasta que la zanahoria esté tierna.", "Añadimos la leche evaporada y trituramos hasta obtener una crema fina.", "Servimos caliente."], "consejo": "Tritura la crema en caliente y luego vuelve a ponerla al fuego 1–2 minutos sin dejar de remover. Ese último hervor corto la deja más fina, sedosa y con mejor textura.💡 Petit Consejos: Saca el queso havarti de la nevera unos minutos antes de montar la pulguita. Al estar a temperatura ambiente se funde ligeramente con el calor del pan. Sal. 150 g de filetes de pechuga de pollo."}], "miercoles": [{"tipo": "Desayuno", "titulo": "Tosta-pizza de queso cottage y pavo", "ingredientes": ["1 rebanada de pan 100% integral.", "40 g de tomate natural triturado.", "60 g de queso cottage.", "40 g de pechuga de pavo cocida 99%.", "30 g de queso rallado proteico.", "1 cdta de orégano."], "pasos": ["Unta mos el tomate natural triturado sobre el pan.", "Repartimos el queso cottage por encima.", "Añadimos la pechuga de pavo cortada en trocitos.", "Cubrimos con el queso rallado proteico.", "Llevamos a la freidora de aire a 200°C durante 6 minutos, hasta que el queso", "esté bien fundido y dorado.", "Sacamos la tosta, agregamos orégano por encima y servimos caliente."], "consejo": "Añade rúcula o espinacas frescas al final para un contraste fresco. Puedes hacerla en el horno, colocando la tostada en la bandeja con papel vegetal y horneando a 200°C durante 8–10 minutos, con el grill los últimos 2 minutos si quieres un gratinado más intenso."}, {"tipo": "Comida", "titulo": "Albóndigas de pavo en salsa de tomate", "ingredientes": ["con patatas crujientes", "Ingredientes:", "125 g de carne de pavo picada.", "200 g de patata.", "175 g de tomate natural triturado.", "1 cdtas de AOVE."], "pasos": ["Lava mos b ien las patatas, las cortamos en dados pequeños y las mezclamos con 1 cdta de AOVE y una", "pizca de sal.", "Cocinamos las patatas en la freidora de aire a 200°C durante 16–18 minutos o en el horno a 200°C", "durante 30 minutos, hasta que estén doradas, removiendo a mitad.", "Mientras salpimentamos la carne de pavo y formamos albóndigas del mismo tamaño con las manos.", "En una sartén amplia, calentamos la otra cdta de AOVE y doramos las albóndigas a fuego medio-alto por", "todos los lados.", "Añadimos el tomate natural triturado, ajustamos de sal y especias, bajamos el fuego y dejamos cocinar", "todo junto durante 10 minutos, hasta que las albóndigas estén bien hechas y la salsa ligeramente", "espesa.", "Servimos las albóndigas con su salsa de tomate y acompañamos con las patatitas crujientes."], "consejo": "Si haces las albóndigas pequeñas se cocinan antes y quedan más jugosas sin necesidad de añadir huevo ni pan.Sal. Especias al gusto. 100 g de ensalada."}, {"tipo": "Merienda", "titulo": "Batido de proteína + pieza de fruta + frutos secos", "ingredientes": ["25 g de proteína en polvo.", "150 ml de leche desnatada.", "1 pieza de fruta (150g).", "10 g de frutos secos."], "pasos": ["Mezclaos la proteína en la leche."], "consejo": null}, {"tipo": "Cena", "titulo": "Taco cremoso de caballa, verduras y aguacate", "ingredientes": ["1 tortilla integral.", "100 g de caballa al natural", "escurrida.", "50 g de aguacate.", "1 tomate."], "pasos": ["En un bol desmenuzamos la caballa con un tenedor.", "Añadimos el aguacate machacado, el tomate picado, la mostaza, el yogur y el", "zumo de limón.", "Salpimentamos y mezclamos hasta obtener una textura cremosa.", "Colocamos unas hojas de lechuga sobre las tortilla.", "Repartimos la mezcla cremosa, cerramos los tacos y servimos."], "consejo": "Pasa la tortilla 20 segundos por la sartén o al micro antes de rellenarlas. Quedan más flexibles y no se rompen.60 g cda de yogur natural alto en proteína tipo Skyr. 1 cdta de mostaza. 15 ml de zumo de limón. Hojas de lechuga. Sal."}], "jueves": [{"tipo": "Desayuno", "titulo": "Mug cake de chocolate y frutos del bosque", "ingredientes": ["35 g de harina de avena.", "1 huevo.", "50 g de plátano maduro.", "35 g de frutos del bosque (frescos o congelados).", "5 g de cacao puro en polvo desgrasado.", "5 g de pepitas de chocolate negro.", "2 g de polvo para hornear."], "pasos": ["En una taza grande apta para microondas, añ adimos los frutos del bosque y los chafamos", "ligeramente con un tenedor.", "METEMOS en el microondas 40 segundos a máxima potencia, hasta que estén jugosos y", "templados (no hace falta que hiervan). Removemos y reservamos en la propia taza.", "En un bol aparte, trituramos el plátano y lo mezclamos el resto de ingredientes hasta", "obtener una masa homogénea.", "Vertemos esta mezcla sobre los frutos del bosque calientes, sin remover en exceso.", "Cocinamos en el microondas a 750 W durante 1 minuto.", "Sacamos y dejamos reposar 1 minuto antes de comer."], "consejo": "Si te gusta el centro más jugoso tipo brownie, quédate en 45-50 segundos."}, {"tipo": "Comida", "titulo": "Potaje rápido de garbanzos, espinacas y huevo", "ingredientes": ["200 g de garbanzos cocidos.", "40 g de de espinacas frescas.", "1/2 cebolla dulce.", "40 g de tomate natural triturado", "1 cdta de pimentón dulce."], "pasos": ["Ponemos los huevos a cocer.", "En una sartén con 1 cdta de AOVE, pochamos la cebolla picada a fuego medio durante", "unos minutos.", "Añadimos el ajo picado y salteamos 1 minuto hasta que empiece a dorarse.", "Incorporamos el pimentón dulce, mezclamos rápido y añadimos enseguida el tomate", "natural triturado para que no se queme.", "Agregamos las espinacas lavadas y troceadas y removemos hasta que se pochen.", "Añadimos los garbanzos cocidos escurridos, mezclamos bien y vertemos un chorrito de", "agua. Cocinamos todo junto 5 minutos para que se integren los sabores y ajustamos de", "sal.", "Agregamos los huevos cocidos troceados por encima y servimos."], "consejo": "Si quieres un toque más cremoso, puedes aplastar con el tenedor una pequeña parte de los garbanzos mientras se cocina.1 cdta de AOVE. 50 ml de agua (ajustar según textura). 2 huevos. Sal."}, {"tipo": "Merienda", "titulo": "Pulguita integral de lomo y pimientos del", "ingredientes": ["piquillo + pieza de fruta", "Ingredientes:", "50 g de pulguita integral.", "40 g de lomo embuchado.", "20 g de pimientos del piquillo.", "1 pieza de fruta (150g)."], "pasos": ["Abrimos la pulguita integral por la mitad y la tostamos ligeramente para", "que quede crujiente por fuera y tierna por dentro.", "Rellenamos con el lomo y los pimientos del piquillo."], "consejo": "Si quieres potenciar el sabor sin añadir ingredientes extra, calienta ligeramente los pimientos del piquillo en la sartén 1–2 minutos antes de montar la pulguita."}, {"tipo": "Cena", "titulo": "Wrap crujiente de verduras y atún", "ingredientes": ["1 tortillas de trigo integral.", "150 g de atún al natural escurrido.", "40 g de maíz.", "1/3 de cebolla morada.", "1/4 de pimiento rojo."], "pasos": ["Picamos el pimiento rojo y la cebolla morada muy finos.", "En un bol, integramos todos los ingredientes, excepto la rúcula, hasta conseguir", "una mezcla cremosa.", "Ponemos un puñado de rúcula en el centro de las tortillas integrales.", "Repartimos el relleno en el centro de las tortillas, sobre la rúcula, y las cerramos", "por todas sus partes.", "En una sartén a fuego medio con un poquito de AOVE, los doramos por todas", "sus partes hasta que estén crujientes.", "Sacamos y servimos inmediatamente."], "consejo": "Puedes dorarlos en la sandwichera o en airfryer 3-4 minutos.120 g de yogur alto en proteína tipo Skyr. 30 g de tomate natural triturado. 1 cdta de AOVE. Rúcula fresca."}], "viernes": [{"tipo": "Desayuno", "titulo": "Sándwich mixto con huevo a la plancha", "ingredientes": ["45 g de pan integral.", "20 g de jamón cocido 98%.", "15 g de queso Havarti.", "1 huevo.", "1 pieza de fruta (150g)."], "pasos": ["Tostamos las rebanadas de pan integral en una tostadora o en sartén", "hasta que estén doradas y crujientes.", "En una sartén antiadherente cocinamos el huevo a fuego medio.", "Dejamos la clara cuajada y la yema al punto deseado.", "Montamos el sándwich colocando sobre una rebanada el jamón cocido,", "el queso y el huevo", "Con ayuda de un cuchillo o cortapastas, hacemos un agujero en la", "rebanada superior para que asome la yema del huevo y cerramos el", "sándwich."], "consejo": "Si quieres que el queso se funda mejor, mete el sándwich ya montado unos segundos en la sartén o en la airfryer antes de añadir el huevo. Quedará mucho más jugoso."}, {"tipo": "Comida", "titulo": "Salmón glaseado con miel y mostaza con quinoa y", "ingredientes": ["brócoli", "Ingredientes:", "100 g de lomo de salmón sin piel.", "35 g de quinoa.", "150 g de brócoli.", "5 g de miel cruda."], "pasos": ["Cocemos la quinoa en abunda nte agua con una pizca de sal durante 12–15 minutos, hasta que esté", "tierna. Escurrimos y reservamos.", "Cocemos el brócoli al vapor o en agua con sal durante 4–5 minutos, hasta  que esté tierno pero aún", "verde. Escurrimos bien.", "En un bol pequeño, mezclamos la miel, la mostaza de Dijon, el zumo de limón, una pizca de sal y", "reservamos.", "Calentamos una sartén antiadherente a fuego medio-alto con el AOVE y cocinamos el salmón 2–3", "minutos por cada lado, hasta que quede dorado por fuera y jugoso por dentro.", "En el último minuto, pincelamos el salmón con la mezcla de miel y mostaza para que se glasee y", "quede brillante.", "Salteamos ligeramente el brócoli en la misma sartén (fuera del fuego fuerte) con los jugos del salmón", "para darle un toque extra de sabor.", "Servimos el salmón glaseado acompañado de la quinoa y el brócoli."], "consejo": "Ralla un poco de limón por encima al servir para darle un toque más aromático al plato.10 g de mostaza de Dijon. 10 ml de zumo de limón. 1 cdta de AOVE. Sal."}, {"tipo": "Merienda", "titulo": "Bizcocho exprés de chocolate", "ingredientes": ["1 plátano maduro.", "1 huevos.", "20 g de harina de avena.", "5 g de cacao puro en polvo desgrasado.", "5 g de chocolate negro 85 %.", "3 g de polvo para hornear."], "pasos": ["En un bol trituramos todos los ingredientes (excepto el chocolate", "negro) hasta obtener una mezcla homogénea.", "Incorporamos la mezcla en un bol apto para microondas.", "Repartimos el chocolate negro troceado por encima de la mezcla.", "Llevamos al microondas a 750W durante 2 minutos y medio.", "Sacamos, dejamos reposar 1 minuto y servimos."], "consejo": "Si te gusta más jugoso tipo brownie, saca el bizcocho cuando aún esté ligeramente húmedo por el centro. Si lo prefieres más hecho, añade 20–30 segundos extra."}, {"tipo": "Cena", "titulo": "Nachos saludables", "ingredientes": ["1 tortilla de trigo integral.", "80 g de carne de ternera picada.", "30 g de queso rallado .", "30 g de guacamole."], "pasos": ["Cort amos la tortilla integral en triángulos tipo doritos y la mezclamos con unas gotas de", "AOVE y una pizca de sal.", "Cocinamos los triángulos en freidora de aire a 190ºC durante 6–8 minutos o en horno a", "200 ºC durante 10–12 minutos, hasta que estén dorados y crujientes. Reservamos.", "Mientras tanto, en una sartén, cocinamos la carne de ternera magra con sal hasta que esté", "bien hecha y suelta, ponemos el queso rallado por encima y tapamos la sartén para que el", "queso se funda sobre la carne.", "En un bol preparamos el pico de gallo: picamos el tomate y la cebolla morada en dados", "pequeños, añadimos el zumo de limón y una pizca de sal y mezclamos.", "Colocamos los nachos en un plato y repartimos la ternera con el queso fundido encima.", "Terminamos añadiendo el guacamole y el pico de gallo por encima."], "consejo": "Añade el guacamole y el pico de gallo siempre al final y en frío. Puedes añadir jalapeños si te gusta el picante.1 tomate. 1/4 de cebolla morada. Un chorrito de zumo de limón. 1 cdta de AOVE."}], "sabado": [{"tipo": "Desayuno", "titulo": "Tortitas de cacao y frutos del bosque", "ingredientes": ["40 g de harina de avena.", "80 g de plátano.", "8 g de cacao puro en polvo desgrasado.", "1 huevo.", "3 g de polvo para hornear.", "10 g de crema de avellana y cacao sin azúcar.", "40 g de frutos del bosque."], "pasos": ["Trituramos todos los ingredientes hasta obtener una mezcla homogénea.", "Calentamos una sartén antiadherente a fuego medio-bajo.", "Cuando esté caliente, vamos echando la mezcla.", "Le damos la vuelta con cuidado cuando comience a burbujear y cocinamos durante 30", "segundos más.", "Servimos con la crema de avellana y cacao y los frutos del bosque."], "consejo": "Puedes sustituir el plátano por manzana o pera sin piel."}, {"tipo": "Comida", "titulo": "Flautas cremosas de pollo con salsa deluxe", "ingredientes": ["2 tortillas de trigo integral.", "80 g de pechuga de pollo cocida", "1/2 tomate.", "20 g de mozzarella rallada.", "30 g de queso crema light.", "1 cdas de perejil fresco picado."], "pasos": ["Precalentamos el horno a 210°C en modo  grill.", "En un bol mezclamos el pollo cocido deshilachado, el tomate en dados, el  queso crema", "light, la mozzarella rallada, el perejil picado, el ajo en polvo, la pimienta negra y la sal.", "Distribuimos la mezcla en un extremo de cada tortilla, enrollamos firmemente como un", "burrito y cerramos con un palillo para que no se abran.", "Colocamos las flautas separadas entre sí en una bandeja de horno con papel de horno.", "Pincelamos la superficie con la yema batida.", "Horneamos a 200ºC durante 6 minutos, hasta que estén doradas.", "Mezclamos todos los ingredientes de la salsa en un bol y servimos junto a las flautas."], "consejo": "Podéis hacerlas en airfryer a 200 °C durante 4 minutos.1 cda de ajo en polvo. 0,5 yema. Pimienta negra molida. Sal. 30 g de yogur natural. 1 cda de cebollino fresco."}, {"tipo": "Merienda", "titulo": "Chocolate caliente a la taza alto en proteína", "ingredientes": ["250 ml de leche o bebida vegetal.", "10 g de cacao puro en polvo desgrasado.", "25 g de proteína en polvo sabor chocolate.", "5 g de maicena.", "1 pieza de fruta (150g)."], "pasos": ["En un vaso, disolvemos la maicena con 50 ml de la leche fría hasta que", "no queden grumos.", "En un cazo, calentamos el resto de la leche a fuego medio junto con el", "cacao en polvo, removiendo bien.", "Cuando esté caliente (sin hervir), añadimos la mezcla de leche y", "maicena y removemos constantemente hasta que espese ligeramente.", "Retiramos del fuego, dejamos templar unos segundos e incorporamos", "la proteína en polvo poco a poco, removiendo sin parar.", "Servimos caliente."], "consejo": "Con 5 g de maicena queda tipo chocolate espeso para mojar. Si lo quieres aún más denso, puedes subir a 7–8 g, pero siempre disuelta en frío para que quede fino y sin grumos."}, {"tipo": "Cena", "titulo": "Huevos a la napolitana", "ingredientes": ["1 tomates.", "40 g de tomate natural triturado.", "30 g de champiñones.", "20 g de espinacas frescas.", "1 huevos.", "15 g de rulo  de cabra.", "25 g de mozzarella rallada.", "30 g de pan 100% integral."], "pasos": ["En un a sartén a fuego medio incorporamos el tomate lavado y cortado en dados", "pequeños.", "Cocinamos hasta que se ablande y agregamos el tomate natural triturado, las espinacas,", "las setas, la sal, mezclamos y cocinamos durante 5 minutos.", "Incoporamos los huevos y tapamos la sartén para que se cocinen bien.", "Cuandonlos huevos estén listos, incorporamos el rulo de cabra troceado, la mozzarella y", "tapamos la sartén hasta que se fundan por completo.", "Terminamos con pimienta negra molida y servimos."], "consejo": "Puedes utilizar tus verduras favoritas"}], "domingo": [{"tipo": "Desayuno", "titulo": "Bruschetta integral de queso cottage y tomates", "ingredientes": ["cherry", "Ingredientes:", "1 rebanada de pan 100% integral.", "100 g de queso cottage.", "100 g de tomates cherry.", "1 diente de ajo.", "1 cdta de AOVE."], "pasos": ["Corta mos los tomates cherry por la mitad, los colocamos en un bol, añadimos unas gotas", "de AOVE y una pizca de sal y los cocinamos en la freidora de aire a 200°C durante 5", "minutos, hasta que estén ligeramente asados.", "Mientras tanto, picamos muy fino el ajo y lo mezclamos con el AOVE. Abrimos el pan", "integral y lo pincelamos ligeramente con esta mezcla.", "Llevamos el pan a la freidora de aire a 195°C durante 2 minutos, para que se caliente y", "quede crujiente.", "Sacamos el pan, repartimos el queso cottage por encima y colocamos los tomates cherry", "asados.", "Terminamos con unas escamas de sal y servimos al momento."], "consejo": "Puedes preparar esta tosta y los tomares en freidora de aire, horno, microondas o sartén. O incluso disfrutarlo tal cual si quieres que sea más rápido."}, {"tipo": "Comida", "titulo": "Curry suave de merluza con arroz y verduras", "ingredientes": ["150 g de merluza en tacos.", "45 g de arroz basmati en crudo.", "1/2 cebolla.", "1 zanahoria.", "120 ml de leche de coco ligera.", "1 cdta de curry.", "1 cda de AOVE."], "pasos": ["Cocemos el arroz en agua con sal durante 10-12 minutos o según indicaciones", "del envase y reservamos.", "En una sartén c on un chorrito de AOVE, salteamos la cebolla picada y la", "zanahoria en tiras finas hasta que estén tiernas.", "Añadimos la merluza salpimentada y marcamos ligeramente por ambos lados.", "Agregamos la leche de coco y el curry y cocinamos a fuego medio durante 5-7", "minutos hasta que la salsa espese y la merluza esté hecha.", "Servimos con el arroz."], "consejo": "Acompaña con un toque de lima para potenciar el sabor y dar un toque fresco."}, {"tipo": "Merienda", "titulo": "Yogur natural + pieza de fruta + frutos secos", "ingredientes": ["120 g de yogur natural alto en proteína tipo Skyr", "15 g de frutos secos.", "1 pieza de fruta (150g)."], "pasos": ["Mezclamos el yogur con la fruta y los frutos secos."], "consejo": null}, {"tipo": "Cena", "titulo": "Guisantes salteados con huevo y jamón", "ingredientes": ["120 g de guisantes de bote", "escurridos.", "40 g de jamón serrano.", "1 huevos.", "1/4 de cebolla dulce.", "1 cdta de AOVE.", "100 g de ensalada"], "pasos": ["Picamos la cebolla  muy fina y laminamos el diente de ajo.", "En una sartén con 1 cdta de AOVE, salteamos el ajo durante 30 segundos, añadimos la", "cebolla y cocinamos a fuego medio 4–5 minutos hasta que esté blandita.", "Agregamos los guisantes escurridos, salpimentamos y los salteamos 3–4 minutos para que", "cojan sabor.", "Mientras, en otra sartén antiadherente cocinamos el huevo a la plancha con la tapa", "puesta.", "Servimos los guisantes como base, ponemos el huevo encima y terminamos con las", "lonchas de jamón por encima para que se templen ligeramente con el calor del plato."], "consejo": "Añade un chorrito de limón al salteado de guisantes para potenciar el sabor sin añadir calorías y equilibrar perfectamente el jamón y el huevo."}]}
-  };
 
-  const dayOrder = [
+  days: [
     { key: "lunes", label: "L" },
     { key: "martes", label: "M" },
     { key: "miercoles", label: "X" },
@@ -1515,301 +292,216 @@
     { key: "viernes", label: "V" },
     { key: "sabado", label: "S" },
     { key: "domingo", label: "D" }
-  ];
+  ],
 
-  let currentWeek = loadWeek(2);
-  let currentDayKey = null;
-
-  function getTodayKey() {
-    const jsDay = new Date().getDay(); // 0=domingo, 1=lunes, ...
-    switch (jsDay) {
-      case 1: return "lunes";
-      case 2: return "martes";
-      case 3: return "miercoles";
-      case 4: return "jueves";
-      case 5: return "viernes";
-      case 6: return "sabado";
-      case 0:
-      default: return "domingo";
+  init() {
+    const savedWeek = localStorage.getItem('ultimaSemana');
+    if (savedWeek && MENUS[savedWeek]) {
+      this.state.week = parseInt(savedWeek);
     }
-  }
+    const todayIndex = new Date().getDay();
+    const map = [6, 0, 1, 2, 3, 4, 5]; 
+    this.state.day = this.days[map[todayIndex]].key;
 
-  function setActiveButtons(containerId, activeText) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-    Array.from(container.querySelectorAll(".day-button")).forEach(btn => {
-      btn.classList.toggle("active", btn.textContent === activeText);
+    this.renderControls();
+    this.render();
+  },
+
+  persist() {
+    localStorage.setItem('ultimaSemana', this.state.week);
+    localStorage.setItem('favoritos', JSON.stringify(this.state.favs));
+  },
+
+  setView(viewName) {
+    this.state.view = viewName;
+    document.querySelectorAll('.controls-grid .btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(`view-${viewName}`).classList.add('active');
+
+    document.getElementById('container-daily').classList.add('hidden');
+    document.getElementById('container-search').classList.add('hidden');
+    document.getElementById('container-favs').classList.add('hidden');
+    document.getElementById(`container-${viewName}`).classList.remove('hidden');
+
+    this.render();
+  },
+
+  setWeek(w) {
+    this.state.week = w;
+    this.persist();
+    this.renderControls();
+    this.render();
+  },
+
+  setDay(d) {
+    this.state.day = d;
+    this.render();
+  },
+
+  setFilter(type) {
+    this.state.filterType = type;
+    const container = document.getElementById('type-filter');
+    Array.from(container.children).forEach(btn => {
+      btn.classList.toggle('active', btn.textContent === type);
     });
-  }
+    this.render();
+  },
 
-  function renderWeekSelector() {
-    const ws = document.getElementById("week-selector");
-    if (!ws) return;
-    ws.innerHTML = "";
-    [1,2,3,4].forEach(w => {
-      const btn = document.createElement("button");
-      btn.textContent = "S" + w;
-      btn.className = "day-button" + (w === currentWeek ? " active" : "");
-      btn.addEventListener("click", () => {
-        currentWeek = w;
-        saveWeek(w);
-        renderWeekSelector();
-        renderDay(currentDayKey || getTodayKey());
+  handleSearch(val) {
+    this.state.searchQuery = val.toLowerCase();
+    this.render();
+  },
+
+  renderControls() {
+    document.getElementById('current-week-label').textContent = `Semana ${this.state.week}`;
+    const weekContainer = document.getElementById('week-selector');
+    weekContainer.innerHTML = '';
+    Object.keys(MENUS).forEach(w => {
+      const btn = document.createElement('button');
+      btn.className = `btn ${parseInt(w) === this.state.week ? 'active' : ''}`;
+      btn.textContent = `S${w}`;
+      btn.onclick = () => app.setWeek(parseInt(w));
+      weekContainer.appendChild(btn);
+    });
+
+    const dayContainer = document.getElementById('day-selector');
+    dayContainer.innerHTML = '';
+    this.days.forEach(d => {
+      const btn = document.createElement('button');
+      btn.className = `btn ${d.key === this.state.day ? 'active' : ''}`;
+      btn.textContent = d.label; 
+      btn.onclick = () => app.setDay(d.key);
+      dayContainer.appendChild(btn);
+    });
+  },
+
+  render() {
+    const area = document.getElementById('content-area');
+    area.innerHTML = '';
+    let recipesToShow = [];
+
+    if (this.state.view === 'daily') {
+      const dayData = MENUS[this.state.week]?.[this.state.day] || [];
+      recipesToShow = dayData.map(r => ({ ...r, week: this.state.week, day: this.state.day }));
+      const dayBtns = document.querySelectorAll('#day-selector .btn');
+      dayBtns.forEach((b, i) => {
+        b.classList.toggle('active', this.days[i].key === this.state.day);
       });
-      ws.appendChild(btn);
-    });
-  }
-
-  function renderDaySelector(activeDayKey) {
-    const selector = document.getElementById("day-selector");
-    selector.innerHTML = "";
-
-    dayOrder.forEach(d => {
-      const btn = document.createElement("button");
-      btn.textContent = d.label;
-      btn.className = "day-button" + (d.key === activeDayKey ? " active" : "");
-      btn.addEventListener("click", () => renderDay(d.key));
-      selector.appendChild(btn);
-    });
-  }
-  
-  function renderDay(dayKey) {
-    currentDayKey = dayKey;
-
-    renderDaySelector(dayKey);   // 👈 CLAVE
-    document.getElementById("recipes").innerHTML = "";
-
-    let dayData = MENUS[currentWeek]?.[dayKey] || [];
-    dayData = filterByFavs(dayData, dayKey);
-
-    dayData.forEach(meal => {
-      renderMeal(meal, currentWeek, dayKey);
-    });
-  }
-
-  
-  document.addEventListener("DOMContentLoaded", () => {
-    renderWeekSelector();
-    const favToggle = document.getElementById('fav-toggle');
-    if (favToggle) {
-      favToggle.addEventListener('click', () => {
-        showOnlyFavs = !showOnlyFavs;
-        const ws = document.getElementById('week-selector');
-        const ds = document.getElementById('day-selector');
-        if (ws) ws.style.display = showOnlyFavs ? 'none' : '';
-        if (ds) ds.style.display = showOnlyFavs ? 'none' : '';
-        document.getElementById('day-selector').style.display = showOnlyFavs ? 'none' : '';
-
-        favToggle.textContent = showOnlyFavs ? '⬅ Volver al menú' : '⭐ Ver solo favoritos';
-        renderDay(currentDayKey);
-        renderFavList();
+    } else if (this.state.view === 'search') {
+      Object.entries(MENUS).forEach(([w, days]) => {
+        Object.entries(days).forEach(([d, meals]) => {
+          meals.forEach(m => {
+            const matchesType = this.state.filterType === 'Todos' || m.tipo === this.state.filterType;
+            const matchesSearch = this.state.searchQuery === '' || 
+                                  m.titulo.toLowerCase().includes(this.state.searchQuery) ||
+                                  m.ingredientes.some(i => i.toLowerCase().includes(this.state.searchQuery));
+            if (matchesType && matchesSearch) {
+              recipesToShow.push({ ...m, week: w, day: d });
+            }
+          });
+        });
       });
+    } else if (this.state.view === 'favs') {
+      this.state.favs.forEach(id => {
+        const parts = id.split('-');
+        const w = parts[0].replace('w','');
+        const d = parts[1];
+        const tipo = parts[2];
+        const titulo = parts.slice(3).join('-');
+        const meal = MENUS[w]?.[d]?.find(m => m.tipo === tipo && m.titulo === titulo);
+        if (meal) {
+          recipesToShow.push({ ...meal, week: w, day: d });
+        }
+      });
+      if (recipesToShow.length === 0) {
+        area.innerHTML = '<div class="empty-state">No hay favoritos guardados.</div>';
+        return;
+      }
     }
 
-    currentDayKey = getTodayKey();
-    renderWeekSelector();
-    renderDay(currentDayKey);
-        renderFavList();
-  });
+    recipesToShow.forEach(meal => {
+      area.appendChild(this.createCard(meal));
+    });
+  },
 
-  function renderMeal(meal, week, dayKey) {
-    const section = document.getElementById("recipes");
+  createCard(meal) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    const id = `w${meal.week}-${meal.day}-${meal.tipo}-${meal.titulo}`;
+    const isFav = this.state.favs.includes(id);
 
-    const card = document.createElement("div");
-    card.className = "card";
+    const header = document.createElement('div');
+    header.className = 'card-header';
+    header.innerHTML = `
+      <span class="meal-type">${meal.tipo} • S${meal.week}</span>
+      <span class="fav-icon ${isFav ? 'active' : ''}" onclick="app.toggleFav('${id}', this)">${isFav ? '★' : '☆'}</span>
+    `;
 
-    // Cabecera: tipo + favorito
-    const header = document.createElement("div");
-    header.className = "meal-header";
+    const h3 = document.createElement('h3');
+    h3.textContent = meal.titulo;
 
-    const type = document.createElement("div");
-    type.className = "meal-type";
-    type.textContent = meal.tipo;
+    const ingTitle = document.createElement('span');
+    ingTitle.className = 'section-label';
+    ingTitle.textContent = 'Ingredientes';
 
-    const fav = document.createElement("span");
-    fav.className = "fav-btn";
+    const ul = document.createElement('ul');
+    ul.className = 'ing-list';
+    meal.ingredientes.forEach(ing => {
+      const li = document.createElement('li');
+      li.textContent = ing;
+      // Eliminado el evento onclick
+      ul.appendChild(li);
+    });
 
-    const id = "w" + week + "-" + dayKey + "-" + meal.tipo + "-" + meal.titulo;
-    const favs = getFavs();
+    const stepTitle = document.createElement('span');
+    stepTitle.className = 'section-label';
+    stepTitle.textContent = 'Preparación';
 
-    fav.textContent = favs.includes(id) ? "★" : "☆";
-    if (favs.includes(id)) fav.classList.add("active");
+    const ol = document.createElement('ol');
+    meal.pasos.forEach(step => {
+      const li = document.createElement('li');
+      li.textContent = step;
+      ol.appendChild(li);
+    });
 
-    fav.addEventListener("click", () => toggleFav(id, fav));
-
-    header.appendChild(type);
-    header.appendChild(fav);
     card.appendChild(header);
+    card.appendChild(h3);
+    card.appendChild(ingTitle);
+    card.appendChild(ul);
+    card.appendChild(stepTitle);
+    card.appendChild(ol);
 
-    // Título
-    const title = document.createElement("div");
-    title.className = "meal-title";
-    title.textContent = meal.titulo;
-    card.appendChild(title);
-
-    // Ingredientes
-    if (meal.ingredientes && meal.ingredientes.length) {
-      const ingTitle = document.createElement("div");
-      ingTitle.className = "section-title";
-      ingTitle.textContent = "Ingredientes";
-      card.appendChild(ingTitle);
-
-      const ul = document.createElement("ul");
-      meal.ingredientes.forEach(i => {
-	const li = document.createElement("li");
-	li.textContent = i;
-	ul.appendChild(li);
-      });
-      card.appendChild(ul);
-    }
-
-    // Pasos
-    if (meal.pasos && meal.pasos.length) {
-      const stepsTitle = document.createElement("div");
-      stepsTitle.className = "section-title";
-      stepsTitle.textContent = "Preparación";
-      card.appendChild(stepsTitle);
-
-      const ol = document.createElement("ol");
-      meal.pasos.forEach(p => {
-	const li = document.createElement("li");
-	li.textContent = p;
-	ol.appendChild(li);
-      });
-      card.appendChild(ol);
-    }
-
-    // Consejo
     if (meal.consejo) {
-      const tip = document.createElement("div");
-      tip.className = "tip";
-      tip.textContent = meal.consejo;
+      const tip = document.createElement('div');
+      tip.className = 'tip';
+      tip.innerHTML = '<strong>💡 Consejo:</strong> ' + meal.consejo;
       card.appendChild(tip);
     }
 
-    section.appendChild(card);
-  }
+    return card;
+  },
 
-  function getAllMeals() {
-    const all = [];
-    Object.entries(MENUS).forEach(([week, days]) => {
-      Object.entries(days).forEach(([day, meals]) => {
-	meals.forEach(meal => {
-	  all.push({
-	    id: `w${week}-${day}-${meal.tipo}-${meal.titulo}`,
-	    week,
-	    day,
-	    meal
-	  });
-	});
-      });
-    });
-    return all;
-  }
-
-  function renderFullList(filterText = "") {
-    const container = document.getElementById("list-container");
-    const list = document.getElementById("list-all");
-
-    document.getElementById("recipes").innerHTML = "";
-    document.getElementById("week-selector").style.display = "none";
-    document.getElementById("day-selector").style.display = "none";
-    document.getElementById("fav-list-container").style.display = "none";
-
-    container.style.display = "block";
-    list.innerHTML = "";
-
-    const text = filterText.toLowerCase();
-    getAllMeals()
-      .filter(e => {
-	const matchText =
-	  e.meal.titulo.toLowerCase().includes(text);
-
-	const matchType =
-	  currentTypeFilter === "Todos" ||
-	  e.meal.tipo === currentTypeFilter;
-
-	return matchText && matchType;
-      })
-      .forEach(e => {
-	const li = document.createElement("li");
-	li.textContent = `${e.meal.titulo} (${e.meal.tipo}, semana ${e.week})`;
-	li.style.cursor = "pointer";
-	li.addEventListener("click", () => {
-	  renderSingleFav(e.id);
-	});
-	list.appendChild(li);
-      });
-  }
-
-  document.getElementById("list-search").addEventListener("input", e => {
-    renderFullList(e.target.value);
-  });
-
-  function backToMenu() {
-    showOnlyFavs = false;
-    showOnlyList = false;
-
-    // Reset botones
-    const favToggle = document.getElementById("fav-toggle");
-    if (favToggle) favToggle.textContent = "⭐ Ver solo favoritos";
-
-    const listToggle = document.getElementById("list-toggle");
-    if (listToggle) listToggle.textContent = "📋 Lista";
-
-    // Ocultar contenedores de listas
-    const favC = document.getElementById("fav-list-container");
-    if (favC) favC.style.display = "none";
-
-    const listC = document.getElementById("list-container");
-    if (listC) listC.style.display = "none";
-
-    // Mostrar selectores
-    const ws = document.getElementById("week-selector");
-    const ds = document.getElementById("day-selector");
-    if (ws) ws.style.display = "";
-    if (ds) ds.style.display = "";
-
-    // Volver a pintar el día actual
-    renderWeekSelector();
-    renderDay(currentDayKey || dayOrder[0].key);
-  }
-
-  document.getElementById("list-toggle").addEventListener("click", () => {
-    // Si ya estoy en lista => vuelvo al menú
-    if (showOnlyList) {
-      backToMenu();
-      return;
+  toggleFav(id, iconElement) {
+    const index = this.state.favs.indexOf(id);
+    if (index > -1) {
+      this.state.favs.splice(index, 1);
+      iconElement.textContent = '☆';
+      iconElement.classList.remove('active');
+    } else {
+      this.state.favs.push(id);
+      iconElement.textContent = '★';
+      iconElement.classList.add('active');
     }
+    this.persist();
+    if (this.state.view === 'favs') {
+      this.render();
+    }
+  }
+};
 
-    // Entrar en lista: apago favoritos
-    showOnlyFavs = false;
-    showOnlyList = true;
+document.addEventListener('DOMContentLoaded', () => {
+  loadMenus();
+});
 
-    // Actualizo textos
-    document.getElementById("list-toggle").textContent = "⬅ Volver al menú";
-    document.getElementById("fav-toggle").textContent = "⭐ Ver solo favoritos";
-
-    // Renderizo vista lista
-    renderFullList("");
-  });
-
-  document.getElementById("type-filters").addEventListener("click", e => {
-  if (e.target.tagName !== "BUTTON") return;
-
-  currentTypeFilter = e.target.dataset.type;
-
-  // actualizar estado visual
-  document.querySelectorAll("#type-filters button")
-    .forEach(b => b.classList.remove("active"));
-  e.target.classList.add("active");
-
-  // volver a renderizar la lista respetando búsqueda + filtro
-  const search = document.getElementById("list-search").value || "";
-  renderFullList(search);
-  });
-
-  
 </script>
 </body>
 </html>
