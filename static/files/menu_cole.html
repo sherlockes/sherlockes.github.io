@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Miraflores</title>
+    <title>Menú Comedor Mira</title>
     <style>
         :root {
-            --primary: #2c3e50;
+            --primary: #003366; /* Azul oscuro institucional */
             --accent: #3498db;
             --bg: #f4f7f6;
             --card: #ffffff;
@@ -26,12 +26,22 @@
         }
 
         header {
-            background: var(--primary);
-            color: white;
+            background: var(--primary); /* Fondo oscuro para resaltar el logo */
             width: 100%;
-            padding: 1.5rem 0;
+            padding: 1.2rem 0;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 260px;
+            width: 75%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
         }
 
         .nav-bar {
@@ -40,7 +50,7 @@
             justify-content: space-between;
             width: 92%;
             max-width: 500px;
-            margin: 1rem 0;
+            margin: 1.5rem 0 1rem 0;
             background: var(--card);
             padding: 0.6rem;
             border-radius: 12px;
@@ -51,20 +61,21 @@
             background: var(--accent);
             color: white;
             border: none;
-            padding: 12px 18px;
+            padding: 12px 20px;
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
-        button:active { transform: scale(0.95); opacity: 0.9; }
+        button:active { transform: scale(0.92); opacity: 0.9; }
 
         #week-info {
             text-align: center;
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-size: 0.95rem;
+            font-weight: 700;
             line-height: 1.2;
+            color: var(--primary);
         }
 
         .menu-list {
@@ -72,58 +83,61 @@
             max-width: 500px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-bottom: 2rem;
+            gap: 15px;
+            margin-bottom: 3rem;
         }
 
         .day-card {
             background: var(--card);
-            padding: 15px;
-            border-radius: 12px;
-            border-left: 6px solid #dcdde1;
-            transition: all 0.3s ease;
+            padding: 18px;
+            border-radius: 15px;
+            border-left: 6px solid #d1d8e0;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.03);
         }
 
         .day-card.today {
             border-left-color: #27ae60;
             background: #f0fff4;
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.1);
         }
 
         .day-header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 8px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 6px;
         }
 
-        .day-name { font-weight: 850; text-transform: uppercase; color: var(--primary); font-size: 0.8rem; }
-        .day-date { color: var(--muted); font-size: 0.8rem; }
+        .day-name { font-weight: 800; text-transform: uppercase; color: var(--primary); font-size: 0.85rem; }
+        .day-date { color: var(--muted); font-size: 0.85rem; }
 
         .menu-body {
-            font-size: 1.05rem;
-            line-height: 1.5;
-            white-space: pre-line; /* Mantiene saltos de línea del JSON */
+            font-size: 1.1rem;
+            line-height: 1.6;
+            white-space: pre-line;
+            color: #34495e;
         }
 
-        .loading { margin-top: 30px; color: var(--muted); }
-        .error { color: #e74c3c; padding: 20px; text-align: center; }
+        .loading { margin-top: 40px; color: var(--muted); font-weight: 500; }
+        .error { color: #e74c3c; padding: 30px; text-align: center; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1 style="margin:0; font-size: 1.3rem;">🍴 Menú Escolar</h1>
+        <img src="https://ceipmiraflores.org/wp-content/uploads/2021/06/LOGO-MIRAFLORES-2blk.png" alt="Logo Miraflores" class="logo">
     </header>
 
     <div class="nav-bar">
         <button onclick="changeWeek(-7)">❮</button>
-        <div id="week-info">Cargando...</div>
+        <div id="week-info">Cargando menú...</div>
         <button onclick="changeWeek(7)">❯</button>
     </div>
 
     <div id="app" class="menu-list">
-        <div class="loading">Obteniendo datos del servidor...</div>
+        <div class="loading">Sincronizando con el comedor...</div>
     </div>
 
     <script>
@@ -143,46 +157,39 @@
             const url = 'https://raw.githubusercontent.com/sherlockes/sherlockes.github.io/refs/heads/main/static/files/menu_mira.json';
             try {
                 const response = await fetch(url);
-                if (!response.ok) throw new Error('No se pudo acceder al archivo');
+                if (!response.ok) throw new Error('Error de red');
                 menuData = await response.json();
                 render();
             } catch (err) {
-                document.getElementById('app').innerHTML = `<div class="error">⚠️ Error al cargar: ${err.message}<br>Comprueba tu conexión.</div>`;
+                document.getElementById('app').innerHTML = `<div class="error">⚠️ No se pudieron cargar los menús.<br>Inténtalo de nuevo más tarde.</div>`;
             }
         }
 
-        // Función clave: busca la fecha en múltiples formatos posibles dentro del JSON
         function getMenuForDate(date) {
             if (!menuData) return "---";
-
+            const pad = (n) => n.toString().padStart(2, '0');
             const d = date.getDate();
             const m = date.getMonth() + 1;
             const y = date.getFullYear();
 
-            // Formatos posibles: 2025-02-13, 13/02/2025, 13-02-2025, 13/2/2025...
-            const pad = (n) => n.toString().padStart(2, '0');
             const candidates = [
                 `${y}-${pad(m)}-${pad(d)}`,
                 `${pad(d)}/${pad(m)}/${y}`,
                 `${pad(d)}-${pad(m)}-${y}`,
-                `${d}/${m}/${y}`,
-                `${y}/${pad(m)}/${pad(d)}`
+                `${d}/${m}/${y}`
             ];
 
-            // Si el JSON es un Array, buscamos el objeto que contenga la fecha
             if (Array.isArray(menuData)) {
                 const found = menuData.find(item => {
-                    const itemDate = (item.fecha || item.date || item.dia || "").toString();
-                    return candidates.includes(itemDate);
+                    const val = item.fecha || item.date || item.dia;
+                    return candidates.includes(val);
                 });
                 return found ? (found.menu || found.comida || found.texto) : "---";
             }
 
-            // Si el JSON es un Objeto, buscamos la key
             for (let c of candidates) {
                 if (menuData[c]) return menuData[c];
             }
-
             return "---";
         }
 
@@ -195,7 +202,7 @@
             endOfWeek.setDate(currentMonday.getDate() + 4);
 
             const options = { day: 'numeric', month: 'short' };
-            info.innerHTML = `Semana del<br>${currentMonday.toLocaleDateString('es-ES', options)} al ${endOfWeek.toLocaleDateString('es-ES', options)}`;
+            info.innerHTML = `SEMANA DEL<br>${currentMonday.toLocaleDateString('es-ES', options)} AL ${endOfWeek.toLocaleDateString('es-ES', options)}`.toUpperCase();
 
             const todayStr = new Date().toDateString();
 
