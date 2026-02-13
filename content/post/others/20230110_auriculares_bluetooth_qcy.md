@@ -161,7 +161,9 @@ Los auriculares [QCY T4](https://www.qcyearbuds.com/qcy-t4/) ofrecen sonido clar
 - Los graves están muy poco reforzados
 
 ***El paso del tiempo***
-- Pendiente de determinar
+- Físicamente los auriculares han resistido muy bien el uso pero no se puede decir lo mismo de la batería que poco a poco los ha convertido en inusables para el día a día.
+
+- La conexión del puerto de carga es otro problema que ha aparecido. Suciedad, oxidación, falta de presión y desgaste son los factores que hacen que con el paso del tiempo aparezcan los problemas de carga de los auriculares por no estar conectados a la caja.
 
 [Manual de instrucciones](https://t.me/sherblog_archivo/26)
 
