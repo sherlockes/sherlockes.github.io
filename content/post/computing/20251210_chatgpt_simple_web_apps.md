@@ -17,10 +17,73 @@ weight: 5
 ---
 Hacer pequeñas aplicaciones cada día que pasa es más sencillo sin tener mucha idea de programar. Aquí dejo unas cuantas que he creado para satisfacer necesidades puntuales. Hasta la descripción de la aplicación va a ser cortesía de la inteligencia artificial.
 <!--more-->
-{{< borrador >}}
-### Menú para el colegio
 
-{{< / borrador >}}
+### Visor del menú del comedor escolar
+
+En casa hay una pregunta que se repite cada semana:  
+**¿qué toca hoy en el comedor?**
+
+Para evitar tener que abrir PDFs, buscar correos o navegar por varias páginas, decidí crear una pequeña herramienta web que mostrase el menú semanal de forma directa y rápida.
+
+---
+
+#### Qué hace exactamente
+
+La aplicación es un visor muy simple que muestra el menú del comedor correspondiente a la **semana actual**, con la posibilidad de cambiar de semana para consultar días pasados o futuros.
+
+Nada más abrirla aparece la información clara, sin distracciones ni pasos intermedios.  
+Justo lo que buscaba: algo que se pudiera revisar en segundos desde el móvil.
+
+---
+
+#### Por qué nació esta idea
+
+No pretendía hacer una gran aplicación, sino resolver un problema cotidiano:
+
+- Consultar el menú rápidamente  
+- Evitar documentos pesados o poco adaptados al móvil  
+- Tener una vista limpia y siempre accesible  
+
+En definitiva, una solución pequeña para una necesidad muy concreta del día a día.
+
+---
+
+#### Cómo está hecha
+
+La herramienta está construida con tecnologías web muy básicas:
+
+- **HTML** para la estructura  
+- **JavaScript** para la lógica de navegación entre semanas  
+- **JSON** como fuente de datos del menú  
+
+Sin frameworks, sin dependencias y con la mínima complejidad posible.  
+A veces lo más útil es también lo más sencillo.
+
+---
+
+#### Usos prácticos
+
+Aunque el objetivo principal es consultar el menú escolar, en casa ya le estamos dando varios usos:
+
+- Planificar cenas según lo que han comido al mediodía  
+- Revisar con antelación si hay platos que gusten más… o menos  
+- Enseñar a los peques a mirar qué comerán cada día  
+
+Pequeños detalles que ayudan a organizar mejor la rutina semanal.
+
+---
+
+#### Pruébala tú mismo
+
+Si utilizas comedor escolar y quieres consultar el menú de forma rápida, puedes acceder aquí:
+
+**https://sherblog.es/files/menu_cole.html**
+
+No hay instalación ni configuración:  
+abrir, mirar y listo.
+
+A veces una herramienta mínima es todo lo que necesitamos.
+
 
 ### Menú diario
 Esta pequeña webapp de menú semanal es un buen ejemplo: todo vive en un único archivo HTML, listo para abrir en cualquier navegador y empezar a usar sin instalación ni configuración previa. Una solución directa, portátil y sorprendentemente completa.
