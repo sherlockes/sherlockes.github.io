@@ -1,6 +1,6 @@
 ---
 title: "Simple web apps by Chatgpt"
-date: "2026-02-13"
+date: "2026-03-09"
 creation: "2025-12-10"
 description: "Aquí dejo unas simples aplicaciones web que he creado con la ayuda de Chatgpt"
 thumbnail: "images/20251210_chatgpt_simple_web_apps_00.jpg"
@@ -17,6 +17,28 @@ weight: 5
 ---
 Hacer pequeñas aplicaciones cada día que pasa es más sencillo sin tener mucha idea de programar. Aquí dejo unas cuantas que he creado para satisfacer necesidades puntuales. Hasta la descripción de la aplicación va a ser cortesía de la inteligencia artificial.
 <!--more-->
+### Validador de Cuestionarios
+Seguro que te ha pasado alguna vez: estás trabajando en una aplicación que consume datos de un archivo JSON y, por una coma mal puesta o una llave que falta, todo el sistema deja de funcionar. Recientemente, me he visto en esta situación mientras preparaba una serie de tests y cuestionarios, así que decidí crear una herramienta sencilla pero eficaz: el Validador de Cuestionarios.
+
+![image-04]
+
+#### ¿Qué hace exactamente este validador?
+La aplicación tiene un objetivo muy específico: asegurar que cualquier archivo .json que vayamos a importar en nuestro sistema de cuestionarios cumpla con la estructura técnica necesaria. No se limita a decirte si el JSON es válido a nivel de sintaxis, sino que entra en la lógica del contenido:
+
+Estructura de Array: Comprueba que el archivo sea una lista de objetos.
+
+Campos obligatorios: Verifica que cada pregunta incluya los campos pregunta, opciones, respuestaCorrecta y explicacion.
+
+Consistencia de datos: Valida que el índice de la respuestaCorrecta corresponda realmente con una de las opciones disponibles.
+
+Feedback inmediato: Si algo falla, te indica exactamente en qué pregunta está el error y por qué.
+
+#### ¿Por qué crear una herramienta así?
+La motivación principal fue el ahorro de tiempo. Cuando manejas archivos con decenas de preguntas, revisar manualmente que cada índice de respuesta sea correcto es una tarea tediosa y propensa a errores humanos.
+
+He buscado una interfaz limpia y funcional, donde basta con arrastrar el archivo a la zona de soltado para obtener un diagnóstico en milisegundos. Está construida íntegramente con tecnologías web estándar (HTML5, CSS3 y JavaScript), lo que la hace ligera y extremadamente rápida al ejecutarse directamente en el navegador.
+
+Aquí tienes la aplicación [Validador de Cuestionarios].
 
 ### Visor del menú del comedor escolar
 
@@ -158,9 +180,11 @@ Aquí tienes la aplicación [Informe de desviaciones]
 [Informe de desviaciones]: /files/desviaciones.html
 [Generador de turnos]: /files/turnos.html
 [Menú semanal]: /files/menu.html
+[Validador de Cuestionarios]: /files/validador.html
 
 [image-01]: /images/20251210_chatgpt_simple_web_apps_01.jpg
 [image-02]: /images/20251210_chatgpt_simple_web_apps_02.jpg
 [image-03]: /images/20251210_chatgpt_simple_web_apps_03.jpg
+[image-04]: /images/20251210_chatgpt_simple_web_apps_04.jpg
 
 
