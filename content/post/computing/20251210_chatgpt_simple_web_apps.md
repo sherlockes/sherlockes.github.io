@@ -1,6 +1,6 @@
 ---
 title: "Simple web apps by Chatgpt"
-date: "2026-03-09"
+date: "2026-03-19"
 creation: "2025-12-10"
 description: "Aquí dejo unas simples aplicaciones web que he creado con la ayuda de Chatgpt"
 thumbnail: "images/20251210_chatgpt_simple_web_apps_00.jpg"
@@ -17,6 +17,41 @@ weight: 5
 ---
 Hacer pequeñas aplicaciones cada día que pasa es más sencillo sin tener mucha idea de programar. Aquí dejo unas cuantas que he creado para satisfacer necesidades puntuales. Hasta la descripción de la aplicación va a ser cortesía de la inteligencia artificial.
 <!--more-->
+### MiraQuizs: Gamificando el aprendizaje con cuestionarios interactivos
+El proceso de estudio puede ser, en ocasiones, una tarea monótona para los más pequeños. Buscando una alternativa más dinámica y visual para repasar contenidos escolares, he desarrollado MiraQuizs, una sencilla pero eficaz aplicación web de cuestionarios diseñada para convertir el aprendizaje en un reto interactivo.
+
+Podéis echarle un vistazo en: https://miraquizs.vercel.app/
+
+¿Cómo funciona?
+La aplicación se basa en una estructura ligera y rápida, utilizando tecnologías web estándar como HTML, JavaScript y JSON. Al acceder, el usuario se encuentra con un selector de temas que abarca diferentes áreas de conocimiento, desde Lengua hasta Ciencias Naturales o Sociales.
+
+Una vez seleccionado el cuestionario, la app presenta las preguntas de forma aleatoria. Entre sus características principales destacan:
+
+Barra de progreso: Permite visualizar cuánto falta para terminar el test.
+
+Puntuación en vivo: Calcula la nota media de aciertos en tiempo real.
+
+Feedback inmediato: Si se falla una pregunta, la aplicación muestra la respuesta correcta junto a una breve explicación para reforzar el concepto.
+
+Sistema de Ranking: Al finalizar, los usuarios pueden registrar su nombre y puntuación para entrar en un Top 10 global, fomentando una competición sana.
+
+Tecnología sencilla y portable
+Uno de los puntos clave del proyecto es su sencillez técnica. Al utilizar archivos JSON para almacenar las preguntas, es extremadamente fácil añadir nuevos temas o actualizar los existentes sin modificar la lógica del código. Además, la integración con Google Apps Script permite gestionar el ranking de forma externa y gratuita, manteniendo la aplicación totalmente estática y eficiente.
+
+Usos prácticos
+Aunque nació con el foco puesto en el ámbito escolar (especialmente para alumnos de 5º de Primaria), su versatilidad permite usarla en otros escenarios:
+
+Repaso escolar: Ideal para fijar conceptos de temas específicos antes de un examen.
+
+Competiciones en casa: Una forma divertida de jugar en familia mientras se aprende.
+
+Personalización: Al ser un desarrollo propio, permite adaptar el nivel de dificultad a las necesidades reales del niño.
+
+Conclusión
+MiraQuizs no pretende sustituir a los libros, sino ser un complemento que aporte un toque de gamificación al estudio diario. Es una prueba más de cómo con un poco de código y una estructura clara se pueden crear herramientas útiles para el día a día.
+
+Os invito a entrar, elegir un tema y poner a prueba vuestros conocimientos. ¿Seréis capaces de entrar en el podio del ranking?
+
 ### Validador de Cuestionarios
 Seguro que te ha pasado alguna vez: estás trabajando en una aplicación que consume datos de un archivo JSON y, por una coma mal puesta o una llave que falta, todo el sistema deja de funcionar. Recientemente, me he visto en esta situación mientras preparaba una serie de tests y cuestionarios, así que decidí crear una herramienta sencilla pero eficaz: el Validador de Cuestionarios.
 
