@@ -30,8 +30,6 @@ Esta es sólo una prueba de concepto de como he utilizado una serie de servicios
 
 El resultado de la fusión de todos estos servicios lo puedes ver en: https://miraquizs.vercel.app
 
-![image-01]
-
 ### Enlaces de interés
 - [enlace](www.sherblog.es)
 
