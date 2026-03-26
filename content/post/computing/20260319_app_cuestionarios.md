@@ -3,7 +3,7 @@ title: "App de cuestionarios"
 date: "2026-03-26"
 creation: "2026-03-19"
 description: "Como he utilizado un popurri de servicios gratuitos para la creacion de esta app de cuestionarios"
-	thumbnail: "images/20260319_app_cuestionarios_00.jpg"
+thumbnail: "images/20260319_app_cuestionarios_00.jpg"
 disable_comments: true
 authorbox: false
 toc: false
