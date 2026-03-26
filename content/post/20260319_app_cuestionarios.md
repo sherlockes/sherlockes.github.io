@@ -1,9 +1,9 @@
 ---
 title: "App de cuestionarios"
-date: "2026-03-20"
+date: "2026-03-26"
 creation: "2026-03-19"
 description: "Como he utilizado un popurri de servicios gratuitos para la creacion de esta app de cuestionarios"
-thumbnail: "images/20260319_app_cuestionarios_00.jpg"
+	thumbnail: "images/20260319_app_cuestionarios_00.jpg"
 disable_comments: true
 authorbox: false
 toc: false
@@ -26,7 +26,7 @@ Esta es una prueba de concepto de como he utilizado una serie de servicios gratu
 - [gemini]: Este LLM me ha ayudado con la parte de la programación de la app web, todo el código html, css y js ha sido creado haciendo uso del Vibe Coding.
 - [google sheets]: En este archivo de hoja de cálculo vamos a guardar una tabla con los datos para realizar la clasificación de las mejores nota.
 - [google scripts]: El enlace del html estático con la hoja de calculo lo haremos con dos pequeñas funciones que van a cumplir las labores de API
-- [verce]: Desplegar una app web a partir de un repositorio es una labor de niños gracias a este servicio
+- [vercel]: Desplegar una app web a partir de un repositorio es una labor de niños gracias a este servicio
 
 El resultado de la fusión de todos estos servicios lo puedes ver en: https://miraquizs.vercel.app
 
