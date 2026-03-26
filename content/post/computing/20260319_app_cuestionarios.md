@@ -15,7 +15,7 @@ tags:
 - "google sheets"
 - "google scripts"
 - "vercel"
-draft: true
+draft: false
 weight: 5
 ---
 Esta es una prueba de concepto de como he utilizado una serie de servicios gratuitos para la creación de una app de cuestionarios. No pretendo explicar el funcionamiento, sólo en que me ha ayudado cada uno.
