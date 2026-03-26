@@ -18,7 +18,7 @@ tags:
 draft: false
 weight: 5
 ---
-Esta es una prueba de concepto de como he utilizado una serie de servicios gratuitos para la creación de una app de cuestionarios. No pretendo explicar el funcionamiento, sólo en que me ha ayudado cada uno.
+Esta es sólo una prueba de concepto de como he utilizado una serie de servicios gratuitos para la creación de una app de cuestionarios. No pretendo explicar el funcionamiento, sólo en que me ha ayudado cada uno.
 <!--more-->
 - [google drive]: Todo empieza aquí, escanear un libro con la cámara del teléfono y guardarla en la nube es coser y cantar. Lo mas laborioso de escanear las 20 páginas de un tema es que le tienes que poner a mano el nombre del archivo.
 - [notebooklm]: Esto es simplemente magia, le subes el archivo que hemos escaneado anteriormente y sólo hace falta un simple prompt para que te devuelva un cuestionario tipo test en formato json para alimentar nuestra aplicación.
