@@ -130,6 +130,9 @@ Adiós al Warning de Yasnippet: Al eliminar la función (insert ...) de las expr
 - Consistencia de Imágenes: La función (file-name-base) vincula el nombre de la imagen al nombre del archivo .md, manteniendo tu carpeta de medios perfectamente organizada.
 
 
+pepe
+
+
 ![image-01]
 
 ### Enlaces de interés
