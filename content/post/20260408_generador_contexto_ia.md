@@ -1,21 +1,22 @@
 ---
-title: "${1:Título}"
-date: "YY"
-creation: "YY"
-description: "${2:Descripción}"
-thumbnail: "images/YY_00.jpg"
+title: "Título"
+date: "2026-04-08"
+creation: "2026-04-08"
+description: "Descripción"
+thumbnail: "images/20260408_generador_contexto_ia_00.jpg"
 disable_comments: true
 authorbox: false
 toc: false
 mathjax: false
 categories:
-  - "YY"
+- "Computing"
 tags: 
+- "Bash"
 draft: true
 weight: 5
 ---
-${3:Resumen de introducción}
-$0
+Resumen de introducción
+
 
 ![image-01]
 
@@ -24,6 +25,6 @@ $0
 
 [link]: https://www.google.es
 
-[image-01]: /images/`(file-name-base)`_01.jpg
+[image-01]: /images/20260408_generador_contexto_ia_01.jpg
 
 
