@@ -1,6 +1,6 @@
 ---
 title: "Sherlocaster"
-date: "2026-02-12"
+date: "2026-04-08"
 creation: "2026-01-21"
 description: "Un podcst a partir de audios desdargados de Youtube y Twitch"
 thumbnail: "images/20260121_sherlocaster_00.jpg"
@@ -15,7 +15,7 @@ tags:
 draft: true
 weight: 5
 ---
-Resumen de introducción
+Resumen de introducción es...
 <!--more-->
 # 🛠️ Cómo funciona Sherlocaster por dentro: anatomía de una utilidad que convierte canales de vídeo en podcasts
 
