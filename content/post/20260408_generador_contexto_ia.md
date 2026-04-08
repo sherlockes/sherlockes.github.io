@@ -1,5 +1,5 @@
 ---
-title: "Título"
+title: "Generador de contexto para IA"
 date: "2026-04-08"
 creation: "2026-04-08"
 description: "Descripción"
@@ -16,7 +16,7 @@ draft: true
 weight: 5
 ---
 Resumen de introducción
-
+	
 
 ![image-01]
 
