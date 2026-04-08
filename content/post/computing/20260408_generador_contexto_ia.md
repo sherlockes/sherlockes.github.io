@@ -13,7 +13,7 @@ categories:
 tags: 
 - "bash"
 - "linux"
-draft: true
+draft: false
 weight: 5
 ---
 El "vibe coding" se trata de mantener el flujo creativo y dejar que la IA se encargue de la carpintería pesada. Podemos definir este `context-engine.sh` como un "acelerador de partículas" para este flujo.
