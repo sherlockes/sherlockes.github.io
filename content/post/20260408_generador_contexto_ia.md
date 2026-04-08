@@ -9,8 +9,10 @@ authorbox: false
 toc: false
 mathjax: false
 categories:
-- "android"
+- "computing"
 tags: 
+- "bash"
+- "linux"
 draft: true
 weight: 5
 ---
