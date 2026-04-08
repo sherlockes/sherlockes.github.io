@@ -1,3 +1,7 @@
+# -*- mode: snippet -*-
+# name: post
+# key: post
+# --
 ---
 title: "Título"
 date: "2026-04-08"
@@ -16,13 +20,12 @@ draft: true
 weight: 5
 ---
 Resumen de introducción
-<!--more-->
 
 
 ![image-01]
 
 ### Enlaces de interés
-- [enlace](www.sherblog.pro)
+- [enlace](www.sherblog.es)
 
 [link]: https://www.google.es
 
