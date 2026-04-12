@@ -9,8 +9,9 @@ authorbox: false
 toc: false
 mathjax: false
 categories:
+- "computing"
+tags:
 - "emacs"
-tags: 
 - "yasnippet"
 - "elisp"
 - "autoinsert"
