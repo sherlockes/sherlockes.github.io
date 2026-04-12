@@ -1,6 +1,6 @@
 ---
 title: "Creación de un post de Hugo desde emacs"
-date: "2026-04-09"
+date: "2026-04-12"
 creation: "2026-04-08"
 description: "Automatizando al máximo los post de Hugo desde emacs gracias a esta configuración"
 thumbnail: "images/20260409_emacs_hugo_post_00.jpg"
@@ -31,7 +31,7 @@ El sistema funciona como una reacción en cadena:
 
 ### 1. Configuración en `init.el`
 
-Primero, preparamos a Emacs para que reconozca cuándo debe actuar y definimos el "cerebro" que extraerá la información de tus posts. En el archivo `init.el` tengo definido lo siguiente.
+Primero, preparamos a Emacs para que reconozca cuándo debe actuar y definimos el "cerebro" que extraerá la información de tus posts. Luego recorreremos los post antiguos para extraer etiquetas y categorías. En el archivo `init.el` tengo definido lo siguiente.
 
 ``` elisp
 ;; =============================================================================
@@ -116,19 +116,8 @@ $0
 [image-01]: /images/`(file-name-base)`_01.jpg
 ```
 
-> Gracias al comando tr '[:upper:]' '[:lower:]', todas lass etiquetas se sugieren en minúsculas. Se acabó tener etiquetas duplicadas como "Linux" y "linux".
+> Gracias al comando tr '[:upper:]' '[:lower:]', todas las etiquetas se sugieren en minúsculas. Se acabó tener etiquetas duplicadas como "Linux" y "linux".
 
-
-pepe
-
-
-![image-01]
-
-### Enlaces de interés
-- [enlace](www.sherblog.es)
-
-[link]: https://www.google.es
-
-[image-01]: /images/20260409_emacs_hugo_post_01.jpg
+Esta es sólo una razón más por la que llevo usando Emacs para la creación de artículos para el blog desde el año 2018.
 
 
