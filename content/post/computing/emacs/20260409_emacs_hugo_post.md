@@ -14,7 +14,7 @@ tags:
 - "yasnippet"
 - "elisp"
 - "autoinsert"
-draft: true
+draft: false
 weight: 5
 ---
 Para centrarte en escribir, el proceso de publicación no tiene que suponer una barrera. Así he configurado emacs para optimizar la creación de post para el blog con la mínima fricción posible.
