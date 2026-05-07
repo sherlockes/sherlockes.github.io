@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Imagemagick on Sherblog</title>
-    <link>http://192.168.10.211:1313/tags/imagemagick/</link>
+    <link>http://localhost:1313/tags/imagemagick/</link>
     <description>Recent content in Imagemagick on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Fri, 29 Nov 2019 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://192.168.10.211:1313/tags/imagemagick/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/imagemagick/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Extrayendo la portada de un pdf</title>
-      <link>http://192.168.10.211:1313/extrayendo-la-portada-de-un-pdf/</link>
+      <link>http://localhost:1313/extrayendo-la-portada-de-un-pdf/</link>
       <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/extrayendo-la-portada-de-un-pdf/</guid>
+      <guid>http://localhost:1313/extrayendo-la-portada-de-un-pdf/</guid>
       <description>&lt;p&gt;Una vez más me encuentro con un problema de los que puedo optar por la solución sencilla y laboriosa o por la optima y meticulosa. Necesito convertir de varios archivos en pdf la primera página (Portada) a una imagen para lo cual voy a probar dos alternativas, primero con &lt;a href=&#34;https://imagemagick.org&#34;&gt;Imagemagick&lt;/a&gt; y posteriormente con &lt;a href=&#34;https://poppler.freedesktop.org/&#34;&gt;Poppler&lt;/a&gt; ambas desde la terminal y la línea de comandos de Linux Mint.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Redimensionar imágenes desde la línea de comandos</title>
-      <link>http://192.168.10.211:1313/redimensionar-im%C3%A1genes-desde-la-l%C3%ADnea-de-comandos/</link>
+      <link>http://localhost:1313/redimensionar-im%C3%A1genes-desde-la-l%C3%ADnea-de-comandos/</link>
       <pubDate>Mon, 07 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/redimensionar-im%C3%A1genes-desde-la-l%C3%ADnea-de-comandos/</guid>
+      <guid>http://localhost:1313/redimensionar-im%C3%A1genes-desde-la-l%C3%ADnea-de-comandos/</guid>
       <description>&lt;p&gt;Hace unos días me encontré con un problema a la hora de mandar imprimir unas fotografías y es que dentro de las seleccionadas había diversos tamaños por lo que tuve que igualarlas.&lt;/p&gt;&#xA;&lt;p&gt;Si solo fueran unas pocas fotos no me hubiera planteado &amp;ldquo;automatizar&amp;rdquo; la tarea pero al tratarse de casi cien fotografías me da pereza hacerlo una a una manualmente mediante.&lt;/p&gt;&#xA;&lt;p&gt;Habitualmente uso Gimp para el retoque y ajuste de imágenes. Este potente software libre dispone de un modo de procesamiento de imágenes por lotes del que no cuesta mucho encontrar información pero que tiene una curva de aprendizaje demasiado fuerte para lo que ahora necesito.&lt;/p&gt;</description>
     </item>
   </channel>

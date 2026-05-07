@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Org-Roam on Sherblog</title>
-    <link>http://192.168.10.211:1313/tags/org-roam/</link>
+    <link>http://localhost:1313/tags/org-roam/</link>
     <description>Recent content in Org-Roam on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Tue, 08 Aug 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://192.168.10.211:1313/tags/org-roam/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/org-roam/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sincronizando Org-Roam mediante Github en Emacs</title>
-      <link>http://192.168.10.211:1313/sincronizando-org-roam-mediante-github-en-emacs/</link>
+      <link>http://localhost:1313/sincronizando-org-roam-mediante-github-en-emacs/</link>
       <pubDate>Tue, 08 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/sincronizando-org-roam-mediante-github-en-emacs/</guid>
+      <guid>http://localhost:1313/sincronizando-org-roam-mediante-github-en-emacs/</guid>
       <description>&lt;p&gt;Está muy bien tener una base de conocimiento centralizada en una carpeta y gestionarla mediante &lt;a href=&#34;https://www.orgroam.com&#34;&gt;Org-Roam&lt;/a&gt; pero mejor aun está poder acceder y modificar esta carpeta desde varios equipos gracias a un repositorio de &lt;a href=&#34;https://github.com&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
   </channel>

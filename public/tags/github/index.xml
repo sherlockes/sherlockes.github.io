@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github on Sherblog</title>
-    <link>http://192.168.10.211:1313/tags/github/</link>
+    <link>http://localhost:1313/tags/github/</link>
     <description>Recent content in Github on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://192.168.10.211:1313/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo Deck 2026</title>
-      <link>http://192.168.10.211:1313/hugo-deck-2026/</link>
+      <link>http://localhost:1313/hugo-deck-2026/</link>
       <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/hugo-deck-2026/</guid>
+      <guid>http://localhost:1313/hugo-deck-2026/</guid>
       <description>&lt;p&gt;No se si será la última, lo que es seguro que es la más sencilla y potente forma que hasta ahora he utilizado para actualizar el contenido de mi blog.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Entorno de desarrollo de Hugo en Docker</title>
-      <link>http://192.168.10.211:1313/entorno-de-desarrollo-de-hugo-en-docker/</link>
+      <link>http://localhost:1313/entorno-de-desarrollo-de-hugo-en-docker/</link>
       <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/entorno-de-desarrollo-de-hugo-en-docker/</guid>
+      <guid>http://localhost:1313/entorno-de-desarrollo-de-hugo-en-docker/</guid>
       <description>&lt;p&gt;Hace años que tengo mi blog de Hugo desplegado desde GitHub usando GitHub Actions, pero todavía no tenía un entorno de desarrollo cómodo y aislado donde trastear sin miedo a romper nada. Aquí cuento cómo he montado un &lt;strong&gt;entorno de desarrollo efímero con Docker&lt;/strong&gt; en mi servidor casero.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home Assistant on Sherblog</title>
-    <link>http://192.168.10.211:1313/categories/home-assistant/</link>
+    <link>http://localhost:1313/categories/home-assistant/</link>
     <description>Recent content in Home Assistant on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Wed, 21 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://192.168.10.211:1313/categories/home-assistant/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/home-assistant/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Modificando Pi-hole desde Home assistant</title>
-      <link>http://192.168.10.211:1313/modificando-pi-hole-desde-home-assistant/</link>
+      <link>http://localhost:1313/modificando-pi-hole-desde-home-assistant/</link>
       <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/modificando-pi-hole-desde-home-assistant/</guid>
+      <guid>http://localhost:1313/modificando-pi-hole-desde-home-assistant/</guid>
       <description>&lt;p&gt;No cabe duda de que &lt;a href=&#34;https://pi-hole.net&#34;&gt;Pi-hole&lt;/a&gt; es una utilidad brutal para la gestión de publicidad pero su &lt;a href=&#34;https://www.home-assistant.io/integrations/pi_hole/&#34;&gt;integración&lt;/a&gt; con &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; deja mucho que desear, ya que el único control que ofrece es la deshabilitación de la utilidad completa.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Controlando un Tasmota remoto desde Home Assistant</title>
-      <link>http://192.168.10.211:1313/controlando-un-tasmota-remoto-desde-home-assistant/</link>
+      <link>http://localhost:1313/controlando-un-tasmota-remoto-desde-home-assistant/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/controlando-un-tasmota-remoto-desde-home-assistant/</guid>
+      <guid>http://localhost:1313/controlando-un-tasmota-remoto-desde-home-assistant/</guid>
       <description>&lt;p&gt;Tengo problemas con el &lt;a href=&#34;https://smlight.tech/product/slzb-06&#34;&gt;SLZB-06&lt;/a&gt; de mi segunda residencia cuando se va la luz, así es como lo he solucionado gracias a un enchufe inteligente.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Configurar Wireguard de Home Assistant en cliente linux</title>
-      <link>http://192.168.10.211:1313/configurar-wireguard-de-home-assistant-en-cliente-linux/</link>
+      <link>http://localhost:1313/configurar-wireguard-de-home-assistant-en-cliente-linux/</link>
       <pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/configurar-wireguard-de-home-assistant-en-cliente-linux/</guid>
+      <guid>http://localhost:1313/configurar-wireguard-de-home-assistant-en-cliente-linux/</guid>
       <description>&lt;p&gt;Por su sencillez y efectividad, tengo instalado el servidor de &lt;a href=&#34;https://www.wireguard.com&#34;&gt;Wireguard&lt;/a&gt; como un complemento de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt;. Esta es la forma de como he configurado un cliente linux para conectarse a la vpn desde el exterior de mi red local.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Z2M en segunda residencia</title>
-      <link>http://192.168.10.211:1313/z2m-en-segunda-residencia/</link>
+      <link>http://localhost:1313/z2m-en-segunda-residencia/</link>
       <pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/z2m-en-segunda-residencia/</guid>
+      <guid>http://localhost:1313/z2m-en-segunda-residencia/</guid>
       <description>&lt;p&gt;La solución más sencilla y barata para crear una red zigbee con la que domotizar nuestra segunda residencia sin duda alguna es mediante el uso del adaptador ethernet zigbee 3.0 &lt;a href=&#34;https://smlight.tech/product/slzb-06/&#34;&gt;SLZB-06&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Activar sirena TS0224 mediante Z2M en Home assistant</title>
-      <link>http://192.168.10.211:1313/activar-sirena-ts0224-mediante-z2m-en-home-assistant/</link>
+      <link>http://localhost:1313/activar-sirena-ts0224-mediante-z2m-en-home-assistant/</link>
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/activar-sirena-ts0224-mediante-z2m-en-home-assistant/</guid>
+      <guid>http://localhost:1313/activar-sirena-ts0224-mediante-z2m-en-home-assistant/</guid>
       <description>&lt;p&gt;Muchas veces, activar un elemento zigbee no es tan obvio en Home Assistant. Esta es la muestra de lo que tengo que hacer para hacer sonar la sirena zigbee que tengo instalada a modo de alarma.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Apagado remoto de un equipo desde Home Assistant</title>
-      <link>http://192.168.10.211:1313/apagado-remoto-de-un-equipo-desde-home-assistant/</link>
+      <link>http://localhost:1313/apagado-remoto-de-un-equipo-desde-home-assistant/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/apagado-remoto-de-un-equipo-desde-home-assistant/</guid>
+      <guid>http://localhost:1313/apagado-remoto-de-un-equipo-desde-home-assistant/</guid>
       <description>&lt;p&gt;Tengo un pequeño servidor local con &lt;a href=&#34;https://ubuntu.com/download/server&#34;&gt;Ubuntu server&lt;/a&gt; que quiero poder encender y apagar de forma remota. Así es como lo he conseguido un interruptor en mi panel de control de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sensor de temperatura personalizado</title>
-      <link>http://192.168.10.211:1313/sensor-de-temperatura-personalizado/</link>
+      <link>http://localhost:1313/sensor-de-temperatura-personalizado/</link>
       <pubDate>Fri, 13 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/sensor-de-temperatura-personalizado/</guid>
+      <guid>http://localhost:1313/sensor-de-temperatura-personalizado/</guid>
       <description>&lt;p&gt;En &lt;a href=&#34;https://aliexpress.com/&#34;&gt;Aliexpress&lt;/a&gt; puedes encontrar infinidad de sensores zigbee pero no uno al que conectar varias sondas de temperatura a un precio razonable. Por esto me he decidido a crear el mio propio.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Automatizando las luces del salón</title>
-      <link>http://192.168.10.211:1313/automatizando-las-luces-del-sal%C3%B3n/</link>
+      <link>http://localhost:1313/automatizando-las-luces-del-sal%C3%B3n/</link>
       <pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/automatizando-las-luces-del-sal%C3%B3n/</guid>
+      <guid>http://localhost:1313/automatizando-las-luces-del-sal%C3%B3n/</guid>
       <description>&lt;p&gt;Esta es la forma en la que tengo dispuesto el funcionamiento de las luces del salón mediante una sola automatización dentro de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Calibración de las persianas con en controlador TS130F</title>
-      <link>http://192.168.10.211:1313/calibraci%C3%B3n-de-las-persianas-con-en-controlador-ts130f/</link>
+      <link>http://localhost:1313/calibraci%C3%B3n-de-las-persianas-con-en-controlador-ts130f/</link>
       <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/calibraci%C3%B3n-de-las-persianas-con-en-controlador-ts130f/</guid>
+      <guid>http://localhost:1313/calibraci%C3%B3n-de-las-persianas-con-en-controlador-ts130f/</guid>
       <description>&lt;p&gt;La parte más importante de la domotización de las persianas es un correcto ajuste de las posiciones de apertura y cierre. Parece sencillo, pero sin un manual de instrucciones del fabricante se convierte en un dolor de cabeza.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Convertir una luz en interruptor en Home Assistant</title>
-      <link>http://192.168.10.211:1313/convertir-una-luz-en-interruptor-en-home-assistant/</link>
+      <link>http://localhost:1313/convertir-una-luz-en-interruptor-en-home-assistant/</link>
       <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/convertir-una-luz-en-interruptor-en-home-assistant/</guid>
+      <guid>http://localhost:1313/convertir-una-luz-en-interruptor-en-home-assistant/</guid>
       <description>&lt;p&gt;Es posible utilizar un módulo zigbee de luces como si fuera un enchufe cableado, el problema aparece cuando intentas encender o apagar todas las luces de un área en la que lo tienes incluido y se activa al son de las bombillas.&lt;/p&gt;</description>
     </item>
   </channel>

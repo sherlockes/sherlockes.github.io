@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Excel on Sherblog</title>
-    <link>http://192.168.10.211:1313/tags/excel/</link>
+    <link>http://localhost:1313/tags/excel/</link>
     <description>Recent content in Excel on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Mon, 27 Dec 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://192.168.10.211:1313/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/excel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Actualizar módulo de funciones en excel</title>
-      <link>http://192.168.10.211:1313/actualizar-m%C3%B3dulo-de-funciones-en-excel/</link>
+      <link>http://localhost:1313/actualizar-m%C3%B3dulo-de-funciones-en-excel/</link>
       <pubDate>Mon, 27 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/actualizar-m%C3%B3dulo-de-funciones-en-excel/</guid>
+      <guid>http://localhost:1313/actualizar-m%C3%B3dulo-de-funciones-en-excel/</guid>
       <description>&lt;p&gt;Tenemos varias hojas de cálculo de Excel que trabajan todas con un mismo módulo de funciones. Esta es la forma para que de forma automática se actualicen los módulos de todas las hojas al realizar una modificación en el módulo que alberga las funciones.&lt;/p&gt;</description>
     </item>
   </channel>

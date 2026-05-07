@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Telegram on Sherblog</title>
-    <link>http://192.168.10.211:1313/tags/telegram/</link>
+    <link>http://localhost:1313/tags/telegram/</link>
     <description>Recent content in Telegram on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Tue, 20 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://192.168.10.211:1313/tags/telegram/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/telegram/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automatizando el menú escolar con n8n</title>
-      <link>http://192.168.10.211:1313/automatizando-el-men%C3%BA-escolar-con-n8n/</link>
+      <link>http://localhost:1313/automatizando-el-men%C3%BA-escolar-con-n8n/</link>
       <pubDate>Tue, 20 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/automatizando-el-men%C3%BA-escolar-con-n8n/</guid>
+      <guid>http://localhost:1313/automatizando-el-men%C3%BA-escolar-con-n8n/</guid>
       <description>&lt;p&gt;En muchos colegios el menú mensual se publica en un PDF que acaba olvidado en una web, en un correo o en el grupo de WhatsApp de las familias. Consultarlo cada mañana es poco práctico, y automatizarlo no es trivial. De esta forma he conseguido convertirlo en una notificación diaria a Telegram&lt;/p&gt;</description>
     </item>
     <item>
       <title>Errores de seguimiento de torrents en Synology con n8n</title>
-      <link>http://192.168.10.211:1313/errores-de-seguimiento-de-torrents-en-synology-con-n8n/</link>
+      <link>http://localhost:1313/errores-de-seguimiento-de-torrents-en-synology-con-n8n/</link>
       <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/errores-de-seguimiento-de-torrents-en-synology-con-n8n/</guid>
+      <guid>http://localhost:1313/errores-de-seguimiento-de-torrents-en-synology-con-n8n/</guid>
       <description>&lt;p&gt;Cuando usas &lt;a href=&#34;https://www.synology.com/es-es/dsm/packages/DownloadStation&#34;&gt;Download Station&lt;/a&gt; para Synology una de las características que echas de menos es el control del seguimiento de torrents compartidos en trackers para saber cuando los puedes borrar de tu lista de propagación. Así me las apaño yo gracias a &lt;a href=&#34;https://n8n.io&#34;&gt;n8n&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Bot de Telegram en Python</title>
-      <link>http://192.168.10.211:1313/bot-de-telegram-en-python/</link>
+      <link>http://localhost:1313/bot-de-telegram-en-python/</link>
       <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/bot-de-telegram-en-python/</guid>
+      <guid>http://localhost:1313/bot-de-telegram-en-python/</guid>
       <description>&lt;p&gt;Resumen de introducción&lt;/p&gt;&#xA;&lt;!--more--&#xA;https://www.geeksforgeeks.org/create-a-telegram-bot-using-python/&#xA;&#xA;pip3 install python-telegram-bot&#xA;&#xA;&#xA;@BotFather&#xA;/newbot&#xA;poner nombre y usuario&#xA; name yt2pd&#xA; username yt2pdbot&#xA; token 5584141312:AAHGTgp5KTFaI6exIfDqJzW_mZAE2PZYgpk&#xA; url t.me/yt2pdbot&#xA;&#xA;&#xA;https://github.com/python-telegram-bot/python-telegram-bot/wiki/Extensions-%E2%80%93-Your-first-Bot&#xA;&#xA;```python&#xA;import logging&#xA;from telegram import Update&#xA;from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler&#xA;&#xA;TOKEN=&#39;token&#39;&#xA;&#xA;logging.basicConfig(&#xA;    format=&#39;%(asctime)s - %(name)s - %(levelname)s - %(message)s&#39;,&#xA;    level=logging.INFO&#xA;)&#xA;&#xA;async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):&#xA;    await context.bot.send_message(&#xA;        chat_id=update.effective_chat.id,&#xA;        text=&#34;Soy un bot, dime lo que quieras¡¡&#34;&#xA;    )&#xA;&#xA;if __name__ == &#39;__main__&#39;:&#xA;    application = ApplicationBuilder().token(TOKEN).build()&#xA;    start_handler = CommandHandler(&#39;start&#39;, start)&#xA;    application.add_handler(start_handler)&#xA;    application.run_polling()&#xA;```&#xA;&#xA;![image-01]&#xA;&#xA;### Enlaces de interés&#xA;- [Python Telegram Bot](https://python-telegram-bot.org)&#xA;- [Telegram BotFather](https://core.telegram.org/bots#6-botfather)&#xA;&#xA;&#xA;[link]: https://www.google.es&#xA;&#xA;[image-01]: /images/20220418_python_telegram_bot_01.jpg</description>
     </item>
     <item>
       <title>Archivos de Telegram al NAS</title>
-      <link>http://192.168.10.211:1313/archivos-de-telegram-al-nas/</link>
+      <link>http://localhost:1313/archivos-de-telegram-al-nas/</link>
       <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/archivos-de-telegram-al-nas/</guid>
+      <guid>http://localhost:1313/archivos-de-telegram-al-nas/</guid>
       <description>&lt;p&gt;Hace mucho tiempo que llevo buscando un método para descargar archivos desde Telegram (en mi teléfono Android) al NAS sin estar en la misma red local ni usar datos de mi tarifa móvil. Ahora creo que he dado con una forma rápida y sencilla&amp;hellip;&lt;/p&gt;</description>
     </item>
   </channel>

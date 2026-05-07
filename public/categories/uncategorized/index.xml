@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Uncategorized on Sherblog</title>
-    <link>http://192.168.10.211:1313/categories/uncategorized/</link>
+    <link>http://localhost:1313/categories/uncategorized/</link>
     <description>Recent content in Uncategorized on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Tue, 28 Jun 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://192.168.10.211:1313/categories/uncategorized/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/uncategorized/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mi contribución al software libre</title>
-      <link>http://192.168.10.211:1313/mi-contribuci%C3%B3n-al-software-libre/</link>
+      <link>http://localhost:1313/mi-contribuci%C3%B3n-al-software-libre/</link>
       <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/mi-contribuci%C3%B3n-al-software-libre/</guid>
+      <guid>http://localhost:1313/mi-contribuci%C3%B3n-al-software-libre/</guid>
       <description>&lt;p&gt;La mejor forma de contribuir con el software libre es mediante la aportación de tu tiempo y conocimientos, cuando tienes poco de ambos como es mi caso tendrá que resultar suficiente con alguna aportación económica periódica.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Script en bash para comprobar la actualización de un archivo de la web</title>
-      <link>http://192.168.10.211:1313/script-en-bash-para-comprobar-la-actualizaci%C3%B3n-de-un-archivo-de-la-web/</link>
+      <link>http://localhost:1313/script-en-bash-para-comprobar-la-actualizaci%C3%B3n-de-un-archivo-de-la-web/</link>
       <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/script-en-bash-para-comprobar-la-actualizaci%C3%B3n-de-un-archivo-de-la-web/</guid>
+      <guid>http://localhost:1313/script-en-bash-para-comprobar-la-actualizaci%C3%B3n-de-un-archivo-de-la-web/</guid>
       <description>&lt;p&gt;Si eres de los que se pega horas refrescando una web para ver si han actualizado un archivo que está colgado, aquí dejo el método que he utilizado para evitar el mal rato mediante un script en bash.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Sherblog</title>
-    <link>http://192.168.10.211:1313/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://192.168.10.211:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Computing</title>
-      <link>http://192.168.10.211:1313/categories/computing/</link>
+      <link>http://localhost:1313/categories/computing/</link>
       <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/categories/computing/</guid>
+      <guid>http://localhost:1313/categories/computing/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>http://192.168.10.211:1313/categories/hugo/</link>
+      <link>http://localhost:1313/categories/hugo/</link>
       <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/categories/hugo/</guid>
+      <guid>http://localhost:1313/categories/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>http://192.168.10.211:1313/categories/linux/</link>
+      <link>http://localhost:1313/categories/linux/</link>
       <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/categories/linux/</guid>
+      <guid>http://localhost:1313/categories/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Hardware</title>
-      <link>http://192.168.10.211:1313/categories/hardware/</link>
+      <link>http://localhost:1313/categories/hardware/</link>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/categories/hardware/</guid>
+      <guid>http://localhost:1313/categories/hardware/</guid>
       <description></description>
     </item>
     <item>
       <title>Home Assistant</title>
-      <link>http://192.168.10.211:1313/categories/home-assistant/</link>
+      <link>http://localhost:1313/categories/home-assistant/</link>
       <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/categories/home-assistant/</guid>
+      <guid>http://localhost:1313/categories/home-assistant/</guid>
       <description></description>
     </item>
     <item>
       <title>Diseño</title>
-      <link>http://192.168.10.211:1313/categories/dise%C3%B1o/</link>
+      <link>http://localhost:1313/categories/dise%C3%B1o/</link>
       <pubDate>Tue, 20 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/categories/dise%C3%B1o/</guid>
+      <guid>http://localhost:1313/categories/dise%C3%B1o/</guid>
       <description></description>
     </item>
     <item>
       <title>Varios</title>
-      <link>http://192.168.10.211:1313/categories/varios/</link>
+      <link>http://localhost:1313/categories/varios/</link>
       <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/categories/varios/</guid>
+      <guid>http://localhost:1313/categories/varios/</guid>
       <description></description>
     </item>
     <item>
       <title>Productividad</title>
-      <link>http://192.168.10.211:1313/categories/productividad/</link>
+      <link>http://localhost:1313/categories/productividad/</link>
       <pubDate>Wed, 22 Feb 2023 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/categories/productividad/</guid>
+      <guid>http://localhost:1313/categories/productividad/</guid>
       <description></description>
     </item>
     <item>
       <title>Raspberry</title>
-      <link>http://192.168.10.211:1313/categories/raspberry/</link>
+      <link>http://localhost:1313/categories/raspberry/</link>
       <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/categories/raspberry/</guid>
+      <guid>http://localhost:1313/categories/raspberry/</guid>
       <description></description>
     </item>
     <item>
       <title>Uncategorized</title>
-      <link>http://192.168.10.211:1313/categories/uncategorized/</link>
+      <link>http://localhost:1313/categories/uncategorized/</link>
       <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/categories/uncategorized/</guid>
+      <guid>http://localhost:1313/categories/uncategorized/</guid>
       <description></description>
     </item>
   </channel>

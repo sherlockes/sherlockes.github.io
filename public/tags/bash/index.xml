@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bash on Sherblog</title>
-    <link>http://192.168.10.211:1313/tags/bash/</link>
+    <link>http://localhost:1313/tags/bash/</link>
     <description>Recent content in Bash on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Wed, 08 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://192.168.10.211:1313/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Generador de contexto para IA</title>
-      <link>http://192.168.10.211:1313/generador-de-contexto-para-ia/</link>
+      <link>http://localhost:1313/generador-de-contexto-para-ia/</link>
       <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/generador-de-contexto-para-ia/</guid>
+      <guid>http://localhost:1313/generador-de-contexto-para-ia/</guid>
       <description>&lt;p&gt;El &amp;ldquo;vibe coding&amp;rdquo; se trata de mantener el flujo creativo y dejar que la IA se encargue de la carpintería pesada. Podemos definir este &lt;code&gt;context-engine.sh&lt;/code&gt; como un &amp;ldquo;acelerador de partículas&amp;rdquo; para este flujo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Youtube y Twitch a Podcast en Docker</title>
-      <link>http://192.168.10.211:1313/youtube-y-twitch-a-podcast-en-docker/</link>
+      <link>http://localhost:1313/youtube-y-twitch-a-podcast-en-docker/</link>
       <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/youtube-y-twitch-a-podcast-en-docker/</guid>
+      <guid>http://localhost:1313/youtube-y-twitch-a-podcast-en-docker/</guid>
       <description>&lt;p&gt;Hace tiempo que uso unos sencillos scripts en bash para crear un podcast a partir del audio de unos cuantos canales de &lt;a href=&#34;https://www.youtube.com&#34;&gt;Youtube&lt;/a&gt; y &lt;a href=&#34;https://www.twitch.tv&#34;&gt;Twitch&lt;/a&gt;. Ahora lo vamos a meter en un contenedor para que sea más fácil de migrar a otra máquina.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Modificando Pi-hole desde Home assistant</title>
-      <link>http://192.168.10.211:1313/modificando-pi-hole-desde-home-assistant/</link>
+      <link>http://localhost:1313/modificando-pi-hole-desde-home-assistant/</link>
       <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/modificando-pi-hole-desde-home-assistant/</guid>
+      <guid>http://localhost:1313/modificando-pi-hole-desde-home-assistant/</guid>
       <description>&lt;p&gt;No cabe duda de que &lt;a href=&#34;https://pi-hole.net&#34;&gt;Pi-hole&lt;/a&gt; es una utilidad brutal para la gestión de publicidad pero su &lt;a href=&#34;https://www.home-assistant.io/integrations/pi_hole/&#34;&gt;integración&lt;/a&gt; con &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; deja mucho que desear, ya que el único control que ofrece es la deshabilitación de la utilidad completa.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Incrustar texto externo en Hugo</title>
-      <link>http://192.168.10.211:1313/incrustar-texto-externo-en-hugo/</link>
+      <link>http://localhost:1313/incrustar-texto-externo-en-hugo/</link>
       <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/incrustar-texto-externo-en-hugo/</guid>
+      <guid>http://localhost:1313/incrustar-texto-externo-en-hugo/</guid>
       <description>&lt;p&gt;Hace tiempo que vengo pensando en la capacidad de poder introducir texto desde un archivo externo dentro de los post que publico en &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;. Hoy se me ha encendido la bombilla.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Actualización:&lt;/strong&gt; Inclusión de texto desde un servidor remoto de forma nativa.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Controlando un Tasmota remoto desde Home Assistant</title>
-      <link>http://192.168.10.211:1313/controlando-un-tasmota-remoto-desde-home-assistant/</link>
+      <link>http://localhost:1313/controlando-un-tasmota-remoto-desde-home-assistant/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/controlando-un-tasmota-remoto-desde-home-assistant/</guid>
+      <guid>http://localhost:1313/controlando-un-tasmota-remoto-desde-home-assistant/</guid>
       <description>&lt;p&gt;Tengo problemas con el &lt;a href=&#34;https://smlight.tech/product/slzb-06&#34;&gt;SLZB-06&lt;/a&gt; de mi segunda residencia cuando se va la luz, así es como lo he solucionado gracias a un enchufe inteligente.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Backups en la nube con Restic</title>
-      <link>http://192.168.10.211:1313/backups-en-la-nube-con-restic/</link>
+      <link>http://localhost:1313/backups-en-la-nube-con-restic/</link>
       <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/backups-en-la-nube-con-restic/</guid>
+      <guid>http://localhost:1313/backups-en-la-nube-con-restic/</guid>
       <description>&lt;p&gt;Después de valorar algunas alternativas para la creación de las copias de seguridad de los datos de mis contenedores he encontrado una buena solución en restic.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Configurar Wireguard de Home Assistant en cliente linux</title>
-      <link>http://192.168.10.211:1313/configurar-wireguard-de-home-assistant-en-cliente-linux/</link>
+      <link>http://localhost:1313/configurar-wireguard-de-home-assistant-en-cliente-linux/</link>
       <pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/configurar-wireguard-de-home-assistant-en-cliente-linux/</guid>
+      <guid>http://localhost:1313/configurar-wireguard-de-home-assistant-en-cliente-linux/</guid>
       <description>&lt;p&gt;Por su sencillez y efectividad, tengo instalado el servidor de &lt;a href=&#34;https://www.wireguard.com&#34;&gt;Wireguard&lt;/a&gt; como un complemento de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt;. Esta es la forma de como he configurado un cliente linux para conectarse a la vpn desde el exterior de mi red local.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Instalación y configuración de Zerotier</title>
-      <link>http://192.168.10.211:1313/instalaci%C3%B3n-y-configuraci%C3%B3n-de-zerotier/</link>
+      <link>http://localhost:1313/instalaci%C3%B3n-y-configuraci%C3%B3n-de-zerotier/</link>
       <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/instalaci%C3%B3n-y-configuraci%C3%B3n-de-zerotier/</guid>
-      <description>&lt;p&gt;Hace más de cinco años que empecé a usar &lt;a href=&#34;https://www.zerotier.com&#34;&gt;Zerotier&lt;/a&gt; tal y como en su día expliqué en este &lt;a href=&#34;http://192.168.10.211:1313/primeros-pasos-con-zerotier/&#34;&gt;artículo&lt;/a&gt; como consecuencia de un problema con los puertos del router. Ahora lo reedito con todo lo que he aprendido en este tiempo.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/instalaci%C3%B3n-y-configuraci%C3%B3n-de-zerotier/</guid>
+      <description>&lt;p&gt;Hace más de cinco años que empecé a usar &lt;a href=&#34;https://www.zerotier.com&#34;&gt;Zerotier&lt;/a&gt; tal y como en su día expliqué en este &lt;a href=&#34;http://localhost:1313/primeros-pasos-con-zerotier/&#34;&gt;artículo&lt;/a&gt; como consecuencia de un problema con los puertos del router. Ahora lo reedito con todo lo que he aprendido en este tiempo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>De Youtube a Podcat V2</title>
-      <link>http://192.168.10.211:1313/de-youtube-a-podcat-v2/</link>
+      <link>http://localhost:1313/de-youtube-a-podcat-v2/</link>
       <pubDate>Thu, 18 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/de-youtube-a-podcat-v2/</guid>
-      <description>&lt;p&gt;Hace un tiempo cree un &lt;a href=&#34;http://192.168.10.211:1313/de-youtube-a-podcast/&#34;&gt;script&lt;/a&gt; para crear un podcast a partir de un canal de Youtube. Ahora voy un paso más allá creándolo a partir de un conjunto de canales de Youtube.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/de-youtube-a-podcat-v2/</guid>
+      <description>&lt;p&gt;Hace un tiempo cree un &lt;a href=&#34;http://localhost:1313/de-youtube-a-podcast/&#34;&gt;script&lt;/a&gt; para crear un podcast a partir de un canal de Youtube. Ahora voy un paso más allá creándolo a partir de un conjunto de canales de Youtube.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Crear y configurar una instancia gratuita en Oracle</title>
-      <link>http://192.168.10.211:1313/crear-y-configurar-una-instancia-gratuita-en-oracle/</link>
+      <link>http://localhost:1313/crear-y-configurar-una-instancia-gratuita-en-oracle/</link>
       <pubDate>Wed, 25 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/crear-y-configurar-una-instancia-gratuita-en-oracle/</guid>
+      <guid>http://localhost:1313/crear-y-configurar-una-instancia-gratuita-en-oracle/</guid>
       <description>&lt;p&gt;Tener un pequeño servidor privado virtual a modo de laboratorio en el que hacer nuestras pruebas es gratis gracias a &lt;a href=&#34;https://cloud.oracle.com&#34;&gt;Oracle Cloud&lt;/a&gt;, aquí dejo la forma de conseguirlo y las pruebas que con el he realizado.&lt;/p&gt;&#xA;&lt;p&gt;Actualización: Simular que trabaja&lt;/p&gt;</description>
     </item>
   </channel>

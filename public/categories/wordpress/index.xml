@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wordpress on Sherblog</title>
-    <link>http://192.168.10.211:1313/categories/wordpress/</link>
+    <link>http://localhost:1313/categories/wordpress/</link>
     <description>Recent content in Wordpress on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Fri, 05 May 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://192.168.10.211:1313/categories/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/wordpress/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Error al exportar base de datos de WordPress en Synology webStation</title>
-      <link>http://192.168.10.211:1313/error-al-exportar-base-de-datos-de-wordpress-en-synology-webstation/</link>
+      <link>http://localhost:1313/error-al-exportar-base-de-datos-de-wordpress-en-synology-webstation/</link>
       <pubDate>Fri, 05 May 2017 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/error-al-exportar-base-de-datos-de-wordpress-en-synology-webstation/</guid>
-      <description>&lt;p&gt;Hace unos días que publiqué el &lt;a href=&#34;http://192.168.10.211:1313/copia-de-seguridad-de-la-base-de-datos-de-wordpress/&#34;&gt;modo&lt;/a&gt; en el que hacía la copia de seguridad de la base de datos de WordPress desde el propio hosting hasta una unidad de Google Drive. Haciendo pruebas para alojar la web en el Nas de Synology me doy cuenta de que el &lt;a href=&#34;https://es.wordpress.org/plugins/wp-db-backup&#34;&gt;plugin&lt;/a&gt; para exportar la base de datos y enviarla por correo electrónico periódicamente no funciona.&lt;/p&gt;&#xA;&lt;p&gt;Pruebo con otros plugins similares y todos me dan el mismo error y tras unas pruebas y un poco de buceo por la red me doy cuenta que el problema reside en la incapacidad del servidor web para tratar los archivos comprimidos.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/error-al-exportar-base-de-datos-de-wordpress-en-synology-webstation/</guid>
+      <description>&lt;p&gt;Hace unos días que publiqué el &lt;a href=&#34;http://localhost:1313/copia-de-seguridad-de-la-base-de-datos-de-wordpress/&#34;&gt;modo&lt;/a&gt; en el que hacía la copia de seguridad de la base de datos de WordPress desde el propio hosting hasta una unidad de Google Drive. Haciendo pruebas para alojar la web en el Nas de Synology me doy cuenta de que el &lt;a href=&#34;https://es.wordpress.org/plugins/wp-db-backup&#34;&gt;plugin&lt;/a&gt; para exportar la base de datos y enviarla por correo electrónico periódicamente no funciona.&lt;/p&gt;&#xA;&lt;p&gt;Pruebo con otros plugins similares y todos me dan el mismo error y tras unas pruebas y un poco de buceo por la red me doy cuenta que el problema reside en la incapacidad del servidor web para tratar los archivos comprimidos.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Copia de seguridad de la base de datos de WordPress</title>
-      <link>http://192.168.10.211:1313/copia-de-seguridad-de-la-base-de-datos-de-wordpress/</link>
+      <link>http://localhost:1313/copia-de-seguridad-de-la-base-de-datos-de-wordpress/</link>
       <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/copia-de-seguridad-de-la-base-de-datos-de-wordpress/</guid>
+      <guid>http://localhost:1313/copia-de-seguridad-de-la-base-de-datos-de-wordpress/</guid>
       <description>&lt;p&gt;Hace unos días expliqué como gestiona la copia de seguridad de los archivos de WordPress (la carpeta wp-content) y aquí vamos a ver como hago lo propio con la base de datos. El flujo de trabajo es simple, periódicamente me llega un correo electrónico con la base de datos comprimida como archivo adjunto y guardo ese archivo en mi unidad de Google Drive.&lt;/p&gt;&#xA;&lt;p&gt;El plugin de WordPress &lt;a href=&#34;%C2%A0https://es.wordpress.org/plugins/wp-db-backup/&#34;&gt;WP-DB-Backup&lt;/a&gt; es el que se encarga de enviar un correo electrónico periódicamente con la copia de la base de datos. La configuración es muy sencilla, una vez que el plugin está instalado y activo vamos al menú &amp;ldquo;Herramientas - Copia de respaldo&amp;rdquo; del escritorio de WordPress y bajamos hasta la opción &amp;ldquo;Respaldo Programado&amp;rdquo;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Flujo de trabajo con imágenes en WordPress</title>
-      <link>http://192.168.10.211:1313/flujo-de-trabajo-con-im%C3%A1genes-en-wordpress/</link>
+      <link>http://localhost:1313/flujo-de-trabajo-con-im%C3%A1genes-en-wordpress/</link>
       <pubDate>Thu, 30 Mar 2017 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/flujo-de-trabajo-con-im%C3%A1genes-en-wordpress/</guid>
+      <guid>http://localhost:1313/flujo-de-trabajo-con-im%C3%A1genes-en-wordpress/</guid>
       <description>&lt;p&gt;Al publicar un post en WordPress una de las cosas que más pereza da es la inclusión de imágenes ya que hay que capturarlas, recortarlas, guardarlas, renombrarlas, subirlas al servidor e incrustarlas en el post. En este proceso pueden intervenir varias utilidades y programas por lo que resulta laborioso.&lt;/p&gt;&#xA;&lt;p&gt;Para todo esto utilizo &lt;a href=&#34;http://www.faststone.org/FSCaptureDetail.htm&#34;&gt;Faststone Capture&lt;/a&gt; en su versión portable que puedes descargar desde &lt;a href=&#34;http://www.faststone.org/FSCapturerDownload.htm&#34;&gt;aquí&lt;/a&gt;. Una pequeña pero potente utilidad que cubre todas las fases arriba mencionadas para la edición de imágenes. Si, la aplicación no es gratis pero puedes probar una versión de 30 días completamente funcional para ver si te interesa desembolsar los 20$. También puedes encontrar una medicina &lt;a href=&#34;https://www.crackhex.ch/topic/1630-faststone-capture-84-serial-keygen/&#34;&gt;aquí&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Descarga fallida. No working transports found</title>
-      <link>http://192.168.10.211:1313/descarga-fallida.-no-working-transports-found/</link>
+      <link>http://localhost:1313/descarga-fallida.-no-working-transports-found/</link>
       <pubDate>Mon, 13 Mar 2017 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/descarga-fallida.-no-working-transports-found/</guid>
-      <description>&lt;p&gt;Después de la instalación de WordPress en el servidor Synology al intentar actualizar los temas o los plugins me encuentro con el siguiente error.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://192.168.10.211:1313/images/20170215_descarga_fallida_01.jpg&#34; alt=&#34;imagen&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Pues nada, toca &amp;ldquo;Googlear&amp;rdquo; un rato y pronto me doy cuenta de que la solución es bastante sencilla y basta con habilitar la extensión &amp;ldquo;Curl&amp;rdquo; dentro de la configuración de php de la aplicación Web Station tal y como se puede ver en la siguiente captura de pantalla.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/descarga-fallida.-no-working-transports-found/</guid>
+      <description>&lt;p&gt;Después de la instalación de WordPress en el servidor Synology al intentar actualizar los temas o los plugins me encuentro con el siguiente error.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/20170215_descarga_fallida_01.jpg&#34; alt=&#34;imagen&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Pues nada, toca &amp;ldquo;Googlear&amp;rdquo; un rato y pronto me doy cuenta de que la solución es bastante sencilla y basta con habilitar la extensión &amp;ldquo;Curl&amp;rdquo; dentro de la configuración de php de la aplicación Web Station tal y como se puede ver en la siguiente captura de pantalla.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Instalación manual de WordPress en Synology</title>
-      <link>http://192.168.10.211:1313/instalaci%C3%B3n-manual-de-wordpress-en-synology/</link>
+      <link>http://localhost:1313/instalaci%C3%B3n-manual-de-wordpress-en-synology/</link>
       <pubDate>Tue, 28 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/instalaci%C3%B3n-manual-de-wordpress-en-synology/</guid>
+      <guid>http://localhost:1313/instalaci%C3%B3n-manual-de-wordpress-en-synology/</guid>
       <description>&lt;p&gt;Desde el centro de paquetes de DSM en posible acceder a la instalación de WordPress de una forma sencilla tal y como puedes es en este &lt;a href=&#34;https://www.jmramirez.pro/tutorial/web-en-un-synology-con-wordpress/&#34;&gt;tutorial&lt;/a&gt;, pero si lo que tu quieres es realizar una instalación manual con la que consigas un mayor control aquí te dejo los pasos a seguir.&lt;/p&gt;&#xA;&lt;p&gt;Antes de comenzar con la instalación de WordPress hay que instalar &amp;ldquo;Web Station&amp;rdquo; como servidor de archivos, &amp;ldquo;Maria Db&amp;rdquo; para el alojamiento de las bases de datos y &amp;ldquo;PhpMyAdmin&amp;rdquo; para gestionar las bases de datos. Tras instalar &amp;ldquo;Web Station&amp;rdquo; seleccionaremos Apache como servidor y la versión de php. Para &amp;ldquo;Maria Db&amp;rdquo; es muy importante generar una contraseña para el usuario root después de instalarlo. Con esto ya podemos iniciar la instalación propia de WordPress.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Backup de la web al Nas mediante ftp y ssh en Synology</title>
-      <link>http://192.168.10.211:1313/backup-de-la-web-al-nas-mediante-ftp-y-ssh-en-synology/</link>
+      <link>http://localhost:1313/backup-de-la-web-al-nas-mediante-ftp-y-ssh-en-synology/</link>
       <pubDate>Sun, 26 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/backup-de-la-web-al-nas-mediante-ftp-y-ssh-en-synology/</guid>
+      <guid>http://localhost:1313/backup-de-la-web-al-nas-mediante-ftp-y-ssh-en-synology/</guid>
       <description>&lt;p&gt;Esta vez y como casi siempre el objetivo es sencillo, crear una copia de seguridad del contenido de una página web al &lt;a href=&#34;https://es.wikipedia.org/wiki/Almacenamiento_conectado_en_red&#34;&gt;Nas&lt;/a&gt; que tengo en casa, de una forma automática y periódica.&lt;/p&gt;&#xA;&lt;p&gt;Después de valorar varias alternativas, la que me ha parecido más apropiada es mediante una conexión &lt;a href=&#34;https://es.wikipedia.org/wiki/File_Transfer_Protocol&#34;&gt;ftp&lt;/a&gt;. Puesto que esta web trabaja bajo WordPress resultará suficiente la copia de la carpeta &amp;ldquo;wp-content&amp;rdquo; desde el servidor del hosting a nuestro Nas. Otro día veremos como gestionar la copia de seguridad de la base de datos de WordPress.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Instalar WordPress en cinco minutos.  Mito o realidad.</title>
-      <link>http://192.168.10.211:1313/instalar-wordpress-en-cinco-minutos.-mito-o-realidad./</link>
+      <link>http://localhost:1313/instalar-wordpress-en-cinco-minutos.-mito-o-realidad./</link>
       <pubDate>Wed, 21 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/instalar-wordpress-en-cinco-minutos.-mito-o-realidad./</guid>
+      <guid>http://localhost:1313/instalar-wordpress-en-cinco-minutos.-mito-o-realidad./</guid>
       <description>&lt;p&gt;Desde wordpress.org presumen de poder instalar su sistema de gestión de contenidos en tan sólo cinco minutos y a continuación me dispongo a comprobar si es un mito o una realidad.&lt;/p&gt;&#xA;&lt;p&gt;Los pasos a realizar son los siguiente:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Descargar la última versión de es.wordpress.org&lt;/li&gt;&#xA;&lt;li&gt;Descomprimir el instalador&lt;/li&gt;&#xA;&lt;li&gt;Conexión ftp y subir archivos&lt;/li&gt;&#xA;&lt;li&gt;Acceder al panel de control&lt;/li&gt;&#xA;&lt;li&gt;Entrar en bases de datos MySQL&lt;/li&gt;&#xA;&lt;li&gt;Crear nueva base de datos&lt;/li&gt;&#xA;&lt;li&gt;Crear un nuevo usario MySQL&lt;/li&gt;&#xA;&lt;li&gt;Añadir usuario a base de datos&lt;/li&gt;&#xA;&lt;li&gt;Asignar privilegios al usuario&lt;/li&gt;&#xA;&lt;li&gt;Renombrar el archivo &amp;ldquo;wp-config-sample&amp;rdquo; en la carpeta raiz de la instalación por &amp;ldquo;wp-config.php&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;Modificar wp-config.php con la información de acceso a la base de datos MySQL&lt;/li&gt;&#xA;&lt;li&gt;Accede a tu blog y automáticamente se redireccionará &amp;ldquo;&lt;a href=&#34;https://www.tublog.com/wp-config/install.php%22&#34;&gt;www.tublog.com/wp-config/install.php&amp;quot;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Rellena la info necesaria&lt;/li&gt;&#xA;&lt;li&gt;Ya está listo¡¡¡&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Esta es la enésima vez que lo instalo, así que tengo claro todos los pasos a realizar y como llevarlos a cabo. Es muy probable que a un usuario nobel le cueste algo más de tiempo. Puedes ver todo el proceso en el siguiente vídeo (No te de vergüenza hacer la ventana grande que el vídeo está en HD).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Publicar automáticamente en Facebook al hacerlo en WordPress</title>
-      <link>http://192.168.10.211:1313/publicar-autom%C3%A1ticamente-en-facebook-al-hacerlo-en-wordpress/</link>
+      <link>http://localhost:1313/publicar-autom%C3%A1ticamente-en-facebook-al-hacerlo-en-wordpress/</link>
       <pubDate>Tue, 13 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/publicar-autom%C3%A1ticamente-en-facebook-al-hacerlo-en-wordpress/</guid>
+      <guid>http://localhost:1313/publicar-autom%C3%A1ticamente-en-facebook-al-hacerlo-en-wordpress/</guid>
       <description>&lt;p&gt;Que algo sencillo se convierta en un dolor de cabeza es una de las cosas que más frustra. He estado mucho tiempo buscando una forma rápida y sencilla de que mis publicaciones en el blog se conviertan también en entradas de mi página en Facebook para que al menos mis &amp;ldquo;amigos&amp;rdquo; tengan la oportunidad de enterarse de los artículos que escribo y los lean en caso de que les interese.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sincronizar WordPress en local y servidor</title>
-      <link>http://192.168.10.211:1313/sincronizar-wordpress-en-local-y-servidor/</link>
+      <link>http://localhost:1313/sincronizar-wordpress-en-local-y-servidor/</link>
       <pubDate>Tue, 06 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/sincronizar-wordpress-en-local-y-servidor/</guid>
+      <guid>http://localhost:1313/sincronizar-wordpress-en-local-y-servidor/</guid>
       <description>&lt;p&gt;Si de algo carece WordPress, o al menos yo no he sido capaz de encontrarlo después de mucho navegar por la red, es de un entorno de desarrollo en local. A que me refiero, cada vez que nos ponemos a realizar modificaciones en la web algo más allá que publicar un post nos encontramos con la tediosa labor de descargar, modificar, guardar, subir y comprobar cada modificación hasta que conseguimos dejar la web a nuestro gusto.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Marcos de imágenes en WordPress</title>
-      <link>http://192.168.10.211:1313/marcos-de-im%C3%A1genes-en-wordpress/</link>
+      <link>http://localhost:1313/marcos-de-im%C3%A1genes-en-wordpress/</link>
       <pubDate>Wed, 29 Jul 2015 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/marcos-de-im%C3%A1genes-en-wordpress/</guid>
+      <guid>http://localhost:1313/marcos-de-im%C3%A1genes-en-wordpress/</guid>
       <description>&lt;p&gt;Escribiendo hoy un post he encontrado la solución a un problema que ya se me había planteado anteriormente y hasta ahora no había sido capaz de encontrar de una forma sencilla como esta. Se trata de los marcos alrededor de las imágenes en WordPress.&lt;/p&gt;&#xA;&lt;p&gt;Por defecto, si insertamos en la entrada una imagen desde la galería en una entrada de WordPress el código que se genera es el siguiente&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;img src=&amp;#34;sherblog/wp-content/uploads/Homer.jpg&amp;#34; alt=&amp;#34;Image&amp;#34; class=&amp;#34;aligncenter size-full wp-image-556&amp;#34; /&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Resultando la imagen con un bonito marco que no siempre queremos que aparezca&lt;/p&gt;</description>
     </item>
   </channel>
