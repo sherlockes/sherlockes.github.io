@@ -6,8 +6,15 @@
     <description>Recent content in Hugo on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Sun, 30 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://192.168.10.211:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Deck 2026</title>
+      <link>http://192.168.10.211:1313/hugo-deck-2026/</link>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://192.168.10.211:1313/hugo-deck-2026/</guid>
+      <description>&lt;p&gt;No se si será la última, lo que es seguro que es la más sencilla y potente forma que hasta ahora he utilizado para actualizar el contenido de mi blog.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Entorno de desarrollo de Hugo en Docker</title>
       <link>http://192.168.10.211:1313/entorno-de-desarrollo-de-hugo-en-docker/</link>

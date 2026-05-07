@@ -6,8 +6,15 @@
     <description>Recent content in Hugo on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Sat, 06 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://192.168.10.211:1313/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Deck 2026</title>
+      <link>http://192.168.10.211:1313/hugo-deck-2026/</link>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://192.168.10.211:1313/hugo-deck-2026/</guid>
+      <description>&lt;p&gt;No se si será la última, lo que es seguro que es la más sencilla y potente forma que hasta ahora he utilizado para actualizar el contenido de mi blog.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Incrustar flujos de N8N en Hugo</title>
       <link>http://192.168.10.211:1313/incrustar-flujos-de-n8n-en-hugo/</link>
@@ -70,13 +77,6 @@
       <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
       <guid>http://192.168.10.211:1313/arquetipos-en-hugo-archetypes/</guid>
       <description>&lt;p&gt;Cada vez que se comienza la creación de un artículo en Hugo partimos del comando &lt;code&gt;hugo new post/nuevo.md&lt;/code&gt; que hace uso de los arquetipos creados para definir la plantilla de este artículo. Aquí dejo como los tengo configurados para ahorrar tiempo.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Hugo con Github actions</title>
-      <link>http://192.168.10.211:1313/hugo-con-github-actions/</link>
-      <pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/hugo-con-github-actions/</guid>
-      <description>&lt;p&gt;Durante mucho tiempo he tenido alojado este blog en &lt;a href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt; pero la publicación se realizaba en local mediante la Raspberry. Ahora voy a generar la publicación del blog a partir de un propio repositorio mediante las &lt;a href=&#34;https://github.com/features/actions&#34;&gt;acciones de GitHub&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

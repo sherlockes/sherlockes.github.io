@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://192.168.10.211:1313/hugo-deck-2026/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://192.168.10.211:1313/mi-nuevo-init.el-en-2026/</loc>
     <lastmod>2026-04-26T00:00:00+00:00</lastmod>
   </url><url>
@@ -935,25 +938,40 @@
     <loc>http://192.168.10.211:1313/raspberry-descargando-wordpress/</loc>
     <lastmod>2018-04-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://192.168.10.211:1313/tags/apps/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://192.168.10.211:1313/categories/</loc>
-    <lastmod>2026-04-26T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://192.168.10.211:1313/categories/computing/</loc>
-    <lastmod>2026-04-26T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://192.168.10.211:1313/tags/github/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://192.168.10.211:1313/categories/hugo/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://192.168.10.211:1313/tags/hugo/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://192.168.10.211:1313/post/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://192.168.10.211:1313/tags/python/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://192.168.10.211:1313/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://192.168.10.211:1313/tags/</loc>
+    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://192.168.10.211:1313/tags/emacs/</loc>
     <lastmod>2026-04-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://192.168.10.211:1313/tags/lisp/</loc>
-    <lastmod>2026-04-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://192.168.10.211:1313/post/</loc>
-    <lastmod>2026-04-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://192.168.10.211:1313/</loc>
-    <lastmod>2026-04-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://192.168.10.211:1313/tags/</loc>
     <lastmod>2026-04-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://192.168.10.211:1313/categories/linux/</loc>
@@ -975,9 +993,6 @@
     <lastmod>2026-04-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://192.168.10.211:1313/tags/linux/</loc>
-    <lastmod>2026-04-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://192.168.10.211:1313/tags/python/</loc>
     <lastmod>2026-04-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://192.168.10.211:1313/tags/google-scripts/</loc>
@@ -1031,20 +1046,11 @@
     <loc>http://192.168.10.211:1313/tags/trimage/</loc>
     <lastmod>2026-01-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://192.168.10.211:1313/categories/hugo/</loc>
-    <lastmod>2025-12-06T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://192.168.10.211:1313/tags/shortcodes/</loc>
     <lastmod>2025-12-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://192.168.10.211:1313/tags/synology/</loc>
     <lastmod>2025-12-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://192.168.10.211:1313/tags/github/</loc>
-    <lastmod>2025-11-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://192.168.10.211:1313/tags/hugo/</loc>
-    <lastmod>2025-11-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://192.168.10.211:1313/post/computing/home_assistant/</loc>
     <lastmod>2025-10-24T00:00:00+00:00</lastmod>
@@ -1303,9 +1309,6 @@
   </url><url>
     <loc>http://192.168.10.211:1313/tags/gopro/</loc>
     <lastmod>2016-06-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://192.168.10.211:1313/tags/apps/</loc>
-    <lastmod>2016-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://192.168.10.211:1313/?p=906/</loc>
     <lastmod>2015-10-15T00:00:00+00:00</lastmod>

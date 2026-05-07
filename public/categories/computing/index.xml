@@ -6,8 +6,15 @@
     <description>Recent content in Computing on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Sun, 26 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://192.168.10.211:1313/categories/computing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Deck 2026</title>
+      <link>http://192.168.10.211:1313/hugo-deck-2026/</link>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://192.168.10.211:1313/hugo-deck-2026/</guid>
+      <description>&lt;p&gt;No se si será la última, lo que es seguro que es la más sencilla y potente forma que hasta ahora he utilizado para actualizar el contenido de mi blog.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Mi nuevo init.el en 2026</title>
       <link>http://192.168.10.211:1313/mi-nuevo-init.el-en-2026/</link>
@@ -70,13 +77,6 @@
       <pubDate>Tue, 20 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://192.168.10.211:1313/automatizando-el-men%C3%BA-escolar-con-n8n/</guid>
       <description>&lt;p&gt;En muchos colegios el menú mensual se publica en un PDF que acaba olvidado en una web, en un correo o en el grupo de WhatsApp de las familias. Consultarlo cada mañana es poco práctico, y automatizarlo no es trivial. De esta forma he conseguido convertirlo en una notificación diaria a Telegram&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Enviar enlaces desde telegram a hoarder y readeck mediante n8n</title>
-      <link>http://192.168.10.211:1313/enviar-enlaces-desde-telegram-a-hoarder-y-readeck-mediante-n8n/</link>
-      <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://192.168.10.211:1313/enviar-enlaces-desde-telegram-a-hoarder-y-readeck-mediante-n8n/</guid>
-      <description>&lt;p&gt;La forma más sencilla de guardar un favorito es reenviarlo a un canal de &lt;a href=&#34;https://telegram.org&#34;&gt;Telegram&lt;/a&gt; pero la organización allí es compleja. Vamos a crear una automatización en &lt;a href=&#34;https://n8n.io&#34;&gt;n8n&lt;/a&gt; que reenvíe estos enlaces a nuestra instalación de &lt;a href=&#34;https://karakeep.app/&#34;&gt;Karakeep&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
