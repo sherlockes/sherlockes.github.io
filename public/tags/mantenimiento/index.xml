@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mantenimiento on Sherblog</title>
-    <link>http://localhost:1313/tags/mantenimiento/</link>
+    <link>http://192.168.10.211:1313/tags/mantenimiento/</link>
     <description>Recent content in Mantenimiento on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Tue, 21 Aug 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/mantenimiento/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://192.168.10.211:1313/tags/mantenimiento/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apurada de frenada</title>
-      <link>http://localhost:1313/apurada-de-frenada/</link>
+      <link>http://192.168.10.211:1313/apurada-de-frenada/</link>
       <pubDate>Tue, 21 Aug 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apurada-de-frenada/</guid>
+      <guid>http://192.168.10.211:1313/apurada-de-frenada/</guid>
       <description>&lt;h3 id=&#34;el-problema&#34;&gt;El problema&lt;/h3&gt;&#xA;&lt;p&gt;Una mañana perfecta para pasear con la bici se ha visto truncada por falta de mantenimiento en la misma.  Todo transcurría de forma correcta con la bicicleta de montaña hasta que en un pequeño tramo de descenso el freno delantelo ha empezado ha hacer un ruido bastante raro.  Paro un momento, miro la pinza de freno por si algo se ha introducido en ella y lo que veo es que las pastilla de freno están completamente desgastadas.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Una avería rara… una solución fácil.</title>
-      <link>http://localhost:1313/una-aver%C3%ADa-rara-una-soluci%C3%B3n-f%C3%A1cil./</link>
+      <link>http://192.168.10.211:1313/una-aver%C3%ADa-rara-una-soluci%C3%B3n-f%C3%A1cil./</link>
       <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/una-aver%C3%ADa-rara-una-soluci%C3%B3n-f%C3%A1cil./</guid>
+      <guid>http://192.168.10.211:1313/una-aver%C3%ADa-rara-una-soluci%C3%B3n-f%C3%A1cil./</guid>
       <description>&lt;p&gt;Hoy ha sido un día de estos en los que una simple avería es capaz de dar al traste con una buena salida en bicicleta. Por suerte cuando ha tenido lugar ya llevávamos un par de horas de ruta y nos hemos vuelto a casa con un paseo suficiente.&lt;/p&gt;&#xA;&lt;p&gt;El primer síntoma de la avería ha aparecido en un tramo cuesta abajo cuando tras pasar unas regachas y al intentar dar a los pedales hacia detrás la cadena hace un extraño hasta casi salirse.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fixie o Single Speed</title>
-      <link>http://localhost:1313/fixie-o-single-speed/</link>
+      <link>http://192.168.10.211:1313/fixie-o-single-speed/</link>
       <pubDate>Wed, 29 Jun 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/fixie-o-single-speed/</guid>
+      <guid>http://192.168.10.211:1313/fixie-o-single-speed/</guid>
       <description>&lt;p&gt;Hace mucho tiempo que quería probar la experiencia de ir en fixie por la ciudad ya que la web está repleta de comentarios sobre sus bondades. &lt;/p&gt;&#xA;&lt;p&gt;Hace varios meses que circulo con una Single Speed con la que estoy muy contento. La rueda trasera esta montada sobre un buje flip-flop por lo que convertir la bicicleta de una sola velocidad en una fixie es tan sencillo como darle la vuelta a la rueda.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Avería de las roldanas del cambio</title>
-      <link>http://localhost:1313/aver%C3%ADa-de-las-roldanas-del-cambio/</link>
+      <link>http://192.168.10.211:1313/aver%C3%ADa-de-las-roldanas-del-cambio/</link>
       <pubDate>Tue, 03 Nov 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/aver%C3%ADa-de-las-roldanas-del-cambio/</guid>
+      <guid>http://192.168.10.211:1313/aver%C3%ADa-de-las-roldanas-del-cambio/</guid>
       <description>&lt;p&gt;La mayoría de las averías en la bicicleta son fruto del desgaste o mal mantenimiento de las piezas que la componen. La última que he tenido ha sido bastante curiosa y ha tenido lugar en plena ruta cuando sin previo aviso la cadena no giraba al darle hacia atrás a los pedales.&lt;/p&gt;&#xA;&lt;p&gt;Rápidamente me doy cuenta de que la roldana inferior del cambio está bloqueada y sólo permite el giro en un sentido, por suerte es que que permite avanzar a la bicicleta por lo que no me impide llegar a casa montado sobre la misma.&lt;/p&gt;</description>
     </item>
     <item>
       <title>El látex y las maxxis se llevan mal</title>
-      <link>http://localhost:1313/el-l%C3%A1tex-y-las-maxxis-se-llevan-mal/</link>
+      <link>http://192.168.10.211:1313/el-l%C3%A1tex-y-las-maxxis-se-llevan-mal/</link>
       <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/el-l%C3%A1tex-y-las-maxxis-se-llevan-mal/</guid>
+      <guid>http://192.168.10.211:1313/el-l%C3%A1tex-y-las-maxxis-se-llevan-mal/</guid>
       <description>&lt;p&gt;Hace unos meses hice un artículo sobre las ventajas e inconvenientes de usar la mezcla casera a base de látex como líquido sellante en neumáticos tubeless de la bicicleta de montaña. Habitualmente compro las cubiertas en &lt;a href=&#34;http://www.cubiertasmtb.com&#34;&gt;www.cubiertasmtb.com&lt;/a&gt; y para el caso de las maxxis el fabricante recomienda usar blackseal como líquido sellante.&lt;/p&gt;&#xA;&lt;p&gt;Pues bien, nunca sabes si esta recomendación está justificada para garantizar un correcto funcionamiento de la cubierta o simplemente por el beneficio económico del fabricante. Desde hace un tiempo monto en la bicicleta de XC cubiertas maxxis crosmark ya que su funcionamiento se ajusta muy bien a mis necesidades pero con la última rueda delantera he tenido un problema de formación de mini bultos a lo largo de la banda de rodadura y una constante pérdida de líquido sellante por ellos.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mantenimiento pedales Shimano Spd</title>
-      <link>http://localhost:1313/mantenimiento-pedales-shimano-spd/</link>
+      <link>http://192.168.10.211:1313/mantenimiento-pedales-shimano-spd/</link>
       <pubDate>Mon, 03 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/mantenimiento-pedales-shimano-spd/</guid>
+      <guid>http://192.168.10.211:1313/mantenimiento-pedales-shimano-spd/</guid>
       <description>&lt;p&gt;En todas mis bicicletas de montaña llevo pedales shimano, 520, 540 o Xt con más de cuatro años de antigüedad el par más nuevo de todos los que utilizo.&lt;/p&gt;&#xA;&lt;p&gt;Pues bien, de siempre se ha dicho que los pedales Shimano no necesitan casi mantenimiento y aquí voy a intentar exponer que es lo para mí significa ese &amp;ldquo;casi&amp;rdquo;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;mantenimiento-habitual&#34;&gt;Mantenimiento habitual&lt;/h3&gt;&#xA;&lt;p&gt;Esta es la parte fácil, rápida y sencilla pero no por ello menos importante ni necesaria. Con cada limpieza de la bicicleta es importante quitar todos los restos de polvo o barro de los pedales con agua a presión, secarlos completamente y aplicar sobre la zona de los muelles y puntos de giro de las fijaciones algún tipo de lubricante con base de ceras, teflón o silicona para evitar crujidos, aumentar la duración y mitigar la acumulación de polvo en los pedales.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Liquido anti-pinchazos casero. Pros y contras</title>
-      <link>http://localhost:1313/liquido-anti-pinchazos-casero.-pros-y-contras/</link>
+      <link>http://192.168.10.211:1313/liquido-anti-pinchazos-casero.-pros-y-contras/</link>
       <pubDate>Thu, 06 Nov 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/liquido-anti-pinchazos-casero.-pros-y-contras/</guid>
+      <guid>http://192.168.10.211:1313/liquido-anti-pinchazos-casero.-pros-y-contras/</guid>
       <description>&lt;p&gt;Después de varios años empleando líquido anti-pinchazos en las ruedas de la bicicleta estas son las conclusiones a las que he llegado.&lt;/p&gt;&#xA;&lt;p&gt;En ningún momento voy a poner en duda el funcionamiento de los líquidos comerciales ya que es complicado que aguante en el mercado algo que no sirve para lo que ha sido concebido. El problema está básicamente en el precio. Aproximadamente, para la rueda de una bicicleta de montaña habrá que gastarse unos 6€ en los 100 ml que se necesitan. Por ese precio se puede comprar un kilo de látex para pintar que mezclado al 50% con agua nos produce casi dos litros de líquido anti-pinchazos para rellenar 20 ruedas. Si la solución casera es veinte veces más barata, hay que probarla.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Reparar pinchazos tubeless en el monte</title>
-      <link>http://localhost:1313/reparar-pinchazos-tubeless-en-el-monte/</link>
+      <link>http://192.168.10.211:1313/reparar-pinchazos-tubeless-en-el-monte/</link>
       <pubDate>Sun, 07 Sep 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/reparar-pinchazos-tubeless-en-el-monte/</guid>
+      <guid>http://192.168.10.211:1313/reparar-pinchazos-tubeless-en-el-monte/</guid>
       <description>&lt;p&gt;Es un poco tarde para hablar de las ventajas de usar neumáticos tubeless en nuestras bicicletas de montaña ya que ha sido un tema de los más comentados durante los últimos años. Personalmente, prefiero usar una cubierta tubeless al tradicional conjunto de cubierta y cámara, pero no todo son bondades, aunque cuando se trabaja con ellas en el taller y con medios adecuados la vida es bella, una vez que nos metemos en ruta presentan dos grandes inconvenientes. Es imposible talonar una cubierta con una bomba de mano y un pinchazo puede llegar a ser un gran dolor de cabeza.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Avería en cambio Sram x5</title>
-      <link>http://localhost:1313/aver%C3%ADa-en-cambio-sram-x5/</link>
+      <link>http://192.168.10.211:1313/aver%C3%ADa-en-cambio-sram-x5/</link>
       <pubDate>Thu, 14 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/aver%C3%ADa-en-cambio-sram-x5/</guid>
+      <guid>http://192.168.10.211:1313/aver%C3%ADa-en-cambio-sram-x5/</guid>
       <description>&lt;p&gt;Otro día que toca volver a casa antes de hora por culpa de una avería mecánica, hoy le ha tocado al cambio trasero, al intentar subir piñones me he encontrado con que la palanca no responde y se ha quedado así.&lt;/p&gt;&#xA;&lt;p&gt;![1]&lt;/p&gt;&#xA;&lt;p&gt;La cosa no pinta bien, puedo bajar piñones pero no es posible subirlos, de forma que me pongo a desmontar el pulsador sin perder la fe en que haya sido un muelle que se haya salido del alojamiento o una avería similar de fácil reparación. Desmonto la palanca grande que tensa la sirga del cambio de forma que debería aparecer algo como esto…&lt;/p&gt;</description>
     </item>
     <item>
       <title>Alinear patilla de cambio doblada</title>
-      <link>http://localhost:1313/alinear-patilla-de-cambio-doblada/</link>
+      <link>http://192.168.10.211:1313/alinear-patilla-de-cambio-doblada/</link>
       <pubDate>Thu, 27 Dec 2012 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/alinear-patilla-de-cambio-doblada/</guid>
+      <guid>http://192.168.10.211:1313/alinear-patilla-de-cambio-doblada/</guid>
       <description>&lt;p&gt;La patilla del cambio es una de las piezas más olvidadas de la bici pero con una función importantísima. Del conjunto cuadro, cambio y patilla, esta última es el elemento más débil (y barato) de forma que ante una caída o piedra en el camino que golpee el cambio se partirá, evitando con ello que se produzcan daños más serios en el cuadro.&lt;/p&gt;&#xA;&lt;p&gt;![2]&lt;/p&gt;&#xA;&lt;p&gt;Es una avería relativamente común partir la patilla del cambio. Su diagnóstico es evidente ya que nos quedamos con el cambio colgando del cable y su reparación es bastante simple, siempre y cuando no tengas problemas en encontrar la patilla adecuada ya que para cada modelo de cuadro existe un modelo particular.&lt;/p&gt;</description>
     </item>
   </channel>

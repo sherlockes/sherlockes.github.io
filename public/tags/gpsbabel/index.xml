@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gpsbabel on Sherblog</title>
-    <link>http://localhost:1313/tags/gpsbabel/</link>
+    <link>http://192.168.10.211:1313/tags/gpsbabel/</link>
     <description>Recent content in Gpsbabel on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Wed, 01 Apr 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/gpsbabel/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://192.168.10.211:1313/tags/gpsbabel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reducir puntos de un track gpx</title>
-      <link>http://localhost:1313/reducir-puntos-de-un-track-gpx/</link>
+      <link>http://192.168.10.211:1313/reducir-puntos-de-un-track-gpx/</link>
       <pubDate>Wed, 01 Apr 2009 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/reducir-puntos-de-un-track-gpx/</guid>
+      <guid>http://192.168.10.211:1313/reducir-puntos-de-un-track-gpx/</guid>
       <description>&lt;p&gt;Cada día más, la gente comparte las rutas mediante algún servicio online (&lt;a href=&#34;http://es.wikiloc.com/wikiloc/user.do?name=Sherlockes&#34;&gt;Wikiloc&lt;/a&gt; es el que yo utilizo) para que cualquiera pueda verlas e incluso descargarlas para meterlas en el navegado gps y de esta forma poder seguirlas de una forma rápida y sencilla. Es cierto que la aventura pierde un poco de encanto pero ayuda a planificar el trayecto evitando así sorpresas que nos podrían arruinar un bonito día en el campo.&lt;/p&gt;</description>
     </item>
   </channel>

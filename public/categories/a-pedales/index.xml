@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>A Pedales on Sherblog</title>
-    <link>http://localhost:1313/categories/a-pedales/</link>
+    <link>http://192.168.10.211:1313/categories/a-pedales/</link>
     <description>Recent content in A Pedales on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Tue, 21 Aug 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/a-pedales/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://192.168.10.211:1313/categories/a-pedales/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apurada de frenada</title>
-      <link>http://localhost:1313/apurada-de-frenada/</link>
+      <link>http://192.168.10.211:1313/apurada-de-frenada/</link>
       <pubDate>Tue, 21 Aug 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apurada-de-frenada/</guid>
+      <guid>http://192.168.10.211:1313/apurada-de-frenada/</guid>
       <description>&lt;h3 id=&#34;el-problema&#34;&gt;El problema&lt;/h3&gt;&#xA;&lt;p&gt;Una mañana perfecta para pasear con la bici se ha visto truncada por falta de mantenimiento en la misma.  Todo transcurría de forma correcta con la bicicleta de montaña hasta que en un pequeño tramo de descenso el freno delantelo ha empezado ha hacer un ruido bastante raro.  Paro un momento, miro la pinza de freno por si algo se ha introducido en ella y lo que veo es que las pastilla de freno están completamente desgastadas.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cubierta KO, Decathlon OK</title>
-      <link>http://localhost:1313/cubierta-ko-decathlon-ok/</link>
+      <link>http://192.168.10.211:1313/cubierta-ko-decathlon-ok/</link>
       <pubDate>Thu, 16 Aug 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/cubierta-ko-decathlon-ok/</guid>
-      <description>&lt;p&gt;Con menos de tres meses montada en la rueda trasera de la bicicleta de carretera, la cubierta &lt;a href=&#34;https://www.decathlon.es/neum-resist-5-700x25-protect-id_8386929.html&#34;&gt;BTWIN Resist Protect&lt;/a&gt; que compré en Decathlon presenta este aspecto.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/20170720_cubierta_btwin_ko.jpg&#34; alt=&#34;cubierta&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Completamente cuarteada a lo largo de todo el flanco de la rueda sin ninguna causa probable más allá de un defecto de fabricación ya que la cubierta no ha sido especialmente expuesta a malas condiciones atmosféricas y la presión de inflado ha estado siempre dentro de los valores recomendados por el fabricante.&lt;/p&gt;</description>
+      <guid>http://192.168.10.211:1313/cubierta-ko-decathlon-ok/</guid>
+      <description>&lt;p&gt;Con menos de tres meses montada en la rueda trasera de la bicicleta de carretera, la cubierta &lt;a href=&#34;https://www.decathlon.es/neum-resist-5-700x25-protect-id_8386929.html&#34;&gt;BTWIN Resist Protect&lt;/a&gt; que compré en Decathlon presenta este aspecto.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://192.168.10.211:1313/images/20170720_cubierta_btwin_ko.jpg&#34; alt=&#34;cubierta&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Completamente cuarteada a lo largo de todo el flanco de la rueda sin ninguna causa probable más allá de un defecto de fabricación ya que la cubierta no ha sido especialmente expuesta a malas condiciones atmosféricas y la presión de inflado ha estado siempre dentro de los valores recomendados por el fabricante.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Barrancos del sur de Zaragoza</title>
-      <link>http://localhost:1313/barrancos-del-sur-de-zaragoza/</link>
+      <link>http://192.168.10.211:1313/barrancos-del-sur-de-zaragoza/</link>
       <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/barrancos-del-sur-de-zaragoza/</guid>
-      <description>&lt;p&gt;Para todo aquel que disfrute de la bicicleta de montaña y alguna vez se deje caer por Zaragoza, aquí una recopilación con los principales barrancos que se pueden encontrar en la zona sur de la capital aragonesa.&lt;/p&gt;&#xA;&lt;iframe width=&#34;500px&#34; height=&#34;300px&#34; frameBorder=&#34;0&#34; src=&#34;https://umap.openstreetmap.fr/es/map/barrancos-de-zaragoza_241825?scaleControl=false&amp;miniMap=false&amp;scrollWheelZoom=false&amp;zoomControl=true&amp;allowEdit=false&amp;moreControl=true&amp;searchControl=null&amp;tilelayersControl=null&amp;embedControl=null&amp;datalayersControl=true&amp;onLoadPanel=undefined&amp;captionBar=false&#34;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href=&#34;https://umap.openstreetmap.fr/es/map/barrancos-de-zaragoza_241825&#34;&gt;Ver pantalla completa&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;También puedes descargar el archivo desde &lt;a href=&#34;http://localhost:1313/files/brrzgz.gpx&#34;&gt;aquí&lt;/a&gt; para abrirlo con con &lt;a href=&#34;https://www.google.es/intl/es_es/earth/download/ge/agree.html&#34;&gt;Google Earth&lt;/a&gt; o tu editor preferido.&lt;/p&gt;&#xA;&lt;p&gt;Intentaré periódicamente ir actualizando este archivo con nuevos barrancos y sendas. 😉&lt;/p&gt;</description>
+      <guid>http://192.168.10.211:1313/barrancos-del-sur-de-zaragoza/</guid>
+      <description>&lt;p&gt;Para todo aquel que disfrute de la bicicleta de montaña y alguna vez se deje caer por Zaragoza, aquí una recopilación con los principales barrancos que se pueden encontrar en la zona sur de la capital aragonesa.&lt;/p&gt;&#xA;&lt;iframe width=&#34;500px&#34; height=&#34;300px&#34; frameBorder=&#34;0&#34; src=&#34;https://umap.openstreetmap.fr/es/map/barrancos-de-zaragoza_241825?scaleControl=false&amp;miniMap=false&amp;scrollWheelZoom=false&amp;zoomControl=true&amp;allowEdit=false&amp;moreControl=true&amp;searchControl=null&amp;tilelayersControl=null&amp;embedControl=null&amp;datalayersControl=true&amp;onLoadPanel=undefined&amp;captionBar=false&#34;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href=&#34;https://umap.openstreetmap.fr/es/map/barrancos-de-zaragoza_241825&#34;&gt;Ver pantalla completa&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;También puedes descargar el archivo desde &lt;a href=&#34;http://192.168.10.211:1313/files/brrzgz.gpx&#34;&gt;aquí&lt;/a&gt; para abrirlo con con &lt;a href=&#34;https://www.google.es/intl/es_es/earth/download/ge/agree.html&#34;&gt;Google Earth&lt;/a&gt; o tu editor preferido.&lt;/p&gt;&#xA;&lt;p&gt;Intentaré periódicamente ir actualizando este archivo con nuevos barrancos y sendas. 😉&lt;/p&gt;</description>
     </item>
     <item>
       <title>Una avería rara… una solución fácil.</title>
-      <link>http://localhost:1313/una-aver%C3%ADa-rara-una-soluci%C3%B3n-f%C3%A1cil./</link>
+      <link>http://192.168.10.211:1313/una-aver%C3%ADa-rara-una-soluci%C3%B3n-f%C3%A1cil./</link>
       <pubDate>Sun, 07 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/una-aver%C3%ADa-rara-una-soluci%C3%B3n-f%C3%A1cil./</guid>
+      <guid>http://192.168.10.211:1313/una-aver%C3%ADa-rara-una-soluci%C3%B3n-f%C3%A1cil./</guid>
       <description>&lt;p&gt;Hoy ha sido un día de estos en los que una simple avería es capaz de dar al traste con una buena salida en bicicleta. Por suerte cuando ha tenido lugar ya llevávamos un par de horas de ruta y nos hemos vuelto a casa con un paseo suficiente.&lt;/p&gt;&#xA;&lt;p&gt;El primer síntoma de la avería ha aparecido en un tramo cuesta abajo cuando tras pasar unas regachas y al intentar dar a los pedales hacia detrás la cadena hace un extraño hasta casi salirse.&lt;/p&gt;</description>
     </item>
     <item>
       <title>De Google Earth a mapa para Garmin en 5 minutos</title>
-      <link>http://localhost:1313/de-google-earth-a-mapa-para-garmin-en-5-minutos/</link>
+      <link>http://192.168.10.211:1313/de-google-earth-a-mapa-para-garmin-en-5-minutos/</link>
       <pubDate>Thu, 06 Jul 2017 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/de-google-earth-a-mapa-para-garmin-en-5-minutos/</guid>
+      <guid>http://192.168.10.211:1313/de-google-earth-a-mapa-para-garmin-en-5-minutos/</guid>
       <description>&lt;p&gt;Desde hace muchos años, utilizo &lt;a href=&#34;http://www.elgps.com/foroGPS/viewtopic.php?f=41&amp;amp;t=8646&#34;&gt;Topohispania&lt;/a&gt; para la navegación en bicicleta con el Garmin Edge.&lt;/p&gt;&#xA;&lt;p&gt;Recientemente, me ha vuelto a picar la curiosidad de como crear un mapa con las sendas y barrancos que no salen en Topohispania y que están por los lugares que circulo habitualmente para superponerlo en el gps de la bicicleta. Lo primero que escuentro es &lt;a href=&#34;http://www.foromtb.com/threads/paso-a-paso-crear-un-mapa-para-superponerlo-al-topohispania.888466/&#34;&gt;esto&lt;/a&gt;, un tutorial de 2012 que emplea un sinfín de utilidades ya difíciles de encontrar y que echa para atrás sólo de ver la amplitud del mismo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Openstreetmap en Gps Garmin</title>
-      <link>http://localhost:1313/openstreetmap-en-gps-garmin/</link>
+      <link>http://192.168.10.211:1313/openstreetmap-en-gps-garmin/</link>
       <pubDate>Wed, 26 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/openstreetmap-en-gps-garmin/</guid>
-      <description>&lt;p&gt;Para el que no lo conozca, &lt;a href=&#34;https://www.openstreetmap.org&#34;&gt;OpenStreetMap&lt;/a&gt; (también conocido como OSM) es un proyecto colaborativo para crear mapas libres y editables. Los mapas se crean utilizando información geográfica capturada con dispositivos GPS móviles, ortofotografías y otras fuentes libres. Esta cartografía, tanto las imágenes creadas como los datos vectoriales almacenados en su base de datos, se distribuye bajo licencia abierta Licencia Abierta de Bases de Datos (en inglés ODbL).&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/20170426_openstreetmaps_garmin_01.jpg&#34; alt=&#34;imagen&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Desde hace un tiempo hay una forma rápida y sencilla de incluirlos en los gps de la marca Garmin para una navegación por carreteras y caminos mediante &lt;a href=&#34;http://garmin.openstreetmap.nl&#34;&gt;esta&lt;/a&gt; web.&lt;/p&gt;</description>
+      <guid>http://192.168.10.211:1313/openstreetmap-en-gps-garmin/</guid>
+      <description>&lt;p&gt;Para el que no lo conozca, &lt;a href=&#34;https://www.openstreetmap.org&#34;&gt;OpenStreetMap&lt;/a&gt; (también conocido como OSM) es un proyecto colaborativo para crear mapas libres y editables. Los mapas se crean utilizando información geográfica capturada con dispositivos GPS móviles, ortofotografías y otras fuentes libres. Esta cartografía, tanto las imágenes creadas como los datos vectoriales almacenados en su base de datos, se distribuye bajo licencia abierta Licencia Abierta de Bases de Datos (en inglés ODbL).&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://192.168.10.211:1313/images/20170426_openstreetmaps_garmin_01.jpg&#34; alt=&#34;imagen&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Desde hace un tiempo hay una forma rápida y sencilla de incluirlos en los gps de la marca Garmin para una navegación por carreteras y caminos mediante &lt;a href=&#34;http://garmin.openstreetmap.nl&#34;&gt;esta&lt;/a&gt; web.&lt;/p&gt;</description>
     </item>
     <item>
       <title>La obsolescencia prematura de unos puños</title>
-      <link>http://localhost:1313/la-obsolescencia-prematura-de-unos-pu%C3%B1os/</link>
+      <link>http://192.168.10.211:1313/la-obsolescencia-prematura-de-unos-pu%C3%B1os/</link>
       <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/la-obsolescencia-prematura-de-unos-pu%C3%B1os/</guid>
+      <guid>http://192.168.10.211:1313/la-obsolescencia-prematura-de-unos-pu%C3%B1os/</guid>
       <description>&lt;p&gt;Después de casi cinco años y varios miles de kilómetros montados sobre la bicicleta ha llegado el momento del cambio de los puños del manillar de la bicicleta de montaña reacondicionada a la carretera. Durante todo este tiempo he usado los [Ritchey WCS True Grip Ergo] &lt;a href=&#34;http://ritcheylogic.com/wcs-ergo-true-grip&#34;&gt;2&lt;/a&gt; con los que estoy muy contento, por lo que para nada me planteo un cambio de modelo.&lt;/p&gt;&#xA;&lt;p&gt;Tal y como se puede ver en la imagen de cabecera, el fabricante los pone a la venta por 13€. Pero esto sólo es el precio de catalogo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fixie o Single Speed</title>
-      <link>http://localhost:1313/fixie-o-single-speed/</link>
+      <link>http://192.168.10.211:1313/fixie-o-single-speed/</link>
       <pubDate>Wed, 29 Jun 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/fixie-o-single-speed/</guid>
+      <guid>http://192.168.10.211:1313/fixie-o-single-speed/</guid>
       <description>&lt;p&gt;Hace mucho tiempo que quería probar la experiencia de ir en fixie por la ciudad ya que la web está repleta de comentarios sobre sus bondades. &lt;/p&gt;&#xA;&lt;p&gt;Hace varios meses que circulo con una Single Speed con la que estoy muy contento. La rueda trasera esta montada sobre un buje flip-flop por lo que convertir la bicicleta de una sola velocidad en una fixie es tan sencillo como darle la vuelta a la rueda.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Avería de las roldanas del cambio</title>
-      <link>http://localhost:1313/aver%C3%ADa-de-las-roldanas-del-cambio/</link>
+      <link>http://192.168.10.211:1313/aver%C3%ADa-de-las-roldanas-del-cambio/</link>
       <pubDate>Tue, 03 Nov 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/aver%C3%ADa-de-las-roldanas-del-cambio/</guid>
+      <guid>http://192.168.10.211:1313/aver%C3%ADa-de-las-roldanas-del-cambio/</guid>
       <description>&lt;p&gt;La mayoría de las averías en la bicicleta son fruto del desgaste o mal mantenimiento de las piezas que la componen. La última que he tenido ha sido bastante curiosa y ha tenido lugar en plena ruta cuando sin previo aviso la cadena no giraba al darle hacia atrás a los pedales.&lt;/p&gt;&#xA;&lt;p&gt;Rápidamente me doy cuenta de que la roldana inferior del cambio está bloqueada y sólo permite el giro en un sentido, por suerte es que que permite avanzar a la bicicleta por lo que no me impide llegar a casa montado sobre la misma.&lt;/p&gt;</description>
     </item>
     <item>
       <title>El látex y las maxxis se llevan mal</title>
-      <link>http://localhost:1313/el-l%C3%A1tex-y-las-maxxis-se-llevan-mal/</link>
+      <link>http://192.168.10.211:1313/el-l%C3%A1tex-y-las-maxxis-se-llevan-mal/</link>
       <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/el-l%C3%A1tex-y-las-maxxis-se-llevan-mal/</guid>
+      <guid>http://192.168.10.211:1313/el-l%C3%A1tex-y-las-maxxis-se-llevan-mal/</guid>
       <description>&lt;p&gt;Hace unos meses hice un artículo sobre las ventajas e inconvenientes de usar la mezcla casera a base de látex como líquido sellante en neumáticos tubeless de la bicicleta de montaña. Habitualmente compro las cubiertas en &lt;a href=&#34;http://www.cubiertasmtb.com&#34;&gt;www.cubiertasmtb.com&lt;/a&gt; y para el caso de las maxxis el fabricante recomienda usar blackseal como líquido sellante.&lt;/p&gt;&#xA;&lt;p&gt;Pues bien, nunca sabes si esta recomendación está justificada para garantizar un correcto funcionamiento de la cubierta o simplemente por el beneficio económico del fabricante. Desde hace un tiempo monto en la bicicleta de XC cubiertas maxxis crosmark ya que su funcionamiento se ajusta muy bien a mis necesidades pero con la última rueda delantera he tenido un problema de formación de mini bultos a lo largo de la banda de rodadura y una constante pérdida de líquido sellante por ellos.&lt;/p&gt;</description>
     </item>
   </channel>

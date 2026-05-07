@@ -2,46 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Zerotier on Sherblog</title>
-    <link>http://localhost:1313/tags/zerotier/</link>
+    <link>http://192.168.10.211:1313/tags/zerotier/</link>
     <description>Recent content in Zerotier on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/zerotier/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://192.168.10.211:1313/tags/zerotier/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Controlando un Tasmota remoto desde Home Assistant</title>
-      <link>http://localhost:1313/controlando-un-tasmota-remoto-desde-home-assistant/</link>
+      <link>http://192.168.10.211:1313/controlando-un-tasmota-remoto-desde-home-assistant/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/controlando-un-tasmota-remoto-desde-home-assistant/</guid>
+      <guid>http://192.168.10.211:1313/controlando-un-tasmota-remoto-desde-home-assistant/</guid>
       <description>&lt;p&gt;Tengo problemas con el &lt;a href=&#34;https://smlight.tech/product/slzb-06&#34;&gt;SLZB-06&lt;/a&gt; de mi segunda residencia cuando se va la luz, así es como lo he solucionado gracias a un enchufe inteligente.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Usando un tunel ssh para aceder a un servidor remoto</title>
-      <link>http://localhost:1313/usando-un-tunel-ssh-para-aceder-a-un-servidor-remoto/</link>
+      <link>http://192.168.10.211:1313/usando-un-tunel-ssh-para-aceder-a-un-servidor-remoto/</link>
       <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/usando-un-tunel-ssh-para-aceder-a-un-servidor-remoto/</guid>
+      <guid>http://192.168.10.211:1313/usando-un-tunel-ssh-para-aceder-a-un-servidor-remoto/</guid>
       <description>&lt;p&gt;Esta vez me encuentro con que tengo que acceder a la configuración de un router remoto, no tengo acceso a través de ssh pero  en la red del mismo tengo &amp;ldquo;infiltrada&amp;rdquo; una Raspberry con Zerotier.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Instalación y configuración de Zerotier</title>
-      <link>http://localhost:1313/instalaci%C3%B3n-y-configuraci%C3%B3n-de-zerotier/</link>
+      <link>http://192.168.10.211:1313/instalaci%C3%B3n-y-configuraci%C3%B3n-de-zerotier/</link>
       <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/instalaci%C3%B3n-y-configuraci%C3%B3n-de-zerotier/</guid>
-      <description>&lt;p&gt;Hace más de cinco años que empecé a usar &lt;a href=&#34;https://www.zerotier.com&#34;&gt;Zerotier&lt;/a&gt; tal y como en su día expliqué en este &lt;a href=&#34;http://localhost:1313/primeros-pasos-con-zerotier/&#34;&gt;artículo&lt;/a&gt; como consecuencia de un problema con los puertos del router. Ahora lo reedito con todo lo que he aprendido en este tiempo.&lt;/p&gt;</description>
+      <guid>http://192.168.10.211:1313/instalaci%C3%B3n-y-configuraci%C3%B3n-de-zerotier/</guid>
+      <description>&lt;p&gt;Hace más de cinco años que empecé a usar &lt;a href=&#34;https://www.zerotier.com&#34;&gt;Zerotier&lt;/a&gt; tal y como en su día expliqué en este &lt;a href=&#34;http://192.168.10.211:1313/primeros-pasos-con-zerotier/&#34;&gt;artículo&lt;/a&gt; como consecuencia de un problema con los puertos del router. Ahora lo reedito con todo lo que he aprendido en este tiempo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Encender el Nas desde el teléfono</title>
-      <link>http://localhost:1313/encender-el-nas-desde-el-tel%C3%A9fono/</link>
+      <link>http://192.168.10.211:1313/encender-el-nas-desde-el-tel%C3%A9fono/</link>
       <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/encender-el-nas-desde-el-tel%C3%A9fono/</guid>
+      <guid>http://192.168.10.211:1313/encender-el-nas-desde-el-tel%C3%A9fono/</guid>
       <description>&lt;p&gt;Tener el NAS encendido todo el día puede ser un gasto innecesario. El mío se enciende de forma automática las horas necesarias para las copias de seguridad y lo enciendo de forma remota desde mi teléfono si lo necesito de forma puntual fuera de este horario.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Primeros pasos con Zerotier</title>
-      <link>http://localhost:1313/primeros-pasos-con-zerotier/</link>
+      <link>http://192.168.10.211:1313/primeros-pasos-con-zerotier/</link>
       <pubDate>Wed, 27 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/primeros-pasos-con-zerotier/</guid>
-      <description>&lt;h2 id=&#34;la-situación&#34;&gt;La situación.&lt;/h2&gt;&#xA;&lt;p&gt;Hace unos días que vengo teniendo problemas con la conexión VPN (&lt;a href=&#34;http://localhost:1313/raspberry-servidor-vpn/&#34;&gt;Servidor VPN&lt;/a&gt;) que utilizo para conectarme a la red de mi casa cuando estoy en movilidad. Parece que el problema no está en el servidor VPN que corre sobre la Raspberry B+ ni en el cliente de &lt;a href=&#34;https://play.google.com/store/apps/details?id=de.blinkt.openvpn&amp;amp;hl=es&#34;&gt;openvpn&lt;/a&gt; que utilizo en mi terminal Android, pero no ha sido fácil llegar a esta conclusión. Después de varias pruebas y de mucho tiempo funcionando de un día para otro y sin tocar ninguna configurando el sistema ha dejado de funcionar.&lt;/p&gt;</description>
+      <guid>http://192.168.10.211:1313/primeros-pasos-con-zerotier/</guid>
+      <description>&lt;h2 id=&#34;la-situación&#34;&gt;La situación.&lt;/h2&gt;&#xA;&lt;p&gt;Hace unos días que vengo teniendo problemas con la conexión VPN (&lt;a href=&#34;http://192.168.10.211:1313/raspberry-servidor-vpn/&#34;&gt;Servidor VPN&lt;/a&gt;) que utilizo para conectarme a la red de mi casa cuando estoy en movilidad. Parece que el problema no está en el servidor VPN que corre sobre la Raspberry B+ ni en el cliente de &lt;a href=&#34;https://play.google.com/store/apps/details?id=de.blinkt.openvpn&amp;amp;hl=es&#34;&gt;openvpn&lt;/a&gt; que utilizo en mi terminal Android, pero no ha sido fácil llegar a esta conclusión. Después de varias pruebas y de mucho tiempo funcionando de un día para otro y sin tocar ninguna configurando el sistema ha dejado de funcionar.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

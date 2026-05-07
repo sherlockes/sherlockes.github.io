@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Z2m on Sherblog</title>
-    <link>http://localhost:1313/tags/z2m/</link>
+    <link>http://192.168.10.211:1313/tags/z2m/</link>
     <description>Recent content in Z2m on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Thu, 16 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/z2m/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://192.168.10.211:1313/tags/z2m/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Activar sirena TS0224 mediante Z2M en Home assistant</title>
-      <link>http://localhost:1313/activar-sirena-ts0224-mediante-z2m-en-home-assistant/</link>
+      <link>http://192.168.10.211:1313/activar-sirena-ts0224-mediante-z2m-en-home-assistant/</link>
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/activar-sirena-ts0224-mediante-z2m-en-home-assistant/</guid>
+      <guid>http://192.168.10.211:1313/activar-sirena-ts0224-mediante-z2m-en-home-assistant/</guid>
       <description>&lt;p&gt;Muchas veces, activar un elemento zigbee no es tan obvio en Home Assistant. Esta es la muestra de lo que tengo que hacer para hacer sonar la sirena zigbee que tengo instalada a modo de alarma.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tilt-Shift on Sherblog</title>
-    <link>http://localhost:1313/tags/tilt-shift/</link>
+    <link>http://192.168.10.211:1313/tags/tilt-shift/</link>
     <description>Recent content in Tilt-Shift on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Tue, 13 Jan 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/tilt-shift/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://192.168.10.211:1313/tags/tilt-shift/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tilt-Shift con Photoshop</title>
-      <link>http://localhost:1313/tilt-shift-con-photoshop/</link>
+      <link>http://192.168.10.211:1313/tilt-shift-con-photoshop/</link>
       <pubDate>Tue, 13 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tilt-shift-con-photoshop/</guid>
+      <guid>http://192.168.10.211:1313/tilt-shift-con-photoshop/</guid>
       <description>&lt;p&gt;Para los que escuchen la expresión por primera vez, Tilt-Shift se podría definir en fotografía como el arte de simular una maqueta a partir de la realidad. Para hacerlo directamente con una cámara hay que emplear unos objetivos y lentes que se nos escapan al bolsillo de la mayoría de los mortales por lo que vamos a intentar la modalidad barata que es mediante Photoshop.&lt;/p&gt;&#xA;&lt;p&gt;Lo primero que necesitamos es una fotografía cuyo principal requerimiento es que esté tomada desde un punto elevado y distante. Si la fotografía contiene elementos humanos o arquitectónicos coloridos será mucho más creible. El entorno rural no facilita estas cualidades por lo que habrá que intentarlo con lo que hay.&lt;/p&gt;</description>
     </item>
   </channel>

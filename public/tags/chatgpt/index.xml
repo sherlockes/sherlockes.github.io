@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chatgpt on Sherblog</title>
-    <link>http://localhost:1313/tags/chatgpt/</link>
+    <link>http://192.168.10.211:1313/tags/chatgpt/</link>
     <description>Recent content in Chatgpt on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Tue, 29 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/chatgpt/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://192.168.10.211:1313/tags/chatgpt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mostrando todos mis artículos</title>
-      <link>http://localhost:1313/mostrando-todos-mis-art%C3%ADculos/</link>
+      <link>http://192.168.10.211:1313/mostrando-todos-mis-art%C3%ADculos/</link>
       <pubDate>Tue, 29 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/mostrando-todos-mis-art%C3%ADculos/</guid>
+      <guid>http://192.168.10.211:1313/mostrando-todos-mis-art%C3%ADculos/</guid>
       <description>&lt;p&gt;Como he conseguido crear una plantilla para &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; en la que mostrar todos los artículos del Blog con la inestimable ayuda de &lt;a href=&#34;https://chatgpt.com&#34;&gt;chatgpt&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
   </channel>

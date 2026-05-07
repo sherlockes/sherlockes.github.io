@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nginx on Sherblog</title>
-    <link>http://localhost:1313/tags/nginx/</link>
+    <link>http://192.168.10.211:1313/tags/nginx/</link>
     <description>Recent content in Nginx on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Mon, 25 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://192.168.10.211:1313/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Configurar Nginx Proxy Manager en Ubuntu server</title>
-      <link>http://localhost:1313/configurar-nginx-proxy-manager-en-ubuntu-server/</link>
+      <link>http://192.168.10.211:1313/configurar-nginx-proxy-manager-en-ubuntu-server/</link>
       <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/configurar-nginx-proxy-manager-en-ubuntu-server/</guid>
+      <guid>http://192.168.10.211:1313/configurar-nginx-proxy-manager-en-ubuntu-server/</guid>
       <description>&lt;p&gt;Hace tiempo que estoy dándole vueltas a montar un proxy inverso para mis servicios locales. Hoy me he decidido a montarlo con Nginx Proxy Manager.&lt;/p&gt;</description>
     </item>
   </channel>

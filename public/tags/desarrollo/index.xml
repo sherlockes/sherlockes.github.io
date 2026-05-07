@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Desarrollo on Sherblog</title>
-    <link>http://localhost:1313/tags/desarrollo/</link>
+    <link>http://192.168.10.211:1313/tags/desarrollo/</link>
     <description>Recent content in Desarrollo on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Tue, 14 Dec 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/desarrollo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://192.168.10.211:1313/tags/desarrollo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Contenido relacionado en Hugo</title>
-      <link>http://localhost:1313/contenido-relacionado-en-hugo/</link>
+      <link>http://192.168.10.211:1313/contenido-relacionado-en-hugo/</link>
       <pubDate>Tue, 14 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/contenido-relacionado-en-hugo/</guid>
+      <guid>http://192.168.10.211:1313/contenido-relacionado-en-hugo/</guid>
       <description>&lt;p&gt;Para que el visitante obtenga una mejor experiencia de tu contenido, es importante mostrarle contenido relaccionado para que siga leyendo a continuación de loa que ya ha consultado. Así lo he implementado en &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Raspberry Montaje y ssh</title>
-      <link>http://localhost:1313/raspberry-montaje-y-ssh/</link>
+      <link>http://192.168.10.211:1313/raspberry-montaje-y-ssh/</link>
       <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/raspberry-montaje-y-ssh/</guid>
+      <guid>http://192.168.10.211:1313/raspberry-montaje-y-ssh/</guid>
       <description>&lt;h3 id=&#34;montaje-y-acceso-ssh&#34;&gt;Montaje y acceso ssh&lt;/h3&gt;&#xA;&lt;p&gt;Ya tengo todo lo que creo que necesito.  Una &lt;a href=&#34;https://www.amazon.es/gp/product/B01CD5VC92/ref=oh_aui_detailpage_o00_s01?ie=UTF8&amp;amp;psc=1&#34;&gt;Raspberry&lt;/a&gt;, una &lt;a href=&#34;https://www.amazon.es/gp/product/B013UDL58E/ref=oh_aui_detailpage_o00_s00?ie=UTF8&amp;amp;psc=1&#34;&gt;tarjeta micro sd&lt;/a&gt;, una &lt;a href=&#34;https://www.amazon.es/gp/product/B01DDFFOYK/ref=oh_aui_detailpage_o00_s01?ie=UTF8&amp;amp;psc=1&#34;&gt;fuente de alimentación&lt;/a&gt; y un &lt;a href=&#34;https://www.amazon.es/gp/product/B001U3ZRBS/ref=oh_aui_detailpage_o00_s01?ie=UTF8&amp;amp;psc=1&#34;&gt;cable de red&lt;/a&gt;.  Total 59€ de inversión inicial que supongo no se quedarán ahí.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Raspberry configurando rclone sin entorno gráfico</title>
-      <link>http://localhost:1313/raspberry-configurando-rclone-sin-entorno-gr%C3%A1fico/</link>
+      <link>http://192.168.10.211:1313/raspberry-configurando-rclone-sin-entorno-gr%C3%A1fico/</link>
       <pubDate>Thu, 11 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/raspberry-configurando-rclone-sin-entorno-gr%C3%A1fico/</guid>
+      <guid>http://192.168.10.211:1313/raspberry-configurando-rclone-sin-entorno-gr%C3%A1fico/</guid>
       <description>&lt;p&gt;En linux no hay cliente oficial para acceder a Google Drive pero por suerte hay varias utilizades que permiten realizar enta labor.  Hay cientos de post al respecto de la existencia de estas utilidades, por lo que no voy a crear uno más, simplemente voy a explicar mi experiencia con una de las que yo utilizo. &lt;a href=&#34;https://rclone.org&#34;&gt;Rclone&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Raspberry red y wifi</title>
-      <link>http://localhost:1313/raspberry-red-y-wifi/</link>
+      <link>http://192.168.10.211:1313/raspberry-red-y-wifi/</link>
       <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/raspberry-red-y-wifi/</guid>
+      <guid>http://192.168.10.211:1313/raspberry-red-y-wifi/</guid>
       <description>&lt;h3 id=&#34;configurar-red-y-wifi&#34;&gt;Configurar red y wifi&lt;/h3&gt;&#xA;&lt;p&gt;Es interesante que la Raspberry arranque siempre con la misma dirección ip de red si queremos con ella automatizar algún servicio.  Para ello, en primer lugar hay que editar el archivo &amp;ldquo;/etc/dhcpcd.conf&amp;rdquo; mediante la instrucción &lt;code&gt;sudo nano /etc/dhcpcd.conf&lt;/code&gt; e introduciremos al final las siguientes líneas (dependiendo de la configuración de la red y del router.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;interface eth0&#xA;&#xA;static ip_address=192.168.1.202/24&#xA;static routers=192.168.1.1&#xA;static domain_name_servers=192.168.1.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&#xA;&lt;li&gt;Guardamos el archivo =&amp;gt; Ctrl + o&lt;/li&gt;&#xA;&lt;li&gt;Salimos del editor nano =&amp;gt; Ctrl + x&lt;/li&gt;&#xA;&lt;li&gt;Reiniciamos la Raspberry =&amp;gt; sudo reboot&lt;/li&gt;&#xA;&lt;li&gt;Nos logamos de nuevo a través de la nueva ip&lt;/li&gt;&#xA;&lt;li&gt;Comprobamos que ha funcionado =&amp;gt; ip a&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Ahora vamos a intentar ir un paso más allá y configurar la conexión a la red a través del módulo integrado wifi que trae la Raspberry 3.  Para configurar la red inalámbrica hay que editar el archivo &amp;ldquo;/etc/wpa_supplicant/wpa_supplicant.conf&amp;rdquo;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Raspberry apache y php</title>
-      <link>http://localhost:1313/raspberry-apache-y-php/</link>
+      <link>http://192.168.10.211:1313/raspberry-apache-y-php/</link>
       <pubDate>Tue, 03 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/raspberry-apache-y-php/</guid>
+      <guid>http://192.168.10.211:1313/raspberry-apache-y-php/</guid>
       <description>&lt;h3 id=&#34;instalando-php-y-apache&#34;&gt;Instalando PhP y Apache&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt-get install php7.0 libapache2-mod-php7.0 php7.0-mysql -y&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Para comprobar la correcta instalación de php borraremos el archivo &amp;ldquo;index.html&amp;rdquo;, crearemos un archivo &amp;ldquo;index.php&amp;rdquo; en el que escribiremos un mensaje &amp;ldquo;hola mundo&amp;rdquo; y reiniciaremos el servidor.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd /var/www/html&#xA;sudo rm index.html&#xA;sudo nano index.php&#xA;&#xA;   &amp;lt;?php echo &amp;#34;hola mundo&amp;#34;; ?&amp;gt;&#xA;   Pulsar control-x&#xA;   Pulsar y&#xA;   Pulsar intro&#xA;&#xA;sudo service apache2 restart&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ahora al acceder desde el navegador a la ip de nuestra raspberry se debería mostrar el mensaje &amp;ldquo;hola mundo&amp;rdquo;.  Antes de seguir adelante, modificaremos el archivo de configuración de php para que nos permita subir al servidor archivos de hasta 8Mb.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Raspberry mysql y DB</title>
-      <link>http://localhost:1313/raspberry-mysql-y-db/</link>
+      <link>http://192.168.10.211:1313/raspberry-mysql-y-db/</link>
       <pubDate>Wed, 04 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/raspberry-mysql-y-db/</guid>
+      <guid>http://192.168.10.211:1313/raspberry-mysql-y-db/</guid>
       <description>&lt;h3 id=&#34;instalando-mysql&#34;&gt;Instalando Mysql&lt;/h3&gt;&#xA;&lt;p&gt;El motor de WordPress es una base de datos por lo que es necesario un motor que la gestione, usaré MySql y se instala de la siguente forma:&lt;/p&gt;&#xA;&lt;code&gt;&#xD;&#xA;sudo apt-get install mysql-server mysql-client -y&#xD;&#xA;&lt;/code&gt;&#xD;&#xA;Al terminar la instalación nos pedirá una contraseña para el usuario &#34;root&#34;.  Es muy importante que no se quede en blanco para dar seguridad a la base de datos.  Introducimos la que nos apetezca.  Además para securizar más la instalación ejecutamos el siguiente comando&#xD;&#xA;&lt;code&gt;&#xD;&#xA;sudo mysql_secure_installation&#xD;&#xA;&lt;/code&gt;&#xD;&#xA;Respondiendo a las preguntas de la siguiente forma.&#xD;&#xA;  * Change the root password? [Y/n] n&#xD;&#xA;  * Remove anonymous users? [Y/n] y&#xD;&#xA;  * Disallow root login remotely? [Y/n] y&#xD;&#xA;  * Remove test database and access to it? [Y/n] y&#xD;&#xA;  * Reload privilege tables now? [Y/n] y&#xD;&#xA;&lt;p&gt;Accedemos a la consola de MySql con el siguiente comando tras el cual se nos solicitará la contraseña correspondiente al usuario &amp;ldquo;root&amp;rdquo;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Raspberry y Docker</title>
-      <link>http://localhost:1313/raspberry-y-docker/</link>
+      <link>http://192.168.10.211:1313/raspberry-y-docker/</link>
       <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/raspberry-y-docker/</guid>
+      <guid>http://192.168.10.211:1313/raspberry-y-docker/</guid>
       <description>&lt;h3 id=&#34;manejando-contenedores-con-docker&#34;&gt;Manejando contenedores con Docker&lt;/h3&gt;&#xA;&lt;p&gt;Instalar Docker\&#xA;&lt;code&gt;&#xA;sudo apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common&lt;/p&gt;&#xA;&lt;p&gt;sudo curl -fsSL &lt;a href=&#34;https://download.docker.com/linux/$(&#34;&gt;https://download.docker.com/linux/$(&lt;/a&gt;. /etc/os-release; echo &amp;ldquo;$ID&amp;rdquo;)/gpg | sudo apt-key add -&lt;/p&gt;&#xA;&lt;p&gt;sudo echo &amp;ldquo;deb [arch=armhf] &lt;a href=&#34;https://download.docker.com/linux/$(&#34;&gt;https://download.docker.com/linux/$(&lt;/a&gt;. /etc/os-release; echo &amp;ldquo;$ID&amp;rdquo;) &lt;br&gt;&#xA;$(lsb_release -cs) stable&amp;rdquo; | &lt;br&gt;&#xA;sudo tee /etc/apt/sources.list.d/docker.list&lt;/p&gt;&#xA;&lt;p&gt;sudo apt update&#xA;sudo apt install docker-ce&#xA;sudo systemctl enable docker&#xA;sudo systemctl start docker&#xA;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;añadir tu usuario al grupo de docker\&#xA;&lt;code&gt;sudo gpasswd -a ${USER} docker&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;eliminar todos los contenedores con un solo comando\&#xA;&lt;code&gt;docker rm $(docker ps -a -q)&lt;/code&gt;&#xA;&lt;code&gt;docker rm $(docker container ls -a -q)&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Raspberry Servidor VPN</title>
-      <link>http://localhost:1313/raspberry-servidor-vpn/</link>
+      <link>http://192.168.10.211:1313/raspberry-servidor-vpn/</link>
       <pubDate>Wed, 11 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/raspberry-servidor-vpn/</guid>
+      <guid>http://192.168.10.211:1313/raspberry-servidor-vpn/</guid>
       <description>&lt;h3 id=&#34;instalando-un-servidor-vpn&#34;&gt;Instalando un servidor VPN&lt;/h3&gt;&#xA;&lt;p&gt;Una de las grandes funcionalidades que nos puede ofrecer nuestra Raspberry Pi es como servidor VPN el cual tiene dos finalidades fundamentales.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Acceder de forma segura a nuestra red local desde fuera de ella&lt;/li&gt;&#xA;&lt;li&gt;Conseguir una navegación segura en redes wifi públicas&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt update&#xD;&#xA;sudo apt upgrade&#xD;&#xA;curl -L https://install.pivpn.io | bash&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Para los detalles de las opciones de configuración durante la instalación tan sólo hay que visitar la web de &lt;a href=&#34;https://www.atareao.es/tutorial/raspberry-pi-primeros-pasos/acceder-a-la-red-local-desde-fuera&#34;&gt;El Atareao&lt;/a&gt; donde lo explica pormenorizadamente.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Raspberry Acceso desde el exterior</title>
-      <link>http://localhost:1313/raspberry-acceso-desde-el-exterior/</link>
+      <link>http://192.168.10.211:1313/raspberry-acceso-desde-el-exterior/</link>
       <pubDate>Tue, 10 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/raspberry-acceso-desde-el-exterior/</guid>
+      <guid>http://192.168.10.211:1313/raspberry-acceso-desde-el-exterior/</guid>
       <description>&lt;p&gt;Ya tenemos nuestro servidor prácticamente montado, ahora necesitamos que cualquiera desde fuera de nuestra red pueda acceder al mismo.  Esto presenta dos problemas, el redireccionamiento de router a la raspberry y la ip dinámica que nos asigna el proveedor de servicios de internet.&lt;/p&gt;&#xA;&lt;p&gt;Por un lado, para dirigir el tráfico que llega a nuestro router en busca de nuestro servidor tendremos que abrir el puerto 80 para la ip local que tiene adjudicada la Raspberry, en mi caso la 192.168.1.202.  Esto lo realizaremos desde la configuración del router accediendo al panel de administración web en la dirección 192.168.1.1.  No merece la pena el esfuerzo de dar más explicaciones de los pasos concretos a realizar pues cada router es distinto&lt;/p&gt;</description>
     </item>
     <item>
       <title>Raspberry Reinicios periódicos</title>
-      <link>http://localhost:1313/raspberry-reinicios-peri%C3%B3dicos/</link>
+      <link>http://192.168.10.211:1313/raspberry-reinicios-peri%C3%B3dicos/</link>
       <pubDate>Tue, 10 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/raspberry-reinicios-peri%C3%B3dicos/</guid>
+      <guid>http://192.168.10.211:1313/raspberry-reinicios-peri%C3%B3dicos/</guid>
       <description>&lt;h3 id=&#34;reiniciar-la-raspberry-a-diario&#34;&gt;Reiniciar la Raspberry a diario&lt;/h3&gt;&#xA;&lt;p&gt;Para que la Raspberry se reinicie al menos una vez al día por si alguno de los servicios se cuelga y no tenemos acceso a ella o no nos damos cuenta del problema he implementado un reinicio diario a las 4:00 AM mediante una tarea programada usando el cron del usuario root&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo crontab -e&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;nos abre un archivo al que le añadiremos la siguiente línea&lt;/p&gt;</description>
     </item>
   </channel>

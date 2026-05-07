@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Trekbuddy on Sherblog</title>
-    <link>http://localhost:1313/tags/trekbuddy/</link>
+    <link>http://192.168.10.211:1313/tags/trekbuddy/</link>
     <description>Recent content in Trekbuddy on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Thu, 19 Feb 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/trekbuddy/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://192.168.10.211:1313/tags/trekbuddy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Trekbuddy 0.9.83 en un HTC Touch Diamond</title>
-      <link>http://localhost:1313/trekbuddy-0.9.83-en-un-htc-touch-diamond/</link>
+      <link>http://192.168.10.211:1313/trekbuddy-0.9.83-en-un-htc-touch-diamond/</link>
       <pubDate>Thu, 19 Feb 2009 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/trekbuddy-0.9.83-en-un-htc-touch-diamond/</guid>
-      <description>&lt;p&gt;El proceso de instalación no ha sido tan &lt;a href=&#34;http://localhost:1313/que-hacer-sin-un-m%C3%B3vil-de-%C3%BAltima-generaci%C3%B3n/&#34;&gt;sencillo&lt;/a&gt; como en mi antiguo Nokia 6267 pero después de alguna prueba ya está funcionando y aquí está la muestra.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/pctp-F3XMnk?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;&lt;p&gt;Pronto haré un video tutorial explicando toda la instalación.&lt;/p&gt;</description>
+      <guid>http://192.168.10.211:1313/trekbuddy-0.9.83-en-un-htc-touch-diamond/</guid>
+      <description>&lt;p&gt;El proceso de instalación no ha sido tan &lt;a href=&#34;http://192.168.10.211:1313/que-hacer-sin-un-m%C3%B3vil-de-%C3%BAltima-generaci%C3%B3n/&#34;&gt;sencillo&lt;/a&gt; como en mi antiguo Nokia 6267 pero después de alguna prueba ya está funcionando y aquí está la muestra.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/pctp-F3XMnk?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;&lt;p&gt;Pronto haré un video tutorial explicando toda la instalación.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Que hacer sin un móvil de última generación</title>
-      <link>http://localhost:1313/que-hacer-sin-un-m%C3%B3vil-de-%C3%BAltima-generaci%C3%B3n/</link>
+      <link>http://192.168.10.211:1313/que-hacer-sin-un-m%C3%B3vil-de-%C3%BAltima-generaci%C3%B3n/</link>
       <pubDate>Wed, 09 Jan 2008 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/que-hacer-sin-un-m%C3%B3vil-de-%C3%BAltima-generaci%C3%B3n/</guid>
-      <description>&lt;p&gt;Aquí dejo una muestra de lo que se puede llegar a conseguir con un móvil de penúltima generación. De forma completamente gratuita y legal.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/20080110_movil.jpg&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Como se puede ver en la imagen, se trata de una aplicación GPS pero son muy pocos dispositivos móviles los que llevan integrada una antena GPS por lo que para hacerla funcionar haré uso de una antena autónoma con conexión Bluetooth como &lt;a href=&#34;http://www.woxter.com/contenido/productos2.php?idcategoria=19&amp;amp;id=209&#34;&gt;esta&lt;/a&gt;. Además, dependiendo del tamaño del mapa que utilicemos será necesaria una tarjeta de memoria con capacidad acorde al mismo.&lt;/p&gt;</description>
+      <guid>http://192.168.10.211:1313/que-hacer-sin-un-m%C3%B3vil-de-%C3%BAltima-generaci%C3%B3n/</guid>
+      <description>&lt;p&gt;Aquí dejo una muestra de lo que se puede llegar a conseguir con un móvil de penúltima generación. De forma completamente gratuita y legal.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://192.168.10.211:1313/images/20080110_movil.jpg&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Como se puede ver en la imagen, se trata de una aplicación GPS pero son muy pocos dispositivos móviles los que llevan integrada una antena GPS por lo que para hacerla funcionar haré uso de una antena autónoma con conexión Bluetooth como &lt;a href=&#34;http://www.woxter.com/contenido/productos2.php?idcategoria=19&amp;amp;id=209&#34;&gt;esta&lt;/a&gt;. Además, dependiendo del tamaño del mapa que utilicemos será necesaria una tarjeta de memoria con capacidad acorde al mismo.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

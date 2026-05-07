@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tracks on Sherblog</title>
-    <link>http://localhost:1313/tags/tracks/</link>
+    <link>http://192.168.10.211:1313/tags/tracks/</link>
     <description>Recent content in Tracks on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sun, 25 Feb 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/tracks/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://192.168.10.211:1313/tags/tracks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Barrancos del sur de Zaragoza</title>
-      <link>http://localhost:1313/barrancos-del-sur-de-zaragoza/</link>
+      <link>http://192.168.10.211:1313/barrancos-del-sur-de-zaragoza/</link>
       <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/barrancos-del-sur-de-zaragoza/</guid>
-      <description>&lt;p&gt;Para todo aquel que disfrute de la bicicleta de montaña y alguna vez se deje caer por Zaragoza, aquí una recopilación con los principales barrancos que se pueden encontrar en la zona sur de la capital aragonesa.&lt;/p&gt;&#xA;&lt;iframe width=&#34;500px&#34; height=&#34;300px&#34; frameBorder=&#34;0&#34; src=&#34;https://umap.openstreetmap.fr/es/map/barrancos-de-zaragoza_241825?scaleControl=false&amp;miniMap=false&amp;scrollWheelZoom=false&amp;zoomControl=true&amp;allowEdit=false&amp;moreControl=true&amp;searchControl=null&amp;tilelayersControl=null&amp;embedControl=null&amp;datalayersControl=true&amp;onLoadPanel=undefined&amp;captionBar=false&#34;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href=&#34;https://umap.openstreetmap.fr/es/map/barrancos-de-zaragoza_241825&#34;&gt;Ver pantalla completa&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;También puedes descargar el archivo desde &lt;a href=&#34;http://localhost:1313/files/brrzgz.gpx&#34;&gt;aquí&lt;/a&gt; para abrirlo con con &lt;a href=&#34;https://www.google.es/intl/es_es/earth/download/ge/agree.html&#34;&gt;Google Earth&lt;/a&gt; o tu editor preferido.&lt;/p&gt;&#xA;&lt;p&gt;Intentaré periódicamente ir actualizando este archivo con nuevos barrancos y sendas. 😉&lt;/p&gt;</description>
+      <guid>http://192.168.10.211:1313/barrancos-del-sur-de-zaragoza/</guid>
+      <description>&lt;p&gt;Para todo aquel que disfrute de la bicicleta de montaña y alguna vez se deje caer por Zaragoza, aquí una recopilación con los principales barrancos que se pueden encontrar en la zona sur de la capital aragonesa.&lt;/p&gt;&#xA;&lt;iframe width=&#34;500px&#34; height=&#34;300px&#34; frameBorder=&#34;0&#34; src=&#34;https://umap.openstreetmap.fr/es/map/barrancos-de-zaragoza_241825?scaleControl=false&amp;miniMap=false&amp;scrollWheelZoom=false&amp;zoomControl=true&amp;allowEdit=false&amp;moreControl=true&amp;searchControl=null&amp;tilelayersControl=null&amp;embedControl=null&amp;datalayersControl=true&amp;onLoadPanel=undefined&amp;captionBar=false&#34;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href=&#34;https://umap.openstreetmap.fr/es/map/barrancos-de-zaragoza_241825&#34;&gt;Ver pantalla completa&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;También puedes descargar el archivo desde &lt;a href=&#34;http://192.168.10.211:1313/files/brrzgz.gpx&#34;&gt;aquí&lt;/a&gt; para abrirlo con con &lt;a href=&#34;https://www.google.es/intl/es_es/earth/download/ge/agree.html&#34;&gt;Google Earth&lt;/a&gt; o tu editor preferido.&lt;/p&gt;&#xA;&lt;p&gt;Intentaré periódicamente ir actualizando este archivo con nuevos barrancos y sendas. 😉&lt;/p&gt;</description>
     </item>
     <item>
       <title>La ruta perfecta por los meandros del Ebro</title>
-      <link>http://localhost:1313/la-ruta-perfecta-por-los-meandros-del-ebro/</link>
+      <link>http://192.168.10.211:1313/la-ruta-perfecta-por-los-meandros-del-ebro/</link>
       <pubDate>Thu, 10 Feb 2011 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/la-ruta-perfecta-por-los-meandros-del-ebro/</guid>
+      <guid>http://192.168.10.211:1313/la-ruta-perfecta-por-los-meandros-del-ebro/</guid>
       <description>&lt;p&gt;Después de algunos miles de kilómetros dando vueltas por la zona, creo que estoy en condiciones de dibujar lo que para mi es la ruta perfecta para bicicleta de montaña por la extraordinaria zona de los meandros del Ebro.&lt;/p&gt;&#xA;&lt;p&gt;Son apenas 45 kilómetros que a priori pueden parecer cortos pero que cuesta hacer en menos de tres horas. La ruta tiene de todo, subidas de hasta un 30% de desnivel, senderos, bajadas técnicas y por desgracia un par de kilómetros de carretera. La ruta es circular y, aunque comienza en Cinco Olivas, se puede hacer también desde Alborge, Sástago o Escatrón repitiendo apenas 500 metros del recorrido.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Reducir puntos de un track gpx</title>
-      <link>http://localhost:1313/reducir-puntos-de-un-track-gpx/</link>
+      <link>http://192.168.10.211:1313/reducir-puntos-de-un-track-gpx/</link>
       <pubDate>Wed, 01 Apr 2009 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/reducir-puntos-de-un-track-gpx/</guid>
+      <guid>http://192.168.10.211:1313/reducir-puntos-de-un-track-gpx/</guid>
       <description>&lt;p&gt;Cada día más, la gente comparte las rutas mediante algún servicio online (&lt;a href=&#34;http://es.wikiloc.com/wikiloc/user.do?name=Sherlockes&#34;&gt;Wikiloc&lt;/a&gt; es el que yo utilizo) para que cualquiera pueda verlas e incluso descargarlas para meterlas en el navegado gps y de esta forma poder seguirlas de una forma rápida y sencilla. Es cierto que la aventura pierde un poco de encanto pero ayuda a planificar el trayecto evitando así sorpresas que nos podrían arruinar un bonito día en el campo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Gr99 en GPX</title>
-      <link>http://localhost:1313/gr99-en-gpx/</link>
+      <link>http://192.168.10.211:1313/gr99-en-gpx/</link>
       <pubDate>Wed, 25 Mar 2009 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/gr99-en-gpx/</guid>
+      <guid>http://192.168.10.211:1313/gr99-en-gpx/</guid>
       <description>&lt;p&gt;Aunque el título pueda parecer algo extraño, el asunto es muy simple, de las siglas &amp;ldquo;gpx&amp;rdquo; ya he hablado en algún otro post y se puede definir como la forma más internacional de plasmar en un archivo la información gps de una ruta (Estos de la &lt;a href=&#34;http://es.wikipedia.org/wiki/GPX&#34;&gt;Wikipedia&lt;/a&gt; se explican mejor que yo). Respecto a las siglas Gr99 indican &amp;ldquo;sendero de Gran Recorrido nº 99&amp;rdquo; o lo que es lo mismo, un camino que transcurre en su mayor parte por caminos al margen de las vías principales de circulación (&lt;a href=&#34;http://es.wikipedia.org/wiki/Gran_Recorrido&#34;&gt;Que listos son&lt;/a&gt;).&lt;/p&gt;</description>
     </item>
   </channel>

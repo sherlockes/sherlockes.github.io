@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Openstreetmap on Sherblog</title>
-    <link>http://localhost:1313/tags/openstreetmap/</link>
+    <link>http://192.168.10.211:1313/tags/openstreetmap/</link>
     <description>Recent content in Openstreetmap on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Wed, 26 Apr 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/openstreetmap/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://192.168.10.211:1313/tags/openstreetmap/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Openstreetmap en Gps Garmin</title>
-      <link>http://localhost:1313/openstreetmap-en-gps-garmin/</link>
+      <link>http://192.168.10.211:1313/openstreetmap-en-gps-garmin/</link>
       <pubDate>Wed, 26 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/openstreetmap-en-gps-garmin/</guid>
-      <description>&lt;p&gt;Para el que no lo conozca, &lt;a href=&#34;https://www.openstreetmap.org&#34;&gt;OpenStreetMap&lt;/a&gt; (también conocido como OSM) es un proyecto colaborativo para crear mapas libres y editables. Los mapas se crean utilizando información geográfica capturada con dispositivos GPS móviles, ortofotografías y otras fuentes libres. Esta cartografía, tanto las imágenes creadas como los datos vectoriales almacenados en su base de datos, se distribuye bajo licencia abierta Licencia Abierta de Bases de Datos (en inglés ODbL).&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/20170426_openstreetmaps_garmin_01.jpg&#34; alt=&#34;imagen&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Desde hace un tiempo hay una forma rápida y sencilla de incluirlos en los gps de la marca Garmin para una navegación por carreteras y caminos mediante &lt;a href=&#34;http://garmin.openstreetmap.nl&#34;&gt;esta&lt;/a&gt; web.&lt;/p&gt;</description>
+      <guid>http://192.168.10.211:1313/openstreetmap-en-gps-garmin/</guid>
+      <description>&lt;p&gt;Para el que no lo conozca, &lt;a href=&#34;https://www.openstreetmap.org&#34;&gt;OpenStreetMap&lt;/a&gt; (también conocido como OSM) es un proyecto colaborativo para crear mapas libres y editables. Los mapas se crean utilizando información geográfica capturada con dispositivos GPS móviles, ortofotografías y otras fuentes libres. Esta cartografía, tanto las imágenes creadas como los datos vectoriales almacenados en su base de datos, se distribuye bajo licencia abierta Licencia Abierta de Bases de Datos (en inglés ODbL).&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://192.168.10.211:1313/images/20170426_openstreetmaps_garmin_01.jpg&#34; alt=&#34;imagen&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Desde hace un tiempo hay una forma rápida y sencilla de incluirlos en los gps de la marca Garmin para una navegación por carreteras y caminos mediante &lt;a href=&#34;http://garmin.openstreetmap.nl&#34;&gt;esta&lt;/a&gt; web.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

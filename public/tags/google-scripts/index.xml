@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Google Scripts on Sherblog</title>
-    <link>http://localhost:1313/tags/google-scripts/</link>
+    <link>http://192.168.10.211:1313/tags/google-scripts/</link>
     <description>Recent content in Google Scripts on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Thu, 26 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/google-scripts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://192.168.10.211:1313/tags/google-scripts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>App de cuestionarios</title>
-      <link>http://localhost:1313/app-de-cuestionarios/</link>
+      <link>http://192.168.10.211:1313/app-de-cuestionarios/</link>
       <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/app-de-cuestionarios/</guid>
+      <guid>http://192.168.10.211:1313/app-de-cuestionarios/</guid>
       <description>&lt;p&gt;Esta es sólo una prueba de concepto de como he utilizado una serie de servicios gratuitos para la creación de una app de cuestionarios. No pretendo explicar el funcionamiento, sólo en que me ha ayudado cada uno.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Archivos de Telegram al NAS</title>
-      <link>http://localhost:1313/archivos-de-telegram-al-nas/</link>
+      <link>http://192.168.10.211:1313/archivos-de-telegram-al-nas/</link>
       <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/archivos-de-telegram-al-nas/</guid>
+      <guid>http://192.168.10.211:1313/archivos-de-telegram-al-nas/</guid>
       <description>&lt;p&gt;Hace mucho tiempo que llevo buscando un método para descargar archivos desde Telegram (en mi teléfono Android) al NAS sin estar en la misma red local ni usar datos de mi tarifa móvil. Ahora creo que he dado con una forma rápida y sencilla&amp;hellip;&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Zigbee on Sherblog</title>
-    <link>http://localhost:1313/tags/zigbee/</link>
+    <link>http://192.168.10.211:1313/tags/zigbee/</link>
     <description>Recent content in Zigbee on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Tue, 04 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/zigbee/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://192.168.10.211:1313/tags/zigbee/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Z2M en segunda residencia</title>
-      <link>http://localhost:1313/z2m-en-segunda-residencia/</link>
+      <link>http://192.168.10.211:1313/z2m-en-segunda-residencia/</link>
       <pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/z2m-en-segunda-residencia/</guid>
+      <guid>http://192.168.10.211:1313/z2m-en-segunda-residencia/</guid>
       <description>&lt;p&gt;La solución más sencilla y barata para crear una red zigbee con la que domotizar nuestra segunda residencia sin duda alguna es mediante el uso del adaptador ethernet zigbee 3.0 &lt;a href=&#34;https://smlight.tech/product/slzb-06/&#34;&gt;SLZB-06&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Activar sirena TS0224 mediante Z2M en Home assistant</title>
-      <link>http://localhost:1313/activar-sirena-ts0224-mediante-z2m-en-home-assistant/</link>
+      <link>http://192.168.10.211:1313/activar-sirena-ts0224-mediante-z2m-en-home-assistant/</link>
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/activar-sirena-ts0224-mediante-z2m-en-home-assistant/</guid>
+      <guid>http://192.168.10.211:1313/activar-sirena-ts0224-mediante-z2m-en-home-assistant/</guid>
       <description>&lt;p&gt;Muchas veces, activar un elemento zigbee no es tan obvio en Home Assistant. Esta es la muestra de lo que tengo que hacer para hacer sonar la sirena zigbee que tengo instalada a modo de alarma.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sensor de temperatura personalizado</title>
-      <link>http://localhost:1313/sensor-de-temperatura-personalizado/</link>
+      <link>http://192.168.10.211:1313/sensor-de-temperatura-personalizado/</link>
       <pubDate>Fri, 13 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sensor-de-temperatura-personalizado/</guid>
+      <guid>http://192.168.10.211:1313/sensor-de-temperatura-personalizado/</guid>
       <description>&lt;p&gt;En &lt;a href=&#34;https://aliexpress.com/&#34;&gt;Aliexpress&lt;/a&gt; puedes encontrar infinidad de sensores zigbee pero no uno al que conectar varias sondas de temperatura a un precio razonable. Por esto me he decidido a crear el mio propio.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Calibración de las persianas con en controlador TS130F</title>
-      <link>http://localhost:1313/calibraci%C3%B3n-de-las-persianas-con-en-controlador-ts130f/</link>
+      <link>http://192.168.10.211:1313/calibraci%C3%B3n-de-las-persianas-con-en-controlador-ts130f/</link>
       <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/calibraci%C3%B3n-de-las-persianas-con-en-controlador-ts130f/</guid>
+      <guid>http://192.168.10.211:1313/calibraci%C3%B3n-de-las-persianas-con-en-controlador-ts130f/</guid>
       <description>&lt;p&gt;La parte más importante de la domotización de las persianas es un correcto ajuste de las posiciones de apertura y cierre. Parece sencillo, pero sin un manual de instrucciones del fabricante se convierte en un dolor de cabeza.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Convertir una luz en interruptor en Home Assistant</title>
-      <link>http://localhost:1313/convertir-una-luz-en-interruptor-en-home-assistant/</link>
+      <link>http://192.168.10.211:1313/convertir-una-luz-en-interruptor-en-home-assistant/</link>
       <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/convertir-una-luz-en-interruptor-en-home-assistant/</guid>
+      <guid>http://192.168.10.211:1313/convertir-una-luz-en-interruptor-en-home-assistant/</guid>
       <description>&lt;p&gt;Es posible utilizar un módulo zigbee de luces como si fuera un enchufe cableado, el problema aparece cuando intentas encender o apagar todas las luces de un área en la que lo tienes incluido y se activa al son de las bombillas.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mostrar dispositivos no disponibles en Home Assistant</title>
-      <link>http://localhost:1313/mostrar-dispositivos-no-disponibles-en-home-assistant/</link>
+      <link>http://192.168.10.211:1313/mostrar-dispositivos-no-disponibles-en-home-assistant/</link>
       <pubDate>Sat, 21 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/mostrar-dispositivos-no-disponibles-en-home-assistant/</guid>
+      <guid>http://192.168.10.211:1313/mostrar-dispositivos-no-disponibles-en-home-assistant/</guid>
       <description>&lt;p&gt;De vez en cuando, hay dispositivos &lt;a href=&#34;https://es.wikipedia.org/wiki/Zigbee&#34;&gt;Zigbee&lt;/a&gt; que dejan de estar disponibles para &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; y hay que volver a configurarlos, con esta sencilla tarjeta podremos ver cuales son y así no tener duda de que es lo que falla.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Apagar todas las luces en Home Assistant</title>
-      <link>http://localhost:1313/apagar-todas-las-luces-en-home-assistant/</link>
+      <link>http://192.168.10.211:1313/apagar-todas-las-luces-en-home-assistant/</link>
       <pubDate>Fri, 05 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apagar-todas-las-luces-en-home-assistant/</guid>
+      <guid>http://192.168.10.211:1313/apagar-todas-las-luces-en-home-assistant/</guid>
       <description>&lt;p&gt;Cuando no todas las luces automatizadas de casa son bombillas inteligentes la labor de apagarlas todas al mismo tiempo requiere alguna solución un poco más trabajada como las que muestro a continuación.&lt;/p&gt;</description>
     </item>
   </channel>
