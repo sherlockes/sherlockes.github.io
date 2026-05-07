@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Sistema de pulsadores con Esp32 y micropython - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Pequeño proyecto para construir un sistema de pulsadores para un juego escolar">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/20241111_pulsadores_esp32_00.jpg" />
+	<meta name="twitter:title" content="Sistema de pulsadores con Esp32 y micropython"/>
+	<meta name="twitter:description" content="Pequeño proyecto para construir un sistema de pulsadores para un juego escolar"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/sistema-de-pulsadores-con-esp32-y-micropython/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Sistema de pulsadores con Esp32 y micropython">
+	<meta property="og:url" content="http://localhost:1313/sistema-de-pulsadores-con-esp32-y-micropython/">
+	<meta property="og:description" content="Pequeño proyecto para construir un sistema de pulsadores para un juego escolar"/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20241111_pulsadores_esp32_00.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sistema de pulsadores con Esp32 y micropython">
+  <meta name="twitter:description" content="Pequeño proyecto para construir un sistema de pulsadores para un juego escolar">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Sistema de pulsadores con Esp32 y micropython</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2025-01-29T00:00:00Z">2025-01-29</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/hardware/" rel="category">Hardware</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20241111_pulsadores_esp32_00.jpg" alt="Sistema de pulsadores con Esp32 y micropython">
+		
+	</figure><div class="content post__content clearfix">
+			<p>Hoy toca construir un pequeño sistema de pulsadores para un juego escolar que detecte y muestre el primero que ha activado el pulsador para de esta forma poder dar una respuesta.</p>
+<p>El sistema va a ser sencillo. Tenemos cuatro pulsadores y cuatro indicadores luminosos, se mostrará el pulsador que primero se active mediante el correspondiente indicador luminoso e impedirá que la pulsación posterior de cualquier otro desencadene la iluminación de su indicador. Además tendremos un quinto pulsador que reiniciará la secuencia.</p>
+<p>Por sencillez, precio, posibilidades y conocimiento, desde un principio he tenido claro que iba a usar un ESP32 y micropython como en algún <a href="/configurando-un-rel%C3%A9-wifi-mediante-esp-01-y-micropython/">proyecto</a> anterior. Usaré una placa de desarrollo <a href="https://es.aliexpress.com/item/1005006661654117.html">ESP32-WROOM-32U</a> y el entorno de desarrollo <a href="https://thonny.org">Thonny</a>.</p>
+<p>Tendremos cuatro pulsadores de activación y uno de reinicio. Cuando el pulsador de reinicio se pulse se encenderán todas las luces correspondientes a los pulsadores de activación y permanecerán encendidas un tiempo aleatorio entre 5 y 10 segundos. Pasado el tiempo se apagarán todas las luces y sólo se encenderá la del pulsador que se active primero a partir de ese momento. La luz del pulsador &ldquo;ganador&rdquo; quedará encendida hasta que se reinicie la secuencia.</p>
+<p>El código a usar será el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> machine <span style="color:#f92672">import</span> Pin
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configuración de los pines de los LEDs</span>
+</span></span><span style="display:flex;"><span>led_rojo <span style="color:#f92672">=</span> Pin(<span style="color:#ae81ff">2</span>, Pin<span style="color:#f92672">.</span>OUT)      <span style="color:#75715e"># LED rojo en GPIO 2</span>
+</span></span><span style="display:flex;"><span>led_amarillo <span style="color:#f92672">=</span> Pin(<span style="color:#ae81ff">4</span>, Pin<span style="color:#f92672">.</span>OUT)  <span style="color:#75715e"># LED amarillo en GPIO 4</span>
+</span></span><span style="display:flex;"><span>led_verde <span style="color:#f92672">=</span> Pin(<span style="color:#ae81ff">16</span>, Pin<span style="color:#f92672">.</span>OUT)    <span style="color:#75715e"># LED verde en GPIO 16</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configuración de los pines de los pulsadores</span>
+</span></span><span style="display:flex;"><span>pulsador1 <span style="color:#f92672">=</span> Pin(<span style="color:#ae81ff">18</span>, Pin<span style="color:#f92672">.</span>IN, Pin<span style="color:#f92672">.</span>PULL_UP)  <span style="color:#75715e"># Pulsador 1 en GPIO 18</span>
+</span></span><span style="display:flex;"><span>pulsador2 <span style="color:#f92672">=</span> Pin(<span style="color:#ae81ff">19</span>, Pin<span style="color:#f92672">.</span>IN, Pin<span style="color:#f92672">.</span>PULL_UP)  <span style="color:#75715e"># Pulsador 2 en GPIO 19</span>
+</span></span><span style="display:flex;"><span>pulsador3 <span style="color:#f92672">=</span> Pin(<span style="color:#ae81ff">21</span>, Pin<span style="color:#f92672">.</span>IN, Pin<span style="color:#f92672">.</span>PULL_UP)  <span style="color:#75715e"># Pulsador 3 en GPIO 21</span>
+</span></span><span style="display:flex;"><span>pulsador_reset <span style="color:#f92672">=</span> Pin(<span style="color:#ae81ff">22</span>, Pin<span style="color:#f92672">.</span>IN, Pin<span style="color:#f92672">.</span>PULL_UP)  <span style="color:#75715e"># Pulsador de reinicio en GPIO 22</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Inicializar el estado de los LEDs</span>
+</span></span><span style="display:flex;"><span>led_encendido <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>  <span style="color:#75715e"># Variable para almacenar cuál LED está encendido</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Comprobar si se presionó el pulsador de reinicio</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> pulsador_reset<span style="color:#f92672">.</span>value():  <span style="color:#75715e"># Si el pulsador de reinicio está presionado</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Encender todos los LEDs</span>
+</span></span><span style="display:flex;"><span>        led_rojo<span style="color:#f92672">.</span>on()
+</span></span><span style="display:flex;"><span>        led_amarillo<span style="color:#f92672">.</span>on()
+</span></span><span style="display:flex;"><span>        led_verde<span style="color:#f92672">.</span>on()
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Esperar un tiempo aleatorio entre 5 y 10 segundos</span>
+</span></span><span style="display:flex;"><span>        tiempo_espera <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>uniform(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>        time<span style="color:#f92672">.</span>sleep(tiempo_espera)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Apagar todos los LEDs y resetear el estado</span>
+</span></span><span style="display:flex;"><span>        led_rojo<span style="color:#f92672">.</span>off()
+</span></span><span style="display:flex;"><span>        led_amarillo<span style="color:#f92672">.</span>off()
+</span></span><span style="display:flex;"><span>        led_verde<span style="color:#f92672">.</span>off()
+</span></span><span style="display:flex;"><span>        led_encendido <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>  <span style="color:#75715e"># Restablecer el estado de LED encendido</span>
+</span></span><span style="display:flex;"><span>        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">0.5</span>)  <span style="color:#75715e"># Breve pausa para evitar rebotes después de reiniciar</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Comprobar el estado de cada pulsador si no hay ningún LED encendido</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> led_encendido <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> pulsador1<span style="color:#f92672">.</span>value():  <span style="color:#75715e"># Si pulsador 1 está presionado</span>
+</span></span><span style="display:flex;"><span>            led_rojo<span style="color:#f92672">.</span>on()
+</span></span><span style="display:flex;"><span>            led_encendido <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;rojo&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> <span style="color:#f92672">not</span> pulsador2<span style="color:#f92672">.</span>value():  <span style="color:#75715e"># Si pulsador 2 está presionado</span>
+</span></span><span style="display:flex;"><span>            led_amarillo<span style="color:#f92672">.</span>on()
+</span></span><span style="display:flex;"><span>            led_encendido <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;amarillo&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> <span style="color:#f92672">not</span> pulsador3<span style="color:#f92672">.</span>value():  <span style="color:#75715e"># Si pulsador 3 está presionado</span>
+</span></span><span style="display:flex;"><span>            led_verde<span style="color:#f92672">.</span>on()
+</span></span><span style="display:flex;"><span>            led_encendido <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;verde&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">0.1</span>)  <span style="color:#75715e"># Espera un corto tiempo para evitar lecturas rápidas</span>
+</span></span></code></pre></div><p>El primer prototipo está listo en unos minutos con una placa de pruebas, unos pulsadores, leds y cables conectores.</p>
+<p><img src="/images/20241111_pulsadores_esp32_01.jpg" alt="image-01"></p>
+<h3 id="los-fracasos-de-los-relés">Los fracasos de los relés</h3>
+<p>Puesto que vamos a conectar varios leds al ESP32 he optado por usar unos relés para que la corriente de salida de los pines no sea una limitación. Por el tema del ruido, en un primer momento pensé en usar relés de estado sólido. El módulo adquirido es el <a href="https://es.aliexpress.com/item/1005004908428159.html">G3MB-202P SSR AVR DSP</a> de cuatro canales</p>
+<p><img src="/images/20241111_pulsadores_esp32_01.jpg" alt="image-01"></p>
+<p>Las primeras pruebas fueron mal, ya que al trabajar con una carga tan pequeña (Un par de leds alimentados a 5V por relé), la corriente de fuga es suficiente para mantenerlos encendidos aunque cambiemos el estado de la entrada.</p>
+<p>Por esto me decido por usar relés mecánicos, más exactamente el módulo.</p>
+<p>probando&hellip;</p>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="www.sherblog.pro">enlace</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/configurando-un-rel%C3%A9-wifi-mediante-esp-01-y-micropython/">Configurando un relé wifi mediante esp-01 y micropython</a></li>
+	    
+	    <li><a href="/esphome-en-home-assistant/">ESPHome en Home Assistant</a></li>
+	    
+	    <li><a href="/los-auriculares-qcy-que-he-usado/">Los auriculares QCY que he usado</a></li>
+	    
+	    <li><a href="/?p=906/">La discriminación rural en el servicio telefónico</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/esp/" rel="tag">esp</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/thonny/" rel="tag">thonny</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/unir-rss-y-enviar-a-telegram-mediante-n8n/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Unir Rss y enviar a Telegram mediante n8n</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/backups-en-la-nube-con-restic/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Backups en la nube con Restic</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

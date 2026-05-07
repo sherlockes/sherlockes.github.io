@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Unir Rss y enviar a Telegram mediante n8n - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Como obtener la info de de varios rss y enviar un resumen combinado a Telegram">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/20250117_n8n_merge_rss_00.jpg" />
+	<meta name="twitter:title" content="Unir Rss y enviar a Telegram mediante n8n"/>
+	<meta name="twitter:description" content="Como obtener la info de de varios rss y enviar un resumen combinado a Telegram"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/unir-rss-y-enviar-a-telegram-mediante-n8n/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Unir Rss y enviar a Telegram mediante n8n">
+	<meta property="og:url" content="http://localhost:1313/unir-rss-y-enviar-a-telegram-mediante-n8n/">
+	<meta property="og:description" content="Como obtener la info de de varios rss y enviar un resumen combinado a Telegram"/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20250117_n8n_merge_rss_00_xl.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Unir Rss y enviar a Telegram mediante n8n">
+  <meta name="twitter:description" content="Como obtener la info de de varios rss y enviar un resumen combinado a Telegram">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Unir Rss y enviar a Telegram mediante n8n</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2025-01-28T00:00:00Z">2025-01-28</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">Computing</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20250117_n8n_merge_rss_00.jpg" alt="Unir Rss y enviar a Telegram mediante n8n">
+		
+	</figure><div class="content post__content clearfix">
+			<p>Combinar varios rss y enviar el resultado filtrado a Telegram sin apenas escribir código es coser y cantar gracias a n8n.</p>
+<h3 id="para-que-nos-va-a-servir-esta-plantilla">Para que nos va a servir esta plantilla:</h3>
+<p>Nos servirá para combinar varias fuentes de Rss, curar el contenido y enviar el resultado a un canal de Telegram donde será fácil de consultar.</p>
+<p><img src="/images/20250117_n8n_merge_rss_01.jpg" alt="image-01"></p>
+<h3 id="como-funciona">Como funciona:</h3>
+<ul>
+<li>Partimos de dos fuentes rss de los que básicamente nos interesa extraer el título, enlace y fecha de publicación. Periódicamente, el flujo de trabajo va a consultar ambas fuentes y mediante expresiones regulares y algo de javascript se editarán varios campos hasta quedarnos con los deseados en el formato adecuado.</li>
+<li>Una vez formateadas las fuentes las combinaremos mediante el nodo &ldquo;Merge&rdquo;</li>
+<li>Puesto que el flujo de trabajo se va a ejecutar dos veces al día, despreciaremos los elementos que tengan más de dos días de antigüedad. Esto se realizará gracias a un nodo &ldquo;Filter&rdquo;.</li>
+<li>Un nodo &ldquo;Sort&rdquo; será el encargado de ordenar los elementos por fecha de publicación para que nos aparezcan primero los más recientes.</li>
+<li>Para crear una lista plana en formato &ldquo;Markdown&rdquo; a partir de la serie de elementos resultantes vamos a usar una pequeña función en Javascript (Esta función deberá escapar los caracteres espaciales para que sean correctamente interpretados.</li>
+<li>Finalmente se enviará la lista al canal correspondiente mediante un nodo &ldquo;Telegram&rdquo;</li>
+</ul>
+<h3 id="instrucciones-de-configuración">Instrucciones de configuración</h3>
+<ul>
+<li>Cuando abramos el flujo de trabajo por primera vez deberemos configurar la credencial de Telegram.</li>
+<li>En los nodos &ldquo;Rss&rdquo; insertaremos las url de las fuentes que vamos a consultar.</li>
+<li>En los nodos &ldquo;Edit Fields&rdquo; deberemos ajustar las expresiones regulares para obtener el resultado deseado en función de nuestras fuentes Rss. En este caso yo he ajustado las expresiones para obtener el nombre, tamaño y enlace de cada archivo publicado.</li>
+<li>En el nodo &ldquo;Sort&rdquo; podemos modificar la antigüedad máxima de los elementos que vamos a enviar. En este caso, se han incluido 2 dias (2 * 24 * 60 * 60 * 1000 milisegundos) ya que es necesario tener en cuenta que Telegram tiene una longitud máxima de mensaje y si nos excedemos devolverá un error en lugar de enviarlo.</li>
+<li>Finalmente, incluiremos en el nodo &ldquo;Telegram&rdquo; la identificación del canal donde vamos a enviar los mensajes.</li>
+</ul>
+<h3 id="paso-a-paso">Paso a paso</h3>
+<h4 id="schedule-trigger">Schedule trigger</h4>
+<p>Gracias a este disparador ejecutamos el flujo se trabajo cada 8 horas</p>
+<p><img src="/images/20250117_n8n_merge_rss_01.jpg" alt="image-01"></p>
+<h4 id="read-rss">Read Rss</h4>
+<p>Este nodo se encarga de leer la fuente Rss y devolverla en forma de json que posteriormente vamos a analizar</p>
+<p><img src="/images/20250117_n8n_merge_rss_03.jpg" alt="image-03"></p>
+<h4 id="edit-fields">Edit Fields</h4>
+<p>Estos nodos se encargan del curado de la información obtenida del Rss para sólo quedarnos con la parte que nos interesa</p>
+<p><img src="/images/20250117_n8n_merge_rss_04.jpg" alt="image-04"></p>
+<p>Gracias al uso de expresiones regulares resulta sencillo realizar la curación del contenido para finalmente tener un &ldquo;nombre&rdquo;, &ldquo;enlace&rdquo; y &ldquo;momento de publicación&rdquo;</p>
+<h4 id="merge-rss">Merge Rss</h4>
+<p>Si más, este nodo une el contenido de la información obtenida de los distintos Rss en un solo json que vamos a seguir procesando.</p>
+<h4 id="filter">Filter</h4>
+<p>La finalidad de este nodo es eliminar todos los elementos que tengan más de dos días de antigüedad aprovechando que la fecha de publicación está descrita en milisegundos.</p>
+<p><img src="/images/20250117_n8n_merge_rss_05.jpg" alt="image-05"></p>
+<h4 id="sort">Sort</h4>
+<p>Ordena los elementos por fecha de publicación dejando al principio los más recientes</p>
+<p><img src="/images/20250117_n8n_merge_rss_06.jpg" alt="image-06"></p>
+<h4 id="markdown-list">Markdown list</h4>
+<p>Gracias a este bloque de código en javascript conseguimos convertir el json que nos devuelve el nodo anterior en una lista formateada en Markdown para enviar a Telegram. Es importante &ldquo;escapar&rdquo; caracteres especiales para que el texto sea correctamente interpretado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Escape simbols function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">escapeMarkdown</span>(<span style="color:#a6e22e">text</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">text</span>
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\\/g</span>, <span style="color:#e6db74">&#34;\\\\&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\*/g</span>, <span style="color:#e6db74">&#34;\\*&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\_/g</span>, <span style="color:#e6db74">&#34;\\_&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\[/g</span>, <span style="color:#e6db74">&#34;\\[&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\]/g</span>, <span style="color:#e6db74">&#34;\\]&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/~/g</span>, <span style="color:#e6db74">&#34;\\~&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/`/g</span>, <span style="color:#e6db74">&#34;\\`&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&gt;/g</span>, <span style="color:#e6db74">&#34;\\&gt;&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/#/g</span>, <span style="color:#e6db74">&#34;\\#&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\+/g</span>, <span style="color:#e6db74">&#34;\\+&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/=/g</span>, <span style="color:#e6db74">&#34;\\=&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\|/g</span>, <span style="color:#e6db74">&#34;\\|&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/!/g</span>, <span style="color:#e6db74">&#34;\\!&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Generate list with links
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formattedList</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">item</span> =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">escapeMarkdown</span>(<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">title</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;No title&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">link</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">link</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;#&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Telegram Markdown Format: [Text](URL)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`[</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">title</span><span style="color:#e6db74">}</span><span style="color:#e6db74">](</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">link</span><span style="color:#e6db74">}</span><span style="color:#e6db74">)`</span>;
+</span></span><span style="display:flex;"><span>}).<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;\n&#34;</span>); <span style="color:#75715e">// Join with line break
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Return generated list
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">return</span> [{ <span style="color:#a6e22e">json</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">formattedList</span> } }];
+</span></span></code></pre></div><h4 id="telegram">Telegram</h4>
+<p>Finalmente ya sólo hay que enviar el texto a través de Telegram a un chat donde hayamos configurado nuestro bot.</p>
+<p><img src="/images/20250117_n8n_merge_rss_07.jpg" alt="image-07"></p>
+<p>Puedes navegar a través de todos estos nodos visitando la <a href="https://n8n.io/workflows/2748-merge-and-filter-several-rss-and-send-to-telegram/">plantilla de n8n</a>.</p>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/errores-de-seguimiento-de-torrents-en-synology-con-n8n/">Errores de seguimiento de torrents en Synology con n8n</a></li>
+	    
+	    <li><a href="/automatizando-el-men%C3%BA-escolar-con-n8n/">Automatizando el menú escolar con n8n</a></li>
+	    
+	    <li><a href="/enviar-enlaces-desde-telegram-a-hoarder-y-readeck-mediante-n8n/">Enviar enlaces desde telegram a hoarder y readeck mediante n8n</a></li>
+	    
+	    <li><a href="/incrustar-flujos-de-n8n-en-hugo/">Incrustar flujos de N8N en Hugo</a></li>
+	    
+	    <li><a href="/visor-de-mapa-conquistado-en-minetest/">Visor de mapa conquistado en Minetest</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/n8n/" rel="tag">n8n</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/de-strava-a-google-sheets-gracias-a-n8n/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">De Strava a Google Sheets gracias a n8n</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/sistema-de-pulsadores-con-esp32-y-micropython/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Sistema de pulsadores con Esp32 y micropython</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

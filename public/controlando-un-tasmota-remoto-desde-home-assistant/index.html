@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Controlando un Tasmota remoto desde Home Assistant - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="El método que he utilizado para controlar un enchufe inteligente con Tasmota desde Home Assistant gracias a Zerotier y una máquina de salto">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/20251023_home_assistant_remote_tasmota_00.jpg" />
+	<meta name="twitter:title" content="Controlando un Tasmota remoto desde Home Assistant"/>
+	<meta name="twitter:description" content="El método que he utilizado para controlar un enchufe inteligente con Tasmota desde Home Assistant gracias a Zerotier y una máquina de salto"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/controlando-un-tasmota-remoto-desde-home-assistant/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Controlando un Tasmota remoto desde Home Assistant">
+	<meta property="og:url" content="http://localhost:1313/controlando-un-tasmota-remoto-desde-home-assistant/">
+	<meta property="og:description" content="El método que he utilizado para controlar un enchufe inteligente con Tasmota desde Home Assistant gracias a Zerotier y una máquina de salto"/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20251023_home_assistant_remote_tasmota_00_xl.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Controlando un Tasmota remoto desde Home Assistant">
+  <meta name="twitter:description" content="El método que he utilizado para controlar un enchufe inteligente con Tasmota desde Home Assistant gracias a Zerotier y una máquina de salto">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Controlando un Tasmota remoto desde Home Assistant</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2025-10-24T00:00:00Z">2025-10-24</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/home-assistant/" rel="category">Home Assistant</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20251023_home_assistant_remote_tasmota_00.jpg" alt="Controlando un Tasmota remoto desde Home Assistant">
+		
+	</figure><div class="content post__content clearfix">
+			<p>Tengo problemas con el <a href="https://smlight.tech/product/slzb-06">SLZB-06</a> de mi segunda residencia cuando se va la luz, así es como lo he solucionado gracias a un enchufe inteligente.</p>
+<p>Cada vez que se produce un microcorte del suministro eléctrico en mi segunda residencia se reinician el router que conecta a internet y el <a href="https://smlight.tech/product/slzb-06">SLZB-06</a> que controla la red de dispositivos zigbee. Como consecuencia, la instalación de <a href="https://www.home-assistant.io">Home Assistant</a> que tengo en mi vivienda habitual deja de verlos y ,tras unos intentos fallidos, el complemento de <a href="https://www.zigbee2mqtt.io">Z2M</a> que vigila el coordinador zigbee se queda parado. Al recuperar el suministro eléctrico, los dos dispositivos arrancan de nuevo pero <a href="https://www.zigbee2mqtt.io">Z2M</a> no es capaz de conectar con el <a href="https://smlight.tech/product/slzb-06">SLZB-06</a>. Llegados a este punto hay dos posibilidades:</p>
+<ul>
+<li>Puedo, a través del navegador, acceder al panel de control web del <a href="https://smlight.tech/product/slzb-06">SLZB-06</a>. Lo reinicio, espero un poco y reinicio el complemento de <a href="https://www.zigbee2mqtt.io">Z2M</a> que estaba en fallo en <a href="https://www.home-assistant.io">Home Assistant</a>.</li>
+<li>No es posible acceder al panel de control web del <a href="https://smlight.tech/product/slzb-06">SLZB-06</a> y necesito un reinicio forzado quitando la alimentación del dispositivo.</li>
+</ul>
+<p>La primera opción es molesta pero sólo supone dos minutos corregirla. El problema real lo tengo con la segunda opción ya que no tengo acceso físico al <a href="https://smlight.tech/product/slzb-06">SLZB-06</a> por estar en esta segunda residencia.</p>
+<p>La solución parece sencilla, alimentar el <a href="https://smlight.tech/product/slzb-06">SLZB-06</a> con un enchufe inteligente que pueda apagar y encender para &ldquo;resetear&rdquo; el coordinador zigbee cuando lo necesite. Atención, el enchufe no puede ser zigbee, ya que podría apagarlo pero&hellip; ¿Quien va a encenderlo si el coordinador que le tiene que transmitir la orden está apagado? Por esto me veo obligado a utilizar un enchufe wifi (Cruzaremos los dedos por que este sea capaz de conectarse al router tras un microcorte) y para poder controlarlo desde Home Assistant sin depender de una nube de terceros he optado por un <a href="https://es.aliexpress.com/item/1005009316915168.html">modelo</a> con [Tasmota] preinstalado.</p>
+<p><img src="/images/20251023_home_assistant_remote_tasmota_01.jpg" alt="image-01"></p>
+<p>Con el enchufe montado, con IP local 192.168.1.32 que no he sido capaz de poner fija desde el panel de control de Tasmota y sin ningún tipo de seguridad, de momento, podemos controlarlo desde cualquier navegador dentro de la red local. Ahora llega el reto, controlarlo desde el <a href="https://www.home-assistant.io">Home Assistant</a> de mi residencia habitual.</p>
+<p>En [Tasmota] no se permite de forma nativa la conexión VPN mediante <a href="https://www.wireguard.com">Wireguard</a> que empleo para la conexión remota del <a href="https://smlight.tech/product/slzb-06">SLZB-06</a> por lo que voy a recurrir al uso de una Raspberry como máquina de salto y <a href="https://www.zerotier.com">Zerotier</a> como método de conexión a la misma.</p>
+<p>Mi objetivo es ahora crear en Home Assistant un interruptor que, a través de esa Raspberry remota, pueda encender, apagar y consultar el estado real del Tasmota, todo a través del túnel <a href="https://www.zerotier.com">Zerotier</a>.</p>
+<p>Empecé probando con combinaciones de switch: y shell_command:, intentando usar comandos SSH definidos externamente, pero Home Assistant no permitía referenciarlos directamente desde command_line. También intenté crear sensores intermedios para el estado, pero no terminaban de registrarse correctamente.
+Finalmente, la solución ha llegado con la integración moderna command_line, que desde las versiones recientes de <a href="https://www.home-assistant.io">Home Assistant</a> permite declarar un bloque único con distintos tipos de entidades (sensor, switch, etc.) sin necesidad de plataformas separadas.</p>
+<p>El bloque final que he implementado ha quedado así:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">command_line</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">switch</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Enchufe remoto CO</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">unique_id</span>: <span style="color:#ae81ff">co_enchufe_tasmota</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">command_on</span>: &gt;<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        ssh -i /config/ssh/id_rsa -o StrictHostKeyChecking=no \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        pi@192.168.191.205 &#34;curl -s &#39;http://192.168.1.32/cm?cmnd=Power%20On&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">command_off</span>: &gt;<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        ssh -i /config/ssh/id_rsa -o StrictHostKeyChecking=no \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        pi@192.168.191.205 &#34;curl -s &#39;http://192.168.1.32/cm?cmnd=Power%20Off&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">command_state</span>: &gt;<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        ssh -i /config/ssh/id_rsa -o StrictHostKeyChecking=no \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        pi@192.168.191.205 &#34;curl -s &#39;http://192.168.1.32/cm?cmnd=Power&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">value_template</span>: &gt;<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        {{ value_json.POWER == &#39;ON&#39; }}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">command_timeout</span>: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">scan_interval</span>: <span style="color:#ae81ff">600</span>
+</span></span></code></pre></div><p>Tras un reinicio de <a href="https://www.home-assistant.io">Home Assistant</a> ya queda el interruptor listo para funcionar.</p>
+<p>Con esta configuración, Home Assistant ejecuta los comandos SSH hacia la Raspberry remota (192.168.191.205), que a su vez lanza las peticiones HTTP al enchufe Tasmota (192.168.1.32).
+Gracias al túnel de Zerotier, todo ocurre dentro de una red privada virtual, sin abrir puertos ni depender de IPs públicas.</p>
+<p>El interruptor ahora enciende, apaga y refleja el estado real del enchufe con un retardo mínimo. Además, scan_interval permite que el estado se actualice automáticamente cada cierto tiempo por si el dispositivo se cambia manualmente, para evitar demasiadas consultas lo he dejado en &ldquo;600&rdquo; segundos.</p>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="https://www.home-assistant.io/integrations/command_line/">command_line</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/configurar-wireguard-de-home-assistant-en-cliente-linux/">Configurar Wireguard de Home Assistant en cliente linux</a></li>
+	    
+	    <li><a href="/instalaci%C3%B3n-y-configuraci%C3%B3n-de-zerotier/">Instalación y configuración de Zerotier</a></li>
+	    
+	    <li><a href="/modificando-pi-hole-desde-home-assistant/">Modificando Pi-hole desde Home assistant</a></li>
+	    
+	    <li><a href="/incrustar-texto-externo-en-hugo/">Incrustar texto externo en Hugo</a></li>
+	    
+	    <li><a href="/usando-un-tunel-ssh-para-aceder-a-un-servidor-remoto/">Usando un tunel ssh para aceder a un servidor remoto</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/zerotier/" rel="tag">zerotier</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/tasmota/" rel="tag">tasmota</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/bash/" rel="tag">bash</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/configurar-wireguard-de-home-assistant-en-cliente-linux/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Configurar Wireguard de Home Assistant en cliente linux</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

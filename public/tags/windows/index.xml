@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>windows on Sherblog</title>
-    <link>https://sherlockes.github.io/tags/windows/</link>
-    <description>Recent content in windows on Sherblog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Windows on Sherblog</title>
+    <link>http://localhost:1313/tags/windows/</link>
+    <description>Recent content in Windows on Sherblog</description>
+    <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Thu, 19 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Salvado por Robocopy</title>
+      <link>http://localhost:1313/salvado-por-robocopy/</link>
+      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/salvado-por-robocopy/</guid>
+      <description>&lt;p&gt;Hasta ayer no tenía ni idea de la existencia de &lt;a href=&#34;https://learn.microsoft.com/es-es/windows-server/administration/windows-commands/robocopy&#34;&gt;Robocopy&lt;/a&gt; pero hoy me ha salvado de un buen rato de faena y quitado un dolor de cabeza.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Instalando Windows 7</title>
-      <link>https://sherlockes.github.io/instalando-windows-7/</link>
+      <link>http://localhost:1313/instalando-windows-7/</link>
       <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/instalando-windows-7/</guid>
-      <description>El problema, un sistema lento Varios años después necesito instalar Windows en un pc, ya me he cansado de tener que esperar diez minutos hasta que arranque el sistema después de casi siete años de que la instalación de Windows 7 home Premium este acumulando kilos y kilos de basura informática.
-Windows 7 Vs Windows 10 Hoy por hoy Windows 7 me ofrece todo lo que necesito y el pc en el que voy a instalarlo no es precisamente de última generación por lo que no siquiera valoro la instalación de Windows 10.</description>
+      <guid>http://localhost:1313/instalando-windows-7/</guid>
+      <description>&lt;h3 id=&#34;el-problema-un-sistema-lento&#34;&gt;El problema, un sistema lento&lt;/h3&gt;&#xA;&lt;p&gt;Varios años después necesito instalar Windows en un pc, ya me he cansado de tener que esperar diez minutos hasta que arranque el sistema después de casi siete años de que la instalación de Windows 7 home Premium este acumulando kilos y kilos de basura informática.&lt;/p&gt;&#xA;&lt;h3 id=&#34;windows-7-vs-windows-10&#34;&gt;Windows 7 Vs Windows 10&lt;/h3&gt;&#xA;&lt;p&gt;Hoy por hoy Windows 7 me ofrece todo lo que necesito y el pc en el que voy a instalarlo no es precisamente de última generación por lo que no siquiera valoro la instalación de Windows 10. Seguro que me estoy perdiendo cientos de buenas características pero ya he dejado atrás los tiempos en los que el sistema operativo era una experiencia, ahora sólo lo considero una herramienta.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comedor Miraflores</title>
+    <style>
+        :root {
+            --primary: #003366; /* Azul oscuro institucional */
+            --accent: #3498db;
+            --bg: #f4f7f6;
+            --card: #ffffff;
+            --text: #2c3e50;
+            --muted: #7f8c8d;
+        }
+
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        header {
+            background: var(--primary); /* Fondo oscuro para resaltar el logo */
+            width: 100%;
+            padding: 1.2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 260px;
+            width: 75%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 92%;
+            max-width: 500px;
+            margin: 1.5rem 0 1rem 0;
+            background: var(--card);
+            padding: 0.6rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        button:active { transform: scale(0.92); opacity: 0.9; }
+
+        #week-info {
+            text-align: center;
+            font-size: 0.95rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+
+        .menu-list {
+            width: 92%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 3rem;
+        }
+
+        .day-card {
+            background: var(--card);
+            padding: 18px;
+            border-radius: 15px;
+            border-left: 6px solid #d1d8e0;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.03);
+        }
+
+        .day-card.today {
+            border-left-color: #27ae60;
+            background: #f0fff4;
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.1);
+        }
+
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 6px;
+        }
+
+        .day-name { font-weight: 800; text-transform: uppercase; color: var(--primary); font-size: 0.85rem; }
+        .day-date { color: var(--muted); font-size: 0.85rem; }
+
+        .menu-body {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            white-space: pre-line;
+            color: #34495e;
+        }
+
+        .loading { margin-top: 40px; color: var(--muted); font-weight: 500; }
+        .error { color: #e74c3c; padding: 30px; text-align: center; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://ceipmiraflores.org/wp-content/uploads/2021/06/LOGO-MIRAFLORES-2blk.png" alt="Logo Miraflores" class="logo">
+    </header>
+
+    <div class="nav-bar">
+        <button onclick="changeWeek(-7)">❮</button>
+        <div id="week-info">Cargando menú...</div>
+        <button onclick="changeWeek(7)">❯</button>
+    </div>
+
+    <div id="app" class="menu-list">
+        <div class="loading">Sincronizando con el comedor...</div>
+    </div>
+
+    <script>
+        let menuData = null;
+        let currentMonday = getMonday(new Date());
+
+        function getMonday(d) {
+            d = new Date(d);
+            const day = d.getDay();
+            const diff = d.getDate() - day + (day === 0 ? -6 : 1);
+            const monday = new Date(d.setDate(diff));
+            monday.setHours(0,0,0,0);
+            return monday;
+        }
+
+        async function loadMenu() {
+            const url = 'https://raw.githubusercontent.com/sherlockes/sherlockes.github.io/refs/heads/main/static/files/menu_mira.json';
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Error de red');
+                menuData = await response.json();
+                render();
+            } catch (err) {
+                document.getElementById('app').innerHTML = `<div class="error">⚠️ No se pudieron cargar los menús.<br>Inténtalo de nuevo más tarde.</div>`;
+            }
+        }
+
+        function getMenuForDate(date) {
+            if (!menuData) return "---";
+            const pad = (n) => n.toString().padStart(2, '0');
+            const d = date.getDate();
+            const m = date.getMonth() + 1;
+            const y = date.getFullYear();
+
+            const candidates = [
+                `${y}-${pad(m)}-${pad(d)}`,
+                `${pad(d)}/${pad(m)}/${y}`,
+                `${pad(d)}-${pad(m)}-${y}`,
+                `${d}/${m}/${y}`
+            ];
+
+            if (Array.isArray(menuData)) {
+                const found = menuData.find(item => {
+                    const val = item.fecha || item.date || item.dia;
+                    return candidates.includes(val);
+                });
+                return found ? (found.menu || found.comida || found.texto) : "---";
+            }
+
+            for (let c of candidates) {
+                if (menuData[c]) return menuData[c];
+            }
+            return "---";
+        }
+
+        function render() {
+            const container = document.getElementById('app');
+            const info = document.getElementById('week-info');
+            container.innerHTML = '';
+
+            const endOfWeek = new Date(currentMonday);
+            endOfWeek.setDate(currentMonday.getDate() + 4);
+
+            const options = { day: 'numeric', month: 'short' };
+            info.innerHTML = `SEMANA DEL<br>${currentMonday.toLocaleDateString('es-ES', options)} AL ${endOfWeek.toLocaleDateString('es-ES', options)}`.toUpperCase();
+
+            const todayStr = new Date().toDateString();
+
+            for (let i = 0; i < 5; i++) {
+                const date = new Date(currentMonday);
+                date.setDate(currentMonday.getDate() + i);
+                
+                const menuText = getMenuForDate(date);
+                const isToday = date.toDateString() === todayStr;
+
+                const card = document.createElement('div');
+                card.className = `day-card ${isToday ? 'today' : ''}`;
+                
+                const dayName = new Intl.DateTimeFormat('es-ES', { weekday: 'long' }).format(date);
+                const dateNum = date.toLocaleDateString('es-ES');
+
+                card.innerHTML = `
+                    <div class="day-header">
+                        <span class="day-name">${dayName}</span>
+                        <span class="day-date">${dateNum}</span>
+                    </div>
+                    <div class="menu-body">${menuText}</div>
+                `;
+                container.appendChild(card);
+            }
+        }
+
+        function changeWeek(days) {
+            currentMonday.setDate(currentMonday.getDate() + days);
+            render();
+        }
+
+        loadMenu();
+    </script>
+</body>
+</html>

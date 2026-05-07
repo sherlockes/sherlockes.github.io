@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Descarga y edición de actividades de Strava en Python - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Como he gestionado la descarga automatizada de las actividades de Strava y posterior edición para mostrar en un mapa mediante python.">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/20231104_strava_api_gpx_python_00.jpg" />
+	<meta name="twitter:title" content="Descarga y edición de actividades de Strava en Python"/>
+	<meta name="twitter:description" content="Como he gestionado la descarga automatizada de las actividades de Strava y posterior edición para mostrar en un mapa mediante python."/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/descarga-y-edici%C3%B3n-de-actividades-de-strava-en-python/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Descarga y edición de actividades de Strava en Python">
+	<meta property="og:url" content="http://localhost:1313/descarga-y-edici%C3%B3n-de-actividades-de-strava-en-python/">
+	<meta property="og:description" content="Como he gestionado la descarga automatizada de las actividades de Strava y posterior edición para mostrar en un mapa mediante python."/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20231104_strava_api_gpx_python_00.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Descarga y edición de actividades de Strava en Python">
+  <meta name="twitter:description" content="Como he gestionado la descarga automatizada de las actividades de Strava y posterior edición para mostrar en un mapa mediante python.">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Descarga y edición de actividades de Strava en Python</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-11-04T00:00:00Z">2023-11-04</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">Computing</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20231104_strava_api_gpx_python_00.jpg" alt="Descarga y edición de actividades de Strava en Python">
+		
+	</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Índice</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#preparación-previa">Preparación previa</a></li>
+        <li><a href="#carga-de-env">Carga de .env</a></li>
+        <li><a href="#declaración-de-variables">Declaración de variables</a></li>
+        <li><a href="#autorización">Autorización</a></li>
+        <li><a href="#abrir-url">Abrir url</a></li>
+        <li><a href="#librerías-a-instalar">Librerías a instalar</a></li>
+        <li><a href="#enlaces-de-interés">Enlaces de interés</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p>Descargar las actividades anuales de <a href="https://www.strava.com">Strava</a> para la creación de un mapa con mis rutas de forma automatizada es un proyecto detrás del cual llevaba mucho tiempo. Al fin lo he afrontado.</p>
+<p>Voy a intentar contarlo poco a poco para que cualquiera lo pueda seguir con sólo tener unos conocimientos muy básicos de <a href="https://www.python.org">Python</a> como son los míos. Será necesario tener en cuanta que las indicaciones que aquí quedan son para un trabajo sobre <a href="https://linuxmint.com">Linux Mint</a> y Python3, cualquier otro sistema requerirá una adaptación.</p>
+<h3 id="preparación-previa">Preparación previa</h3>
+<p>Es probable que el repositorio de paquetes [Pip] ya lo tengas instalado en tu sistema linux, también será necesaria la herramienta de creación de entornos virtuales <a href="https://pypi.org/project/virtualenv/">virtualenv</a>. Ambas herramientas las instalaremos desde la consola con los siguientes comandos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install python3-pip
+</span></span><span style="display:flex;"><span>pip install virtualenv
+</span></span></code></pre></div><blockquote>
+<p>El uso de entornos virtuales nos permite crear un sistema aislado donde instalar las librerías de no interfieran con las propias del sistema operativo y se puedan eliminar de una forma sencilla al terminar o descartar el proyecto.</p>
+</blockquote>
+<p>El siguiente paso es la creación y activación del entorno virtual para lo que, desde la terminal nos situaremos en la carpeta donde queremos nuestro proyecto y ejecutaremos los siguientes comandos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>virtualenv mientorno
+</span></span><span style="display:flex;"><span>source mientorno/bin/activate
+</span></span></code></pre></div><p>Ahora ya tenemos la carpeta &ldquo;mientorno&rdquo; creada para almacenar nuestro proyecto y activado el entorno virtual para aislarlo del sistema. El &ldquo;prompt&rdquo; de la terminal habrá cambiado y ahora tendremos algo como lo siguiente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">(</span>mientorno<span style="color:#f92672">)</span> user@host:~$ 
+</span></span></code></pre></div><blockquote>
+<p>Para desactivar el entorno virtual usaremos directamente el comando <code>deactivate</code>.</p>
+</blockquote>
+<p>Antes de empezar a programar necesitamos conocer el &ldquo;id de cliente&rdquo; y el &ldquo;secreto de cliente&rdquo; de nuestra cuenta. Ambos los podemos encontrar en los ajustes del <a href="https://www.strava.com/settings/api">API de Strava</a>.</p>
+<p><img src="/images/20231104_strava_api_gpx_python_01.jpg" alt="image-01"></p>
+<p>Con esta información crearemos un archivo &ldquo;.env&rdquo; en la carpeta que se ha creado para nuestro entorno virtual y cuyo contenido será el siguiente con los correspondientes parámetros de <a href="https://www.strava.com">Strava</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>CLIENT_ID=123456
+</span></span><span style="display:flex;"><span>CLIENT_SECRET=d4cd6r8ec6uca55dhee5ef535b776g286f074576
+</span></span></code></pre></div><p>Ya estamos listos para crear nuestro archivo &ldquo;strava.py&rdquo; en la carpeta donde hemos incluido anteriormente el &ldquo;.env&rdquo; y lo empezamos a dotar de funcionalidad.</p>
+<h3 id="carga-de-env">Carga de .env</h3>
+<p>Mediante la librería <a href="https://pypi.org/project/python-dotenv/">python-dotenv</a> vamos a posibilitar que las variables almacenadas en el archivo de texto externo se carguen como variables de entorno en el entorno virtual que hemos creado sin más que hacer una llamada a la función.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>load_dotenv<span style="color:#f92672">()</span>
+</span></span></code></pre></div><h3 id="declaración-de-variables">Declaración de variables</h3>
+<p>Necesitamos unas cuantas variables para las llaves de <a href="https://www.strava.com">Strava</a>, la identificación del cliente, el código y la url de autorización que pasamos a definir a continuación.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>client_id <span style="color:#f92672">=</span> os.getenv<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;CLIENT_ID&#39;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>client_secret <span style="color:#f92672">=</span> os.getenv<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;CLIENT_SECRET&#39;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>authorization_code <span style="color:#f92672">=</span> None
+</span></span><span style="display:flex;"><span>strava_authorization_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://www.strava.com/oauth/authorize?&#34;</span> + <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#e6db74">&#34;client_id=&#34;</span> + client_id + <span style="color:#e6db74">&#34;&amp;&#34;</span> + <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#e6db74">&#34;redirect_uri=http://localhost:5000/authorization&amp;&#34;</span> + <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#e6db74">&#34;response_type=code&amp;scope=read,activity:read_all&#34;</span>
+</span></span></code></pre></div><h3 id="autorización">Autorización</h3>
+<p>Esta es la parte más farragosa ya que el proceso de autentificación es completamente manual siguiendo los siguientes pasos.</p>
+<ul>
+<li>Abrir en el navegador la url de autorización</li>
+<li>Esperar a la redirección del explorador</li>
+<li>Copiar de la url de redirección el código de autorización</li>
+</ul>
+<p>Este proceso, aunque no es complicado, es muy latoso ya que hay que realizarlo cada vez que ejecutemos el script. Para automatizarlo un poco vamos a &ldquo;matar moscas a cañonazos&rdquo; haciendo una visita automática a la url de autorización y corriendo en nuestra máquina un servidor que &ldquo;escuche&rdquo; la redirección para captar el código de autorización.</p>
+<h3 id="abrir-url">Abrir url</h3>
+<h3 id="librerías-a-instalar">Librerías a instalar</h3>
+<ul>
+<li><a href="https://pypi.org/project/python-dotenv/">python-dotenv</a> - Lectura de variables desde texto externo</li>
+<li><a href="https://pypi.org/project/requests/">requests</a> - Hacer peticiones http</li>
+</ul>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="www.sherblog.pro">enlace</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/sherlocaster/">Sherlocaster</a></li>
+	    
+	    <li><a href="/de-strava-a-google-sheets-gracias-a-n8n/">De Strava a Google Sheets gracias a n8n</a></li>
+	    
+	    <li><a href="/bot-de-telegram-en-python/">Bot de Telegram en Python</a></li>
+	    
+	    <li><a href="/crear-podcast-a-partir-de-un-canal-de-twitch/">Crear Podcast a partir de un canal de Twitch</a></li>
+	    
+	    <li><a href="/descargar-archivos-de-telegram/">Descargar archivos de Telegram</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/strava/" rel="tag">strava</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/python/" rel="tag">python</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/crear-y-configurar-una-instancia-gratuita-en-oracle/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Crear y configurar una instancia gratuita en Oracle</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/synology.-falta-de-espacio-en-la-unidad-de-sistema/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Synology. Falta de espacio en la unidad de sistema</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

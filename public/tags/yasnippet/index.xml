@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yasnippet on Sherblog</title>
+    <link>http://localhost:1313/tags/yasnippet/</link>
+    <description>Recent content in Yasnippet on Sherblog</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 12 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/yasnippet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creación de un post de Hugo desde emacs</title>
+      <link>http://localhost:1313/creaci%C3%B3n-de-un-post-de-hugo-desde-emacs/</link>
+      <pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/creaci%C3%B3n-de-un-post-de-hugo-desde-emacs/</guid>
+      <description>&lt;p&gt;Para centrarte en escribir, el proceso de publicación no tiene que suponer una barrera. Así he configurado emacs para optimizar la creación de post para el blog con la mínima fricción posible.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

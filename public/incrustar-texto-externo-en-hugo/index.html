@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="es">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,22 +10,28 @@
 
 	
 	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:image" content="http://www.sherblog.pro/images/20210421_hugo_incrustar_texto_00.jpg" />
+	<meta name="twitter:image" content="http://localhost:1313//images/20210421_hugo_incrustar_texto_00.jpg" />
 	<meta name="twitter:title" content="Incrustar texto externo en Hugo"/>
 	<meta name="twitter:description" content="Como incrustar texto de un archivo externo dentro de un post en Hugo"/>
 	<meta name="twitter:creator" content="@sherblogpro">
-	<meta name="twitter:site" content="sherblog.pro" />
+	<meta name="twitter:site" content="http://localhost:1313/incrustar-texto-externo-en-hugo/" />
 
 	
 	<meta property="og:type" content="article">
 	<meta property="og:locale" content="es_ES">
-	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:site_name" content="Sherblog">
 	<meta property="og:locale" content="es_ES">
 	<meta property="og:title"   content="Incrustar texto externo en Hugo">
-	<meta property="og:url"   content="https://sherlockes.github.io">
+	<meta property="og:url" content="http://localhost:1313/incrustar-texto-externo-en-hugo/">
 	<meta property="og:description" content="Como incrustar texto de un archivo externo dentro de un post en Hugo"/>
 
-	<meta property="og:image" content="http://www.sherblog.pro/images/20210421_hugo_incrustar_texto_00.jpg" />
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20210421_hugo_incrustar_texto_00_xl.jpg" />
+	
+	
 
 	
 	
@@ -35,7 +41,6 @@
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="shortcut icon" href="/favicon.ico">
-		
 
 	
 	
@@ -44,9 +49,10 @@
 <body class="body">
 	<div class="container container--outer">
 		<header class="header">
-	<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Incrustar texto externo en Hugo"/>
-<meta name="twitter:description" content="Como incrustar texto de un archivo externo dentro de un post en Hugo"/>
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Incrustar texto externo en Hugo">
+  <meta name="twitter:description" content="Como incrustar texto de un archivo externo dentro de un post en Hugo">
 
 	<div class="container">
 		<div class="logo">
@@ -96,6 +102,13 @@
 				
 			</a>
 		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
 	</ul>
 </nav>
 
@@ -110,7 +123,7 @@
 			<h1 class="post__title">Incrustar texto externo en Hugo</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-03-25T00:00:00Z">2022-03-25</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/hugo/" rel="category">hugo</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2025-12-06T00:00:00Z">2025-12-06</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/hugo/" rel="category">Hugo</a>
 	</span>
 </div></div>
 		</header>
@@ -121,7 +134,7 @@
 		
 	</figure><div class="content post__content clearfix">
 			<p>Hace tiempo que vengo pensando en la capacidad de poder introducir texto desde un archivo externo dentro de los post que publico en <a href="https://gohugo.io">Hugo</a>. Hoy se me ha encendido la bombilla.</p>
-<p><strong>Actualización:</strong> Inclusión de texto desde un servidor remoto.</p>
+<p><strong>Actualización:</strong> Inclusión de texto desde un servidor remoto de forma nativa.</p>
 <p>Una potente herramienta que posee <a href="https://gohugo.io">Hugo</a> es la posibilidad de uso de <a href="https://gohugo.io/content-management/shortcodes/">Shortcodes</a> (Fragmentos simples dentro de los archivos de contenido que llaman a plantillas integradas o personalizadas), pero más potente todavía es el uso de <a href="https://gohugo.io/templates/shortcode-templates/">Shortcodes personalizados</a> que ya he utilizado en otras ocasiones como en mi proyecto de <a href="https://sherblog.pro/mis-v%C3%A9rtices-geod%C3%A9sicos-en-hugo/">Vértices Geodésicos</a>.</p>
 <h3 id="desde-el-propio-servidor">Desde el propio servidor</h3>
 <p>Es posible utilizar esta característica para crear un Shortcode que incluya en el post el texto contenido en un archivo de texto externo que esté alojado en el propio servidor sin más que escribir una línea de código.</p>
@@ -133,7 +146,7 @@
 <p>Ahora ya sólo resta insertar el siguiente código en la zona del post o la página donde queramos incluir el texto del archivo externo.</p>
 <pre tabindex="0"><code>{{&lt; texto_externo &#34;/archivo.md&#34; &gt;}}
 </code></pre><p>Para que se cargue correctamente, el archivo deberá alojarse en la carpeta &ldquo;static&rdquo; ya que es lo que <a href="https://gohugo.io">Hugo</a> entiende como la raíz de los documentos en el Blog.</p>
-<h3 id="desde-un-servidor-externo">Desde un servidor externo</h3>
+<h3 id="desde-un-servidor-externo-a-través-de-cloudflare">Desde un servidor externo (A través de Cloudflare)</h3>
 <p>Muchas veces me encuentro con la necesidad de incluir en un post código de github que no quiero tener que estar pendiente de actualizar cuando este se modifique. Como este método no funciona si queremos incluir texto desde un servidor remoto por lo que he creado un segundo &ldquo;shortcut&rdquo; gracias a una herramienta de <a href="https://quinncasey.com/tools/hugo-remote-content-from-url/">Quinn Casey</a> que he duplicado en <a href="https://workers.cloudflare.com">Cloudflare Workers</a> de forma gratuita. Para realizar esta función crearemos el archivo &ldquo;texto_remoto.html&rdquo; en la carpeta &ldquo;shortcodes&rdquo; con el siguiente contenido:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{- $remote_url := (.Get 0) -}}
 </span></span><span style="display:flex;"><span>{{- $remote_data := getJSON &#34;https://texto-remoto.sherlockes.workers.dev/fetch?url=&#34; $remote_url -}}
@@ -145,7 +158,16 @@
 </code></pre><blockquote>
 <p>No es la mejor solución depender de la herramienta de un tercero para mi desarrollo pero de momento es una buena solución a un buen precio.</p>
 </blockquote>
-<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<h3 id="desde-un-servidor-externo-solución-nativa">Desde un servidor externo (Solución nativa)</h3>
+<p>Con las últimas versiones de <a href="https://gohugo.io">Hugo</a> ya es posible implementar una solución al problema de incluir texto externo sin depender de recursos de terceros. Así quedará el shortcode &ldquo;texto_remoto.html&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>{{- $remote_url := .Get 0 -}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{- with resources.GetRemote $remote_url -}}
+</span></span><span style="display:flex;"><span>&lt;pre&gt;&lt;code class=&#34;language-txt&#34;&gt;{{ .Content | htmlEscape | safeHTML }}&lt;/code&gt;&lt;/pre&gt;
+</span></span><span style="display:flex;"><span>{{- else -}}
+</span></span><span style="display:flex;"><span>&lt;p&gt;&lt;em&gt;No se pudo cargar el contenido remoto desde {{ $remote_url }}.&lt;/em&gt;&lt;/p&gt;
+</span></span><span style="display:flex;"><span>{{- end -}}
+</span></span></code></pre></div><h3 id="enlaces-de-interés">Enlaces de interés</h3>
 <ul>
 <li><a href="https://quinncasey.com/tools/hugo-remote-content-from-url/">Quinn Casey - Remote content in hgo</a></li>
 </ul>
@@ -157,6 +179,8 @@
     <h3>Otros de mís artículos que te pueden interesar</h3>
     <ul>
 	    
+	    <li><a href="/incrustar-flujos-de-n8n-en-hugo/">Incrustar flujos de N8N en Hugo</a></li>
+	    
 	    <li><a href="/entorno-de-desarrollo-de-sherblog-en-emacs/">Entorno de desarrollo de Sherblog en Emacs</a></li>
 	    
 	    <li><a href="/script-de-instalaci%C3%B3n-de-hugo-en-linux/">Script de instalación de Hugo en linux</a></li>
@@ -164,8 +188,6 @@
 	    <li><a href="/como-a%C3%B1ado-enlaces-en-hugo/">Como añado enlaces en Hugo</a></li>
 	    
 	    <li><a href="/lista-de-art%C3%ADculos-por-categor%C3%ADa-en-hugo/">Lista de artículos por categoría en Hugo</a></li>
-	    
-	    <li><a href="/insertar-comentarios-en-hugo/">Insertar comentarios en Hugo</a></li>
 	    
     </ul>
 </div>
@@ -190,21 +212,21 @@
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/como-a%C3%B1ado-enlaces-en-hugo/" rel="prev">
+		<a class="pager__link" href="/entorno-de-desarrollo-de-hugo-en-docker/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Anterior</span>
-			<p class="pager__title">Como añado enlaces en Hugo</p>
+			<p class="pager__title">Entorno de desarrollo de Hugo en Docker</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/script-de-instalaci%C3%B3n-de-hugo-en-linux/" rel="next">
+		<a class="pager__link" href="/incrustar-flujos-de-n8n-en-hugo/" rel="next">
 			<span class="pager__subtitle">Siguiente&thinsp;»</span>
-			<p class="pager__title">Script de instalación de Hugo en linux</p>
+			<p class="pager__title">Incrustar flujos de N8N en Hugo</p>
 		</a>
 	</div>
 </nav>
 <div class="content post__content clearfix">
   <h3>Comentarios</h3>
-  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://emacs.ch/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
 </div>
 
 
@@ -215,14 +237,37 @@
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-		        &copy; 2023 Sherlockes.
+		        &copy; 2026 Sherlockes.
 			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
 			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
 		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
 	</div>
 </footer>
 
 	</div>
-<script async defer src="/js/menu.js"></script>
-<script src="/js/custom.js"></script></body>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
 </html>

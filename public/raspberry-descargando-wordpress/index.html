@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="es">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,22 +10,28 @@
 
 	
 	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:image" content="http://www.sherblog.pro/images/raspberry_logo.png" />
+	<meta name="twitter:image" content="http://localhost:1313//images/raspberry_logo.png" />
 	<meta name="twitter:title" content="Raspberry Descargando Wordpress"/>
 	<meta name="twitter:description" content="Descargando la última versión de WordPress a nuestra Raspberry Pi."/>
 	<meta name="twitter:creator" content="@sherblogpro">
-	<meta name="twitter:site" content="sherblog.pro" />
+	<meta name="twitter:site" content="http://localhost:1313/raspberry-descargando-wordpress/" />
 
 	
 	<meta property="og:type" content="article">
 	<meta property="og:locale" content="es_ES">
-	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:site_name" content="Sherblog">
 	<meta property="og:locale" content="es_ES">
 	<meta property="og:title"   content="Raspberry Descargando Wordpress">
-	<meta property="og:url"   content="https://sherlockes.github.io">
+	<meta property="og:url" content="http://localhost:1313/raspberry-descargando-wordpress/">
 	<meta property="og:description" content="Descargando la última versión de WordPress a nuestra Raspberry Pi."/>
 
-	<meta property="og:image" content="http://www.sherblog.pro/images/raspberry_logo.png" />
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/raspberry_logo.png" />
+	
+	
 
 	
 	
@@ -35,7 +41,6 @@
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="shortcut icon" href="/favicon.ico">
-		
 
 	
 	
@@ -44,9 +49,10 @@
 <body class="body">
 	<div class="container container--outer">
 		<header class="header">
-	<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Raspberry Descargando Wordpress"/>
-<meta name="twitter:description" content="Descargando la última versión de WordPress a nuestra Raspberry Pi."/>
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Raspberry Descargando Wordpress">
+  <meta name="twitter:description" content="Descargando la última versión de WordPress a nuestra Raspberry Pi.">
 
 	<div class="container">
 		<div class="logo">
@@ -96,6 +102,13 @@
 				
 			</a>
 		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
 	</ul>
 </nav>
 
@@ -122,7 +135,15 @@
 	</figure><div class="content post__content clearfix">
 			<h3 id="descargando-wordpress">Descargando WordPress</h3>
 <p>En primer lugar descargamos la ultima versión de WordPress a el directorio &ldquo;home&rdquo; del usuario Pi.  Si la descargamos en inglés lo haremos mediante el archivo &ldquo;latest.tar.gz&rdquo; pero si la queremos en castellano habrá en entrar en [[http://es.wordpress.org]] y comprobar cual es la versión actual para descargar un archivo del tipo &ldquo;wordpress-4.8.2-es_ES.tar.gz&rdquo;</p>
-<!-- raw HTML omitted -->
+<code>
+sudo mkdir /var/www/html/sherblog/
+cd ~
+wget http://wordpress.org/latest.tar.gz
+tar -xzvf latest.tar.gz
+sudo mv wordpress/* /var/www/html/sherblog
+sudo rm latest.tar.gz
+sudo rm -rf wordpress
+</code>
 <p>Las líneas de arriba realizan la siguiente secuencia:</p>
 <ul>
 <li>Crea un directorio en la raiz de apache para instalar WordPress</li>
@@ -134,18 +155,37 @@
 <li>Borra la carpeta vacía</li>
 </ul>
 <p>Con esto ya están listos los archivos de WordPress, ahora modificaremos el archivo &ldquo;wp-config&rdquo; con la información de la conexión a la base de datos que hemos creado anteriormente.</p>
-<!-- raw HTML omitted -->
+<code>
+cd /var/www/html/sherblog
+sudo cp wp-config-sample.php wp-config.php
+sudo nano wp-config.php
+</code>
 <p>define(&lsquo;DB_NAME&rsquo;, &lsquo;dbwordpress&rsquo;);\
 define(&lsquo;DB_USER&rsquo;, &lsquo;wpuser&rsquo;);\
 define(&lsquo;DB_PASSWORD&rsquo;, &lsquo;wpP455w0rd&rsquo;);\</p>
-<!-- raw HTML omitted -->
+<code>
+sudo chown -R pi:pi /var/www/html/sherblog
+sudo mkdir /var/www/html/sherblog/wp-content/uploads
+sudo chown -R www-data:www-data /var/www/html/sherblog/wp-content/uploads
+sudo nano /etc/apache2/sites-available/000-default.conf
+sudo service apache2 restart
+sudo touch /var/www/html/sherblog/.htaccess
+sudo chown www-data:www-data /var/www/html/sherblog/.htaccess
+sudo find /var/www/html/ -type d -exec chmod 755 {} \;
+sudo find /var/www/html/ -type f -exec chmod 644 {} \;
+sudo restart
+</code>
 <ul>
 <li>Cambiamos a Pi como propietario de la carpeta &ldquo;sherblog&rdquo;</li>
 <li>Creamos la carpeta &ldquo;uploads&rdquo;</li>
 <li>Cambiamos a apache2 como propietario de la carpeta &ldquo;uploads&rdquo;</li>
 <li>Editamos el archivo &ldquo;virtual host&rdquo; de apache2 y añadimos &ldquo;AllowOverride All&rdquo; para la carpeta /var/www/html/sherblog, añdimos el siguiente párafo y guardamos los cambios.</li>
 </ul>
-<!-- raw HTML omitted -->
+<code>
+<Directory /var/www/html/sherblog>
+    AllowOverride All
+</Directory>
+</code>
 <ul>
 <li>Reiniciamos Apache</li>
 <li>Creamos el archivo .htaccess</li>
@@ -204,7 +244,7 @@ define(&lsquo;DB_PASSWORD&rsquo;, &lsquo;wpP455w0rd&rsquo;);\</p>
 </nav>
 <div class="content post__content clearfix">
   <h3>Comentarios</h3>
-  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://emacs.ch/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
 </div>
 
 
@@ -215,14 +255,37 @@ define(&lsquo;DB_PASSWORD&rsquo;, &lsquo;wpP455w0rd&rsquo;);\</p>
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-		        &copy; 2023 Sherlockes.
+		        &copy; 2026 Sherlockes.
 			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
 			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
 		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
 	</div>
 </footer>
 
 	</div>
-<script async defer src="/js/menu.js"></script>
-<script src="/js/custom.js"></script></body>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
 </html>

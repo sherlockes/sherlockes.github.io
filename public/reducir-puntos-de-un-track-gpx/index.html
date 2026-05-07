@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Reducir puntos de un track gpx - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Reducir puntos de un track gpx">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://www.sherblog.es/images/logo.png" />
+	<meta name="twitter:title" content="Reducir puntos de un track gpx"/>
+	<meta name="twitter:description" content="Reducir puntos de un track gpx"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/reducir-puntos-de-un-track-gpx/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Reducir puntos de un track gpx">
+	<meta property="og:url" content="http://localhost:1313/reducir-puntos-de-un-track-gpx/">
+	<meta property="og:description" content="Reducir puntos de un track gpx"/>
+
+	
+	<meta property="og:image" content="http://localhost:1313/images/logo.png" />
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Reducir puntos de un track gpx">
+  <meta name="twitter:description" content="Reducir puntos de un track gpx">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Reducir puntos de un track gpx</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2009-04-01T00:00:00Z">2009-04-01</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/gps/" rel="category">Gps</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Cada día más, la gente comparte las rutas mediante algún servicio online (<a href="http://es.wikiloc.com/wikiloc/user.do?name=Sherlockes">Wikiloc</a> es el que yo utilizo) para que cualquiera pueda verlas e incluso descargarlas para meterlas en el navegado gps y de esta forma poder seguirlas de una forma rápida y sencilla. Es cierto que la aventura pierde un poco de encanto pero ayuda a planificar el trayecto evitando así sorpresas que nos podrían arruinar un bonito día en el campo.</p>
+<p>No voy a entrar en el modo de descargar el track desde la web o como cargarlo posteriormente en el navegador ya que las posibilidades son infinitas en función del servicio y el modelo que emplee cada uno, sólo recomendar que lo más adecuado parece hacerlo a través del formato &ldquo;gpx&rdquo; por ser el más extendido y común.</p>
+<p>Una vez cargado el track en el navegador nos podemos encontrar con el problema de que este no es capaz de cargarlo en la memoria y nos muestra un error. Si el archivo está correctamente formateado (La mayoría de servicios detectan este problema cuando cualquiera intenta subirlos a la web) es muy probable que el problema venga a raiz de un número demasiado elevado de los puntos que conforman el trayecto. En mis rutas en bicicleta utilizo un <a href="https://buy.garmin.com/shop/shop.do?cID=160&amp;pID=10884">Garmin Edge 605</a> que, aunque el fabricante no lo dice por ningún sítio (O yo no he sido capaz de verlo), según fuentes oficiosas parece que tiene un límite de 500 puntos en los tracks importados (Esto no es cierto ya que he estado haciendo unas pruebas y he podido cargar archivos gpx de hasta 1850 puntos).</p>
+<p>Cuando un track tiene muchos puntos puede ser por dos motivos, el primero de ellos, si el recorrido es muy largo así como el tiempo invertido, la cantidad de información recogida será elevada y necesaria de forma que la única forma de visualizar el track será partirlo en varias etapas (Esto para otro día que ya se me cansan los dedos). El segundo motivo es que se haya guardado más información de la necesaria, es decir, para seguir una ruta de algunos kilómetros no hace falta que la distancia entre dos puntos sea de algunos centímetros. Por si no ha quedado claro y una imagen vale más que mil palabras, en la siguiente podemos ver una ruta de menos de un kilómetro.</p>
+<p><img src="/images/20090401_reducir_gpx_1.jpg" alt="imagen"></p>
+<p>Esta ruta contiene unos 50 puntos, o lo que es lo mismo, se ha guardado información cada aproximadamente 13 metros. Ahora intentemos quitar algún punto de este track.</p>
+<p><img src="/images/20090401_reducir_gpx_2.jpg" alt="imagen"></p>
+<p>Esta ruta contiene sólo 6 puntos pero es tan sencilla de seguir como la anterior y además hemos facilitado la labor del navegador haciéndole cargar en la memoria un archivo con muchs menos puntos.</p>
+<p>Y ahora viene el problema. ¿Cómo quito los puntos que sobran de un archivo gpx que me he descargado de la red?. Aquí es donde entra una herramienta informática que aunque no es perfecta si es muy útil y gratuita. Se traga de <a href="http://www.gpsbabel.org/">GPSBabel</a> y es un pequeño programa que no requiere instalación y que se descarga desde <a href="http://www.gpsbabel.org/download.html">aquí</a>. Ejecutaremos el archivo &ldquo;GPSBabelGUI.exe&rdquo; una vez descomprimido y nos aparecerá la suguiente pantalla.</p>
+<p><img src="/images/20090401_reducir_gpx_3.jpg" alt="imagen"></p>
+<p>Tanto en el formato de entrada como en el de salida seleccionaremos &ldquo;GPX XML (.gpx)&rdquo; (En caso de que estemos trabajando con un archivo *.gpx e iniciaremos el cuadro de diálogo para el archivo de origen en primer lugar y posteriormente el de destino para decirle al programe donde queremos guardarlo. Seleccionaremos las rutas y pinchando en la opción &ldquo;Filtrar&rdquo; no aparece la siguiente ventana.</p>
+<p><img src="/images/20090401_reducir_gpx_4.jpg" alt="imagen"></p>
+<p>Aunque hay muchas opciones, para este caso únicamente seleccionaremos la opción de simplificar en el apartado de rutas y trazas e introduciremos el número máximo de puntos que queremos para nuestro archivo. Aceptando este cuadro de diálogo ya sólo resta pulsar en el botón &ldquo;Iniciar&rdquo; para que se cree un nuevo archivo con el número máximo de puntos que hemos indicado.</p>
+<p>Este programa no hace ningún milagro, así que después de crear el archivo es importante compararla visualmente con la original para saber que podremos seguirla sin ningún problema.</p>
+
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/gr99-en-gpx/">Gr99 en GPX</a></li>
+	    
+	    <li><a href="/barrancos-del-sur-de-zaragoza/">Barrancos del sur de Zaragoza</a></li>
+	    
+	    <li><a href="/la-ruta-perfecta-por-los-meandros-del-ebro/">La ruta perfecta por los meandros del Ebro</a></li>
+	    
+	    <li><a href="/trekbuddy-0.9.83-en-un-htc-touch-diamond/">Trekbuddy 0.9.83 en un HTC Touch Diamond</a></li>
+	    
+	    <li><a href="/de-garmin-a-google-drive/">De Garmin a Google drive</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/gpsbabel/" rel="tag">gpsbabel</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/tracks/" rel="tag">tracks</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/gr99-en-gpx/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Gr99 en GPX</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/hdr-con-photomatix-y-photoshop/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">HDR con Photomatix y Photoshop</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

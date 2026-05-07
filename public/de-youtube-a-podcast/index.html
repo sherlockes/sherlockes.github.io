@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="es">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,22 +10,28 @@
 
 	
 	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:image" content="http://www.sherblog.pro/images/20220916_youtube_to_podcast_00.jpg" />
+	<meta name="twitter:image" content="http://localhost:1313//images/20220916_youtube_to_podcast_00.jpg" />
 	<meta name="twitter:title" content="De Youtube a Podcast"/>
 	<meta name="twitter:description" content="Aquí dejo mi método para pasar a formato podcast un anal de youtube"/>
 	<meta name="twitter:creator" content="@sherblogpro">
-	<meta name="twitter:site" content="sherblog.pro" />
+	<meta name="twitter:site" content="http://localhost:1313/de-youtube-a-podcast/" />
 
 	
 	<meta property="og:type" content="article">
 	<meta property="og:locale" content="es_ES">
-	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:site_name" content="Sherblog">
 	<meta property="og:locale" content="es_ES">
 	<meta property="og:title"   content="De Youtube a Podcast">
-	<meta property="og:url"   content="https://sherlockes.github.io">
+	<meta property="og:url" content="http://localhost:1313/de-youtube-a-podcast/">
 	<meta property="og:description" content="Aquí dejo mi método para pasar a formato podcast un anal de youtube"/>
 
-	<meta property="og:image" content="http://www.sherblog.pro/images/20220916_youtube_to_podcast_00.jpg" />
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20220916_youtube_to_podcast_00_xl.jpg" />
+	
+	
 
 	
 	
@@ -35,7 +41,6 @@
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="shortcut icon" href="/favicon.ico">
-		
 
 	
 	
@@ -44,9 +49,10 @@
 <body class="body">
 	<div class="container container--outer">
 		<header class="header">
-	<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="De Youtube a Podcast"/>
-<meta name="twitter:description" content="Aquí dejo mi método para pasar a formato podcast un anal de youtube"/>
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="De Youtube a Podcast">
+  <meta name="twitter:description" content="Aquí dejo mi método para pasar a formato podcast un anal de youtube">
 
 	<div class="container">
 		<div class="logo">
@@ -96,6 +102,13 @@
 				
 			</a>
 		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
 	</ul>
 </nav>
 
@@ -110,7 +123,7 @@
 			<h1 class="post__title">De Youtube a Podcast</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-10-04T00:00:00Z">2022-10-04</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">computing</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-10-04T00:00:00Z">2022-10-04</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">Computing</a>
 	</span>
 </div></div>
 		</header>
@@ -143,7 +156,7 @@ e incrusto esta información en el &ldquo;track&rdquo; descargado a través del 
 <p>Tras poner el feed en el servidor webdav donde he colocado los archivos de audio ya sólo resta añadirlo y actualizarlo en la aplicación de Podcast.</p>
 <h3 id="script-completo">Script completo</h3>
 <p>Todo el código del script lo pueden encontrar en mi repositorio de scripts <a href="https://github.com/sherlockes/SherloScripts">GitHub</a>
-<pre><code>#!/bin/bash
+<pre><code class="language-txt">#!/bin/bash
 
 ###################################################################
 #Script Name: youtube2podcast.sh
@@ -170,10 +183,10 @@ twitch_dir=~/twitch
 DESCARGADOS=&#34;$twitch_dir/$CANAL/descargados_yt.txt&#34;
 
 notificacion=~/SherloScripts/bash/telegram.sh
-inicio=$( date &#43;%s )
+inicio=$( date +%s )
 
 mensaje=$&#39;Actualizar Youtube via &lt;a href=&#34;https://raw.githubusercontent.com/sherlockes/SherloScripts/master/bash/youtube2podcast.sh&#34;&gt;youtube2podcast.sh&lt;/a&gt;\n&#39;
-mensaje&#43;=$&#39;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n&#39;
+mensaje+=$&#39;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n&#39;
 
 
 echo &#34;######################################&#34;
@@ -192,7 +205,7 @@ dependencias(){
     else
 	echo &#34;ATENCION: yt-dlp no está disponible&#34;
 	sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
-	sudo chmod a&#43;rx /usr/local/bin/yt-dlp
+	sudo chmod a+rx /usr/local/bin/yt-dlp
     fi
 
     # id3v2
@@ -221,11 +234,11 @@ dependencias(){
 comprobar(){
 
     if [ $1 -eq 0 ]; then
-	mensaje&#43;=$&#39;OK&#39;
+	mensaje+=$&#39;OK&#39;
     else
-	mensaje&#43;=$&#39;ERROR&#39;
+	mensaje+=$&#39;ERROR&#39;
     fi
-    mensaje&#43;=$&#39;\n&#39;
+    mensaje+=$&#39;\n&#39;
 }
 
 #----------------------------------------------------------#
@@ -240,7 +253,7 @@ buscar_ultimos_yt(){
     local duracion
 
     # Obtiene el json de los ultimos vídeos.
-    mensaje&#43;=$&#39;Obteniendo últimos vídeos . . . . . . . . . . . . .&#39;
+    mensaje+=$&#39;Obteniendo últimos vídeos . . . . . . . . . . . . .&#39;
     echo &#34;- Buscando últimos vídeos de $CANAL_NOMBRE&#34;
 
     mapfile -t videos &lt; &lt;( yt-dlp --flat-playlist --print &#34;%(id)s/%(duration)s&#34; --playlist-end 10 $CANAL_YT )
@@ -272,7 +285,7 @@ descargar_video_yt(){
     local url=&#34;https://www.youtube.com/watch?v=$id&#34;
     
     echo &#34;- Descargando el vídeo $id&#34;
-    mensaje&#43;=$&#34;Descargando vídeo $id . . . . . . &#34;
+    mensaje+=$&#34;Descargando vídeo $id . . . . . . &#34;
     yt-dlp -o &#34;%(id)s.%(ext)s&#34; --extract-audio --audio-format mp3 $url
 
     if [ $? -eq 0 ]; then
@@ -324,8 +337,8 @@ anadir_item(){
 	# Personalización para Youtube
 	URL_VID=&#34;https://www.youtube.com/watch?v=$ID_EP&#34;
 	FEC_EP=$(yt-dlp --print &#34;%(upload_date)s&#34; $URL_VID)
-	FEC_EP=$(date -d $FEC_EP &#43;&#34;%Y-%m-%dT%H:%M:%S%:z&#34;)
-	FEC_EP=$(date --date &#34;$FEC_EP&#43;14 hours&#34; &#34;&#43;%a, %d %b %Y %T %Z&#34;)
+	FEC_EP=$(date -d $FEC_EP +&#34;%Y-%m-%dT%H:%M:%S%:z&#34;)
+	FEC_EP=$(date --date &#34;$FEC_EP+14 hours&#34; &#34;+%a, %d %b %Y %T %Z&#34;)
     else
 	# Personalización para Twitch
 	URL_VID=&#34;https://www.twitch.tv/videos/$ID_EP&#34;
@@ -379,7 +392,7 @@ actualizar_feed () {
   xmlns:content=&#34;http://purl.org/rss/1.0/modules/content/&#34;
   xmlns:itunes=&#34;http://www.itunes.com/dtds/podcast-1.0.dtd&#34;&gt;
   &lt;channel&gt;
-    &lt;atom:link href=&#34;$servidor/twitch/$canal/feed.xml&#34; rel=&#34;self&#34; type=&#34;application/rss&#43;xml&#34;/&gt;
+    &lt;atom:link href=&#34;$servidor/twitch/$canal/feed.xml&#34; rel=&#34;self&#34; type=&#34;application/rss+xml&#34;/&gt;
     &lt;title&gt;$TITULO&lt;/title&gt;
     &lt;description&gt;Un podcast creado por Sherlockes a partir del canal de $TITULO&lt;/description&gt;
     &lt;copyright&gt;Copyright 2022 Sherlockes&lt;/copyright&gt;
@@ -434,7 +447,7 @@ cd $twitch_dir
 echo &#34;- Corriendo en $twitch_dir&#34;
 
 # Comprobar dependencias
-mensaje&#43;=$&#39;Comprobando dependencias. . . . . . . . . . . &#39;
+mensaje+=$&#39;Comprobando dependencias. . . . . . . . . . . &#39;
 dependencias
 comprobar $?
 
@@ -443,30 +456,30 @@ buscar_ultimos_yt &#34;$CANAL&#34;
 
 # Añadir info si hay nuevos vídeos y moverlos a la carpeta mp3
 if ls ./*.mp3 1&gt; /dev/null 2&gt;&amp;1; then
-    mensaje&#43;=$&#39;Añadiendo info del nuevo vídeo . . . . . . . . &#39;
+    mensaje+=$&#39;Añadiendo info del nuevo vídeo . . . . . . . . &#39;
     tag_y_mover
     comprobar $?
 fi
 
 # Actualizar el feed si hay nuevos vídeos
 if ls ./$CANAL/mp3/*.mp3 1&gt; /dev/null 2&gt;&amp;1; then
-    mensaje&#43;=$&#39;Actualizando el Feed . . . . . . . . . . . . . . . . &#39;
+    mensaje+=$&#39;Actualizando el Feed . . . . . . . . . . . . . . . . &#39;
     actualizar_feed &#34;$SERVIDOR&#34; &#34;$CANAL&#34; &#34;$TITULO&#34;
     comprobar $?
 fi
 
 # Subir si hay nuevo contenido al servidor
 if ls ./$CANAL/mp3/*.mp3 1&gt; /dev/null 2&gt;&amp;1; then
-    mensaje&#43;=$&#34;Subiendo los mp3&#39;s al sevidor webdav . . .&#34;
+    mensaje+=$&#34;Subiendo los mp3&#39;s al sevidor webdav . . .&#34;
     subir_contenido &#34;$CANAL&#34;
     comprobar $?
 fi
 
 # Envia el mensaje de telegram con el resultado
-fin=$( date &#43;%s )
+fin=$( date +%s )
 let duracion=$fin-$inicio
-mensaje&#43;=$&#39;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n&#39;
-mensaje&#43;=$&#34;Duración del Script:  $duracion segundos&#34;
+mensaje+=$&#39;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n&#39;
+mensaje+=$&#34;Duración del Script:  $duracion segundos&#34;
 
 $notificacion &#34;$mensaje&#34;
 </code></pre></p>
@@ -517,21 +530,21 @@ $notificacion &#34;$mensaje&#34;
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/unir-o-separar-en-varios-pdf-en-linux-desde-la-l%C3%ADnea-de-comandos/" rel="prev">
+		<a class="pager__link" href="/mi-contribuci%C3%B3n-al-software-libre/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Anterior</span>
-			<p class="pager__title">Unir o separar en varios pdf en linux desde la línea de comandos</p>
+			<p class="pager__title">Mi contribución al software libre</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/" rel="next">
+		<a class="pager__link" href="/microbit-desde-cero-con-ni%C3%B1os/" rel="next">
 			<span class="pager__subtitle">Siguiente&thinsp;»</span>
-			<p class="pager__title">Del Blog a Twitter y Mastodon mediante rss y Bash</p>
+			<p class="pager__title">Microbit desde cero con niños</p>
 		</a>
 	</div>
 </nav>
 <div class="content post__content clearfix">
   <h3>Comentarios</h3>
-  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://emacs.ch/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
 </div>
 
 
@@ -542,14 +555,37 @@ $notificacion &#34;$mensaje&#34;
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-		        &copy; 2023 Sherlockes.
+		        &copy; 2026 Sherlockes.
 			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
 			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
 		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
 	</div>
 </footer>
 
 	</div>
-<script async defer src="/js/menu.js"></script>
-<script src="/js/custom.js"></script></body>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
 </html>

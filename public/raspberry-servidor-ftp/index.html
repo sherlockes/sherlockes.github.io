@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="es">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,22 +10,28 @@
 
 	
 	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:image" content="http://www.sherblog.pro/images/20180406_raspberry_vsftpd.jpg" />
+	<meta name="twitter:image" content="http://localhost:1313//images/20180406_raspberry_vsftpd.jpg" />
 	<meta name="twitter:title" content="Raspberry Servidor ftp"/>
 	<meta name="twitter:description" content="Instalando un servidor ftp a nuestra Raspberry Pi."/>
 	<meta name="twitter:creator" content="@sherblogpro">
-	<meta name="twitter:site" content="sherblog.pro" />
+	<meta name="twitter:site" content="http://localhost:1313/raspberry-servidor-ftp/" />
 
 	
 	<meta property="og:type" content="article">
 	<meta property="og:locale" content="es_ES">
-	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:site_name" content="Sherblog">
 	<meta property="og:locale" content="es_ES">
 	<meta property="og:title"   content="Raspberry Servidor ftp">
-	<meta property="og:url"   content="https://sherlockes.github.io">
+	<meta property="og:url" content="http://localhost:1313/raspberry-servidor-ftp/">
 	<meta property="og:description" content="Instalando un servidor ftp a nuestra Raspberry Pi."/>
 
-	<meta property="og:image" content="http://www.sherblog.pro/images/20180406_raspberry_vsftpd.jpg" />
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20180406_raspberry_vsftpd.jpg" />
+	
+	
 
 	
 	
@@ -35,7 +41,6 @@
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="shortcut icon" href="/favicon.ico">
-		
 
 	
 	
@@ -44,9 +49,10 @@
 <body class="body">
 	<div class="container container--outer">
 		<header class="header">
-	<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Raspberry Servidor ftp"/>
-<meta name="twitter:description" content="Instalando un servidor ftp a nuestra Raspberry Pi."/>
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Raspberry Servidor ftp">
+  <meta name="twitter:description" content="Instalando un servidor ftp a nuestra Raspberry Pi.">
 
 	<div class="container">
 		<div class="logo">
@@ -96,6 +102,13 @@
 				
 			</a>
 		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
 	</ul>
 </nav>
 
@@ -122,13 +135,23 @@
 	</figure><div class="content post__content clearfix">
 			<h3 id="instalando-vsftpd">Instalando VSftpD</h3>
 <p>Aunque no es imprescindible para la instalación y funcionamiento de WordPress, el servidor ftp nos resulta muy util para la instalación automática de plugins, actualizaciones, importaciones&hellip; Por lo que lo incluimos también dentro de la pequeña Raspberry.</p>
-<!-- raw HTML omitted -->
+<code>
+cd ~
+sudo apt-get update
+sudo apt-get install vsftpd -y
+sudo nano /etc/vsftpd.conf
+</code>
 <p>Instalamos &ldquo;vsftp&rdquo; y editamos el archivo de configuración asegurándonos de que están como aparecen a continuación los siguientes paramétros.</p>
-<!-- raw HTML omitted -->
+<code>
+local_enable=YES
+write_enable=YES
+</code>
 <p>*** Actualización ***
 //Para que los archivos subidos mediante el cliente ftp (logeado con el usuario &ldquo;pi&rdquo;) al servidor en la raspberry puedan ser leidos y ejecutados por el usuario &ldquo;www-data&rdquo; deberemos modificar tambien el parámetro umask de forma que quede local_umask=022//</p>
 <p>Guardamos los cambios y reiniciamos el servidor para que tengan efecto.</p>
-<!-- raw HTML omitted -->
+<code>
+sudo service vsftpd restart
+</code>
 
 		</div>
 		<footer class="post__footer">
@@ -182,7 +205,7 @@
 </nav>
 <div class="content post__content clearfix">
   <h3>Comentarios</h3>
-  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://emacs.ch/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
 </div>
 
 
@@ -193,14 +216,37 @@
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-		        &copy; 2023 Sherlockes.
+		        &copy; 2026 Sherlockes.
 			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
 			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
 		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
 	</div>
 </footer>
 
 	</div>
-<script async defer src="/js/menu.js"></script>
-<script src="/js/custom.js"></script></body>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
 </html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Creando scripts en Bash en Emacs - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Este el el flujo de trabajo a la hora de crear y comprobar el funcionamiento de los scripts que genero en Bash mediante Emacs.">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/20230128_emacs_bash_script_00.jpg" />
+	<meta name="twitter:title" content="Creando scripts en Bash en Emacs"/>
+	<meta name="twitter:description" content="Este el el flujo de trabajo a la hora de crear y comprobar el funcionamiento de los scripts que genero en Bash mediante Emacs."/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/creando-scripts-en-bash-en-emacs/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Creando scripts en Bash en Emacs">
+	<meta property="og:url" content="http://localhost:1313/creando-scripts-en-bash-en-emacs/">
+	<meta property="og:description" content="Este el el flujo de trabajo a la hora de crear y comprobar el funcionamiento de los scripts que genero en Bash mediante Emacs."/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20230128_emacs_bash_script_00.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Creando scripts en Bash en Emacs">
+  <meta name="twitter:description" content="Este el el flujo de trabajo a la hora de crear y comprobar el funcionamiento de los scripts que genero en Bash mediante Emacs.">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Creando scripts en Bash en Emacs</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-03-10T00:00:00Z">2023-03-10</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">Computing</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20230128_emacs_bash_script_00.jpg" alt="Creando scripts en Bash en Emacs">
+		
+	</figure><div class="content post__content clearfix">
+			<p>Esta es la forma en la que utilizo <a href="https://www.gnu.org/software/emacs/">emacs</a> como entorno de trabajo para crear y comprobar el funcionamiento de los scripts en Bash que necesito sin utilizar más recursos que la propia aplicación.</p>
+<p>Tras partir la pantalla en dos ventanas verticales (C-x 3), el primer paso es crear el archivo para el script, utilizo Dired para ubicarme en la carpeta y directamente el comando <code>find-file</code> (C-x C-f) para crear el nuevo archivo que tendrá la extensión &ldquo;*.sh&rdquo;.</p>
+<p>Llegados a este punto <a href="https://github.com/joaotavora/yasnippet">Yasnippet</a> y <a href="https://www.emacswiki.org/emacs/AutoInsertMode">Autoinsert</a> hacen el resto tal y como expliqué en otro <a href="/plantillas-de-archivos-en-emacs/">artículo</a>. Gracias a las líneas que aparecen a continuación en el archivo de configuración de <a href="https://www.gnu.org/software/emacs/">emacs</a> se genera un archivo con la plantilla correspondiente y se convierte el mismo en ejecutable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(setq auto-insert-alist <span style="color:#f92672">&#39;</span>(
+</span></span><span style="display:flex;"><span>    ((<span style="color:#e6db74">&#34;\\.sh\\&#39;&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;Shell script&#34;</span>) <span style="color:#f92672">.</span> [<span style="color:#e6db74">&#34;template.sh&#34;</span> autoinsert-yas-expand])
+</span></span><span style="display:flex;"><span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(defun autoinsert-yas-expand()
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Reemplaza el texto en una plantilla de yasnippet.&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">;; Caso si es un Script</span>
+</span></span><span style="display:flex;"><span>    (if (<span style="color:#a6e22e">string-match</span> <span style="color:#e6db74">&#34;\.sh&#34;</span> (<span style="color:#a6e22e">file-name-nondirectory</span> <span style="color:#a6e22e">buffer-file-name</span>))
+</span></span><span style="display:flex;"><span>            (shell-command (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;chmod u+x &#34;</span> <span style="color:#a6e22e">buffer-file-name</span>))
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    (yas/expand-snippet (<span style="color:#a6e22e">buffer-string</span>) (<span style="color:#a6e22e">point-min</span>) (<span style="color:#a6e22e">point-max</span>))
+</span></span><span style="display:flex;"><span>    (save-buffer)
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>Tal y como se puede ver en el archivo de la plantilla de abajo, se rellena automáticamente el nombre de script y la fecha de creación en la cabecera para dejarnos escribir la descripción y empezar a escribir el código.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">###################################################################</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Script Name: `(file-name-base)`.sh</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Description: ${1:Descripción}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Args: N/A</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Creation/Update: `(insert (format-time-string &#34;%Y%m%d&#34;))`/`(insert (format-time-string &#34;%Y%m%d&#34;))`</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Author: www.sherblog.pro</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Email: sherblog@gmail.com</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">###################################################################</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">################################</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">####       Variables        ####</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">################################</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">################################</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">####      Dependencias      ####</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">################################</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">################################</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">####       Funciones        ####</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">################################</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">################################</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">####    Script principal    ####</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">################################</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$0
+</span></span></code></pre></div><p>Una vez que tenemos listo el script lo podemos ejecutar directamente desde <a href="https://www.gnu.org/software/emacs/">emacs</a> con el comando &ldquo;executable-interpret&rdquo; (C-c C-x) apareciendo el resultado en la otra ventana.</p>
+<p>Para el caso de que estemos realizando la edición de un archivo en local, al pulsar &ldquo;C-c C-x&rdquo; nos aparecerá en la barra de comandos de <a href="https://www.gnu.org/software/emacs/">emacs</a> algo como lo siguiente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Run script: /home/usuario/prueba.sh
+</span></span></code></pre></div><p>Al pulsar &ldquo;enter&rdquo; es posible que nos pregunte si queremos guardar previamente el archivo y a continuación aparecerá el resultado del script en otra ventana</p>
+<p>En el caso de que estemos realizando la edición de un archivo remoto que queremos ejecutar sobre la terminal remota , al pulsar &ldquo;C-c C-x&rdquo; nos aparecerá en la barra de comandos de <a href="https://www.gnu.org/software/emacs/">emacs</a> algo como lo siguiente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Run script: /ssh:usuario@192.168.10.202:/home/usuario/prueba.sh
+</span></span></code></pre></div><p>Al ejecutar el comando nos aparece un error</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>-*- mode: compilation; default-directory: <span style="color:#e6db74">&#34;/ssh:usuario@192.168.10.202:/home/usuario/&#34;</span> -*-
+</span></span><span style="display:flex;"><span>Comint started at Fri Mar <span style="color:#ae81ff">10</span> 12:11:53
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>/ssh:usuario@192.168.10.202:/home/usuario/prueba.sh
+</span></span><span style="display:flex;"><span>/bin/sh: 2: /ssh:usuario@192.168.10.202:/home/usuario/prueba.sh: not found
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Comint exited abnormally with code <span style="color:#ae81ff">127</span> at Fri Mar <span style="color:#ae81ff">10</span> 12:11:53
+</span></span></code></pre></div><p>La solución pasa por eliminar la referencia a la conexión ssh antes de ejecutar el script de forma que el comando se quedará según lo siguiente exactamente igual que en el caso de un archivo local:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Run script: /home/usuario/prueba.sh
+</span></span></code></pre></div><p><img src="/images/20230128_emacs_bash_script_01.jpg" alt="image-01"></p>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="www.sherblog.pro">enlace</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/entorno-de-desarrollo-de-sherblog-en-emacs/">Entorno de desarrollo de Sherblog en Emacs</a></li>
+	    
+	    <li><a href="/crear-y-configurar-una-instancia-gratuita-en-oracle/">Crear y configurar una instancia gratuita en Oracle</a></li>
+	    
+	    <li><a href="/comprobar-dispositivos-online-en-bash/">Comprobar dispositivos online en Bash</a></li>
+	    
+	    <li><a href="/exportar-org-roam-a-hugo-en-gitlab/">Exportar Org-Roam a Hugo en Gitlab</a></li>
+	    
+	    <li><a href="/comprobaci%C3%B3n-ortogr%C3%A1fica-en-emacs/">Comprobación ortográfica en Emacs</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/bash/" rel="tag">bash</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/emacs/" rel="tag">emacs</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/configuraci%C3%B3n-de-rclone-mediante-dotfiles/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Configuración de Rclone mediante Dotfiles</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/men%C3%BA-para-montar-nubes-en-bash/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Menú para montar nubes en Bash</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

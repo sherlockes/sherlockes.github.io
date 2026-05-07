@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Menú de Sarita</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <style>
+    :root {
+      --primary: #ff8c42;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --text: #2d3436;
+      --text-muted: #636e72;
+      --border: #dfe6e9;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121212;
+        --card-bg: #1e1e1e;
+        --text: #dfe6e9;
+        --text-muted: #b2bec3;
+        --border: #2d3436;
+        --shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+    }
+
+    body {
+      margin: 0;
+      padding: 1rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding-bottom: 4rem;
+    }
+
+    /* Header Compacto */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    h1 { font-size: 1.25rem; margin: 0; color: var(--primary); }
+    .week-badge { 
+      font-size: 0.85rem; 
+      background: var(--card-bg); 
+      padding: 4px 10px; 
+      border-radius: 12px; 
+      box-shadow: var(--shadow);
+      font-weight: bold;
+    }
+
+    /* Botones Superiores */
+    .controls-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+      padding: 0.6rem 0.2rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+    .btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      font-weight: 700;
+      box-shadow: 0 2px 5px rgba(255, 140, 66, 0.3);
+    }
+
+    /* Scroll Horizontal Optimizado para 7 elementos */
+    .scroll-container {
+      display: flex;
+      overflow-x: hidden; /* Forzamos a que no haya scroll si queremos que quepan todos */
+      gap: 4px; /* Espacio mínimo necesario entre botones */
+      padding: 10px 0; /* Eliminamos el padding lateral del contenedor para ganar espacio */
+      margin-bottom: 0.5rem;
+      width: 100%;
+    }
+
+    .scroll-container .btn {
+      /* CÁLCULO MÁGICO: (100% de la pantalla - espacio de los 6 huecos) / 7 botones */
+      flex: 0 0 calc((100% - (4px * 6)) / 7); 
+      min-width: 0; /* Permite que el cálculo mande sobre el tamaño */
+      padding: 10px 0; /* Padding vertical cómodo, horizontal 0 para no empujar el texto */
+      font-size: 0.72rem; /* Tamaño de letra ajustado para que quepa "Mier." o "Dom." */
+      border-radius: 8px;
+      white-space: nowrap;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    /* Buscador */
+    .search-box {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      box-sizing: border-box;
+      outline: none;
+    }
+    .search-box:focus { border-color: var(--primary); }
+
+    /* Tarjetas */
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+    }
+
+    .meal-type {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      background: rgba(255, 140, 66, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .fav-icon {
+      cursor: pointer;
+      font-size: 1.5rem;
+      line-height: 1;
+      color: #dfe6e9;
+      transition: color 0.2s;
+      padding: 0 5px;
+    }
+    .fav-icon.active { color: #ffd700; }
+
+    h3 { margin: 0.5rem 0 0.75rem 0; font-size: 1.1rem; line-height: 1.3; }
+
+    .section-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      display: block;
+      border-bottom: 2px solid var(--bg);
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+    }
+
+    /* --- CAMBIO: LISTA DE INGREDIENTES ESTÁNDAR --- */
+    ul.ing-list { 
+      list-style: disc; /* Pone los puntos */
+      padding-left: 1.2rem; /* Espacio para los puntos */
+      margin: 0.5rem 0; 
+    }
+    ul.ing-list li {
+      padding: 4px 0;
+      /* Eliminado el grid y el cursor pointer */
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    
+    ol { padding-left: 1.2rem; margin: 0; color: var(--text); }
+    ol li { margin-bottom: 0.5rem; font-size: 0.95rem; }
+
+    .tip {
+      background: var(--bg);
+      border: 1px dashed var(--primary);
+      padding: 0.8rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      opacity: 0.7;
+    }
+
+    .hidden { display: none !important; }
+    
+  </style>
+</head>
+<body>
+
+<main>
+  <header>
+    <h1>El menú de Sarita</h1>
+    <span class="week-badge" id="current-week-label">Semana 1</span>
+  </header>
+
+  <div class="controls-grid">
+    <button class="btn" id="view-daily" onclick="app.setView('daily')">Día</button>
+    <button class="btn" id="view-search" onclick="app.setView('search')">Buscar</button>
+    <button class="btn" id="view-favs" onclick="app.setView('favs')">Fav</button>
+  </div>
+
+  <div class="scroll-container" id="week-selector"></div>
+
+  <div id="container-daily">
+    <div class="scroll-container" id="day-selector"></div>
+  </div>
+
+  <div id="container-search" class="hidden">
+    <input type="text" id="search-input" class="search-box" placeholder="Busca un plato o ingrediente..." onkeyup="app.handleSearch(this.value)">
+    <div class="scroll-container" id="type-filter">
+      <button class="btn active" onclick="app.setFilter('Todos')">Todos</button>
+      <button class="btn" onclick="app.setFilter('Desayuno')">Desayuno</button>
+      <button class="btn" onclick="app.setFilter('Comida')">Comida</button>
+      <button class="btn" onclick="app.setFilter('Merienda')">Merienda</button>
+      <button class="btn" onclick="app.setFilter('Cena')">Cena</button>
+    </div>
+  </div>
+
+  <div id="container-favs" class="hidden">
+    <p class="subtitle" style="text-align: center; margin-bottom:1rem; font-size: 0.9rem; color: var(--text-muted);">Tus platos guardados ❤️</p>
+  </div>
+
+  <div id="content-area"></div>
+
+</main>
+
+<script>
+let MENUS = {}; // ← ahora vacío, se cargará desde la URL
+
+async function loadMenus() {
+  try {
+    const res = await fetch("https://raw.githubusercontent.com/sherlockes/sherlockes.github.io/main/static/files/menu.json");
+    if (!res.ok) throw new Error("HTTP " + res.status);
+
+    const data = await res.json();
+    MENUS = data.semanas || data; // 👈 clave: usar "semanas" si existe
+
+    app.init();
+  } catch (err) {
+    console.error("Error cargando el menú:", err);
+    document.getElementById("content-area").innerHTML =
+      '<div class="empty-state">No se pudo cargar el menú.</div>';
+  }
+}
+
+
+const app = {
+  state: {
+    week: 1,
+    day: 'lunes',
+    view: 'daily',
+    filterType: 'Todos',
+    searchQuery: '',
+    favs: JSON.parse(localStorage.getItem('favoritos') || '[]')
+  },
+
+  days: [
+    { key: "lunes", label: "L" },
+    { key: "martes", label: "M" },
+    { key: "miercoles", label: "X" },
+    { key: "jueves", label: "J" },
+    { key: "viernes", label: "V" },
+    { key: "sabado", label: "S" },
+    { key: "domingo", label: "D" }
+  ],
+
+  init() {
+    const savedWeek = localStorage.getItem('ultimaSemana');
+    if (savedWeek && MENUS[savedWeek]) {
+      this.state.week = parseInt(savedWeek);
+    }
+    const todayIndex = new Date().getDay();
+    const map = [6, 0, 1, 2, 3, 4, 5]; 
+    this.state.day = this.days[map[todayIndex]].key;
+
+    this.renderControls();
+    this.render();
+  },
+
+  persist() {
+    localStorage.setItem('ultimaSemana', this.state.week);
+    localStorage.setItem('favoritos', JSON.stringify(this.state.favs));
+  },
+
+  setView(viewName) {
+    this.state.view = viewName;
+    document.querySelectorAll('.controls-grid .btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(`view-${viewName}`).classList.add('active');
+
+    document.getElementById('container-daily').classList.add('hidden');
+    document.getElementById('container-search').classList.add('hidden');
+    document.getElementById('container-favs').classList.add('hidden');
+    document.getElementById(`container-${viewName}`).classList.remove('hidden');
+
+    this.render();
+  },
+
+  setWeek(w) {
+    this.state.week = w;
+    this.persist();
+    this.renderControls();
+    this.render();
+  },
+
+  setDay(d) {
+    this.state.day = d;
+    this.render();
+  },
+
+  setFilter(type) {
+    this.state.filterType = type;
+    const container = document.getElementById('type-filter');
+    Array.from(container.children).forEach(btn => {
+      btn.classList.toggle('active', btn.textContent === type);
+    });
+    this.render();
+  },
+
+  handleSearch(val) {
+    this.state.searchQuery = val.toLowerCase();
+    this.render();
+  },
+
+  renderControls() {
+    document.getElementById('current-week-label').textContent = `Semana ${this.state.week}`;
+    const weekContainer = document.getElementById('week-selector');
+    weekContainer.innerHTML = '';
+    Object.keys(MENUS).forEach(w => {
+      const btn = document.createElement('button');
+      btn.className = `btn ${parseInt(w) === this.state.week ? 'active' : ''}`;
+      btn.textContent = `S${w}`;
+      btn.onclick = () => app.setWeek(parseInt(w));
+      weekContainer.appendChild(btn);
+    });
+
+    const dayContainer = document.getElementById('day-selector');
+    dayContainer.innerHTML = '';
+    this.days.forEach(d => {
+      const btn = document.createElement('button');
+      btn.className = `btn ${d.key === this.state.day ? 'active' : ''}`;
+      btn.textContent = d.label; 
+      btn.onclick = () => app.setDay(d.key);
+      dayContainer.appendChild(btn);
+    });
+  },
+
+  render() {
+    const area = document.getElementById('content-area');
+    area.innerHTML = '';
+    let recipesToShow = [];
+
+    if (this.state.view === 'daily') {
+      const dayData = MENUS[this.state.week]?.[this.state.day] || [];
+      recipesToShow = dayData.map(r => ({ ...r, week: this.state.week, day: this.state.day }));
+      const dayBtns = document.querySelectorAll('#day-selector .btn');
+      dayBtns.forEach((b, i) => {
+        b.classList.toggle('active', this.days[i].key === this.state.day);
+      });
+    } else if (this.state.view === 'search') {
+      Object.entries(MENUS).forEach(([w, days]) => {
+        Object.entries(days).forEach(([d, meals]) => {
+          meals.forEach(m => {
+            const matchesType = this.state.filterType === 'Todos' || m.tipo === this.state.filterType;
+            const matchesSearch = this.state.searchQuery === '' || 
+                                  m.titulo.toLowerCase().includes(this.state.searchQuery) ||
+                                  m.ingredientes.some(i => i.toLowerCase().includes(this.state.searchQuery));
+            if (matchesType && matchesSearch) {
+              recipesToShow.push({ ...m, week: w, day: d });
+            }
+          });
+        });
+      });
+    } else if (this.state.view === 'favs') {
+      this.state.favs.forEach(id => {
+        const parts = id.split('-');
+        const w = parts[0].replace('w','');
+        const d = parts[1];
+        const tipo = parts[2];
+        const titulo = parts.slice(3).join('-');
+        const meal = MENUS[w]?.[d]?.find(m => m.tipo === tipo && m.titulo === titulo);
+        if (meal) {
+          recipesToShow.push({ ...meal, week: w, day: d });
+        }
+      });
+      if (recipesToShow.length === 0) {
+        area.innerHTML = '<div class="empty-state">No hay favoritos guardados.</div>';
+        return;
+      }
+    }
+
+    recipesToShow.forEach(meal => {
+      area.appendChild(this.createCard(meal));
+    });
+  },
+
+  createCard(meal) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    const id = `w${meal.week}-${meal.day}-${meal.tipo}-${meal.titulo}`;
+    const isFav = this.state.favs.includes(id);
+
+    const header = document.createElement('div');
+    header.className = 'card-header';
+    header.innerHTML = `
+      <span class="meal-type">${meal.tipo} • S${meal.week}</span>
+      <span class="fav-icon ${isFav ? 'active' : ''}" onclick="app.toggleFav('${id}', this)">${isFav ? '★' : '☆'}</span>
+    `;
+
+    const h3 = document.createElement('h3');
+    h3.textContent = meal.titulo;
+
+    const ingTitle = document.createElement('span');
+    ingTitle.className = 'section-label';
+    ingTitle.textContent = 'Ingredientes';
+
+    const ul = document.createElement('ul');
+    ul.className = 'ing-list';
+    meal.ingredientes.forEach(ing => {
+      const li = document.createElement('li');
+      li.textContent = ing;
+      // Eliminado el evento onclick
+      ul.appendChild(li);
+    });
+
+    const stepTitle = document.createElement('span');
+    stepTitle.className = 'section-label';
+    stepTitle.textContent = 'Preparación';
+
+    const ol = document.createElement('ol');
+    meal.pasos.forEach(step => {
+      const li = document.createElement('li');
+      li.textContent = step;
+      ol.appendChild(li);
+    });
+
+    card.appendChild(header);
+    card.appendChild(h3);
+    card.appendChild(ingTitle);
+    card.appendChild(ul);
+    card.appendChild(stepTitle);
+    card.appendChild(ol);
+
+    if (meal.consejo) {
+      const tip = document.createElement('div');
+      tip.className = 'tip';
+      tip.innerHTML = '<strong>💡 Consejo:</strong> ' + meal.consejo;
+      card.appendChild(tip);
+    }
+
+    return card;
+  },
+
+  toggleFav(id, iconElement) {
+    const index = this.state.favs.indexOf(id);
+    if (index > -1) {
+      this.state.favs.splice(index, 1);
+      iconElement.textContent = '☆';
+      iconElement.classList.remove('active');
+    } else {
+      this.state.favs.push(id);
+      iconElement.textContent = '★';
+      iconElement.classList.add('active');
+    }
+    this.persist();
+    if (this.state.view === 'favs') {
+      this.render();
+    }
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadMenus();
+});
+
+</script>
+</body>
+</html>

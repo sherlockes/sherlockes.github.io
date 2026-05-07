@@ -2,100 +2,81 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Sherblog</title>
-    <link>https://sherlockes.github.io/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on Sherblog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Fri, 15 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>computing</title>
-      <link>https://sherlockes.github.io/categories/computing/</link>
-      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/categories/computing/</guid>
+      <title>Computing</title>
+      <link>http://localhost:1313/categories/computing/</link>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/computing/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>home assistant</title>
-      <link>https://sherlockes.github.io/categories/home-assistant/</link>
-      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/categories/home-assistant/</guid>
+      <title>Linux</title>
+      <link>http://localhost:1313/categories/linux/</link>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/linux/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hardware</title>
-      <link>https://sherlockes.github.io/categories/hardware/</link>
-      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/categories/hardware/</guid>
+      <title>Hardware</title>
+      <link>http://localhost:1313/categories/hardware/</link>
+      <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/hardware/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>productividad</title>
-      <link>https://sherlockes.github.io/categories/productividad/</link>
+      <title>Home Assistant</title>
+      <link>http://localhost:1313/categories/home-assistant/</link>
+      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/home-assistant/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Diseño</title>
+      <link>http://localhost:1313/categories/dise%C3%B1o/</link>
+      <pubDate>Tue, 20 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/dise%C3%B1o/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>http://localhost:1313/categories/hugo/</link>
+      <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Varios</title>
+      <link>http://localhost:1313/categories/varios/</link>
+      <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/varios/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Productividad</title>
+      <link>http://localhost:1313/categories/productividad/</link>
       <pubDate>Wed, 22 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/categories/productividad/</guid>
+      <guid>http://localhost:1313/categories/productividad/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Raspberry</title>
-      <link>https://sherlockes.github.io/categories/raspberry/</link>
+      <link>http://localhost:1313/categories/raspberry/</link>
       <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/categories/raspberry/</guid>
+      <guid>http://localhost:1313/categories/raspberry/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hugo</title>
-      <link>https://sherlockes.github.io/categories/hugo/</link>
-      <pubDate>Sat, 17 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/categories/hugo/</guid>
+      <title>Uncategorized</title>
+      <link>http://localhost:1313/categories/uncategorized/</link>
+      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/uncategorized/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://sherlockes.github.io/categories/linux/</link>
-      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>iot</title>
-      <link>https://sherlockes.github.io/categories/iot/</link>
-      <pubDate>Fri, 05 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/categories/iot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vertices</title>
-      <link>https://sherlockes.github.io/categories/vertices/</link>
-      <pubDate>Mon, 13 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/categories/vertices/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sherver</title>
-      <link>https://sherlockes.github.io/categories/sherver/</link>
-      <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/categories/sherver/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

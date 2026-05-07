@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Incrustar flujos de N8N en Hugo - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Como he conseguido incrustar flujos de trabajo de n8n en hugo mediante un pequeño shortcode">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/20251206_hugo_n8n_00.jpg" />
+	<meta name="twitter:title" content="Incrustar flujos de N8N en Hugo"/>
+	<meta name="twitter:description" content="Como he conseguido incrustar flujos de trabajo de n8n en hugo mediante un pequeño shortcode"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/incrustar-flujos-de-n8n-en-hugo/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Incrustar flujos de N8N en Hugo">
+	<meta property="og:url" content="http://localhost:1313/incrustar-flujos-de-n8n-en-hugo/">
+	<meta property="og:description" content="Como he conseguido incrustar flujos de trabajo de n8n en hugo mediante un pequeño shortcode"/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20251206_hugo_n8n_00_xl.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Incrustar flujos de N8N en Hugo">
+  <meta name="twitter:description" content="Como he conseguido incrustar flujos de trabajo de n8n en hugo mediante un pequeño shortcode">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Incrustar flujos de N8N en Hugo</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2025-12-06T00:00:00Z">2025-12-06</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/hugo/" rel="category">Hugo</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20251206_hugo_n8n_00.jpg" alt="Incrustar flujos de N8N en Hugo">
+		
+	</figure><div class="content post__content clearfix">
+			<p>A priori, la publicación de tus propios workflows de <a href="https://n8n.io">n8n</a> en su web de <a href="https://creators.n8n.io">creadores</a> puede parecer la forma más rápida y sencilla pero resulta que el filtro es terrible y no importa que el flujo funcione o no, lo importante es que el formato sea el correcto. Por esto me decido a publicarlos en mi propio <a href="https://sherblog.es">blog</a>.</p>
+<p>El objetivo esta vez está claro, queremos guardar un workflow de <a href="https://n8n.io">n8n</a> exportado en json en la carpeta &ldquo;static/workflows&rdquo; y que se pueda incrustar en un post en el que describiremos como funciona y cuales son sus bloques. Estamos de suerte, <a href="https://n8n.io">n8n</a> tiene un componente para publicar sus workflows y lo que aquí voy a hacer es adaptarlo a un shortcode de <a href="https://gohugo.io">Hugo</a>.</p>
+<p>Después de un rato peleándome con el código he dado con el contenido que deberá tener el archivo &ldquo;n8n_workflow.html&rdquo; que crearemos en la carpeta &ldquo;layouts/shortcodes&rdquo;</p>
+<pre><code class="language-txt">&lt;style&gt;
+n8n-demo {
+    --n8n-workflow-min-height: 400px;
+}
+&lt;/style&gt;
+
+&lt;!-- Polyfills y componente --&gt;
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.0.0/webcomponents-loader.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://www.unpkg.com/lit@2.0.0-rc.2/polyfill-support.js&#34;&gt;&lt;/script&gt;
+&lt;script type=&#34;module&#34; src=&#34;https://cdn.jsdelivr.net/npm/@n8n_io/n8n-demo-component/n8n-demo.bundled.js&#34;&gt;&lt;/script&gt;
+
+&lt;n8n-demo 
+    frame=&#34;true&#34;
+    workflow=&#39;{{ readFile (printf &#34;static%s&#34; (.Get `src`)) | safeHTML }}&#39;&gt;
+&lt;/n8n-demo&gt;
+</code></pre>
+<p>Con esto y el correspondiente workflow exportado guardado en la carpeta &ldquo;static/workflows&rdquo; ya sólo queda invocar el shortcode dentro del post</p>
+<p>{{&lt; n8n_workflow src=&quot;/workflows/rss_mastodon_telegram&quot; &gt;}}</p>
+<p>Y nos quedará algo como esto:</p>
+<style>
+n8n-demo {
+    --n8n-workflow-min-height: 400px;
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.0.0/webcomponents-loader.js"></script>
+<script src="https://www.unpkg.com/lit@2.0.0-rc.2/polyfill-support.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@n8n_io/n8n-demo-component/n8n-demo.bundled.js"></script>
+
+<n8n-demo 
+    frame="true"
+    workflow='{
+  &#34;name&#34;: &#34;Rss Sherblog to Mastodon & Telegram&#34;,
+  &#34;nodes&#34;: [
+    {
+      &#34;parameters&#34;: {
+        &#34;pollTimes&#34;: {
+          &#34;item&#34;: [
+            {
+              &#34;mode&#34;: &#34;everyHour&#34;
+            }
+          ]
+        },
+        &#34;feedUrl&#34;: &#34;https://sherblog.es/index.xml&#34;
+      },
+      &#34;id&#34;: &#34;c86d5d69-a698-455f-8750-29ad7e19840c&#34;,
+      &#34;name&#34;: &#34;RSS Feed Trigger&#34;,
+      &#34;type&#34;: &#34;n8n-nodes-base.rssFeedReadTrigger&#34;,
+      &#34;typeVersion&#34;: 1,
+      &#34;position&#34;: [
+        -960,
+        352
+      ]
+    },
+    {
+      &#34;parameters&#34;: {
+        &#34;method&#34;: &#34;POST&#34;,
+        &#34;url&#34;: &#34;https://mas.to/api/v1/statuses&#34;,
+        &#34;authentication&#34;: &#34;genericCredentialType&#34;,
+        &#34;genericAuthType&#34;: &#34;oAuth2Api&#34;,
+        &#34;sendBody&#34;: true,
+        &#34;bodyParameters&#34;: {
+          &#34;parameters&#34;: [
+            {
+              &#34;name&#34;: &#34;status&#34;,
+              &#34;value&#34;: &#34;={{ $json.contentSnippet }}\n{{ $json.link }}&#34;
+            }
+          ]
+        },
+        &#34;options&#34;: {}
+      },
+      &#34;id&#34;: &#34;575a08b1-88c8-4f81-bd55-da0b717bad80&#34;,
+      &#34;name&#34;: &#34;Mastodon API&#34;,
+      &#34;type&#34;: &#34;n8n-nodes-base.httpRequest&#34;,
+      &#34;typeVersion&#34;: 4.2,
+      &#34;position&#34;: [
+        -576,
+        208
+      ],
+      &#34;credentials&#34;: {
+        &#34;oAuth2Api&#34;: {
+          &#34;id&#34;: &#34;zkmgeLGpegQGlRsK&#34;,
+          &#34;name&#34;: &#34;Mastodon (mas.to)&#34;
+        }
+      }
+    },
+    {
+      &#34;parameters&#34;: {
+        &#34;chatId&#34;: &#34;-1001216307043&#34;,
+        &#34;text&#34;: &#34;=Nuevo artículo en el Blog\n{{ $json.title }}\n{{ $json.link }}&#34;,
+        &#34;additionalFields&#34;: {
+          &#34;appendAttribution&#34;: false
+        }
+      },
+      &#34;id&#34;: &#34;14f703b1-e411-40f3-9615-41fb16ae93dd&#34;,
+      &#34;name&#34;: &#34;Telegram&#34;,
+      &#34;type&#34;: &#34;n8n-nodes-base.telegram&#34;,
+      &#34;typeVersion&#34;: 1.2,
+      &#34;position&#34;: [
+        -576,
+        480
+      ],
+      &#34;notesInFlow&#34;: false,
+      &#34;webhookId&#34;: &#34;97bd7bfb-a356-4335-80f7-4749a11f0edc&#34;,
+      &#34;credentials&#34;: {
+        &#34;telegramApi&#34;: {
+          &#34;id&#34;: &#34;7PHYK39uh1jMzOBd&#34;,
+          &#34;name&#34;: &#34;Telegram account&#34;
+        }
+      }
+    }
+  ],
+  &#34;pinData&#34;: {},
+  &#34;connections&#34;: {
+    &#34;RSS Feed Trigger&#34;: {
+      &#34;main&#34;: [
+        [
+          {
+            &#34;node&#34;: &#34;Mastodon API&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          },
+          {
+            &#34;node&#34;: &#34;Telegram&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          }
+        ]
+      ]
+    }
+  },
+  &#34;active&#34;: true,
+  &#34;settings&#34;: {
+    &#34;executionOrder&#34;: &#34;v1&#34;
+  },
+  &#34;versionId&#34;: &#34;88a46e3d-932d-4e3a-8d2d-27d17d5ee98d&#34;,
+  &#34;meta&#34;: {
+    &#34;templateCredsSetupCompleted&#34;: true,
+    &#34;instanceId&#34;: &#34;8fb543b511022c43ab705107ba101545bb8b0fdb9bd6ebc4cca28dc9591a036e&#34;
+  },
+  &#34;id&#34;: &#34;vVkuj92HyfZOyaaF&#34;,
+  &#34;tags&#34;: []
+}'>
+</n8n-demo>
+
+<p>Nada más sencillo, rápido y potente</p>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="https://n8n-io.github.io/n8n-demo-webcomponent/">n8n web component</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/incrustar-texto-externo-en-hugo/">Incrustar texto externo en Hugo</a></li>
+	    
+	    <li><a href="/compartiendo-contenido-de-hugo-en-mastodon/">Compartiendo contenido de Hugo en Mastodon</a></li>
+	    
+	    <li><a href="/como-a%C3%B1ado-enlaces-en-hugo/">Como añado enlaces en Hugo</a></li>
+	    
+	    <li><a href="/lista-de-art%C3%ADculos-por-categor%C3%ADa-en-hugo/">Lista de artículos por categoría en Hugo</a></li>
+	    
+	    <li><a href="/insertar-comentarios-en-hugo/">Insertar comentarios en Hugo</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/html/" rel="tag">html</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/shortcodes/" rel="tag">shortcodes</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/n8n/" rel="tag">n8n</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/incrustar-texto-externo-en-hugo/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Incrustar texto externo en Hugo</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

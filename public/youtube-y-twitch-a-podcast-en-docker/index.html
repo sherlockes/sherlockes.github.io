@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Youtube y Twitch a Podcast en Docker - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Como he creado un sencillo contenedor a partir del script yt2pcst.sh">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/20250220_yt_tw_to_podcast_docker_00.jpg" />
+	<meta name="twitter:title" content="Youtube y Twitch a Podcast en Docker"/>
+	<meta name="twitter:description" content="Como he creado un sencillo contenedor a partir del script yt2pcst.sh"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/youtube-y-twitch-a-podcast-en-docker/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Youtube y Twitch a Podcast en Docker">
+	<meta property="og:url" content="http://localhost:1313/youtube-y-twitch-a-podcast-en-docker/">
+	<meta property="og:description" content="Como he creado un sencillo contenedor a partir del script yt2pcst.sh"/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20250220_yt_tw_to_podcast_docker_00.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Youtube y Twitch a Podcast en Docker">
+  <meta name="twitter:description" content="Como he creado un sencillo contenedor a partir del script yt2pcst.sh">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Youtube y Twitch a Podcast en Docker</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2026-01-23T00:00:00Z">2026-01-23</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">Computing</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20250220_yt_tw_to_podcast_docker_00.jpg" alt="Youtube y Twitch a Podcast en Docker">
+		
+	</figure><div class="content post__content clearfix">
+			<p>Hace tiempo que uso unos sencillos scripts en bash para crear un podcast a partir del audio de unos cuantos canales de <a href="https://www.youtube.com">Youtube</a> y <a href="https://www.twitch.tv">Twitch</a>. Ahora lo vamos a meter en un contenedor para que sea más fácil de migrar a otra máquina.</p>
+<p>Para <a href="https://www.youtube.com">Youtube</a> uso <a href="https://github.com/sherlockes/SherloScripts/blob/master/bash/yt2pcst.sh">yt2pcst</a> y para <a href="https://www.twitch.tv">Twitch</a> hago lo mismo con <a href="https://github.com/sherlockes/SherloScripts/blob/master/bash/tw2pcst.sh">tw2pcst</a>. Básicamente la función de ambos es descargar vídeos del correspondiente servicio de streaming, convertirlos a audios, subirlos a un servidor y generar un feed para tratarlos como si de un podcast se tratase. La diferencia entre ambos es que para el caso de <a href="https://www.youtube.com">Youtube</a> se descargan vídeos de varios canales mientras que para <a href="https://www.twitch.tv">Twitch</a> de sólo uno.</p>
+<blockquote>
+<p>Se que debería dar una vuelta a ambos archivos y unirlos en uno. Para cuando tenga un rato libre&hellip;</p>
+</blockquote>
+<p>Pero de esto ya he hablado en otros artículos así que ahora nos vamos a centrar en como unir ambos scripts en un contenedor docker que corra en nuestro servidor.</p>
+<h3 id="estructura-del-proyecto">Estructura del proyecto</h3>
+<p>Vamos a meter todos los archivos dentro de la carpeta &ldquo;Sherlocast&rdquo; y el árbol quedará como aparece a continuación.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>├── config
+</span></span><span style="display:flex;"><span>    └── rclone.conf
+</span></span><span style="display:flex;"><span>├── data
+</span></span><span style="display:flex;"><span>    ├── twitch
+</span></span><span style="display:flex;"><span>        ├── jordillatzer
+</span></span><span style="display:flex;"><span>            ├── artwork.jpg
+</span></span><span style="display:flex;"><span>            ├── descargados.txt
+</span></span><span style="display:flex;"><span>            ├── feed.xml
+</span></span><span style="display:flex;"><span>            ├── items.xml
+</span></span><span style="display:flex;"><span>            └── mp3
+</span></span><span style="display:flex;"><span>    └── yt2pcst
+</span></span><span style="display:flex;"><span>        ├── artwork.jpg
+</span></span><span style="display:flex;"><span>        ├── canales.txt
+</span></span><span style="display:flex;"><span>        ├── descargados.txt
+</span></span><span style="display:flex;"><span>        ├── feed.xml
+</span></span><span style="display:flex;"><span>        ├── items.xml
+</span></span><span style="display:flex;"><span>        └── mp3
+</span></span><span style="display:flex;"><span>├── docker-compose.yml
+</span></span><span style="display:flex;"><span>├── Dockerfile
+</span></span><span style="display:flex;"><span>├── .env
+</span></span><span style="display:flex;"><span>├── scripts
+</span></span><span style="display:flex;"><span>    ├── start.sh
+</span></span><span style="display:flex;"><span>    ├── telegram_V2.sh
+</span></span><span style="display:flex;"><span>    ├── tw2pcst.sh
+</span></span><span style="display:flex;"><span>    └── yt2pcst.sh
+</span></span><span style="display:flex;"><span>└── start_sherlocast.sh
+</span></span></code></pre></div><h3 id="dockerfile">Dockerfile</h3>
+<p>Es la base de nuestro contenedor, selecciona la distribución base a utilizar, instala dependencias, crea directorios necesarios y lanza la aplicación de inicio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Usar una imagen base de Ubuntu</span>
+</span></span><span style="display:flex;"><span>FROM ubuntu:22.04
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Evitar interacciones durante la instalación</span>
+</span></span><span style="display:flex;"><span>ENV DEBIAN_FRONTEND<span style="color:#f92672">=</span>noninteractive
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Deshabilitar backups de rclone</span>
+</span></span><span style="display:flex;"><span>ENV RCLONE_BACKUP_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Instalar dependencias necesarias</span>
+</span></span><span style="display:flex;"><span>RUN apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install -y <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    python3 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    python3-pip <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    python3-venv <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    curl <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    jq <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    unzip <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    ffmpeg <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    id3v2 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    sudo <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Instalar yt-dlp</span>
+</span></span><span style="display:flex;"><span>RUN curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#f92672">&amp;&amp;</span> chmod a+rx /usr/local/bin/yt-dlp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Instalar pipx y twitch-dl</span>
+</span></span><span style="display:flex;"><span>RUN python3 -m pip install --user pipx <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    python3 -m pipx ensurepath <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    /root/.local/bin/pipx install twitch-dl <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    ln -s /root/.local/bin/twitch-dl /usr/local/bin/twitch-dl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verificar la instalación</span>
+</span></span><span style="display:flex;"><span>RUN which twitch-dl <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    twitch-dl --version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Instalar rclone</span>
+</span></span><span style="display:flex;"><span>RUN curl https://rclone.org/install.sh | bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Crear directorios necesarios</span>
+</span></span><span style="display:flex;"><span>WORKDIR /app
+</span></span><span style="display:flex;"><span>RUN mkdir -p /app/config /app/scripts /app/data /app/logs
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ejecutar el script directamente</span>
+</span></span><span style="display:flex;"><span>CMD <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;/bin/bash&#34;</span>, <span style="color:#e6db74">&#34;/app/scripts/start.sh&#34;</span><span style="color:#f92672">]</span>
+</span></span></code></pre></div><h3 id="startsh">start.sh</h3>
+<p>Es el archivo al que llama el Dockerfile tras ser montado. Su misión es descargar los scripts de mi repositorio de Github copiarlos al volumen del contenedor y lanzarlos. Con esto realizar modificaciones en los scripts no implica tener que actualizar el contenedor y resulta muy útil en la fase de desarrollo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Definir la URL del script y la ruta de destino</span>
+</span></span><span style="display:flex;"><span>SCRIPT_YT_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://raw.githubusercontent.com/sherlockes/SherloScripts/refs/heads/master/bash/yt2pcst.sh&#34;</span>
+</span></span><span style="display:flex;"><span>SCRIPT_YT_PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/app/scripts/yt2pcst.sh&#34;</span>
+</span></span><span style="display:flex;"><span>SCRIPT_TW_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://raw.githubusercontent.com/sherlockes/SherloScripts/refs/heads/master/bash/tw2pcst.sh&#34;</span>
+</span></span><span style="display:flex;"><span>SCRIPT_TW_PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/app/scripts/tw2pcst.sh&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Crear la carpeta si no existe</span>
+</span></span><span style="display:flex;"><span>mkdir -p <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>dirname <span style="color:#e6db74">&#34;</span>$SCRIPT_YT_PATH<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Descargar el script actualizado para youtube</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;</span>$SCRIPT_YT_URL<span style="color:#e6db74">&#34;</span> -o <span style="color:#e6db74">&#34;</span>$SCRIPT_YT_PATH<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">||</span> <span style="color:#f92672">{</span> echo <span style="color:#e6db74">&#34;Error al descargar el script.&#34;</span>; exit 1; <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Dar permisos de ejecución</span>
+</span></span><span style="display:flex;"><span>chmod +x <span style="color:#e6db74">&#34;</span>$SCRIPT_YT_PATH<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ejecutar el script principal de youtube</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>$SCRIPT_YT_PATH<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Descargar el script actualizado para twitch</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;</span>$SCRIPT_TW_URL<span style="color:#e6db74">&#34;</span> -o <span style="color:#e6db74">&#34;</span>$SCRIPT_TW_PATH<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">||</span> <span style="color:#f92672">{</span> echo <span style="color:#e6db74">&#34;Error al descargar el script.&#34;</span>; exit 1; <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Dar permisos de ejecución</span>
+</span></span><span style="display:flex;"><span>chmod +x <span style="color:#e6db74">&#34;</span>$SCRIPT_TW_PATH<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ejecutar el script principal de twitch</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>$SCRIPT_TW_PATH<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p><img src="/images/20250220_youtube_to_podcast_docker_01.jpg" alt="image-01"></p>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="www.sherblog.es">enlace</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/generador-de-contexto-para-ia/">Generador de contexto para IA</a></li>
+	    
+	    <li><a href="/backups-en-la-nube-con-restic/">Backups en la nube con Restic</a></li>
+	    
+	    <li><a href="/instalaci%C3%B3n-y-configuraci%C3%B3n-de-zerotier/">Instalación y configuración de Zerotier</a></li>
+	    
+	    <li><a href="/configurar-nginx-proxy-manager-en-ubuntu-server/">Configurar Nginx Proxy Manager en Ubuntu server</a></li>
+	    
+	    <li><a href="/de-youtube-a-podcat-v2/">De Youtube a Podcat V2</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/bash/" rel="tag">bash</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/docker/" rel="tag">docker</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/modificando-pi-hole-desde-home-assistant/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Modificando Pi-hole desde Home assistant</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/los-auriculares-qcy-que-he-usado/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Los auriculares QCY que he usado</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

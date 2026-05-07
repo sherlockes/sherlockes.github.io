@@ -1,102 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>home assistant on Sherblog</title>
-    <link>https://sherlockes.github.io/categories/home-assistant/</link>
-    <description>Recent content in home assistant on Sherblog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Home Assistant on Sherblog</title>
+    <link>http://localhost:1313/categories/home-assistant/</link>
+    <description>Recent content in Home Assistant on Sherblog</description>
+    <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Fri, 21 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/home-assistant/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/home-assistant/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modificando Pi-hole desde Home assistant</title>
+      <link>http://localhost:1313/modificando-pi-hole-desde-home-assistant/</link>
+      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/modificando-pi-hole-desde-home-assistant/</guid>
+      <description>&lt;p&gt;No cabe duda de que &lt;a href=&#34;https://pi-hole.net&#34;&gt;Pi-hole&lt;/a&gt; es una utilidad brutal para la gestión de publicidad pero su &lt;a href=&#34;https://www.home-assistant.io/integrations/pi_hole/&#34;&gt;integración&lt;/a&gt; con &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; deja mucho que desear, ya que el único control que ofrece es la deshabilitación de la utilidad completa.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Controlando un Tasmota remoto desde Home Assistant</title>
+      <link>http://localhost:1313/controlando-un-tasmota-remoto-desde-home-assistant/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/controlando-un-tasmota-remoto-desde-home-assistant/</guid>
+      <description>&lt;p&gt;Tengo problemas con el &lt;a href=&#34;https://smlight.tech/product/slzb-06&#34;&gt;SLZB-06&lt;/a&gt; de mi segunda residencia cuando se va la luz, así es como lo he solucionado gracias a un enchufe inteligente.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Configurar Wireguard de Home Assistant en cliente linux</title>
-      <link>https://sherlockes.github.io/configurar-wireguard-de-home-assistant-en-cliente-linux/</link>
-      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/configurar-wireguard-de-home-assistant-en-cliente-linux/</guid>
+      <link>http://localhost:1313/configurar-wireguard-de-home-assistant-en-cliente-linux/</link>
+      <pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/configurar-wireguard-de-home-assistant-en-cliente-linux/</guid>
       <description>&lt;p&gt;Por su sencillez y efectividad, tengo instalado el servidor de &lt;a href=&#34;https://www.wireguard.com&#34;&gt;Wireguard&lt;/a&gt; como un complemento de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt;. Esta es la forma de como he configurado un cliente linux para conectarse a la vpn desde el exterior de mi red local.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Instalando Home Assistant supervisado en Debian 11</title>
-      <link>https://sherlockes.github.io/instalando-home-assistant-supervisado-en-debian-11/</link>
-      <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/instalando-home-assistant-supervisado-en-debian-11/</guid>
-      <description>&lt;p&gt;Si quieres sacar todo el potencial de tu Raspberry al tiempo que la empleas como servidor de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; con el uso de &lt;a href=&#34;https://www.home-assistant.io/addons/&#34;&gt;Addons&lt;/a&gt;, aquí dejo el método oficial de la instalación supervisada mediante Debian 11 en una Raspberry 3B+.&lt;/p&gt;</description>
+      <title>Z2M en segunda residencia</title>
+      <link>http://localhost:1313/z2m-en-segunda-residencia/</link>
+      <pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/z2m-en-segunda-residencia/</guid>
+      <description>&lt;p&gt;La solución más sencilla y barata para crear una red zigbee con la que domotizar nuestra segunda residencia sin duda alguna es mediante el uso del adaptador ethernet zigbee 3.0 &lt;a href=&#34;https://smlight.tech/product/slzb-06/&#34;&gt;SLZB-06&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Sensores virtuales y Jinja2 en Home Assistant</title>
-      <link>https://sherlockes.github.io/sensores-virtuales-y-jinja2-en-home-assistant/</link>
-      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/sensores-virtuales-y-jinja2-en-home-assistant/</guid>
-      <description>&lt;p&gt;Aquí dejo la solución que he implementado ante el problema de crear una nueva entidad en Home Assistant cuyo valor dependa del de otras entidades ya existentes gracias al uso de sensores virtuales y el motor de plantillas de Jinja2.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Actualización:&lt;/strong&gt; Sensor de día lectivo&lt;/p&gt;</description>
+      <title>Activar sirena TS0224 mediante Z2M en Home assistant</title>
+      <link>http://localhost:1313/activar-sirena-ts0224-mediante-z2m-en-home-assistant/</link>
+      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/activar-sirena-ts0224-mediante-z2m-en-home-assistant/</guid>
+      <description>&lt;p&gt;Muchas veces, activar un elemento zigbee no es tan obvio en Home Assistant. Esta es la muestra de lo que tengo que hacer para hacer sonar la sirena zigbee que tengo instalada a modo de alarma.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Tarjetas inteligentes en Home Assistant</title>
-      <link>https://sherlockes.github.io/tarjetas-inteligentes-en-home-assistant/</link>
-      <pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/tarjetas-inteligentes-en-home-assistant/</guid>
-      <description>&lt;p&gt;Para que el contenido de una tarjeta del panel de control de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; sea dinámico y potenciar toda su funcionalidad, la forma más sencilla es mediante el uso de &lt;a href=&#34;https://github.com/thomasloven/lovelace-auto-entities&#34;&gt;auto-entities&lt;/a&gt;. Aquí dejo la forma de realizarlo.&lt;/p&gt;</description>
+      <title>Apagado remoto de un equipo desde Home Assistant</title>
+      <link>http://localhost:1313/apagado-remoto-de-un-equipo-desde-home-assistant/</link>
+      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apagado-remoto-de-un-equipo-desde-home-assistant/</guid>
+      <description>&lt;p&gt;Tengo un pequeño servidor local con &lt;a href=&#34;https://ubuntu.com/download/server&#34;&gt;Ubuntu server&lt;/a&gt; que quiero poder encender y apagar de forma remota. Así es como lo he conseguido un interruptor en mi panel de control de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Calcular temperatura media en Home Assistant</title>
-      <link>https://sherlockes.github.io/calcular-temperatura-media-en-home-assistant/</link>
-      <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/calcular-temperatura-media-en-home-assistant/</guid>
-      <description>&lt;p&gt;¿Que pasa si en casa tenemos varios sensores y queremos calcular la temperatura media de ellos para controlar la calefacción? Con esta sencilla integración personalizada es posible crear un sensor virtual de una forma rápida y sencilla.&lt;/p&gt;</description>
+      <title>Sensor de temperatura personalizado</title>
+      <link>http://localhost:1313/sensor-de-temperatura-personalizado/</link>
+      <pubDate>Fri, 13 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sensor-de-temperatura-personalizado/</guid>
+      <description>&lt;p&gt;En &lt;a href=&#34;https://aliexpress.com/&#34;&gt;Aliexpress&lt;/a&gt; puedes encontrar infinidad de sensores zigbee pero no uno al que conectar varias sondas de temperatura a un precio razonable. Por esto me he decidido a crear el mio propio.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Realizar acciones mediante plantillas en Home Assistant</title>
-      <link>https://sherlockes.github.io/realizar-acciones-mediante-plantillas-en-home-assistant/</link>
-      <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/realizar-acciones-mediante-plantillas-en-home-assistant/</guid>
-      <description>&lt;p&gt;El editor visual de acciones en las automatizaciones de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; presenta muchas limitaciones. Encender o apagar una luz cuando lo hace otra o en función del estado de la puerta son dos de las que tengo implementadas.&lt;/p&gt;</description>
+      <title>Automatizando las luces del salón</title>
+      <link>http://localhost:1313/automatizando-las-luces-del-sal%C3%B3n/</link>
+      <pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/automatizando-las-luces-del-sal%C3%B3n/</guid>
+      <description>&lt;p&gt;Esta es la forma en la que tengo dispuesto el funcionamiento de las luces del salón mediante una sola automatización dentro de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Configuración de Home Assistant en github</title>
-      <link>https://sherlockes.github.io/configuraci%C3%B3n-de-home-assistant-en-github/</link>
-      <pubDate>Fri, 04 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/configuraci%C3%B3n-de-home-assistant-en-github/</guid>
-      <description>&lt;p&gt;Guardar la configuración de Home Assistant en un repositorio de GitHub puede llegar a ser muy útil de cara a compartirla o ver los parámetros que han sido modificados. Esta es la forma en la que mi Raspberry lo realiza a diario.&lt;/p&gt;</description>
+      <title>Calibración de las persianas con en controlador TS130F</title>
+      <link>http://localhost:1313/calibraci%C3%B3n-de-las-persianas-con-en-controlador-ts130f/</link>
+      <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/calibraci%C3%B3n-de-las-persianas-con-en-controlador-ts130f/</guid>
+      <description>&lt;p&gt;La parte más importante de la domotización de las persianas es un correcto ajuste de las posiciones de apertura y cierre. Parece sencillo, pero sin un manual de instrucciones del fabricante se convierte en un dolor de cabeza.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Instalación de Home Assistant en Raspberry</title>
-      <link>https://sherlockes.github.io/instalaci%C3%B3n-de-home-assistant-en-raspberry/</link>
-      <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/instalaci%C3%B3n-de-home-assistant-en-raspberry/</guid>
-      <description>&lt;p&gt;Las dudas surgen cuando tienes varias posibilidades. Esto es lo que me ha pasado a la hora de empezar las pruebas con Home Assistant en una Raspberry Pi 4 de 4gb de ram sobre un stick usb.&lt;/p&gt;</description>
+      <title>Convertir una luz en interruptor en Home Assistant</title>
+      <link>http://localhost:1313/convertir-una-luz-en-interruptor-en-home-assistant/</link>
+      <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/convertir-una-luz-en-interruptor-en-home-assistant/</guid>
+      <description>&lt;p&gt;Es posible utilizar un módulo zigbee de luces como si fuera un enchufe cableado, el problema aparece cuando intentas encender o apagar todas las luces de un área en la que lo tienes incluido y se activa al son de las bombillas.&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>Reseteo automático de Home assistant</title>
-      <link>https://sherlockes.github.io/reseteo-autom%C3%A1tico-de-home-assistant/</link>
-      <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/reseteo-autom%C3%A1tico-de-home-assistant/</guid>
-      <description>&lt;p&gt;Por muy estable que sea un sistema, resetearlo de vez en cuando se suele venir bien y nos sirve para asegurar un correcto arranque. En mi caso hago que la Raspberry sobre la que corre &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; se resetee todos los días a las cuatro de la mañana mediante una automatización que a continuación paso a detallar.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Reseteo automático de Home assistant</title>
-      <link>https://sherlockes.github.io/reseteo-autom%C3%A1tico-de-home-assistant/</link>
-      <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/reseteo-autom%C3%A1tico-de-home-assistant/</guid>
-      <description>&lt;p&gt;Por muy estable que sea un sistema, resetearlo de vez en cuando se suele venir bien y nos sirve para asegurar un correcto arranque. En mi caso hago que la Raspberry sobre la que corre &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; se resetee todos los días a las cuatro de la mañana mediante una automatización que a continuación paso a detallar.&lt;/p&gt;</description>
-    </item>
-    
   </channel>
 </rss>

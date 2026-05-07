@@ -1,0 +1,954 @@
+{
+  "name": "Menu Miraflores",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "menu-colegio",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -528,
+        -336
+      ],
+      "id": "f3f8e2e8-97e0-4226-a05c-d7cc8bfd0e21",
+      "name": "Webhook",
+      "webhookId": "9dc36736-c3f3-4a7a-9da9-ffa28aac27a9"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "/tmp/menu.pdf",
+        "dataPropertyName": "file",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        240,
+        -352
+      ],
+      "id": "34cd1252-8b51-460b-92c1-7681f449c4d8",
+      "name": "Read/Write Files from Disk"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "70a8a772-ab59-4164-a223-0038ccb3d39b",
+              "leftValue": "={{$binary.file.fileName}}",
+              "rightValue": "=^\\d{6}\\.pdf$",
+              "operator": {
+                "type": "string",
+                "operation": "regex"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -288,
+        -336
+      ],
+      "id": "7a8f698f-82d6-489d-a4bf-8fcddebbd88d",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "command": "pdftoppm /tmp/menu.pdf /tmp/menu -png\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        480,
+        -352
+      ],
+      "id": "391180ab-4235-4e33-96f6-3d858cc7bfdd",
+      "name": "Execute Command"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6abfcd0a-41c6-4832-985b-75a3a254ae68",
+              "name": "year",
+              "value": "={{$binary.file.fileName.slice(0, 4)}}",
+              "type": "string"
+            },
+            {
+              "id": "676f223b-e9ba-4eef-aa68-73e57a5e8e90",
+              "name": "month",
+              "value": "={{$binary.file.fileName.slice(4, 6)}}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -16,
+        -352
+      ],
+      "id": "8180d568-e4f6-4617-87ee-382ac4f40bda",
+      "name": "fecha"
+    },
+    {
+      "parameters": {
+        "fileSelector": "/tmp/menu-1.png",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        688,
+        -352
+      ],
+      "id": "c9ace18b-1571-4d04-8c65-7dfbdbeaec24",
+      "name": "Read/Write Files from Disk1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openRouterApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"openai/gpt-4o-mini\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"Este es el menú mensual de un colegio. Devuelve EXCLUSIVAMENTE un array JSON. Cada elemento debe tener: date (YYYY-MM-DD) y menu. Para el menú se debe respetar la estructura de tres líneas una para el 1º, una para el 2º y otra para el postre. Si en un día aparece reflejado el menu como festivo o vacaciones no se añade elemento. El mes es {{ $node['fecha'].json.year }}-{{ $node['fecha'].json.month }}.\"\n        },\n        {\n          \"type\": \"image_url\",\n          \"image_url\": {\n            \"url\": \"data:image/png;base64,{{ $json.data }}\"\n          }\n        }\n      ]\n    }\n  ]\n}\n\n\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        240,
+        -96
+      ],
+      "id": "b9ff526a-3579-4232-bbe1-5c32345dff64",
+      "name": "HTTP Request",
+      "credentials": {
+        "openRouterApi": {
+          "id": "RSpSDjvVqBNzR05Z",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        -16,
+        -96
+      ],
+      "id": "355470c4-79f8-4529-9a9c-07ffa626710e",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Obtener el contenido del modelo\nconst content = $json.choices[0].message.content;\n\n// 2. Extraer el JSON del bloque ```json ... ```\nconst match = content.match(/```json\\s*([\\s\\S]*?)\\s*```/);\n\nif (!match) {\n  throw new Error('No se encontró un bloque JSON en la respuesta');\n}\n\n// 3. Parsear JSON\nconst data = JSON.parse(match[1]);\n\n// 4. Devolver una fila por día (formato n8n)\nreturn data.map(item => ({ json: item }));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        -96
+      ],
+      "id": "be475e2b-3dd0-4fb8-86a5-e6e81336ddc3",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4d74c8ae-e13b-439e-a5a4-816ab566cc1f",
+              "name": "hoy",
+              "value": "={{$now.toFormat('yyyy-MM-dd')}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -288,
+        144
+      ],
+      "id": "ed5ce360-25be-4e51-87e8-21f840e8e687",
+      "name": "hoy"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1umROAtJP6xylo-r-5-ag9mETxY4Q3aAFGLlVi52AsWE",
+          "mode": "list",
+          "cachedResultName": "Menu_Miraflores",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1umROAtJP6xylo-r-5-ag9mETxY4Q3aAFGLlVi52AsWE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1umROAtJP6xylo-r-5-ag9mETxY4Q3aAFGLlVi52AsWE/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Fecha",
+              "lookupValue": "={{ $('hoy').item.json.hoy }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        864,
+        144
+      ],
+      "id": "2139e475-d826-467d-8891-c2c6bf457970",
+      "name": "Obtener menu",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "uuAbU0x0PlF8VH5J",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1umROAtJP6xylo-r-5-ag9mETxY4Q3aAFGLlVi52AsWE",
+          "mode": "list",
+          "cachedResultName": "Menu_Miraflores",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1umROAtJP6xylo-r-5-ag9mETxY4Q3aAFGLlVi52AsWE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1umROAtJP6xylo-r-5-ag9mETxY4Q3aAFGLlVi52AsWE/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha": "={{ $json.date }}",
+            "Menu": "={{ $json.menu }}"
+          },
+          "matchingColumns": [
+            "Fecha"
+          ],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Menu",
+              "displayName": "Menu",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        688,
+        -96
+      ],
+      "id": "0205e070-f2de-41ea-9c63-c04f4f81b3a8",
+      "name": "Actualizar hoja",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "uuAbU0x0PlF8VH5J",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "events": [
+          "init"
+        ]
+      },
+      "type": "n8n-nodes-base.n8nTrigger",
+      "typeVersion": 1,
+      "position": [
+        -528,
+        368
+      ],
+      "id": "39882472-c558-499e-8227-62e2fc4b25a6",
+      "name": "Arranque"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -528,
+        144
+      ],
+      "id": "ca75d67a-5d8f-46bd-9cf3-87c70999a6a5",
+      "name": "8:00 AM"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1umROAtJP6xylo-r-5-ag9mETxY4Q3aAFGLlVi52AsWE",
+          "mode": "list",
+          "cachedResultName": "Menu_Miraflores",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1umROAtJP6xylo-r-5-ag9mETxY4Q3aAFGLlVi52AsWE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1umROAtJP6xylo-r-5-ag9mETxY4Q3aAFGLlVi52AsWE/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Enviado": "={{ $json.Fecha }}",
+            "Menu": "={{ $json.Menu }}",
+            "Fecha": "={{ $json.Fecha }}"
+          },
+          "matchingColumns": [
+            "Fecha"
+          ],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Menu",
+              "displayName": "Menu",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Enviado",
+              "displayName": "Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        864,
+        384
+      ],
+      "id": "ae2ab0af-f957-4294-a3e5-1ec64a4fa49f",
+      "name": "marcar_enviado",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "uuAbU0x0PlF8VH5J",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "29899f3b-394e-40a6-8ead-55cd59f47ea8",
+              "leftValue": "={{$items().length}}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            },
+            {
+              "id": "19d0a9c1-d407-43dc-a398-aeb42c36d6e0",
+              "leftValue": "={{ $json.Enviado }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1104,
+        144
+      ],
+      "id": "36b25d7b-a394-4309-9879-68a80c07eaef",
+      "name": "si_enviado"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "4f32fe4f-5ad8-4fc5-863e-c2f46cdea453",
+              "leftValue": "={{$now.weekday}}",
+              "rightValue": 5,
+              "operator": {
+                "type": "number",
+                "operation": "lte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -64,
+        384
+      ],
+      "id": "5734edeb-012d-4656-99ce-7d375748aa4d",
+      "name": "si_lectivo"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "d95efc506c5eadc3913fbe82449cb2c0fac5cd4e0ef304555005c70c4d5fafb3@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "Festivos escolares"
+        },
+        "limit": 1,
+        "timeMin": "={{$now.startOf('day').toISO()}}",
+        "timeMax": "={{$now.endOf('day').toISO()}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        160,
+        368
+      ],
+      "id": "ed680f57-80c2-43f1-9e5e-1b7998dd7cc6",
+      "name": "obtener_festivos",
+      "alwaysOutputData": false,
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "fo8KRoe338XjlpMG",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        384,
+        160
+      ],
+      "id": "36b2a52e-6077-4a7b-aa03-83d6d98f8f42",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "content": "## Guardar menú\n**Link para descargar menú** -> https://www.elgustodecrecer.es/AreaPersonal\n**Comando para lanzar webhook**  --> `curl -X POST https://n8n.zgz.sherblog.es/webhook-test/menu-colegio -F \"file=@202512.pdf\"`\n**Carpeta para guardar archivo pdf** --> Sherlockes_google_drive/Menu_cole",
+        "height": 528,
+        "width": 1488
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -592,
+        -464
+      ],
+      "id": "3bb464ee-0114-4309-88ff-594eb74b1a1f",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "hour": 9
+            },
+            {}
+          ]
+        },
+        "triggerOn": "specificFolder",
+        "folderToWatch": {
+          "__rl": true,
+          "value": "1uCZBK0oNscI-wikMZArR-ow9s3RlnCSH",
+          "mode": "list",
+          "cachedResultName": "Menu_cole",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1uCZBK0oNscI-wikMZArR-ow9s3RlnCSH"
+        },
+        "event": "fileCreated",
+        "options": {
+          "fileType": "all"
+        }
+      },
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [
+        -528,
+        -96
+      ],
+      "id": "b1d52059-ecec-4d11-a370-202baed3c4d7",
+      "name": "Google Drive Trigger",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "9yIGSWoGFEFkXhH1",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Enviar mensaje diario",
+        "height": 448,
+        "width": 1920
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -592,
+        96
+      ],
+      "id": "976ade3e-e1e7-4470-acc3-77acfc9e91ad",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "chatId": "-1001306695790",
+        "text": "=Menú en el colegio para hoy:\n{{ $json.Menu }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1104,
+        384
+      ],
+      "id": "55eb6f3a-e88d-4e24-9fc3-11c2e7eafa4e",
+      "name": "mensaje con menú",
+      "webhookId": "836f24de-f3e1-448e-80b2-a8ddd80e0096",
+      "credentials": {
+        "telegramApi": {
+          "id": "7PHYK39uh1jMzOBd",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "-1001306695790",
+        "text": "=No está guardado el menú de hoy para el cole, entra en https://www.elgustodecrecer.es/AreaPersonal para descargarlo.",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        384,
+        384
+      ],
+      "id": "c78a23ec-9e8c-4665-98ea-585dec252f25",
+      "name": "mensaje sin menú",
+      "webhookId": "836f24de-f3e1-448e-80b2-a8ddd80e0096",
+      "credentials": {
+        "telegramApi": {
+          "id": "7PHYK39uh1jMzOBd",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "0a11ad2b-8c10-4a6b-93c2-71a3e52be7f4",
+              "leftValue": "={{ $items('Merge').length }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        624,
+        160
+      ],
+      "id": "9df62b1b-5d24-46bb-b10d-c9afee004569",
+      "name": "si_menu"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "fecha",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk": {
+      "main": [
+        [
+          {
+            "node": "Execute Command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fecha": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk1": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Actualizar hoja",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "hoy": {
+      "main": [
+        [
+          {
+            "node": "si_lectivo",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Arranque": {
+      "main": [
+        [
+          {
+            "node": "hoy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "8:00 AM": {
+      "main": [
+        [
+          {
+            "node": "hoy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Obtener menu": {
+      "main": [
+        [
+          {
+            "node": "si_enviado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "marcar_enviado": {
+      "main": [
+        [
+          {
+            "node": "mensaje con menú",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "si_enviado": {
+      "main": [
+        [
+          {
+            "node": "marcar_enviado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "si_lectivo": {
+      "main": [
+        [
+          {
+            "node": "obtener_festivos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "obtener_festivos": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "si_menu",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive Trigger": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "si_menu": {
+      "main": [
+        [
+          {
+            "node": "Obtener menu",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "mensaje sin menú",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3538bbd8-8657-49de-b45e-a36387cba936",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8fb543b511022c43ab705107ba101545bb8b0fdb9bd6ebc4cca28dc9591a036e"
+  },
+  "id": "4P0D0hkzN5BsMgXg",
+  "tags": []
+}

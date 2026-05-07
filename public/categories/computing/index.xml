@@ -1,104 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>computing on Sherblog</title>
-    <link>https://sherlockes.github.io/categories/computing/</link>
-    <description>Recent content in computing on Sherblog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Computing on Sherblog</title>
+    <link>http://localhost:1313/categories/computing/</link>
+    <description>Recent content in Computing on Sherblog</description>
+    <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Fri, 15 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/computing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/computing/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Exportar Org-Roam a Hugo en Gitlab</title>
-      <link>https://sherlockes.github.io/exportar-org-roam-a-hugo-en-gitlab/</link>
-      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/exportar-org-roam-a-hugo-en-gitlab/</guid>
-      <description>&lt;p&gt;Creo que todavía no he hablado de &lt;a href=&#34;https://www.orgroam.com&#34;&gt;Org-Roam&lt;/a&gt; aunque, antes de se me olviden algunos pasos voy a dejar descrito todo el proceso de exportación a una web estática en &lt;a href=&#34;https://gitlab.com&#34;&gt;Gitlab&lt;/a&gt; mediante &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;.&lt;/p&gt;</description>
+      <title>Mi nuevo init.el en 2026</title>
+      <link>http://localhost:1313/mi-nuevo-init.el-en-2026/</link>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/mi-nuevo-init.el-en-2026/</guid>
+      <description>&lt;p&gt;Han pasado más de 8 años desde que empecé mis andaduras con Emacs. el archivo de configuración y arranque init.el ha crecido mucho durante todo este tiempo. Ahora lo he reconstruido sobre &lt;strong&gt;Emacs 30&lt;/strong&gt; con una base moderna, limpia y compatible, manteniendo casi todo lo valioso del sistema antiguo y añadiendo nuevas características.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Si no tienes tiempo para seguir leyendo, puedes encontrar mi configuración en mi repositorio &lt;a href=&#34;https://github.com/sherlockes/SherloScripts/tree/master/emacs&#34;&gt;sherloscripts&lt;/a&gt;. Sólo tienes que clonarlo en ~/Sherloscripts y ejecutar el archivo &lt;code&gt;install.sh&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Ordenar post en Hugo</title>
-      <link>https://sherlockes.github.io/ordenar-post-en-hugo/</link>
-      <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/ordenar-post-en-hugo/</guid>
-      <description>&lt;p&gt;Por defecto &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; ordena los post en función de la fecha de creación, para ordenarlos por la fecha de actualización estos son los pasos que hay que seguir.&lt;/p&gt;</description>
+      <title>Creación de un post de Hugo desde emacs</title>
+      <link>http://localhost:1313/creaci%C3%B3n-de-un-post-de-hugo-desde-emacs/</link>
+      <pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/creaci%C3%B3n-de-un-post-de-hugo-desde-emacs/</guid>
+      <description>&lt;p&gt;Para centrarte en escribir, el proceso de publicación no tiene que suponer una barrera. Así he configurado emacs para optimizar la creación de post para el blog con la mínima fricción posible.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Comprobación ortográfica en Emacs</title>
-      <link>https://sherlockes.github.io/comprobaci%C3%B3n-ortogr%C3%A1fica-en-emacs/</link>
-      <pubDate>Sat, 19 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/comprobaci%C3%B3n-ortogr%C3%A1fica-en-emacs/</guid>
-      <description>&lt;p&gt;Por defecto, &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt; no realiza comprobación ortográfica de nuestro documentos. Hay que realizar una configuración previa que el lo que aquí paso a mostrar.&lt;/p&gt;</description>
+      <title>Generador de contexto para IA</title>
+      <link>http://localhost:1313/generador-de-contexto-para-ia/</link>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/generador-de-contexto-para-ia/</guid>
+      <description>&lt;p&gt;El &amp;ldquo;vibe coding&amp;rdquo; se trata de mantener el flujo creativo y dejar que la IA se encargue de la carpintería pesada. Podemos definir este &lt;code&gt;context-engine.sh&lt;/code&gt; como un &amp;ldquo;acelerador de partículas&amp;rdquo; para este flujo.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Mi archivo de configuración en Emacs</title>
-      <link>https://sherlockes.github.io/mi-archivo-de-configuraci%C3%B3n-en-emacs/</link>
-      <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/mi-archivo-de-configuraci%C3%B3n-en-emacs/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Actualización:&lt;/strong&gt; El archivo &amp;ldquo;init.el&amp;rdquo; se me está haciendo grande y ahora me apoyo en un &amp;ldquo;functions.el&amp;rdquo; y en una comprobación de paquetes en el arranque.
-Hay pocas cosas tan personales en informática como la configuración de &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt;. En mi caso uso una combinación de &lt;code&gt;.emacs&lt;/code&gt; e &lt;code&gt;init.el&lt;/code&gt; de la que seguro puedes sacar algo que aprender.&lt;/p&gt;</description>
+      <title>Sherlocaster</title>
+      <link>http://localhost:1313/sherlocaster/</link>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sherlocaster/</guid>
+      <description>&lt;p&gt;Resumen de introducción es&amp;hellip;&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Sincronizando Org-Roam mediante Github en Emacs</title>
-      <link>https://sherlockes.github.io/sincronizando-org-roam-mediante-github-en-emacs/</link>
-      <pubDate>Tue, 08 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/sincronizando-org-roam-mediante-github-en-emacs/</guid>
-      <description>&lt;p&gt;Está muy bien tener una base de conocimiento centralizada en una carpeta y gestionarla mediante &lt;a href=&#34;https://www.orgroam.com&#34;&gt;Org-Roam&lt;/a&gt; pero mejor aun está poder acceder y modificar esta carpeta desde varios equipos gracias a un repositorio de &lt;a href=&#34;https://github.com&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;</description>
+      <title>App de cuestionarios</title>
+      <link>http://localhost:1313/app-de-cuestionarios/</link>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/app-de-cuestionarios/</guid>
+      <description>&lt;p&gt;Esta es sólo una prueba de concepto de como he utilizado una serie de servicios gratuitos para la creación de una app de cuestionarios. No pretendo explicar el funcionamiento, sólo en que me ha ayudado cada uno.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Acceder a Github via ssh sin password</title>
-      <link>https://sherlockes.github.io/acceder-a-github-via-ssh-sin-password/</link>
-      <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/acceder-a-github-via-ssh-sin-password/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Actualización:&lt;/strong&gt; Solucionando el problema desde el origen con un correcto clonado.&lt;/p&gt;
-&lt;p&gt;Como corregir los problemas de permisos de usuario al intentar actualizar un repositorio remoto que hemos clonado en nuestra máquina.&lt;/p&gt;</description>
+      <title>Simple web apps by Chatgpt</title>
+      <link>http://localhost:1313/simple-web-apps-by-chatgpt/</link>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/simple-web-apps-by-chatgpt/</guid>
+      <description>&lt;p&gt;Hacer pequeñas aplicaciones cada día que pasa es más sencillo sin tener mucha idea de programar. Aquí dejo unas cuantas que he creado para satisfacer necesidades puntuales. Hasta la descripción de la aplicación va a ser cortesía de la inteligencia artificial.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Menú para montar nubes en Bash</title>
-      <link>https://sherlockes.github.io/men%C3%BA-para-montar-nubes-en-bash/</link>
-      <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/men%C3%BA-para-montar-nubes-en-bash/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Actualización:&lt;/strong&gt; Instalación de &amp;ldquo;fuse3&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;Ya hace un tiempo que vengo utilizando la terminal para montar las distintas nubes de las que hago uso a diario en mi terminal con &lt;a href=&#34;https://linuxmint.com/&#34;&gt;Linux Mint&lt;/a&gt;. Ahora he creado un pequeño script en bash que me ahorra tiempo en esta operación y con el que he conseguido aprender abundantes conceptos en bash que a continuación paso a desgranar.&lt;/p&gt;</description>
+      <title>Youtube y Twitch a Podcast en Docker</title>
+      <link>http://localhost:1313/youtube-y-twitch-a-podcast-en-docker/</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/youtube-y-twitch-a-podcast-en-docker/</guid>
+      <description>&lt;p&gt;Hace tiempo que uso unos sencillos scripts en bash para crear un podcast a partir del audio de unos cuantos canales de &lt;a href=&#34;https://www.youtube.com&#34;&gt;Youtube&lt;/a&gt; y &lt;a href=&#34;https://www.twitch.tv&#34;&gt;Twitch&lt;/a&gt;. Ahora lo vamos a meter en un contenedor para que sea más fácil de migrar a otra máquina.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Crear y configurar una instancia gratuita en Oracle</title>
-      <link>https://sherlockes.github.io/crear-y-configurar-una-instancia-gratuita-en-oracle/</link>
-      <pubDate>Tue, 18 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/crear-y-configurar-una-instancia-gratuita-en-oracle/</guid>
-      <description>&lt;p&gt;Tener un pequeño servidor privado virtual a modo de laboratorio en el que hacer nuestras pruebas es gratis gracias a &lt;a href=&#34;https://cloud.oracle.com&#34;&gt;Oracle Cloud&lt;/a&gt;, aquí dejo la forma de conseguirlo y las pruebas que con el he realizado&lt;/p&gt;</description>
+      <title>Salvado por Robocopy</title>
+      <link>http://localhost:1313/salvado-por-robocopy/</link>
+      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/salvado-por-robocopy/</guid>
+      <description>&lt;p&gt;Hasta ayer no tenía ni idea de la existencia de &lt;a href=&#34;https://learn.microsoft.com/es-es/windows-server/administration/windows-commands/robocopy&#34;&gt;Robocopy&lt;/a&gt; pero hoy me ha salvado de un buen rato de faena y quitado un dolor de cabeza.&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Configuración de Rclone mediante Dotfiles</title>
-      <link>https://sherlockes.github.io/configuraci%C3%B3n-de-rclone-mediante-dotfiles/</link>
-      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/configuraci%C3%B3n-de-rclone-mediante-dotfiles/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://rclone.org&#34;&gt;Rclone&lt;/a&gt; presenta un problema si pretendemos trabajar a través de un enlace simbólico como archivo de configuración ya que al actualizarla elimina el enlace y genera un nuevo archivo &amp;ldquo;rclone.conf&amp;rdquo;. De esta forma le he conseguido dar solución.&lt;/p&gt;</description>
+      <title>Automatizando el menú escolar con n8n</title>
+      <link>http://localhost:1313/automatizando-el-men%C3%BA-escolar-con-n8n/</link>
+      <pubDate>Tue, 20 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/automatizando-el-men%C3%BA-escolar-con-n8n/</guid>
+      <description>&lt;p&gt;En muchos colegios el menú mensual se publica en un PDF que acaba olvidado en una web, en un correo o en el grupo de WhatsApp de las familias. Consultarlo cada mañana es poco práctico, y automatizarlo no es trivial. De esta forma he conseguido convertirlo en una notificación diaria a Telegram&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Del Blog a Twitter y Mastodon mediante rss y Bash</title>
-      <link>https://sherlockes.github.io/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/</link>
-      <pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/</guid>
-      <description>&lt;p&gt;Una buena forma de dar algo de visibilidad a los post en el blog es publicándolos en &lt;a href=&#34;https://twitter.com/sherblogpro&#34;&gt;Twitter&lt;/a&gt; y &lt;a href=&#34;https://joinmastodon.org/es&#34;&gt;Mastodon&lt;/a&gt;. Aunque no es muy laborioso, resulta más cómodo que se realice de forma automática y aquí dejo como he creado mi propio script para hacerlo.&lt;/p&gt;</description>
+      <title>Enviar enlaces desde telegram a hoarder y readeck mediante n8n</title>
+      <link>http://localhost:1313/enviar-enlaces-desde-telegram-a-hoarder-y-readeck-mediante-n8n/</link>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/enviar-enlaces-desde-telegram-a-hoarder-y-readeck-mediante-n8n/</guid>
+      <description>&lt;p&gt;La forma más sencilla de guardar un favorito es reenviarlo a un canal de &lt;a href=&#34;https://telegram.org&#34;&gt;Telegram&lt;/a&gt; pero la organización allí es compleja. Vamos a crear una automatización en &lt;a href=&#34;https://n8n.io&#34;&gt;n8n&lt;/a&gt; que reenvíe estos enlaces a nuestra instalación de &lt;a href=&#34;https://karakeep.app/&#34;&gt;Karakeep&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

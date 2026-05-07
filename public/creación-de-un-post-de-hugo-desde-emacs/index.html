@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Creación de un post de Hugo desde emacs - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Automatizando al máximo los post de Hugo desde emacs gracias a esta configuración">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/20260409_emacs_hugo_post_00.jpg" />
+	<meta name="twitter:title" content="Creación de un post de Hugo desde emacs"/>
+	<meta name="twitter:description" content="Automatizando al máximo los post de Hugo desde emacs gracias a esta configuración"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/creaci%C3%B3n-de-un-post-de-hugo-desde-emacs/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Creación de un post de Hugo desde emacs">
+	<meta property="og:url" content="http://localhost:1313/creaci%C3%B3n-de-un-post-de-hugo-desde-emacs/">
+	<meta property="og:description" content="Automatizando al máximo los post de Hugo desde emacs gracias a esta configuración"/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20260409_emacs_hugo_post_00_xl.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Creación de un post de Hugo desde emacs">
+  <meta name="twitter:description" content="Automatizando al máximo los post de Hugo desde emacs gracias a esta configuración">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Creación de un post de Hugo desde emacs</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2026-04-12T00:00:00Z">2026-04-12</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">Computing</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20260409_emacs_hugo_post_00.jpg" alt="Creación de un post de Hugo desde emacs">
+		
+	</figure><div class="content post__content clearfix">
+			<p>Para centrarte en escribir, el proceso de publicación no tiene que suponer una barrera. Así he configurado emacs para optimizar la creación de post para el blog con la mínima fricción posible.</p>
+<p>Si gestionas un blog con <strong>Hugo</strong>, sabrás que mantener la consistencia de las etiquetas y categorías es un reto. Hoy vamos a configurar un flujo de trabajo en <strong>Emacs</strong> que hace todo el trabajo por nosotros, utilizando tres pilares: <code>auto-insert</code>, <code>yasnippet</code> y <code>Lisp</code>.</p>
+<h2 id="el-flujo-de-trabajo">El Flujo de Trabajo</h2>
+<p>El sistema funciona como una reacción en cadena:</p>
+<ol>
+<li><strong>Creación</strong>: Al crear un nuevo archivo <code>.md</code> en la carpeta de tu blog y cuyo nombre empiece por una fecha, Emacs activa <code>auto-insert</code>.</li>
+<li><strong>Inyección</strong>: <code>auto-insert</code> busca una plantilla física (<code>template.md</code>) y la inyecta en el buffer vacío.</li>
+<li><strong>Expansión</strong>: Inmediatamente, se llama a <code>yasnippet</code> para que procese el contenido.</li>
+<li><strong>Inteligencia</strong>: El código Lisp dentro de la plantilla ejecuta comandos de terminal para leer los posts antiguos y ofrecer categorías y etiquetas reales en un menú desplegable.</li>
+</ol>
+<h3 id="1-configuración-en-initel">1. Configuración en <code>init.el</code></h3>
+<p>Primero, preparamos a Emacs para que reconozca cuándo debe actuar y definimos el &ldquo;cerebro&rdquo; que extraerá la información de tus posts. Luego recorreremos los post antiguos para extraer etiquetas y categorías. En el archivo <code>init.el</code> tengo definido lo siguiente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#75715e">;; =============================================================================</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; CONFIGURACIÓN DE AUTO-INSERT Y YASNIPPET</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; =============================================================================</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(auto-insert-mode)                                      <span style="color:#75715e">;; Habilitar Auto-insert</span>
+</span></span><span style="display:flex;"><span>(setq auto-insert-directory <span style="color:#e6db74">&#34;~/dotfiles/templates/&#34;</span>)    <span style="color:#75715e">;; Carpeta de plantillas</span>
+</span></span><span style="display:flex;"><span>(setq auto-insert-query <span style="color:#66d9ef">nil</span>)                            <span style="color:#75715e">;; No preguntar, insertar siempre</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; Función que conecta Auto-insert con Yasnippet</span>
+</span></span><span style="display:flex;"><span>(defun autoinsert-yas-expand()
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Reemplaza el texto en una plantilla de yasnippet.&#34;</span>
+</span></span><span style="display:flex;"><span>    (yas/expand-snippet (<span style="color:#a6e22e">buffer-string</span>) (<span style="color:#a6e22e">point-min</span>) (<span style="color:#a6e22e">point-max</span>))
+</span></span><span style="display:flex;"><span>    (save-buffer))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; Regla: Si el nombre del archivo empieza por fecha (20xxxxxx_...), usa template.md</span>
+</span></span><span style="display:flex;"><span>(setq auto-insert-alist <span style="color:#f92672">&#39;</span>(
+</span></span><span style="display:flex;"><span>    ((<span style="color:#e6db74">&#34;20[0-9]\\{6\\}_.+\\.md\\&#39;&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;Markdown&#34;</span>) <span style="color:#f92672">.</span> [<span style="color:#e6db74">&#34;template.md&#34;</span> autoinsert-yas-expand])
+</span></span><span style="display:flex;"><span>    ))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; =============================================================================</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; EXTRACCIÓN DINÁMICA DE CATEGORÍAS Y TAGS</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; =============================================================================</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(defun my-hugo-extract-metadata (type)
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Busca metadatos en Hugo, silencia errores y unifica en minúsculas.&#34;</span>
+</span></span><span style="display:flex;"><span>  (let* ((posts-path (<span style="color:#a6e22e">expand-file-name</span> <span style="color:#e6db74">&#34;content/post&#34;</span> blog-dir))
+</span></span><span style="display:flex;"><span>         <span style="color:#75715e">;; Comando: busca metadatos, limpia comillas, unifica minúsculas y ordena</span>
+</span></span><span style="display:flex;"><span>         (cmd (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;grep -rPh -A 10 &#39;^%s:&#39; %s 2&gt;/dev/null | grep &#39;^  - \&#34;&#39; | sed -n &#39;s/.*\&#34;\\(.*\\)\&#34;.*/\\1/p&#39; | tr &#39;[:upper:]&#39; &#39;[:lower:]&#39; | sort -u&#34;</span> 
+</span></span><span style="display:flex;"><span>                      type posts-path))
+</span></span><span style="display:flex;"><span>         (raw-output (shell-command-to-string cmd))
+</span></span><span style="display:flex;"><span>         (lines (split-string raw-output <span style="color:#e6db74">&#34;\n&#34;</span> <span style="color:#66d9ef">t</span>)))
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">;; Filtro para eliminar avisos de Bash (ioctl, etc.) en procesos sin TTY</span>
+</span></span><span style="display:flex;"><span>    (seq-filter (lambda (line) 
+</span></span><span style="display:flex;"><span>                  (not (or (string-match-p <span style="color:#e6db74">&#34;bash:&#34;</span> line)
+</span></span><span style="display:flex;"><span>                           (string-match-p <span style="color:#e6db74">&#34;ioctl&#34;</span> line)
+</span></span><span style="display:flex;"><span>                           (string-match-p <span style="color:#e6db74">&#34;control de trabajos&#34;</span> line))))
+</span></span><span style="display:flex;"><span>                lines)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(defun my-blog-select-categories-dynamic ()
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Selector de categoría única.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">completing-read</span> <span style="color:#e6db74">&#34;Categoría: &#34;</span> (my-hugo-extract-metadata <span style="color:#e6db74">&#34;categories&#34;</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(defun my-blog-select-tags-dynamic ()
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Selector múltiple de etiquetas.&#34;</span>
+</span></span><span style="display:flex;"><span>  (let ((choices (completing-read-multiple <span style="color:#e6db74">&#34;Etiquetas (SEP CON COMA): &#34;</span> (my-hugo-extract-metadata <span style="color:#e6db74">&#34;tags&#34;</span>))))
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">mapconcat</span> (lambda (x) (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;\n  - \&#34;&#34;</span> x <span style="color:#e6db74">&#34;\&#34;&#34;</span>)) choices <span style="color:#e6db74">&#34;&#34;</span>)))
+</span></span></code></pre></div><h3 id="2-la-plantilla-templatemd">2. La Plantilla: template.md</h3>
+<p>Este archivo es el corazón de la automatización que está guardado en la carpeta de plantillas configurado como auto-insert-directory. Fíjate que no usamos la función insert de Lisp, sino que dejamos que el código devuelva el valor directamente para evitar el aviso de error de Yasnippet.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: <span style="color:#e6db74">&#34;${1:Título}&#34;</span>
+</span></span><span style="display:flex;"><span>date: <span style="color:#e6db74">&#34;`(format-time-string &#34;</span>%Y-%m-%d<span style="color:#e6db74">&#34;)`&#34;</span>
+</span></span><span style="display:flex;"><span>creation: <span style="color:#e6db74">&#34;`(format-time-string &#34;</span>%Y-%m-%d<span style="color:#e6db74">&#34;)`&#34;</span>
+</span></span><span style="display:flex;"><span>description: <span style="color:#e6db74">&#34;${2:Descripción}&#34;</span>
+</span></span><span style="display:flex;"><span>thumbnail: <span style="color:#e6db74">&#34;images/`(file-name-base)`_00.jpg&#34;</span>
+</span></span><span style="display:flex;"><span>disable_comments: true
+</span></span><span style="display:flex;"><span>authorbox: false
+</span></span><span style="display:flex;"><span>toc: false
+</span></span><span style="display:flex;"><span>mathjax: false
+</span></span><span style="display:flex;"><span>categories:
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">-</span> <span style="color:#e6db74">&#34;`(my-blog-select-categories-dynamic)`&#34;</span>
+</span></span><span style="display:flex;"><span>tags: <span style="color:#f92672">`</span>(my-blog-select-tags-dynamic)<span style="color:#f92672">`</span>
+</span></span><span style="display:flex;"><span>draft: true
+</span></span><span style="display:flex;"><span>weight: <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>${3:Resumen de introducción}
+</span></span><span style="display:flex;"><span>&lt;!--more--&gt;
+</span></span><span style="display:flex;"><span>$0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>![image-01]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">###</span> Enlaces de interés
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">-</span> [enlace](www.sherblog.es)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[link]<span style="color:#f92672">:</span> https://www.google.es
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[image-01]<span style="color:#f92672">:</span> /images/<span style="color:#f92672">`</span>(file-name-base)<span style="color:#f92672">`</span>_01.jpg
+</span></span></code></pre></div><blockquote>
+<p>Gracias al comando tr &lsquo;[:upper:]&rsquo; &lsquo;[:lower:]&rsquo;, todas las etiquetas se sugieren en minúsculas. Se acabó tener etiquetas duplicadas como &ldquo;Linux&rdquo; y &ldquo;linux&rdquo;.</p>
+</blockquote>
+<p>Esta es sólo una razón más por la que llevo usando Emacs para la creación de artículos para el blog desde el año 2018.</p>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/mi-nuevo-init.el-en-2026/">Mi nuevo init.el en 2026</a></li>
+	    
+	    <li><a href="/actualizar-fecha-de-archivo-en-emacs/">Actualizar fecha de archivo en emacs</a></li>
+	    
+	    <li><a href="/exportar-org-roam-a-hugo-en-gitlab/">Exportar Org-Roam a Hugo en Gitlab</a></li>
+	    
+	    <li><a href="/comprobaci%C3%B3n-ortogr%C3%A1fica-en-emacs/">Comprobación ortográfica en Emacs</a></li>
+	    
+	    <li><a href="/mi-archivo-de-configuraci%C3%B3n-en-emacs/">Mi archivo de configuración en Emacs</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/emacs/" rel="tag">emacs</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/yasnippet/" rel="tag">yasnippet</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/elisp/" rel="tag">elisp</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/autoinsert/" rel="tag">autoinsert</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/actualizar-fecha-de-archivo-en-emacs/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Actualizar fecha de archivo en emacs</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Z2M en segunda residencia - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Como configurar un slzb-06 para generar una red zigbee en una segunda residencia">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/20240815_slzb-06_z2m_00.jpg" />
+	<meta name="twitter:title" content="Z2M en segunda residencia"/>
+	<meta name="twitter:description" content="Como configurar un slzb-06 para generar una red zigbee en una segunda residencia"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/z2m-en-segunda-residencia/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Z2M en segunda residencia">
+	<meta property="og:url" content="http://localhost:1313/z2m-en-segunda-residencia/">
+	<meta property="og:description" content="Como configurar un slzb-06 para generar una red zigbee en una segunda residencia"/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20240815_slzb-06_z2m_00_xl.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Z2M en segunda residencia">
+  <meta name="twitter:description" content="Como configurar un slzb-06 para generar una red zigbee en una segunda residencia">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Z2M en segunda residencia</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2025-02-04T00:00:00Z">2025-02-04</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/home-assistant/" rel="category">Home Assistant</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20240815_slzb-06_z2m_00.jpg" alt="Z2M en segunda residencia">
+		
+	</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Índice</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#montar-una-integración-de-z2m-zigbee2mqtt">Montar una integración de Z2M (Zigbee2Mqtt)</a></li>
+        <li><a href="#cambiando-el-nombre-del-menú">Cambiando el nombre del menú</a></li>
+        <li><a href="#fallo-de-conexión-tras-reinicio">Fallo de conexión tras reinicio</a></li>
+        <li><a href="#enlaces-de-interés">Enlaces de interés</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p>La solución más sencilla y barata para crear una red zigbee con la que domotizar nuestra segunda residencia sin duda alguna es mediante el uso del adaptador ethernet zigbee 3.0 <a href="https://smlight.tech/product/slzb-06/">SLZB-06</a></p>
+<p><img src="/images/20240815_slzb-06_z2m_01.jpg" alt="image-01"></p>
+<p>El adaptador <a href="https://smlight.tech/product/slzb-06/">SLZB-06</a> es sencillamente genial, ya que te permite crear un coordinador zigbee con el que domotizar una segunda residencia sin tener que montar un segundo servidor de <a href="https://www.home-assistant.io/">Home Assistant</a> en esta. Simplemente hay que conectarlo a un puerto ethernet del router y a través de una conexión vpn reportará el estado de los sensores a nuestro servidor remoto.</p>
+<p>No aportaría nada de valor replicando los pasos del fantástico artículo de <a href="https://programarfacil.com/domotica/multiples-casas-con-home-assistant/">Programar Fácil</a> en el que explica perfectamente la configuración del mismo, sólo voy a seguir donde el lo ha dejado. Si quieres ver una versión reducida la tienes en mi <a href="https://sherblog.es/brain/#c6386915-e497-48d4-a467-445d84ede824">Nota SLZB-06</a></p>
+<p>Si ya tienes montada la integración de [ZHA] en tu servidor de <a href="https://www.home-assistant.io/">Home Assistant</a> te encontrarás con el problema de que no puedes crear una segunda. A continuación la solución que he implementado.</p>
+<h3 id="montar-una-integración-de-z2m-zigbee2mqtt">Montar una integración de Z2M (Zigbee2Mqtt)</h3>
+<p>En mi servidor domótico tengo montada una imagen de <a href="https://www.home-assistant.io/installation/raspberrypi">HAOS</a> en una unidad usb sobre una rpi4. Ya tengo funcionando una integración de [ZHA] y otra de [Z2M] con sendos módulos zigbee conectados a la raspberry mediante usb. Para añadir una segunda integración [Z2M] realizamos los siguientes pasos</p>
+<ul>
+<li>Acceder a &ldquo;Ajustes - Complementos - Tienda de complementos&rdquo;</li>
+<li>Acceder al menú (Tres puntos) y repositorios</li>
+<li>Añadimos el repositorio &ldquo;<a href="https://github.com/zigbee2mqtt/hassio-zigbee2mqtt/">https://github.com/zigbee2mqtt/hassio-zigbee2mqtt/</a> &quot;</li>
+<li>Refrescamos la página para recargar la tienda de complementos</li>
+<li>Buscamos &ldquo;Zigbee2Mqtt&rdquo; se han duplicado los complementos</li>
+</ul>
+<p><img src="/images/20240815_slzb-06_z2m_02.jpg" alt="image-02"></p>
+<ul>
+<li>Instalamos el que no está marcado con la línea azul</li>
+<li>Accedemos al menú de configuración del complemento</li>
+<li>Cambiamos el &ldquo;data_path&rdquo; por defecto (En mi caso /config/zigbee2mqtt_co)</li>
+<li>Cambiamos el puerto (+1) tanto en &ldquo;socat&rdquo; como en &ldquo;Red&rdquo; (8486)</li>
+</ul>
+<p><img src="/images/20240815_slzb-06_z2m_03.jpg" alt="image-03"></p>
+<ul>
+<li>Editamos el archivo &ldquo;/homeassistant/zigbee2mqtt_co/configuration.yaml&rdquo;. Con la reciente actualización a V2 de Z2M ha sido necesario incluir una modificaciones en el archivo. (Por defecto el &ldquo;log_level&rdquo; se puede quedar en &ldquo;info&rdquo; aunque yo lo he modificado para que no se haga muy grande el archivo.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">homeassistant</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">data_path</span>: <span style="color:#ae81ff">/config/zigbee2mqtt_co</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">advanced</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">network_key</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">171</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">22</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">21</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">221</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">215</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">33</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">213</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">233</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">18</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">232</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">17</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">56</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">114</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">212</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">157</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">pan_id</span>: <span style="color:#ae81ff">6754</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ext_pan_id</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">115</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">127</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">62</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">198</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">250</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">93</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">43</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">chanel</span>: <span style="color:#ae81ff">11</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">homeassistant_legacy_entity_attributes</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">homeassistant_legacy_triggers</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">legacy_api</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">legacy_availability_payload</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">log_level</span>: <span style="color:#ae81ff">warning</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">mqtt</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">server</span>: <span style="color:#ae81ff">mqtt://core-mosquitto:1883</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">user</span>: <span style="color:#ae81ff">addons</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">password</span>: <span style="color:#ae81ff">OuyaiCh5acai7aebohz5Noh3Ziegho0ich7jo8HeicheiH5yahhiaphaiTifog9k</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">base_topic</span>: <span style="color:#ae81ff">zigbee2mqtt_co</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">frontend</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">port</span>: <span style="color:#ae81ff">8099</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">serial</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">port</span>: <span style="color:#ae81ff">tcp://172.27.66.3:6638</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">baudrate</span>: <span style="color:#ae81ff">115200</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">adapter</span>: <span style="color:#ae81ff">zstack</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">device_options</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">legacy</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#ae81ff">4</span>
+</span></span></code></pre></div><blockquote>
+<p>No tengo claro si este archivo se podría simplificar un poco más, lo cierto es que a mi así me ha funcionado a la primera.</p>
+</blockquote>
+<p>Ya tenemos listas las dos integraciones de Zigbee2Mqtt en nuestra instalación de <a href="https://www.home-assistant.io/">Home Assistant</a>. El único problema es que ambas se muestran en la barra de menú con el mismo nombre. Veamos que se puede hacer&hellip;</p>
+<h3 id="cambiando-el-nombre-del-menú">Cambiando el nombre del menú</h3>
+<p>Gracias a <a href="https://github.com/lovelylain/hass_ingress">hass_ingress</a> vamos a poder añadir nuevos accesos directos al menú de <a href="https://www.home-assistant.io/">Home Assistant</a> de una forma rápida y sencilla.</p>
+<ul>
+<li>Accedemos a <a href="https://hacs.xyz/">HACS</a> (Suponiendo que lo tenemos instalado, sino&hellip;)</li>
+<li>Añadimos un repositorio personalizado desde el menú
+<a href="https://github.com/lovelylain/hass_ingress">https://github.com/lovelylain/hass_ingress</a>)</li>
+</ul>
+<p><img src="/images/20240815_slzb-06_z2m_04.jpg" alt="image-04"></p>
+<ul>
+<li>Buscamos y descargamos la integración &ldquo;ingress&rdquo;</li>
+<li>Copiamos la url de redirección a cada una de las instancias Z2M</li>
+<li>Añadimos a &ldquo;configuration.yaml&rdquo; de HA el siguiente código</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">ingress</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">zigbee2mqtt</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">work_mode</span>: <span style="color:#ae81ff">hassio</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">title</span>: <span style="color:#ae81ff">Z2M Zaragoza</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">icon</span>: <span style="color:#ae81ff">mdi:zigbee</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">url</span>: <span style="color:#ae81ff">45df7312_zigbee2mqtt</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">zigbee2mqtt_co</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">work_mode</span>: <span style="color:#ae81ff">hassio</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">title</span>: <span style="color:#ae81ff">Z2M Cinco Olivas</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">icon</span>: <span style="color:#ae81ff">mdi:zigbee</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">url</span>: <span style="color:#ae81ff">9336c2b0_zigbee2mqtt</span>
+</span></span></code></pre></div><ul>
+<li>Reiniciamos Home Assistant</li>
+</ul>
+<p>Ya podemos ver en el menú lateral de Home Assistant el nombre personalizado para cada una de las instancias de Zigbee2Mqtt</p>
+<p><img src="/images/20240815_slzb-06_z2m_05.jpg" alt="image-05"></p>
+<h3 id="fallo-de-conexión-tras-reinicio">Fallo de conexión tras reinicio</h3>
+<p>Tras unos fallos en el suministro eléctrico de la vivienda donde está instalado el SLZB-06 he perdido la comunicación con el mismo desde Home Assistant. El diagnóstico es el siguiente:</p>
+<ul>
+<li>Puedo acceder al coordinador mediante la IP local</li>
+<li>Puedo acceder al panel de control del coordinador también por VPN</li>
+<li>Por telnet puedo acceder a la ip y puerto &ldquo;172.27.66.3:6638&rdquo; sin problemas</li>
+<li>El complemento de Z2M no carga por fallo de conexión con el coordinador
+<pre tabindex="0"><code>[2025-02-03 12:20:05] info:   zh:zstack:znp: Skip bootloader for CC2652/CC1352
+[2025-02-03 12:20:23] error:   z2m: Error while starting zigbee-herdsman
+</code></pre></li>
+</ul>
+<p>Me pongo con ello y pruebo una serie de medidas todas ellas sin éxito:</p>
+<ul>
+<li>Reiniciar el SLZB</li>
+<li>Reiniciar Home Assistant</li>
+<li>Cambio del firmware del SLZB-06 a versión anterior</li>
+<li>Restaurar una copia de seguridad de HA a un momento funcional</li>
+<li>Cambio del firmware del SLZB-06 a la última versión en desarrollo</li>
+<li>Cambio del modo de conexión del módulo de radio (de coordinador a router y Zigbee Hub)</li>
+</ul>
+<p>Tras unas horas de desesperación en las que no he devuelto el adaptador a los valores de fábrica por que no lo tengo cerca he dado con este <a href="https://github.com/zigbee2mqtt/hassio-zigbee2mqtt/issues/644">hilo de Github</a> en el que proponen varias soluciones. La primera que pruebo es cambiar el modo de conexión a &ldquo;USB&rdquo; y posteriormente restaurar la conexión &ldquo;Ethernet&rdquo;</p>
+<blockquote>
+<p>Imprescindible si no tienes el adaptador en la mano activar la casilla &ldquo;Keep ON Wi-Fi/Ethernet network &amp; web server in USB mode&rdquo; antes de guardar los cambios.</p>
+</blockquote>
+<p><img src="/images/20240815_slzb-06_z2m_06.jpg" alt="image-06"></p>
+<p>Y&hellip; Voila¡¡ Problema resuelto. Un profundo dolor de cabeza resuelto con una solución a aplicar en menos de un minuto.</p>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="https://programarfacil.com/domotica/multiples-casas-con-home-assistant">Programar Fácil</a></li>
+<li><a href="https://smlight.tech/manual/slzb-06/guide/getting-started/">SLZB-06 user manual</a></li>
+<li><a href="https://www.youtube.com/watch?v=ZBbl0I-Zpuk&amp;t=7s">Smart Home Australia</a></li>
+<li><a href="https://www.youtube.com/watch?v=QOx733CU1p8">BeardedTinker</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/activar-sirena-ts0224-mediante-z2m-en-home-assistant/">Activar sirena TS0224 mediante Z2M en Home assistant</a></li>
+	    
+	    <li><a href="/sensor-de-temperatura-personalizado/">Sensor de temperatura personalizado</a></li>
+	    
+	    <li><a href="/calibraci%C3%B3n-de-las-persianas-con-en-controlador-ts130f/">Calibración de las persianas con en controlador TS130F</a></li>
+	    
+	    <li><a href="/convertir-una-luz-en-interruptor-en-home-assistant/">Convertir una luz en interruptor en Home Assistant</a></li>
+	    
+	    <li><a href="/mostrar-dispositivos-no-disponibles-en-home-assistant/">Mostrar dispositivos no disponibles en Home Assistant</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/zigbee/" rel="tag">zigbee</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/activar-sirena-ts0224-mediante-z2m-en-home-assistant/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Activar sirena TS0224 mediante Z2M en Home assistant</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/configurar-wireguard-de-home-assistant-en-cliente-linux/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Configurar Wireguard de Home Assistant en cliente linux</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

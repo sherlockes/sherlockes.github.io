@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="es">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,22 +10,28 @@
 
 	
 	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:image" content="http://www.sherblog.pro/images/20221116_oracle_instance_00.jpg" />
+	<meta name="twitter:image" content="http://localhost:1313//images/20221116_oracle_instance_00.jpg" />
 	<meta name="twitter:title" content="Crear y configurar una instancia gratuita en Oracle"/>
 	<meta name="twitter:description" content="Descripción"/>
 	<meta name="twitter:creator" content="@sherblogpro">
-	<meta name="twitter:site" content="sherblog.pro" />
+	<meta name="twitter:site" content="http://localhost:1313/crear-y-configurar-una-instancia-gratuita-en-oracle/" />
 
 	
 	<meta property="og:type" content="article">
 	<meta property="og:locale" content="es_ES">
-	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:site_name" content="Sherblog">
 	<meta property="og:locale" content="es_ES">
 	<meta property="og:title"   content="Crear y configurar una instancia gratuita en Oracle">
-	<meta property="og:url"   content="https://sherlockes.github.io">
+	<meta property="og:url" content="http://localhost:1313/crear-y-configurar-una-instancia-gratuita-en-oracle/">
 	<meta property="og:description" content="Descripción"/>
 
-	<meta property="og:image" content="http://www.sherblog.pro/images/20221116_oracle_instance_00.jpg" />
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20221116_oracle_instance_00_xl.jpg" />
+	
+	
 
 	
 	
@@ -35,7 +41,6 @@
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="shortcut icon" href="/favicon.ico">
-		
 
 	
 	
@@ -44,9 +49,10 @@
 <body class="body">
 	<div class="container container--outer">
 		<header class="header">
-	<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Crear y configurar una instancia gratuita en Oracle"/>
-<meta name="twitter:description" content="Descripción"/>
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Crear y configurar una instancia gratuita en Oracle">
+  <meta name="twitter:description" content="Descripción">
 
 	<div class="container">
 		<div class="logo">
@@ -96,6 +102,13 @@
 				
 			</a>
 		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
 	</ul>
 </nav>
 
@@ -110,7 +123,7 @@
 			<h1 class="post__title">Crear y configurar una instancia gratuita en Oracle</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-04-18T00:00:00Z">2023-04-18</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">computing</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-10-25T00:00:00Z">2023-10-25</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">Computing</a>
 	</span>
 </div></div>
 		</header>
@@ -132,6 +145,7 @@
         <li><a href="#añadir-un-usuario">Añadir un usuario</a></li>
         <li><a href="#prompt-color-y-teclas-en-la-consola-de-comandos">Prompt color y teclas en la consola de comandos</a></li>
         <li><a href="#crear-un-servidor-webdav-mediante-rclone">Crear un servidor webdav mediante rclone</a></li>
+        <li><a href="#simular-que-trabaja">Simular que trabaja</a></li>
         <li><a href="#enlaces-de-interés">Enlaces de interés</a></li>
       </ul>
     </li>
@@ -139,7 +153,8 @@
 </nav>
 	</div>
 </div><div class="content post__content clearfix">
-			<p>Tener un pequeño servidor privado virtual a modo de laboratorio en el que hacer nuestras pruebas es gratis gracias a <a href="https://cloud.oracle.com">Oracle Cloud</a>, aquí dejo la forma de conseguirlo y las pruebas que con el he realizado</p>
+			<p>Tener un pequeño servidor privado virtual a modo de laboratorio en el que hacer nuestras pruebas es gratis gracias a <a href="https://cloud.oracle.com">Oracle Cloud</a>, aquí dejo la forma de conseguirlo y las pruebas que con el he realizado.</p>
+<p>Actualización: Simular que trabaja</p>
 <p>El proceso de la creación de la cuenta en <a href="https://cloud.oracle.com">Oracle Cloud</a> puede llegar a ser desesperante por la lentitud del entorno. A la hora de crear una nueva instancia el asunto resulta bastante sencillo e intuitivo. Lo más importante a tener en cuenta es descargar las llaves ssh para poder tener acceso a la máquina remota que hemos creado o bien subir a la instancia creada la llave pública de nuestro equipo.</p>
 <p><img src="/images/20221116_oracle_instance_01.jpg" alt="image-01"></p>
 <blockquote>
@@ -244,10 +259,27 @@
 </span></span></code></pre></div><blockquote>
 <p>Tener en cuenta que se esperan 30 segundos antes de lanzar el comando del servidor para asegurar que la infraestructura de red está montada.</p>
 </blockquote>
+<h3 id="simular-que-trabaja">Simular que trabaja</h3>
+<p>A los señores de Oracle no les gusta que la instancia esté sin hacer nada y te informa que de seguir así será parada. Todo esto en un perfecto inglés.</p>
+<blockquote>
+<p>Oracle Cloud Infrastructure (OCI) will be reclaiming idle Always Free compute resources from Always Free customers only. Reclaiming idle resources allows OCI to efficiently provide services to Always Free customers. Your account has been identified as having one or more compute instances that have been idle for the past 7 days. These idle instances will be stopped 7 days from now. If your idle Always Free compute instance is stopped, you can restart it as long as the associated compute shape is available in your region.</p>
+</blockquote>
+<p>De momento no tengo claro el objetivo de producción de la instancia y supongo que si la paro voy a tener problemas para volverla a arrancar así que vamos a darle un poco de trabajo mediante la aplicación &ldquo;NeverIdle&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://github.com/layou233/NeverIdle/releases/download/0.1/NeverIdle-linux-arm64 -O NeverIdle
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">777</span> NeverIdle
+</span></span></code></pre></div><blockquote>
+<p>Hay que tener en cuenta que en caso de servidores AMD el archivo es distinto y habrá que acudir a GitHub para descargarlo.</p>
+</blockquote>
+<p>Ahora mediante el comando <code>crontab -e</code> editaremos el cron de usuario y añadimos la siguiente línea</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>@reboot /home/sherlockes/NeverIdle -c 2h1m2s -m <span style="color:#ae81ff">2</span> -n 4h 
+</span></span></code></pre></div><p>De esta forma cada vez que reinicie la instancia se ejecutará la aplicación &ldquo;NeverIdle&rdquo; y para forzar un reinicio diario ejecutamos <code>sudo crontab -e</code> y añadimos la siguiente línea para que la instancia se reinicie todos los días a las 4 de la mañana.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4</span> * * * /sbin/reboot
+</span></span></code></pre></div><p>A ver si con esto conseguimos que oracle no apague la instancia.</p>
 <h3 id="enlaces-de-interés">Enlaces de interés</h3>
 <ul>
 <li><a href="https://askubuntu.com/questions/163802/backspace-tab-del-and-arrow-keys-not-working-in-terminal-using-ssh">Ask Ubuntu - Keys not working in terminal</a></li>
 <li><a href="https://askubuntu.com/questions/39731/terminal-colors-not-working">Ask Ubuntu - Terminal colors not working</a></li>
+<li><a href="https://blog.51sec.org/2023/02/oracle-cloud-cleaning-up-idle-compute.html?expand_article=1">Blog 51 - Oracle idle compute</a></li>
 <li><a href="https://docs.oracle.com/en/cloud/cloud-at-customer/occ-get-started/add-ssh-enabled-user.html">Oracle - Add ssh user</a></li>
 <li><a href="https://docs.oracle.com/es-ww/iaas/Content/Compute/Tasks/accessinginstance.htm">Oracle - Conexión a una instancia</a></li>
 </ul>
@@ -259,15 +291,15 @@
     <h3>Otros de mís artículos que te pueden interesar</h3>
     <ul>
 	    
+	    <li><a href="/comprobar-dispositivos-online-en-bash/">Comprobar dispositivos online en Bash</a></li>
+	    
 	    <li><a href="/men%C3%BA-para-montar-nubes-en-bash/">Menú para montar nubes en Bash</a></li>
+	    
+	    <li><a href="/creando-scripts-en-bash-en-emacs/">Creando scripts en Bash en Emacs</a></li>
 	    
 	    <li><a href="/configuraci%C3%B3n-de-rclone-mediante-dotfiles/">Configuración de Rclone mediante Dotfiles</a></li>
 	    
-	    <li><a href="/del-blog-a-twitter-y-mastodon-mediante-rss-y-bash/">Del Blog a Twitter y Mastodon mediante rss y Bash</a></li>
-	    
-	    <li><a href="/entorno-de-desarrollo-de-sherblog-en-emacs/">Entorno de desarrollo de Sherblog en Emacs</a></li>
-	    
-	    <li><a href="/de-youtube-a-podcast/">De Youtube a Podcast</a></li>
+	    <li><a href="/generador-de-contexto-para-ia/">Generador de contexto para IA</a></li>
 	    
     </ul>
 </div>
@@ -289,21 +321,21 @@
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/configuraci%C3%B3n-de-rclone-mediante-dotfiles/" rel="prev">
+		<a class="pager__link" href="/comprobar-dispositivos-online-en-bash/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Anterior</span>
-			<p class="pager__title">Configuración de Rclone mediante Dotfiles</p>
+			<p class="pager__title">Comprobar dispositivos online en Bash</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/men%C3%BA-para-montar-nubes-en-bash/" rel="next">
+		<a class="pager__link" href="/descarga-y-edici%C3%B3n-de-actividades-de-strava-en-python/" rel="next">
 			<span class="pager__subtitle">Siguiente&thinsp;»</span>
-			<p class="pager__title">Menú para montar nubes en Bash</p>
+			<p class="pager__title">Descarga y edición de actividades de Strava en Python</p>
 		</a>
 	</div>
 </nav>
 <div class="content post__content clearfix">
   <h3>Comentarios</h3>
-  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://emacs.ch/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
 </div>
 
 
@@ -314,14 +346,37 @@
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-		        &copy; 2023 Sherlockes.
+		        &copy; 2026 Sherlockes.
 			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
 			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
 		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
 	</div>
 </footer>
 
 	</div>
-<script async defer src="/js/menu.js"></script>
-<script src="/js/custom.js"></script></body>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
 </html>

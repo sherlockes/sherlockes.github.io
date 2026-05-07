@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Strava on Sherblog</title>
+    <link>http://localhost:1313/tags/strava/</link>
+    <description>Recent content in Strava on Sherblog</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Wed, 22 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/strava/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>De Strava a Google Sheets gracias a n8n</title>
+      <link>http://localhost:1313/de-strava-a-google-sheets-gracias-a-n8n/</link>
+      <pubDate>Wed, 22 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/de-strava-a-google-sheets-gracias-a-n8n/</guid>
+      <description>&lt;p&gt;Tras varias pruebas, al fin he conseguido la manera de enviar el resumen de cada actividad de &lt;a href=&#34;https://www.strava.com/&#34;&gt;Strava&lt;/a&gt; a la hoja donde genero mis estadísticas en Google Sheets de forma autoalojada y desatendida gracias a n8n.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Descarga y edición de actividades de Strava en Python</title>
+      <link>http://localhost:1313/descarga-y-edici%C3%B3n-de-actividades-de-strava-en-python/</link>
+      <pubDate>Sat, 04 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/descarga-y-edici%C3%B3n-de-actividades-de-strava-en-python/</guid>
+      <description>&lt;p&gt;Descargar las actividades anuales de &lt;a href=&#34;https://www.strava.com&#34;&gt;Strava&lt;/a&gt; para la creación de un mapa con mis rutas de forma automatizada es un proyecto detrás del cual llevaba mucho tiempo. Al fin lo he afrontado.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

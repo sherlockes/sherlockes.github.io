@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Apagado remoto de un equipo desde Home Assistant - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Como he implementado un botón para encender y apagar un servidor remoto desde Home Assistant">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/20251112_homeassistant_remote_host_poweroff_00.jpg" />
+	<meta name="twitter:title" content="Apagado remoto de un equipo desde Home Assistant"/>
+	<meta name="twitter:description" content="Como he implementado un botón para encender y apagar un servidor remoto desde Home Assistant"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/apagado-remoto-de-un-equipo-desde-home-assistant/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Apagado remoto de un equipo desde Home Assistant">
+	<meta property="og:url" content="http://localhost:1313/apagado-remoto-de-un-equipo-desde-home-assistant/">
+	<meta property="og:description" content="Como he implementado un botón para encender y apagar un servidor remoto desde Home Assistant"/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20251112_homeassistant_remote_host_poweroff_00_xl.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Apagado remoto de un equipo desde Home Assistant">
+  <meta name="twitter:description" content="Como he implementado un botón para encender y apagar un servidor remoto desde Home Assistant">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Apagado remoto de un equipo desde Home Assistant</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2024-11-17T00:00:00Z">2024-11-17</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/home-assistant/" rel="category">Home Assistant</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20251112_homeassistant_remote_host_poweroff_00.jpg" alt="Apagado remoto de un equipo desde Home Assistant">
+		
+	</figure><div class="content post__content clearfix">
+			<p>Tengo un pequeño servidor local con <a href="https://ubuntu.com/download/server">Ubuntu server</a> que quiero poder encender y apagar de forma remota. Así es como lo he conseguido un interruptor en mi panel de control de <a href="https://www.home-assistant.io">Home Assistant</a>.</p>
+<h3 id="encendido-remoto">Encendido remoto</h3>
+<p>Gracias al <a href="https://es.wikipedia.org/wiki/Wake_on_LAN">WoL</a> el encendido remoto de un equipo es realmente sencillo. Lo primero es acceder a la BIOS del equipo y habilitar el &ldquo;Wake On LAN&rdquo;. Cada fabricante lo tiene escondido en un menú diferente así que las capturas de pantalla de mi caso particular que pueda poner seguramente no sirvan de ayuda.</p>
+<blockquote>
+<p>Además de WoL, si vas a usar el equipo como servidor, resulta imprescindible habilitar también desde la BIOS en encendido automático para que el equipo vuelva a arrancar tras un corte de corriente.</p>
+</blockquote>
+<p>Con esto, todavía no es posible arrancar el equipo mediante WoL ya que las distribuciones basadas en Debian, como es mi caso, requieren una configuración posterior de la interface de red.</p>
+<p>Empezaremos listando las interfaces de red para conocer el nombre y ver cual corresponde a la que tenemos activa.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip link show
+</span></span></code></pre></div><p>El comando produce la siguiente salida:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span style="color:#ae81ff">65536</span> qdisc noqueue state UNKNOWN mode DEFAULT group default qlen <span style="color:#ae81ff">1000</span> link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+</span></span><span style="display:flex;"><span>2: enp1s0: &lt;BROADCAST,MULTICAST&gt; mtu <span style="color:#ae81ff">1500</span> qdisc noop state DOWN mode DEFAULT group default qlen <span style="color:#ae81ff">1000</span> link/ether 54:47:11:24:9d:fb brd ff:ff:ff:ff:ff:ff
+</span></span><span style="display:flex;"><span>3: enp2s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span style="color:#ae81ff">1500</span> qdisc pfifo_fast state UP mode DEFAULT group default qlen <span style="color:#ae81ff">1000</span> link/ether 54:43:0e:2a:9e:fc brd ff:ff:ff:ff:ff:ff
+</span></span><span style="display:flex;"><span>4: wlp0s20f3: &lt;BROADCAST,MULTICAST&gt; mtu <span style="color:#ae81ff">1500</span> qdisc noop state DOWN mode DEFAULT group default qlen <span style="color:#ae81ff">1000</span> link/ether b0:dc:ef:ca:9d:65 brd ff:ff:ff:ff:ff:ff
+</span></span></code></pre></div><p>De lo anterior (La red activa aparece como &ldquo;state UP&rdquo;) podemos deducir que la interface de red activa es &ldquo;enp2s0&rdquo; y pasaremos a analizarla con la utilidad <a href="https://www.kernel.org/pub/software/network/ethtool/">ethtool</a>. Si no tenemos instalada la aplicación la instalaremos con <code>sudo apt install ethtool</code> y lanzaremos el análisis.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ethtool enp2s0
+</span></span></code></pre></div><p>La salida que, en mi caso ha dado es la siguiente y en ella podemos ver como la opción &ldquo;Wake-on&rdquo; esta deshabilitada (disabled):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PHYAD: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>Transceiver: external
+</span></span><span style="display:flex;"><span>MDI-X: Unknown
+</span></span><span style="display:flex;"><span>Supports Wake-on: pumbg
+</span></span><span style="display:flex;"><span>Wake-on: d
+</span></span><span style="display:flex;"><span>Link detected: yes
+</span></span></code></pre></div><p>Podemos habilitar WoL en el modo &ldquo;magic packet&rdquo; mediante el comando <code>ethtool -s enp2s0 wol g</code> y obtendremos la confirmación de que este modo se ha habilitado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PHYAD: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>Transceiver: external
+</span></span><span style="display:flex;"><span>MDI-X: Unknown
+</span></span><span style="display:flex;"><span>Supports Wake-on: pumbg
+</span></span><span style="display:flex;"><span>Wake-on: g
+</span></span><span style="display:flex;"><span>Link detected: yes
+</span></span></code></pre></div><p>Resulta que este método funciona pero no es persistente y después de un reinicio se desactiva el WOL por lo que hay que crear un script que lo active en cada reinicio del servidor.</p>
+<ul>
+<li>Crear archivo &ldquo;wol&rdquo; <code>sudo nano /etc/network/if-up.d/wol</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>  <span style="color:#75715e">#!/bin/bash</span>
+</span></span><span style="display:flex;"><span>  ethtool -s enp2s0 wol g
+</span></span></code></pre></div><ul>
+<li>Dar permiso de ejecución al archivo con <code>sudo chmod +x /etc/network/if-up.d/wol</code></li>
+<li>Para ejecutar en cada reinicio editamos el crontab de root <code>sudo crontab -e</code> y añadimos la siguiente línea:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>@reboot /etc/network/if-up.d/wol	 
+</span></span></code></pre></div><p>Ahora y tenemos el equipo listo para encenderlo de forma remota desde <a href="https://www.home-assistant.io">Home Assistant</a>. Utilizaremos la integración <a href="https://www.home-assistant.io/integrations/wake_on_lan/">Wake on LAN</a> capaz de enviar un &ldquo;magic packet&rdquo; a un equipo remoto para encenderlo sin más necesidades que la MAC y la IP local de dicho equipo.</p>
+<blockquote>
+<p>Mediante el comando <code>ip link show</code> no sólo hemos visto el nombre de la interface de red, también podemos conocer la MAC de la misma.</p>
+</blockquote>
+<p>Ahora necesitamos añadir un &ldquo;switch&rdquo; en el archivo &ldquo;configuration.yaml&rdquo; de <a href="https://www.home-assistant.io">Home Assistant</a> mediante las siguientes líneas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">switch</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">wake_on_lan</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">uber</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">mac</span>: <span style="color:#ae81ff">54</span>:<span style="color:#ae81ff">43</span>:<span style="color:#ae81ff">0e:2a:9e:fc</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">host</span>: <span style="color:#ae81ff">192.168.10.211</span>
+</span></span></code></pre></div><p>Añadimos el &ldquo;switch&rdquo; a nuestro panel de <a href="https://www.home-assistant.io">Home Assistant</a> y listo para encender el servidor remoto.
+<img src="/images/20251112_homeassistant_remote_host_poweroff_01.jpg" alt="image-01"></p>
+<h3 id="apagado-remoto">Apagado remoto</h3>
+<p>Llegados a este punto tenemos un equipo remoto que queremos apagar y un equipo donde tenemos instalado <a href="https://www.home-assistant.io">Home Assistant</a></p>
+<p>En primer lugar necesitamos que para ejecutar el comando <code>poweroff</code> en el equipo remoto no se solicite contraseña. Seguimos los siguientes pasos</p>
+<ul>
+<li>Accedemos al equipo remoto mediante ssh <code>ssh usuario@ip_remoto</code></li>
+<li>Ejecutamos  en el equipo remoto <code>sudo visudo</code></li>
+<li>Añadimos la siguiente línea</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mi_usuario ALL<span style="color:#f92672">=</span>NOPASSWD:/sbin/poweroff
+</span></span></code></pre></div><p>A continuación accedemos a la terminal de <a href="https://www.home-assistant.io">Home Assistant</a> que deberemos tener instalada mediante el complemento <a href="https://github.com/hassio-addons/addon-ssh">Advanced SSH &amp; Web Terminal</a></p>
+<ul>
+<li>Generamos una llave ssh <code>ssh-keygen</code> en el directorio &ldquo;/config/ssh/id_rsa&rdquo; y sin ningún tipo de contraseña</li>
+<li>Nos logeamos como superusuario <code>sudo -i</code></li>
+<li>Copiamos la &ldquo;ssh-key&rdquo; al equipo remoto <code>ssh-copy-id -i /config/ssh/id_rsa.pub usuario@ip_remoto</code></li>
+</ul>
+<p>Ya sólo falta crear un &ldquo;shell_command&rdquo; y vincularlo al apagado del &ldquo;switch&rdquo; en el archivo &ldquo;configuration.yaml&rdquo; de <a href="https://www.home-assistant.io">Home Assistant</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">switch</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">wake_on_lan</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">dever</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">mac</span>: <span style="color:#ae81ff">84</span>:<span style="color:#ae81ff">47</span>:<span style="color:#ae81ff">09</span>:<span style="color:#ae81ff">24</span>:<span style="color:#ae81ff">9e:fc</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">host</span>: <span style="color:#ae81ff">192.168.10.211</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">turn_off</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">service</span>: <span style="color:#ae81ff">shell_command.turn_off_dever</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">shell_command</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">turn_off_dever</span>: <span style="color:#ae81ff">ssh -i /config/ssh/id_rsa -o StrictHostKeyChecking=no sherlockes@192.168.10.211 &#39;sudo poweroff&#39;</span>
+</span></span></code></pre></div><h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="https://askubuntu.com/questions/191257/how-could-i-shutdown-a-remote-host-in-my-network-thru-ssh-with-a-local-host">Ask Ubuntu</a></li>
+<li><a href="https://www.home-assistant.io/integrations/wake_on_lan/">Home Assistant - Wake on LAN</a></li>
+<li><a href="https://community.home-assistant.io/t/running-a-shell-command-from-home-assistant-to-remote-linux-pc/135221/74">Community HA - Remote shell command</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/instalando-home-assistant-supervisado-en-debian-11/">Instalando Home Assistant supervisado en Debian 11</a></li>
+	    
+	    <li><a href="/generador-de-contexto-para-ia/">Generador de contexto para IA</a></li>
+	    
+	    <li><a href="/flujo-de-im%C3%A1genes-en-linux/">Flujo de imágenes en Linux</a></li>
+	    
+	    <li><a href="/usando-un-tunel-ssh-para-aceder-a-un-servidor-remoto/">Usando un tunel ssh para aceder a un servidor remoto</a></li>
+	    
+	    <li><a href="/sensor-de-temperatura-personalizado/">Sensor de temperatura personalizado</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/ssh/" rel="tag">ssh</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/linux/" rel="tag">linux</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/sensor-de-temperatura-personalizado/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Sensor de temperatura personalizado</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/activar-sirena-ts0224-mediante-z2m-en-home-assistant/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Activar sirena TS0224 mediante Z2M en Home assistant</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Modificando Pi-hole desde Home assistant - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Como añadir y quitar dominios de la lista negra de Pi-hole desde Home Assistant">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/20250513_home_assistant_pihole_00.jpg" />
+	<meta name="twitter:title" content="Modificando Pi-hole desde Home assistant"/>
+	<meta name="twitter:description" content="Como añadir y quitar dominios de la lista negra de Pi-hole desde Home Assistant"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/modificando-pi-hole-desde-home-assistant/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Modificando Pi-hole desde Home assistant">
+	<meta property="og:url" content="http://localhost:1313/modificando-pi-hole-desde-home-assistant/">
+	<meta property="og:description" content="Como añadir y quitar dominios de la lista negra de Pi-hole desde Home Assistant"/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20250513_home_assistant_pihole_00.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Modificando Pi-hole desde Home assistant">
+  <meta name="twitter:description" content="Como añadir y quitar dominios de la lista negra de Pi-hole desde Home Assistant">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Modificando Pi-hole desde Home assistant</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2026-01-21T00:00:00Z">2026-01-21</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/home-assistant/" rel="category">Home Assistant</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20250513_home_assistant_pihole_00.jpg" alt="Modificando Pi-hole desde Home assistant">
+		
+	</figure><div class="content post__content clearfix">
+			<p>No cabe duda de que <a href="https://pi-hole.net">Pi-hole</a> es una utilidad brutal para la gestión de publicidad pero su <a href="https://www.home-assistant.io/integrations/pi_hole/">integración</a> con <a href="https://www.home-assistant.io">Home Assistant</a> deja mucho que desear, ya que el único control que ofrece es la deshabilitación de la utilidad completa.</p>
+<h3 id="que-buscamos">Que buscamos?</h3>
+<p>La finalidad es bastante sencilla, simplemente un interruptor en <a href="https://www.home-assistant.io">Home Assistant</a> mediante el cual activemos o no el filtrado de una serie de dominios por parte de <a href="https://pi-hole.net">Pi-hole</a></p>
+<blockquote>
+<p>En mi caso lo utilizo para que los niños no puedan acceder a Youtube unos días y horas determinados.</p>
+</blockquote>
+<p>Antes de seguir adelante, tener en cuenta que <a href="https://pi-hole.net">Pi-hole</a> y <a href="https://www.home-assistant.io">Home Assistant</a> están corriendo en dos máquinas distintas, sendas Raspberry, una con Raspbian y otra con HAOS. Es más, están corriendo en redes distintas, pero esto no es un problema gracias a <a href="/instalaci%C3%B3n-y-configuraci%C3%B3n-de-zerotier/">Zerotier</a>.</p>
+<h3 id="la-estrategia">La estrategia</h3>
+<p>Puesto que la <a href="https://www.home-assistant.io/integrations/pi_hole/">integración</a> de <a href="https://pi-hole.net">Pi-hole</a> para <a href="https://www.home-assistant.io">Home Assistant</a> no lo permite, vamos a modificar el listado de dominios a filtrar desde la línea de comandos mediante un script que se ejecutará en la máquina que tiene <a href="https://pi-hole.net">Pi-hole</a> pero que será lanzado mediante un interruptor o automatización en la máquina que corre <a href="https://www.home-assistant.io">Home Assistant</a>.</p>
+<h3 id="los-scripts">Los Scripts</h3>
+<p>Vamos a partir de un archivo &ldquo;youtube_blocklist.txt&rdquo; en el que se incluirán todos los servidores que necesitamos filtrar. De esta forma, añadir o quitar un servidor es tan sencillo como editar este archivo. Pepe</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>youtube.com
+</span></span><span style="display:flex;"><span>www.youtube.com
+</span></span><span style="display:flex;"><span>m.youtube.com
+</span></span><span style="display:flex;"><span>youtubei.googleapis.com
+</span></span><span style="display:flex;"><span>youtube.googleapis.com
+</span></span><span style="display:flex;"><span>ytimg.com
+</span></span><span style="display:flex;"><span>yt3.ggpht.com
+</span></span></code></pre></div><h4 id="bloquear-los-dominios-youtube_blocksh">Bloquear los dominios &ldquo;youtube_block.sh&rdquo;</h4>
+<p>Esta parte es sencilla, crearemos un archivo &ldquo;youtube_block.sh&rdquo; al que dotaremos de permisos de ejecución y con el siguiente contenido:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>DOMAINS<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat ~/youtube_blocklist.txt<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>pihole deny $DOMAINS
+</span></span></code></pre></div><p>Cuando se ejecute el script todos los dominios que aparezcan en el listado serán bloqueados</p>
+<h4 id="desbloquear-los-dominios-youtube_unblocksh">Desbloquear los dominios &ldquo;youtube_unblock.sh&rdquo;</h4>
+<p>Desde la versión 6 de <a href="https://pi-hole.net">Pi-hole</a> esto se ha complicado un poco y es que ya no permite eliminar el bloqueo a dominios desde la línea de comandos. La forma de atacar este problema es mediante la modificación directa de la base de datos donde <a href="https://pi-hole.net">Pi-hole</a> guarda los dominios bloqueados.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>DB<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/etc/pihole/gravity.db&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> read domain; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    sqlite3 <span style="color:#e6db74">&#34;</span>$DB<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;DELETE FROM domainlist WHERE type=1 AND domain = &#39;</span>$domain<span style="color:#e6db74">&#39;;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &lt; /home/pi/youtube_blocklist.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Recargar listas</span>
+</span></span><span style="display:flex;"><span>pihole reloadlists
+</span></span></code></pre></div><blockquote>
+<p>Esto requiere que &ldquo;sqlite3&rdquo; esté instalada en la máquina que corre <a href="https://pi-hole.net">Pi-hole</a> y que el script anterior se ejecute con privilegios de administrador.</p>
+</blockquote>
+<h3 id="lanzar-los-scripts-desde-home-assistant">Lanzar los scripts desde Home Assistant</h3>
+<p>Ya tenemos pues los Scripts que van a añadir o quitar los dominios del filtrado, ahora tenemos que poder ejecutarlos desde nuestra máquina con <a href="https://www.home-assistant.io">Home Assistant</a>.</p>
+<p>A continuación accedemos a la terminal de <a href="https://www.home-assistant.io">Home Assistant</a> que deberemos tener instalada mediante el complemento <a href="https://github.com/hassio-addons/addon-ssh">Advanced SSH &amp; Web Terminal</a></p>
+<ul>
+<li>Generamos una llave (En caso de que no la hayamos creado anteriormente) ssh <code>ssh-keygen</code> en el directorio &ldquo;/config/ssh/id_rsa&rdquo; y sin ningún tipo de contraseña</li>
+<li>Nos logeamos como superusuario <code>sudo -i</code></li>
+<li>Copiamos la &ldquo;ssh-key&rdquo; al equipo remoto <code>ssh-copy-id -i /config/ssh/id_rsa.pub usuario@ip_remoto</code></li>
+</ul>
+<p>Ya sólo falta crear un &ldquo;shell_command&rdquo; dentro del archivo de configuración &ldquo;configuration.yaml&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">shell_command</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">co_youtube_block</span>: <span style="color:#ae81ff">ssh -i /config/ssh/id_rsa -o StrictHostKeyChecking=no pi@192.168.191.205 &#39;./youtube_block.sh&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">co_youtube_unblock</span>: <span style="color:#ae81ff">ssh -i /config/ssh/id_rsa -o StrictHostKeyChecking=no pi@192.168.191.205 &#39;sudo ./youtube_unblock.sh&#39;</span>
+</span></span></code></pre></div><p>En este momento y tras un reinicio ya podemos lanzar los comandos de consola desde <a href="https://www.home-assistant.io">Home Assistant</a>. Ahora crearemos un nuevo</p>
+<p>AYUDANTE</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">alias</span>: <span style="color:#ae81ff">co_youtube_block</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">triggers</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">state</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">entity_id</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">input_boolean.co_youtube_block</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">to</span>: <span style="color:#e6db74">&#34;on&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">id</span>: <span style="color:#ae81ff">activar</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">state</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">entity_id</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">input_boolean.co_youtube_block</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">to</span>: <span style="color:#e6db74">&#34;off&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">id</span>: <span style="color:#ae81ff">desactivar</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">conditions</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">actions</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">choose</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">conditions</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#f92672">condition</span>: <span style="color:#ae81ff">trigger</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">id</span>:
+</span></span><span style="display:flex;"><span>              - <span style="color:#ae81ff">activar</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">sequence</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#f92672">action</span>: <span style="color:#ae81ff">shell_command.co_youtube_block</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">metadata</span>: {}
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">data</span>: {}
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">conditions</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#f92672">condition</span>: <span style="color:#ae81ff">trigger</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">id</span>:
+</span></span><span style="display:flex;"><span>              - <span style="color:#ae81ff">desactivar</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">sequence</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#f92672">action</span>: <span style="color:#ae81ff">shell_command.co_youtube_unblock</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">metadata</span>: {}
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">data</span>: {}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">mode</span>: <span style="color:#ae81ff">single</span>
+</span></span></code></pre></div><p><img src="/images/20250513_home_assistant_pihole_01.jpg" alt="image-01"></p>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="www.sherblog.es">enlace</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/controlando-un-tasmota-remoto-desde-home-assistant/">Controlando un Tasmota remoto desde Home Assistant</a></li>
+	    
+	    <li><a href="/configurar-wireguard-de-home-assistant-en-cliente-linux/">Configurar Wireguard de Home Assistant en cliente linux</a></li>
+	    
+	    <li><a href="/generador-de-contexto-para-ia/">Generador de contexto para IA</a></li>
+	    
+	    <li><a href="/youtube-y-twitch-a-podcast-en-docker/">Youtube y Twitch a Podcast en Docker</a></li>
+	    
+	    <li><a href="/incrustar-texto-externo-en-hugo/">Incrustar texto externo en Hugo</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/bash/" rel="tag">bash</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/pihole/" rel="tag">pihole</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/salvado-por-robocopy/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Salvado por Robocopy</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/youtube-y-twitch-a-podcast-en-docker/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Youtube y Twitch a Podcast en Docker</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

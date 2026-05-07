@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Emacs desde cero - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Aquí iré documentando mi experiencia con este impresionante editor de texto..">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/titulo_00.jpg" />
+	<meta name="twitter:title" content="Emacs desde cero"/>
+	<meta name="twitter:description" content="Aquí iré documentando mi experiencia con este impresionante editor de texto.."/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/emacs-desde-cero/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Emacs desde cero">
+	<meta property="og:url" content="http://localhost:1313/emacs-desde-cero/">
+	<meta property="og:description" content="Aquí iré documentando mi experiencia con este impresionante editor de texto.."/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/titulo_00.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Emacs desde cero">
+  <meta name="twitter:description" content="Aquí iré documentando mi experiencia con este impresionante editor de texto..">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Emacs desde cero</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-03-15T00:00:00Z">2022-03-15</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/varios/" rel="category">Varios</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/titulo_00.jpg" alt="Emacs desde cero">
+		
+	</figure><div class="content post__content clearfix">
+			<p><a href="https://www.gnu.org/software/emacs/">Emacs</a> es una aplicación fea, nada intuitiva y con una curva de aprendizaje muy pronunciada, a cambio te ofrece un completo entorno de trabajo con infinidad de posibilidades. Hace más de cinco años que empecé a escribir este artículo, ahora me decido a terminarlo cansado de verlo en mi lista de artículos en borrador a pesar de que sigo aprendiendo algo sobre <a href="https://www.gnu.org/software/emacs/">Emacs</a> cada día.</p>
+<h3 id="emacs-sólo-un-editor-de-texto">Emacs, sólo un editor de texto?</h3>
+<p>Caí en el uso de <a href="https://www.gnu.org/software/emacs/">Emacs</a> como editor de texto pero con el tiempo me he dado cuenta de que esta cualidad solo es la &ldquo;punta del iceberg&rdquo; ya que lo he terminado usando también para realizar conexiones remotas, navegar entre directorios, entorno de desarrollo y la única aplicación que necesito para gestionar este blog.</p>
+<p>Es gratis, es libre y me ofrece un entorno de trabajo sin distracciones con el que estoy encantado.</p>
+<h3 id="que-necesito">Que necesito?</h3>
+<ul>
+<li><a href="https://www.gnu.org/software/emacs/download.html">Descargar aquí</a> la aplicación.</li>
+<li>Ver los vídeos del Canal de <a href="https://www.youtube.com/playlist?list=PLxGJqI9jxu_iWOJt_GqpWKq5STAZVA4rn">Emacx</a> en Youtube.</li>
+<li>Algo de tiempo, perseverancia y paciencia</li>
+</ul>
+<h3 id="donde-está-el-problema">Donde está el problema?</h3>
+<p>Emacs es una de esas aplicaciones que cuando las abres te parece que no van a ser capaces de hacer nada pero que a medida que vas profundizando en ellas te das cuenta de la increíble potencia que presentan.  Una interface que parece de finales de los ochenta y un tutorial en la ventana de inicio son dos de las cualidades que echan para atrás a casi cualquiera.</p>
+<p>Pero lo que sin duda alguna es el gran impedimento para trabajar con Emacs es su curva de aprendizaje increíblemente lenta al principio por culpa de un flujo de trabajo completamente diferente al resto de aplicaciones y la infinidad de atajos de
+teclado que hay que hay que aprender para conseguir una productividad “digna”.</p>
+<h2 id="lo-que-he-aprendido">Lo que he aprendido</h2>
+<h3 id="personalizando-emacs">Personalizando Emacs</h3>
+<ul>
+<li>Añadiendo capacidad para sintaxis MarkDown <code>sudo apt install elpa-markdown-mode</code></li>
+</ul>
+<h3 id="comandos-genéricos">Comandos genéricos</h3>
+<p>F11 ; pantalla completa
+C-x C-c ; Cierra Emacs
+C-g ; Cancelar un comando</p>
+<h3 id="ventanas">Ventanas</h3>
+<p>C-x 0 ; Elimina la ventana actual
+C-x 1 ; Elimina todas ventanas menos la actual
+C-x 2 ; Crea una ventana horizontal
+C-x 3 ; Crea una ventana vertical
+C-x o ; Cambiar de ventana</p>
+<h3 id="buffer">Buffer</h3>
+<p>C-x k ; Cierra el buffer actual
+M-x ; Activa el minibuffer
+C-x -&gt; ; avanza un buffer
+C-x &lt;- ; retrocede un buffer
+C-x b ; Cambia de buffer
+C-x C-f ; Crea un buffer / visita un archivo
+C-x C-w ; Renombra un archivo
+C-x C-s ; Guarda los cambios
+C-h i ; Muestra la zona de manuales
+C-x C-q ; Pone el buffer en modo de solo lectura</p>
+<h3 id="edición-de-texto">Edición de texto</h3>
+<p>M-w ; Copiar un texto
+C-y ; Pegar un texto
+C-w ; Cortar un texto
+C-spc ; Marcar
+M-d ; Borra una palabra
+C-s ; Busca un texto hacia adelante
+C-r ; Busca un texto hacia atrás
+M-% ; Buscar y reemplazar una palabra (&ldquo;y&quot;si, &ldquo;n&quot;no,  &ldquo;!&ldquo;todas)</p>
+<h4 id="comandos-del-minibuffer">Comandos del minibuffer</h4>
+<p>shell ; Lanza una terminal
+menu-bar-mode ; oculta la barra de menú
+tool-bar-mode ; oculta la barra de herramientas
+customize-theme ; configuración del tema
+eval-buffer ; evalúa el contenido del buffer activo
+ido-mode ; Activa el modo ido
+customize ; Entra al modo de configuración de Emacs
+package-list-packages ; lista los paquetes instalados</p>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/entorno-de-desarrollo-de-sherblog-en-emacs/">Entorno de desarrollo de Sherblog en Emacs</a></li>
+	    
+	    <li><a href="/exportar-de-org-a-html-en-emacs/">Exportar de org a html en emacs</a></li>
+	    
+	    <li><a href="/reemplazo-mediante-expresiones-regulares-en-emacs/">Reemplazo mediante expresiones regulares en Emacs</a></li>
+	    
+	    <li><a href="/como-desinstalar-paquetes-en-emacs/">Como desinstalar paquetes en Emacs</a></li>
+	    
+	    <li><a href="/usando-dired-en-emacs/">Usando Dired en Emacs</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/emacs/" rel="tag">emacs</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/mi-uso-de-alias-en-bash/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Mi uso de alias en bash</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/crear-podcast-a-partir-de-un-canal-de-twitch/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Crear Podcast a partir de un canal de Twitch</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Configurar Nginx Proxy Manager en Ubuntu server - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Descripción">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/20241113_nginx_proxy_manager_00.jpg" />
+	<meta name="twitter:title" content="Configurar Nginx Proxy Manager en Ubuntu server"/>
+	<meta name="twitter:description" content="Descripción"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/configurar-nginx-proxy-manager-en-ubuntu-server/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Configurar Nginx Proxy Manager en Ubuntu server">
+	<meta property="og:url" content="http://localhost:1313/configurar-nginx-proxy-manager-en-ubuntu-server/">
+	<meta property="og:description" content="Descripción"/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20241113_nginx_proxy_manager_00_xl.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Configurar Nginx Proxy Manager en Ubuntu server">
+  <meta name="twitter:description" content="Descripción">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Configurar Nginx Proxy Manager en Ubuntu server</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2024-11-25T00:00:00Z">2024-11-25</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">Computing</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20241113_nginx_proxy_manager_00.jpg" alt="Configurar Nginx Proxy Manager en Ubuntu server">
+		
+	</figure><div class="content post__content clearfix">
+			<p>Hace tiempo que estoy dándole vueltas a montar un proxy inverso para mis servicios locales. Hoy me he decidido a montarlo con Nginx Proxy Manager.</p>
+<p>Antes de nada tengo que definir mis condiciones particulares</p>
+<ul>
+<li>Dominio creado en DonDominio</li>
+<li>Servidor local montado sobre un minipc corriendo Ubuntu Server</li>
+<li>Aplicación Docker y Docker-compose instalada y configurada</li>
+<li>Router ZTE F6640</li>
+</ul>
+<h3 id="creando-un-subdominio">Creando un subDominio</h3>
+<p>El primer paso es crear un sub dominio o redirección de tipo A &ldquo;*.tu_servidor.tudominio.com&rdquo; que deberemos redireccionar a la ip de nuestro servidor.</p>
+<p><img src="/images/20241113_nginx_proxy_manager_01.jpg" alt="image-01"></p>
+<p>En mi caso, <a href="https://www.dondominio.com">DonDominio</a> tiene la utilidad <a href="https://dondominio.dev/es/dondns/">DonDNS</a> que, mediante una pequeña aplicación que instalaremos en nuestro servidor y una llave API personal de usuario, es posible actualizar la IP de una redirección a medida que la IP pública de nuestro servidor vaya cambiando. Las instrucciones para un servidor linux están perfectamente descritas en su <a href="https://dondominio.dev/es/dondns/docs/linux/">documentación</a>.</p>
+<h3 id="abriendo-los-puertos-en-el-router">Abriendo los puertos en el router</h3>
+<p>Para la configuración y funcionanmiento del proxy necesitaremos tener abiertos los puertos 80,81 y 443 y redireccionados a la IP local de nuestro servidor casero. Esto lo haremos desde la página de configuración del router. Una vez terminemos con la configuración, se puede cerrar al puerto 81. Nginx Proxy Manager seguirá funcionando con normalidad.</p>
+<p><img src="/images/20241113_nginx_proxy_manager_02.jpg" alt="image-02"></p>
+<blockquote>
+<p>Cada router tiene una forma distinta de hacerlo, en mi caso tengo un router ZTE F6640 y se puede acceder mediante el menú &ldquo;Internet - Security - Port Forwarding&rdquo;</p>
+</blockquote>
+<h3 id="instalando-nginx-proxy-manager">Instalando nginx proxy manager</h3>
+<p>Para la instalación del proxy inverso necesitamos tener instalado Docker y Docker-compose tan simple como seguir la <a href="https://nginxproxymanager.com/guide/">guía de instalación de Nginx Proxy Manager</a> con este sencillo &ldquo;docker-compose.yml&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">app</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#39;jc21/nginx-proxy-manager:latest&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">unless-stopped</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#39;80:80&#39;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#39;81:81&#39;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#39;443:443&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./data:/data</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./letsencrypt:/etc/letsencrypt</span>
+</span></span></code></pre></div><ul>
+<li>Lanzamos el contenedor a través de <code>docker-compose up -d</code></li>
+<li>Accedemos a través del navegador al puerto 81 del servidor donde lo hayamos instalado</li>
+<li>Accedemos mediante usuario &ldquo;<a href="mailto:admin@example.com">admin@example.com</a>&rdquo; y password &ldquo;changeme&rdquo;</li>
+<li>Cambiamos las credenciales por defecto</li>
+</ul>
+<p>Así accedemos directamente al panel de control de Nginx Proxy Manager</p>
+<p><img src="/images/20241113_nginx_proxy_manager_03.jpg" alt="image-03"></p>
+<h3 id="configuración-del-host">Configuración del Host</h3>
+<p>Ya estamos listos para crear nuestra primera redirección. Para un servidor http de nginx que tenemos instalado en nuestro servidor local con IP 192.168.10.211 y al que accedemos mediante el puerto 8080 tenemos que crear un nuevo &ldquo;Proxy Host&rdquo; si queremos acceder a el desde fuera de nuestro domicilio mediante la dirección &ldquo;nginx.tu_servidor.tudominio.com&rdquo; realizaremos lo siguiente.</p>
+<ul>
+<li>Accedemos al menú &ldquo;Proxy Hosts&rdquo;</li>
+<li>Añadimos uno nuevo &ldquo;Add Proxy Host&rdquo;</li>
+<li>En el campo &ldquo;Domain Names&rdquo;: nginx.tu_servidor.tudominio.com</li>
+<li>El campo &ldquo;Scheme&rdquo; queda como &ldquo;http&rdquo;</li>
+<li>En el campo &ldquo;Forward Hostname/IP&rdquo;: 192.168.10.211</li>
+<li>En el campo &ldquo;Forward Port&rdquo;: 8080</li>
+<li>Activamos la opción &ldquo;Block Common Exploits&rdquo;</li>
+<li>Guardamos los cambios</li>
+</ul>
+<p><img src="/images/20241113_nginx_proxy_manager_04.jpg" alt="image-04"></p>
+<p>Con esto ya tendremos un nuevo host añadido</p>
+<p><img src="/images/20241113_nginx_proxy_manager_05.jpg" alt="image-05"></p>
+<p>Podemos acceder a el mediante <code>http://ngin.tu_servidor.tudominio.com</code></p>
+<p>El siguiente paso en configurar el acceso seguro a la redirección. Para esto editamos el Proxy Host que habíamos creado.</p>
+<ul>
+<li>Seleccionamos la pestaña SSL</li>
+<li>Pulsamos sobre el cuadro &ldquo;SSL Certificate&rdquo;</li>
+<li>Solicitamos un nuevo certificado SSL</li>
+</ul>
+<p><img src="/images/20241113_nginx_proxy_manager_06.jpg" alt="image-06"></p>
+<ul>
+<li>Marcamos &ldquo;Force SSL&rdquo;, &ldquo;HSTS Enabled&rdquo;, &ldquo;HTTP/2 Support&rdquo; y &ldquo;HSTS Subdomanins&rdquo;</li>
+<li>Introducimos la dirección de correo</li>
+<li>Aceptamos los términos</li>
+<li>Guardamos los cambios</li>
+</ul>
+<p>Ahora ya podemos acceder al host mediante <code>https://ngin.tu_servidor.tudominio.com</code></p>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="https://cursosdedesarrollo.com/2022/01/nginx-proxy-manager-o-la-manera-sencilla-de-manejar-acceso-a-tus-servicios-docker/">Cursos de desarrollo - Nginx proxy manager</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/youtube-y-twitch-a-podcast-en-docker/">Youtube y Twitch a Podcast en Docker</a></li>
+	    
+	    <li><a href="/entorno-de-desarrollo-de-hugo-en-docker/">Entorno de desarrollo de Hugo en Docker</a></li>
+	    
+	    <li><a href="/instalaci%C3%B3n-y-configuraci%C3%B3n-de-zerotier/">Instalación y configuración de Zerotier</a></li>
+	    
+	    <li><a href="/de-youtube-a-podcat-v2/">De Youtube a Podcat V2</a></li>
+	    
+	    <li><a href="/mi-casa-inteligente-desde-cero/">Mi casa inteligente desde cero</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/docker/" rel="tag">docker</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/nginx/" rel="tag">nginx</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/mis-copias-de-seguridad/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Mis copias de seguridad</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/instalaci%C3%B3n-y-configuraci%C3%B3n-de-zerotier/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Instalación y configuración de Zerotier</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

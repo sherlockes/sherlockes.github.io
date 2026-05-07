@@ -1,66 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>jinja2 on Sherblog</title>
-    <link>https://sherlockes.github.io/tags/jinja2/</link>
-    <description>Recent content in jinja2 on Sherblog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Jinja2 on Sherblog</title>
+    <link>http://localhost:1313/tags/jinja2/</link>
+    <description>Recent content in Jinja2 on Sherblog</description>
+    <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Wed, 21 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/jinja2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/jinja2/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Sensores virtuales y Jinja2 en Home Assistant</title>
-      <link>https://sherlockes.github.io/sensores-virtuales-y-jinja2-en-home-assistant/</link>
-      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/sensores-virtuales-y-jinja2-en-home-assistant/</guid>
-      <description>&lt;p&gt;Aquí dejo la solución que he implementado ante el problema de crear una nueva entidad en Home Assistant cuyo valor dependa del de otras entidades ya existentes gracias al uso de sensores virtuales y el motor de plantillas de Jinja2.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Actualización:&lt;/strong&gt; Sensor de día lectivo&lt;/p&gt;</description>
+      <title>Automatizando las luces del salón</title>
+      <link>http://localhost:1313/automatizando-las-luces-del-sal%C3%B3n/</link>
+      <pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/automatizando-las-luces-del-sal%C3%B3n/</guid>
+      <description>&lt;p&gt;Esta es la forma en la que tengo dispuesto el funcionamiento de las luces del salón mediante una sola automatización dentro de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>Mostrar dispositivos no disponibles en Home Assistant</title>
+      <link>http://localhost:1313/mostrar-dispositivos-no-disponibles-en-home-assistant/</link>
+      <pubDate>Sat, 21 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/mostrar-dispositivos-no-disponibles-en-home-assistant/</guid>
+      <description>&lt;p&gt;De vez en cuando, hay dispositivos &lt;a href=&#34;https://es.wikipedia.org/wiki/Zigbee&#34;&gt;Zigbee&lt;/a&gt; que dejan de estar disponibles para &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; y hay que volver a configurarlos, con esta sencilla tarjeta podremos ver cuales son y así no tener duda de que es lo que falla.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Compartiendo contenido de Hugo en Mastodon</title>
-      <link>https://sherlockes.github.io/compartiendo-contenido-de-hugo-en-mastodon/</link>
+      <link>http://localhost:1313/compartiendo-contenido-de-hugo-en-mastodon/</link>
       <pubDate>Mon, 12 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/compartiendo-contenido-de-hugo-en-mastodon/</guid>
+      <guid>http://localhost:1313/compartiendo-contenido-de-hugo-en-mastodon/</guid>
       <description>&lt;p&gt;Para que al publicar en Mastodon un artículo de la web se vincule también la imagen del mismo es necesario realizar unas modificaciones en la plantilla de Hugo.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Realizar acciones mediante plantillas en Home Assistant</title>
-      <link>https://sherlockes.github.io/realizar-acciones-mediante-plantillas-en-home-assistant/</link>
+      <link>http://localhost:1313/realizar-acciones-mediante-plantillas-en-home-assistant/</link>
       <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/realizar-acciones-mediante-plantillas-en-home-assistant/</guid>
+      <guid>http://localhost:1313/realizar-acciones-mediante-plantillas-en-home-assistant/</guid>
       <description>&lt;p&gt;El editor visual de acciones en las automatizaciones de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; presenta muchas limitaciones. Encender o apagar una luz cuando lo hace otra o en función del estado de la puerta son dos de las que tengo implementadas.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Sensores virtuales y Jinja2 en Home Assistant</title>
-      <link>https://sherlockes.github.io/sensores-virtuales-y-jinja2-en-home-assistant/</link>
+      <link>http://localhost:1313/sensores-virtuales-y-jinja2-en-home-assistant/</link>
       <pubDate>Thu, 09 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/sensores-virtuales-y-jinja2-en-home-assistant/</guid>
+      <guid>http://localhost:1313/sensores-virtuales-y-jinja2-en-home-assistant/</guid>
       <description>&lt;p&gt;Aquí dejo la solución que he implementado ante el problema de crear una nueva entidad en Home Assistant cuyo valor dependa del de otras entidades ya existentes gracias al uso de sensores virtuales y el motor de plantillas de Jinja2.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Automatización de alumbrado con puerta</title>
-      <link>https://sherlockes.github.io/automatizaci%C3%B3n-de-alumbrado-con-puerta/</link>
+      <link>http://localhost:1313/automatizaci%C3%B3n-de-alumbrado-con-puerta/</link>
       <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/automatizaci%C3%B3n-de-alumbrado-con-puerta/</guid>
+      <guid>http://localhost:1313/automatizaci%C3%B3n-de-alumbrado-con-puerta/</guid>
       <description>&lt;p&gt;Hacer una automatización para que se encienda una luz cuando se cierre una puerta y se apague al cerrarla es sencillo en &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt;, la cosa se complica cuando quieres hacerlo de la forma más simple posible.&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>Automatización de alumbrado con puerta</title>
-      <link>https://sherlockes.github.io/automatizaci%C3%B3n-de-alumbrado-con-puerta/</link>
-      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/automatizaci%C3%B3n-de-alumbrado-con-puerta/</guid>
-      <description>&lt;p&gt;Hacer una automatización para que se encienda una luz cuando se cierre una puerta y se apague al cerrarla es sencillo en &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt;, la cosa se complica cuando quieres hacerlo de la forma más simple posible.&lt;/p&gt;</description>
-    </item>
-    
   </channel>
 </rss>

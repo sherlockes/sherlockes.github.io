@@ -2,20 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Backup on Sherblog</title>
-    <link>https://sherlockes.github.io/tags/backup/</link>
+    <link>http://localhost:1313/tags/backup/</link>
     <description>Recent content in Backup on Sherblog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Thu, 13 Dec 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/backup/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Dec 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/backup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Backup de WordPress en Google Drive</title>
-      <link>https://sherlockes.github.io/backup-de-wordpress-en-google-drive/</link>
+      <link>http://localhost:1313/backup-de-wordpress-en-google-drive/</link>
       <pubDate>Thu, 13 Dec 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/backup-de-wordpress-en-google-drive/</guid>
-      <description>Estamos de nuevo aquí para buscar la solución a un problema que tarde o temprano todo webmaster debe afrontar como es crear una copia de seguridad para nuestra web en WordPress. Como siempre, intentaré buscar algo sencillo, práctico y sobre todo gratuito.
-Antes de nada necesito un sitio para guardar la copia de seguridad &amp;ldquo;en la nube&amp;rdquo;. No he probado otros, pero por el precio y características Google Drive es una buena alternativa.</description>
+      <guid>http://localhost:1313/backup-de-wordpress-en-google-drive/</guid>
+      <description>&lt;p&gt;Estamos de nuevo aquí para buscar la solución a un problema que tarde o temprano todo webmaster debe afrontar como es crear una copia de seguridad para nuestra web en WordPress. Como siempre, intentaré buscar algo sencillo, práctico y sobre todo gratuito.&lt;/p&gt;&#xA;&lt;p&gt;Antes de nada necesito un sitio para guardar la copia de seguridad &amp;ldquo;en la nube&amp;rdquo;. No he probado otros, pero por el precio y características &lt;a href=&#34;https://drive.google.com&#34;&gt;Google Drive&lt;/a&gt; es una buena alternativa. Tan sólo tienes que instalar el &lt;a href=&#34;https://www.google.com/drive/download/&#34;&gt;complemento&lt;/a&gt; (para windows) y seleccionar la carpeta de tu pc que quieres que se sincronice con tu espacio en los cielos de Google.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,294 @@
+[
+  {
+    "fecha": "2026-01-07",
+    "menu": "Lentejas (eco) estofadas con verduras. Filete de abadejo en salsa (guisante, patata y tomate). Fruta y pan."
+  },
+  {
+    "fecha": "2026-01-08",
+    "menu": "Espirales pomodoro (tomate, cebolla, especias). Tortilla francesa con atún con ensalada de lechuga. Yogur y pan integral."
+  },
+  {
+    "fecha": "2026-01-09",
+    "menu": "Judías verdes con refrito. Magro de cerdo a la campesina (patata, cebolla, tomate, pimiento, zanahoria, calabacín y tomillo). Fruta y pan."
+  },
+  {
+    "fecha": "2026-01-12",
+    "menu": "Alubias estofadas con arroz integral. Tortilla de patatas con ensalada de lechuga. Fruta y pan."
+  },
+  {
+    "fecha": "2026-01-13",
+    "menu": "Menestra de verduras salteadas. Pavo guisado con verduras (cebolla, zanahoria, patata y tomate). Fruta y pan integral."
+  },
+  {
+    "fecha": "2026-01-14",
+    "menu": "Crema de zanahoria (eco.). Revuelto de jamón york con ensalada de lechuga. Fruta y pan."
+  },
+  {
+    "fecha": "2026-01-15",
+    "menu": "Sopa de cocido con pasta. Cocido completo con ensalada de lechuga. Yogur y pan integral."
+  },
+  {
+    "fecha": "2026-01-16",
+    "menu": "Arroz caldoso de verduras. Filete de merluza en salsa verde (guisante, cebolla, ajo y perejil). Fruta y pan."
+  },
+  {
+    "fecha": "2026-01-19",
+    "menu": "Lentejas a la castellana (cebolla, zanahoria, patata y pimentón). Salmón con salsa de tomate con ensalada de lechuga. Fruta y pan."
+  },
+  {
+    "fecha": "2026-01-20",
+    "menu": "Sopa de sémola con arroz. Pollo al chilindrón (patata, tomate, pimiento rojo y pimiento verde). Fruta y pan integral."
+  },
+  {
+    "fecha": "2026-01-21",
+    "menu": "Verdura tricolor (patata, zanahoria, judía verde). Magro de cerdo a la campesina (patata, cebolla, tomate, pimiento, zanahoria, calabacín y tomillo). Yogur y pan integral."
+  },
+  {
+    "fecha": "2026-01-22",
+    "menu": "Macarrones integrales (eco.) con salsa napolitana (tomate, calabacín y albahaca). Filete de abadejo al horno con verduritas (cebolla, zanahoria y pimiento). Fruta y pan."
+  },
+  {
+    "fecha": "2026-01-23",
+    "menu": "Alubias estofadas con verduras. Tortilla de calabacín con ensalada de lechuga. Fruta y pan."
+  },
+  {
+    "fecha": "2026-01-26",
+    "menu": "Sopa maravilla con verduras. Palometa a la griega con ensalada de lechuga. Fruta y pan."
+  },
+  {
+    "fecha": "2026-01-27",
+    "menu": "Lentejas (eco.) a la campesina. Tortilla francesa de queso con ensalada de lechuga. Fruta y pan integral."
+  },
+  {
+    "fecha": "2026-01-28",
+    "menu": "Arroz con salsa de tomate. Filete de merluza en salsa marinera (tomate, cebolla, ajo y especias). Fruta y pan."
+  },
+  {
+    "fecha": "2026-01-30",
+    "menu": "Menestra de verduras salteadas. Pavo guisado con verduras (cebolla, zanahoria, patata y tomate). Fruta y pan."
+  },
+  {
+    "fecha": "2026-02-02",
+    "menu": "Espirales pomodoro (tomate, cebolla, especias). Tortilla francesa de jamón york con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-02-03",
+    "menu": "Menestra de verduras salteadas. Pavo guisado con verduras (cebolla, zanahoria, patata y tomate)."
+  },
+  {
+    "fecha": "2026-02-04",
+    "menu": "Alubias estofadas con arroz Integral. Filete de abadejo en salsa (guisante, patata y tomate) con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-02-05",
+    "menu": "Judías verdes con refrito. Magro de cerdo a la campesina (patata, cebolla, tomate, pimiento, zanahoria, calabacín y tomillo)."
+  },
+  {
+    "fecha": "2026-02-06",
+    "menu": "Sopa de cocido con pasta. Cocido completo con ensalada de lechuga. Yogur."
+  },
+  {
+    "fecha": "2026-02-09",
+    "menu": "Lentejas (eco) estofadas con verduras con arroz Integral. Tortilla de patatas con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-02-10",
+    "menu": "Sopa minestrone. Pollo al chilindrón (patata, tomate, pimiento rojo y pimiento verde)."
+  },
+  {
+    "fecha": "2026-02-11",
+    "menu": "Potaje de garbanzos. Revuelto de atún con ensalada de lechuga. Yogur."
+  },
+  {
+    "fecha": "2026-02-12",
+    "menu": "Crema de calabacin (eco.). Pollo en salsa (patata, cebolla, zanahoria y tomate)."
+  },
+  {
+    "fecha": "2026-02-13",
+    "menu": "Arroz (eco.) con salsa de tomate. Filete de merluza en salsa verde (guisante, cebolla, ajo y perejil) con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-02-16",
+    "menu": "Alubias estofadas con verduras. Filete de abadejo al horno con verduritas (cebolla, zanahoria y pimiento) con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-02-17",
+    "menu": "Verdura tricolor (patata, zanahoria, judía verde). Magro de cerdo a la campesina (patata, cebolla, tomate, pimiento, zanahoria, calabacín y tomillo)."
+  },
+  {
+    "fecha": "2026-02-18",
+    "menu": "Macarrones integrales (eco.) con salsa napolitana (tomate, calabacín y albahaca). Tortilla francesa de queso con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-02-19",
+    "menu": "Crema de zanahoria (eco.). Pollo con arroz. Yogur."
+  },
+  {
+    "fecha": "2026-02-20",
+    "menu": "Lentejas a la castellana (cebolla, zanahoria, patata y pimentón). Salmón con salsa de tomate con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-02-23",
+    "menu": "Sopa maravilla con verduras. Pollo en salsa de champiñones (champiñón, patata, cebolla y tomillo)."
+  },
+  {
+    "fecha": "2026-02-24",
+    "menu": "Arroz (eco.) caldoso de verduras. Palometa a la griega con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-02-25",
+    "menu": "Potaje de garbanzos. Revuelto de jamón york con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-02-26",
+    "menu": "Judías verdes con refrito. Pavo guisado con verduras (cebolla, zanahoria, patata y tomate). Yogur."
+  },
+  {
+    "fecha": "2026-02-27",
+    "menu": "Alubias estofadas con verduras. Tortilla de calabacín con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-03-03",
+    "menu": "Crema de brócoli. Pollo en salsa de champiñones (champiñón, patata, cebolla y tomillo)."
+  },
+  {
+    "fecha": "2026-03-04",
+    "menu": "Lentejas (eco) a la castellana. Tortilla de calabacín con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-03-06",
+    "menu": "Sopa de cocido con pasta. Cocido completo con ensalada de lechuga. Yogur."
+  },
+  {
+    "fecha": "2026-03-07",
+    "menu": "Macarrones integrales (eco.) con salsa napolitana (tomate, calabacín y albahaca). Abadejo en salsa verde (guisante, cebolla, ajo y perejil) con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-03-10",
+    "menu": "Verdura tricolor (patata, zanahoria, judía verde). Pavo guisado con verduras (cebolla, zanahoria, patata y tomate)."
+  },
+  {
+    "fecha": "2026-03-11",
+    "menu": "Sopa maravilla con verduras. Salmón al horno con salsa pomodoro con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-03-12",
+    "menu": "Lentejas (eco.) a la jardinera. Tortilla francesa de queso con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-03-11",
+    "menu": "Arroz con salsa de tomate. Filete de abadejo en salsa (guisante, patata y tomate) con ensalada de lechuga. Yogur."
+  },
+  {
+    "fecha": "2026-03-14",
+    "menu": "Alubias estofadas con verduras. Revuelto de jamón york."
+  },
+  {
+    "fecha": "2026-03-17",
+    "menu": "Espirales pomodoro (tomate, cebolla, especias). Merluza en salsa marinera con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-03-18",
+    "menu": "Potaje de garbanzos. Tortilla de patatas con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-03-19",
+    "menu": "Salteado de borraja con patatas. Magro a la campesina."
+  },
+  {
+    "fecha": "2026-03-20",
+    "menu": "Lentejas estofadas con verduras. Filete de caballa con pisto. Yogur."
+  },
+  {
+    "fecha": "2026-03-21",
+    "menu": "Crema de calabacin (eco.). Pollo con arroz con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-03-24",
+    "menu": "Alubias estofadas con verduras. Tortilla francesa de jamón york con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-03-25",
+    "menu": "Sopa de cocido con pasta. Cocido completo con ensalada de lechuga. Yogur."
+  },
+  {
+    "fecha": "2026-03-26",
+    "menu": "Arroz caldoso de verduras. Salmón al horno con salsa de tomate."
+  },
+  {
+    "fecha": "2026-03-27",
+    "menu": "Patatas guisadas. Revuelto de atún con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-03-28",
+    "menu": "Judías verdes con refrito. Pavo guisado con verduras (cebolla, zanahoria, patata y tomate)."
+  },
+  {
+    "fecha": "2026-03-31",
+    "menu": "Lentejas estofadas con verduras. Tortilla de calabacín con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-04-07",
+    "menu": "Arroz caldoso de verduras. Filete de merluza en salsa verde (guisante, cebolla, ajo y perejil)."
+  },
+  {
+    "fecha": "2026-04-08",
+    "menu": "Lentejas a la campesina. Tortilla de calabacín con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-04-09",
+    "menu": "Verdura tricolor (patata, zanahoria, judía verde). Pavo guisado con verduras (cebolla, zanahoria, patata y tomate). Yogur."
+  },
+  {
+    "fecha": "2026-04-10",
+    "menu": "Potaje de garbanzos. Albóndigas vegetales en salsa de tomate con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-04-13",
+    "menu": "Alubias guisadas. Revuelto de jamón york con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-04-14",
+    "menu": "Crema de verduras. Magro guisado con verduras."
+  },
+  {
+    "fecha": "2026-04-15",
+    "menu": "Sopa minestrone. Salmón con salsa de tomate con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-04-16",
+    "menu": "Menestra de verduras salteadas. Macarrones integrales (eco.) con salsa boloñesa vegana. Yogur."
+  },
+  {
+    "fecha": "2026-04-17",
+    "menu": "Lentejas estofadas con arroz integral. Tortilla de patatas con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-04-20",
+    "menu": "Potaje de garbanzos. Filete de abadejo en salsa (guisante, patata y tomate)."
+  },
+  {
+    "fecha": "2026-04-21",
+    "menu": "Arroz con salsa de tomate. Tortilla francesa con atún con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-04-22",
+    "menu": "Crema de zanahoria (eco.). Pollo al chilindrón (patata, tomate, pimiento rojo y pimiento verde) con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-04-24",
+    "menu": "Sopa de cocido con pasta. Cocido completo con ensalada de lechuga. Yogur."
+  },
+  {
+    "fecha": "2026-04-27",
+    "menu": "Judías verdes con refrito. Pavo guisado con verduras (cebolla, zanahoria, patata y tomate)."
+  },
+  {
+    "fecha": "2026-04-28",
+    "menu": "Lentejas a la castellana (cebolla, zanahoria, patata y pimentón) con arroz integral. Palometa a la griega con ensalada de lechuga."
+  },
+  {
+    "fecha": "2026-04-29",
+    "menu": "Espirales pomodoro (tomate, cebolla, especias). Tortilla francesa de queso con ensalada de lechuga."
+  }
+]

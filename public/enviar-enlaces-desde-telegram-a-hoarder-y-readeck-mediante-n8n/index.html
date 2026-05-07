@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Enviar enlaces desde telegram a hoarder y readeck mediante n8n - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Como enviar enlaces desde Telegram al mismo tiempo a los servidores de favoritos Hoarder y Readeck">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/20250404_n8n_tg_karakeep_00.jpg" />
+	<meta name="twitter:title" content="Enviar enlaces desde telegram a hoarder y readeck mediante n8n"/>
+	<meta name="twitter:description" content="Como enviar enlaces desde Telegram al mismo tiempo a los servidores de favoritos Hoarder y Readeck"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/enviar-enlaces-desde-telegram-a-hoarder-y-readeck-mediante-n8n/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Enviar enlaces desde telegram a hoarder y readeck mediante n8n">
+	<meta property="og:url" content="http://localhost:1313/enviar-enlaces-desde-telegram-a-hoarder-y-readeck-mediante-n8n/">
+	<meta property="og:description" content="Como enviar enlaces desde Telegram al mismo tiempo a los servidores de favoritos Hoarder y Readeck"/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20250404_n8n_tg_karakeep_00_xl.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Enviar enlaces desde telegram a hoarder y readeck mediante n8n">
+  <meta name="twitter:description" content="Como enviar enlaces desde Telegram al mismo tiempo a los servidores de favoritos Hoarder y Readeck">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Enviar enlaces desde telegram a hoarder y readeck mediante n8n</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2026-01-05T00:00:00Z">2026-01-05</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">Computing</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20250404_n8n_tg_karakeep_00.jpg" alt="Enviar enlaces desde telegram a hoarder y readeck mediante n8n">
+		
+	</figure><div class="content post__content clearfix">
+			<p>La forma más sencilla de guardar un favorito es reenviarlo a un canal de <a href="https://telegram.org">Telegram</a> pero la organización allí es compleja. Vamos a crear una automatización en <a href="https://n8n.io">n8n</a> que reenvíe estos enlaces a nuestra instalación de <a href="https://karakeep.app/">Karakeep</a>.</p>
+<p><a href="https://karakeep.app/">Karakeep</a> es un gestor de marcadores de código abierto para organizar contenido web que permite guardar enlaces, imágenes y más, con etiquetado automático basado en IA y un enfoque en autohospedaje. Prioriza el control del usuario sobre sus datos, diferenciándose de opciones comerciales al ser personalizables, autohospedados y locales.</p>
+<p>Una vez más nos vamos a apoyar en <a href="https://n8n.io">n8n</a> para realizar una automatización, en este caso la del guardado de favoritos.</p>
+<h3 id="para-que-nos-va-a-servir-esta-plantilla">Para que nos va a servir esta plantilla:</h3>
+<p>Dispongo de un canal personal de <a href="https://telegram.org">Telegram</a> en el que me guardo los enlaces interesantes que quiero guardar o leer en otro momento. La idea es que <a href="https://n8n.io">n8n</a> se encargue de leer los nuevos enlaces añadidos a este canal y los envíe, a través de la correspondiente API a la instalación de <a href="https://karakeep.app/">Karakeep</a>.</p>
+<h3 id="enlace-con-karakeep">Enlace con Karakeep</h3>
+<p>En un principio usé el nodo &ldquo;http request&rdquo; pero después di con el nodo de la comunidad de n8n <a href="https://github.com/technovangelist/n8n-nodes-karakeep">n8n-nodes-karakeep</a> que permite añadir las credenciales de <a href="https://karakeep.app/">Karakeep</a> a la instancia de <a href="https://n8n.io">n8n</a> y de esta forma hacer el proceso mucho más sencillo.</p>
+<style>
+n8n-demo {
+    --n8n-workflow-min-height: 400px;
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.0.0/webcomponents-loader.js"></script>
+<script src="https://www.unpkg.com/lit@2.0.0-rc.2/polyfill-support.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@n8n_io/n8n-demo-component/n8n-demo.bundled.js"></script>
+
+<n8n-demo 
+    frame="true"
+    workflow='{
+  &#34;name&#34;: &#34;Telegram channel to Karakeep&#34;,
+  &#34;nodes&#34;: [
+    {
+      &#34;parameters&#34;: {
+        &#34;jsCode&#34;: &#34;// LLamr mediante {{$node[\&#34;vars\&#34;].json.TG_SHERLINK_BOT_TOKEN}}\nreturn [{\n  json: {\n    // Variables de Telegram\n    TG_SHERLINK_BOT_TOKEN: $env.TG_SHERLINK_BOT_TOKEN,\n    TG_SHERLINK_ID: $env.TG_SHERLINK_ID,\n\n    // ReadDeck vars\n    READECK_SERVER: $env.READECK_SERVER,\n    READECK_API_KEY: $env.READECK_API_KEY,\n\n    // Hoarder vars\n    HOARDER_SERVER: $env.HOARDER_SERVER,\n    HOARDER_API_KEY: $env.HOARDER_API_KEY\n  }\n}];&#34;
+      },
+      &#34;type&#34;: &#34;n8n-nodes-base.code&#34;,
+      &#34;typeVersion&#34;: 2,
+      &#34;position&#34;: [
+        880,
+        -1488
+      ],
+      &#34;id&#34;: &#34;ebebedd1-296d-4efb-b911-0595f2f5e67a&#34;,
+      &#34;name&#34;: &#34;vars&#34;
+    },
+    {
+      &#34;parameters&#34;: {
+        &#34;rule&#34;: {
+          &#34;interval&#34;: [
+            {
+              &#34;field&#34;: &#34;minutes&#34;,
+              &#34;minutesInterval&#34;: 30
+            }
+          ]
+        }
+      },
+      &#34;type&#34;: &#34;n8n-nodes-base.scheduleTrigger&#34;,
+      &#34;typeVersion&#34;: 1.3,
+      &#34;position&#34;: [
+        608,
+        -1488
+      ],
+      &#34;id&#34;: &#34;35f2c1de-dde4-40b6-93ea-fada33c7545d&#34;,
+      &#34;name&#34;: &#34;Schedule Trigger&#34;
+    },
+    {
+      &#34;parameters&#34;: {
+        &#34;options&#34;: {}
+      },
+      &#34;type&#34;: &#34;n8n-nodes-base.splitInBatches&#34;,
+      &#34;typeVersion&#34;: 3,
+      &#34;position&#34;: [
+        352,
+        -1248
+      ],
+      &#34;id&#34;: &#34;851a8b2d-299d-44b2-88ba-5584bd89459d&#34;,
+      &#34;name&#34;: &#34;Loop Over Items&#34;
+    },
+    {
+      &#34;parameters&#34;: {
+        &#34;operation&#34;: &#34;create&#34;,
+        &#34;url&#34;: &#34;={{ $(&#39;Loop Over Items&#39;).item.json.url }}&#34;
+      },
+      &#34;type&#34;: &#34;n8n-nodes-karakeep.karakeep&#34;,
+      &#34;typeVersion&#34;: 1,
+      &#34;position&#34;: [
+        2160,
+        -1248
+      ],
+      &#34;id&#34;: &#34;5053c73e-a28e-402c-bc6f-584a96aff62c&#34;,
+      &#34;name&#34;: &#34;Create a bookmark&#34;,
+      &#34;credentials&#34;: {
+        &#34;karakeepApi&#34;: {
+          &#34;id&#34;: &#34;lA4GKp5NB9fAnsB3&#34;,
+          &#34;name&#34;: &#34;Karakeep account&#34;
+        }
+      }
+    },
+    {
+      &#34;parameters&#34;: {
+        &#34;operation&#34;: &#34;search&#34;,
+        &#34;searchQuery&#34;: &#34;={{ $json.normalizedUrl }}&#34;,
+        &#34;searchOptions&#34;: {
+          &#34;includeContent&#34;: false
+        }
+      },
+      &#34;type&#34;: &#34;n8n-nodes-karakeep.karakeep&#34;,
+      &#34;typeVersion&#34;: 1,
+      &#34;position&#34;: [
+        880,
+        -1232
+      ],
+      &#34;id&#34;: &#34;c2957750-4630-4afe-82ce-25f99b08f864&#34;,
+      &#34;name&#34;: &#34;Search bookmarks&#34;,
+      &#34;executeOnce&#34;: true,
+      &#34;credentials&#34;: {
+        &#34;karakeepApi&#34;: {
+          &#34;id&#34;: &#34;lA4GKp5NB9fAnsB3&#34;,
+          &#34;name&#34;: &#34;Karakeep account&#34;
+        }
+      }
+    },
+    {
+      &#34;parameters&#34;: {
+        &#34;conditions&#34;: {
+          &#34;options&#34;: {
+            &#34;caseSensitive&#34;: true,
+            &#34;leftValue&#34;: &#34;&#34;,
+            &#34;typeValidation&#34;: &#34;strict&#34;,
+            &#34;version&#34;: 3
+          },
+          &#34;conditions&#34;: [
+            {
+              &#34;id&#34;: &#34;b6be33dc-16f9-487b-a1ae-cbd51f105518&#34;,
+              &#34;leftValue&#34;: &#34;={{ $(&#39;news_normal&#39;).item.json.normalizedUrl }}&#34;,
+              &#34;rightValue&#34;: &#34;={{ $json.normalizedUrl }}&#34;,
+              &#34;operator&#34;: {
+                &#34;type&#34;: &#34;string&#34;,
+                &#34;operation&#34;: &#34;notEquals&#34;
+              }
+            }
+          ],
+          &#34;combinator&#34;: &#34;and&#34;
+        },
+        &#34;options&#34;: {}
+      },
+      &#34;type&#34;: &#34;n8n-nodes-base.if&#34;,
+      &#34;typeVersion&#34;: 2.3,
+      &#34;position&#34;: [
+        1904,
+        -1136
+      ],
+      &#34;id&#34;: &#34;f95dbcf6-8ff5-4347-9edd-b246acd6650f&#34;,
+      &#34;name&#34;: &#34;If&#34;
+    },
+    {
+      &#34;parameters&#34;: {
+        &#34;assignments&#34;: {
+          &#34;assignments&#34;: [
+            {
+              &#34;id&#34;: &#34;89b965ce-ce91-4fb0-8beb-bb7b38621732&#34;,
+              &#34;name&#34;: &#34;url&#34;,
+              &#34;value&#34;: &#34;={{\n  $json.channel_post?.entities\n    ?.filter(e =&gt; e.type === &#39;url&#39;)\n    .map(e =&gt;\n      $json.channel_post.text.substring(\n        e.offset,\n        e.offset &#43; e.length\n      )\n    ) || []\n}}\n&#34;,
+              &#34;type&#34;: &#34;string&#34;
+            }
+          ]
+        },
+        &#34;options&#34;: {}
+      },
+      &#34;type&#34;: &#34;n8n-nodes-base.set&#34;,
+      &#34;typeVersion&#34;: 3.4,
+      &#34;position&#34;: [
+        1696,
+        -1488
+      ],
+      &#34;id&#34;: &#34;cd8c733b-f3cd-4e6b-bb18-dd1aa1a95881&#34;,
+      &#34;name&#34;: &#34;urls&#34;
+    },
+    {
+      &#34;parameters&#34;: {
+        &#34;fieldToSplitOut&#34;: &#34;result&#34;,
+        &#34;options&#34;: {}
+      },
+      &#34;type&#34;: &#34;n8n-nodes-base.splitOut&#34;,
+      &#34;typeVersion&#34;: 1,
+      &#34;position&#34;: [
+        1408,
+        -1488
+      ],
+      &#34;id&#34;: &#34;c59b35f3-689d-487a-a123-c08808753c28&#34;,
+      &#34;name&#34;: &#34;list&#34;
+    },
+    {
+      &#34;parameters&#34;: {
+        &#34;chatId&#34;: &#34;={{$node[\&#34;vars\&#34;].json.TG_SHERLINK_ID}}&#34;,
+        &#34;text&#34;: &#34;={{ $(&#39;Loop Over Items&#39;).item.json.url }} - Guardado OK&#34;,
+        &#34;additionalFields&#34;: {
+          &#34;appendAttribution&#34;: false
+        }
+      },
+      &#34;type&#34;: &#34;n8n-nodes-base.telegram&#34;,
+      &#34;typeVersion&#34;: 1.2,
+      &#34;position&#34;: [
+        2368,
+        -960
+      ],
+      &#34;id&#34;: &#34;638d0192-6763-46c0-b828-61de8a1986fc&#34;,
+      &#34;name&#34;: &#34;Send message&#34;,
+      &#34;webhookId&#34;: &#34;f2fa89da-2f06-408d-b1bf-91761eaf55bf&#34;,
+      &#34;notesInFlow&#34;: false,
+      &#34;credentials&#34;: {
+        &#34;telegramApi&#34;: {
+          &#34;id&#34;: &#34;8GkZJxObTogqYGRS&#34;,
+          &#34;name&#34;: &#34;Telegram Sherlinks&#34;
+        }
+      }
+    },
+    {
+      &#34;parameters&#34;: {
+        &#34;url&#34;: &#34;=https://api.telegram.org/bot{{$node[\&#34;vars\&#34;].json.TG_SHERLINK_BOT_TOKEN}}/getUpdates &#34;,
+        &#34;sendQuery&#34;: true,
+        &#34;queryParameters&#34;: {
+          &#34;parameters&#34;: [
+            {}
+          ]
+        },
+        &#34;options&#34;: {}
+      },
+      &#34;type&#34;: &#34;n8n-nodes-base.httpRequest&#34;,
+      &#34;typeVersion&#34;: 4.2,
+      &#34;position&#34;: [
+        1136,
+        -1488
+      ],
+      &#34;id&#34;: &#34;6ac3c86f-8d29-49d5-b7ef-f87ba2e95516&#34;,
+      &#34;name&#34;: &#34;get_messages&#34;
+    },
+    {
+      &#34;parameters&#34;: {
+        &#34;jsCode&#34;: &#34;// URL original (ajusta el campo si no es \&#34;url\&#34;)\nconst originalUrl = $json.url || $json.link || \&#34;\&#34;;\n\n// Función de normalización\nfunction normalizeUrl(url) {\n  return url\n    .trim()\n    .replace(/^https?:\\/\\//i, &#39;&#39;)     // quita http / https\n    .replace(/^www\\./i, &#39;&#39;)           // quita www\n    .replace(/[?#].*$/, &#39;&#39;)           // quita query y hash\n    .replace(/\\/$/, &#39;&#39;)               // quita barra final\n    .toLowerCase();\n}\n\n// Devolvemos la URL normalizada\nreturn {\n  normalizedUrl: normalizeUrl(originalUrl)\n};\n\n&#34;
+      },
+      &#34;type&#34;: &#34;n8n-nodes-base.code&#34;,
+      &#34;typeVersion&#34;: 2,
+      &#34;position&#34;: [
+        608,
+        -1232
+      ],
+      &#34;id&#34;: &#34;f23811ae-4afd-4078-baa6-061e8a8716a1&#34;,
+      &#34;name&#34;: &#34;news_normal&#34;
+    },
+    {
+      &#34;parameters&#34;: {
+        &#34;jsCode&#34;: &#34;function normalize(u) {\n  return u\n    .trim()\n    .replace(/^https?:\\/\\//i, &#39;&#39;)\n    .replace(/^www\\./i, &#39;&#39;)\n    .replace(/[?#].*$/, &#39;&#39;)\n    .replace(/\\/$/, &#39;&#39;)\n    .toLowerCase();\n}\n\nreturn items.map(item =&gt; ({\n  json: {\n    normalizedUrl: normalize(item.json.url),\n  }\n}));\n\n\n&#34;
+      },
+      &#34;type&#34;: &#34;n8n-nodes-base.code&#34;,
+      &#34;typeVersion&#34;: 2,
+      &#34;position&#34;: [
+        1648,
+        -1136
+      ],
+      &#34;id&#34;: &#34;6aa97019-02db-4088-ae20-acabc53eda58&#34;,
+      &#34;name&#34;: &#34;saved_normal&#34;
+    },
+    {
+      &#34;parameters&#34;: {
+        &#34;assignments&#34;: {
+          &#34;assignments&#34;: [
+            {
+              &#34;id&#34;: &#34;b0b44997-e99e-4d04-817d-6a73a2028f6b&#34;,
+              &#34;name&#34;: &#34;url&#34;,
+              &#34;value&#34;: &#34;={{ $json.bookmarks[0].content.url }}&#34;,
+              &#34;type&#34;: &#34;string&#34;
+            }
+          ]
+        },
+        &#34;options&#34;: {}
+      },
+      &#34;type&#34;: &#34;n8n-nodes-base.set&#34;,
+      &#34;typeVersion&#34;: 3.4,
+      &#34;position&#34;: [
+        1136,
+        -1232
+      ],
+      &#34;id&#34;: &#34;b17533ab-de12-41fa-ba6e-aea87ce20f68&#34;,
+      &#34;name&#34;: &#34;search_url&#34;
+    },
+    {
+      &#34;parameters&#34;: {
+        &#34;conditions&#34;: {
+          &#34;options&#34;: {
+            &#34;caseSensitive&#34;: true,
+            &#34;leftValue&#34;: &#34;&#34;,
+            &#34;typeValidation&#34;: &#34;strict&#34;,
+            &#34;version&#34;: 3
+          },
+          &#34;conditions&#34;: [
+            {
+              &#34;id&#34;: &#34;e0c343b8-f9cf-4d91-add0-33bd50175f0c&#34;,
+              &#34;leftValue&#34;: &#34;={{ $json.url }}&#34;,
+              &#34;rightValue&#34;: &#34;&#34;,
+              &#34;operator&#34;: {
+                &#34;type&#34;: &#34;string&#34;,
+                &#34;operation&#34;: &#34;empty&#34;,
+                &#34;singleValue&#34;: true
+              }
+            }
+          ],
+          &#34;combinator&#34;: &#34;and&#34;
+        },
+        &#34;options&#34;: {}
+      },
+      &#34;type&#34;: &#34;n8n-nodes-base.if&#34;,
+      &#34;typeVersion&#34;: 2.3,
+      &#34;position&#34;: [
+        1344,
+        -1232
+      ],
+      &#34;id&#34;: &#34;6c74f139-bb87-4b29-a047-ec0c3f1976d8&#34;,
+      &#34;name&#34;: &#34;If1&#34;
+    }
+  ],
+  &#34;pinData&#34;: {
+    &#34;Schedule Trigger&#34;: [
+      {
+        &#34;json&#34;: {
+          &#34;timestamp&#34;: &#34;2025-12-23T11:30:17.021&#43;01:00&#34;,
+          &#34;Readable date&#34;: &#34;December 23rd 2025, 11:30:17 am&#34;,
+          &#34;Readable time&#34;: &#34;11:30:17 am&#34;,
+          &#34;Day of week&#34;: &#34;Tuesday&#34;,
+          &#34;Year&#34;: &#34;2025&#34;,
+          &#34;Month&#34;: &#34;December&#34;,
+          &#34;Day of month&#34;: &#34;23&#34;,
+          &#34;Hour&#34;: &#34;11&#34;,
+          &#34;Minute&#34;: &#34;30&#34;,
+          &#34;Second&#34;: &#34;17&#34;,
+          &#34;Timezone&#34;: &#34;Europe/Madrid (UTC&#43;01:00)&#34;
+        },
+        &#34;pairedItem&#34;: {
+          &#34;item&#34;: 0
+        }
+      }
+    ]
+  },
+  &#34;connections&#34;: {
+    &#34;vars&#34;: {
+      &#34;main&#34;: [
+        [
+          {
+            &#34;node&#34;: &#34;get_messages&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          }
+        ]
+      ]
+    },
+    &#34;Schedule Trigger&#34;: {
+      &#34;main&#34;: [
+        [
+          {
+            &#34;node&#34;: &#34;vars&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          }
+        ]
+      ]
+    },
+    &#34;Loop Over Items&#34;: {
+      &#34;main&#34;: [
+        [],
+        [
+          {
+            &#34;node&#34;: &#34;news_normal&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          }
+        ]
+      ]
+    },
+    &#34;Create a bookmark&#34;: {
+      &#34;main&#34;: [
+        [
+          {
+            &#34;node&#34;: &#34;Send message&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          }
+        ]
+      ]
+    },
+    &#34;Search bookmarks&#34;: {
+      &#34;main&#34;: [
+        [
+          {
+            &#34;node&#34;: &#34;search_url&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          }
+        ]
+      ]
+    },
+    &#34;If&#34;: {
+      &#34;main&#34;: [
+        [
+          {
+            &#34;node&#34;: &#34;Create a bookmark&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          }
+        ],
+        [
+          {
+            &#34;node&#34;: &#34;Loop Over Items&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          }
+        ]
+      ]
+    },
+    &#34;urls&#34;: {
+      &#34;main&#34;: [
+        [
+          {
+            &#34;node&#34;: &#34;Loop Over Items&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          }
+        ]
+      ]
+    },
+    &#34;list&#34;: {
+      &#34;main&#34;: [
+        [
+          {
+            &#34;node&#34;: &#34;urls&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          }
+        ]
+      ]
+    },
+    &#34;Send message&#34;: {
+      &#34;main&#34;: [
+        [
+          {
+            &#34;node&#34;: &#34;Loop Over Items&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          }
+        ]
+      ]
+    },
+    &#34;get_messages&#34;: {
+      &#34;main&#34;: [
+        [
+          {
+            &#34;node&#34;: &#34;list&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          }
+        ]
+      ]
+    },
+    &#34;news_normal&#34;: {
+      &#34;main&#34;: [
+        [
+          {
+            &#34;node&#34;: &#34;Search bookmarks&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          }
+        ]
+      ]
+    },
+    &#34;saved_normal&#34;: {
+      &#34;main&#34;: [
+        [
+          {
+            &#34;node&#34;: &#34;If&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          }
+        ]
+      ]
+    },
+    &#34;search_url&#34;: {
+      &#34;main&#34;: [
+        [
+          {
+            &#34;node&#34;: &#34;If1&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          }
+        ]
+      ]
+    },
+    &#34;If1&#34;: {
+      &#34;main&#34;: [
+        [
+          {
+            &#34;node&#34;: &#34;Create a bookmark&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          }
+        ],
+        [
+          {
+            &#34;node&#34;: &#34;saved_normal&#34;,
+            &#34;type&#34;: &#34;main&#34;,
+            &#34;index&#34;: 0
+          }
+        ]
+      ]
+    }
+  },
+  &#34;active&#34;: true,
+  &#34;settings&#34;: {
+    &#34;executionOrder&#34;: &#34;v1&#34;,
+    &#34;callerPolicy&#34;: &#34;workflowsFromSameOwner&#34;
+  },
+  &#34;versionId&#34;: &#34;21e43101-e032-419b-b908-9bb3637ab241&#34;,
+  &#34;meta&#34;: {
+    &#34;templateCredsSetupCompleted&#34;: true,
+    &#34;instanceId&#34;: &#34;8fb543b511022c43ab705107ba101545bb8b0fdb9bd6ebc4cca28dc9591a036e&#34;
+  },
+  &#34;id&#34;: &#34;YP1C4oZbVM1gGyLs&#34;,
+  &#34;tags&#34;: [
+    {
+      &#34;updatedAt&#34;: &#34;2025-12-14T18:18:45.149Z&#34;,
+      &#34;createdAt&#34;: &#34;2025-12-14T18:18:45.149Z&#34;,
+      &#34;id&#34;: &#34;CSDydgwq9IOtGTCK&#34;,
+      &#34;name&#34;: &#34;Telegram&#34;
+    },
+    {
+      &#34;updatedAt&#34;: &#34;2025-12-14T18:18:50.450Z&#34;,
+      &#34;createdAt&#34;: &#34;2025-12-14T18:18:50.450Z&#34;,
+      &#34;id&#34;: &#34;q2biv46SkDKdmvaB&#34;,
+      &#34;name&#34;: &#34;Karakeep&#34;
+    }
+  ]
+}'>
+</n8n-demo>
+
+<blockquote>
+<p>Los nodos que aparecen reflejados con un &ldquo;?&rdquo; son los correspondientes al nodo de la comunidad de n8n para Karakeep</p>
+</blockquote>
+<h3 id="como-funciona">Como funciona</h3>
+<ul>
+<li>Puesto que mi servidor conde corre <a href="https://n8n.io">n8n</a> no está siempre encendido, será un &ldquo;Schedule Trigger&rdquo; el que se encargue cada cierto tiempo si hay algún contenido nuevo en el canal de <a href="https://telegram.org">Telegram</a> donde guardo los enlaces. Esta petición se realiza mediante &ldquo;http request&rdquo; y la API de <a href="https://telegram.org">Telegram</a>.</li>
+<li>A continuación se extrae una lista de url&rsquo;s con los enlaces incluidos en los nuevos mensajes.</li>
+<li>Para cada uno de los enlaces, se normaliza y busca coincidencias en la base de datos de karakeep.</li>
+<li>En caso de existir coincidencias se pasa al siguiente enlace, si no hay coincidencias se guarda en <a href="https://karakeep.app/">Karakeep</a> y se informa del guardado mediante un mensaje de Telegram.</li>
+</ul>
+<h3 id="instrucciones-de-configuración">Instrucciones de configuración</h3>
+<p>La plantilla hace uso de las variables de entorno que tengo declaradas en el archivo &ldquo;docker-compose.yml&rdquo; de <a href="https://n8n.io">n8n</a> mediante un archivo &ldquo;.env&rdquo; externo. Estas son las variables que utilizo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span># Telegram Bot Token Sherlink
+</span></span><span style="display:flex;"><span>TG_SHERLINK_BOT_TOKEN=**********:*************************************
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Id Telegram Channel Sherlink
+</span></span><span style="display:flex;"><span>TG_SHERLINK_ID=-*************
+</span></span></code></pre></div><p>He realizado esta plantilla en la versión 1.123.5 de <a href="https://n8n.io">n8n</a></p>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="https://github.com/technovangelist/n8n-nodes-karakeep">n8n-nodes-karakeep</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/automatizando-el-men%C3%BA-escolar-con-n8n/">Automatizando el menú escolar con n8n</a></li>
+	    
+	    <li><a href="/errores-de-seguimiento-de-torrents-en-synology-con-n8n/">Errores de seguimiento de torrents en Synology con n8n</a></li>
+	    
+	    <li><a href="/unir-rss-y-enviar-a-telegram-mediante-n8n/">Unir Rss y enviar a Telegram mediante n8n</a></li>
+	    
+	    <li><a href="/mi-nuevo-init.el-en-2026/">Mi nuevo init.el en 2026</a></li>
+	    
+	    <li><a href="/creaci%C3%B3n-de-un-post-de-hugo-desde-emacs/">Creación de un post de Hugo desde emacs</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/n8n/" rel="tag">n8n</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/errores-de-seguimiento-de-torrents-en-synology-con-n8n/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Errores de seguimiento de torrents en Synology con n8n</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/flujo-de-im%C3%A1genes-en-linux/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Flujo de imágenes en Linux</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

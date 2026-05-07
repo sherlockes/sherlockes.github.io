@@ -1,29 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>google sheets on Sherblog</title>
-    <link>https://sherlockes.github.io/tags/google-sheets/</link>
-    <description>Recent content in google sheets on Sherblog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Google Sheets on Sherblog</title>
+    <link>http://localhost:1313/tags/google-sheets/</link>
+    <description>Recent content in Google Sheets on Sherblog</description>
+    <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Wed, 13 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/google-sheets/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/google-sheets/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>App de cuestionarios</title>
+      <link>http://localhost:1313/app-de-cuestionarios/</link>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/app-de-cuestionarios/</guid>
+      <description>&lt;p&gt;Esta es sólo una prueba de concepto de como he utilizado una serie de servicios gratuitos para la creación de una app de cuestionarios. No pretendo explicar el funcionamiento, sólo en que me ha ayudado cada uno.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Automatizando el menú escolar con n8n</title>
+      <link>http://localhost:1313/automatizando-el-men%C3%BA-escolar-con-n8n/</link>
+      <pubDate>Tue, 20 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/automatizando-el-men%C3%BA-escolar-con-n8n/</guid>
+      <description>&lt;p&gt;En muchos colegios el menú mensual se publica en un PDF que acaba olvidado en una web, en un correo o en el grupo de WhatsApp de las familias. Consultarlo cada mañana es poco práctico, y automatizarlo no es trivial. De esta forma he conseguido convertirlo en una notificación diaria a Telegram&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Termostato Raspberry</title>
-      <link>https://sherlockes.github.io/termostato-raspberry/</link>
+      <link>http://localhost:1313/termostato-raspberry/</link>
       <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/termostato-raspberry/</guid>
+      <guid>http://localhost:1313/termostato-raspberry/</guid>
       <description>&lt;p&gt;Con la reciente muerte de termostato inteligente de NetAtmo a causa de una simple pila sulfatada me he decidido a crear el mio propio con la raspberry y un poco de Python. Iré escribiendo aquí los procesos con el mismo.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Subtotales en Google Sheets</title>
-      <link>https://sherlockes.github.io/subtotales-en-google-sheets/</link>
+      <link>http://localhost:1313/subtotales-en-google-sheets/</link>
       <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/subtotales-en-google-sheets/</guid>
+      <guid>http://localhost:1313/subtotales-en-google-sheets/</guid>
       <description>&lt;p&gt;En este post comentaré las dos formas que utilizo en mis archivos de Google Sheets para hacer cálculos de subtotales de forma &amp;ldquo;dinamica&amp;rdquo;, es decir, en función del valor de otra columna. Para ello utilizo las funciones &amp;ldquo;filter&amp;rdquo; y &amp;ldquo;sumar.si&amp;rdquo;.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

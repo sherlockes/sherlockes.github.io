@@ -95,6 +95,16 @@
 		 type: 'hugo-deck-navigate',
 		 path: window.location.pathname
 	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
 	 }
 	</script>
 	{{ end }}

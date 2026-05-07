@@ -1,101 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vertices on Sherblog</title>
-    <link>https://sherlockes.github.io/categories/vertices/</link>
-    <description>Recent content in vertices on Sherblog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Vertices on Sherblog</title>
+    <link>http://localhost:1313/categories/vertices/</link>
+    <description>Recent content in Vertices on Sherblog</description>
+    <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Mon, 13 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/categories/vertices/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/vertices/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vértice geodésico Muga</title>
-      <link>https://sherlockes.github.io/vertices/muga/</link>
+      <link>http://localhost:1313/vertices/muga/</link>
       <pubDate>Mon, 13 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/vertices/muga/</guid>
-      <description>Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico Muga está situado en el término municipal de Sástago a una altura de 377 metros. En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (Aquí está el archivo con las coordenadas de todos ellos).</description>
+      <guid>http://localhost:1313/vertices/muga/</guid>
+      <description>&lt;p&gt;&#xA;Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico Muga está situado en el término municipal de Sástago  a una altura de 377 metros. &#xA;&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;center&gt;&lt;a href=&#34;https://i.imgur.com/DtoX8GP.jpg&#34;&gt;&lt;img src=&#34;https://i.imgur.com/DtoX8GPl.jpg&#34; title=&#34;Vista del vertice&#34; target=&#34;_blank&#34;/&gt;&lt;/a&gt;&lt;/center&gt;&#xA;&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;p&gt;En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (&lt;a href=&#34;http://localhost:1313/gpx/mis_vertices.gpx&#34;&gt;Aquí&lt;/a&gt; está el archivo con las coordenadas de todos ellos). Puedes ver más información oficial en la web del &lt;a href=&#34;ftp://ftp.geodesia.ign.es/Red_Geodesica/Hoja0414/041403.pdf&#34; target=&#34;_blank&#34;&gt;Instituto Geográfico Nacional&lt;/a&gt;. Desde esta misma web es posible acceder al &lt;a href=&#34;ftp://ftp.geodesia.ign.es/utilidades/&#34;&gt;directorio de utilidades&lt;/a&gt; donde se actualiza periódicamente un archivo con todos los vértices de España.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Vértice geodésico Loma_De_Utebo</title>
-      <link>https://sherlockes.github.io/vertices/loma_de_utebo/</link>
+      <link>http://localhost:1313/vertices/loma_de_utebo/</link>
       <pubDate>Tue, 02 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/vertices/loma_de_utebo/</guid>
-      <description>Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico Loma_De_Utebo está situado en el término municipal de Zaragoza a una altura de 383 metros. En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (Aquí está el archivo con las coordenadas de todos ellos).</description>
+      <guid>http://localhost:1313/vertices/loma_de_utebo/</guid>
+      <description>&lt;p&gt;&#xA;Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico Loma_De_Utebo está situado en el término municipal de Zaragoza  a una altura de 383 metros. &#xA;&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;center&gt;&lt;a href=&#34;https://i.imgur.com/E14Mu1b.jpg&#34;&gt;&lt;img src=&#34;https://i.imgur.com/E14Mu1bl.jpg&#34; title=&#34;Vista del vertice&#34; target=&#34;_blank&#34;/&gt;&lt;/a&gt;&lt;/center&gt;&#xA;&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;p&gt;En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (&lt;a href=&#34;http://localhost:1313/gpx/mis_vertices.gpx&#34;&gt;Aquí&lt;/a&gt; está el archivo con las coordenadas de todos ellos). Puedes ver más información oficial en la web del &lt;a href=&#34;ftp://ftp.geodesia.ign.es/Red_Geodesica/Hoja0354/035454.pdf&#34; target=&#34;_blank&#34;&gt;Instituto Geográfico Nacional&lt;/a&gt;. Desde esta misma web es posible acceder al &lt;a href=&#34;ftp://ftp.geodesia.ign.es/utilidades/&#34;&gt;directorio de utilidades&lt;/a&gt; donde se actualiza periódicamente un archivo con todos los vértices de España.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Mis vértices geodésicos en Hugo</title>
-      <link>https://sherlockes.github.io/mis-v%C3%A9rtices-geod%C3%A9sicos-en-hugo/</link>
+      <link>http://localhost:1313/mis-v%C3%A9rtices-geod%C3%A9sicos-en-hugo/</link>
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/mis-v%C3%A9rtices-geod%C3%A9sicos-en-hugo/</guid>
+      <guid>http://localhost:1313/mis-v%C3%A9rtices-geod%C3%A9sicos-en-hugo/</guid>
       <description>&lt;p&gt;Hace más de dos años desde que visité mi ultimo vértice geodésico. Durante todo este tiempo el proyecto que empecé en el ya lejano 2008 lo he tenido aparcado por unos cuantos motivos&amp;hellip;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Vértice geodésico Alto_Del_Molino</title>
-      <link>https://sherlockes.github.io/vertices/alto_del_molino/</link>
+      <link>http://localhost:1313/vertices/alto_del_molino/</link>
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/vertices/alto_del_molino/</guid>
-      <description>Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico Alto_Del_Molino está situado en el término municipal de Zaragoza a una altura de 240 metros. En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (Aquí está el archivo con las coordenadas de todos ellos).</description>
+      <guid>http://localhost:1313/vertices/alto_del_molino/</guid>
+      <description>&lt;p&gt;&#xA;Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico Alto_Del_Molino está situado en el término municipal de Zaragoza  a una altura de 240 metros. &#xA;&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;center&gt;&lt;a href=&#34;https://i.imgur.com/Zh55Wd5.jpg&#34;&gt;&lt;img src=&#34;https://i.imgur.com/Zh55Wd5l.jpg&#34; title=&#34;Vista del vertice&#34; target=&#34;_blank&#34;/&gt;&lt;/a&gt;&lt;/center&gt;&#xA;&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;p&gt;En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (&lt;a href=&#34;http://localhost:1313/gpx/mis_vertices.gpx&#34;&gt;Aquí&lt;/a&gt; está el archivo con las coordenadas de todos ellos). Puedes ver más información oficial en la web del &lt;a href=&#34;ftp://ftp.geodesia.ign.es/Red_Geodesica/Hoja0355/035513.pdf&#34; target=&#34;_blank&#34;&gt;Instituto Geográfico Nacional&lt;/a&gt;. Desde esta misma web es posible acceder al &lt;a href=&#34;ftp://ftp.geodesia.ign.es/utilidades/&#34;&gt;directorio de utilidades&lt;/a&gt; donde se actualiza periódicamente un archivo con todos los vértices de España.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Vértice geodésico Campillo</title>
-      <link>https://sherlockes.github.io/vertices/campillo/</link>
+      <link>http://localhost:1313/vertices/campillo/</link>
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/vertices/campillo/</guid>
-      <description>Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico Campillo está situado en el término municipal de Zaragoza a una altura de 406 metros. En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (Aquí está el archivo con las coordenadas de todos ellos).</description>
+      <guid>http://localhost:1313/vertices/campillo/</guid>
+      <description>&lt;p&gt;&#xA;Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico Campillo está situado en el término municipal de Zaragoza  a una altura de 406 metros. &#xA;&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;center&gt;&lt;a href=&#34;https://i.imgur.com/QtnAQG5.jpg&#34;&gt;&lt;img src=&#34;https://i.imgur.com/QtnAQG5l.jpg&#34; title=&#34;Vista del vertice&#34; target=&#34;_blank&#34;/&gt;&lt;/a&gt;&lt;/center&gt;&#xA;&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;p&gt;En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (&lt;a href=&#34;http://localhost:1313/gpx/mis_vertices.gpx&#34;&gt;Aquí&lt;/a&gt; está el archivo con las coordenadas de todos ellos). Puedes ver más información oficial en la web del &lt;a href=&#34;ftp://ftp.geodesia.ign.es/Red_Geodesica/Hoja0355/035535.pdf&#34; target=&#34;_blank&#34;&gt;Instituto Geográfico Nacional&lt;/a&gt;. Desde esta misma web es posible acceder al &lt;a href=&#34;ftp://ftp.geodesia.ign.es/utilidades/&#34;&gt;directorio de utilidades&lt;/a&gt; donde se actualiza periódicamente un archivo con todos los vértices de España.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Vértice geodésico Loma_Lobera</title>
-      <link>https://sherlockes.github.io/vertices/loma_lobera/</link>
+      <link>http://localhost:1313/vertices/loma_lobera/</link>
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/vertices/loma_lobera/</guid>
-      <description>Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico Loma_Lobera está situado en el término municipal de Villamayor de Gállego a una altura de 439 metros. En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (Aquí está el archivo con las coordenadas de todos ellos).</description>
+      <guid>http://localhost:1313/vertices/loma_lobera/</guid>
+      <description>&lt;p&gt;&#xA;Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico Loma_Lobera está situado en el término municipal de Villamayor de Gállego  a una altura de 439 metros. &#xA;&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;center&gt;&lt;a href=&#34;https://i.imgur.com/PxUdsMd.jpg&#34;&gt;&lt;img src=&#34;https://i.imgur.com/PxUdsMdl.jpg&#34; title=&#34;Vista del vertice&#34; target=&#34;_blank&#34;/&gt;&lt;/a&gt;&lt;/center&gt;&#xA;&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;p&gt;En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (&lt;a href=&#34;http://localhost:1313/gpx/mis_vertices.gpx&#34;&gt;Aquí&lt;/a&gt; está el archivo con las coordenadas de todos ellos). Puedes ver más información oficial en la web del &lt;a href=&#34;ftp://ftp.geodesia.ign.es/Red_Geodesica/Hoja0355/035543.pdf&#34; target=&#34;_blank&#34;&gt;Instituto Geográfico Nacional&lt;/a&gt;. Desde esta misma web es posible acceder al &lt;a href=&#34;ftp://ftp.geodesia.ign.es/utilidades/&#34;&gt;directorio de utilidades&lt;/a&gt; donde se actualiza periódicamente un archivo con todos los vértices de España.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Vértice geodésico San_Cristobal</title>
-      <link>https://sherlockes.github.io/vertices/san_cristobal/</link>
+      <link>http://localhost:1313/vertices/san_cristobal/</link>
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/vertices/san_cristobal/</guid>
-      <description>Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico San_Cristobal está situado en el término municipal de Zaragoza a una altura de 309 metros. En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (Aquí está el archivo con las coordenadas de todos ellos).</description>
+      <guid>http://localhost:1313/vertices/san_cristobal/</guid>
+      <description>&lt;p&gt;&#xA;Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico San_Cristobal está situado en el término municipal de Zaragoza  a una altura de 309 metros. &#xA;&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;center&gt;&lt;a href=&#34;https://i.imgur.com/6ztJZuq.jpg&#34;&gt;&lt;img src=&#34;https://i.imgur.com/6ztJZuql.jpg&#34; title=&#34;Vista del vertice&#34; target=&#34;_blank&#34;/&gt;&lt;/a&gt;&lt;/center&gt;&#xA;&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;p&gt;En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (&lt;a href=&#34;http://localhost:1313/gpx/mis_vertices.gpx&#34;&gt;Aquí&lt;/a&gt; está el archivo con las coordenadas de todos ellos). Puedes ver más información oficial en la web del &lt;a href=&#34;ftp://ftp.geodesia.ign.es/Red_Geodesica/Hoja0355/035525.pdf&#34; target=&#34;_blank&#34;&gt;Instituto Geográfico Nacional&lt;/a&gt;. Desde esta misma web es posible acceder al &lt;a href=&#34;ftp://ftp.geodesia.ign.es/utilidades/&#34;&gt;directorio de utilidades&lt;/a&gt; donde se actualiza periódicamente un archivo con todos los vértices de España.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Vértice geodésico Cabezuela</title>
-      <link>https://sherlockes.github.io/vertices/cabezuela/</link>
+      <link>http://localhost:1313/vertices/cabezuela/</link>
       <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/vertices/cabezuela/</guid>
-      <description>Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico Cabezuela está situado en el término municipal de Brihuega a una altura de 1074 metros. En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (Aquí está el archivo con las coordenadas de todos ellos).</description>
+      <guid>http://localhost:1313/vertices/cabezuela/</guid>
+      <description>&lt;p&gt;&#xA;Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico Cabezuela está situado en el término municipal de Brihuega  a una altura de 1074 metros. &#xA;&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;center&gt;&lt;a href=&#34;https://i.imgur.com/eHMiqbA.jpg&#34;&gt;&lt;img src=&#34;https://i.imgur.com/eHMiqbAl.jpg&#34; title=&#34;Vista del vertice&#34; target=&#34;_blank&#34;/&gt;&lt;/a&gt;&lt;/center&gt;&#xA;&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;p&gt;En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (&lt;a href=&#34;http://localhost:1313/gpx/mis_vertices.gpx&#34;&gt;Aquí&lt;/a&gt; está el archivo con las coordenadas de todos ellos). Puedes ver más información oficial en la web del &lt;a href=&#34;ftp://ftp.geodesia.ign.es/Red_Geodesica/Hoja0512/051225.pdf&#34; target=&#34;_blank&#34;&gt;Instituto Geográfico Nacional&lt;/a&gt;. Desde esta misma web es posible acceder al &lt;a href=&#34;ftp://ftp.geodesia.ign.es/utilidades/&#34;&gt;directorio de utilidades&lt;/a&gt; donde se actualiza periódicamente un archivo con todos los vértices de España.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Vértice geodésico Casa_Vieja</title>
-      <link>https://sherlockes.github.io/vertices/casa_vieja/</link>
+      <link>http://localhost:1313/vertices/casa_vieja/</link>
       <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/vertices/casa_vieja/</guid>
-      <description>Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico Casa Vieja está situado en el término municipal de El Olivar a una altura de 1051 metros. En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (Aquí está el archivo con las coordenadas de todos ellos).</description>
+      <guid>http://localhost:1313/vertices/casa_vieja/</guid>
+      <description>&lt;p&gt;&#xA;Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico Casa Vieja está situado en el término municipal de El Olivar  a una altura de 1051 metros. &#xA;&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;center&gt;&lt;a href=&#34;https://i.imgur.com/pTeI9xC.jpg&#34;&gt;&lt;img src=&#34;https://i.imgur.com/pTeI9xCl.jpg&#34; title=&#34;Vista del vertice&#34; target=&#34;_blank&#34;/&gt;&lt;/a&gt;&lt;/center&gt;&#xA;&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;p&gt;En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (&lt;a href=&#34;http://localhost:1313/gpx/mis_vertices.gpx&#34;&gt;Aquí&lt;/a&gt; está el archivo con las coordenadas de todos ellos). Puedes ver más información oficial en la web del &lt;a href=&#34;ftp://ftp.geodesia.ign.es/Red_Geodesica/Hoja0537/053725.pdf&#34; target=&#34;_blank&#34;&gt;Instituto Geográfico Nacional&lt;/a&gt;. Desde esta misma web es posible acceder al &lt;a href=&#34;ftp://ftp.geodesia.ign.es/utilidades/&#34;&gt;directorio de utilidades&lt;/a&gt; donde se actualiza periódicamente un archivo con todos los vértices de España.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Vértice geodésico Iglesia</title>
-      <link>https://sherlockes.github.io/vertices/iglesia/</link>
+      <link>http://localhost:1313/vertices/iglesia/</link>
       <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/vertices/iglesia/</guid>
-      <description>Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico Iglesia está situado en el término municipal de Trillo a una altura de 1138 metros. En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (Aquí está el archivo con las coordenadas de todos ellos).</description>
+      <guid>http://localhost:1313/vertices/iglesia/</guid>
+      <description>&lt;p&gt;&#xA;Una nueva ruta y un nuevo mojón alcanzado (y con este ya van 54), en este caso se trata del vértice geodésico Iglesia está situado en el término municipal de Trillo  a una altura de 1138 metros. &#xA;&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;center&gt;&lt;a href=&#34;https://i.imgur.com/z4655Iv.jpg&#34;&gt;&lt;img src=&#34;https://i.imgur.com/z4655Ivl.jpg&#34; title=&#34;Vista del vertice&#34; target=&#34;_blank&#34;/&gt;&lt;/a&gt;&lt;/center&gt;&#xA;&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;p&gt;En el centro del siguiente mapa se puede ver la ubicación del vértice junto con todos los demás que hasta ahora he &#34;conquistado&#34; (&lt;a href=&#34;http://localhost:1313/gpx/mis_vertices.gpx&#34;&gt;Aquí&lt;/a&gt; está el archivo con las coordenadas de todos ellos). Puedes ver más información oficial en la web del &lt;a href=&#34;ftp://ftp.geodesia.ign.es/Red_Geodesica/Hoja0537/053776.pdf&#34; target=&#34;_blank&#34;&gt;Instituto Geográfico Nacional&lt;/a&gt;. Desde esta misma web es posible acceder al &lt;a href=&#34;ftp://ftp.geodesia.ign.es/utilidades/&#34;&gt;directorio de utilidades&lt;/a&gt; donde se actualiza periódicamente un archivo con todos los vértices de España.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

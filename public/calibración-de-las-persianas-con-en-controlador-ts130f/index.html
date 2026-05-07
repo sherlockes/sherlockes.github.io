@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Calibración de las persianas con en controlador TS130F - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Forma de calibrar la apertura y cierre de las persianas mediante zha y el controlador TS130F de Tuya">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/20231119_calibration_ts130f_zigbee_curtains_00.jpg" />
+	<meta name="twitter:title" content="Calibración de las persianas con en controlador TS130F"/>
+	<meta name="twitter:description" content="Forma de calibrar la apertura y cierre de las persianas mediante zha y el controlador TS130F de Tuya"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/calibraci%C3%B3n-de-las-persianas-con-en-controlador-ts130f/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Calibración de las persianas con en controlador TS130F">
+	<meta property="og:url" content="http://localhost:1313/calibraci%C3%B3n-de-las-persianas-con-en-controlador-ts130f/">
+	<meta property="og:description" content="Forma de calibrar la apertura y cierre de las persianas mediante zha y el controlador TS130F de Tuya"/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20231119_calibration_ts130f_zigbee_curtains_00_xl.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Calibración de las persianas con en controlador TS130F">
+  <meta name="twitter:description" content="Forma de calibrar la apertura y cierre de las persianas mediante zha y el controlador TS130F de Tuya">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Calibración de las persianas con en controlador TS130F</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2024-02-08T00:00:00Z">2024-02-08</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/home-assistant/" rel="category">Home Assistant</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20231119_calibration_ts130f_zigbee_curtains_00.jpg" alt="Calibración de las persianas con en controlador TS130F">
+		
+	</figure><div class="content post__content clearfix">
+			<p>La parte más importante de la domotización de las persianas es un correcto ajuste de las posiciones de apertura y cierre. Parece sencillo, pero sin un manual de instrucciones del fabricante se convierte en un dolor de cabeza.</p>
+<p>Partimos de un controlador &ldquo;barato&rdquo; de <a href="https://es.aliexpress.com/item/1005005225077998.html?spm=a2g0o.order_list.order_list_main.24.6d91194dVqAnVc&amp;gatewayAdapt=glo2esp">Aliexpress</a> que no es más que un TS130F de Tuya del que no hay ni rastro en la web del fabricante y del que no he sido capaz de encontrar un manual de usuario completo.</p>
+<p>Mi centro de control domótico en <a href="https://www.home-assistant.io/">Home Assistant</a> y mediante la integración <a href="https://www.home-assistant.io/integrations/zha/">Zha</a> gestiono todos los elementos zigbee que tengo instalados en casa a través de un controlador <a href="https://sonoff.tech/product/gateway-and-sensors/sonoff-zigbee-3-0-usb-dongle-plus-e/">Sonoff</a> y es para este caso particular para el que voy ha dar la explicación.</p>
+<p>Tras el cableado del controlador, el emparejamiento con la red domótica no presenta ninguna dificultad. Simplemente se pulsa el botón de &ldquo;reset&rdquo; durante unos segundos hasta que el led empieza a parpadear y se busca un nuevo dispositivo zigbee.</p>
+<p><img src="/images/20231119_calibration_ts130f_zigbee_curtains_01.jpg" alt="image-01"></p>
+<p>Tras esto ni mucho menos el dispositivo está listo ya que al darle a subir o bajar la persiana se menea un poco y se para. Necesita una calibración de las posiciones &ldquo;cerrada&rdquo; y &ldquo;abierta&rdquo;. Seguiremos los siguientes pasos:</p>
+<ul>
+<li>Accedemos al menú &ldquo;Ajustes&rdquo;</li>
+<li>&ldquo;Dispositivos y servicios&rdquo;</li>
+<li>Seleccionamos el dispositivo que acabamos de emparejar.</li>
+<li>Nos fijamos en el menú &ldquo;Información del dispositivo&rdquo;</li>
+</ul>
+<p><img src="/images/20231119_calibration_ts130f_zigbee_curtains_02.jpg" alt="image-02"></p>
+<ul>
+<li>Pinchamos el en menú de los tres puntos</li>
+<li>Seleccionamos la opción &ldquo;Administrar dispositivo Zigbee&rdquo;</li>
+</ul>
+<p><img src="/images/20231119_calibration_ts130f_zigbee_curtains_03.jpg" alt="image-03"></p>
+<h3 id="calibración-por-movimiento">Calibración por movimiento</h3>
+<p>Este tipo de calibración consiste en activar el modo de calibración y realizar un movimiento de la persiana entre sus extremos siguiendo estos pasos:</p>
+<ul>
+<li>En la pestaña &ldquo;Clústeres&rdquo; selecciona los clústeres &ldquo;TuyaCoveringCluster&rdquo;</li>
+<li>En el atributo &ldquo;Calibration&rdquo; poner &ldquo;0&rdquo; como valor</li>
+<li>Escribir atributo para entrar en el modo de calibración</li>
+<li>En la pestaña comandos seleccionar &ldquo;down_close&rdquo; y emitir el comando</li>
+<li>La persiana empieza a bajar</li>
+<li>Seleccionar el comando &ldquo;stop&rdquo; y esperar mientras baja la persiana.</li>
+<li>Emitir el comando justo cuando llegue a la posición de cerrada.</li>
+<li>Seleccionar el comando &ldquo;up_open&rdquo; y emitirlo.</li>
+<li>Mientras la persiana sube seleccionar el comando &ldquo;stop&rdquo;</li>
+<li>Justo cuando la persiana llega arriba emitir el comando &ldquo;stop&rdquo;</li>
+<li>En el atributo &ldquo;Calibration&rdquo; poner &ldquo;1&rdquo; como valor</li>
+<li>Escribir el atributo para salir del modo de calibración.</li>
+</ul>
+<h3 id="calibración-por-tiempo">Calibración por tiempo</h3>
+<p>Es muy probable que a que la persiana va haciendo varios ciclos de subidas y bajadas esta no llegue a alcanzar una de las posiciones extremas. En este caso realizaremos una recalibración del tiempo de subida/bajada. Para definir los pasos supondremos el caso de que la persiana no llegue a subir del todo.</p>
+<ul>
+<li>En la pestaña &ldquo;Clústeres&rdquo; selecciona los clústeres &ldquo;TuyaCoveringCluster&rdquo;</li>
+<li>En la pestaña &ldquo;Atributos&rdquo; seleccionamos y leemos &ldquo;current position lift percentage&rdquo;</li>
+<li>Introducimos y escribimos el porcentaje real de subida para poder seguir subiendo.</li>
+<li>Subir la persiana (Si no alcanza la pos superior, repetir el paso anterior)</li>
+<li>Leer el atributo &ldquo;Calibration time&rdquo; (Décimas de segundo)</li>
+<li>Incrementar y escribir el valor con el tiempo que le faltaba para llegar arriba</li>
+</ul>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=AYZHKyLMS8w">Calibrar persianas zigbee de Vivogar</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/sensor-de-temperatura-personalizado/">Sensor de temperatura personalizado</a></li>
+	    
+	    <li><a href="/z2m-en-segunda-residencia/">Z2M en segunda residencia</a></li>
+	    
+	    <li><a href="/activar-sirena-ts0224-mediante-z2m-en-home-assistant/">Activar sirena TS0224 mediante Z2M en Home assistant</a></li>
+	    
+	    <li><a href="/convertir-una-luz-en-interruptor-en-home-assistant/">Convertir una luz en interruptor en Home Assistant</a></li>
+	    
+	    <li><a href="/mostrar-dispositivos-no-disponibles-en-home-assistant/">Mostrar dispositivos no disponibles en Home Assistant</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/zigbee/" rel="tag">zigbee</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/convertir-una-luz-en-interruptor-en-home-assistant/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Convertir una luz en interruptor en Home Assistant</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/automatizando-las-luces-del-sal%C3%B3n/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Automatizando las luces del salón</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

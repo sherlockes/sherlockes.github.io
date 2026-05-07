@@ -2,20 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gopro on Sherblog</title>
-    <link>https://sherlockes.github.io/tags/gopro/</link>
+    <link>http://localhost:1313/tags/gopro/</link>
     <description>Recent content in Gopro on Sherblog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Sat, 04 Jun 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/gopro/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Jun 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gopro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lo barato no siempre es suficiente</title>
-      <link>https://sherlockes.github.io/lo-barato-no-siempre-es-suficiente/</link>
+      <link>http://localhost:1313/lo-barato-no-siempre-es-suficiente/</link>
       <pubDate>Sat, 04 Jun 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/lo-barato-no-siempre-es-suficiente/</guid>
-      <description>Cuando cacharreas con la Gopro más o menos habitualmente y la conectas muchas veces al ordenador, lo más probable es que pierdas o rompas la tapa lateral que cubre el puerto USB y HDMI. Pues bien, hace unos días que me desapareció esta tapa de plástico y tras una infructuosa búsqueda me sumergí en Banggood a la búsqueda de un repuesto bueno, bonito y sobre todo barato.
-Termine comprando por menos de 2$ esta tapa de repuesto.</description>
+      <guid>http://localhost:1313/lo-barato-no-siempre-es-suficiente/</guid>
+      <description>&lt;p&gt;Cuando cacharreas con la Gopro más o menos habitualmente y la conectas muchas veces al ordenador, lo más probable es que pierdas o rompas la tapa lateral que cubre el puerto USB y HDMI. Pues bien, hace unos días que me desapareció esta tapa de plástico y tras una infructuosa búsqueda me sumergí en &lt;a href=&#34;http://www.banggood.com&#34;&gt;Banggood&lt;/a&gt; a la búsqueda de un repuesto bueno, bonito y sobre todo barato.&lt;/p&gt;&#xA;&lt;p&gt;Termine comprando por menos de 2$ &lt;a href=&#34;http://www.banggood.com/Replacement-USB-Side-Door-Cover-Case-Cap-Repair-Part-For-GoPro-Hero-3-3-Plus-4-p-1026853.html&#34;&gt;esta&lt;/a&gt; tapa de repuesto.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

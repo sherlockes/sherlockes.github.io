@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Backups en la nube con Restic - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Gestión de las copias de seguridad de los datos de contenedores dockers con Restic">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/20250311_restic_backup_00.jpg" />
+	<meta name="twitter:title" content="Backups en la nube con Restic"/>
+	<meta name="twitter:description" content="Gestión de las copias de seguridad de los datos de contenedores dockers con Restic"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/backups-en-la-nube-con-restic/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Backups en la nube con Restic">
+	<meta property="og:url" content="http://localhost:1313/backups-en-la-nube-con-restic/">
+	<meta property="og:description" content="Gestión de las copias de seguridad de los datos de contenedores dockers con Restic"/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20250311_restic_backup_00_xl.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Backups en la nube con Restic">
+  <meta name="twitter:description" content="Gestión de las copias de seguridad de los datos de contenedores dockers con Restic">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Backups en la nube con Restic</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2025-03-18T00:00:00Z">2025-03-18</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">Computing</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20250311_restic_backup_00.jpg" alt="Backups en la nube con Restic">
+		
+	</figure><div class="content post__content clearfix">
+			<p>Después de valorar algunas alternativas para la creación de las copias de seguridad de los datos de mis contenedores he encontrado una buena solución en restic.</p>
+<h3 id="que-necesito">Que necesito</h3>
+<p>Todos los datos que necesito para montar los contenedores que uso habitualmente la tengo guardada en la carpeta &ldquo;~/dockers&rdquo; con lo que el problema es muy sencillo. Tan solo tengo que hacer una copia de seguridad de esta carpeta en otro dispositivo.</p>
+<h3 id="alternativas">Alternativas</h3>
+<p>Comencé copiando esta carpeta comprimida al ordenador de sobremesa de forma regular o incluso subiéndola a un canal de Telegram. Empecé incluso a hacer un script para automatizar la tarea pero el otro día tuve una revelación gracias a <a href="https://www.atareao.es">Atareao</a> y me he decidido a probar <a href="https://restic.net">Restic</a> Como gestor de la copia de seguridad. Una de las razones de peso ha sido la posibilidad que ofrece <a href="https://restic.net">Restic</a> de combinarse con <a href="https://rclone.org">Rclone</a> para hacer directamente la copia en la nube.</p>
+<h3 id="que-voy-a-utilizar">Que voy a utilizar</h3>
+<ul>
+<li>Restic como gestor de backups</li>
+<li>Rclone como herramienta para subir el backup a la nube</li>
+<li>Bash para crear un script con el que automatizar la tarea</li>
+<li>Cron para programar el script</li>
+<li>Claude para ayudarme en el proceso.</li>
+</ul>
+<h3 id="instalación-de-restic-y-rclone">Instalación de Restic y Rclone</h3>
+<p>Para linux, la instalación de <a href="https://restic.net">Restic</a> y <a href="https://rclone.org">Rclone</a> es realmente sencilla</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install restic
+</span></span><span style="display:flex;"><span>sudo -v ; curl https://rclone.org/install.sh | sudo bash
+</span></span></code></pre></div><p>El siguiente paso es configurar un remoto para <a href="https://rclone.org">Rclone</a> a partir de una nube mediante el comando <code>rclone config</code> tal y como ya he explicado en otros <a href="https://sherblog.es/tags/rclone/">artículos</a>. En mi caso particular voy a utilizar la nube de <a href="https://mega.nz">Mega</a> que ofrece gratis 50 Gb para configurar el remoto.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sherlockes@uber:~$ rclone config
+</span></span><span style="display:flex;"><span>Current remotes:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Name                 Type
+</span></span><span style="display:flex;"><span><span style="color:#f92672">====</span>                 <span style="color:#f92672">====</span>
+</span></span><span style="display:flex;"><span>Sherlockes78_GD      drive
+</span></span><span style="display:flex;"><span>Sherlockes_Mega      mega
+</span></span></code></pre></div><h3 id="configuración-del-repositorio">Configuración del repositorio</h3>
+<p>El sitio donde se van a guardar las copias de seguridad lo llamaremos &ldquo;repositorio&rdquo; y es un directorio donde <a href="https://restic.net">Restic</a> va a guardar todos los datos necesarios. Para acceder al repositorio será necesaria una contraseña y el primer paso para configurarlo es inicializarlo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export RESTIC_PASSWORD<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tu_contraseña_segura&#34;</span>
+</span></span><span style="display:flex;"><span>restic -r rclone:Sherlockes_Mega:docker_backups init
+</span></span></code></pre></div><blockquote>
+<p>En este caso estoy usando el remoto de rclone &ldquo;Sherlockes_Mega&rdquo; y la carpeta &ldquo;docker_backups&rdquo; como ubicación para el repositorio de Restic.</p>
+</blockquote>
+<h3 id="realizando-la-copia-de-seguridad">Realizando la copia de seguridad</h3>
+<p>Crearemos un archivo &ldquo;backup.sh&rdquo; al que daremos permisos de ejecución y en el que incluiremos el siguiente contenido:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>export RESTIC_PASSWORD<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tu_contraseña_segura&#34;</span>
+</span></span><span style="display:flex;"><span>REPO<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rclone:Sherlockes_Mega:docker_backups&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>restic -r $REPO backup ~/dockers
+</span></span></code></pre></div><h3 id="que-más-se-le-puede-pedir">¿Que más se le puede pedir?</h3>
+<p>Aunque la copia de seguridad ya funciona hay una serie de aspectos en los que se podría mejorar:</p>
+<ul>
+<li>Excluir determinado tipo de archivos de la copia</li>
+<li>Poner la contraseña en un archivo externo al script</li>
+<li>Ejecución como root para evitar problemas con permisos de archivos</li>
+<li>Automatizar la tarea</li>
+</ul>
+<h4 id="excluir-determinado-tipo-de-archivos">Excluir determinado tipo de archivos</h4>
+<p>En mi caso, dentro de las carpetas de datos hay archivos &ldquo;*.mp3&rdquo; que son de uso temporal y de los que no necesito hacer copia de seguridad. para esto usaremos el argumento &ldquo;exclude&rdquo; en el comando de Restic.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>restic -r $REPO backup ~/dockers --exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*.mp3&#34;</span>
+</span></span></code></pre></div><h4 id="contraseña-en-archivo-externo">Contraseña en archivo externo</h4>
+<p>Puesto que todos mis scripts los guardo en un repositorio público de <a href="https://github.com/sherlockes/SherloScripts/tree/master/bash">Github</a> no resulta práctico que la contraseña de mi copia de seguridad esté ahí expuesta. Restic ofrece la posibilidad de guardarla en un archivo externo.</p>
+<p>En mi caso voy a crear el archivo &ldquo;.restic-password&rdquo; que únicamente contiene la contraseña y modificaré el script con lo siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PASSWORD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/sherlockes/.restic-password&#34;</span>
+</span></span><span style="display:flex;"><span>restic -r $REPO --password-file $PASSWORD_FILE backup ~/dockers --exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*.mp3&#34;</span>
+</span></span></code></pre></div><h4 id="ejecución-como-root">Ejecución como root</h4>
+<p>A la hora de realizar la copia de seguridad he de dado cuenta de que hay determinados archivos a los que mi usuario no tiene acceso por lo que me veo obligado a ejecutar la copia como &ldquo;root&rdquo; mediante &ldquo;sudo&rdquo; pero es necesario que:</p>
+<ul>
+<li>Rclone use la configuración de mi usuario al lanzarlo como &ldquo;root&rdquo;.</li>
+<li>No pida la contraseña para poder automatizarlo posteriormente.</li>
+</ul>
+<p>Al ejecutarlo con &ldquo;sudo&rdquo;, rclone busca la configuración de &ldquo;root&rdquo; y no va a encontrar los remotos que hemos creado con nuestro usuario. Para evitar esto vamos a utilizar una variable de entorno mediante la que le vamos a pasar a Restic la ubicación del archivo de configuración de Rclone. Añadiremos lo siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export RCLONE_CONFIG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/sherlockes/.config/rclone/rclone.conf&#34;</span>
+</span></span></code></pre></div><p>Para que la ejecución mediante &ldquo;sudo&rdquo; haga uso de las variables de entorno debemos usar el argumento &ldquo;-E&rdquo; y para que no nos pida la contraseña al ejecutar restic añadiremos la siguiente línea al archivo &ldquo;/etc/sudoers&rdquo; usando el comando `sudo visudo&quot;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sherlockes ALL<span style="color:#f92672">=(</span>ALL<span style="color:#f92672">)</span> NOPASSWD:SETENV: /usr/bin/restic
+</span></span></code></pre></div><p>ya con esto sólo nos queda modificar el script para que restic sea lanzado bajo &ldquo;sudo&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -E restic -r $REPO --password-file $PASSWORD_FILE backup ~/dockers --exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*.mp3&#34;</span>
+</span></span></code></pre></div><h4 id="automatizar-la-tarea">Automatizar la tarea</h4>
+<p>El último paso es que la tarea se ejecute automáticamente. Yo he escogido el método del &ldquo;cron&rdquo; por ser el más sencillo de todos.</p>
+<ul>
+<li>Ejecutamos <code>crontab -e</code></li>
+<li>Añadimos al final <code>@reboot ~/backup.sh &gt; ~/backup.log 2&gt;&amp;1</code></li>
+<li>Guardamos mediante <code>Ctrl + x</code></li>
+</ul>
+<p>A partir de esto, cada vez que arranca el servidor se realizar una copia de seguridad de los datos de los contenedores docker que hemos seleccionado.</p>
+<h3 id="script-completo">Script completo</h3>
+<p>Puedes encontrar este <a href="https://github.com/sherlockes/SherloScripts/blob/master/bash/backup_dockers.sh">script</a> en mi repositorio de <a href="https://github.com/sherlockes/SherloScripts/tree/master/bash">Github</a>.</p>
+<pre><code class="language-txt">#!/bin/bash
+
+###################################################################
+#Script Name: backup_dockers.sh
+#Description: Descripción
+#Args: N/A
+#Creation/Update: 20250225/20250312
+#Author: www.sherblog.es                                             
+#Email: sherlockes@gmail.com                               
+###################################################################
+
+################################
+####       Variables        ####
+################################
+
+export RCLONE_CONFIG=&#34;/home/sherlockes/.config/rclone/rclone.conf&#34;
+
+REPO=&#34;rclone:Sherlockes_Mega:docker_backups&#34;
+PASSWORD_FILE=&#34;/home/sherlockes/.restic-password&#34;
+
+################################
+####    Script principal    ####
+################################
+
+# Copiar la carpeta del docker intrubot en RPI
+echo &#34;Copiando Intrubot config desde RPI&#34;
+rsync -avz --progress --recursive --mkpath pi@192.168.10.210:/home/pi/dockers/intrubot/ /home/sherlockes/dockers/intrubot
+
+# Realizar backup
+echo &#34;Iniciando backup de ~/dockers: $(date)&#34;
+sudo -E restic -r $REPO --password-file $PASSWORD_FILE backup /home/sherlockes/dockers --exclude=&#34;*.mp3&#34; --exclude=&#34;*.mp4&#34;
+
+# Política de retención (opcional)
+echo &#34;Aplicando política de retención&#34;
+sudo -E restic -r $REPO --password-file $PASSWORD_FILE forget --keep-daily 7 --keep-weekly 4 --keep-monthly 6 --prune
+
+echo &#34;Backup completado: $(date)&#34;
+
+
+</code></pre>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="www.atareao.es">Atareao</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/men%C3%BA-para-montar-nubes-en-bash/">Menú para montar nubes en Bash</a></li>
+	    
+	    <li><a href="/configuraci%C3%B3n-de-rclone-mediante-dotfiles/">Configuración de Rclone mediante Dotfiles</a></li>
+	    
+	    <li><a href="/instalar-rclone-en-synology-ds920-/">Instalar rclone en Synology Ds920&#43;</a></li>
+	    
+	    <li><a href="/moviendo-archivos-con-rclone/">Moviendo archivos con Rclone</a></li>
+	    
+	    <li><a href="/generador-de-contexto-para-ia/">Generador de contexto para IA</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/bash/" rel="tag">bash</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/rclone/" rel="tag">rclone</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/restic/" rel="tag">restic</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/sistema-de-pulsadores-con-esp32-y-micropython/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Sistema de pulsadores con Esp32 y micropython</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/usando-un-tunel-ssh-para-aceder-a-un-servidor-remoto/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Usando un tunel ssh para aceder a un servidor remoto</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

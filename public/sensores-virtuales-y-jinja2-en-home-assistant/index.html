@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="es">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,22 +10,28 @@
 
 	
 	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:image" content="http://www.sherblog.pro/images/20210921_home_assistant_virtual_sensors_jinja2_00.jpg" />
+	<meta name="twitter:image" content="http://localhost:1313//images/20210921_home_assistant_virtual_sensors_jinja2_00.jpg" />
 	<meta name="twitter:title" content="Sensores virtuales y Jinja2 en Home Assistant"/>
 	<meta name="twitter:description" content="Mi manejo de los sensores virtuales y el motor de plantillas Jinja2 en Home Assistant"/>
 	<meta name="twitter:creator" content="@sherblogpro">
-	<meta name="twitter:site" content="sherblog.pro" />
+	<meta name="twitter:site" content="http://localhost:1313/sensores-virtuales-y-jinja2-en-home-assistant/" />
 
 	
 	<meta property="og:type" content="article">
 	<meta property="og:locale" content="es_ES">
-	<meta property="og:site_name" content="sherblog.pro">
+	<meta property="og:site_name" content="Sherblog">
 	<meta property="og:locale" content="es_ES">
 	<meta property="og:title"   content="Sensores virtuales y Jinja2 en Home Assistant">
-	<meta property="og:url"   content="https://sherlockes.github.io">
+	<meta property="og:url" content="http://localhost:1313/sensores-virtuales-y-jinja2-en-home-assistant/">
 	<meta property="og:description" content="Mi manejo de los sensores virtuales y el motor de plantillas Jinja2 en Home Assistant"/>
 
-	<meta property="og:image" content="http://www.sherblog.pro/images/20210921_home_assistant_virtual_sensors_jinja2_00.jpg" />
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20210921_home_assistant_virtual_sensors_jinja2_00_xl.jpg" />
+	
+	
 
 	
 	
@@ -35,7 +41,6 @@
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="shortcut icon" href="/favicon.ico">
-		
 
 	
 	
@@ -44,9 +49,10 @@
 <body class="body">
 	<div class="container container--outer">
 		<header class="header">
-	<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Sensores virtuales y Jinja2 en Home Assistant"/>
-<meta name="twitter:description" content="Mi manejo de los sensores virtuales y el motor de plantillas Jinja2 en Home Assistant"/>
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sensores virtuales y Jinja2 en Home Assistant">
+  <meta name="twitter:description" content="Mi manejo de los sensores virtuales y el motor de plantillas Jinja2 en Home Assistant">
 
 	<div class="container">
 		<div class="logo">
@@ -96,6 +102,13 @@
 				
 			</a>
 		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
 	</ul>
 </nav>
 
@@ -110,7 +123,7 @@
 			<h1 class="post__title">Sensores virtuales y Jinja2 en Home Assistant</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-12-21T00:00:00Z">2022-12-21</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/home-assistant/" rel="category">home assistant</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-12-09T00:00:00Z">2021-12-09</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/home-assistant/" rel="category">Home Assistant</a>
 	</span>
 </div></div>
 		</header>
@@ -133,8 +146,6 @@
         <li><a href="#sensor-de-casa-vacía">Sensor de casa vacía</a></li>
         <li><a href="#sensor-de-consigna-de-temperatura">Sensor de consigna de temperatura</a></li>
         <li><a href="#sensor-de-horario-de-apagado-de-la-tv">Sensor de horario de apagado de la TV</a></li>
-        <li><a href="#sensor-de-estado-de-la-tv">Sensor de estado de la TV</a></li>
-        <li><a href="#sensor-de-día-lectivo">Sensor de día lectivo</a></li>
       </ul>
     </li>
   </ul>
@@ -142,7 +153,6 @@
 	</div>
 </div><div class="content post__content clearfix">
 			<p>Aquí dejo la solución que he implementado ante el problema de crear una nueva entidad en Home Assistant cuyo valor dependa del de otras entidades ya existentes gracias al uso de sensores virtuales y el motor de plantillas de Jinja2.</p>
-<p><strong>Actualización:</strong> Sensor de día lectivo</p>
 <h3 id="creando-el-archivo-de-sensores">Creando el archivo de sensores</h3>
 <p>Antes de seguir adelante es importante tener instalado el complemento <a href="https://github.com/home-assistant/addons/tree/master/configurator">File Editor</a> que puedes instalar desde la tienda oficial.</p>
 <p><img src="/images/20210921_home_assistant_virtual_sensors_jinja2_01.jpg" alt="image-01"></p>
@@ -292,34 +302,7 @@
             {% else %}
             on
             {% endif %}
-</code></pre><h3 id="sensor-de-estado-de-la-tv">Sensor de estado de la TV</h3>
-<p>Mi TV no es &ldquo;inteligente&rdquo; y para poder encenderla o apagarla a través de <a href="https://www.home-assistant.io">Home Assistant</a> lo hago a través de un <a href="https://www.broadlink.com.es/broadlink-rm-mini3-domotica-mando-distancia-universal.html">Broadlink RM mini</a> colocado en el salón gracias a la integración <a href="https://github.com/smartHomeHub/SmartIR">SmartIR</a>. Esta integración hace uso de un sensor de encendido denominado &ldquo;power_sensor&rdquo; de forma que cuando está a &ldquo;on&rdquo; ofrece todos los controles de la TV y cuando esta a &ldquo;off&rdquo; sólo ofrece la posibilidad de encenderla.</p>
-<p>Para crear este sensor de encendido tengo conectada la TV a un enchufe inteligente que me da información de consumo. No se si la medición es muy fiable, pero la experiencia me dice que cuando está encendida gasta por encima de los 30w lo que es información suficiente para crear este sensor de estado de la TV que incluyo dentro del archivo &ldquo;sensors.yaml&rdquo;</p>
-<pre tabindex="0"><code>  - platform: template
-    sensors:
-      estado_tv:
-        friendly_name: &#34;Como está la tele?&#34;
-        value_template: &gt;-
-            {% set consumo_tv = state_attr(&#39;sensor.salon_tv_enchufe_corriente&#39;,&#39;current&#39;) %}
-            {% if consumo_tv &gt; 30 %}
-            on
-            {% else %}
-            off
-            {% endif %}
-</code></pre><h3 id="sensor-de-día-lectivo">Sensor de día lectivo</h3>
-<p>Desde hace varios años tengo una automatización en Alexa como despertador para los días de colegio, ahora voy a integrarla en <a href="https://www.home-assistant.io">Home Assistant</a> mediante un calendario &ldquo;festivos_escolares&rdquo; en el que he insertado el <a href="https://educa.aragon.es/calendario-escolar">calendario escolar</a> con todos los días que no hay que ir al cole (Lo he hecho a través de la integración con Google Calendar aunque también se podría haber hecho directamente en <a href="https://www.home-assistant.io">Home Assistant</a>).</p>
-<p>El sensor que he creado para saber si hoy es lectivo pasa por comprobar que no haya ningún festivo escolar ni que sea fin de semana. Así de sencillo.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">template</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">sensors</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">es_lectivo_hoy</span>:
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">entity_id</span>: <span style="color:#ae81ff">sensor.date</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">value_template</span>: &gt;<span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            {% if states(&#39;calendar.festivos_escolares&#39;) == &#39;on&#39; or now().isoweekday() &gt;= 6 %}
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              no
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            {% else %}
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              si
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            {% endif %}</span>            
-</span></span></code></pre></div>
+</code></pre>
 		</div>
 		<footer class="post__footer">
 		  
@@ -328,13 +311,13 @@
     <h3>Otros de mís artículos que te pueden interesar</h3>
     <ul>
 	    
+	    <li><a href="/automatizaci%C3%B3n-de-alumbrado-con-puerta/">Automatización de alumbrado con puerta</a></li>
+	    
+	    <li><a href="/automatizando-las-luces-del-sal%C3%B3n/">Automatizando las luces del salón</a></li>
+	    
+	    <li><a href="/mostrar-dispositivos-no-disponibles-en-home-assistant/">Mostrar dispositivos no disponibles en Home Assistant</a></li>
+	    
 	    <li><a href="/realizar-acciones-mediante-plantillas-en-home-assistant/">Realizar acciones mediante plantillas en Home Assistant</a></li>
-	    
-	    <li><a href="/sensores-virtuales-y-jinja2-en-home-assistant/">Sensores virtuales y Jinja2 en Home Assistant</a></li>
-	    
-	    <li><a href="/automatizaci%C3%B3n-de-alumbrado-con-puerta/">Automatización de alumbrado con puerta</a></li>
-	    
-	    <li><a href="/automatizaci%C3%B3n-de-alumbrado-con-puerta/">Automatización de alumbrado con puerta</a></li>
 	    
 	    <li><a href="/compartiendo-contenido-de-hugo-en-mastodon/">Compartiendo contenido de Hugo en Mastodon</a></li>
 	    
@@ -358,21 +341,21 @@
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/tarjetas-inteligentes-en-home-assistant/" rel="prev">
+		<a class="pager__link" href="/automatizaci%C3%B3n-de-alumbrado-con-puerta/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Anterior</span>
-			<p class="pager__title">Tarjetas inteligentes en Home Assistant</p>
+			<p class="pager__title">Automatización de alumbrado con puerta</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/instalando-home-assistant-supervisado-en-debian-11/" rel="next">
+		<a class="pager__link" href="/el-termostato-de-la-caldera-en-home-assistant/" rel="next">
 			<span class="pager__subtitle">Siguiente&thinsp;»</span>
-			<p class="pager__title">Instalando Home Assistant supervisado en Debian 11</p>
+			<p class="pager__title">El termostato de la caldera en Home Assistant</p>
 		</a>
 	</div>
 </nav>
 <div class="content post__content clearfix">
   <h3>Comentarios</h3>
-  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://emacs.ch/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
 </div>
 
 
@@ -383,14 +366,37 @@
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-		        &copy; 2023 Sherlockes.
+		        &copy; 2026 Sherlockes.
 			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
 			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
 		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
 	</div>
 </footer>
 
 	</div>
-<script async defer src="/js/menu.js"></script>
-<script src="/js/custom.js"></script></body>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
 </html>

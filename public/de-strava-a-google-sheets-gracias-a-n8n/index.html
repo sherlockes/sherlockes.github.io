@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>De Strava a Google Sheets gracias a n8n - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Como he conseguido enviar el resumen de cada actividad de Strava a una hoja de cálculo de Google Sheets mediante n8n.">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/20241216_n8n_strava_sheet_00.jpg" />
+	<meta name="twitter:title" content="De Strava a Google Sheets gracias a n8n"/>
+	<meta name="twitter:description" content="Como he conseguido enviar el resumen de cada actividad de Strava a una hoja de cálculo de Google Sheets mediante n8n."/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/de-strava-a-google-sheets-gracias-a-n8n/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="De Strava a Google Sheets gracias a n8n">
+	<meta property="og:url" content="http://localhost:1313/de-strava-a-google-sheets-gracias-a-n8n/">
+	<meta property="og:description" content="Como he conseguido enviar el resumen de cada actividad de Strava a una hoja de cálculo de Google Sheets mediante n8n."/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20241216_n8n_strava_sheet_00_xl.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="De Strava a Google Sheets gracias a n8n">
+  <meta name="twitter:description" content="Como he conseguido enviar el resumen de cada actividad de Strava a una hoja de cálculo de Google Sheets mediante n8n.">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">De Strava a Google Sheets gracias a n8n</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2025-01-22T00:00:00Z">2025-01-22</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">Computing</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20241216_n8n_strava_sheet_00.jpg" alt="De Strava a Google Sheets gracias a n8n">
+		
+	</figure><div class="content post__content clearfix">
+			<p>Tras varias pruebas, al fin he conseguido la manera de enviar el resumen de cada actividad de <a href="https://www.strava.com/">Strava</a> a la hoja donde genero mis estadísticas en Google Sheets de forma autoalojada y desatendida gracias a n8n.</p>
+<p>Desde hace varios años vengo recopilando todas mis actividades de <a href="https://www.strava.com/">Strava</a> en una hoja de cálculo de Google Sheets. Las nuevas actividades son añadidas de forma automática gracias a dos servicios, <a href="https://ifttt.com">IFTTT</a> y <a href="https://feedmyride.net">feedmyride</a>. Utilizo ambos por que uno complementa la información que no me da el otro y viceversa pero quiero encontrar una solución que no me haga depender de servicios de terceros.</p>
+<p>Después de un tiempo trasteando con <a href="https://github.com/stravalib/stravalib">Stravalib</a>, una librería de python para interactuar con la API de Strava, he llegado a un callejón sin salida en lo referente a la autentificación y gestión de credenciales de forma desatendida por lo que me he puesto a buscar una solución alternativa.</p>
+<p><a href="https://n8n.io">n8n</a> es una plataforma de automatización de flujos de trabajo que conecta aplicaciones, servicios y bases de datos sin necesidad de programar. Es altamente personalizable y de código abierto, lo que permite integraciones complejas mediante nodos configurables. Es fácil autoalojarlo mediante <a href="https://www.docker.com">Docker</a> en un servidor y, uniéndolo a un proxy inverso, resulta trivial acceder a el de forma remota.</p>
+<h3 id="el-workflow">El workflow</h3>
+<p>Pues bien, por un lado tengo mi cuenta de Strava y por otro una hoja de cálculo en un archivo de Google Sheets en el que después de cada actividad quiero guardar la fecha, tiempo, distancia, altitud ganada&hellip; Para esto me he creado este &ldquo;Workflow&rdquo;:</p>
+<p><img src="/images/20241216_n8n_strava_sheet_01.jpg" alt="image-01"></p>
+<p>Es un flujo de trabajo completamente lineal que no tiene ninguna complicación. Veamos paso por paso lo que va haciendo.</p>
+<ul>
+<li>Schedule Trigger. Lanza el worflow una vez cada hora</li>
+<li>actividades. Lee el hoja de cálculo de Google Sheets donde tengo guardadas las actividades</li>
+<li>ordenar_guardadas. Ordena las actividades por su código de referencia</li>
+<li>ultimas_guardadas. Se queda sólo con las últimas 5 actividades que he guardado</li>
+<li>ultimas_id. Desprecia el resto de campos y se queda sólo con el código de identificación</li>
+<li>Strava. Descarga las 10 últimas actividades de Strava.</li>
+<li>ordenar_strava. Ordena por el id las actividades descargadas</li>
+<li>Remove Duplicates. Elimina registros duplicados</li>
+<li>ultimas_strava. Se queda sólo con las últimas 5 actividades descargadas</li>
+<li>strava_last. Limita la salida a los campos necesarios y los reformatea</li>
+<li>Code. Compara las cinco actividades leídas con las descargadas y devuelve las no guardadas</li>
+<li>ordenar_resultados. Ordena por el id de las actividades</li>
+<li>Google Sheets. Añade los resultados como nuevas filas en la hoja de cálculo</li>
+</ul>
+<p>Y ya está, simplemente funciona. Cada hora comprueba si las últimas cinco actividades que tengo guardadas son las mismas que las últimas cinco que hay en Strava y si no es así añade las que falten.</p>
+<blockquote>
+<p>Este flujo de trabajo se puede simplificar bastante si usamos como disparador el webhook que Strava lanza cuando se añade una nueva actividad pero esto nos obliga a tener el servidor encendido continuamente.</p>
+</blockquote>
+<h3 id="formateando-campos">Formateando campos</h3>
+<ul>
+<li>
+<p>El campo &ldquo;id&rdquo; no es necesario modificarlo, guardo el mismo valor que devuelve Strava</p>
+</li>
+<li>
+<p>Como fecha, strava devuelve un valor completo como este &ldquo;2024-10-19T16:13:16Z&rdquo; que quiero simplificar a &ldquo;19/10/2024&rdquo;. Para esto utilizo esta conversión.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>{{ <span style="color:#a6e22e">DateTime</span>.<span style="color:#a6e22e">fromISO</span>(<span style="color:#a6e22e">$json</span>.<span style="color:#a6e22e">start_date_local</span>).<span style="color:#a6e22e">toFormat</span>(<span style="color:#e6db74">&#39;d/M/yyyy&#39;</span>) }}
+</span></span></code></pre></div><ul>
+<li>Para la distancia necesito convertir la distancia devuelta en metros a kilómetros con un sólo decimal.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>{{ Math.<span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">$json</span>.<span style="color:#a6e22e">distance</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">10</span> }}
+</span></span></code></pre></div><ul>
+<li>
+<p>La altitud acumulada de la ruta tampoco es necesario modificarla ya que se obtiene un valor en metros con un solo decimal.</p>
+</li>
+<li>
+<p>El tiempo si que hay que formatearlo. Strava devuelve un valor de segundos que quiero dar forma de horas, minutos y segundos. Para esto uso el siguiente código:</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>{{ <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span>Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">$json</span>.<span style="color:#a6e22e">moving_time</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">3600</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span>Math.<span style="color:#a6e22e">floor</span>((<span style="color:#a6e22e">$json</span>.<span style="color:#a6e22e">moving_time</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3600</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">60</span>).<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">padStart</span>(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;0&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span>(<span style="color:#a6e22e">$json</span>.<span style="color:#a6e22e">moving_time</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">60</span>).<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">padStart</span>(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;0&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span> }}
+</span></span></code></pre></div><h3 id="comparando-resultados">Comparando resultados</h3>
+<p>La parte más importante de este flujo es la encargada de comprobar cuales de las nuevas actividades no están ya guardadas. Para esto se desprecias de las últimas actividades descargadas de Strava las que existan en las últimas actividades guardadas según este código:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Obtén los items del nodo &#34;Strava&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">stravaItems</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;strava_last&#39;</span>).<span style="color:#a6e22e">all</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Obtén los items del nodo &#34;ultimas_id&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ultimasGuardadasItems</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;ultimas_id&#39;</span>).<span style="color:#a6e22e">all</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Extrae las referencias guardadas en un Set, asegurando el formato como cadena
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">referenciasGuardadas</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Set</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ultimasGuardadasItems</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">item</span> =&gt; String(<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">id</span>))
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Filtra los items de &#34;Strava&#34; cuyos IDs no estén en las referencias guardadas
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">filteredItems</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">stravaItems</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">item</span> =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Convertir el ID actual de Strava a cadena para comparar correctamente
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">referenciasGuardadas</span>.<span style="color:#a6e22e">has</span>(String(<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">id</span>));
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Devuelve los items filtrados
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">return</span> <span style="color:#a6e22e">filteredItems</span>;
+</span></span></code></pre></div><p>Puedes revisar completamente el workflow en la <a href="https://n8n.io/workflows/2678-export-all-strava-activity-data-to-google-sheets/">plantilla de n8n</a>.</p>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/descarga-y-edici%C3%B3n-de-actividades-de-strava-en-python/">Descarga y edición de actividades de Strava en Python</a></li>
+	    
+	    <li><a href="/errores-de-seguimiento-de-torrents-en-synology-con-n8n/">Errores de seguimiento de torrents en Synology con n8n</a></li>
+	    
+	    <li><a href="/visor-de-mapa-conquistado-en-minetest/">Visor de mapa conquistado en Minetest</a></li>
+	    
+	    <li><a href="/backups-en-la-nube-con-restic/">Backups en la nube con Restic</a></li>
+	    
+	    <li><a href="/actualizar-fecha-de-archivo-en-emacs/">Actualizar fecha de archivo en emacs</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/strava/" rel="tag">strava</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/instalaci%C3%B3n-y-configuraci%C3%B3n-de-zerotier/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Instalación y configuración de Zerotier</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/unir-rss-y-enviar-a-telegram-mediante-n8n/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Unir Rss y enviar a Telegram mediante n8n</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>google earth on Sherblog</title>
-    <link>https://sherlockes.github.io/tags/google-earth/</link>
-    <description>Recent content in google earth on Sherblog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Google Earth on Sherblog</title>
+    <link>http://localhost:1313/tags/google-earth/</link>
+    <description>Recent content in Google Earth on Sherblog</description>
+    <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Thu, 06 Jul 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://sherlockes.github.io/tags/google-earth/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/google-earth/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>De Google Earth a mapa para Garmin en 5 minutos</title>
-      <link>https://sherlockes.github.io/de-google-earth-a-mapa-para-garmin-en-5-minutos/</link>
+      <link>http://localhost:1313/de-google-earth-a-mapa-para-garmin-en-5-minutos/</link>
       <pubDate>Thu, 06 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://sherlockes.github.io/de-google-earth-a-mapa-para-garmin-en-5-minutos/</guid>
-      <description>Desde hace muchos años, utilizo Topohispania para la navegación en bicicleta con el Garmin Edge.
-Recientemente, me ha vuelto a picar la curiosidad de como crear un mapa con las sendas y barrancos que no salen en Topohispania y que están por los lugares que circulo habitualmente para superponerlo en el gps de la bicicleta. Lo primero que escuentro es esto, un tutorial de 2012 que emplea un sinfín de utilidades ya difíciles de encontrar y que echa para atrás sólo de ver la amplitud del mismo.</description>
+      <guid>http://localhost:1313/de-google-earth-a-mapa-para-garmin-en-5-minutos/</guid>
+      <description>&lt;p&gt;Desde hace muchos años, utilizo &lt;a href=&#34;http://www.elgps.com/foroGPS/viewtopic.php?f=41&amp;amp;t=8646&#34;&gt;Topohispania&lt;/a&gt; para la navegación en bicicleta con el Garmin Edge.&lt;/p&gt;&#xA;&lt;p&gt;Recientemente, me ha vuelto a picar la curiosidad de como crear un mapa con las sendas y barrancos que no salen en Topohispania y que están por los lugares que circulo habitualmente para superponerlo en el gps de la bicicleta. Lo primero que escuentro es &lt;a href=&#34;http://www.foromtb.com/threads/paso-a-paso-crear-un-mapa-para-superponerlo-al-topohispania.888466/&#34;&gt;esto&lt;/a&gt;, un tutorial de 2012 que emplea un sinfín de utilidades ya difíciles de encontrar y que echa para atrás sólo de ver la amplitud del mismo.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Sensor de temperatura personalizado - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Como he creado mi propio sensor de temperatura a partir de un módulo zigbee">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="http://localhost:1313//images/20240913_zigbee_custom_temperature_sensor_00.jpg" />
+	<meta name="twitter:title" content="Sensor de temperatura personalizado"/>
+	<meta name="twitter:description" content="Como he creado mi propio sensor de temperatura a partir de un módulo zigbee"/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="http://localhost:1313/sensor-de-temperatura-personalizado/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Sensor de temperatura personalizado">
+	<meta property="og:url" content="http://localhost:1313/sensor-de-temperatura-personalizado/">
+	<meta property="og:description" content="Como he creado mi propio sensor de temperatura a partir de un módulo zigbee"/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="http://localhost:1313/images/20240913_zigbee_custom_temperature_sensor_00_xl.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sensor de temperatura personalizado">
+  <meta name="twitter:description" content="Como he creado mi propio sensor de temperatura a partir de un módulo zigbee">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Sensor de temperatura personalizado</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2024-09-13T00:00:00Z">2024-09-13</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/home-assistant/" rel="category">Home Assistant</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20240913_zigbee_custom_temperature_sensor_00.jpg" alt="Sensor de temperatura personalizado">
+		
+	</figure><div class="content post__content clearfix">
+			<p>En <a href="https://aliexpress.com/">Aliexpress</a> puedes encontrar infinidad de sensores zigbee pero no uno al que conectar varias sondas de temperatura a un precio razonable. Por esto me he decidido a crear el mio propio.</p>
+<h3 id="materiales">Materiales</h3>
+<p>Vamos a partir de un pequeño y económico <a href="https://www.ti.com/lit/gpn/cc2530">CC2530</a> que no es difícil encontrar por menos de 5€ con antena incluida
+<img src="/images/20240913_zigbee_custom_temperature_sensor_02.jpg" alt="image-02"></p>
+<p>Hay varias alternativas para programar el controlador, personalmente me he decantado por usar el <a href="https://www.ti.com/tool/CC-DEBUGGER">CC-DEBUGGER</a> con un coste inferior a 10€
+<img src="/images/20240913_zigbee_custom_temperature_sensor_03.jpg" alt="image-03"></p>
+<p>Por poco más de 1€ podemos encontrar la sonda de temperatura <a href="https://www.analog.com/en/products/ds18b20.html#part-details">DS18B20</a> que conectaremos al controlador zigbee.
+<img src="/images/20240913_zigbee_custom_temperature_sensor_04.jpg" alt="image-04"></p>
+<p>Para un primer prototipo, lo anterior junto a alguna resistencia y unos cables dupont va a ser todo lo necesario. Posteriormente lo meteremos todo en una caja con una fuente de alimentación.</p>
+<h3 id="firmware">Firmware</h3>
+<p>En ningún momento me he planteado desarrollar mi propio software para controlar este dispositivo. Buscando información he encontrado (Pvto), un firmware para controlar el CC2530 personalizable desde un entorno gráfico. Parece que la última actualización es de hace más de tres años, con todo creo que puede funcionar.</p>
+<p>Problema, El software de configuración de ptvo sólo corre en windows por lo que para ejecutarlo en <a href="https://www.linuxmint.com">Linux Mint</a> he necesitado el uso de <a href="https://www.winehq.org">Wine</a> ejecutando los siguientes comandos en la carpeta donde haya descargado y descomprimido el <a href="https://ptvo.info/download/ptvo-firmware-latest.zip">instalador de Ptvo</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install wine
+</span></span><span style="display:flex;"><span>sudo wine FirmwareConfig.exe
+</span></span></code></pre></div><blockquote>
+<p>Aunque salen algunos errores a la hora de lanzar el ejecutable de windows mediante Wine, termina arrancando y es completamente funcional.</p>
+</blockquote>
+<p><img src="/images/20240913_zigbee_custom_temperature_sensor_05.jpg" alt="image-05"></p>
+<ul>
+<li>Seleccionamos el CC2530 como tipo de placa sobre el que vamos a trabajar</li>
+<li>La seleccionamos como dispositivo final</li>
+<li>La selección o no del &ldquo;Status led&rdquo; es irrelevante</li>
+<li>Seleccionamos la salida 1</li>
+<li>Le asignamos un pin de la placa</li>
+<li>Seleccionamos nuestra sonda y que la vamos a colocar con una resistencia externa.</li>
+</ul>
+<p>Con esto ya podemos guardar el firmware que hemos creado en una carpeta de nuestro pc. Se generará un archivo *.txt con la información de la configuración y otro archivo *.hex con el contenido del firmware que debemos volcar al CC2530.</p>
+<h3 id="volcando-el-firmware-al-cc2530">Volcando el firmware al CC2530</h3>
+<p>Como ya he comentado anteriormente, voy a usar un <a href="https://www.ti.com/tool/CC-DEBUGGER">CC-DEBUGGER</a> para programar el CC2530 desde mi ordenador. Para hacerlo desde linux es necesario tener instalado <a href="https://github.com/dashesy/cc-tool">cc-tool</a> lo que puede llegar a ser un fuerte dolor de cabeza tal y como puedes ver en esta <a href="https://sherblog.es/brain/#0b8d3fe0-0bc7-4845-8028-7a2042137b4b">nota</a>.</p>
+<p>Ahora necesitamos conectar el CC2530 al cc-debugger mediante unos puentes con cables dupont según el siguiente esquema.</p>
+<p><img src="/images/20240913_zigbee_custom_temperature_sensor_01.jpg" alt="image-01"></p>
+<table>
+  <thead>
+      <tr>
+          <th>Pin</th>
+          <th>CCdebugger</th>
+          <th>CC2530</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>GND</td>
+          <td>GND</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Degug Clock</td>
+          <td>P2.2</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>Debug Data</td>
+          <td>P2.1</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>Reset</td>
+          <td>Reset</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>Vcc</td>
+          <td>Vcc</td>
+      </tr>
+  </tbody>
+</table>
+<p>Con unos cuantos cables conectamos el cc-debugger al cc2530
+<img src="/images/20240913_zigbee_custom_temperature_sensor_06.jpg" alt="image-06"></p>
+<p>Conectamos el ccdebugger al pc y volcamos el firmware que hemos generado anteriormente mediante la siguiente instrucción.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cc-tool -e -w custom_zigbee.hex
+</span></span></code></pre></div><p>Si todo ha ido bien, el resultado será algo parecido a esto.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Programmer: CC Debugger
+</span></span><span style="display:flex;"><span>Target: CC2530
+</span></span><span style="display:flex;"><span>Erasing flash...
+</span></span><span style="display:flex;"><span>Completed       
+</span></span><span style="display:flex;"><span>Writing flash <span style="color:#f92672">(</span><span style="color:#ae81ff">236</span> KB<span style="color:#f92672">)</span>...
+</span></span><span style="display:flex;"><span>Completed <span style="color:#f92672">(</span>16.62 s.<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h3 id="montando-el-prototipo">Montando el prototipo</h3>
+<p>Finalmente mi prototipo tendrá tres sondas de temperatura para el control de la caldera y el agua caliente sanitaria, dos relés para el termostato y encendido de la propia caldera y finalmente un led que indique el funcionamiento. Según esto el firmware generado tiene estas características:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>Board type: CC2530
+</span></span><span style="display:flex;"><span>Device type: End device without routing
+</span></span><span style="display:flex;"><span>Status LED: P11, Periodic (every 5 seconds)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Output pins:
+</span></span><span style="display:flex;"><span>P14: Output 1, DS18B20, External pull-up (Sensor ID (optional, hex): AA-BB-CC-DD-EE-FF-01-02, Mode: Multiple on bus, Auto-detect)
+</span></span><span style="display:flex;"><span>P15: Output 2, DS18B20, External pull-up (Sensor ID (optional, hex): AA-BB-CC-DD-EE-FF-01-02, Mode: Multiple on bus, Auto-detect)
+</span></span><span style="display:flex;"><span>P16: Output 3, DS18B20, External pull-up (Sensor ID (optional, hex): AA-BB-CC-DD-EE-FF-01-02, Mode: Multiple on bus, Auto-detect)
+</span></span><span style="display:flex;"><span>P00: Output 4, GPIO, External pull-up (Role: Generic), Remember state
+</span></span><span style="display:flex;"><span>P01: Output 5, GPIO, External pull-up (Role: Generic), Remember state
+</span></span></code></pre></div><p><img src="/images/20240913_zigbee_custom_temperature_sensor_07.jpg" alt="image-07"></p>
+<p>La teoría queda muy despejada pero a la hora de llevar este prototipo a la práctica este es el resultado que he conseguido con una placa de pruebas pequeña, un poco de pegamento, una caja de conexiones eléctricas de superficie, cables y paciencia&hellip;
+<img src="/images/20240913_zigbee_custom_temperature_sensor_08.jpg" alt="image-08"></p>
+<blockquote>
+<p>He intentado usar un módulo con los dos relés pero aunque los leds del módulo indicaban un correcto funcionamiento, los relés no llegaban a hacer el movimiento mecánico.</p>
+</blockquote>
+<p>El módulo estará conectado a la red eléctrica de 220v con un modulo de alimentación de 3V dará alimentación a todos los componentes.</p>
+<h3 id="añadiendo-a-home-assistant">Añadiendo a Home Assistant</h3>
+<p>Para añadir el módulo que he creado sólo hay que acceder a la extensión Zigbee2Mqtt, permitir unirse a todos los dispositivos durante 5 minutos y entonces conectar el prototipo a la corriente. Obtendremos un dispositivo en HA como el siguiente.</p>
+<p><img src="/images/20240913_zigbee_custom_temperature_sensor_09.jpg" alt="image-09"></p>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="https://domoticaencasa.es/tutorial-ampliamos-cobertura-zigbee2mqtt-cc2530-cc2531/">Domótica en casa - CC2530</a></li>
+<li><a href="https://community.home-assistant.io/t/diy-zigbee-4x-ds18b20-temperature-measurement/246584">HA - DIY zigbee temperature measurement</a></li>
+<li><a href="https://ptvo.info/zigbee-configurable-firmware-features/external-sensors/ds18b20/">pvto - external sensors</a></li>
+<li><a href="https://ptvo.info/how-to-select-and-flash-cc2530-144/">pvto - flash cc2530</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/calibraci%C3%B3n-de-las-persianas-con-en-controlador-ts130f/">Calibración de las persianas con en controlador TS130F</a></li>
+	    
+	    <li><a href="/z2m-en-segunda-residencia/">Z2M en segunda residencia</a></li>
+	    
+	    <li><a href="/activar-sirena-ts0224-mediante-z2m-en-home-assistant/">Activar sirena TS0224 mediante Z2M en Home assistant</a></li>
+	    
+	    <li><a href="/convertir-una-luz-en-interruptor-en-home-assistant/">Convertir una luz en interruptor en Home Assistant</a></li>
+	    
+	    <li><a href="/mostrar-dispositivos-no-disponibles-en-home-assistant/">Mostrar dispositivos no disponibles en Home Assistant</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/zigbee/" rel="tag">zigbee</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/automatizando-las-luces-del-sal%C3%B3n/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Automatizando las luces del salón</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/apagado-remoto-de-un-equipo-desde-home-assistant/" rel="next">
+			<span class="pager__subtitle">Siguiente&thinsp;»</span>
+			<p class="pager__title">Apagado remoto de un equipo desde Home Assistant</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>
