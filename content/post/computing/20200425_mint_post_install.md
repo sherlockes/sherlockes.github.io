@@ -1,6 +1,6 @@
 ---
 title: "Mi Post-instalación de Linux Mint"
-date: "2026-01-20"
+date: "2026-04-21"
 creation: "2020-04-25"
 description: "Aquí están todos los pasos que doy después de la instalación de Linux Mint, perfectamente documentado para que no se me olvide..."
 thumbnail: "images/20200425_mint_post_install_00.jpg"
@@ -55,6 +55,7 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 # Probamos la conexión con Github
 ssh -T git@github.com
 ```
+> La mejor forma de listar la cláve pública para copiarla a [Github] es mediante el comando `cat`
 
 ## Emacs (Editor de texto)
 Desde el repositorio de paquetes de Linux Mint aunque no sea la última versión.
@@ -66,10 +67,8 @@ sudo apt install aspell-es
 
 El archivo de configuración de Emacs llamado ".emacs" se creará en "/home/usuario/" y tendrá el siguiente contenido.
 ```
-(setq user-init-file "/home/sherlockes/Google_Drive/SherloScripts/emacs/.emacs")
-(setq user-emacs-directory "/home/sherlockes/Google_Drive/SherloScripts/emacs/.emacs.d/")
-(setq default-directory "/home/sherlockes/")
-(setenv "HOME" "/home/sherlockes/")
+(setq user-dir (expand-file-name "~"))
+(setq user-init-file (concat user-dir "/dotfiles/emacs/.emacs.d/init.el"))
 (load user-init-file)
 ```
 {{< borrador >}}
@@ -103,15 +102,15 @@ La configuración completa de todas mis nubes la realizo copiando el archivo de 
 ## Zerotier (Virtual VPN)
 La instalación es tan sencilla como `curl -s https://install.zerotier.com | sudo bash` y añadimos el cliente a la red que tengamos creada en [Zerotier] mediante el comando `sudo zerotier-cli join 78898a1265hfg34b`
 
-En la última instalación ha dado problemas y he tenido que cambiar el nombre en clave de la distribución en "/etc/apt/sources.list.d/zerotier.list" para que quede así:
+En la última instalación ha dado problemas con Linux Mint y he tenido que cambiar el nombre en clave de la distribución para dejarlo en la versión "noble" de Ubuntu.
 
 ``` bash
-deb [signed-by=/usr/share/keyrings/zerotier-debian-package-key.gpg] http://download.zerotier.com/debian/noble noble main
-```
+sudo rm /etc/apt/sources.list.d/zerotier.list
 
-Después ya se puede actualizar e instalar:
-``` bash
+echo "deb [signed-by=/usr/share/keyrings/zerotier-archive-keyring.gpg] http://download.zerotier.com/debian/noble noble main" | sudo tee /etc/apt/sources.list.d/zerotier.list
+
 sudo apt-get update
+
 sudo apt-get install zerotier-one
 ```
 
@@ -129,6 +128,7 @@ Y por ahora esto es todo lo que tengo instalado en mi ordenador, poco a poco ir�
 [artículos sobre Rclone]: https://sherblog.es/tags/rclone/
 [Atareao]: https://www.atareao.es
 [Vivaldi]: https://vivaldi.com
+[Github]: https://github.com/settings/keys
 [Google Drive]: https://drive.google.com/
 [Inkscape]: https://inkscape.org/es/release/
 [Insync]: https://www.insynchq.com/downloads?start=true
