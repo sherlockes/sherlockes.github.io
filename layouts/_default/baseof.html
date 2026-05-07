@@ -88,7 +88,7 @@
 	{{- partial "mathjax.html" . -}}
 
 	<!-- Ruta del archivo para el editor online ---->
-	{{ if .Site.IsServer }}
+	{{ if hugo.IsServer }}
 	<script>
 	 if (window.self !== window.top) {
 	     window.parent.postMessage({
