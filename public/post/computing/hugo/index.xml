@@ -6,8 +6,15 @@
     <description>Recent content in Hugo on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Sat, 06 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/post/computing/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Deck 2026</title>
+      <link>http://localhost:1313/hugo-deck-2026/</link>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/hugo-deck-2026/</guid>
+      <description>&lt;p&gt;No se si será la última, lo que es seguro que es la más sencilla y potente forma que hasta ahora he utilizado para actualizar el contenido de mi blog.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Incrustar flujos de N8N en Hugo</title>
       <link>http://localhost:1313/incrustar-flujos-de-n8n-en-hugo/</link>
@@ -70,13 +77,6 @@
       <pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/script-de-instalaci%C3%B3n-de-hugo-en-linux/</guid>
       <description>&lt;p&gt;Cierto es que la &lt;a href=&#34;https://gohugo.io/getting-started/installing/#source&#34;&gt;instalación de Hugo&lt;/a&gt; no lleva más allá de unos pocos minutos, pero es gratificante no tener que gastar este tiempo cada vez que se actualiza a una nueva versión. Este script es la forma con la que consigo ahorrar este valioso tiempo en mis terminales con linux a partir de la fuente.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Como añado enlaces en Hugo</title>
-      <link>http://localhost:1313/como-a%C3%B1ado-enlaces-en-hugo/</link>
-      <pubDate>Wed, 23 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/como-a%C3%B1ado-enlaces-en-hugo/</guid>
-      <description>&lt;p&gt;Hay diversas formas de incluir los enlaces dentro de los documentos en &lt;a href=&#34;https://es.wikipedia.org/wiki/Markdown&#34;&gt;Markdown&lt;/a&gt; que &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; usa como fuente para generar la web. Aquí voy a explicar la que yo utilizo.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

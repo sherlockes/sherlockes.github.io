@@ -6,8 +6,15 @@
     <description>Recent content in A Pedales on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Tue, 21 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/a-pedales/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Una prueba</title>
+      <link>http://localhost:1313/una-prueba/</link>
+      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/una-prueba/</guid>
+      <description>&lt;p&gt;Escribe aquí el resumen de tu nuevo artículo de bricolaje&amp;hellip;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Apurada de frenada</title>
       <link>http://localhost:1313/apurada-de-frenada/</link>
@@ -70,13 +77,6 @@
       <pubDate>Tue, 03 Nov 2015 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/aver%C3%ADa-de-las-roldanas-del-cambio/</guid>
       <description>&lt;p&gt;La mayoría de las averías en la bicicleta son fruto del desgaste o mal mantenimiento de las piezas que la componen. La última que he tenido ha sido bastante curiosa y ha tenido lugar en plena ruta cuando sin previo aviso la cadena no giraba al darle hacia atrás a los pedales.&lt;/p&gt;&#xA;&lt;p&gt;Rápidamente me doy cuenta de que la roldana inferior del cambio está bloqueada y sólo permite el giro en un sentido, por suerte es que que permite avanzar a la bicicleta por lo que no me impide llegar a casa montado sobre la misma.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>El látex y las maxxis se llevan mal</title>
-      <link>http://localhost:1313/el-l%C3%A1tex-y-las-maxxis-se-llevan-mal/</link>
-      <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/el-l%C3%A1tex-y-las-maxxis-se-llevan-mal/</guid>
-      <description>&lt;p&gt;Hace unos meses hice un artículo sobre las ventajas e inconvenientes de usar la mezcla casera a base de látex como líquido sellante en neumáticos tubeless de la bicicleta de montaña. Habitualmente compro las cubiertas en &lt;a href=&#34;http://www.cubiertasmtb.com&#34;&gt;www.cubiertasmtb.com&lt;/a&gt; y para el caso de las maxxis el fabricante recomienda usar blackseal como líquido sellante.&lt;/p&gt;&#xA;&lt;p&gt;Pues bien, nunca sabes si esta recomendación está justificada para garantizar un correcto funcionamiento de la cubierta o simplemente por el beneficio económico del fabricante. Desde hace un tiempo monto en la bicicleta de XC cubiertas maxxis crosmark ya que su funcionamiento se ajusta muy bien a mis necesidades pero con la última rueda delantera he tenido un problema de formación de mini bultos a lo largo de la banda de rodadura y una constante pérdida de líquido sellante por ellos.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

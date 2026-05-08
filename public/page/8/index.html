@@ -124,6 +124,80 @@
 	<article class="list__item post">
 	
 	<figure class="list__thumbnail thumbnail">
+		<a class="thumbnail__link" href="/bot-de-telegram-en-python/">
+		<img class="thumbnail__image" src="/images/20220418_python_telegram_bot_00.jpg" alt="Bot de Telegram en Python">
+		</a>
+	</figure>
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/bot-de-telegram-en-python/" rel="bookmark">
+			Bot de Telegram en Python
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-11-07T00:00:00Z">2022-11-07</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">Computing</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		<p>Resumen de introducción</p>
+<!--more--
+https://www.geeksforgeeks.org/create-a-telegram-bot-using-python/
+
+pip3 install python-telegram-bot
+
+
+@BotFather
+/newbot
+poner nombre y usuario
+ name yt2pd
+ username yt2pdbot
+ token 5584141312:AAHGTgp5KTFaI6exIfDqJzW_mZAE2PZYgpk
+ url t.me/yt2pdbot
+
+
+https://github.com/python-telegram-bot/python-telegram-bot/wiki/Extensions-%E2%80%93-Your-first-Bot
+
+```python
+import logging
+from telegram import Update
+from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
+
+TOKEN='token'
+
+logging.basicConfig(
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    level=logging.INFO
+)
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await context.bot.send_message(
+        chat_id=update.effective_chat.id,
+        text="Soy un bot, dime lo que quieras¡¡"
+    )
+
+if __name__ == '__main__':
+    application = ApplicationBuilder().token(TOKEN).build()
+    start_handler = CommandHandler('start', start)
+    application.add_handler(start_handler)
+    application.run_polling()
+```
+
+![image-01]
+
+### Enlaces de interés
+- [Python Telegram Bot](https://python-telegram-bot.org)
+- [Telegram BotFather](https://core.telegram.org/bots#6-botfather)
+
+
+[link]: https://www.google.es
+
+[image-01]: /images/20220418_python_telegram_bot_01.jpg
+	</div>
+</article><article class="list__item post">
+	
+	<figure class="list__thumbnail thumbnail">
 		<a class="thumbnail__link" href="/microbit-desde-cero-con-ni%C3%B1os/">
 		<img class="thumbnail__image" src="/images/20221024_microbit_desde_cero_00.jpg" alt="Microbit desde cero con niños">
 		</a>
@@ -297,28 +371,6 @@
 	<div class="content list__excerpt post__content clearfix">
 		<p>El editor visual de acciones en las automatizaciones de <a href="https://www.home-assistant.io">Home Assistant</a> presenta muchas limitaciones. Encender o apagar una luz cuando lo hace otra o en función del estado de la puerta son dos de las que tengo implementadas.</p>
 	</div>
-</article><article class="list__item post">
-	
-	<figure class="list__thumbnail thumbnail">
-		<a class="thumbnail__link" href="/plantillas-de-archivos-en-emacs/">
-		<img class="thumbnail__image" src="/images/20220331_emacs_templates_00.jpg" alt="Plantillas de archivos en Emacs">
-		</a>
-	</figure>
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/plantillas-de-archivos-en-emacs/" rel="bookmark">
-			Plantillas de archivos en Emacs
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-03T00:00:00Z">2022-04-03</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">Computing</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		<p>La parte que más pereza me daba al necesitar desarrollar un script para realizar una automatización era la de crear el archivo, poner la cabecera y hacerlo ejecutable. Gracias a <a href="https://www.gnu.org/software/emacs/">Emacs</a> todo este proceso se realiza automáticamente sin más que crear el archivo.</p>
-	</div>
 </article>
 </main>
 
@@ -436,7 +488,7 @@ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" wi
 		<a class="widget-taglist__link widget__link btn" href="/tags/averias/" title="Averias">Averias (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/backup/" title="Backup">Backup (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bash/" title="Bash">Bash (38)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/bricolaje/" title="Bricolaje">Bricolaje (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bricolaje/" title="Bricolaje">Bricolaje (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/chatgpt/" title="Chatgpt">Chatgpt (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="Css">Css (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/darktable/" title="Darktable">Darktable (1)</a>
