@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pdf on Sherblog</title>
-    <link>http://localhost:1313/tags/pdf/</link>
+    <link>https://hugopreview.vps.sherblog.es:1313/tags/pdf/</link>
     <description>Recent content in Pdf on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Fri, 29 Nov 2019 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/pdf/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/pdf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Extrayendo la portada de un pdf</title>
-      <link>http://localhost:1313/extrayendo-la-portada-de-un-pdf/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/extrayendo-la-portada-de-un-pdf/</link>
       <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/extrayendo-la-portada-de-un-pdf/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/extrayendo-la-portada-de-un-pdf/</guid>
       <description>&lt;p&gt;Una vez más me encuentro con un problema de los que puedo optar por la solución sencilla y laboriosa o por la optima y meticulosa. Necesito convertir de varios archivos en pdf la primera página (Portada) a una imagen para lo cual voy a probar dos alternativas, primero con &lt;a href=&#34;https://imagemagick.org&#34;&gt;Imagemagick&lt;/a&gt; y posteriormente con &lt;a href=&#34;https://poppler.freedesktop.org/&#34;&gt;Poppler&lt;/a&gt; ambas desde la terminal y la línea de comandos de Linux Mint.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Photoshop on Sherblog</title>
-    <link>http://localhost:1313/tags/photoshop/</link>
+    <link>https://hugopreview.vps.sherblog.es:1313/tags/photoshop/</link>
     <description>Recent content in Photoshop on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sun, 22 Nov 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/photoshop/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/photoshop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Como quitar los cables de las fotos con Photoshop</title>
-      <link>http://localhost:1313/como-quitar-los-cables-de-las-fotos-con-photoshop/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/como-quitar-los-cables-de-las-fotos-con-photoshop/</link>
       <pubDate>Sun, 22 Nov 2009 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/como-quitar-los-cables-de-las-fotos-con-photoshop/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/como-quitar-los-cables-de-las-fotos-con-photoshop/</guid>
       <description>&lt;p&gt;Muy buenas fotografías en potencia no han llegado a serlo por culpa de los malditos (pero necesarios) cables del tendido eléctrico. Hay muchos métodos para eliminarlos con photoshop, en el siguiente video dejo el que yo empleo.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/4mNQ-Y6Z7yg?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;&lt;p&gt;Este método es necesario combinarlo con la clonación en caso de tratarse de cables que no terminan el el extremo de la fotografía, pero esto es ya batalla para otro día.&lt;/p&gt;</description>
     </item>
     <item>
       <title>HDR con Photomatix y Photoshop</title>
-      <link>http://localhost:1313/hdr-con-photomatix-y-photoshop/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/hdr-con-photomatix-y-photoshop/</link>
       <pubDate>Tue, 07 Jul 2009 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/hdr-con-photomatix-y-photoshop/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/hdr-con-photomatix-y-photoshop/</guid>
       <description>&lt;p&gt;A estas alturas de partido, es muy probable que sepas Lo que significa HDR en fotografía pero si no es así, la &lt;a href=&#34;http://es.wikipedia.org/wiki/High_Dynamic_Range_Rendering&#34;&gt;wikipedia&lt;/a&gt; está siempre lista para ayudarte.&lt;/p&gt;&#xA;&lt;p&gt;Existen muchos métodos para realizar este tipo de tomas pero ahora me voy a centrar en el que mejores resultados me ha dado hasta ahora, una combinación de &lt;a href=&#34;http://www.hdrsoft.com/index.html&#34;&gt;Photomatix&lt;/a&gt; y &lt;a href=&#34;http://www.adobe.com/es/products/photoshop/photoshop/&#34;&gt;Photoshop&lt;/a&gt;. Ninguno de los dos programas son gratuítos pero podemos descargar una versión de evaluación y si los resultados no parecen satisfactorios comprarlos o encargarlos a la burra.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tilt-Shift con Photoshop</title>
-      <link>http://localhost:1313/tilt-shift-con-photoshop/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/tilt-shift-con-photoshop/</link>
       <pubDate>Tue, 13 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tilt-shift-con-photoshop/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/tilt-shift-con-photoshop/</guid>
       <description>&lt;p&gt;Para los que escuchen la expresión por primera vez, Tilt-Shift se podría definir en fotografía como el arte de simular una maqueta a partir de la realidad. Para hacerlo directamente con una cámara hay que emplear unos objetivos y lentes que se nos escapan al bolsillo de la mayoría de los mortales por lo que vamos a intentar la modalidad barata que es mediante Photoshop.&lt;/p&gt;&#xA;&lt;p&gt;Lo primero que necesitamos es una fotografía cuyo principal requerimiento es que esté tomada desde un punto elevado y distante. Si la fotografía contiene elementos humanos o arquitectónicos coloridos será mucho más creible. El entorno rural no facilita estas cualidades por lo que habrá que intentarlo con lo que hay.&lt;/p&gt;</description>
     </item>
   </channel>

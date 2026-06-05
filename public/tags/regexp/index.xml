@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Regexp on Sherblog</title>
-    <link>http://localhost:1313/tags/regexp/</link>
+    <link>https://hugopreview.vps.sherblog.es:1313/tags/regexp/</link>
     <description>Recent content in Regexp on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sat, 29 Jan 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/regexp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/regexp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Arquetipos en Hugo (Archetypes)</title>
-      <link>http://localhost:1313/arquetipos-en-hugo-archetypes/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/arquetipos-en-hugo-archetypes/</link>
       <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/arquetipos-en-hugo-archetypes/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/arquetipos-en-hugo-archetypes/</guid>
       <description>&lt;p&gt;Cada vez que se comienza la creación de un artículo en Hugo partimos del comando &lt;code&gt;hugo new post/nuevo.md&lt;/code&gt; que hace uso de los arquetipos creados para definir la plantilla de este artículo. Aquí dejo como los tengo configurados para ahorrar tiempo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Renombrado de lotes de archivos en Emacs</title>
-      <link>http://localhost:1313/renombrado-de-lotes-de-archivos-en-emacs/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/renombrado-de-lotes-de-archivos-en-emacs/</link>
       <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/renombrado-de-lotes-de-archivos-en-emacs/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/renombrado-de-lotes-de-archivos-en-emacs/</guid>
       <description>&lt;p&gt;Cuando era usuario de windows, usaba &lt;a href=&#34;https://portableapps.com/apps/utilities/renamer-portable&#34;&gt;Renamer&lt;/a&gt; para cambiar el nombre de varios archivos en lote, en linux todavía no he encontrado una aplicación que me guste así que lo hago gracias a Emacs de una forma rápida.&lt;/p&gt;</description>
     </item>
   </channel>

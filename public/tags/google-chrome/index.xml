@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Google Chrome on Sherblog</title>
-    <link>http://localhost:1313/tags/google-chrome/</link>
+    <link>https://hugopreview.vps.sherblog.es:1313/tags/google-chrome/</link>
     <description>Recent content in Google Chrome on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Tue, 11 Apr 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/google-chrome/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/google-chrome/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deshabilitar cache en chrome</title>
-      <link>http://localhost:1313/deshabilitar-cache-en-chrome/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/deshabilitar-cache-en-chrome/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/deshabilitar-cache-en-chrome/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/deshabilitar-cache-en-chrome/</guid>
       <description>&lt;p&gt;Segun un artículo de &lt;a href=&#34;http://acceso-directo.com/todo-lo-que-necesitas-saber-sobre-el-cache-del-navegador/&#34;&gt;Acceso Directo&lt;/a&gt;, la cache del navegador se entiende como &amp;ldquo;un lugar de almacenamiento temporal que se encuentra en la computadora y que guarda archivos que han sido descargados por el navegador para mostrar sitios. Dentro de estos archivos se encuentran aquellos documentos necesarios para la visualización de un sitio como archivos html, hojas de estilo de CSS, sripts de JavaScript, gráficos, imágenes y contenido multimedia en general&amp;rdquo;.&lt;/p&gt;</description>
     </item>
   </channel>

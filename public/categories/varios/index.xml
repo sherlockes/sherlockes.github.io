@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Varios on Sherblog</title>
-    <link>http://localhost:1313/categories/varios/</link>
+    <link>https://hugopreview.vps.sherblog.es:1313/categories/varios/</link>
     <description>Recent content in Varios on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Thu, 31 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/varios/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es:1313/categories/varios/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mis copias de seguridad</title>
-      <link>http://localhost:1313/mis-copias-de-seguridad/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/mis-copias-de-seguridad/</link>
       <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/mis-copias-de-seguridad/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/mis-copias-de-seguridad/</guid>
       <description>&lt;p&gt;No va a ser este otro sitio en el que te explique la necesidad de las copias de seguridad para nuestros contenidos digitales, solo voy a mostrar la forma como yo las hago y las gestiono en una combinación entre mi NAS y algunas de las nubes públicas.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Los podcast que escucho</title>
-      <link>http://localhost:1313/los-podcast-que-escucho/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/los-podcast-que-escucho/</link>
       <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/los-podcast-que-escucho/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/los-podcast-que-escucho/</guid>
       <description>&lt;p&gt;Me considero un escucha avanzado de Podcast y desde hace varios años los escucho en &lt;a href=&#34;https://podcastaddict.com&#34;&gt;Podcast Addict&lt;/a&gt; , aplicación que me ofrece todo lo que necesito.  Tanto tiempo de escucha hace que continuamente se reciban menciones a nuevos Podcast a los que dar una oportunidad de escucha para agregarlo a mi lista de feeds.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Emacs desde cero</title>
-      <link>http://localhost:1313/emacs-desde-cero/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/emacs-desde-cero/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/emacs-desde-cero/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/emacs-desde-cero/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt; es una aplicación fea, nada intuitiva y con una curva de aprendizaje muy pronunciada, a cambio te ofrece un completo entorno de trabajo con infinidad de posibilidades. Hace más de cinco años que empecé a escribir este artículo, ahora me decido a terminarlo cansado de verlo en mi lista de artículos en borrador a pesar de que sigo aprendiendo algo sobre &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt; cada día.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Gestión de usuarios y passwords</title>
-      <link>http://localhost:1313/gesti%C3%B3n-de-usuarios-y-passwords/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/gesti%C3%B3n-de-usuarios-y-passwords/</link>
       <pubDate>Wed, 06 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/gesti%C3%B3n-de-usuarios-y-passwords/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/gesti%C3%B3n-de-usuarios-y-passwords/</guid>
       <description>&lt;p&gt;Cada día son más los servicios web a los que estamos subscritos y parece evidente que hace falta una gestión adecuada de las contraseñas que utilizamos para acceder a cada uno de estos servicios.  Cada uno maneja este tema a su gusto pero creo que para hacerlo de una forma “segura” hay que cumplir con los siguientes requisitos:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Contraseñas distintas para cada servicio&lt;/li&gt;&#xA;&lt;li&gt;No usar palabras, nombres, fechas&amp;hellip;&lt;/li&gt;&#xA;&lt;li&gt;No usar sólo letras&lt;/li&gt;&#xA;&lt;li&gt;Longitud suficiente (más de diez caracteres)&lt;/li&gt;&#xA;&lt;li&gt;Accesibles desde cualquier lugar&lt;/li&gt;&#xA;&lt;li&gt;Guardadas en un lugar seguro&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;No voy a entrar a valorar las alternativas que existen y que cumplen con las características de arriba, simplemente voy a exponer el método que yo utilizo en la actualidad y como hago para garantizar lo que, a mi modo de ver, es una seguridad suficiente.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Historia del alojamiento del blog</title>
-      <link>http://localhost:1313/historia-del-alojamiento-del-blog/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/historia-del-alojamiento-del-blog/</link>
       <pubDate>Wed, 12 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/historia-del-alojamiento-del-blog/</guid>
-      <description>&lt;p&gt;Parece que fue ayer, pero ya llevo más de diez años escribiendo en este blog y durante todo este tiempo he pasado por varios alojamientos que paso a describir a continuación.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;Diciembre de 2007.&lt;/em&gt; Un &lt;a href=&#34;http://localhost:1313/al-fin-se-ve-la-luz/&#34;&gt;Pentium II&lt;/a&gt; reconvertido a servidor web con el que di mis primeros pasos en el mundo linux. Aprendí muchísimo pero el ruido que producía y el alto consumo eléctrico hicieron que pasados unos meses le buscara una alternativa.&lt;/p&gt;</description>
+      <guid>https://hugopreview.vps.sherblog.es:1313/historia-del-alojamiento-del-blog/</guid>
+      <description>&lt;p&gt;Parece que fue ayer, pero ya llevo más de diez años escribiendo en este blog y durante todo este tiempo he pasado por varios alojamientos que paso a describir a continuación.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;Diciembre de 2007.&lt;/em&gt; Un &lt;a href=&#34;https://hugopreview.vps.sherblog.es:1313/al-fin-se-ve-la-luz/&#34;&gt;Pentium II&lt;/a&gt; reconvertido a servidor web con el que di mis primeros pasos en el mundo linux. Aprendí muchísimo pero el ruido que producía y el alto consumo eléctrico hicieron que pasados unos meses le buscara una alternativa.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Adios WordPress</title>
-      <link>http://localhost:1313/adios-wordpress/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/adios-wordpress/</link>
       <pubDate>Wed, 11 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/adios-wordpress/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/adios-wordpress/</guid>
       <description>&lt;p&gt;Ya han pasado algo más de diez años desde que empecé con WordPress y la verdad es que no he conseguido aprender mucho más allá del uso de unos cuantos plugins. Lo he intentado varias veces pero siempre me he encontrado con el mismo problema y es que aprender a manejar las tripas de este sistema de gestión de contenidos es mucho trabajo cuando solo lo vas a utilizar para gestionar una web.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fuga en cisterna Roca</title>
-      <link>http://localhost:1313/fuga-en-cisterna-roca/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/fuga-en-cisterna-roca/</link>
       <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/fuga-en-cisterna-roca/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/fuga-en-cisterna-roca/</guid>
       <description>&lt;p&gt;Hace unos días que la cisterna del &lt;a href=&#34;https://www.roca.es/catalogo/colecciones/colecciones-bano/the-gap-066-14.0316/inodoro-completo-rimless-compacto-adosado-pared-salida-dual-incluye-taza-cisterna-alimentacion-lateral-tapa-amortiguada-342737..H-341731..0-801732..4#!A34273700H+A341731000+A801732004&#34;&gt;inodoro Roca&lt;/a&gt; de casa fuga y aunque apenas es apreciable a la vista resulta inquietante saber que los euros de la factura del agua se estén escapando por el váter.&lt;/p&gt;&#xA;&lt;p&gt;Antes de ponerse manos a la obra no está de mas dar una vuelta por &lt;a href=&#34;https://www.youtube.com/results?search_query=fuga+cisterna+roca&#34;&gt;Youtube&lt;/a&gt;, seguro que no soy el primero al que le pasa y rápidamente puedo sacar una conclusión.&lt;/p&gt;&#xA;&lt;p&gt;Pues bien, sin ser fontanero, ya tengo claro de que hay principalmente dos razones por la que una cisterna de inodoro puede fugar agua:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Telegram Vs Whatsapp</title>
-      <link>http://localhost:1313/telegram-vs-whatsapp/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/telegram-vs-whatsapp/</link>
       <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/telegram-vs-whatsapp/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/telegram-vs-whatsapp/</guid>
       <description>&lt;h3 id=&#34;conoces-telegram&#34;&gt;¿Conoces Telegram?&lt;/h3&gt;&#xA;&lt;p&gt;Si eres de los que solo usa WhatsApp como aplicación de mensajería instantánea aquí tienes una oportunidad de abrir los ojos antes otra alternativa mucho más potente que es &lt;a href=&#34;https://www.telegram.org/&#34;&gt;Telegram&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;La principal ventaja que presenta Telegram VS Whatsapp reside en que la primera de puede utilizar en varios dispositivos al mismo tiempo. En mi caso la tengo instalada en mi teléfono Android, en el Ipad, en el pc de sobremesa con Windows y en el portatil con Linux pudiéndola utilizar en todo momento en cualquiera de ellos. Además, como complemento a todas estas distribuciones existe una versión &lt;a href=&#34;https://web.telegram.org/#/login&#34;&gt;web&lt;/a&gt; de la que no puedo sacar ninguna conclusión porque hasta ahora no he tenido que utilizar.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Como he ganado 100€ sin quererlo…</title>
-      <link>http://localhost:1313/como-he-ganado-100-sin-quererlo/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/como-he-ganado-100-sin-quererlo/</link>
       <pubDate>Sun, 04 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/como-he-ganado-100-sin-quererlo/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/como-he-ganado-100-sin-quererlo/</guid>
       <description>&lt;p&gt;Aquí va la historia de como he conseguido ganar 100€ (aunque técnicamente ha sido dejar de gastarlos) sin moverme del sitio y lo que es mejor todavía, sin yo buscarlo.&lt;/p&gt;&#xA;&lt;p&gt;Aprovecho para escuchar podcast con los auriculares bluetooth mientras hago bricolaje lejos de mi casa cuando recibo una llamada, como solo tengo que pulsar el botón del auricular para descolgar, lo hago sin saber quien me llama.&lt;/p&gt;&#xA;&lt;p&gt;Una primera impresión me informa de que no es nadie conocido y, a priori, un anunciante más que utiliza la plataforma telefónica para intentar realizar una venta. Resumiendo, una subcontrata de una aseguradora que me quiere vender un seguro.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Lo barato no siempre es suficiente</title>
-      <link>http://localhost:1313/lo-barato-no-siempre-es-suficiente/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/lo-barato-no-siempre-es-suficiente/</link>
       <pubDate>Sat, 04 Jun 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/lo-barato-no-siempre-es-suficiente/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/lo-barato-no-siempre-es-suficiente/</guid>
       <description>&lt;p&gt;Cuando cacharreas con la Gopro más o menos habitualmente y la conectas muchas veces al ordenador, lo más probable es que pierdas o rompas la tapa lateral que cubre el puerto USB y HDMI. Pues bien, hace unos días que me desapareció esta tapa de plástico y tras una infructuosa búsqueda me sumergí en &lt;a href=&#34;http://www.banggood.com&#34;&gt;Banggood&lt;/a&gt; a la búsqueda de un repuesto bueno, bonito y sobre todo barato.&lt;/p&gt;&#xA;&lt;p&gt;Termine comprando por menos de 2$ &lt;a href=&#34;http://www.banggood.com/Replacement-USB-Side-Door-Cover-Case-Cap-Repair-Part-For-GoPro-Hero-3-3-Plus-4-p-1026853.html&#34;&gt;esta&lt;/a&gt; tapa de repuesto.&lt;/p&gt;</description>
     </item>
   </channel>

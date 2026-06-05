@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Grub on Sherblog</title>
-    <link>http://localhost:1313/tags/grub/</link>
+    <link>https://hugopreview.vps.sherblog.es:1313/tags/grub/</link>
     <description>Recent content in Grub on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Wed, 07 Oct 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/grub/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/grub/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cambiar el orden de los elementos del grub</title>
-      <link>http://localhost:1313/cambiar-el-orden-de-los-elementos-del-grub/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/cambiar-el-orden-de-los-elementos-del-grub/</link>
       <pubDate>Wed, 07 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/cambiar-el-orden-de-los-elementos-del-grub/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/cambiar-el-orden-de-los-elementos-del-grub/</guid>
       <description>&lt;p&gt;En mi Pc de sobremesa coexisten Linux Mint y Windows 7, en el GRUB aparecen por defecto en primer lugar las opciones de Linux pero necesito que la opción en la que se produzca el arranque si el usuario no toca nada sea Windows, así lo he conseguido.&lt;/p&gt;</description>
     </item>
   </channel>

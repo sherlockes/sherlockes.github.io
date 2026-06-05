@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Osm on Sherblog</title>
-    <link>http://localhost:1313/tags/osm/</link>
+    <link>https://hugopreview.vps.sherblog.es:1313/tags/osm/</link>
     <description>Recent content in Osm on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Tue, 04 Dec 2012 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/osm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/osm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Geoposicionando post en WordPress</title>
-      <link>http://localhost:1313/geoposicionando-post-en-wordpress/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/geoposicionando-post-en-wordpress/</link>
       <pubDate>Tue, 04 Dec 2012 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/geoposicionando-post-en-wordpress/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/geoposicionando-post-en-wordpress/</guid>
       <description>&lt;p&gt;Esta es una demostración de que muchas veces la solución a un problema es mucho más sencilla de lo que nos parece, simplemente hay que invertir un poco de tiempo en &lt;a href=&#34;http://www.google.es&#34;&gt;buscar&lt;/a&gt; información y tener paciencia en la consecución de los objetivos.&lt;/p&gt;&#xA;&lt;p&gt;Lo que busco con el geoposicionamiento de algunos de los post del blog en tan simple como tener dibujado un mapa en el que, mediante unos iconos, aparezcan representados determinados post según su ubicación real.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Html on Sherblog</title>
-    <link>http://localhost:1313/tags/html/</link>
+    <link>https://hugopreview.vps.sherblog.es:1313/tags/html/</link>
     <description>Recent content in Html on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Thu, 19 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/html/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Simple web apps by Chatgpt</title>
-      <link>http://localhost:1313/simple-web-apps-by-chatgpt/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/simple-web-apps-by-chatgpt/</link>
       <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/simple-web-apps-by-chatgpt/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/simple-web-apps-by-chatgpt/</guid>
       <description>&lt;p&gt;Hacer pequeñas aplicaciones cada día que pasa es más sencillo sin tener mucha idea de programar. Aquí dejo unas cuantas que he creado para satisfacer necesidades puntuales. Hasta la descripción de la aplicación va a ser cortesía de la inteligencia artificial.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Incrustar flujos de N8N en Hugo</title>
-      <link>http://localhost:1313/incrustar-flujos-de-n8n-en-hugo/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/incrustar-flujos-de-n8n-en-hugo/</link>
       <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/incrustar-flujos-de-n8n-en-hugo/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/incrustar-flujos-de-n8n-en-hugo/</guid>
       <description>&lt;p&gt;A priori, la publicación de tus propios workflows de &lt;a href=&#34;https://n8n.io&#34;&gt;n8n&lt;/a&gt; en su web de &lt;a href=&#34;https://creators.n8n.io&#34;&gt;creadores&lt;/a&gt; puede parecer la forma más rápida y sencilla pero resulta que el filtro es terrible y no importa que el flujo funcione o no, lo importante es que el formato sea el correcto. Por esto me decido a publicarlos en mi propio &lt;a href=&#34;https://sherblog.es&#34;&gt;blog&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Compartiendo contenido de Hugo en Mastodon</title>
-      <link>http://localhost:1313/compartiendo-contenido-de-hugo-en-mastodon/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/compartiendo-contenido-de-hugo-en-mastodon/</link>
       <pubDate>Mon, 12 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/compartiendo-contenido-de-hugo-en-mastodon/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/compartiendo-contenido-de-hugo-en-mastodon/</guid>
       <description>&lt;p&gt;Para que al publicar en Mastodon un artículo de la web se vincule también la imagen del mismo es necesario realizar unas modificaciones en la plantilla de Hugo.&lt;/p&gt;</description>
     </item>
   </channel>

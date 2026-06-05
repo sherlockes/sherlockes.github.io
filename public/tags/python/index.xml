@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Sherblog</title>
-    <link>http://localhost:1313/tags/python/</link>
+    <link>https://hugopreview.vps.sherblog.es:1313/tags/python/</link>
     <description>Recent content in Python on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo Deck 2026</title>
-      <link>http://localhost:1313/hugo-deck-2026/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/hugo-deck-2026/</link>
       <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/hugo-deck-2026/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/hugo-deck-2026/</guid>
       <description>&lt;p&gt;No se si será la última, lo que es seguro que es la más sencilla y potente forma que hasta ahora he utilizado para actualizar el contenido de mi blog.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sherlocaster</title>
-      <link>http://localhost:1313/sherlocaster/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/sherlocaster/</link>
       <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sherlocaster/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/sherlocaster/</guid>
       <description>&lt;p&gt;Resumen de introducción es&amp;hellip;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Descarga y edición de actividades de Strava en Python</title>
-      <link>http://localhost:1313/descarga-y-edici%C3%B3n-de-actividades-de-strava-en-python/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/descarga-y-edici%C3%B3n-de-actividades-de-strava-en-python/</link>
       <pubDate>Sat, 04 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/descarga-y-edici%C3%B3n-de-actividades-de-strava-en-python/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/descarga-y-edici%C3%B3n-de-actividades-de-strava-en-python/</guid>
       <description>&lt;p&gt;Descargar las actividades anuales de &lt;a href=&#34;https://www.strava.com&#34;&gt;Strava&lt;/a&gt; para la creación de un mapa con mis rutas de forma automatizada es un proyecto detrás del cual llevaba mucho tiempo. Al fin lo he afrontado.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Bot de Telegram en Python</title>
-      <link>http://localhost:1313/bot-de-telegram-en-python/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/bot-de-telegram-en-python/</link>
       <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/bot-de-telegram-en-python/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/bot-de-telegram-en-python/</guid>
       <description>&lt;p&gt;Resumen de introducción&lt;/p&gt;&#xA;&lt;!--more--&#xA;https://www.geeksforgeeks.org/create-a-telegram-bot-using-python/&#xA;&#xA;pip3 install python-telegram-bot&#xA;&#xA;&#xA;@BotFather&#xA;/newbot&#xA;poner nombre y usuario&#xA; name yt2pd&#xA; username yt2pdbot&#xA; token 5584141312:AAHGTgp5KTFaI6exIfDqJzW_mZAE2PZYgpk&#xA; url t.me/yt2pdbot&#xA;&#xA;&#xA;https://github.com/python-telegram-bot/python-telegram-bot/wiki/Extensions-%E2%80%93-Your-first-Bot&#xA;&#xA;```python&#xA;import logging&#xA;from telegram import Update&#xA;from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler&#xA;&#xA;TOKEN=&#39;token&#39;&#xA;&#xA;logging.basicConfig(&#xA;    format=&#39;%(asctime)s - %(name)s - %(levelname)s - %(message)s&#39;,&#xA;    level=logging.INFO&#xA;)&#xA;&#xA;async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):&#xA;    await context.bot.send_message(&#xA;        chat_id=update.effective_chat.id,&#xA;        text=&#34;Soy un bot, dime lo que quieras¡¡&#34;&#xA;    )&#xA;&#xA;if __name__ == &#39;__main__&#39;:&#xA;    application = ApplicationBuilder().token(TOKEN).build()&#xA;    start_handler = CommandHandler(&#39;start&#39;, start)&#xA;    application.add_handler(start_handler)&#xA;    application.run_polling()&#xA;```&#xA;&#xA;![image-01]&#xA;&#xA;### Enlaces de interés&#xA;- [Python Telegram Bot](https://python-telegram-bot.org)&#xA;- [Telegram BotFather](https://core.telegram.org/bots#6-botfather)&#xA;&#xA;&#xA;[link]: https://www.google.es&#xA;&#xA;[image-01]: /images/20220418_python_telegram_bot_01.jpg</description>
     </item>
     <item>
       <title>Crear Podcast a partir de un canal de Twitch</title>
-      <link>http://localhost:1313/crear-podcast-a-partir-de-un-canal-de-twitch/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/crear-podcast-a-partir-de-un-canal-de-twitch/</link>
       <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/crear-podcast-a-partir-de-un-canal-de-twitch/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/crear-podcast-a-partir-de-un-canal-de-twitch/</guid>
       <description>&lt;p&gt;No tengo tiempo para ver los canales de Twitch que me gustaría seguir en el momento de la emisión y tras unos días probando una aplicación Android para descargar los vídeos me he decidido a crear un podcast privado que se genere de forma automática a partir del contenido de un canal en Twitch.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Descargar archivos de Telegram</title>
-      <link>http://localhost:1313/descargar-archivos-de-telegram/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/descargar-archivos-de-telegram/</link>
       <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/descargar-archivos-de-telegram/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/descargar-archivos-de-telegram/</guid>
       <description>&lt;p&gt;Hace un tiempo que uso un bot para descargar los archivos grandes de Telegram al NAS tal y como expliqué en este &lt;a href=&#34;https://sherblog.pro/archivos-de-telegram-al-nas/&#34;&gt;artículo&lt;/a&gt;, ahora le doy una vuelta y pongo a trabajar la Raspberry con un servicio que me hace prescindir del bot y sus limitaciones.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Termostato Raspberry</title>
-      <link>http://localhost:1313/termostato-raspberry/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/termostato-raspberry/</link>
       <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/termostato-raspberry/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/termostato-raspberry/</guid>
       <description>&lt;p&gt;Con la reciente muerte de termostato inteligente de NetAtmo a causa de una simple pila sulfatada me he decidido a crear el mio propio con la raspberry y un poco de Python. Iré escribiendo aquí los procesos con el mismo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Script para renombrar imágenes en python en función de la fecha en la que se tomaron</title>
-      <link>http://localhost:1313/script-para-renombrar-im%C3%A1genes-en-python-en-funci%C3%B3n-de-la-fecha-en-la-que-se-tomaron/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/script-para-renombrar-im%C3%A1genes-en-python-en-funci%C3%B3n-de-la-fecha-en-la-que-se-tomaron/</link>
       <pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/script-para-renombrar-im%C3%A1genes-en-python-en-funci%C3%B3n-de-la-fecha-en-la-que-se-tomaron/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/script-para-renombrar-im%C3%A1genes-en-python-en-funci%C3%B3n-de-la-fecha-en-la-que-se-tomaron/</guid>
       <description>&lt;p&gt;Un día te vienen de la guardería con un montón de fotos de tu hijo metidas en una carpeta y cada una con un nombre completamente aleatorio en función del dispositivo con el que se tomaron, algo hay que hacer para renombrarlas.&lt;/p&gt;</description>
     </item>
   </channel>

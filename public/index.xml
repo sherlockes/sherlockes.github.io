@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sherblog</title>
-    <link>http://localhost:1313/</link>
+    <link>https://hugopreview.vps.sherblog.es:1313/</link>
     <description>Recent content on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo Deck 2026</title>
-      <link>http://localhost:1313/hugo-deck-2026/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/hugo-deck-2026/</link>
       <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/hugo-deck-2026/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/hugo-deck-2026/</guid>
       <description>&lt;p&gt;No se si será la última, lo que es seguro que es la más sencilla y potente forma que hasta ahora he utilizado para actualizar el contenido de mi blog.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mi nuevo init.el en 2026</title>
-      <link>http://localhost:1313/mi-nuevo-init.el-en-2026/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/mi-nuevo-init.el-en-2026/</link>
       <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/mi-nuevo-init.el-en-2026/</guid>
-      <description>&lt;p&gt;Han pasado más de 8 años desde que empecé mis andaduras con Emacs. El archivo de configuración .emacs y arranque init.el ha crecido mucho durante todo este tiempo. Ahora lo he reconstruido sobre &lt;strong&gt;Emacs 30&lt;/strong&gt; con una base moderna, limpia y compatible, manteniendo casi todo lo valioso del sistema antiguo y añadiendo nuevas características.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Si no tienes tiempo para seguir leyendo, puedes encontrar mi configuración en mi repositorio &lt;a href=&#34;https://github.com/sherlockes/SherloScripts/tree/master/emacs&#34;&gt;sherloscripts&lt;/a&gt;. Sólo tienes que clonarlo en ~/Sherloscripts y ejecutar el archivo &lt;code&gt;install.sh&lt;/code&gt;.&lt;/p&gt;</description>
+      <guid>https://hugopreview.vps.sherblog.es:1313/mi-nuevo-init.el-en-2026/</guid>
+      <description>&lt;p&gt;Ya han pasado más de 8 años desde que empecé mis andaduras con Emacs. El archivo de configuración .emacs y arranque init.el ha crecido mucho durante todo este tiempo. Ahora lo he reconstruido sobre &lt;strong&gt;Emacs 30&lt;/strong&gt; con una base moderna, limpia y compatible, manteniendo casi todo lo valioso del sistema antiguo y añadiendo nuevas características.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Si no tienes tiempo para seguir leyendo, puedes encontrar mi configuración en mi repositorio &lt;a href=&#34;https://github.com/sherlockes/SherloScripts/tree/master/emacs&#34;&gt;sherloscripts&lt;/a&gt;. Sólo tienes que clonarlo en ~/Sherloscripts y ejecutar el archivo &lt;code&gt;install.sh&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mi Post-instalación de Linux Mint</title>
-      <link>http://localhost:1313/mi-post-instalaci%C3%B3n-de-linux-mint/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/mi-post-instalaci%C3%B3n-de-linux-mint/</link>
       <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/mi-post-instalaci%C3%B3n-de-linux-mint/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/mi-post-instalaci%C3%B3n-de-linux-mint/</guid>
       <description>&lt;p&gt;Hay cientos de artículos sobre post-instalaciones de sistemas operativos. Este sólo pretendo que me sirva de guía para mi en las futuras instalaciones de linux Mint, aunque si le puede ayudar a alguien&amp;hellip;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Creación de un post de Hugo desde emacs</title>
-      <link>http://localhost:1313/creaci%C3%B3n-de-un-post-de-hugo-desde-emacs/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/creaci%C3%B3n-de-un-post-de-hugo-desde-emacs/</link>
       <pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/creaci%C3%B3n-de-un-post-de-hugo-desde-emacs/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/creaci%C3%B3n-de-un-post-de-hugo-desde-emacs/</guid>
       <description>&lt;p&gt;Para centrarte en escribir, el proceso de publicación no tiene que suponer una barrera. Así he configurado emacs para optimizar la creación de post para el blog con la mínima fricción posible.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Generador de contexto para IA</title>
-      <link>http://localhost:1313/generador-de-contexto-para-ia/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/generador-de-contexto-para-ia/</link>
       <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/generador-de-contexto-para-ia/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/generador-de-contexto-para-ia/</guid>
       <description>&lt;p&gt;El &amp;ldquo;vibe coding&amp;rdquo; se trata de mantener el flujo creativo y dejar que la IA se encargue de la carpintería pesada. Podemos definir este &lt;code&gt;context-engine.sh&lt;/code&gt; como un &amp;ldquo;acelerador de partículas&amp;rdquo; para este flujo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sherlocaster</title>
-      <link>http://localhost:1313/sherlocaster/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/sherlocaster/</link>
       <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sherlocaster/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/sherlocaster/</guid>
       <description>&lt;p&gt;Resumen de introducción es&amp;hellip;&lt;/p&gt;</description>
     </item>
     <item>
       <title>App de cuestionarios</title>
-      <link>http://localhost:1313/app-de-cuestionarios/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/app-de-cuestionarios/</link>
       <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/app-de-cuestionarios/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/app-de-cuestionarios/</guid>
       <description>&lt;p&gt;Esta es sólo una prueba de concepto de como he utilizado una serie de servicios gratuitos para la creación de una app de cuestionarios. No pretendo explicar el funcionamiento, sólo en que me ha ayudado cada uno.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Simple web apps by Chatgpt</title>
-      <link>http://localhost:1313/simple-web-apps-by-chatgpt/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/simple-web-apps-by-chatgpt/</link>
       <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/simple-web-apps-by-chatgpt/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/simple-web-apps-by-chatgpt/</guid>
       <description>&lt;p&gt;Hacer pequeñas aplicaciones cada día que pasa es más sencillo sin tener mucha idea de programar. Aquí dejo unas cuantas que he creado para satisfacer necesidades puntuales. Hasta la descripción de la aplicación va a ser cortesía de la inteligencia artificial.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Los auriculares QCY que he usado</title>
-      <link>http://localhost:1313/los-auriculares-qcy-que-he-usado/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/los-auriculares-qcy-que-he-usado/</link>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/los-auriculares-qcy-que-he-usado/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/los-auriculares-qcy-que-he-usado/</guid>
       <description>&lt;p&gt;Llevo haciendo uso de auriculares bluetooth de forma intensiva desde 2016, al principio probé varias marcas pero desde 2018 todos los que he usado han sido de la marca &lt;a href=&#34;https://www.qcy.com&#34;&gt;QCY&lt;/a&gt; y no por ser especialmente buenos ni baratos, simplemente por que me dan lo que necesito al precio más bajo posible.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Youtube y Twitch a Podcast en Docker</title>
-      <link>http://localhost:1313/youtube-y-twitch-a-podcast-en-docker/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/youtube-y-twitch-a-podcast-en-docker/</link>
       <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/youtube-y-twitch-a-podcast-en-docker/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/youtube-y-twitch-a-podcast-en-docker/</guid>
       <description>&lt;p&gt;Hace tiempo que uso unos sencillos scripts en bash para crear un podcast a partir del audio de unos cuantos canales de &lt;a href=&#34;https://www.youtube.com&#34;&gt;Youtube&lt;/a&gt; y &lt;a href=&#34;https://www.twitch.tv&#34;&gt;Twitch&lt;/a&gt;. Ahora lo vamos a meter en un contenedor para que sea más fácil de migrar a otra máquina.&lt;/p&gt;</description>
     </item>
   </channel>

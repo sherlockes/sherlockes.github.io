@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Synology on Sherblog</title>
-    <link>http://localhost:1313/tags/synology/</link>
+    <link>https://hugopreview.vps.sherblog.es:1313/tags/synology/</link>
     <description>Recent content in Synology on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sat, 06 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/synology/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/synology/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Errores de seguimiento de torrents en Synology con n8n</title>
-      <link>http://localhost:1313/errores-de-seguimiento-de-torrents-en-synology-con-n8n/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/errores-de-seguimiento-de-torrents-en-synology-con-n8n/</link>
       <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/errores-de-seguimiento-de-torrents-en-synology-con-n8n/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/errores-de-seguimiento-de-torrents-en-synology-con-n8n/</guid>
       <description>&lt;p&gt;Cuando usas &lt;a href=&#34;https://www.synology.com/es-es/dsm/packages/DownloadStation&#34;&gt;Download Station&lt;/a&gt; para Synology una de las características que echas de menos es el control del seguimiento de torrents compartidos en trackers para saber cuando los puedes borrar de tu lista de propagación. Así me las apaño yo gracias a &lt;a href=&#34;https://n8n.io&#34;&gt;n8n&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Synology. Falta de espacio en la unidad de sistema</title>
-      <link>http://localhost:1313/synology.-falta-de-espacio-en-la-unidad-de-sistema/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/synology.-falta-de-espacio-en-la-unidad-de-sistema/</link>
       <pubDate>Tue, 06 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/synology.-falta-de-espacio-en-la-unidad-de-sistema/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/synology.-falta-de-espacio-en-la-unidad-de-sistema/</guid>
       <description>&lt;p&gt;En NAS de Synology no se actualiza por falta de espacio en la unidad de sistema y estos son los pasos que he dado para dar con la solución.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Synology no actualiza por el espacio de la partición del sistema</title>
-      <link>http://localhost:1313/synology-no-actualiza-por-el-espacio-de-la-partici%C3%B3n-del-sistema/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/synology-no-actualiza-por-el-espacio-de-la-partici%C3%B3n-del-sistema/</link>
       <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/synology-no-actualiza-por-el-espacio-de-la-partici%C3%B3n-del-sistema/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/synology-no-actualiza-por-el-espacio-de-la-partici%C3%B3n-del-sistema/</guid>
       <description>&lt;p&gt;Tras un tiempo sin acceder a la interfaz web de mi Synology me encuentro con que no es posible la actualización por una &amp;ldquo;capacidad insuficiente&amp;rdquo; de la partición del sistema y esto es lo que he hecho para resolverlo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Instalar rclone en Synology Ds920&#43;</title>
-      <link>http://localhost:1313/instalar-rclone-en-synology-ds920-/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/instalar-rclone-en-synology-ds920-/</link>
       <pubDate>Sat, 25 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/instalar-rclone-en-synology-ds920-/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/instalar-rclone-en-synology-ds920-/</guid>
       <description>&lt;p&gt;Tanto en la migración de los discos duros desde el Ds216+II al Ds920+ como en la actualización desde DSM6 a DSM7, uno de los problemas con que me he encontrado es que ha desaparecido la instalación de Rclone, toca volver a instalarlo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Home Assistant - Wake on Lan Synology</title>
-      <link>http://localhost:1313/home-assistant-wake-on-lan-synology/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/home-assistant-wake-on-lan-synology/</link>
       <pubDate>Sun, 27 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/home-assistant-wake-on-lan-synology/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/home-assistant-wake-on-lan-synology/</guid>
       <description>&lt;p&gt;Mi NAS no está siempre encendido, arranca todos los días a una hora programada, si quiero hacerlo antes he implementado un interruptor en &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; para encenderlo o apagarlo. Aquí dejo la forma en la que lo he realizado.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Synology broken sudo</title>
-      <link>http://localhost:1313/synology-broken-sudo/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/synology-broken-sudo/</link>
       <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/synology-broken-sudo/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/synology-broken-sudo/</guid>
       <description>&lt;p&gt;Una simple modificación del archivo &amp;ldquo;sudoers&amp;rdquo; en mi Synology Ds920+ se podía haber convertido en una completa reinstalación del sistema operativo de no encontrar esta simple solución.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Montar carpeta del NAS mediante sshfs</title>
-      <link>http://localhost:1313/montar-carpeta-del-nas-mediante-sshfs/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/montar-carpeta-del-nas-mediante-sshfs/</link>
       <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/montar-carpeta-del-nas-mediante-sshfs/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/montar-carpeta-del-nas-mediante-sshfs/</guid>
       <description>&lt;p&gt;Hoy toca montar una carpeta del NAS en el pc mediante sshfs para correr sobre ella un script, resulta sencillo pero hay que tener en cuenta unas peculiaridades&amp;hellip;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Trabajar con ssh-key en Synology</title>
-      <link>http://localhost:1313/trabajar-con-ssh-key-en-synology/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/trabajar-con-ssh-key-en-synology/</link>
       <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/trabajar-con-ssh-key-en-synology/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/trabajar-con-ssh-key-en-synology/</guid>
       <description>&lt;p&gt;El acceso mediante llave público-privada es la forma más sencilla de acceder mediante ssh a nuestro NAS o desde este a oto equipo de forma autónoma y sin pedir contraseña, por la red hay cientos de tutoriales de como hay que hacerlo. Esta es sólo la forma que a mi me ha funcionado sin problemas.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Encender el Nas desde el teléfono</title>
-      <link>http://localhost:1313/encender-el-nas-desde-el-tel%C3%A9fono/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/encender-el-nas-desde-el-tel%C3%A9fono/</link>
       <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/encender-el-nas-desde-el-tel%C3%A9fono/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/encender-el-nas-desde-el-tel%C3%A9fono/</guid>
       <description>&lt;p&gt;Tener el NAS encendido todo el día puede ser un gasto innecesario. El mío se enciende de forma automática las horas necesarias para las copias de seguridad y lo enciendo de forma remota desde mi teléfono si lo necesito de forma puntual fuera de este horario.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rclone en Synology</title>
-      <link>http://localhost:1313/rclone-en-synology/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/rclone-en-synology/</link>
       <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/rclone-en-synology/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/rclone-en-synology/</guid>
       <description>&lt;p&gt;Llega el momento en el que tienes que instalar rclone en tu nas de Synology y te encuentras con que no funciona la misma instalación que has hecho en la Raspberry o Debian&lt;/p&gt;</description>
     </item>
   </channel>

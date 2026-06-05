@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Google Keep on Sherblog</title>
-    <link>http://localhost:1313/tags/google-keep/</link>
+    <link>https://hugopreview.vps.sherblog.es:1313/tags/google-keep/</link>
     <description>Recent content in Google Keep on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sun, 27 May 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/google-keep/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/google-keep/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ordenar listas en Google Keep</title>
-      <link>http://localhost:1313/ordenar-listas-en-google-keep/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/ordenar-listas-en-google-keep/</link>
       <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ordenar-listas-en-google-keep/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/ordenar-listas-en-google-keep/</guid>
       <description>&lt;p&gt;Para el que no lo conozca, Google Keep es una pequeña utilidad que sirve básicamente para crear notas y recordatorios. Las opciones que presenta son muy limitadas pero tiene dos características que la dirán de una gran potencia y versatilidad.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;La sincronización entre dispositivos&lt;/li&gt;&#xA;&lt;li&gt;La compartición con otras personas&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Un tiempo atrás, antes de que descubriera &lt;a href=&#34;https://ia.net/writer&#34;&gt;iawriter&lt;/a&gt;, la utilizaba para muchas cosas pero ahora tengo que reconocer que solo la empleo para la lista de la compra.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gphoto-Sync on Sherblog</title>
-    <link>http://localhost:1313/tags/gphoto-sync/</link>
+    <link>https://hugopreview.vps.sherblog.es:1313/tags/gphoto-sync/</link>
     <description>Recent content in Gphoto-Sync on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Fri, 20 Sep 2019 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/gphoto-sync/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/gphoto-sync/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Backup de Google Photos</title>
-      <link>http://localhost:1313/backup-de-google-photos/</link>
+      <link>https://hugopreview.vps.sherblog.es:1313/backup-de-google-photos/</link>
       <pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/backup-de-google-photos/</guid>
+      <guid>https://hugopreview.vps.sherblog.es:1313/backup-de-google-photos/</guid>
       <description>&lt;p&gt;Desde principios del mes de Julio de 2019, todos los que realizamos una copia de seguridad de de las imágenes subidas a Google Photos una forma automatizada hemos pasado a tener un serio problema que cada vez estoy más cerca de solucionar.&lt;/p&gt;</description>
     </item>
   </channel>
