@@ -6,8 +6,15 @@
     <description>Recent content on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hugopreview.vps.sherblog.es:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Homepage, mostrando contenedores remotos</title>
+      <link>https://hugopreview.vps.sherblog.es:1313/homepage-mostrando-contenedores-remotos/</link>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es:1313/homepage-mostrando-contenedores-remotos/</guid>
+      <description>&lt;p&gt;Hace mucho tiempo que uso &lt;a href=&#34;https://gethomepage.dev&#34;&gt;homepage&lt;/a&gt; como página de inicio para&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Hugo Deck 2026</title>
       <link>https://hugopreview.vps.sherblog.es:1313/hugo-deck-2026/</link>
@@ -70,13 +77,6 @@
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
       <guid>https://hugopreview.vps.sherblog.es:1313/los-auriculares-qcy-que-he-usado/</guid>
       <description>&lt;p&gt;Llevo haciendo uso de auriculares bluetooth de forma intensiva desde 2016, al principio probé varias marcas pero desde 2018 todos los que he usado han sido de la marca &lt;a href=&#34;https://www.qcy.com&#34;&gt;QCY&lt;/a&gt; y no por ser especialmente buenos ni baratos, simplemente por que me dan lo que necesito al precio más bajo posible.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Youtube y Twitch a Podcast en Docker</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/youtube-y-twitch-a-podcast-en-docker/</link>
-      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/youtube-y-twitch-a-podcast-en-docker/</guid>
-      <description>&lt;p&gt;Hace tiempo que uso unos sencillos scripts en bash para crear un podcast a partir del audio de unos cuantos canales de &lt;a href=&#34;https://www.youtube.com&#34;&gt;Youtube&lt;/a&gt; y &lt;a href=&#34;https://www.twitch.tv&#34;&gt;Twitch&lt;/a&gt;. Ahora lo vamos a meter en un contenedor para que sea más fácil de migrar a otra máquina.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

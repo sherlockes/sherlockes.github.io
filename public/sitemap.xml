@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://hugopreview.vps.sherblog.es:1313/homepage-mostrando-contenedores-remotos/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://hugopreview.vps.sherblog.es:1313/hugo-deck-2026/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
   </url><url>
@@ -938,13 +941,34 @@
     <loc>https://hugopreview.vps.sherblog.es:1313/raspberry-descargando-wordpress/</loc>
     <lastmod>2018-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugopreview.vps.sherblog.es:1313/tags/apps/</loc>
-    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://hugopreview.vps.sherblog.es:1313/categories/</loc>
-    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es:1313/categories/computing/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es:1313/tags/docker/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es:1313/tags/homepage/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es:1313/post/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es:1313/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es:1313/categories/sherver/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es:1313/tags/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es:1313/tags/yaml/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es:1313/tags/apps/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es:1313/tags/github/</loc>
@@ -956,16 +980,7 @@
     <loc>https://hugopreview.vps.sherblog.es:1313/tags/hugo/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugopreview.vps.sherblog.es:1313/post/</loc>
-    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://hugopreview.vps.sherblog.es:1313/tags/python/</loc>
-    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hugopreview.vps.sherblog.es:1313/</loc>
-    <lastmod>2026-05-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hugopreview.vps.sherblog.es:1313/tags/</loc>
     <lastmod>2026-05-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es:1313/tags/emacs/</loc>
@@ -1012,9 +1027,6 @@
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es:1313/categories/hardware/</loc>
     <lastmod>2026-02-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hugopreview.vps.sherblog.es:1313/tags/docker/</loc>
-    <lastmod>2026-01-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es:1313/categories/home-assistant/</loc>
     <lastmod>2026-01-21T00:00:00+00:00</lastmod>
@@ -1104,9 +1116,6 @@
     <lastmod>2024-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es:1313/tags/jinja2/</loc>
-    <lastmod>2024-03-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hugopreview.vps.sherblog.es:1313/tags/yaml/</loc>
     <lastmod>2024-03-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es:1313/tags/home-assistant/</loc>
@@ -1204,9 +1213,6 @@
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es:1313/tags/upython/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hugopreview.vps.sherblog.es:1313/categories/sherver/</loc>
-    <lastmod>2021-04-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es:1313/tags/micropython/</loc>
     <lastmod>2021-02-16T00:00:00+00:00</lastmod>
