@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lisp on Sherblog</title>
-    <link>https://hugopreview.vps.sherblog.es:1313/tags/lisp/</link>
+    <link>https://hugopreview.vps.sherblog.es/tags/lisp/</link>
     <description>Recent content in Lisp on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sun, 26 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/lisp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es/tags/lisp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mi nuevo init.el en 2026</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/mi-nuevo-init.el-en-2026/</link>
+      <link>https://hugopreview.vps.sherblog.es/mi-nuevo-init.el-en-2026/</link>
       <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/mi-nuevo-init.el-en-2026/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/mi-nuevo-init.el-en-2026/</guid>
       <description>&lt;p&gt;Han pasado más de 8 años desde que empecé mis andaduras con Emacs. El archivo de configuración .emacs y arranque init.el ha crecido mucho durante todo este tiempo. Ahora lo he reconstruido sobre &lt;strong&gt;Emacs 30&lt;/strong&gt; con una base moderna, limpia y compatible, manteniendo casi todo lo valioso del sistema antiguo y añadiendo nuevas características.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Si no tienes tiempo para seguir leyendo, puedes encontrar mi configuración en mi repositorio &lt;a href=&#34;https://github.com/sherlockes/SherloScripts/tree/master/emacs&#34;&gt;sherloscripts&lt;/a&gt;. Sólo tienes que clonarlo en ~/Sherloscripts y ejecutar el archivo &lt;code&gt;install.sh&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Plantillas de archivos en Emacs</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/plantillas-de-archivos-en-emacs/</link>
+      <link>https://hugopreview.vps.sherblog.es/plantillas-de-archivos-en-emacs/</link>
       <pubDate>Sun, 03 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/plantillas-de-archivos-en-emacs/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/plantillas-de-archivos-en-emacs/</guid>
       <description>&lt;p&gt;La parte que más pereza me daba al necesitar desarrollar un script para realizar una automatización era la de crear el archivo, poner la cabecera y hacerlo ejecutable. Gracias a &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt; todo este proceso se realiza automáticamente sin más que crear el archivo.&lt;/p&gt;</description>
     </item>
   </channel>

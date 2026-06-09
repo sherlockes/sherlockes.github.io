@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Google Photos on Sherblog</title>
-    <link>https://hugopreview.vps.sherblog.es:1313/tags/google-photos/</link>
+    <link>https://hugopreview.vps.sherblog.es/tags/google-photos/</link>
     <description>Recent content in Google Photos on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Tue, 22 Feb 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/google-photos/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es/tags/google-photos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sincronizar Google Photos desde la Raspberry</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/sincronizar-google-photos-desde-la-raspberry/</link>
+      <link>https://hugopreview.vps.sherblog.es/sincronizar-google-photos-desde-la-raspberry/</link>
       <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/sincronizar-google-photos-desde-la-raspberry/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/sincronizar-google-photos-desde-la-raspberry/</guid>
       <description>&lt;p&gt;Hasta ahora había sincronizado mi galería de Google Fotos con el NAS desde el pc de sobremesa con Linux Mint, voy a intentar hacerlo desde la Raspberry para no tener que encender el pc.&lt;/p&gt;</description>
     </item>
   </channel>

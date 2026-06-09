@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>N8n on Sherblog</title>
-    <link>https://hugopreview.vps.sherblog.es:1313/tags/n8n/</link>
+    <link>https://hugopreview.vps.sherblog.es/tags/n8n/</link>
     <description>Recent content in N8n on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Tue, 20 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/n8n/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es/tags/n8n/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automatizando el menú escolar con n8n</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/automatizando-el-men%C3%BA-escolar-con-n8n/</link>
+      <link>https://hugopreview.vps.sherblog.es/automatizando-el-men%C3%BA-escolar-con-n8n/</link>
       <pubDate>Tue, 20 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/automatizando-el-men%C3%BA-escolar-con-n8n/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/automatizando-el-men%C3%BA-escolar-con-n8n/</guid>
       <description>&lt;p&gt;En muchos colegios el menú mensual se publica en un PDF que acaba olvidado en una web, en un correo o en el grupo de WhatsApp de las familias. Consultarlo cada mañana es poco práctico, y automatizarlo no es trivial. De esta forma he conseguido convertirlo en una notificación diaria a Telegram&lt;/p&gt;</description>
     </item>
     <item>
       <title>Enviar enlaces desde telegram a hoarder y readeck mediante n8n</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/enviar-enlaces-desde-telegram-a-hoarder-y-readeck-mediante-n8n/</link>
+      <link>https://hugopreview.vps.sherblog.es/enviar-enlaces-desde-telegram-a-hoarder-y-readeck-mediante-n8n/</link>
       <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/enviar-enlaces-desde-telegram-a-hoarder-y-readeck-mediante-n8n/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/enviar-enlaces-desde-telegram-a-hoarder-y-readeck-mediante-n8n/</guid>
       <description>&lt;p&gt;La forma más sencilla de guardar un favorito es reenviarlo a un canal de &lt;a href=&#34;https://telegram.org&#34;&gt;Telegram&lt;/a&gt; pero la organización allí es compleja. Vamos a crear una automatización en &lt;a href=&#34;https://n8n.io&#34;&gt;n8n&lt;/a&gt; que reenvíe estos enlaces a nuestra instalación de &lt;a href=&#34;https://karakeep.app/&#34;&gt;Karakeep&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Errores de seguimiento de torrents en Synology con n8n</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/errores-de-seguimiento-de-torrents-en-synology-con-n8n/</link>
+      <link>https://hugopreview.vps.sherblog.es/errores-de-seguimiento-de-torrents-en-synology-con-n8n/</link>
       <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/errores-de-seguimiento-de-torrents-en-synology-con-n8n/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/errores-de-seguimiento-de-torrents-en-synology-con-n8n/</guid>
       <description>&lt;p&gt;Cuando usas &lt;a href=&#34;https://www.synology.com/es-es/dsm/packages/DownloadStation&#34;&gt;Download Station&lt;/a&gt; para Synology una de las características que echas de menos es el control del seguimiento de torrents compartidos en trackers para saber cuando los puedes borrar de tu lista de propagación. Así me las apaño yo gracias a &lt;a href=&#34;https://n8n.io&#34;&gt;n8n&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Incrustar flujos de N8N en Hugo</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/incrustar-flujos-de-n8n-en-hugo/</link>
+      <link>https://hugopreview.vps.sherblog.es/incrustar-flujos-de-n8n-en-hugo/</link>
       <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/incrustar-flujos-de-n8n-en-hugo/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/incrustar-flujos-de-n8n-en-hugo/</guid>
       <description>&lt;p&gt;A priori, la publicación de tus propios workflows de &lt;a href=&#34;https://n8n.io&#34;&gt;n8n&lt;/a&gt; en su web de &lt;a href=&#34;https://creators.n8n.io&#34;&gt;creadores&lt;/a&gt; puede parecer la forma más rápida y sencilla pero resulta que el filtro es terrible y no importa que el flujo funcione o no, lo importante es que el formato sea el correcto. Por esto me decido a publicarlos en mi propio &lt;a href=&#34;https://sherblog.es&#34;&gt;blog&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Unir Rss y enviar a Telegram mediante n8n</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/unir-rss-y-enviar-a-telegram-mediante-n8n/</link>
+      <link>https://hugopreview.vps.sherblog.es/unir-rss-y-enviar-a-telegram-mediante-n8n/</link>
       <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/unir-rss-y-enviar-a-telegram-mediante-n8n/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/unir-rss-y-enviar-a-telegram-mediante-n8n/</guid>
       <description>&lt;p&gt;Combinar varios rss y enviar el resultado filtrado a Telegram sin apenas escribir código es coser y cantar gracias a n8n.&lt;/p&gt;</description>
     </item>
   </channel>

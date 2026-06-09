@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gmail on Sherblog</title>
-    <link>https://hugopreview.vps.sherblog.es:1313/tags/gmail/</link>
+    <link>https://hugopreview.vps.sherblog.es/tags/gmail/</link>
     <description>Recent content in Gmail on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sun, 29 Nov 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/gmail/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es/tags/gmail/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automatizando la limpieza de Gmail</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/automatizando-la-limpieza-de-gmail/</link>
+      <link>https://hugopreview.vps.sherblog.es/automatizando-la-limpieza-de-gmail/</link>
       <pubDate>Sun, 29 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/automatizando-la-limpieza-de-gmail/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/automatizando-la-limpieza-de-gmail/</guid>
       <description>&lt;p&gt;Si eres de los que realiza compras en internet, no te importa recibir ofertas, usas Gmail como gestor de correo electrónico y usas la pestaña &amp;ldquo;Promociones&amp;rdquo; creo que este artículo te va a interesar.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sincronizar contactos entre HTC y Gmail</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/sincronizar-contactos-entre-htc-y-gmail/</link>
+      <link>https://hugopreview.vps.sherblog.es/sincronizar-contactos-entre-htc-y-gmail/</link>
       <pubDate>Sat, 07 Feb 2009 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/sincronizar-contactos-entre-htc-y-gmail/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/sincronizar-contactos-entre-htc-y-gmail/</guid>
       <description>&lt;p&gt;Hace unos días ha caído en mis manos una &lt;a href=&#34;http://www.htc.com/es/product.aspx?id=46016&#34;&gt;HTC Diamond&lt;/a&gt; a la que estoy intentando meterle mano.&lt;/p&gt;&#xA;&lt;p&gt;El primer problema con el que me encuentro es la sincronización de los contactos ya que el chisme en cuestión se lleva muy bién con su queridísimo &lt;a href=&#34;http://office.microsoft.com/es-es/outlook/default.aspx&#34;&gt;Microsoft Outlook&lt;/a&gt; (Que los colegas del señor Gates te dejarán probar por un módico precio) pero no quiere saber nada de cualquier otro cliente de correo electrónico.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Copia de seguridad de Gmail</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/copia-de-seguridad-de-gmail/</link>
+      <link>https://hugopreview.vps.sherblog.es/copia-de-seguridad-de-gmail/</link>
       <pubDate>Fri, 03 Oct 2008 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/copia-de-seguridad-de-gmail/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/copia-de-seguridad-de-gmail/</guid>
       <description>&lt;p&gt;El gran problema de la informática es que en un momento puedes perder el trabajo de muchos años a causa de un simple problema en el disco duro si no tenemos una copia de seguridad de nuestros archivos.&lt;/p&gt;&#xA;&lt;p&gt;Desde mi punto de vista, &lt;a href=&#34;http://www.gmail.com&#34;&gt;GMail&lt;/a&gt; es el mejor servicio de correo electrónico gratuito que existe pero no hay que olvidar que está todavía en fase beta y que sus servidores son tan susceptible a las averías o hackers como el pc de casa por lo que es muy importante realizar periódicamente una copia de seguridad de los correos electrónicos que tenemos en nuestra cuenta de Gmail.&lt;/p&gt;</description>
     </item>
   </channel>

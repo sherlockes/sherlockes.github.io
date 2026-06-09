@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Notebooklm on Sherblog</title>
-    <link>https://hugopreview.vps.sherblog.es:1313/tags/notebooklm/</link>
+    <link>https://hugopreview.vps.sherblog.es/tags/notebooklm/</link>
     <description>Recent content in Notebooklm on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Thu, 26 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/notebooklm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es/tags/notebooklm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>App de cuestionarios</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/app-de-cuestionarios/</link>
+      <link>https://hugopreview.vps.sherblog.es/app-de-cuestionarios/</link>
       <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/app-de-cuestionarios/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/app-de-cuestionarios/</guid>
       <description>&lt;p&gt;Esta es sólo una prueba de concepto de como he utilizado una serie de servicios gratuitos para la creación de una app de cuestionarios. No pretendo explicar el funcionamiento, sólo en que me ha ayudado cada uno.&lt;/p&gt;</description>
     </item>
   </channel>

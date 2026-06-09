@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Garmin on Sherblog</title>
-    <link>https://hugopreview.vps.sherblog.es:1313/tags/garmin/</link>
+    <link>https://hugopreview.vps.sherblog.es/tags/garmin/</link>
     <description>Recent content in Garmin on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sun, 25 Mar 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/garmin/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es/tags/garmin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>De Garmin a Google drive</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/de-garmin-a-google-drive/</link>
+      <link>https://hugopreview.vps.sherblog.es/de-garmin-a-google-drive/</link>
       <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/de-garmin-a-google-drive/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/de-garmin-a-google-drive/</guid>
       <description>&lt;h3 id=&#34;el-problema&#34;&gt;El problema&lt;/h3&gt;&#xA;&lt;p&gt;Desde hace muchos años, en todos mis paseos en bicicleta me acompaña un GPS Garmin (Antes un Edge 605 y ahora un Edge 1000) que tengo ligado al servicio de &lt;a href=&#34;https://connect.garmin.com&#34;&gt;Garmin Connect&lt;/a&gt; y indirectamente a &lt;a href=&#34;https://www.strava.com&#34;&gt;Strava&lt;/a&gt;. He visto como van evolucionando ambos servicios online a lo largo del tiempo y algo de lo que a mi gusto ambos cojean es en la personalización de las estadísticas.&lt;/p&gt;</description>
     </item>
     <item>
       <title>De Google Earth a mapa para Garmin en 5 minutos</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/de-google-earth-a-mapa-para-garmin-en-5-minutos/</link>
+      <link>https://hugopreview.vps.sherblog.es/de-google-earth-a-mapa-para-garmin-en-5-minutos/</link>
       <pubDate>Thu, 06 Jul 2017 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/de-google-earth-a-mapa-para-garmin-en-5-minutos/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/de-google-earth-a-mapa-para-garmin-en-5-minutos/</guid>
       <description>&lt;p&gt;Desde hace muchos años, utilizo &lt;a href=&#34;http://www.elgps.com/foroGPS/viewtopic.php?f=41&amp;amp;t=8646&#34;&gt;Topohispania&lt;/a&gt; para la navegación en bicicleta con el Garmin Edge.&lt;/p&gt;&#xA;&lt;p&gt;Recientemente, me ha vuelto a picar la curiosidad de como crear un mapa con las sendas y barrancos que no salen en Topohispania y que están por los lugares que circulo habitualmente para superponerlo en el gps de la bicicleta. Lo primero que escuentro es &lt;a href=&#34;http://www.foromtb.com/threads/paso-a-paso-crear-un-mapa-para-superponerlo-al-topohispania.888466/&#34;&gt;esto&lt;/a&gt;, un tutorial de 2012 que emplea un sinfín de utilidades ya difíciles de encontrar y que echa para atrás sólo de ver la amplitud del mismo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Openstreetmap en Gps Garmin</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/openstreetmap-en-gps-garmin/</link>
+      <link>https://hugopreview.vps.sherblog.es/openstreetmap-en-gps-garmin/</link>
       <pubDate>Wed, 26 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/openstreetmap-en-gps-garmin/</guid>
-      <description>&lt;p&gt;Para el que no lo conozca, &lt;a href=&#34;https://www.openstreetmap.org&#34;&gt;OpenStreetMap&lt;/a&gt; (también conocido como OSM) es un proyecto colaborativo para crear mapas libres y editables. Los mapas se crean utilizando información geográfica capturada con dispositivos GPS móviles, ortofotografías y otras fuentes libres. Esta cartografía, tanto las imágenes creadas como los datos vectoriales almacenados en su base de datos, se distribuye bajo licencia abierta Licencia Abierta de Bases de Datos (en inglés ODbL).&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://hugopreview.vps.sherblog.es:1313/images/20170426_openstreetmaps_garmin_01.jpg&#34; alt=&#34;imagen&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Desde hace un tiempo hay una forma rápida y sencilla de incluirlos en los gps de la marca Garmin para una navegación por carreteras y caminos mediante &lt;a href=&#34;http://garmin.openstreetmap.nl&#34;&gt;esta&lt;/a&gt; web.&lt;/p&gt;</description>
+      <guid>https://hugopreview.vps.sherblog.es/openstreetmap-en-gps-garmin/</guid>
+      <description>&lt;p&gt;Para el que no lo conozca, &lt;a href=&#34;https://www.openstreetmap.org&#34;&gt;OpenStreetMap&lt;/a&gt; (también conocido como OSM) es un proyecto colaborativo para crear mapas libres y editables. Los mapas se crean utilizando información geográfica capturada con dispositivos GPS móviles, ortofotografías y otras fuentes libres. Esta cartografía, tanto las imágenes creadas como los datos vectoriales almacenados en su base de datos, se distribuye bajo licencia abierta Licencia Abierta de Bases de Datos (en inglés ODbL).&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://hugopreview.vps.sherblog.es/images/20170426_openstreetmaps_garmin_01.jpg&#34; alt=&#34;imagen&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Desde hace un tiempo hay una forma rápida y sencilla de incluirlos en los gps de la marca Garmin para una navegación por carreteras y caminos mediante &lt;a href=&#34;http://garmin.openstreetmap.nl&#34;&gt;esta&lt;/a&gt; web.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

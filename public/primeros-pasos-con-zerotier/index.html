@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="es">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=443&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +10,11 @@
 
 	
 	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:image" content="https://hugopreview.vps.sherblog.es:1313//images/20190314_probando_zerotier_00.jpg" />
+	<meta name="twitter:image" content="https://hugopreview.vps.sherblog.es//images/20190314_probando_zerotier_00.jpg" />
 	<meta name="twitter:title" content="Primeros pasos con Zerotier"/>
 	<meta name="twitter:description" content="Una larga historia de como me he visto obligado a pasar de la VPN al uso de ZeroTier"/>
 	<meta name="twitter:creator" content="@sherblogpro">
-	<meta name="twitter:site" content="https://hugopreview.vps.sherblog.es:1313/primeros-pasos-con-zerotier/" />
+	<meta name="twitter:site" content="https://hugopreview.vps.sherblog.es/primeros-pasos-con-zerotier/" />
 
 	
 	<meta property="og:type" content="article">
@@ -22,14 +22,14 @@
 	<meta property="og:site_name" content="Sherblog">
 	<meta property="og:locale" content="es_ES">
 	<meta property="og:title"   content="Primeros pasos con Zerotier">
-	<meta property="og:url" content="https://hugopreview.vps.sherblog.es:1313/primeros-pasos-con-zerotier/">
+	<meta property="og:url" content="https://hugopreview.vps.sherblog.es/primeros-pasos-con-zerotier/">
 	<meta property="og:description" content="Una larga historia de como me he visto obligado a pasar de la VPN al uso de ZeroTier"/>
 
 	
 	
 	
 	
-	<meta property="og:image" content="https://hugopreview.vps.sherblog.es:1313/images/20190314_probando_zerotier_00_xl.jpg" />
+	<meta property="og:image" content="https://hugopreview.vps.sherblog.es/images/20190314_probando_zerotier_00_xl.jpg" />
 	
 	
 
@@ -154,7 +154,7 @@
 	</div>
 </div><div class="content post__content clearfix">
 			<h2 id="la-situación">La situación.</h2>
-<p>Hace unos días que vengo teniendo problemas con la conexión VPN (<a href="https://hugopreview.vps.sherblog.es:1313/raspberry-servidor-vpn/">Servidor VPN</a>) que utilizo para conectarme a la red de mi casa cuando estoy en movilidad. Parece que el problema no está en el servidor VPN que corre sobre la Raspberry B+ ni en el cliente de <a href="https://play.google.com/store/apps/details?id=de.blinkt.openvpn&amp;hl=es">openvpn</a> que utilizo en mi terminal Android, pero no ha sido fácil llegar a esta conclusión. Después de varias pruebas y de mucho tiempo funcionando de un día para otro y sin tocar ninguna configurando el sistema ha dejado de funcionar.</p>
+<p>Hace unos días que vengo teniendo problemas con la conexión VPN (<a href="https://hugopreview.vps.sherblog.es/raspberry-servidor-vpn/">Servidor VPN</a>) que utilizo para conectarme a la red de mi casa cuando estoy en movilidad. Parece que el problema no está en el servidor VPN que corre sobre la Raspberry B+ ni en el cliente de <a href="https://play.google.com/store/apps/details?id=de.blinkt.openvpn&amp;hl=es">openvpn</a> que utilizo en mi terminal Android, pero no ha sido fácil llegar a esta conclusión. Después de varias pruebas y de mucho tiempo funcionando de un día para otro y sin tocar ninguna configurando el sistema ha dejado de funcionar.</p>
 <h2 id="el-diagnóstico">El diagnóstico</h2>
 <p>A priori el fallo puede venir de varios sitios por lo que me dispongo a ir excluyendo uno tras otro.</p>
 <ul>
@@ -164,8 +164,8 @@
 <li>El redireccionamiento de puertos</li>
 </ul>
 <p>En un primer momento, después de reconfigurar la conexión en el cliente vnp, de probar con distintos parámetros y de incluso reinstalarlo borrando los datos de configuración, he terminado por descartar que el fallo esté en el cliente.</p>
-<p>Puesto que la Raspberry se reinicia cada <a href="https://hugopreview.vps.sherblog.es:1313/raspberry-reinicios-peri%C3%B3dicos/">dos días</a> el servidor PiVPN hace lo propio. Directamente paso a reinstalarlo pero la conexión vpn desde el exterior sigue sin funcionar.</p>
-<p>Otro motivo de error puede ser el redireccionamiento que, gracias a <a href="https://hugopreview.vps.sherblog.es:1313/raspberry-acceso-desde-el-exterior/">NoIp</a>, utilizo para no tener que ir modificando continuamente la Ip dinamica que me asigna el operador telefónico.  Esta redirección parece que funciona correctamente pero con todo intento la conexión vpn sustituyendola por la ip pública asignada en ese momento y el fallo persiste en idéntica situación.</p>
+<p>Puesto que la Raspberry se reinicia cada <a href="https://hugopreview.vps.sherblog.es/raspberry-reinicios-peri%C3%B3dicos/">dos días</a> el servidor PiVPN hace lo propio. Directamente paso a reinstalarlo pero la conexión vpn desde el exterior sigue sin funcionar.</p>
+<p>Otro motivo de error puede ser el redireccionamiento que, gracias a <a href="https://hugopreview.vps.sherblog.es/raspberry-acceso-desde-el-exterior/">NoIp</a>, utilizo para no tener que ir modificando continuamente la Ip dinamica que me asigna el operador telefónico.  Esta redirección parece que funciona correctamente pero con todo intento la conexión vpn sustituyendola por la ip pública asignada en ese momento y el fallo persiste en idéntica situación.</p>
 <p>La comunicación vía vpn la vengo realizando en los últimos meses a través del puerto 1194 UDP redireccionado a la ip de la Raspberry. Ya sólo me queda comprobar que esto sigue bien configurado.  Lo compruebo y parece que todo está bien pero voy un paso más allá gracias a un <a href="https://portchecker.co/">chequeador de puertos online</a> y observo como, a pesar de lo que indica la configuración del router, el puerto 1194 UDP no está abierto para mi ip pública.</p>
 <p><img src="/images/20190314_probando_zerotier_02.jpg" alt="imagen"></p>
 <h2 id="el-fallo">El fallo</h2>

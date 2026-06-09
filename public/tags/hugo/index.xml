@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Sherblog</title>
-    <link>https://hugopreview.vps.sherblog.es:1313/tags/hugo/</link>
+    <link>https://hugopreview.vps.sherblog.es/tags/hugo/</link>
     <description>Recent content in Hugo on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo Deck 2026</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/hugo-deck-2026/</link>
+      <link>https://hugopreview.vps.sherblog.es/hugo-deck-2026/</link>
       <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/hugo-deck-2026/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/hugo-deck-2026/</guid>
       <description>&lt;p&gt;No se si será la última, lo que es seguro que es la más sencilla y potente forma que hasta ahora he utilizado para actualizar el contenido de mi blog.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Entorno de desarrollo de Hugo en Docker</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/entorno-de-desarrollo-de-hugo-en-docker/</link>
+      <link>https://hugopreview.vps.sherblog.es/entorno-de-desarrollo-de-hugo-en-docker/</link>
       <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/entorno-de-desarrollo-de-hugo-en-docker/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/entorno-de-desarrollo-de-hugo-en-docker/</guid>
       <description>&lt;p&gt;Hace años que tengo mi blog de Hugo desplegado desde GitHub usando GitHub Actions, pero todavía no tenía un entorno de desarrollo cómodo y aislado donde trastear sin miedo a romper nada. Aquí cuento cómo he montado un &lt;strong&gt;entorno de desarrollo efímero con Docker&lt;/strong&gt; en mi servidor casero.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Visor de mapa conquistado en Minetest</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/visor-de-mapa-conquistado-en-minetest/</link>
+      <link>https://hugopreview.vps.sherblog.es/visor-de-mapa-conquistado-en-minetest/</link>
       <pubDate>Tue, 23 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/visor-de-mapa-conquistado-en-minetest/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/visor-de-mapa-conquistado-en-minetest/</guid>
       <description>&lt;p&gt;Si juegas a Minetest te gustará tener un mapa en el que poder ver toda la zona que has conquistado  de una forma rápida y sencilla.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Exportar Org-Roam a Hugo en Gitlab</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/exportar-org-roam-a-hugo-en-gitlab/</link>
+      <link>https://hugopreview.vps.sherblog.es/exportar-org-roam-a-hugo-en-gitlab/</link>
       <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/exportar-org-roam-a-hugo-en-gitlab/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/exportar-org-roam-a-hugo-en-gitlab/</guid>
       <description>&lt;p&gt;Creo que todavía no he hablado de &lt;a href=&#34;https://www.orgroam.com&#34;&gt;Org-Roam&lt;/a&gt; aunque, antes de se me olviden algunos pasos voy a dejar descrito todo el proceso de exportación a una web estática en &lt;a href=&#34;https://gitlab.com&#34;&gt;Gitlab&lt;/a&gt; mediante &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ordenar post en Hugo</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/ordenar-post-en-hugo/</link>
+      <link>https://hugopreview.vps.sherblog.es/ordenar-post-en-hugo/</link>
       <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/ordenar-post-en-hugo/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/ordenar-post-en-hugo/</guid>
       <description>&lt;p&gt;Por defecto &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; ordena los post en función de la fecha de creación, para ordenarlos por la fecha de actualización estos son los pasos que hay que seguir.&lt;/p&gt;</description>
     </item>
   </channel>

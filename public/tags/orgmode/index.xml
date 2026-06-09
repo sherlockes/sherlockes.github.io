@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Orgmode on Sherblog</title>
-    <link>https://hugopreview.vps.sherblog.es:1313/tags/orgmode/</link>
+    <link>https://hugopreview.vps.sherblog.es/tags/orgmode/</link>
     <description>Recent content in Orgmode on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Wed, 16 Nov 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/orgmode/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es/tags/orgmode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Exportar de org a html en emacs</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/exportar-de-org-a-html-en-emacs/</link>
+      <link>https://hugopreview.vps.sherblog.es/exportar-de-org-a-html-en-emacs/</link>
       <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/exportar-de-org-a-html-en-emacs/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/exportar-de-org-a-html-en-emacs/</guid>
       <description>&lt;p&gt;No pretendo traducir el manual, simplemente hacer un resumen y recopilación de los conceptos que me han resultado útiles al exportar documentos escritos en org-mode a html usando emacs. Añadiré contenido a medida que lo vaya descubriendo y utilizando.&lt;/p&gt;</description>
     </item>
   </channel>

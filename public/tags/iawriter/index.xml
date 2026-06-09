@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IAWriter on Sherblog</title>
-    <link>https://hugopreview.vps.sherblog.es:1313/tags/iawriter/</link>
+    <link>https://hugopreview.vps.sherblog.es/tags/iawriter/</link>
     <description>Recent content in IAWriter on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Tue, 04 Sep 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/iawriter/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es/tags/iawriter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Publicar desde iaWriter</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/publicar-desde-iawriter/</link>
+      <link>https://hugopreview.vps.sherblog.es/publicar-desde-iawriter/</link>
       <pubDate>Tue, 04 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/publicar-desde-iawriter/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/publicar-desde-iawriter/</guid>
       <description>&lt;h3 id=&#34;publicar-solo-con-el-editor-de-texto&#34;&gt;Publicar solo con el editor de texto&lt;/h3&gt;&#xA;&lt;p&gt;Hace un tiempo que estoy intentando escribir en Markdown y para WordPress he estado utilizando el Plugin &lt;a href=&#34;https://wordpress.org/plugins/wp-markdown/&#34;&gt;Wp-MarkDown&lt;/a&gt; que me ha permitido realizar la maquetación del post directamente en Markdown. Una vez que he dejado atrás WordPress en favor de Hugo uno de mis objetivos de los últimos meses ha sido poder publicar en el blog simplemente usando un editor de texto.&lt;/p&gt;&#xA;&lt;p&gt;Pues bien, no sin algo de esfuerzo, al final lo he conseguido. Gracias a Hugo cómo CMS este post que ahora estoy escribiendo lo puedo publicar en mi blog de una forma rápida y sencilla en Markdown directamente desde la aplicación &lt;a href=&#34;https://ia.net/writer&#34;&gt;iaWritter&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
   </channel>

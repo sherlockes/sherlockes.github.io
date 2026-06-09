@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Emule on Sherblog</title>
-    <link>https://hugopreview.vps.sherblog.es:1313/tags/emule/</link>
+    <link>https://hugopreview.vps.sherblog.es/tags/emule/</link>
     <description>Recent content in Emule on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Fri, 09 Jan 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/emule/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es/tags/emule/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Los servidores de Emule caídos</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/los-servidores-de-emule-ca%C3%ADdos/</link>
+      <link>https://hugopreview.vps.sherblog.es/los-servidores-de-emule-ca%C3%ADdos/</link>
       <pubDate>Fri, 09 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/los-servidores-de-emule-ca%C3%ADdos/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/los-servidores-de-emule-ca%C3%ADdos/</guid>
       <description>&lt;p&gt;Son malos tiempos para el tema de los servidores de Emule. Es fácil que un buen día te encuentres con que no puedes conectar a ninguno de tu eterna lista de servidores ED2K pero tranquil@, lo principal es mantener la calma.&lt;/p&gt;&#xA;&lt;p&gt;Como primera medida (Si no la habías tomado anteriormente) es activar la Red Kademlia. El asunto es tan simple como ir al menú Preferencias-Conexión y en el apartado &amp;ldquo;Red&amp;rdquo; activar la casilla correspondiente a la red Kad.&lt;/p&gt;</description>
     </item>
   </channel>

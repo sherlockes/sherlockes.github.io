@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Emacs on Sherblog</title>
-    <link>https://hugopreview.vps.sherblog.es:1313/post/computing/emacs/</link>
+    <link>https://hugopreview.vps.sherblog.es/post/computing/emacs/</link>
     <description>Recent content in Emacs on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sun, 12 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://hugopreview.vps.sherblog.es:1313/post/computing/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es/post/computing/emacs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creación de un post de Hugo desde emacs</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/creaci%C3%B3n-de-un-post-de-hugo-desde-emacs/</link>
+      <link>https://hugopreview.vps.sherblog.es/creaci%C3%B3n-de-un-post-de-hugo-desde-emacs/</link>
       <pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/creaci%C3%B3n-de-un-post-de-hugo-desde-emacs/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/creaci%C3%B3n-de-un-post-de-hugo-desde-emacs/</guid>
       <description>&lt;p&gt;Para centrarte en escribir, el proceso de publicación no tiene que suponer una barrera. Así he configurado emacs para optimizar la creación de post para el blog con la mínima fricción posible.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Actualizar fecha de archivo en emacs</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/actualizar-fecha-de-archivo-en-emacs/</link>
+      <link>https://hugopreview.vps.sherblog.es/actualizar-fecha-de-archivo-en-emacs/</link>
       <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/actualizar-fecha-de-archivo-en-emacs/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/actualizar-fecha-de-archivo-en-emacs/</guid>
       <description>&lt;p&gt;Tener que modificar la fecha de actualización de la cabecera de un archivo cada vez que se realiza una modificación es una tarea &amp;ldquo;rutinaria&amp;rdquo; que debe ser automatizada si no queremos perder el tiempo ni que caiga en el olvido. Así lo he conseguido gracias a elisp en emacs.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Comprobación ortográfica en Emacs</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/comprobaci%C3%B3n-ortogr%C3%A1fica-en-emacs/</link>
+      <link>https://hugopreview.vps.sherblog.es/comprobaci%C3%B3n-ortogr%C3%A1fica-en-emacs/</link>
       <pubDate>Sat, 19 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/comprobaci%C3%B3n-ortogr%C3%A1fica-en-emacs/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/comprobaci%C3%B3n-ortogr%C3%A1fica-en-emacs/</guid>
       <description>&lt;p&gt;Por defecto, &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt; no realiza comprobación ortográfica de nuestro documentos. Hay que realizar una configuración previa que el lo que aquí paso a mostrar.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mi archivo de configuración en Emacs</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/mi-archivo-de-configuraci%C3%B3n-en-emacs/</link>
+      <link>https://hugopreview.vps.sherblog.es/mi-archivo-de-configuraci%C3%B3n-en-emacs/</link>
       <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/mi-archivo-de-configuraci%C3%B3n-en-emacs/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/mi-archivo-de-configuraci%C3%B3n-en-emacs/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Actualización:&lt;/strong&gt; El archivo &amp;ldquo;init.el&amp;rdquo; se me está haciendo grande y ahora me apoyo en un &amp;ldquo;functions.el&amp;rdquo; y en una comprobación de paquetes en el arranque.&#xA;Hay pocas cosas tan personales en informática como la configuración de &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt;. En mi caso uso una combinación de &lt;code&gt;.emacs&lt;/code&gt; e &lt;code&gt;init.el&lt;/code&gt; de la que seguro puedes sacar algo que aprender.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sincronizando Org-Roam mediante Github en Emacs</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/sincronizando-org-roam-mediante-github-en-emacs/</link>
+      <link>https://hugopreview.vps.sherblog.es/sincronizando-org-roam-mediante-github-en-emacs/</link>
       <pubDate>Tue, 08 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/sincronizando-org-roam-mediante-github-en-emacs/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/sincronizando-org-roam-mediante-github-en-emacs/</guid>
       <description>&lt;p&gt;Está muy bien tener una base de conocimiento centralizada en una carpeta y gestionarla mediante &lt;a href=&#34;https://www.orgroam.com&#34;&gt;Org-Roam&lt;/a&gt; pero mejor aun está poder acceder y modificar esta carpeta desde varios equipos gracias a un repositorio de &lt;a href=&#34;https://github.com&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Entorno de desarrollo de Sherblog en Emacs</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/entorno-de-desarrollo-de-sherblog-en-emacs/</link>
+      <link>https://hugopreview.vps.sherblog.es/entorno-de-desarrollo-de-sherblog-en-emacs/</link>
       <pubDate>Sat, 17 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/entorno-de-desarrollo-de-sherblog-en-emacs/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/entorno-de-desarrollo-de-sherblog-en-emacs/</guid>
       <description>&lt;p&gt;Por mucho que podamos pensar &amp;ldquo;sólo cuesta dos minutos&amp;rdquo;, resulta más productivo invertir una hora en preparar una función para poder acomodar &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt; como entorno de desarrollo del blog con una sola tecla que tener que hacerlo a mano cada una de las veces que lo necesitemos.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Exportar de org a html en emacs</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/exportar-de-org-a-html-en-emacs/</link>
+      <link>https://hugopreview.vps.sherblog.es/exportar-de-org-a-html-en-emacs/</link>
       <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/exportar-de-org-a-html-en-emacs/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/exportar-de-org-a-html-en-emacs/</guid>
       <description>&lt;p&gt;No pretendo traducir el manual, simplemente hacer un resumen y recopilación de los conceptos que me han resultado útiles al exportar documentos escritos en org-mode a html usando emacs. Añadiré contenido a medida que lo vaya descubriendo y utilizando.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Plantillas de archivos en Emacs</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/plantillas-de-archivos-en-emacs/</link>
+      <link>https://hugopreview.vps.sherblog.es/plantillas-de-archivos-en-emacs/</link>
       <pubDate>Sun, 03 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/plantillas-de-archivos-en-emacs/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/plantillas-de-archivos-en-emacs/</guid>
       <description>&lt;p&gt;La parte que más pereza me daba al necesitar desarrollar un script para realizar una automatización era la de crear el archivo, poner la cabecera y hacerlo ejecutable. Gracias a &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt; todo este proceso se realiza automáticamente sin más que crear el archivo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Reemplazo mediante expresiones regulares en Emacs</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/reemplazo-mediante-expresiones-regulares-en-emacs/</link>
+      <link>https://hugopreview.vps.sherblog.es/reemplazo-mediante-expresiones-regulares-en-emacs/</link>
       <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/reemplazo-mediante-expresiones-regulares-en-emacs/</guid>
-      <description>&lt;p&gt;A raiz de leer este &lt;a href=&#34;https://ugeek.github.io/blog/post/2022-03-08-reemplazar-texto-de-uno-o-varios-archivos-con-dired-en-emacs.html&#34;&gt;artículo de Angel&lt;/a&gt; he vuelto a intentar lo que hace un tiempo dejé por &lt;a href=&#34;https://hugopreview.vps.sherblog.es:1313/buscar-y-reemplazar-en-bash-con-find-y-sed/&#34;&gt;imposible&lt;/a&gt;. Se trata del reemplazo de cadenas de texto definidas mediante expresiones regulares y de forma recursiva en distintos archivos de varios directorios gracias a &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt;.&lt;/p&gt;</description>
+      <guid>https://hugopreview.vps.sherblog.es/reemplazo-mediante-expresiones-regulares-en-emacs/</guid>
+      <description>&lt;p&gt;A raiz de leer este &lt;a href=&#34;https://ugeek.github.io/blog/post/2022-03-08-reemplazar-texto-de-uno-o-varios-archivos-con-dired-en-emacs.html&#34;&gt;artículo de Angel&lt;/a&gt; he vuelto a intentar lo que hace un tiempo dejé por &lt;a href=&#34;https://hugopreview.vps.sherblog.es/buscar-y-reemplazar-en-bash-con-find-y-sed/&#34;&gt;imposible&lt;/a&gt;. Se trata del reemplazo de cadenas de texto definidas mediante expresiones regulares y de forma recursiva en distintos archivos de varios directorios gracias a &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Como desinstalar paquetes en Emacs</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/como-desinstalar-paquetes-en-emacs/</link>
+      <link>https://hugopreview.vps.sherblog.es/como-desinstalar-paquetes-en-emacs/</link>
       <pubDate>Sun, 27 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/como-desinstalar-paquetes-en-emacs/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/como-desinstalar-paquetes-en-emacs/</guid>
       <description>&lt;p&gt;En &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt; es sencillo repetir las cosas pero muchas de ellas la primera vez son difíciles de llevar a cabo. Aquí dejo el método para desinstalar tanto paquetes como las dependecias de los mismos.&lt;/p&gt;</description>
     </item>
   </channel>

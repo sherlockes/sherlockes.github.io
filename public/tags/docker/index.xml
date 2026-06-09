@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on Sherblog</title>
-    <link>https://hugopreview.vps.sherblog.es:1313/tags/docker/</link>
+    <link>https://hugopreview.vps.sherblog.es/tags/docker/</link>
     <description>Recent content in Docker on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Tue, 09 Jun 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Homepage, mostrando contenedores remotos</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/homepage-mostrando-contenedores-remotos/</link>
+      <link>https://hugopreview.vps.sherblog.es/homepage-mostrando-contenedores-remotos/</link>
       <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/homepage-mostrando-contenedores-remotos/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/homepage-mostrando-contenedores-remotos/</guid>
       <description>&lt;p&gt;Hace mucho tiempo que uso &lt;a href=&#34;https://gethomepage.dev&#34;&gt;homepage&lt;/a&gt; como página de inicio para mostrar el contenido de mis servidores y enlaces favoritos. Aquí dejo como mostrar el estado de un contenedor en un servidor remoto.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Youtube y Twitch a Podcast en Docker</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/youtube-y-twitch-a-podcast-en-docker/</link>
+      <link>https://hugopreview.vps.sherblog.es/youtube-y-twitch-a-podcast-en-docker/</link>
       <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/youtube-y-twitch-a-podcast-en-docker/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/youtube-y-twitch-a-podcast-en-docker/</guid>
       <description>&lt;p&gt;Hace tiempo que uso unos sencillos scripts en bash para crear un podcast a partir del audio de unos cuantos canales de &lt;a href=&#34;https://www.youtube.com&#34;&gt;Youtube&lt;/a&gt; y &lt;a href=&#34;https://www.twitch.tv&#34;&gt;Twitch&lt;/a&gt;. Ahora lo vamos a meter en un contenedor para que sea más fácil de migrar a otra máquina.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Entorno de desarrollo de Hugo en Docker</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/entorno-de-desarrollo-de-hugo-en-docker/</link>
+      <link>https://hugopreview.vps.sherblog.es/entorno-de-desarrollo-de-hugo-en-docker/</link>
       <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/entorno-de-desarrollo-de-hugo-en-docker/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/entorno-de-desarrollo-de-hugo-en-docker/</guid>
       <description>&lt;p&gt;Hace años que tengo mi blog de Hugo desplegado desde GitHub usando GitHub Actions, pero todavía no tenía un entorno de desarrollo cómodo y aislado donde trastear sin miedo a romper nada. Aquí cuento cómo he montado un &lt;strong&gt;entorno de desarrollo efímero con Docker&lt;/strong&gt; en mi servidor casero.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Configurar Nginx Proxy Manager en Ubuntu server</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/configurar-nginx-proxy-manager-en-ubuntu-server/</link>
+      <link>https://hugopreview.vps.sherblog.es/configurar-nginx-proxy-manager-en-ubuntu-server/</link>
       <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/configurar-nginx-proxy-manager-en-ubuntu-server/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/configurar-nginx-proxy-manager-en-ubuntu-server/</guid>
       <description>&lt;p&gt;Hace tiempo que estoy dándole vueltas a montar un proxy inverso para mis servicios locales. Hoy me he decidido a montarlo con Nginx Proxy Manager.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Instalación de Home Assistant en Raspberry</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/instalaci%C3%B3n-de-home-assistant-en-raspberry/</link>
+      <link>https://hugopreview.vps.sherblog.es/instalaci%C3%B3n-de-home-assistant-en-raspberry/</link>
       <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/instalaci%C3%B3n-de-home-assistant-en-raspberry/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/instalaci%C3%B3n-de-home-assistant-en-raspberry/</guid>
       <description>&lt;p&gt;Las dudas surgen cuando tienes varias posibilidades. Esto es lo que me ha pasado a la hora de empezar las pruebas con Home Assistant en una Raspberry Pi 4 de 4gb de ram sobre un stick usb.&lt;/p&gt;</description>
     </item>
   </channel>

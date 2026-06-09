@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="es">
 <head>
-	<meta name="generator" content="Hugo 0.152.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta name="generator" content="Hugo 0.152.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=443&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@
 	<meta name="twitter:title" content="Sherblog"/>
 	<meta name="twitter:description" content="Hay muchas formas de hacer las cosas, aquí dejo la mía por si a alguien le puede servir."/>
 	<meta name="twitter:creator" content="@sherblogpro">
-	<meta name="twitter:site" content="https://hugopreview.vps.sherblog.es:1313/" />
+	<meta name="twitter:site" content="https://hugopreview.vps.sherblog.es/" />
 
 	
 	<meta property="og:type" content="article">
@@ -23,11 +23,11 @@
 	<meta property="og:site_name" content="Sherblog">
 	<meta property="og:locale" content="es_ES">
 	<meta property="og:title"   content="Sherblog">
-	<meta property="og:url" content="https://hugopreview.vps.sherblog.es:1313/">
+	<meta property="og:url" content="https://hugopreview.vps.sherblog.es/">
 	<meta property="og:description" content="Hay muchas formas de hacer las cosas, aquí dejo la mía por si a alguien le puede servir."/>
 
 	
-	<meta property="og:image" content="https://hugopreview.vps.sherblog.es:1313/images/logo.png" />
+	<meta property="og:image" content="https://hugopreview.vps.sherblog.es/images/logo.png" />
 	
 
 	
@@ -122,6 +122,44 @@
 
 	</div>
 	<article class="list__item post">
+	
+	<figure class="list__thumbnail thumbnail">
+		<a class="thumbnail__link" href="/error-en-wordpress-elegir-la-base-de-datos/">
+		<img class="thumbnail__image" src="/images/20110510_wordpress_phpmyadmin.jpg" alt="Error en WordPress (Elegir la base de datos)">
+		</a>
+	</figure>
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/error-en-wordpress-elegir-la-base-de-datos/" rel="bookmark">
+			Error en WordPress (Elegir la base de datos)
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2011-05-10T00:00:00Z">2011-05-10</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/wordpress/" rel="category">Wordpress</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		<p>Un buen día, intentas acceder a tu blog y te encuentras un mensaje como el siguiente.</p>
+<pre tabindex="0"><code>\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+# _Error establishing a database connection_
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+</code></pre><p>Aunque la cosa no pinta bien, intentas que no cunda el pánico y accedes directamente a las páginas de administración del blog pero la cosa se pone fea cuando ves un cartel con la siguiente información.</p>
+<pre tabindex="0"><code>\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+# No se pudo elegir base de datos
+
+Hemos podido conectar con el servidor de la bases de datos (lo que significa que tu nombre de usuario y la contraseña están correctos) pero no se pudo elegir la base de datos `olivas_blog`.
+
+  * ¿Estás seguro que existe?
+  * ¿El usuario _loquesea_ tiene permiso para utilizar la base de datos?
+  * En algunos sistemas el nombre de la base de datos es el prefijo con el nombre de usuario, que sería como _username_loquesea_. ¿Podría ser ésto el problema?
+
+Si no sabes cómo configurar una base de datos debes ponerte en contacto con el **administrador de su hosting**. Si todo lo demás falla puedes encontrar ayuda en los Foros de Soporte de WordPress].
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+</code></pre><p>Rápidamente pones a trabajar a San Google y la primera solución que aparece es un fallo de la versión en castellano de WordPress. Bueno, la reparación parece fácil, se descarga la última versión en inglés, se sube al servidor, se descomprime y&hellip; El asunto sigue igual (Ya me veo reinstalando toda la web desde cero y empieza a ponerse la situación un poco tensa). Como parece que el fallo viene de la base de datos, intento restaurar una copia de seguridad de la misma pero este segundo intento tampoco trae consigo ningún resultado positivo.</p>
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -302,32 +340,6 @@
 <p><img src="/images/20100621_cierre_rcz_1.jpg" alt="imagen"></p>
 <p>El cuerpo de aluminio con tornillo en titanio, su diseño espectacular y minimalista, sus menos de 10 gramos y los apenas 11 Euros que costaba lo convirtieron en una irresistible tentación. Lo compré en <a href="http://www.fizzbikes.com/?topic=listing&amp;cat=315&amp;product=6342">Fizzbikes</a> hace unos meses y cuando lo tuve en la mano me dio cierta sensación de fragilidad sobre todo en el tornillo, es ridículamente pequeño. Llegué a plantearme incluso llevar otro tornillo de repuesto pero me dije: &ldquo;para que quieres una pieza ligera si tienes que llebar encima otra de repuesto&rdquo;.</p>
 	</div>
-</article><article class="list__item post">
-	
-	<figure class="list__thumbnail thumbnail">
-		<a class="thumbnail__link" href="/mantenimiento-mavic-crossride-delantera/">
-		<img class="thumbnail__image" src="/images/titulo_00.jpg" alt="Mantenimiento Mavic Crossride delantera">
-		</a>
-	</figure>
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/mantenimiento-mavic-crossride-delantera/" rel="bookmark">
-			Mantenimiento Mavic Crossride delantera
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2010-05-02T00:00:00Z">2010-05-02</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/a-pedales/" rel="category">A Pedales</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		<p>Los dichosos ruidos han vuelto a hacer su aparición, esta vez en forma de &ldquo;clack, clack&hellip;&rdquo; al pedalear depie. Parece que viene de la rueda delantera y más concretamente de la zona del buje ya que los radios están en perfecto estado.</p>
-<p>Manos a la obra, en el siguiente vídeo dejo los pasos a seguir para desmontar y engrasar el buje de la Mavic Crossride delantera.</p>
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/YvTF54K30Ng?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
-    </div>
-	</div>
 </article>
 </main>
 
@@ -444,7 +456,7 @@ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" wi
 		<a class="widget-taglist__link widget__link btn" href="/tags/autoinsert/" title="Autoinsert">Autoinsert (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/averias/" title="Averias">Averias (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/backup/" title="Backup">Backup (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/bash/" title="Bash">Bash (38)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bash/" title="Bash">Bash (39)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bricolaje/" title="Bricolaje">Bricolaje (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/chatgpt/" title="Chatgpt">Chatgpt (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="Css">Css (1)</a>
@@ -465,7 +477,7 @@ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" wi
 		<a class="widget-taglist__link widget__link btn" href="/tags/gdrive/" title="Gdrive">Gdrive (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/gimp/" title="Gimp">Gimp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/git/" title="Git">Git (6)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="Github">Github (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="Github">Github (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/gmail/" title="Gmail">Gmail (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/google-chrome/" title="Google Chrome">Google Chrome (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/google-drive/" title="Google Drive">Google Drive (4)</a>
@@ -492,7 +504,7 @@ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" wi
 		<a class="widget-taglist__link widget__link btn" href="/tags/imagemagick/" title="Imagemagick">Imagemagick (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/jinja2/" title="Jinja2">Jinja2 (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/keepass/" title="Keepass">Keepass (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="Linux">Linux (9)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux-mint/" title="Linux Mint">Linux Mint (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/lisp/" title="Lisp">Lisp (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/luanti/" title="Luanti">Luanti (1)</a>
@@ -531,7 +543,7 @@ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" wi
 		<a class="widget-taglist__link widget__link btn" href="/tags/shortcodes/" title="Shortcodes">Shortcodes (6)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/software/" title="Software">Software (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/speedtrap/" title="SpeedTrap">SpeedTrap (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/ssh/" title="Ssh">Ssh (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssh/" title="Ssh">Ssh (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/strava/" title="Strava">Strava (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/synology/" title="Synology">Synology (15)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/tasmota/" title="Tasmota">Tasmota (1)</a>

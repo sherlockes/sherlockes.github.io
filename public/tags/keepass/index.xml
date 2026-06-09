@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Keepass on Sherblog</title>
-    <link>https://hugopreview.vps.sherblog.es:1313/tags/keepass/</link>
+    <link>https://hugopreview.vps.sherblog.es/tags/keepass/</link>
     <description>Recent content in Keepass on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Wed, 06 Feb 2019 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://hugopreview.vps.sherblog.es:1313/tags/keepass/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hugopreview.vps.sherblog.es/tags/keepass/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gestión de usuarios y passwords</title>
-      <link>https://hugopreview.vps.sherblog.es:1313/gesti%C3%B3n-de-usuarios-y-passwords/</link>
+      <link>https://hugopreview.vps.sherblog.es/gesti%C3%B3n-de-usuarios-y-passwords/</link>
       <pubDate>Wed, 06 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es:1313/gesti%C3%B3n-de-usuarios-y-passwords/</guid>
+      <guid>https://hugopreview.vps.sherblog.es/gesti%C3%B3n-de-usuarios-y-passwords/</guid>
       <description>&lt;p&gt;Cada día son más los servicios web a los que estamos subscritos y parece evidente que hace falta una gestión adecuada de las contraseñas que utilizamos para acceder a cada uno de estos servicios.  Cada uno maneja este tema a su gusto pero creo que para hacerlo de una forma “segura” hay que cumplir con los siguientes requisitos:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Contraseñas distintas para cada servicio&lt;/li&gt;&#xA;&lt;li&gt;No usar palabras, nombres, fechas&amp;hellip;&lt;/li&gt;&#xA;&lt;li&gt;No usar sólo letras&lt;/li&gt;&#xA;&lt;li&gt;Longitud suficiente (más de diez caracteres)&lt;/li&gt;&#xA;&lt;li&gt;Accesibles desde cualquier lugar&lt;/li&gt;&#xA;&lt;li&gt;Guardadas en un lugar seguro&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;No voy a entrar a valorar las alternativas que existen y que cumplen con las características de arriba, simplemente voy a exponer el método que yo utilizo en la actualidad y como hago para garantizar lo que, a mi modo de ver, es una seguridad suficiente.&lt;/p&gt;</description>
     </item>
   </channel>
