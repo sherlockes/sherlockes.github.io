@@ -133,8 +133,12 @@
 		<img class="thumbnail__image" src="/images/20260609_homepage_mostrando_contenedores_remotos_00.jpg" alt="Homepage, mostrando contenedores remotos">
 		
 	</figure><div class="content post__content clearfix">
-			<p>Hace mucho tiempo que uso <a href="https://gethomepage.dev">homepage</a> como página de inicio para</p>
-<p>Escribe aquí el contenido de tu nuevo artículo&hellip;</p>
+			<p>Hace mucho tiempo que uso <a href="https://gethomepage.dev">homepage</a> como página de inicio para mostrar el contenido de mis servidores y enlaces favoritos. Aquí dejo como mostrar el estado de un contenedor en un servidor remoto.</p>
+<p>Tengo dockers distribuidos por varias máquinas, la forma más sencilla y cómoda de ver el estado de todos ellos es mediante la página de inicio que tengo pública en el <a href="http://homepage.vps.sherblog.es">vps</a> mediante <a href="https://gethomepage.dev">homepage</a>.</p>
+<p>Para mostrar el estado del contenedor en un primer lugar editaremos el archivo <code>docker.yaml</code> incluyendo lo siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">vps-local</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">socket</span>: <span style="color:#ae81ff">/var/run/docker.sock</span>
+</span></span></code></pre></div><p>A continuación en el archivo <code>services.yaml</code> editaremos el enlace correspondiente para que se muestre el estado del contenedor. De esta forma cada servicio quedará así:</p>
 <p>¡[image-01]</p>
 <h3 id="enlaces-de-interés">Enlaces de interés</h3>
 <ul>

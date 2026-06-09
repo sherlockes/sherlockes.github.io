@@ -32,7 +32,11 @@ vps-local:
 socket: /var/run/docker.sock
 ```
 
-A continuación en el archivo `services.yaml` editaremos el enlace correspondiente para que se muestre el estado del contenedor.
+A continuación en el archivo `services.yaml` editaremos el enlace correspondiente para que se muestre el estado del contenedor. De esta forma cada servicio quedará así:
+
+
+
+
 
 ¡[image-01]
 
