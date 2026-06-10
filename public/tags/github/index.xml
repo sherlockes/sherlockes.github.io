@@ -13,7 +13,7 @@
       <link>https://hugopreview.vps.sherblog.es/sincronizar-configuraci%C3%B3n-ssh-en-linux/</link>
       <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
       <guid>https://hugopreview.vps.sherblog.es/sincronizar-configuraci%C3%B3n-ssh-en-linux/</guid>
-      <description>&lt;p&gt;Sincronizando configuración de ssh en linux gracias a un repositorio privado de github.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Sincronizando configuración de los host de ssh en linux gracias a un repositorio privado de github y la inestimable ayuda del script &lt;a href=&#34;https://github.com/sherlockes/SherloScripts/blob/master/bash/gitsync.sh&#34;&gt;gitsync.sh&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hugo Deck 2026</title>

@@ -133,13 +133,17 @@
 		<img class="thumbnail__image" src="/images/20260609_sincronizar_configuracion_ssh_en_linux_00.jpg" alt="Sincronizar configuración SSH en linux">
 		
 	</figure><div class="content post__content clearfix">
-			<p>Sincronizando configuración de ssh en linux gracias a un repositorio privado de github.</p>
+			<p>Sincronizando configuración de los host de ssh en linux gracias a un repositorio privado de github y la inestimable ayuda del script <a href="https://github.com/sherlockes/SherloScripts/blob/master/bash/gitsync.sh">gitsync.sh</a>.</p>
 <p>Tengo un repo privado en <a href="https://github.com/sherlockes">GitHub</a> en el que tengo guardado al archivo de configuración de ssh de linux &ldquo;~/.ssh/config&rdquo; con todos los host de mi red para de esta forma poder sincronizarlo entre todos los equipos.</p>
-<p>El principal problema es como realizar los push al repo una vez que este se haya modificado en alguna máquina</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>└── ssh
+</span></span><span style="display:flex;"><span>    ├── config
+</span></span><span style="display:flex;"><span>    └── leeme.txt
+</span></span></code></pre></div><p>El principal problema es como realizar los push al repo una vez que este se haya modificado en alguna máquina</p>
 <p>¿Y si el propio sistema se encargara de revisar el estado del repositorio, guardar tus cambios locales de forma automática y decidir si toca descargar o subir información?</p>
-<p>El Desafío: Actualizar el repo local o remoto</p>
+<p>El Desafío: Actualizar el repo local o remoto cuando hay cambios en uno u otro</p>
 <h2 id="la-herramienta-el-script-gitsyncsh">La Herramienta: El Script <a href="https://github.com/sherlockes/SherloScripts/blob/master/bash/gitsync.sh">gitsync.sh</a></h2>
-<p>Este script acepta la ruta del repositorio como argumento (usando el directorio actual por defecto) y maneja toda la lógica de forma segura, incluyendo una comprobación previa de la conexión SSH con GitHub.</p>
+<p>Este script creado gracias a la IA acepta la ruta del repositorio como argumento (usando el directorio actual por defecto) y maneja toda la lógica de forma segura, incluyendo una comprobación previa de la conexión SSH con GitHub.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Configuración por defecto de Git</span>
@@ -221,22 +225,20 @@
 <p>Para poder usar este script desde cualquier lugar del sistema sin duplicar el código, lo ideal es mantener el archivo original centralizado (por ejemplo, en una carpeta de herramientas personales) y crear un enlace simbólico en el <code>$PATH</code> del sistema:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ln -s <span style="color:#e6db74">&#34;</span>$PWD<span style="color:#e6db74">/gitsync.sh&#34;</span> /usr/local/bin/gitsync
 </span></span></code></pre></div><p>A partir de este momento, el comando <code>gitsync</code> está disponible globalmente en la terminal.</p>
-<hr>
 <h2 id="el-toque-final-automatización-invisible-con-cron">El Toque Final: Automatización Invisible con Cron</h2>
-<p>Tener el comando simplificado está bien, pero el objetivo real es olvidarse de él. Queremos que se ejecute <strong>en cada arranque del sistema</strong> y <strong>cada dos horas</strong>. Para ello recurrimos al <code>crontab</code> de Linux (<code>crontab -e</code>).</p>
+<p>Tener el comando simplificado está bien, pero el objetivo real es olvidarse de él. Queremos que se ejecute <strong>en cada arranque del sistema</strong>. Para ello recurrimos al <code>crontab</code> de Linux (<code>crontab -e</code>).</p>
 <p>Aquí es donde la mayoría de los intentos de automatización de Git fallan. <code>cron</code> ejecuta las tareas en un entorno ultra-restringido; no carga tu entorno gráfico, ni tu terminal habitual, por lo que <strong>no tiene acceso a tus llaves SSH</strong>. Si lanzas el script a secas, la conexión con GitHub fallará por falta de autenticación.</p>
 <p>Para solucionarlo, forzamos a <code>cron</code> a cargar el entorno del usuario (<code>.bashrc</code>) antes de ejecutar el comando, y redirigimos el resultado a un archivo de registro que se sobrescribirá en cada ejecución para controlar el espacio en disco:</p>
 <pre tabindex="0"><code class="language-cron" data-lang="cron">@reboot . $HOME/.bashrc; /usr/local/bin/gitsync $HOME/dotfiles &gt; $HOME/.gitsync.log 2&gt;&amp;1
-0 */2 * * * . $HOME/.bashrc; /usr/local/bin/gitsync $HOME/dotfiles &gt; $HOME/.gitsync.log 2&gt;&amp;1
-</code></pre><h3 id="desglose-de-la-configuración">Desglose de la configuración:</h3>
+</code></pre><p>Con esto, cada vez que arranque el sistema se actualizará el repositorio con el archivo de configuración ssh.</p>
+<blockquote>
+<p>En caso de que actualicemos este archivo tendremos que lanzar el comando <code>gitsync</code> desde dentro de la carpeta del repo para que se suban los cambios a <a href="https://github.com/sherlockes">GitHub</a></p>
+</blockquote>
+<h2 id="resumen">Resumen:</h2>
 <ul>
-<li><strong><code>@reboot</code> y <code>0 */2 * * *</code></strong>: Aseguran la ejecución al encender el equipo y exactamente cada dos horas (12:00, 14:00&hellip;).</li>
-<li><strong><code>. $HOME/.bashrc;</code></strong>: Carga el agente SSH y las variables necesarias para que la llave privada funcione de manera transparente.</li>
-<li><strong><code>&gt;</code> y <code>2&gt;&amp;1</code></strong>: El operador <code>&gt;</code> limpia el archivo <code>~/.gitsync.log</code> y guarda únicamente la salida de la última ejecución (tanto los mensajes normales como los errores), evitando que el disco se llene con logs infinitos.</li>
-</ul>
-<h3 id="enlaces-de-interés">Enlaces de interés</h3>
-<ul>
-<li><a href="www.sherblog.es">enlace</a></li>
+<li>Clonar el repo con los dotfiles</li>
+<li>Descargar el script <a href="https://github.com/sherlockes/SherloScripts/blob/master/bash/gitsync.sh">gitsync.sh</a> y crear el enlace simbólico</li>
+<li>Crear el cron para la actualización en el arranque</li>
 </ul>
 		</div>
 		<footer class="post__footer">

@@ -15,26 +15,33 @@ tags:
 - "ssh"
 - "github"
 - "bash"
-draft: true
+draft: false
 weight: 5
 ---
 
-Sincronizando configuración de ssh en linux gracias a un repositorio privado de github.
+Sincronizando configuración de los host de ssh en linux gracias a un repositorio privado de github y la inestimable ayuda del script [gitsync.sh].
 
 <!--more-->
 
 Tengo un repo privado en [GitHub] en el que tengo guardado al archivo de configuración de ssh de linux "~/.ssh/config" con todos los host de mi red para de esta forma poder sincronizarlo entre todos los equipos.
 
+``` sh
+.
+└── ssh
+    ├── config
+    └── leeme.txt
+```
+
 El principal problema es como realizar los push al repo una vez que este se haya modificado en alguna máquina
 
 ¿Y si el propio sistema se encargara de revisar el estado del repositorio, guardar tus cambios locales de forma automática y decidir si toca descargar o subir información? 
 
-El Desafío: Actualizar el repo local o remoto
+El Desafío: Actualizar el repo local o remoto cuando hay cambios en uno u otro
 
 
 ## La Herramienta: El Script [gitsync.sh]
 
-Este script acepta la ruta del repositorio como argumento (usando el directorio actual por defecto) y maneja toda la lógica de forma segura, incluyendo una comprobación previa de la conexión SSH con GitHub.
+Este script creado gracias a la IA acepta la ruta del repositorio como argumento (usando el directorio actual por defecto) y maneja toda la lógica de forma segura, incluyendo una comprobación previa de la conexión SSH con GitHub.
 
 ``` bash
 #!/bin/bash
@@ -126,11 +133,9 @@ sudo ln -s "$PWD/gitsync.sh" /usr/local/bin/gitsync
 
 A partir de este momento, el comando `gitsync` está disponible globalmente en la terminal.
 
----
-
 ## El Toque Final: Automatización Invisible con Cron
 
-Tener el comando simplificado está bien, pero el objetivo real es olvidarse de él. Queremos que se ejecute **en cada arranque del sistema** y **cada dos horas**. Para ello recurrimos al `crontab` de Linux (`crontab -e`).
+Tener el comando simplificado está bien, pero el objetivo real es olvidarse de él. Queremos que se ejecute **en cada arranque del sistema**. Para ello recurrimos al `crontab` de Linux (`crontab -e`).
 
 Aquí es donde la mayoría de los intentos de automatización de Git fallan. `cron` ejecuta las tareas en un entorno ultra-restringido; no carga tu entorno gráfico, ni tu terminal habitual, por lo que **no tiene acceso a tus llaves SSH**. Si lanzas el script a secas, la conexión con GitHub fallará por falta de autenticación.
 
@@ -138,18 +143,16 @@ Para solucionarlo, forzamos a `cron` a cargar el entorno del usuario (`.bashrc`)
 
 ```cron
 @reboot . $HOME/.bashrc; /usr/local/bin/gitsync $HOME/dotfiles > $HOME/.gitsync.log 2>&1
-0 */2 * * * . $HOME/.bashrc; /usr/local/bin/gitsync $HOME/dotfiles > $HOME/.gitsync.log 2>&1
 ```
+Con esto, cada vez que arranque el sistema se actualizará el repositorio con el archivo de configuración ssh.
 
-### Desglose de la configuración:
-* **`@reboot` y `0 */2 * * *`**: Aseguran la ejecución al encender el equipo y exactamente cada dos horas (12:00, 14:00...).
-* **`. $HOME/.bashrc;`**: Carga el agente SSH y las variables necesarias para que la llave privada funcione de manera transparente.
-* **`>` y `2>&1`**: El operador `>` limpia el archivo `~/.gitsync.log` y guarda únicamente la salida de la última ejecución (tanto los mensajes normales como los errores), evitando que el disco se llene con logs infinitos.
+> En caso de que actualicemos este archivo tendremos que lanzar el comando `gitsync` desde dentro de la carpeta del repo para que se suban los cambios a [GitHub]
 
+## Resumen:
+* Clonar el repo con los dotfiles
+* Descargar el script [gitsync.sh] y crear el enlace simbólico
+* Crear el cron para la actualización en el arranque
 
-
-### Enlaces de interés
-- [enlace](www.sherblog.es)
 
 [GitHub]: https://github.com/sherlockes
 [gitsync.sh]: https://github.com/sherlockes/SherloScripts/blob/master/bash/gitsync.sh
