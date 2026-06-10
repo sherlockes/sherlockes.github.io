@@ -16,6 +16,13 @@
       <description>&lt;p&gt;Hace mucho tiempo que uso &lt;a href=&#34;https://gethomepage.dev&#34;&gt;homepage&lt;/a&gt; como página de inicio para mostrar el contenido de mis servidores y enlaces favoritos. Aquí dejo como mostrar el estado de un contenedor en un servidor remoto.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Sincronizar configuración SSH en linux</title>
+      <link>https://hugopreview.vps.sherblog.es/sincronizar-configuraci%C3%B3n-ssh-en-linux/</link>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/sincronizar-configuraci%C3%B3n-ssh-en-linux/</guid>
+      <description>&lt;p&gt;Sincronizando configuración de ssh en linux gracias a un repositorio privado de github.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Mi nuevo init.el en 2026</title>
       <link>https://hugopreview.vps.sherblog.es/mi-nuevo-init.el-en-2026/</link>
       <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
@@ -70,13 +77,6 @@
       <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://hugopreview.vps.sherblog.es/youtube-y-twitch-a-podcast-en-docker/</guid>
       <description>&lt;p&gt;Hace tiempo que uso unos sencillos scripts en bash para crear un podcast a partir del audio de unos cuantos canales de &lt;a href=&#34;https://www.youtube.com&#34;&gt;Youtube&lt;/a&gt; y &lt;a href=&#34;https://www.twitch.tv&#34;&gt;Twitch&lt;/a&gt;. Ahora lo vamos a meter en un contenedor para que sea más fácil de migrar a otra máquina.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Modificando Pi-hole desde Home assistant</title>
-      <link>https://hugopreview.vps.sherblog.es/modificando-pi-hole-desde-home-assistant/</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/modificando-pi-hole-desde-home-assistant/</guid>
-      <description>&lt;p&gt;No cabe duda de que &lt;a href=&#34;https://pi-hole.net&#34;&gt;Pi-hole&lt;/a&gt; es una utilidad brutal para la gestión de publicidad pero su &lt;a href=&#34;https://www.home-assistant.io/integrations/pi_hole/&#34;&gt;integración&lt;/a&gt; con &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; deja mucho que desear, ya que el único control que ofrece es la deshabilitación de la utilidad completa.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

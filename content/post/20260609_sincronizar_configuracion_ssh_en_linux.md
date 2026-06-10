@@ -121,7 +121,7 @@ fi
 Para poder usar este script desde cualquier lugar del sistema sin duplicar el código, lo ideal es mantener el archivo original centralizado (por ejemplo, en una carpeta de herramientas personales) y crear un enlace simbólico en el `$PATH` del sistema:
 
 ``` bash
-sudo ln -s "$PWD/git-sync.sh" /usr/local/bin/gitsync
+sudo ln -s "$PWD/gitsync.sh" /usr/local/bin/gitsync
 ```
 
 A partir de este momento, el comando `gitsync` está disponible globalmente en la terminal.
