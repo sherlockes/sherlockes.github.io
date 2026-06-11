@@ -154,9 +154,51 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">server</span>: <span style="color:#ae81ff">vps-local</span>
 </span></span></code></pre></div><p>y con esto conseguimos un resultado en nuestra página como este:</p>
 <p><img src="/images/20260609_homepage_mostrando_contenedores_remotos_01.jpg" alt="image-01"></p>
+<p>Para los contenedores que corren en el mismo host que <a href="https://gethomepage.dev">homepage</a> esta solución es perfecta pero para contenedores que corren en host remotos vamos a necesitar un pequeño contenedor que va a ser el intermediario y encargado de enviar la info del socket de docker de un host a otro. lo montaremos con este docker compose:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">docker-socket-proxy</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">tecnativa/docker-socket-proxy:latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">docker-socket-proxy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">unless-stopped</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/var/run/docker.sock:/var/run/docker.sock:ro</span> <span style="color:#75715e"># Lee el socket local en modo lectura</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;192.168.191.211:2375:2375&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">CONTAINERS=1</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">SERVICES=1</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">NETWORKS=0</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">VOLUMES=0</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">IMAGES=0</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">POST=0</span>
+</span></span></code></pre></div><blockquote>
+<p>La conexión entre ambos host es posible de una forma muy sencilla ya que ambos están dentro de la misma red de zerotier (IP 192.168.191.xxx)</p>
+</blockquote>
+<p>El siguiente paso es añadir un nuevo host en el archivo <code>docker.yaml</code> de la carpeta <code>data</code>del contenedor <a href="https://gethomepage.dev">homepage</a>. El mío ha quedado así usando la ip de la red de zerotier del host remoto:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">vps-local</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">socket</span>: <span style="color:#ae81ff">/var/run/docker.sock</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">uberz</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">host</span>: <span style="color:#ae81ff">192.168.191.211</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">port</span>: <span style="color:#ae81ff">2375</span>
+</span></span></code></pre></div><p>Ahora ya podemos añadir la parte correspondiente dentro de los servicios en el archivo <code>services.yaml</code>para quedar algo así:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">Uber</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">SherloTracks</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">icon</span>: <span style="color:#ae81ff">/icons/sherlotracks.png</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">href</span>: <span style="color:#ae81ff">http://sherlotracks.zgz.sherblog.es</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">description</span>: <span style="color:#ae81ff">contenedor personalizado para mostrar mis tracks de strava</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">container</span>: <span style="color:#ae81ff">sherlotracks-front</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">server</span>: <span style="color:#ae81ff">uberz</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">Sherlocaster</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">icon</span>: <span style="color:#ae81ff">/icons/sherlocaster.png</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">href</span>: <span style="color:#ae81ff">http://192.168.10.211:8000</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">description</span>: <span style="color:#ae81ff">Contenedor personalizado para la descarga de vídeos de Youtube y Twitch. Posteriormente se convierten en un podcast.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">container</span>: <span style="color:#ae81ff">sherlocaster-web</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">server</span>: <span style="color:#ae81ff">uberz</span>
+</span></span></code></pre></div><p>Así de sencillo, sin más.</p>
 <h3 id="enlaces-de-interés">Enlaces de interés</h3>
 <ul>
-<li><a href="www.sherblog.es">enlace</a></li>
+<li><a href="https://github.com/tecnativa/docker-socket-proxy">docker-socket-proxy</a></li>
 </ul>
 		</div>
 		<footer class="post__footer">
