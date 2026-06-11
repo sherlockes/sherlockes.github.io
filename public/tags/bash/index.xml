@@ -6,8 +6,15 @@
     <description>Recent content in Bash on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Tue, 09 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hugopreview.vps.sherblog.es/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Script para Restic</title>
+      <link>https://hugopreview.vps.sherblog.es/script-para-restic/</link>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/script-para-restic/</guid>
+      <description>&lt;p&gt;Hace unos meses escribí un artículo para realizar la copia de seguridad de mis contenedores con &lt;a href=&#34;https://restic.net&#34;&gt;Restic&lt;/a&gt;. Ahora retomo el tema dándole una vuelta de tuerca al script inicial para añadirle una cuantas mejoras:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Sincronizar configuración SSH en linux</title>
       <link>https://hugopreview.vps.sherblog.es/sincronizar-configuraci%C3%B3n-ssh-en-linux/</link>
@@ -70,13 +77,6 @@
       <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
       <guid>https://hugopreview.vps.sherblog.es/instalaci%C3%B3n-y-configuraci%C3%B3n-de-zerotier/</guid>
       <description>&lt;p&gt;Hace más de cinco años que empecé a usar &lt;a href=&#34;https://www.zerotier.com&#34;&gt;Zerotier&lt;/a&gt; tal y como en su día expliqué en este &lt;a href=&#34;https://hugopreview.vps.sherblog.es/primeros-pasos-con-zerotier/&#34;&gt;artículo&lt;/a&gt; como consecuencia de un problema con los puertos del router. Ahora lo reedito con todo lo que he aprendido en este tiempo.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>De Youtube a Podcat V2</title>
-      <link>https://hugopreview.vps.sherblog.es/de-youtube-a-podcat-v2/</link>
-      <pubDate>Thu, 18 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/de-youtube-a-podcat-v2/</guid>
-      <description>&lt;p&gt;Hace un tiempo cree un &lt;a href=&#34;https://hugopreview.vps.sherblog.es/de-youtube-a-podcast/&#34;&gt;script&lt;/a&gt; para crear un podcast a partir de un canal de Youtube. Ahora voy un paso más allá creándolo a partir de un conjunto de canales de Youtube.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

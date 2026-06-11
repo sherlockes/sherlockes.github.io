@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://hugopreview.vps.sherblog.es/script-para-restic/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://hugopreview.vps.sherblog.es/homepage-mostrando-contenedores-remotos/</loc>
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
   </url><url>
@@ -945,13 +948,31 @@
     <lastmod>2018-04-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es/tags/bash/</loc>
-    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es/categories/</loc>
-    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es/categories/computing/</loc>
-    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es/post/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es/tags/rclone/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es/tags/restic/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es/categories/sherver/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es/tags/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es/tags/docker/</loc>
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
@@ -965,19 +986,7 @@
     <loc>https://hugopreview.vps.sherblog.es/tags/linux/</loc>
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugopreview.vps.sherblog.es/post/</loc>
-    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hugopreview.vps.sherblog.es/</loc>
-    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hugopreview.vps.sherblog.es/categories/sherver/</loc>
-    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://hugopreview.vps.sherblog.es/tags/ssh/</loc>
-    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hugopreview.vps.sherblog.es/tags/</loc>
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es/tags/yaml/</loc>
@@ -1081,12 +1090,6 @@
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es/tags/luanti/</loc>
     <lastmod>2025-09-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hugopreview.vps.sherblog.es/tags/rclone/</loc>
-    <lastmod>2025-03-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hugopreview.vps.sherblog.es/tags/restic/</loc>
-    <lastmod>2025-03-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es/tags/wireguard/</loc>
     <lastmod>2025-02-25T00:00:00+00:00</lastmod>

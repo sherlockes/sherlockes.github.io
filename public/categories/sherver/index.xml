@@ -6,8 +6,15 @@
     <description>Recent content in Sherver on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Sun, 11 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hugopreview.vps.sherblog.es/categories/sherver/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Homepage, mostrando contenedores remotos</title>
+      <link>https://hugopreview.vps.sherblog.es/homepage-mostrando-contenedores-remotos/</link>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/homepage-mostrando-contenedores-remotos/</guid>
+      <description>&lt;p&gt;Hace mucho tiempo que uso &lt;a href=&#34;https://gethomepage.dev&#34;&gt;homepage&lt;/a&gt; como página de inicio para mostrar el contenido de mis servidores y enlaces favoritos. Aquí dejo como mostrar el estado de un contenedor en un servidor remoto.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Trabajar con ssh-key en Synology</title>
       <link>https://hugopreview.vps.sherblog.es/trabajar-con-ssh-key-en-synology/</link>
@@ -70,13 +77,6 @@
       <pubDate>Mon, 13 Mar 2017 00:00:00 +0000</pubDate>
       <guid>https://hugopreview.vps.sherblog.es/descarga-fallida.-no-working-transports-found/</guid>
       <description>&lt;p&gt;Después de la instalación de WordPress en el servidor Synology al intentar actualizar los temas o los plugins me encuentro con el siguiente error.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://hugopreview.vps.sherblog.es/images/20170215_descarga_fallida_01.jpg&#34; alt=&#34;imagen&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Pues nada, toca &amp;ldquo;Googlear&amp;rdquo; un rato y pronto me doy cuenta de que la solución es bastante sencilla y basta con habilitar la extensión &amp;ldquo;Curl&amp;rdquo; dentro de la configuración de php de la aplicación Web Station tal y como se puede ver en la siguiente captura de pantalla.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Instalación manual de WordPress en Synology</title>
-      <link>https://hugopreview.vps.sherblog.es/instalaci%C3%B3n-manual-de-wordpress-en-synology/</link>
-      <pubDate>Tue, 28 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/instalaci%C3%B3n-manual-de-wordpress-en-synology/</guid>
-      <description>&lt;p&gt;Desde el centro de paquetes de DSM en posible acceder a la instalación de WordPress de una forma sencilla tal y como puedes es en este &lt;a href=&#34;https://www.jmramirez.pro/tutorial/web-en-un-synology-con-wordpress/&#34;&gt;tutorial&lt;/a&gt;, pero si lo que tu quieres es realizar una instalación manual con la que consigas un mayor control aquí te dejo los pasos a seguir.&lt;/p&gt;&#xA;&lt;p&gt;Antes de comenzar con la instalación de WordPress hay que instalar &amp;ldquo;Web Station&amp;rdquo; como servidor de archivos, &amp;ldquo;Maria Db&amp;rdquo; para el alojamiento de las bases de datos y &amp;ldquo;PhpMyAdmin&amp;rdquo; para gestionar las bases de datos. Tras instalar &amp;ldquo;Web Station&amp;rdquo; seleccionaremos Apache como servidor y la versión de php. Para &amp;ldquo;Maria Db&amp;rdquo; es muy importante generar una contraseña para el usuario root después de instalarlo. Con esto ya podemos iniciar la instalación propia de WordPress.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

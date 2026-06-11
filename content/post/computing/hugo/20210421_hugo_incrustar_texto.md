@@ -75,6 +75,10 @@ Con las últimas versiones de [Hugo] ya es posible implementar una solución al 
 <p><em>No se pudo cargar el contenido remoto desde {{ $remote_url }}.</em></p>
 {{- end -}}
 ```
+Para insertarlo de la misma forma que antes:
+```
+{{</* texto_remoto "file_url" */>}}
+```
 
 
 ### Enlaces de interés

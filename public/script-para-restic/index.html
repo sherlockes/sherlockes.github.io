@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=443&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Script para Restic - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="He creado Script para Restic para compartir mis opiniones y conocimientos.">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="https://hugopreview.vps.sherblog.es//images/20260611_script_para_restic_00.jpg" />
+	<meta name="twitter:title" content="Script para Restic"/>
+	<meta name="twitter:description" content="He creado Script para Restic para compartir mis opiniones y conocimientos."/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="https://hugopreview.vps.sherblog.es/script-para-restic/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Script para Restic">
+	<meta property="og:url" content="https://hugopreview.vps.sherblog.es/script-para-restic/">
+	<meta property="og:description" content="He creado Script para Restic para compartir mis opiniones y conocimientos."/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="https://hugopreview.vps.sherblog.es/images/20260611_script_para_restic_00.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Script para Restic">
+  <meta name="twitter:description" content="He creado Script para Restic para compartir mis opiniones y conocimientos.">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Script para Restic</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2026-06-11T00:00:00Z">2026-06-11</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">Computing</a>, <a class="meta__link" href="/categories/sherver/" rel="category">Sherver</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20260611_script_para_restic_00.jpg" alt="Script para Restic">
+		
+	</figure><div class="content post__content clearfix">
+			<p>Hace unos meses escribí un artículo para realizar la copia de seguridad de mis contenedores con <a href="https://restic.net">Restic</a>. Ahora retomo el tema dándole una vuelta de tuerca al script inicial para añadirle una cuantas mejoras:</p>
+<p>Aquí dejo el <a href="https://github.com/sherlockes/SherloScripts/blob/master/bash/restic-backup.sh">script</a> que he mejorado con la ayuda de la IA.</p>
+<h3 id="modularidad-y-soporte-multi-configuración">Modularidad y Soporte Multi-configuración</h3>
+<p><strong>Antes</strong>: El script original tenía las rutas (~/dockers), los repositorios y las contraseñas escritas directamente &ldquo;a fuego&rdquo; (hardcoded) en el código. Si querías respaldar otra carpeta u otra nube, tenías que duplicar el script entero.</p>
+<p><strong>Ahora</strong>: El script actúa como una plantilla genérica. Acepta un archivo de configuración externo como argumento ($1). Si no se le pasa ninguno, usa uno por defecto gracias a la línea:</p>
+<p><code>CONFIG_FILE=&quot;${1:-$HOME/.restic-backup}&quot;</code></p>
+<blockquote>
+<p>Esta característica te permite gestionar infinitas copias de seguridad distintas utilizando un único script ejecutable sin más que apuntar a un archivo de configuración distinto.</p>
+</blockquote>
+<hr>
+<h3 id="seguridad-mejorada-adiós-a-los-archivos-de-clave-secundarios">Seguridad Mejorada (Adiós a los archivos de clave secundarios)</h3>
+<p><strong>Antes:</strong> El script original requería gestionar dos archivos externos: el script en sí y un archivo <code>.restic-password</code> que contenía la contraseña en texto plano, obligando a Restic a leer el disco con el argumento <code>--password-file</code>.</p>
+<p><strong>Ahora:</strong> Toda la configuración se centraliza en un único lugar. La contraseña se almacena como una variable dentro del archivo <code>.restic-backup</code> y se inyecta directamente en la memoria del sistema mediante el uso nativo de la variable de entorno de Restic:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export RESTIC_PASSWORD<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$RESTIC_PASSWORD<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><hr>
+<h3 id="portabilidad-total-con-la-variable-home">Portabilidad Total con la variable $HOME</h3>
+<p><strong>Antes:</strong> El script original utilizaba rutas absolutas estáticas que apuntaban explícitamente a /home/sherlockes/. Si clonabas el script en otro servidor con un usuario diferente, el script fallaba de inmediato.</p>
+<p><strong>Ahora:</strong> Al implementar $HOME, el script se adapta automáticamente al directorio del usuario que lo esté ejecutando, facilitando enormemente que los lectores de tu blog puedan descargar tu script y usarlo en sus sistemas sin editar una sola línea de código.</p>
+<hr>
+<h3 id="red-de-seguridad-inicialización-automática">Red de Seguridad: Inicialización Automática</h3>
+<p><strong>Antes:</strong> Si el repositorio remoto en la nube de Mega no estaba inicializado previamente con el comando manual init, el script original fallaba catastróficamente lanzando un error y deteniendo el proceso.</p>
+<p><strong>Ahora:</strong> El script incluye una rutina de comprobación inteligente en segundo plano:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -E restic -r <span style="color:#e6db74">&#34;</span>$REPO_REMOTE<span style="color:#e6db74">&#34;</span> snapshots &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>Si detecta que el repositorio en la nube no existe o no es accesible, <strong>lo inicializa de forma automática</strong>, asegurando que la tarea no falle.</p>
+<hr>
+<h3 id="sistema-de-alertas-y-notificaciones">Sistema de Alertas y Notificaciones</h3>
+<p><strong>Antes:</strong> El script original era completamente &ldquo;silencioso&rdquo;. Si el backup fallaba por falta de espacio, caída de red o errores de permisos, no te enterabas a menos que leyeses manualmente el archivo <code>backup.log</code>.</p>
+<p><strong>Ahora:</strong> Se integra una función nativa de telemetría por <strong>Telegram</strong> que envía alertas críticas inmediatas si ocurre un error en el backup o en las políticas de retención, así como un mensaje de confirmación verde (<code>🟢</code>) cuando todo concluye con éxito.</p>
+<hr>
+<h3 id="estrategia-de-backup-híbrida-local--remoto">Estrategia de Backup Híbrida (Local + Remoto)</h3>
+<p><strong>Antes:</strong> El script original únicamente realizaba la copia de seguridad hacia el almacenamiento remoto en la nube de Mega.</p>
+<p><strong>Ahora:</strong> Aplica la regla de respaldo profesional (3-2-1), realizando primero la validación y copia en un repositorio <strong>Local</strong> (para recuperaciones instantáneas a gran velocidad) y posteriormente replicando el proceso hacia el repositorio <strong>Remoto</strong> en Mega (protección ante desastres físicos en el servidor).</p>
+<hr>
+<h3 id="el-problema-del-sudo">El problema del sudo</h3>
+<p>No he sido capaz de eliminar la necesidad de root para llamar al comando restic así que tenemos que seguir añadiendo una línea en <code>sudo visudo</code> que será la siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sherlockes ALL<span style="color:#f92672">=(</span>ALL<span style="color:#f92672">)</span> NOPASSWD:SETENV: /usr/bin/restic
+</span></span></code></pre></div><h3 id="script-completo">Script completo</h3>
+<pre><code class="language-txt">#!/bin/bash
+
+###################################################################
+#Script Name: restic-backup.sh
+#Description: Copia de seguridad 100% modular con Restic
+#Args: [Ruta al archivo de configuración] (Opcional)
+#Creation/Update: 20260518/20260611
+#Author: www.sherblog.es                                             
+#Email: sherlockes@gmail.com                               
+###################################################################
+
+# 1. Cargar archivo de configuración del backup (Portabilidad total con $HOME)
+CONFIG_FILE=&#34;${1:-$HOME/.restic-backup}&#34;
+
+if [ -f &#34;$CONFIG_FILE&#34; ]; then
+    source &#34;$CONFIG_FILE&#34;
+else
+    echo &#34;❌ Error: No se encuentra el archivo de configuración en $CONFIG_FILE&#34;
+    exit 1
+fi
+
+# 2. Inyección de variables de entorno para Rclone y Restic
+export RCLONE_CONFIG=&#34;$RCLONE_CONFIG_PATH&#34;
+export RESTIC_PASSWORD=&#34;$RESTIC_PASSWORD&#34;
+
+# Función para enviar notificaciones a Telegram
+enviar_telegram() {
+    local mensaje=&#34;$1&#34;
+    # Solo envía si las variables de Telegram están configuradas en este archivo
+    if [ ! -z &#34;$TG_BOT_TOKEN&#34; ] &amp;&amp; [ ! -z &#34;$TG_CHAT_ID&#34; ]; then
+        curl -s -X POST &#34;https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage&#34; \
+            -d &#34;chat_id=${TG_CHAT_ID}&#34; \
+            -d &#34;parse_mode=Markdown&#34; \
+            -d &#34;text=${mensaje}&#34; &gt; /dev/null
+    fi
+}
+
+# ==========================================
+# 1. BACKUP EN REMOTO (MEGA)
+# ==========================================
+echo &#34;Comprobando repositorio remoto...&#34;
+sudo -E restic -r &#34;$REPO_REMOTE&#34; snapshots &gt; /dev/null 2&gt;&amp;1
+if [ $? -ne 0 ]; then
+    echo &#34;Inicializando repositorio remoto...&#34;
+    sudo -E restic -r &#34;$REPO_REMOTE&#34; init
+    if [ $? -ne 0 ]; then
+        enviar_telegram &#34;🚨 *FALLO CRÍTICO $(hostname)*: No se pudo inicializar el repositorio REMOTO.&#34;
+        exit 1
+    fi
+fi
+
+echo &#34;Iniciando backup en REMOTO: $(date)&#34;
+sudo -E restic -r &#34;$REPO_REMOTE&#34; backup &#34;$BACKUP_SOURCE&#34; --exclude=&#34;*.mp3&#34; --exclude=&#34;*.mp4&#34;
+
+if [ $? -ne 0 ]; then
+    enviar_telegram &#34;🚨 *FALLO CRÍTICO $(hostname)*: El backup en *REMOTO* ha fallado.&#34;
+    exit 1
+fi
+
+echo &#34;Aplicando política de retención en REMOTO&#34;
+sudo -E restic -r &#34;$REPO_REMOTE&#34; forget --keep-daily 7 --keep-weekly 4 --keep-monthly 6 --prune
+if [ $? -ne 0 ]; then
+    enviar_telegram &#34;⚠️ *Aviso $(hostname)*: El backup remoto se hizo, pero falló la limpieza (Prune REMOTO).&#34;
+fi
+
+# ==========================================
+# 2. BACKUP EN LOCAL
+# ==========================================
+# Auto-inicialización del repositorio local si no existe
+if [ ! -f &#34;$REPO_LOCAL/config&#34; ]; then
+    echo &#34;Inicializando repositorio local...&#34;
+    sudo -E restic -r &#34;$REPO_LOCAL&#34; init
+    if [ $? -ne 0 ]; then
+        enviar_telegram &#34;🚨 *FALLO CRÍTICO $(hostname)*: No se pudo inicializar el repositorio local.&#34;
+        exit 1
+    fi
+fi
+
+echo &#34;Iniciando backup en LOCAL: $(date)&#34;
+sudo -E restic -r &#34;$REPO_LOCAL&#34; backup &#34;$BACKUP_SOURCE&#34; --exclude=&#34;*.mp3&#34; --exclude=&#34;*.mp4&#34;
+
+if [ $? -ne 0 ]; then
+    enviar_telegram &#34;🚨 *FALLO CRÍTICO $(hostname)*: El backup en *LOCAL* ha fallado.&#34;
+    exit 1
+fi
+
+echo &#34;Aplicando política de retención en LOCAL&#34;
+sudo -E restic -r &#34;$REPO_LOCAL&#34; forget --keep-daily 7 --keep-weekly 4 --keep-monthly 6 --prune
+if [ $? -ne 0 ]; then
+    enviar_telegram &#34;⚠️ *Aviso $(hostname)*: El backup local se hizo, pero falló la limpieza (Prune LOCAL).&#34;
+fi
+
+# ==========================================
+# NOTIFICACIÓN DE ÉXITO GENERAL
+# ==========================================
+echo &#34;Todos los backups completados con éxito: $(date)&#34;
+enviar_telegram &#34;🟢 *Backup Completado ($(hostname))*: Las copias de [$BACKUP_SOURCE] en LOCAL y REMOTO se han realizado y purgado correctamente.&#34;
+</code></pre>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/backups-en-la-nube-con-restic/">Backups en la nube con Restic</a></li>
+	    
+	    <li><a href="/men%C3%BA-para-montar-nubes-en-bash/">Menú para montar nubes en Bash</a></li>
+	    
+	    <li><a href="/configuraci%C3%B3n-de-rclone-mediante-dotfiles/">Configuración de Rclone mediante Dotfiles</a></li>
+	    
+	    <li><a href="/instalar-rclone-en-synology-ds920-/">Instalar rclone en Synology Ds920&#43;</a></li>
+	    
+	    <li><a href="/moviendo-archivos-con-rclone/">Moviendo archivos con Rclone</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/rclone/" rel="tag">rclone</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/restic/" rel="tag">restic</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/bash/" rel="tag">bash</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/homepage-mostrando-contenedores-remotos/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Homepage, mostrando contenedores remotos</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>
