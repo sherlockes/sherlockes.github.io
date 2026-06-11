@@ -15,7 +15,7 @@ tags:
 - "docker"
 - "yaml"
 - "homepage"
-draft: true
+draft: false
 weight: 5
 ---
 
