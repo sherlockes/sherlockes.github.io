@@ -139,12 +139,25 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">vps-local</span>:
 </span></span><span style="display:flex;"><span><span style="color:#f92672">socket</span>: <span style="color:#ae81ff">/var/run/docker.sock</span>
 </span></span></code></pre></div><p>A continuación en el archivo <code>services.yaml</code> editaremos el enlace correspondiente para que se muestre el estado del contenedor. De esta forma cada servicio quedará así:</p>
-<p>¡[image-01]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">Ubercon</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">Host Monitor</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">icon</span>: <span style="color:#ae81ff">zerotier</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">href</span>: <span style="color:#ae81ff">https://monitor.vps.sherblog.es</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">description</span>: <span style="color:#ae81ff">Monitor de equipos de las redes personales</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">container</span>: <span style="color:#ae81ff">zerotier-monitor</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">server</span>: <span style="color:#ae81ff">vps-local</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">Rss Tracker</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">icon</span>: <span style="color:#ae81ff">https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/yarr.svg</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">href</span>: <span style="color:#ae81ff">http://rsstracker.vps.sherblog.es</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">description</span>: <span style="color:#ae81ff">Fuentes Rss de todos los trackers privados de torrents</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">container</span>: <span style="color:#ae81ff">rsstracker</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">server</span>: <span style="color:#ae81ff">vps-local</span>
+</span></span></code></pre></div><p>y con esto conseguimos un resultado en nuestra página como este:</p>
+<p><img src="/images/20260609_homepage_mostrando_contenedores_remotos_01.jpg" alt="image-01"></p>
 <h3 id="enlaces-de-interés">Enlaces de interés</h3>
 <ul>
 <li><a href="www.sherblog.es">enlace</a></li>
 </ul>
-<p>[image-01]: /images/20260121_Homepage, mostrando contenedores remotos_01.jpg</p>
 		</div>
 		<footer class="post__footer">
 		  

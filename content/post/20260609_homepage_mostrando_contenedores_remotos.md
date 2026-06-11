@@ -34,11 +34,24 @@ socket: /var/run/docker.sock
 
 A continuación en el archivo `services.yaml` editaremos el enlace correspondiente para que se muestre el estado del contenedor. De esta forma cada servicio quedará así:
 
+``` yaml
+- Ubercon:
+    - Host Monitor:
+        icon: zerotier
+        href: https://monitor.vps.sherblog.es
+        description: Monitor de equipos de las redes personales
+        container: zerotier-monitor
+        server: vps-local
+    - Rss Tracker:
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/yarr.svg
+        href: http://rsstracker.vps.sherblog.es
+        description: Fuentes Rss de todos los trackers privados de torrents
+        container: rsstracker
+        server: vps-local
+```
+y con esto conseguimos un resultado en nuestra página como este:
 
-
-
-
-¡[image-01]
+![image-01]
 
 ### Enlaces de interés
 - [enlace](www.sherblog.es)
@@ -46,4 +59,6 @@ A continuación en el archivo `services.yaml` editaremos el enlace correspondien
 [homepage]: https://gethomepage.dev
 [vps]: http://homepage.vps.sherblog.es
 
-[image-01]: /images/20260121_Homepage, mostrando contenedores remotos_01.jpg
+
+
+[image-01]: /images/20260609_homepage_mostrando_contenedores_remotos_01.jpg
