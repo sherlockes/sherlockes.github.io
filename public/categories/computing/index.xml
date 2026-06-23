@@ -6,8 +6,15 @@
     <description>Recent content in Computing on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Tue, 09 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hugopreview.vps.sherblog.es/categories/computing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Script para Restic</title>
+      <link>https://hugopreview.vps.sherblog.es/script-para-restic/</link>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/script-para-restic/</guid>
+      <description>&lt;p&gt;Hace unos meses escribí un artículo para realizar la copia de seguridad de mis contenedores con &lt;a href=&#34;https://restic.net&#34;&gt;Restic&lt;/a&gt;. Ahora retomo el tema dándole una vuelta de tuerca al script inicial para añadirle una cuantas mejoras:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Homepage, mostrando contenedores remotos</title>
       <link>https://hugopreview.vps.sherblog.es/homepage-mostrando-contenedores-remotos/</link>
@@ -70,13 +77,6 @@
       <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
       <guid>https://hugopreview.vps.sherblog.es/simple-web-apps-by-chatgpt/</guid>
       <description>&lt;p&gt;Hacer pequeñas aplicaciones cada día que pasa es más sencillo sin tener mucha idea de programar. Aquí dejo unas cuantas que he creado para satisfacer necesidades puntuales. Hasta la descripción de la aplicación va a ser cortesía de la inteligencia artificial.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Youtube y Twitch a Podcast en Docker</title>
-      <link>https://hugopreview.vps.sherblog.es/youtube-y-twitch-a-podcast-en-docker/</link>
-      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/youtube-y-twitch-a-podcast-en-docker/</guid>
-      <description>&lt;p&gt;Hace tiempo que uso unos sencillos scripts en bash para crear un podcast a partir del audio de unos cuantos canales de &lt;a href=&#34;https://www.youtube.com&#34;&gt;Youtube&lt;/a&gt; y &lt;a href=&#34;https://www.twitch.tv&#34;&gt;Twitch&lt;/a&gt;. Ahora lo vamos a meter en un contenedor para que sea más fácil de migrar a otra máquina.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
