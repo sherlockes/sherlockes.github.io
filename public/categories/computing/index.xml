@@ -6,8 +6,15 @@
     <description>Recent content in Computing on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Thu, 11 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hugopreview.vps.sherblog.es/categories/computing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sherlocate, una app de seguimiento</title>
+      <link>https://hugopreview.vps.sherblog.es/sherlocate-una-app-de-seguimiento/</link>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/sherlocate-una-app-de-seguimiento/</guid>
+      <description>&lt;p&gt;La aplicación de seguimiento y trackeo que he usado durante los últimos diez años para mis rutas en bici se está poniendo pesada con la publicidad y suscripción de pago. Por esto me he creado mi propia aplicación mediante un contenedor docker que corre en el vps. Se trata de &lt;a href=&#34;https://github.com/sherlockes/sherlocate&#34;&gt;Sherlocate&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Script para Restic</title>
       <link>https://hugopreview.vps.sherblog.es/script-para-restic/</link>
@@ -70,13 +77,6 @@
       <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
       <guid>https://hugopreview.vps.sherblog.es/app-de-cuestionarios/</guid>
       <description>&lt;p&gt;Esta es sólo una prueba de concepto de como he utilizado una serie de servicios gratuitos para la creación de una app de cuestionarios. No pretendo explicar el funcionamiento, sólo en que me ha ayudado cada uno.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Simple web apps by Chatgpt</title>
-      <link>https://hugopreview.vps.sherblog.es/simple-web-apps-by-chatgpt/</link>
-      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/simple-web-apps-by-chatgpt/</guid>
-      <description>&lt;p&gt;Hacer pequeñas aplicaciones cada día que pasa es más sencillo sin tener mucha idea de programar. Aquí dejo unas cuantas que he creado para satisfacer necesidades puntuales. Hasta la descripción de la aplicación va a ser cortesía de la inteligencia artificial.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

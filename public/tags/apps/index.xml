@@ -6,8 +6,15 @@
     <description>Recent content in Apps on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hugopreview.vps.sherblog.es/tags/apps/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sherlocate, una app de seguimiento</title>
+      <link>https://hugopreview.vps.sherblog.es/sherlocate-una-app-de-seguimiento/</link>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/sherlocate-una-app-de-seguimiento/</guid>
+      <description>&lt;p&gt;La aplicación de seguimiento y trackeo que he usado durante los últimos diez años para mis rutas en bici se está poniendo pesada con la publicidad y suscripción de pago. Por esto me he creado mi propia aplicación mediante un contenedor docker que corre en el vps. Se trata de &lt;a href=&#34;https://github.com/sherlockes/sherlocate&#34;&gt;Sherlocate&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Hugo Deck 2026</title>
       <link>https://hugopreview.vps.sherblog.es/hugo-deck-2026/</link>

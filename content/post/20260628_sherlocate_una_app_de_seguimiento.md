@@ -29,13 +29,11 @@ El sistema es muy sencillo, el teléfono manda la ubicación al servidor y este 
 
 Para enviar los datos desde el teléfono vamos a usar la app [Trackar Client], una sencilla app que permite configurar el servidor al que le vamos a enviar los datos de posicionamiento.
 
-Para recibir y mostrar los datos he creado [Sherlocate], una sencilla webapp que simplemente muestra un mapa con la ubicación y ruta que ha seguido el usuario que está enviando los datos. La app la tengo corriendo en un vps mediante docker detrás de un proxy inverso con npm.
+Para recibir y mostrar los datos he creado [Sherlocate], una sencilla webapp que simplemente muestra un mapa con la ubicación y ruta que ha seguido el usuario que está enviando los datos. La app la tengo corriendo en un vps mediante docker detrás de un proxy inverso con npm. En el propio repositorio de Github tienes toda la info.
 
-¡[image-01]
+{{< texto_remoto url="https://raw.githubusercontent.com/sherlockes/sherlocate/refs/heads/main/README.md" wrap="true" markdown="true" >}}
 
-### Enlaces de interés
-- [enlace](www.sherblog.es)
+Y nada más, gracias a la IA y la inversión en un vps cualquier cosa que necesites la tienes en producción en unos pocos días.
 
 [Sherlocate]: https://github.com/sherlockes/sherlocate
 [Trackar Client]: https://www.traccar.org/client/
-[image-01]: /images/20260121_Sherlocate, una app de seguimiento_01.jpg

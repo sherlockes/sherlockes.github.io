@@ -136,13 +136,69 @@
 			<p>La aplicación de seguimiento y trackeo que he usado durante los últimos diez años para mis rutas en bici se está poniendo pesada con la publicidad y suscripción de pago. Por esto me he creado mi propia aplicación mediante un contenedor docker que corre en el vps. Se trata de <a href="https://github.com/sherlockes/sherlocate">Sherlocate</a>.</p>
 <p>El sistema es muy sencillo, el teléfono manda la ubicación al servidor y este muestra una página web con un mapa en el que, cualquiera que conozca tu código de trackeo puede ver tu ubicación actual y la ruta que has seguido para llegar allí. A las 0:00 se borran los datos de posicionamiento de forma que sólo se muestra el rastro del día actual.</p>
 <p>Para enviar los datos desde el teléfono vamos a usar la app <a href="https://www.traccar.org/client/">Trackar Client</a>, una sencilla app que permite configurar el servidor al que le vamos a enviar los datos de posicionamiento.</p>
-<p>Para recibir y mostrar los datos he creado <a href="https://github.com/sherlockes/sherlocate">Sherlocate</a>, una sencilla webapp que simplemente muestra un mapa con la ubicación y ruta que ha seguido el usuario que está enviando los datos. La app la tengo corriendo en un vps mediante docker detrás de un proxy inverso con npm.</p>
-<p>¡[image-01]</p>
-<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<p>Para recibir y mostrar los datos he creado <a href="https://github.com/sherlockes/sherlocate">Sherlocate</a>, una sencilla webapp que simplemente muestra un mapa con la ubicación y ruta que ha seguido el usuario que está enviando los datos. La app la tengo corriendo en un vps mediante docker detrás de un proxy inverso con npm. En el propio repositorio de Github tienes toda la info.</p>
+<h1 id="sherlocate-">Sherlocate 📍</h1>
+<p>Sherlocate es una solución de rastreo en tiempo real autohospedada, simple y ligera. Permite recibir datos de ubicación desde la aplicación oficial de Android <strong>Traccar Client</strong>, almacenar la última posición de forma persistente y mostrarla de forma interactiva en una página web única (SPA) con mapas dinámicos de Leaflet.js.</p>
+<hr>
+<h2 id="-estructura-del-proyecto">🛠️ Estructura del Proyecto</h2>
+<p>El proyecto está compuesto por los siguientes archivos:</p>
 <ul>
-<li><a href="www.sherblog.es">enlace</a></li>
+<li><a href="file:///home/sherlockes/docker/sherlocate/main.py">main.py</a>: Backend desarrollado en <strong>FastAPI</strong> que gestiona la API de localización y sirve el frontend.</li>
+<li><a href="file:///home/sherlockes/docker/sherlocate/templates/index.html">templates/index.html</a>: Frontend SPA con mapa interactivo Leaflet.js, historial de ruta (breadcrumbs), indicador de batería y telemetría.</li>
+<li><a href="file:///home/sherlockes/docker/sherlocate/Dockerfile">Dockerfile</a>: Archivo para compilar la imagen de Docker basada en <code>python:3.11-slim</code>.</li>
+<li><a href="file:///home/sherlockes/docker/sherlocate/requirements.txt">requirements.txt</a>: Dependencias Python.</li>
+<li><a href="file:///home/sherlockes/docker/sherlocate/docker-compose.yml">docker-compose.yml</a>: Orquestación de Docker Compose que lee las variables desde un archivo <code>.env</code> externo.</li>
+<li><code>.env</code>: Archivo de configuración local con las contraseñas e identificadores de los dispositivos (no se sube al repositorio).</li>
+<li><code>.env.example</code>: Plantilla de ejemplo para configurar el archivo <code>.env</code>.</li>
 </ul>
-<p>[image-01]: /images/20260121_Sherlocate, una app de seguimiento_01.jpg</p>
+<hr>
+<h2 id="-despliegue-rápido-docker-compose">🚀 Despliegue Rápido (Docker Compose)</h2>
+<ol>
+<li>Copia el archivo de plantilla a tu configuración real:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cp .env.example .env
+</span></span></code></pre></div></li>
+<li>Edita el archivo <code>.env</code> con tus dispositivos y contraseñas.</li>
+<li>Ejecuta el siguiente comando para compilar e iniciar el contenedor en segundo plano:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker compose up -d --build
+</span></span></code></pre></div></li>
+<li>El servicio estará disponible en <code>http://localhost:8000</code>. Sus datos de posicionamiento se guardarán de forma persistente en la carpeta <code>./data</code> de tu servidor.</li>
+</ol>
+<hr>
+<h2 id="-configuración-detrás-de-nginx-proxy-manager-npm">🔒 Configuración detrás de Nginx Proxy Manager (NPM)</h2>
+<p>Si utilizas <strong>Nginx Proxy Manager</strong> para exponer el servicio a Internet con un dominio propio y SSL (HTTPS), configúralo de la siguiente manera:</p>
+<ol>
+<li>Añade un nuevo <strong>Proxy Host</strong>.</li>
+<li><strong>Domain Names</strong>: Tu subdominio (ej: <code>tracker.midominio.com</code>).</li>
+<li><strong>Scheme</strong>: <code>http</code></li>
+<li><strong>Forward Hostname / IP</strong>:
+<ul>
+<li>Si NPM está en la misma red de Docker que Sherlocate, puedes usar el nombre del contenedor: <code>sherlocate</code></li>
+<li>Si NPM está fuera de Docker o en otra red, usa la IP local del servidor (ej: <code>192.168.1.100</code> o la IP de docker <code>172.17.0.1</code>).</li>
+</ul>
+</li>
+<li><strong>Forward Port</strong>: <code>8000</code></li>
+<li><strong>Websockets Support</strong>: Desactivado está bien (esta app usa short polling).</li>
+<li><strong>Block Common Exploits</strong>: Activado (recomendado).</li>
+<li>En la pestaña <strong>SSL</strong>, solicita un certificado de Let&rsquo;s Encrypt y activa <strong>Force SSL</strong>.</li>
+</ol>
+<hr>
+<h2 id="-configuración-en-la-app-de-android-traccar-client">📱 Configuración en la App de Android (Traccar Client)</h2>
+<p>Configura la app <strong>Traccar Client</strong> (o cualquier cliente de geolocalización compatible con HTTP) en tu dispositivo Android:</p>
+<ol>
+<li><strong>Dirección del servidor</strong>:
+<ul>
+<li>Introduce la URL de tu endpoint de tracking pasando la contraseña del dispositivo como parámetro URL:
+<code>http://[IP-DE-TU-SERVIDOR]:8000/api/tracking?password=CONTRASEÑA_DEL_DISPOSITIVO</code>
+(o usando HTTPS con tu dominio si usas un proxy inverso: <code>https://midominio.com/api/tracking?password=CONTRASEÑA_DEL_DISPOSITIVO</code>).</li>
+</ul>
+</li>
+<li><strong>Identificador del dispositivo</strong>: Introduce el identificador único que definiste en <code>.env</code> (ej. <code>123456</code>).</li>
+<li><strong>Frecuencia</strong>: Ajusta el intervalo de envío (se recomiendan <strong>5 o 10 segundos</strong> para un rastreo fluido en tiempo real).</li>
+<li><strong>Proveedor de localización</strong>: Selecciona <strong>GPS</strong> o <strong>Mixto</strong> para garantizar la precisión de las coordenadas.</li>
+<li><strong>Inicia el servicio</strong>: Activa el interruptor <strong>&ldquo;Estado del servicio&rdquo;</strong> en la pantalla principal.</li>
+</ol>
+
+<p>Y nada más, gracias a la IA y la inversión en un vps cualquier cosa que necesites la tienes en producción en unos pocos días.</p>
 		</div>
 		<footer class="post__footer">
 		  

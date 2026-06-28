@@ -1,7 +1,35 @@
-{{- $remote_url := .Get 0 -}}
+{{- $url := "" -}}
+{{- $wrap := false -}}
+{{- $markdown := false -}}
 
-{{- with resources.GetRemote $remote_url -}}
-<pre><code class="language-txt">{{ .Content | htmlEscape | safeHTML }}</code></pre>
+{{- if .IsNamedParams -}}
+  {{- $url = .Get "url" -}}
+  {{- $wrap_param := .Get "wrap" -}}
+  {{- if or (eq $wrap_param "true") (eq $wrap_param true) -}}
+    {{- $wrap = true -}}
+  {{- end -}}
+  {{- $markdown_param := .Get "markdown" -}}
+  {{- if or (eq $markdown_param "true") (eq $markdown_param true) -}}
+    {{- $markdown = true -}}
+  {{- end -}}
 {{- else -}}
-<p><em>No se pudo cargar el contenido remoto desde {{ $remote_url }}.</em></p>
+  {{- $url = .Get 0 -}}
+  {{- $wrap_param := .Get 1 -}}
+  {{- if or (eq $wrap_param "true") (eq $wrap_param "wrap") (eq $wrap_param true) -}}
+    {{- $wrap = true -}}
+  {{- end -}}
+  {{- $markdown_param := .Get 2 -}}
+  {{- if or (eq $markdown_param "true") (eq $markdown_param "markdown") (eq $markdown_param true) -}}
+    {{- $markdown = true -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with resources.GetRemote $url -}}
+  {{- if $markdown -}}
+    {{ .Content | markdownify | safeHTML }}
+  {{- else -}}
+    <pre{{ if $wrap }} style="white-space: pre-wrap; word-wrap: break-word;"{{ end }}><code class="language-txt">{{ .Content | htmlEscape | safeHTML }}</code></pre>
+  {{- end -}}
+{{- else -}}
+  <p><em>No se pudo cargar el contenido remoto desde {{ $url }}.</em></p>
 {{- end -}}

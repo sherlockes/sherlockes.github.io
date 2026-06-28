@@ -6,8 +6,15 @@
     <description>Recent content in Sherver on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Thu, 11 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hugopreview.vps.sherblog.es/categories/sherver/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sherlocate, una app de seguimiento</title>
+      <link>https://hugopreview.vps.sherblog.es/sherlocate-una-app-de-seguimiento/</link>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/sherlocate-una-app-de-seguimiento/</guid>
+      <description>&lt;p&gt;La aplicación de seguimiento y trackeo que he usado durante los últimos diez años para mis rutas en bici se está poniendo pesada con la publicidad y suscripción de pago. Por esto me he creado mi propia aplicación mediante un contenedor docker que corre en el vps. Se trata de &lt;a href=&#34;https://github.com/sherlockes/sherlocate&#34;&gt;Sherlocate&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Script para Restic</title>
       <link>https://hugopreview.vps.sherblog.es/script-para-restic/</link>
@@ -70,13 +77,6 @@
       <pubDate>Fri, 05 May 2017 00:00:00 +0000</pubDate>
       <guid>https://hugopreview.vps.sherblog.es/error-al-exportar-base-de-datos-de-wordpress-en-synology-webstation/</guid>
       <description>&lt;p&gt;Hace unos días que publiqué el &lt;a href=&#34;https://hugopreview.vps.sherblog.es/copia-de-seguridad-de-la-base-de-datos-de-wordpress/&#34;&gt;modo&lt;/a&gt; en el que hacía la copia de seguridad de la base de datos de WordPress desde el propio hosting hasta una unidad de Google Drive. Haciendo pruebas para alojar la web en el Nas de Synology me doy cuenta de que el &lt;a href=&#34;https://es.wordpress.org/plugins/wp-db-backup&#34;&gt;plugin&lt;/a&gt; para exportar la base de datos y enviarla por correo electrónico periódicamente no funciona.&lt;/p&gt;&#xA;&lt;p&gt;Pruebo con otros plugins similares y todos me dan el mismo error y tras unas pruebas y un poco de buceo por la red me doy cuenta que el problema reside en la incapacidad del servidor web para tratar los archivos comprimidos.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Copia de seguridad de la base de datos de WordPress</title>
-      <link>https://hugopreview.vps.sherblog.es/copia-de-seguridad-de-la-base-de-datos-de-wordpress/</link>
-      <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/copia-de-seguridad-de-la-base-de-datos-de-wordpress/</guid>
-      <description>&lt;p&gt;Hace unos días expliqué como gestiona la copia de seguridad de los archivos de WordPress (la carpeta wp-content) y aquí vamos a ver como hago lo propio con la base de datos. El flujo de trabajo es simple, periódicamente me llega un correo electrónico con la base de datos comprimida como archivo adjunto y guardo ese archivo en mi unidad de Google Drive.&lt;/p&gt;&#xA;&lt;p&gt;El plugin de WordPress &lt;a href=&#34;%C2%A0https://es.wordpress.org/plugins/wp-db-backup/&#34;&gt;WP-DB-Backup&lt;/a&gt; es el que se encarga de enviar un correo electrónico periódicamente con la copia de la base de datos. La configuración es muy sencilla, una vez que el plugin está instalado y activo vamos al menú &amp;ldquo;Herramientas - Copia de respaldo&amp;rdquo; del escritorio de WordPress y bajamos hasta la opción &amp;ldquo;Respaldo Programado&amp;rdquo;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
