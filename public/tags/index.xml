@@ -6,8 +6,43 @@
     <description>Recent content in Tags on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Thu, 11 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hugopreview.vps.sherblog.es/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apps</title>
+      <link>https://hugopreview.vps.sherblog.es/tags/apps/</link>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/tags/apps/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://hugopreview.vps.sherblog.es/tags/docker/</link>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mapas</title>
+      <link>https://hugopreview.vps.sherblog.es/tags/mapas/</link>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/tags/mapas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://hugopreview.vps.sherblog.es/tags/python/</link>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Traccar</title>
+      <link>https://hugopreview.vps.sherblog.es/tags/traccar/</link>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/tags/traccar/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Bash</title>
       <link>https://hugopreview.vps.sherblog.es/tags/bash/</link>
@@ -30,13 +65,6 @@
       <description></description>
     </item>
     <item>
-      <title>Docker</title>
-      <link>https://hugopreview.vps.sherblog.es/tags/docker/</link>
-      <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/tags/docker/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Github</title>
       <link>https://hugopreview.vps.sherblog.es/tags/github/</link>
       <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
@@ -48,34 +76,6 @@
       <link>https://hugopreview.vps.sherblog.es/tags/homepage/</link>
       <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
       <guid>https://hugopreview.vps.sherblog.es/tags/homepage/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>https://hugopreview.vps.sherblog.es/tags/linux/</link>
-      <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/tags/linux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ssh</title>
-      <link>https://hugopreview.vps.sherblog.es/tags/ssh/</link>
-      <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/tags/ssh/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Yaml</title>
-      <link>https://hugopreview.vps.sherblog.es/tags/yaml/</link>
-      <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/tags/yaml/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Apps</title>
-      <link>https://hugopreview.vps.sherblog.es/tags/apps/</link>
-      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/tags/apps/</guid>
       <description></description>
     </item>
   </channel>
