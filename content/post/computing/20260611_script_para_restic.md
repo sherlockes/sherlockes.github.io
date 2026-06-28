@@ -15,7 +15,7 @@ tags:
 - "rclone"
 - "restic"
 - "bash"
-draft: true
+draft: false
 weight: 5
 ---
 
