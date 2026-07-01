@@ -29,7 +29,7 @@
 	
 	
 	
-	<meta property="og:image" content="https://hugopreview.vps.sherblog.es/images/20260628_sherlocate_una_app_de_seguimiento_00.jpg" />
+	<meta property="og:image" content="https://hugopreview.vps.sherblog.es/images/20260628_sherlocate_una_app_de_seguimiento_00_xl.jpg" />
 	
 	
 
@@ -133,10 +133,11 @@
 		<img class="thumbnail__image" src="/images/20260628_sherlocate_una_app_de_seguimiento_00.jpg" alt="Sherlocate, una app de seguimiento">
 		
 	</figure><div class="content post__content clearfix">
-			<p>La aplicación de seguimiento y trackeo que he usado durante los últimos diez años para mis rutas en bici se está poniendo pesada con la publicidad y suscripción de pago. Por esto me he creado mi propia aplicación mediante un contenedor docker que corre en el vps. Se trata de <a href="https://github.com/sherlockes/sherlocate">Sherlocate</a>.</p>
+			<p>La aplicación de seguimiento y trackeo que he usado durante los últimos diez años para mis rutas en bici se está poniendo pesada con la publicidad y subscripción de pago. Por esto me he creado mi propia aplicación mediante un contenedor docker que corre en el vps. Se trata de <a href="https://github.com/sherlockes/sherlocate">Sherlocate</a>.</p>
 <p>El sistema es muy sencillo, el teléfono manda la ubicación al servidor y este muestra una página web con un mapa en el que, cualquiera que conozca tu código de trackeo puede ver tu ubicación actual y la ruta que has seguido para llegar allí. A las 0:00 se borran los datos de posicionamiento de forma que sólo se muestra el rastro del día actual.</p>
 <p>Para enviar los datos desde el teléfono vamos a usar la app <a href="https://www.traccar.org/client/">Trackar Client</a>, una sencilla app que permite configurar el servidor al que le vamos a enviar los datos de posicionamiento.</p>
 <p>Para recibir y mostrar los datos he creado <a href="https://github.com/sherlockes/sherlocate">Sherlocate</a>, una sencilla webapp que simplemente muestra un mapa con la ubicación y ruta que ha seguido el usuario que está enviando los datos. La app la tengo corriendo en un vps mediante docker detrás de un proxy inverso con npm. En el propio repositorio de Github tienes toda la info.</p>
+<p>Si tienes curiosidad por ver el resultado, puedes ver mi último rastreo <a href="https://sherlocate.tejelonsos.es/">aquí</a>.</p>
 <h1 id="sherlocate-">Sherlocate 📍</h1>
 <p>Sherlocate es una solución de rastreo en tiempo real autohospedada, simple y ligera. Permite recibir datos de ubicación desde la aplicación oficial de Android <strong>Traccar Client</strong>, almacenar la última posición de forma persistente y mostrarla de forma interactiva en una página web única (SPA) con mapas dinámicos de Leaflet.js.</p>
 <hr>

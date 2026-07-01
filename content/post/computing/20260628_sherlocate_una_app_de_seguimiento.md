@@ -17,11 +17,11 @@ tags:
 - "docker"
 - "python"
 - "traccar"
-draft: true
+draft: false
 weight: 5
 ---
 
-La aplicación de seguimiento y trackeo que he usado durante los últimos diez años para mis rutas en bici se está poniendo pesada con la publicidad y suscripción de pago. Por esto me he creado mi propia aplicación mediante un contenedor docker que corre en el vps. Se trata de [Sherlocate].
+La aplicación de seguimiento y trackeo que he usado durante los últimos diez años para mis rutas en bici se está poniendo pesada con la publicidad y subscripción de pago. Por esto me he creado mi propia aplicación mediante un contenedor docker que corre en el vps. Se trata de [Sherlocate].
 
 <!--more-->
 
@@ -31,9 +31,12 @@ Para enviar los datos desde el teléfono vamos a usar la app [Trackar Client], u
 
 Para recibir y mostrar los datos he creado [Sherlocate], una sencilla webapp que simplemente muestra un mapa con la ubicación y ruta que ha seguido el usuario que está enviando los datos. La app la tengo corriendo en un vps mediante docker detrás de un proxy inverso con npm. En el propio repositorio de Github tienes toda la info.
 
+Si tienes curiosidad por ver el resultado, puedes ver mi último rastreo [aquí].
+
 {{< texto_remoto url="https://raw.githubusercontent.com/sherlockes/sherlocate/refs/heads/main/README.md" wrap="true" markdown="true" >}}
 
 Y nada más, gracias a la IA y la inversión en un vps cualquier cosa que necesites la tienes en producción en unos pocos días.
 
+[aquí]: https://sherlocate.tejelonsos.es/
 [Sherlocate]: https://github.com/sherlockes/sherlocate
 [Trackar Client]: https://www.traccar.org/client/
