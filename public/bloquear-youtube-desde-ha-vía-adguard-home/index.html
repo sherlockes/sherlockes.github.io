@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=443&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Bloquear YouTube desde HA vía Adguard Home - Sherblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="He creado Bloquear YouTube desde HA vía Adguard Home para compartir mis opiniones y conocimientos.">
+
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="https://hugopreview.vps.sherblog.es//images/20261012_bloquear_youtube_desde_ha_via_adguard_home_00.jpg" />
+	<meta name="twitter:title" content="Bloquear YouTube desde HA vía Adguard Home"/>
+	<meta name="twitter:description" content="He creado Bloquear YouTube desde HA vía Adguard Home para compartir mis opiniones y conocimientos."/>
+	<meta name="twitter:creator" content="@sherblogpro">
+	<meta name="twitter:site" content="https://hugopreview.vps.sherblog.es/bloquear-youtube-desde-ha-v%C3%ADa-adguard-home/" />
+
+	
+	<meta property="og:type" content="article">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:site_name" content="Sherblog">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:title"   content="Bloquear YouTube desde HA vía Adguard Home">
+	<meta property="og:url" content="https://hugopreview.vps.sherblog.es/bloquear-youtube-desde-ha-v%C3%ADa-adguard-home/">
+	<meta property="og:description" content="He creado Bloquear YouTube desde HA vía Adguard Home para compartir mis opiniones y conocimientos."/>
+
+	
+	
+	
+	
+	<meta property="og:image" content="https://hugopreview.vps.sherblog.es/images/20261012_bloquear_youtube_desde_ha_via_adguard_home_00.jpg" />
+	
+	
+
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	
+	
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bloquear YouTube desde HA vía Adguard Home">
+  <meta name="twitter:description" content="He creado Bloquear YouTube desde HA vía Adguard Home para compartir mis opiniones y conocimientos.">
+
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Sherblog" rel="home">
+				<div class="logo__title">Sherblog</div>
+				<div class="logo__tagline">Sólo mi forma de hacer las cosas...</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menú</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/emacs/">
+				
+				<span class="menu__text">Emacs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/hugo/">
+				
+				<span class="menu__text">Hugo</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/home_assistant/">
+				
+				<span class="menu__text">Home assistant</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/mis-v%C3%A9rtices-geod%C3%A9sicos/">
+				
+				<span class="menu__text">Mis vértices geodésicos</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/computing/raspberry/">
+				
+				<span class="menu__text">Raspberry Pi desde cero</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/android/tasker/">
+				
+				<span class="menu__text">Tasker</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Bloquear YouTube desde HA vía Adguard Home</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2026-10-12T00:00:00Z">2026-10-12</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/home-assistant/" rel="category">Home Assistant</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/images/20261012_bloquear_youtube_desde_ha_via_adguard_home_00.jpg" alt="Bloquear YouTube desde HA vía Adguard Home">
+		
+	</figure><div class="content post__content clearfix">
+			<p>Este documento resume los pasos necesarios para crear un interruptor en el panel de control de Home Assistant que permita activar o desactivar de forma manual y bajo demanda una lista de bloqueo DNS alojada en AdGuard Home.</p>
+<h2 id="1-contexto-y-problema">1. Contexto y Problema</h2>
+<p>La integración nativa de <strong>AdGuard Home</strong> en Home Assistant expone interruptores globales para la protección general, el filtrado DNS, SafeSearch o el control parental, pero <strong>no crea entidades individuales para listas de filtros o servicios bloqueados específicos</strong> (como YouTube, redes sociales o dominios personalizados).</p>
+<p>Para habilitar o deshabilitar una lista específica sin tener que acceder al panel de AdGuard Home, podemos aprovechar las acciones del servicio de la integración oficial (<code>adguard.enable_url</code> y <code>adguard.disable_url</code>) en combinación con un ayudante (<em>Input Boolean</em>) y una automatización ligera.</p>
+<h2 id="2-requisitos-previos">2. Requisitos Previos</h2>
+<ol>
+<li>Integración de <strong>AdGuard Home</strong> configurada y funcionando en Home Assistant.</li>
+<li>La lista de URLs debe estar previamente agregada y visible en el panel web de AdGuard Home.</li>
+</ol>
+<h3 id="añadir-la-lista-en-adguard-home">Añadir la lista en AdGuard Home</h3>
+<ol>
+<li>Abre el panel web de AdGuard Home y navega a <strong>Filtros</strong> &gt; <strong>Listas de bloqueo de DNS</strong>.</li>
+<li>Pulsa en <strong>Añadir lista de bloqueo</strong> &gt; <strong>Añadir una lista personalizada</strong>.</li>
+<li>Rellena los datos:
+<ul>
+<li><strong>Nombre:</strong> Por ejemplo, <code>Bloqueo Regex Redes / Streaming</code></li>
+<li><strong>URL:</strong>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>https://raw.githubusercontent.com/sherlockes/SherloScripts/refs/heads/master/pi-hole/regex_blocklist.txt
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>Guarda los cambios y asegúrate de que la lista aparece listada con sus reglas cargadas.</li>
+</ol>
+<h2 id="3-paso-1-crear-el-ayudante-input-boolean">3. Paso 1: Crear el Ayudante (<em>Input Boolean</em>)</h2>
+<p>El ayudante actúa como el interruptor virtual en Home Assistant sobre el que interactuaremos en el dashboard.</p>
+<ol>
+<li>En Home Assistant, dirígete a <strong>Ajustes</strong> &gt; <strong>Dispositivos y servicios</strong> &gt; pestaña <strong>Ayudantes</strong>.</li>
+<li>Haz clic en <strong>Crear ayudante</strong> y selecciona <strong>Interruptor</strong> (<em>Toggle</em>).</li>
+<li>Configura los siguientes campos:
+<ul>
+<li><strong>Nombre:</strong> <code>Adguard Custom List</code></li>
+<li><strong>Icono:</strong> <code>mdi:shield-lock-outline</code></li>
+</ul>
+</li>
+<li>Pulsa en <strong>Crear</strong>. La entidad generada será:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>input_boolean.adguard_custom_list
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="4-paso-2-crear-la-automatización-de-control">4. Paso 2: Crear la Automatización de Control</h2>
+<p>Esta automatización escucha el cambio de estado del ayudante y lanza la acción correspondiente a AdGuard Home.</p>
+<ol>
+<li>Ve a <strong>Ajustes</strong> &gt; <strong>Automatizaciones y escenas</strong> &gt; <strong>Crear automatización</strong>.</li>
+<li>En la esquina superior derecha, abre el menú de tres puntos verticales y selecciona <strong>Editar en YAML</strong>.</li>
+<li>Pega la siguiente definición:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">alias</span>: <span style="color:#e6db74">&#34;Control Bloqueo Redes AdGuard&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;Activa o desactiva la lista de filtrado en AdGuard Home mediante ayudante&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">mode</span>: <span style="color:#ae81ff">restart</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">trigger</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">state</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">entity_id</span>: <span style="color:#ae81ff">input_boolean.adguard_custom_list</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">actions</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">choose</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">conditions</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#f92672">condition</span>: <span style="color:#ae81ff">state</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">entity_id</span>: <span style="color:#ae81ff">input_boolean.adguard_custom_list</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">state</span>: <span style="color:#e6db74">&#34;on&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">sequence</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#f92672">action</span>: <span style="color:#ae81ff">adguard.enable_url</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">data</span>:
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/sherlockes/SherloScripts/refs/heads/master/pi-hole/regex_blocklist.txt&#34;</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#f92672">action</span>: <span style="color:#ae81ff">adguard.refresh</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">conditions</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#f92672">condition</span>: <span style="color:#ae81ff">state</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">entity_id</span>: <span style="color:#ae81ff">input_boolean.adguard_custom_list</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">state</span>: <span style="color:#e6db74">&#34;off&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">sequence</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#f92672">action</span>: <span style="color:#ae81ff">adguard.disable_url</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">data</span>:
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/sherlockes/SherloScripts/refs/heads/master/pi-hole/regex_blocklist.txt&#34;</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#f92672">action</span>: <span style="color:#ae81ff">adguard.refresh</span>
+</span></span></code></pre></div><ol start="4">
+<li>Haz clic en <strong>Guardar</strong>.</li>
+</ol>
+<blockquote>
+<p><strong>Nota:</strong> La acción <code>adguard.refresh</code> asegura que AdGuard aplique los cambios inmediatamente en la memoria caché sin esperar al ciclo de sincronización habitual.</p>
+</blockquote>
+<h2 id="5-paso-3-tarjeta-en-el-panel-de-control-dashboard">5. Paso 3: Tarjeta en el Panel de Control (Dashboard)</h2>
+<p>Para operar el bloqueo con un solo toque desde la interfaz de usuario, añade una tarjeta de tipo botón en la vista deseada de tu cuadro de mandos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">type</span>: <span style="color:#ae81ff">button</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">entity</span>: <span style="color:#ae81ff">input_boolean.adguard_custom_list</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Bloqueo Redes</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">icon</span>: <span style="color:#ae81ff">mdi:shield-lock-outline</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">tap_action</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">action</span>: <span style="color:#ae81ff">toggle</span>
+</span></span></code></pre></div><h2 id="6-verificación-del-funcionamiento">6. Verificación del Funcionamiento</h2>
+<ol>
+<li>Pulsa la tarjeta creada en tu dashboard para ponerla en estado <strong>ON</strong> o <strong>OFF</strong>.</li>
+<li>Abre la pestaña <strong>Filtros</strong> &gt; <strong>Listas de bloqueo de DNS</strong> en el panel web de AdGuard Home y recarga la página.</li>
+<li>Comprueba que el selector de activación de la lista cambia entre marcado (activo) y desmarcado (inactivo) según el estado del botón en Home Assistant.</li>
+</ol>
+<h3 id="enlaces-de-interés">Enlaces de interés</h3>
+<ul>
+<li><a href="www.sherblog.es">enlace</a></li>
+</ul>
+		</div>
+		<footer class="post__footer">
+		  
+
+<div class="content post__content clearfix">
+    <h3>Otros de mís artículos que te pueden interesar</h3>
+    <ul>
+	    
+	    <li><a href="/modificando-pi-hole-desde-home-assistant/">Modificando Pi-hole desde Home assistant</a></li>
+	    
+	    <li><a href="/mi-casa-inteligente-desde-cero/">Mi casa inteligente desde cero</a></li>
+	    
+	    <li><a href="/controlando-un-tasmota-remoto-desde-home-assistant/">Controlando un Tasmota remoto desde Home Assistant</a></li>
+	    
+	    <li><a href="/configurar-wireguard-de-home-assistant-en-cliente-linux/">Configurar Wireguard de Home Assistant en cliente linux</a></li>
+	    
+	    <li><a href="/z2m-en-segunda-residencia/">Z2M en segunda residencia</a></li>
+	    
+    </ul>
+</div>
+
+
+		  
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/home-assistant/" rel="tag">home assistant</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/youtube/" rel="tag">youtube</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/sherlocate-una-app-de-seguimiento/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Anterior</span>
+			<p class="pager__title">Sherlocate, una app de seguimiento</p>
+		</a>
+	</div>
+</nav>
+<div class="content post__content clearfix">
+  <h3>Comentarios</h3>
+  Atrás quedaron los tiempos de los comentarios en el propio blog. La ley de protección de datos y el spam pudieron con ellos. Ahora puedes plantearme cualquier duda, comentario o sugerencia en <a href="https://mas.to/@sherlockes">@sherlockes</a> en Mastodon o Telegram.
+</div>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+		        &copy; 2026 Sherlockes.
+			<span class="footer__copyright-credits">Generado con <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> y <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+			</br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</br></br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+		</div>
+        <link rel="me" href="https://mas.to/@sherlockes">
+	</div>
+</footer>
+
+	</div>
+	<script async defer src="/js/menu.js"></script>
+	<script src="/js/custom.js"></script>
+	
+	<script>
+	 if (window.self !== window.top) {
+	     window.parent.postMessage({
+		 type: 'hugo-deck-navigate',
+		 path: window.location.pathname
+	     }, '*');
+
+	     window.addEventListener('message', function(event) {
+	         if (event.data && event.data.type === 'hugo-deck-scroll') {
+	             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+	             window.scrollTo({
+	                 top: scrollHeight * event.data.percentage,
+	                 behavior: 'auto'
+	             });
+	         }
+	     });
+	 }
+	</script>
+	
+
+</body>
+</html>

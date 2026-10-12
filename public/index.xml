@@ -6,8 +6,15 @@
     <description>Recent content on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Sun, 28 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hugopreview.vps.sherblog.es/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bloquear YouTube desde HA vía Adguard Home</title>
+      <link>https://hugopreview.vps.sherblog.es/bloquear-youtube-desde-ha-v%C3%ADa-adguard-home/</link>
+      <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/bloquear-youtube-desde-ha-v%C3%ADa-adguard-home/</guid>
+      <description>&lt;p&gt;Este documento resume los pasos necesarios para crear un interruptor en el panel de control de Home Assistant que permita activar o desactivar de forma manual y bajo demanda una lista de bloqueo DNS alojada en AdGuard Home.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Sherlocate, una app de seguimiento</title>
       <link>https://hugopreview.vps.sherblog.es/sherlocate-una-app-de-seguimiento/</link>
@@ -70,13 +77,6 @@
       <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
       <guid>https://hugopreview.vps.sherblog.es/generador-de-contexto-para-ia/</guid>
       <description>&lt;p&gt;El &amp;ldquo;vibe coding&amp;rdquo; se trata de mantener el flujo creativo y dejar que la IA se encargue de la carpintería pesada. Podemos definir este &lt;code&gt;context-engine.sh&lt;/code&gt; como un &amp;ldquo;acelerador de partículas&amp;rdquo; para este flujo.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Sherlocaster</title>
-      <link>https://hugopreview.vps.sherblog.es/sherlocaster/</link>
-      <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/sherlocaster/</guid>
-      <description>&lt;p&gt;Resumen de introducción es&amp;hellip;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

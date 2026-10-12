@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://hugopreview.vps.sherblog.es/bloquear-youtube-desde-ha-v%C3%ADa-adguard-home/</loc>
+    <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://hugopreview.vps.sherblog.es/sherlocate-una-app-de-seguimiento/</loc>
     <lastmod>2026-06-28T00:00:00+00:00</lastmod>
   </url><url>
@@ -950,10 +953,28 @@
     <loc>https://hugopreview.vps.sherblog.es/raspberry-descargando-wordpress/</loc>
     <lastmod>2018-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugopreview.vps.sherblog.es/tags/apps/</loc>
-    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://hugopreview.vps.sherblog.es/categories/</loc>
+    <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es/categories/home-assistant/</loc>
+    <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es/tags/home-assistant/</loc>
+    <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es/post/</loc>
+    <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es/</loc>
+    <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es/tags/</loc>
+    <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es/tags/youtube/</loc>
+    <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hugopreview.vps.sherblog.es/tags/apps/</loc>
     <lastmod>2026-06-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es/categories/computing/</loc>
@@ -965,19 +986,10 @@
     <loc>https://hugopreview.vps.sherblog.es/tags/mapas/</loc>
     <lastmod>2026-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugopreview.vps.sherblog.es/post/</loc>
-    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://hugopreview.vps.sherblog.es/tags/python/</loc>
     <lastmod>2026-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugopreview.vps.sherblog.es/</loc>
-    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://hugopreview.vps.sherblog.es/categories/sherver/</loc>
-    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hugopreview.vps.sherblog.es/tags/</loc>
     <lastmod>2026-06-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es/tags/traccar/</loc>
@@ -1051,9 +1063,6 @@
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es/categories/hardware/</loc>
     <lastmod>2026-02-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hugopreview.vps.sherblog.es/categories/home-assistant/</loc>
-    <lastmod>2026-01-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es/tags/pihole/</loc>
     <lastmod>2026-01-21T00:00:00+00:00</lastmod>
@@ -1132,9 +1141,6 @@
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es/tags/jinja2/</loc>
     <lastmod>2024-03-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hugopreview.vps.sherblog.es/tags/home-assistant/</loc>
-    <lastmod>2024-02-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hugopreview.vps.sherblog.es/tags/git/</loc>
     <lastmod>2023-09-15T00:00:00+00:00</lastmod>

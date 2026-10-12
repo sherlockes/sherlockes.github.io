@@ -6,8 +6,22 @@
     <description>Recent content in Tags on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Sun, 28 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hugopreview.vps.sherblog.es/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Home Assistant</title>
+      <link>https://hugopreview.vps.sherblog.es/tags/home-assistant/</link>
+      <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/tags/home-assistant/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Youtube</title>
+      <link>https://hugopreview.vps.sherblog.es/tags/youtube/</link>
+      <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/tags/youtube/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Apps</title>
       <link>https://hugopreview.vps.sherblog.es/tags/apps/</link>
@@ -62,20 +76,6 @@
       <link>https://hugopreview.vps.sherblog.es/tags/restic/</link>
       <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
       <guid>https://hugopreview.vps.sherblog.es/tags/restic/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Github</title>
-      <link>https://hugopreview.vps.sherblog.es/tags/github/</link>
-      <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/tags/github/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Homepage</title>
-      <link>https://hugopreview.vps.sherblog.es/tags/homepage/</link>
-      <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/tags/homepage/</guid>
       <description></description>
     </item>
   </channel>
