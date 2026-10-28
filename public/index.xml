@@ -6,8 +6,15 @@
     <description>Recent content on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Mon, 12 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hugopreview.vps.sherblog.es/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pidiendo ayuda Auto &#43;</title>
+      <link>https://hugopreview.vps.sherblog.es/pidiendo-ayuda-auto-/</link>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/pidiendo-ayuda-auto-/</guid>
+      <description>&lt;p&gt;En el concesionario donde me compré el nuevo coche me pidieron 185€ para gestionar la solicitud de la ayuda Auto +. Motivo más que suficiente para intentarlo por mis propios médios.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Bloquear YouTube desde HA vía Adguard Home</title>
       <link>https://hugopreview.vps.sherblog.es/bloquear-youtube-desde-ha-v%C3%ADa-adguard-home/</link>
@@ -70,13 +77,6 @@
       <pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate>
       <guid>https://hugopreview.vps.sherblog.es/creaci%C3%B3n-de-un-post-de-hugo-desde-emacs/</guid>
       <description>&lt;p&gt;Para centrarte en escribir, el proceso de publicación no tiene que suponer una barrera. Así he configurado emacs para optimizar la creación de post para el blog con la mínima fricción posible.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Generador de contexto para IA</title>
-      <link>https://hugopreview.vps.sherblog.es/generador-de-contexto-para-ia/</link>
-      <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/generador-de-contexto-para-ia/</guid>
-      <description>&lt;p&gt;El &amp;ldquo;vibe coding&amp;rdquo; se trata de mantener el flujo creativo y dejar que la IA se encargue de la carpintería pesada. Podemos definir este &lt;code&gt;context-engine.sh&lt;/code&gt; como un &amp;ldquo;acelerador de partículas&amp;rdquo; para este flujo.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

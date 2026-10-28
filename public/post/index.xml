@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Mon, 12 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hugopreview.vps.sherblog.es/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pidiendo ayuda Auto &#43;</title>
+      <link>https://hugopreview.vps.sherblog.es/pidiendo-ayuda-auto-/</link>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/pidiendo-ayuda-auto-/</guid>
+      <description>&lt;p&gt;En el concesionario donde me compré el nuevo coche me pidieron 185€ para gestionar la solicitud de la ayuda Auto +. Motivo más que suficiente para intentarlo por mis propios médios.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Bloquear YouTube desde HA vía Adguard Home</title>
       <link>https://hugopreview.vps.sherblog.es/bloquear-youtube-desde-ha-v%C3%ADa-adguard-home/</link>
@@ -70,13 +77,6 @@
       <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
       <guid>https://hugopreview.vps.sherblog.es/sherlocaster/</guid>
       <description>&lt;p&gt;Resumen de introducción es&amp;hellip;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>App de cuestionarios</title>
-      <link>https://hugopreview.vps.sherblog.es/app-de-cuestionarios/</link>
-      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/app-de-cuestionarios/</guid>
-      <description>&lt;p&gt;Esta es sólo una prueba de concepto de como he utilizado una serie de servicios gratuitos para la creación de una app de cuestionarios. No pretendo explicar el funcionamiento, sólo en que me ha ayudado cada uno.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

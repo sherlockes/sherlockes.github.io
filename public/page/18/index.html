@@ -124,6 +124,36 @@
 	<article class="list__item post">
 	
 	<figure class="list__thumbnail thumbnail">
+		<a class="thumbnail__link" href="/sobreescribir-el-css-de-un-tema-en-hugo/">
+		<img class="thumbnail__image" src="/images/20180917_hugo_sobreescribir_css_00.jpg" alt="Sobreescribir el css de un tema en Hugo">
+		</a>
+	</figure>
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/sobreescribir-el-css-de-un-tema-en-hugo/" rel="bookmark">
+			Sobreescribir el css de un tema en Hugo
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-09-17T00:00:00Z">2018-09-17</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/hugo/" rel="category">Hugo</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		<p>Uno de los problemas con los que me he encontrado recientemente en la edición de la web  es la modificación del css para reducir un poco el tamaño de la imagen de cabecera dentro de cada post (Thumbnail) para el tema <a href="https://themes.gohugo.io/mainroad/">Mainroad</a></p>
+<p>La hoja de estilos del tema está ubicada en &ldquo;/themes/mainroad/static/css/style.css&rdquo; y en ella podemos encontrar la clase que hace referencia a esta imagen de cabecera del post.</p>
+<pre tabindex="0"><code>.post__thumbnail img {
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+</code></pre><p>Editando la propiedad &ldquo;width&rdquo; podemos reducir directamente el tamaño de la imagen y aparentemente ya hemos conseguido el objetivo que buscábamos pero&hellip;</p>
+	</div>
+</article><article class="list__item post">
+	
+	<figure class="list__thumbnail thumbnail">
 		<a class="thumbnail__link" href="/historia-del-alojamiento-del-blog/">
 		<img class="thumbnail__image" src="/images/logo.jpg" alt="Historia del alojamiento del blog">
 		</a>
@@ -315,29 +345,6 @@
 </ul>
 <p>Un tiempo atrás, antes de que descubriera <a href="https://ia.net/writer">iawriter</a>, la utilizaba para muchas cosas pero ahora tengo que reconocer que solo la empleo para la lista de la compra.</p>
 	</div>
-</article><article class="list__item post">
-	
-	<figure class="list__thumbnail thumbnail">
-		<a class="thumbnail__link" href="/instalando-windows-7/">
-		<img class="thumbnail__image" src="/images/20180419_win7.jpg" alt="Instalando Windows 7">
-		</a>
-	</figure>
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/instalando-windows-7/" rel="bookmark">
-			Instalando Windows 7
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-04-19T00:00:00Z">2018-04-19</time></div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		<h3 id="el-problema-un-sistema-lento">El problema, un sistema lento</h3>
-<p>Varios años después necesito instalar Windows en un pc, ya me he cansado de tener que esperar diez minutos hasta que arranque el sistema después de casi siete años de que la instalación de Windows 7 home Premium este acumulando kilos y kilos de basura informática.</p>
-<h3 id="windows-7-vs-windows-10">Windows 7 Vs Windows 10</h3>
-<p>Hoy por hoy Windows 7 me ofrece todo lo que necesito y el pc en el que voy a instalarlo no es precisamente de última generación por lo que no siquiera valoro la instalación de Windows 10. Seguro que me estoy perdiendo cientos de buenas características pero ya he dejado atrás los tiempos en los que el sistema operativo era una experiencia, ahora sólo lo considero una herramienta.</p>
-	</div>
 </article>
 </main>
 
@@ -478,7 +485,7 @@ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" wi
 		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="Github">Github (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/gmail/" title="Gmail">Gmail (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/google-chrome/" title="Google Chrome">Google Chrome (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/google-drive/" title="Google Drive">Google Drive (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/google-drive/" title="Google Drive">Google Drive (5)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/google-earth/" title="Google Earth">Google Earth (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/google-keep/" title="Google Keep">Google Keep (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/google-photos/" title="Google Photos">Google Photos (1)</a>

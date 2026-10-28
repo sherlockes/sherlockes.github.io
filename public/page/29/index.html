@@ -124,6 +124,43 @@
 	<article class="list__item post">
 	
 	<figure class="list__thumbnail thumbnail">
+		<a class="thumbnail__link" href="/raspberry-mysql-y-db/">
+		<img class="thumbnail__image" src="/images/raspberry_logo.png" alt="Raspberry mysql y DB">
+		</a>
+	</figure>
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/raspberry-mysql-y-db/" rel="bookmark">
+			Raspberry mysql y DB
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-04-04T00:00:00Z">2018-04-04</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/raspberry/" rel="category">Raspberry</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		<h3 id="instalando-mysql">Instalando Mysql</h3>
+<p>El motor de WordPress es una base de datos por lo que es necesario un motor que la gestione, usaré MySql y se instala de la siguente forma:</p>
+<code>
+sudo apt-get install mysql-server mysql-client -y
+</code>
+Al terminar la instalación nos pedirá una contraseña para el usuario "root".  Es muy importante que no se quede en blanco para dar seguridad a la base de datos.  Introducimos la que nos apetezca.  Además para securizar más la instalación ejecutamos el siguiente comando
+<code>
+sudo mysql_secure_installation
+</code>
+Respondiendo a las preguntas de la siguiente forma.
+  * Change the root password? [Y/n] n
+  * Remove anonymous users? [Y/n] y
+  * Disallow root login remotely? [Y/n] y
+  * Remove test database and access to it? [Y/n] y
+  * Reload privilege tables now? [Y/n] y
+<p>Accedemos a la consola de MySql con el siguiente comando tras el cual se nos solicitará la contraseña correspondiente al usuario &ldquo;root&rdquo;</p>
+	</div>
+</article><article class="list__item post">
+	
+	<figure class="list__thumbnail thumbnail">
 		<a class="thumbnail__link" href="/raspberry-y-docker/">
 		<img class="thumbnail__image" src="/images/20180501_raspberry_docker.jpg" alt="Raspberry y Docker">
 		</a>
@@ -341,39 +378,6 @@ sudo nano /etc/vsftpd.conf
 </code>
 <p>Instalamos &ldquo;vsftp&rdquo; y editamos el archivo de configuración asegurándonos de que están como aparecen a continuación los siguientes paramétros.</p>
 	</div>
-</article><article class="list__item post">
-	
-	<figure class="list__thumbnail thumbnail">
-		<a class="thumbnail__link" href="/raspberry-descargando-wordpress/">
-		<img class="thumbnail__image" src="/images/raspberry_logo.png" alt="Raspberry Descargando Wordpress">
-		</a>
-	</figure>
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/raspberry-descargando-wordpress/" rel="bookmark">
-			Raspberry Descargando Wordpress
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-04-05T00:00:00Z">2018-04-05</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/raspberry/" rel="category">Raspberry</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		<h3 id="descargando-wordpress">Descargando WordPress</h3>
-<p>En primer lugar descargamos la ultima versión de WordPress a el directorio &ldquo;home&rdquo; del usuario Pi.  Si la descargamos en inglés lo haremos mediante el archivo &ldquo;latest.tar.gz&rdquo; pero si la queremos en castellano habrá en entrar en [[http://es.wordpress.org]] y comprobar cual es la versión actual para descargar un archivo del tipo &ldquo;wordpress-4.8.2-es_ES.tar.gz&rdquo;</p>
-<code>
-sudo mkdir /var/www/html/sherblog/
-cd ~
-wget http://wordpress.org/latest.tar.gz
-tar -xzvf latest.tar.gz
-sudo mv wordpress/* /var/www/html/sherblog
-sudo rm latest.tar.gz
-sudo rm -rf wordpress
-</code>
-<p>Las líneas de arriba realizan la siguiente secuencia:</p>
-	</div>
 </article>
 </main>
 
@@ -514,7 +518,7 @@ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" wi
 		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="Github">Github (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/gmail/" title="Gmail">Gmail (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/google-chrome/" title="Google Chrome">Google Chrome (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/google-drive/" title="Google Drive">Google Drive (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/google-drive/" title="Google Drive">Google Drive (5)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/google-earth/" title="Google Earth">Google Earth (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/google-keep/" title="Google Keep">Google Keep (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/google-photos/" title="Google Photos">Google Photos (1)</a>
