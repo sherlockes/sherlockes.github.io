@@ -18,13 +18,8 @@ weight: 5
 Resumen de introducción
 <!--more-->
 
-
-![image-01]
-
 ### Enlaces de interés
 - [enlace](www.sherblog.pro)
 
 [link]: https://www.google.es
 
-{{ range $num := (seq 9) }}
-[image-0{{.}}]: /images/{{ $.Name }}_0{{ . }}.jpg{{ end }}

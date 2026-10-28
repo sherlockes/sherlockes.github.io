@@ -20,13 +20,10 @@ En el concesionario donde me compré el nuevo coche me pidieron 185€ para gest
 
 <!--more-->
 
-Escribe aquí el contenido de tu nuevo artículo...
-
-¡[image-01]
+Lo primero que intento es pedir ayuda a 
 
 ### Enlaces de interés
 - [enlace](www.sherblog.es)
 
 [link]: https://www.google.es
 
-[image-01]: /images/20260121_Pidiendo ayuda Auto +_01.jpg
