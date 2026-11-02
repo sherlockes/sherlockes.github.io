@@ -54,6 +54,8 @@ Y desde aquí al apartado "Tus certificados" e importar. Seleccionamos el archiv
 
 ![image-05]
 
+Parece que esta va a ser la buena. Ya podemos entrar en la solicitud de ayuda y rellenar toda la info que se requiere.
+
 Seguiremos aquí...
 
 

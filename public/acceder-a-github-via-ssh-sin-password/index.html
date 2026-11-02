@@ -74,7 +74,7 @@
 				
 			</a>
 		</li>
-		<li class="menu__item">
+		<li class="menu__item menu__item--active">
 			<a class="menu__link" href="/post/computing/hugo/">
 				
 				<span class="menu__text">Hugo</span>
@@ -123,7 +123,7 @@
 			<h1 class="post__title">Acceder a Github via ssh sin password</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-08-07T00:00:00Z">2023-08-07</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computing/" rel="category">Computing</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-07-27T00:00:00Z">2018-07-27</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/hugo/" rel="category">Hugo</a>
 	</span>
 </div></div>
 		</header>
@@ -133,9 +133,7 @@
 		<img class="thumbnail__image" src="/images/20180806_hugo_github_pass_00.jpg" alt="Acceder a Github via ssh sin password">
 		
 	</figure><div class="content post__content clearfix">
-			<p><strong>Actualización:</strong> Solucionando el problema desde el origen con un correcto clonado.</p>
-<p>Como corregir los problemas de permisos de usuario al intentar actualizar un repositorio remoto que hemos clonado en nuestra máquina.</p>
-<h3 id="el-problema">El problema</h3>
+			<h3 id="el-problema">El problema</h3>
 <p>Llevo unos días adentrándome en el maravilloso mundo de <a href="https://github.com">Github</a> del que hace un mes no tenía más idea que el de su mera existencia. En fin, pruebas y pruebas en las que estoy hasta el gorro de tener que introducir cada vez el nombre de usuario y contraseña cuando modifico los repositorios a través de ssh.</p>
 <h3 id="la-solución">La solución</h3>
 <p>Antes de nada nombrar que me conecto a <a href="https://github.com">Github</a> a través de la Raspberry Pi en la que tengo alojada mi web y otros servicios. Nada de ratón ni interface gráfica, solo comandos de texto a través de la terminal cuando lo hago en Linux o con Putty cuando trabajo desde Windows.</p>
@@ -158,61 +156,22 @@ por &ldquo;git+ssh://git@github.com/usuario/repositorio.git&rdquo; mediante el c
 git remote set-url origin git+ssh://git@github.com/usuario/repositorio.git
 &rsquo;''</p>
 <p>Y ya está, ahora ya puedo realizar modificaciones en mis repositorios de Github a través de ssh sin tener que estar continuamente introduciendo mi nombre de usuario y contraseña.</p>
-<blockquote>
-<p>Este problema no aparece si, cuando clonamos el repositorio remoto, usamos el comando <code>git clone git@github.com:tu_usuario/tu_repo.git</code> después de haber subido a github la llave ssh de nuestro equipo.</p>
-</blockquote>
 <p>-password-at-every-git-push/36955408
 [5]: <a href="https://stackoverflow.com">https://stackoverflow.com</a></p>
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTI5ODE4MTgzN119
 -->
+
 		</div>
-		<footer class="post__footer">
-		  
-
-<div class="content post__content clearfix">
-    <h3>Otros de mís artículos que te pueden interesar</h3>
-    <ul>
-	    
-	    <li><a href="/exportar-org-roam-a-hugo-en-gitlab/">Exportar Org-Roam a Hugo en Gitlab</a></li>
-	    
-	    <li><a href="/sincronizando-org-roam-mediante-github-en-emacs/">Sincronizando Org-Roam mediante Github en Emacs</a></li>
-	    
-	    <li><a href="/descarga-y-edici%C3%B3n-de-actividades-de-strava-en-python/">Descarga y edición de actividades de Strava en Python</a></li>
-	    
-	    <li><a href="/crear-y-configurar-una-instancia-gratuita-en-oracle/">Crear y configurar una instancia gratuita en Oracle</a></li>
-	    
-	    <li><a href="/comprobar-dispositivos-online-en-bash/">Comprobar dispositivos online en Bash</a></li>
-	    
-    </ul>
-</div>
-
-
-		  
-<div class="post__tags tags clearfix">
-	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-	<ul class="tags__list">
-		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/git/" rel="tag">git</a>
-		</li>
-	</ul>
-</div>
-		</footer>
 	</article>
 </main>
 
 
 <nav class="pager flex">
-	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/men%C3%BA-para-montar-nubes-en-bash/" rel="prev">
-			<span class="pager__subtitle">«&thinsp;Anterior</span>
-			<p class="pager__title">Menú para montar nubes en Bash</p>
-		</a>
-	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/comprobar-dispositivos-online-en-bash/" rel="next">
+		<a class="pager__link" href="/publicar-desde-iawriter/" rel="next">
 			<span class="pager__subtitle">Siguiente&thinsp;»</span>
-			<p class="pager__title">Comprobar dispositivos online en Bash</p>
+			<p class="pager__title">Publicar desde iaWriter</p>
 		</a>
 	</div>
 </nav>

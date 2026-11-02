@@ -6,8 +6,15 @@
     <description>Recent content in Google Drive on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Wed, 22 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hugopreview.vps.sherblog.es/tags/google-drive/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pidiendo ayuda Auto &#43;</title>
+      <link>https://hugopreview.vps.sherblog.es/pidiendo-ayuda-auto-/</link>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/pidiendo-ayuda-auto-/</guid>
+      <description>&lt;p&gt;En el concesionario donde me compré el nuevo coche me pidieron 185€ para gestionar la solicitud de la ayuda Auto +. Motivo más que suficiente para intentarlo por mis propios médios.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Sincronizar nubes con rclone</title>
       <link>https://hugopreview.vps.sherblog.es/sincronizar-nubes-con-rclone/</link>
