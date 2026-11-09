@@ -12,7 +12,7 @@ categories:
 - "computing"
 tags:
 - "google drive"
-draft: true
+draft: false
 weight: 5
 ---
 
