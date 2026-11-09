@@ -56,18 +56,23 @@ Y desde aquí al apartado "Tus certificados" e importar. Seleccionamos el archiv
 
 Parece que esta va a ser la buena. Ya podemos entrar en la solicitud de ayuda y rellenar toda la info que se requiere.
 
-Seguiremos aquí...
+Pero no es oro todo lo que reluce, después de rellenar toda la solicitud y adjuntar los documentos necesarios le das a enviar y te da un error de autofirma. En ningún sitio te dice, o yo no lo he visto, que es eso de autofirma así que toca volver a buscar más información.
 
+> [AutoFirma] es una aplicación de escritorio desarrollada por el Ministerio de Asuntos Económicos y Transformación Digital (a través de la Secretaría de Estado de Digitalización e Inteligencia Artificial) del Gobierno de España. Su función principal es permitir la firma electrónica de documentos (PDF, XML, etc.) de manera local en tu ordenador durante la realización de trámites administrativos con la Administración Pública a través de internet.
 
+Con esto no resulta muy difícil dar con el sitio para [descargarla] y además estamos de suerte ya que tiene versión para linux.
 
-### Enlaces de interés
-- [enlace](www.sherblog.es)
+Instalamos [Autofirma] y cual es mi sorpresa al ver que tengo que volver a rellenar toda la solicitud y adjuntar los documentos pero esta vez va a ser la definitiva ya que con esto la solicitud se ha procesado correctamente.
+
+Veremos si llega la pasta...
 
 [link]: https://www.google.es
 [Gemini]: https://gemini.google.com
 [Auto +]: https://www.mintur.gob.es/portalayudas/programa-auto/Paginas/Index.aspx
 [FNMT]: https://play.google.com/store/apps/details?id=es.fnmtrcm.ceres.certificadoDigitalFNMT&hl=es-419
 [chrome://settings/certificates]: https://chrome://settings/certificates
+[descargarla]: https://firmaelectronica.gob.es/descargas
+[Autofirma]: https://sede.serviciosmin.gob.es/ES-ES/FIRMAELECTRONICA/Paginas/AutoFirma.aspx
 
 [image-01]: /images/20261028_pidiendo_ayuda_auto_01.jpg
 [image-02]: /images/20261028_pidiendo_ayuda_auto_02.jpg
