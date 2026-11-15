@@ -6,20 +6,41 @@
     <description>Recent content in Tags on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Wed, 28 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hugopreview.vps.sherblog.es/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Home Assistant</title>
+      <link>https://hugopreview.vps.sherblog.es/tags/home-assistant/</link>
+      <pubDate>Sun, 15 Nov 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/tags/home-assistant/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ikea</title>
+      <link>https://hugopreview.vps.sherblog.es/tags/ikea/</link>
+      <pubDate>Sun, 15 Nov 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/tags/ikea/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Z2m</title>
+      <link>https://hugopreview.vps.sherblog.es/tags/z2m/</link>
+      <pubDate>Sun, 15 Nov 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/tags/z2m/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Zigbee</title>
+      <link>https://hugopreview.vps.sherblog.es/tags/zigbee/</link>
+      <pubDate>Sun, 15 Nov 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/tags/zigbee/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Google Drive</title>
       <link>https://hugopreview.vps.sherblog.es/tags/google-drive/</link>
       <pubDate>Wed, 28 Oct 2026 00:00:00 +0000</pubDate>
       <guid>https://hugopreview.vps.sherblog.es/tags/google-drive/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Home Assistant</title>
-      <link>https://hugopreview.vps.sherblog.es/tags/home-assistant/</link>
-      <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/tags/home-assistant/</guid>
       <description></description>
     </item>
     <item>
@@ -55,27 +76,6 @@
       <link>https://hugopreview.vps.sherblog.es/tags/python/</link>
       <pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
       <guid>https://hugopreview.vps.sherblog.es/tags/python/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Traccar</title>
-      <link>https://hugopreview.vps.sherblog.es/tags/traccar/</link>
-      <pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/tags/traccar/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Bash</title>
-      <link>https://hugopreview.vps.sherblog.es/tags/bash/</link>
-      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/tags/bash/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Rclone</title>
-      <link>https://hugopreview.vps.sherblog.es/tags/rclone/</link>
-      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/tags/rclone/</guid>
       <description></description>
     </item>
   </channel>
