@@ -81,7 +81,7 @@
 				
 			</a>
 		</li>
-		<li class="menu__item">
+		<li class="menu__item menu__item--active">
 			<a class="menu__link" href="/post/computing/home_assistant/">
 				
 				<span class="menu__text">Home assistant</span>
@@ -133,12 +133,27 @@
 		<img class="thumbnail__image" src="/images/20261115_el_drama_de_las_kajplats_de_ikea_00.jpg" alt="El drama de las Kajplats de Ikea">
 		
 	</figure><div class="content post__content clearfix">
-			<p>El precio de las bombillas <a href="https://www.ikea.com/es/es/p/kajplats-bombilla-led-e27-470-lumenes-inteligente-espectro-blanco-globo-blanco-opalo-00611307/">Kajplats</a> de Ikea es inmbatible</p>
-<p>Escribe aquí el contenido de tu nuevo artículo&hellip;</p>
-<h3 id="enlaces-de-interés">Enlaces de interés</h3>
-<ul>
-<li><a href="www.sherblog.es">enlace</a></li>
-</ul>
+			<p>El precio de las bombillas <a href="https://www.ikea.com/es/es/p/kajplats-bombilla-led-e27-470-lumenes-inteligente-espectro-blanco-globo-blanco-opalo-00611307/">Kajplats</a> de Ikea es imbatible pero configurarlas en modo Zigbee puede ser un profundo dolor de cabeza. Esta ha sido mi experiencia.</p>
+<p>Menos de 5€ es lo que cuesta una bombilla de <a href="https://www.ikea.com/es/es/p/kajplats-bombilla-led-e27-470-lumenes-inteligente-espectro-blanco-globo-blanco-opalo-00611307/">Kajplats</a> para poner en los flexos de los escritorios de los chicos.</p>
+<p><img src="/images/20261115_el_drama_de_las_kajplats_de_ikea_02.jpg" alt="image-02"></p>
+<p>Pero la configuración no va a ser tan sencilla ya que no dispongo de coordinador <a href="https://www.ikea.com/es/es/p/dirigera-base-productos-inteligentes-blanco-inteligente-10503406/">Dirigera</a> ni de un coordinador matter. Por suerte y tal y como está documentado en <a href="https://www.zigbee2mqtt.io/devices/KAJPLATS_WS.html">www.zigbee2mqtt.io</a>, estas bombillas tambien tienen implementado el protocolo zigbee pero no viene activado por defecto, para activarlo hay que:</p>
+<ol>
+<li>Encender y apagar la bombilla 6 veces para realizar un reseteo de fábrica</li>
+<li>Encender y apagar la bombilla 12 (o 15 en algunos modelos) veces para entrar en el modo de emparejamiento zigbee</li>
+</ol>
+<p>Con la primera bombilla que lo intento no soy capaz de emparejarla después de muchas pruebas así que termino pensando que la bombilla está averiada.</p>
+<blockquote>
+<p>Llego a realizar la conexión zigbee de la bombilla y la puedo apagar desde home assistant pero cuando se enciende se queda parpadeando en blanco cálido como realizando el emparejamiento matter.</p>
+</blockquote>
+<p>La segunda bombilla la intento configurar mucho más cerca del coordinador zigbee y queda funcionando correctamente siguiendo el proceso de activación del emparejamiento zigbee expuesto arriba.</p>
+<p>Sigo haciendo pruebas con la primera bombilla hasta que llega un momento que la bombilla ni enciende al recibir la alimentación por lo que la doy por rota y la cambio por otra.</p>
+<p>Después de un rato en Ikea para cambiar la bombilla, vuelvo a la carga con los intentos de conexión que vuelven a ser fallidos. Ni poniendo la bombilla junto al coordinador zigbee consigo conectarla.</p>
+<p>Por suerte no soy el único que ha encontrado estas dificultades, parece que algunas bombillas son muy escrupulosas con los tiempos de encendido y apagado para hacer el reset y alguien ha creado un <a href="https://community.home-assistant.io/t/ikea-kajplats-smart-bulb-zigbee-pairing-mode-power-cycle/988507">Blueprint</a> para evitar el problema con la ayuda de un enchufe inteligente.</p>
+<p><img src="/images/20261115_el_drama_de_las_kajplats_de_ikea_01.jpg" alt="image-01"></p>
+<p>Con los tiempos de la imagen a mi me ha funcionado a la primera. Sólo hay que seleccionar el enchufe al que vas a conectar la bombilla y ejecutar el script.</p>
+<blockquote>
+<p>Por suerte, la configuración de los pulsadores <a href="https://www.zigbee2mqtt.io/devices/E2489.html">Bilresa</a> es mucho mas sencilla y no da problemas.</p>
+</blockquote>
 		</div>
 		<footer class="post__footer">
 		  
@@ -186,9 +201,9 @@
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/pidiendo-ayuda-auto-/" rel="prev">
+		<a class="pager__link" href="/controlando-un-tasmota-remoto-desde-home-assistant/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Anterior</span>
-			<p class="pager__title">Pidiendo ayuda Auto &#43;</p>
+			<p class="pager__title">Controlando un Tasmota remoto desde Home Assistant</p>
 		</a>
 	</div>
 </nav>

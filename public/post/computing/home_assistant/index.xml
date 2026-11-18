@@ -6,8 +6,15 @@
     <description>Recent content in Home assistant on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hugopreview.vps.sherblog.es/post/computing/home_assistant/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>El drama de las Kajplats de Ikea</title>
+      <link>https://hugopreview.vps.sherblog.es/el-drama-de-las-kajplats-de-ikea/</link>
+      <pubDate>Sun, 15 Nov 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/el-drama-de-las-kajplats-de-ikea/</guid>
+      <description>&lt;p&gt;El precio de las bombillas &lt;a href=&#34;https://www.ikea.com/es/es/p/kajplats-bombilla-led-e27-470-lumenes-inteligente-espectro-blanco-globo-blanco-opalo-00611307/&#34;&gt;Kajplats&lt;/a&gt; de Ikea es imbatible pero configurarlas en modo Zigbee puede ser un profundo dolor de cabeza. Esta ha sido mi experiencia.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Controlando un Tasmota remoto desde Home Assistant</title>
       <link>https://hugopreview.vps.sherblog.es/controlando-un-tasmota-remoto-desde-home-assistant/</link>
@@ -70,13 +77,6 @@
       <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
       <guid>https://hugopreview.vps.sherblog.es/convertir-una-luz-en-interruptor-en-home-assistant/</guid>
       <description>&lt;p&gt;Es posible utilizar un módulo zigbee de luces como si fuera un enchufe cableado, el problema aparece cuando intentas encender o apagar todas las luces de un área en la que lo tienes incluido y se activa al son de las bombillas.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Mostrar dispositivos no disponibles en Home Assistant</title>
-      <link>https://hugopreview.vps.sherblog.es/mostrar-dispositivos-no-disponibles-en-home-assistant/</link>
-      <pubDate>Sat, 21 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/mostrar-dispositivos-no-disponibles-en-home-assistant/</guid>
-      <description>&lt;p&gt;De vez en cuando, hay dispositivos &lt;a href=&#34;https://es.wikipedia.org/wiki/Zigbee&#34;&gt;Zigbee&lt;/a&gt; que dejan de estar disponibles para &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt; y hay que volver a configurarlos, con esta sencilla tarjeta podremos ver cuales son y así no tener duda de que es lo que falla.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

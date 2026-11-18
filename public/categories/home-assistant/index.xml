@@ -6,8 +6,15 @@
     <description>Recent content in Home Assistant on Sherblog</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Mon, 12 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hugopreview.vps.sherblog.es/categories/home-assistant/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>El drama de las Kajplats de Ikea</title>
+      <link>https://hugopreview.vps.sherblog.es/el-drama-de-las-kajplats-de-ikea/</link>
+      <pubDate>Sun, 15 Nov 2026 00:00:00 +0000</pubDate>
+      <guid>https://hugopreview.vps.sherblog.es/el-drama-de-las-kajplats-de-ikea/</guid>
+      <description>&lt;p&gt;El precio de las bombillas &lt;a href=&#34;https://www.ikea.com/es/es/p/kajplats-bombilla-led-e27-470-lumenes-inteligente-espectro-blanco-globo-blanco-opalo-00611307/&#34;&gt;Kajplats&lt;/a&gt; de Ikea es imbatible pero configurarlas en modo Zigbee puede ser un profundo dolor de cabeza. Esta ha sido mi experiencia.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Bloquear YouTube desde HA vía Adguard Home</title>
       <link>https://hugopreview.vps.sherblog.es/bloquear-youtube-desde-ha-v%C3%ADa-adguard-home/</link>
@@ -70,13 +77,6 @@
       <pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate>
       <guid>https://hugopreview.vps.sherblog.es/automatizando-las-luces-del-sal%C3%B3n/</guid>
       <description>&lt;p&gt;Esta es la forma en la que tengo dispuesto el funcionamiento de las luces del salón mediante una sola automatización dentro de &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;Home Assistant&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Calibración de las persianas con en controlador TS130F</title>
-      <link>https://hugopreview.vps.sherblog.es/calibraci%C3%B3n-de-las-persianas-con-en-controlador-ts130f/</link>
-      <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://hugopreview.vps.sherblog.es/calibraci%C3%B3n-de-las-persianas-con-en-controlador-ts130f/</guid>
-      <description>&lt;p&gt;La parte más importante de la domotización de las persianas es un correcto ajuste de las posiciones de apertura y cierre. Parece sencillo, pero sin un manual de instrucciones del fabricante se convierte en un dolor de cabeza.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
